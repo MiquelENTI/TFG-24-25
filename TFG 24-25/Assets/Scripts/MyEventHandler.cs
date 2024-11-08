@@ -33,16 +33,17 @@ public class MyEventHandler : Singleton<MyEventHandler>
                     cellToMove.SetCharacter(character);
                     cellToMove.SetOccupied(true);
                     character.SetOnTileId(cellId);
-
+                    character.MoveToken(cellToMove.GetPosition());
                     cellToMove.PrintStatus();
                     return;
                 }
             }
 
 
-            if (cellToMove.CheckMultipleNodeForCharacter(character.GetDirections(), character.GetId()))
+            if (cellToMove.CheckMultipleNodeForCharacter(character.GetDirections(), character.GetId()) && character.GetMovementsLeft() > 0)
             {
                 Debug.Log("MOOOVE");
+                character.DecreaseMovement();
                 CellNode previousNode = CellNodeManager.Instance.GetNodeById(character.GetOnTileId());
                 previousNode.RemoveCharacter();
                 previousNode.SetOccupied(false);

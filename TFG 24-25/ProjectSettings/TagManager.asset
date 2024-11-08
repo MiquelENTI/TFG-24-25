@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Token
+  - CardToDisplay
   layers:
   - Default
   - TransparentFX

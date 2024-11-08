@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -12,8 +13,11 @@ public class Character
     TeamType teamType;
     int onTile;
     bool toSpawn = true;
+    int numOfMovements;
+    int movementsLeft;
 
     GameObject token;
+    Sprite cardSprite;
 
     public int GetId()
     { return id; }
@@ -33,19 +37,31 @@ public class Character
     public List<CellConnection> GetDirections()
     { return directions; }
 
+    public int GetMovementsLeft()
+    { return movementsLeft; }
+
+    public void DecreaseMovement()
+    { movementsLeft--; }
+    public void ResetMovementsLeft()
+    { movementsLeft = numOfMovements; }
+
     public bool IsToSpawn() 
     { return toSpawn; }
 
     public void DisableSpawn() 
     { toSpawn = false; }
 
+
     public void MoveToken(Vector3 position)
     {  
         position.y = 0.5f;
         token.transform.position = position;
     }
+    
+    public Sprite GetCardSprite()
+    { return cardSprite; }
 
-    public Character(MovementType movementType, TeamType teamType, GameObject token)
+    public Character(MovementType movementType, TeamType teamType, int numOfMovements, GameObject token, Sprite cardSprite)
     {
         directions = new List<CellConnection>();
         switch (movementType)
@@ -76,8 +92,11 @@ public class Character
                 break;
         }
         this.teamType = teamType;
+        this.numOfMovements = numOfMovements;
+        movementsLeft = numOfMovements;
 
-        CharactersManager.Instance.AddCharacter(this);
+        CharactersManager.Instance.AddCharacter(this, cardSprite);
         this.token = token;
+        this.cardSprite = cardSprite;
     }
 }
