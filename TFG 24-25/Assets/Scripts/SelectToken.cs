@@ -23,7 +23,7 @@ public class SelectToken : MonoBehaviour
 
     Vector3 mouseDownPos;
     float revealTimer = 0;
-    float timeToReveal = 2;
+    float timeToReveal = 0.7f;
     bool isDragging = false;
 
     private void Awake()
@@ -49,7 +49,7 @@ public class SelectToken : MonoBehaviour
         if (plane.Raycast(ray, out var enter))
         {
             mousePos = ray.GetPoint(enter);
-            mousePos.y = 1.0f;
+            mousePos.y = 0.75f;
 
         }
 
@@ -100,7 +100,6 @@ public class SelectToken : MonoBehaviour
     {
         if (isDragging || cardToDisplay.activeSelf) 
         {
-            Debug.Log("isDragging or CardIsActive");
             return; 
         }
 
