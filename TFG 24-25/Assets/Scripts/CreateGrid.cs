@@ -28,7 +28,7 @@ public class CreateGrid : MonoBehaviour
         Vector2 cellSize = new(boardSize.x / columns, boardSize.y / rows);
         Vector2 cellOffset = new(cellSize.x / 2.0f, cellSize.y / 2.0f);
 
-        cell.transform.localScale = new Vector3(cellSize.x * 0.9f, cell.transform.localScale.y, cellSize.y * 0.9f);
+        cell.transform.localScale = new Vector3(cellSize.x * 1.08f, cell.transform.localScale.y, cellSize.y * 1.08f);
 
         Vector2 boardCorner = new Vector2(
             board.transform.position.x + (boardSize.y / 2.0f - cellSize.y/2.0f), 
@@ -41,7 +41,7 @@ public class CreateGrid : MonoBehaviour
         for (int i = 0; i < rows; i++)
         {
             List<CellNode> row = new List<CellNode>();
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < columns; j++) 
             {
                 GameObject obj = Instantiate(cell, new Vector3(boardCorner.y + j * cellSize.x, 0.5f, boardCorner.x - i * cellSize.y), Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + i.ToString() + "-" + j.ToString();
@@ -49,6 +49,7 @@ public class CreateGrid : MonoBehaviour
                 CellNode node = new CellNode(obj.transform.position);
             }
         }
+
 
         CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpawnableTiles(2);

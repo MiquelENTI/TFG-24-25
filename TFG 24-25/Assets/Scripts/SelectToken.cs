@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectToken : MonoBehaviour
 {
@@ -15,12 +16,22 @@ public class SelectToken : MonoBehaviour
 
     // TEMP?
     Character character;
+    [SerializeField] GameObject cardToDisplay;
+    
+    // TEMP, en un futur fer-ho desde base dades o Resources
+    public Sprite characterSprite;
 
+    Vector3 mouseDownPos;
+    float revealTimer = 0;
+    float timeToReveal = 0.7f;
+    bool isDragging = false;
 
-
+    private void Awake()
+    {
+    }
     void Start()
     {
-        character = new(MovementType.Omni, TeamType.BLUE, transform.gameObject);
+        character = new(MovementType.Omni, TeamType.BLUE, 1000, transform.gameObject, characterSprite);
         plane = new Plane(Vector3.up, Vector3.up);
     }
 
@@ -38,27 +49,75 @@ public class SelectToken : MonoBehaviour
         if (plane.Raycast(ray, out var enter))
         {
             mousePos = ray.GetPoint(enter);
-            mousePos.y = 1.0f;
+            mousePos.y = 0.75f;
 
         }
 
         return mousePos;
     }
 
+    private void OnMouseDown()
+    {
+        mouseDownPos = GetMouseWorldPos();
+    }
+
     private void OnMouseDrag()
     {
-        transform.position = GetMouseWorldPos();
-    }
+        Vector3 newMousePos = GetMouseWorldPos();
+
+        SeeTokenCard();
+
+        if (mouseDownPos != newMousePos)
+        {
+            isDragging = true;
+        }
+
+        if (cardToDisplay.activeSelf)
+        {
+            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
+            return;
+        }
+
+        transform.position = newMousePos;
+    }   
 
     private void OnMouseUp()
     {
-        if(tileHovering == -1) 
+        isDragging = false;
+
+        if (tileHovering == -1) 
         {
             Debug.Log("TileID is -1");
-            return; }
+            return; 
+        }
 
 
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
+    }
+
+
+    void SeeTokenCard()
+    {
+        if (isDragging || cardToDisplay.activeSelf) 
+        {
+            return; 
+        }
+
+        if (revealTimer < timeToReveal)
+        {
+            Debug.Log(revealTimer);
+            revealTimer += Time.deltaTime;
+            return; 
+        }
+
+        ChangeImageCardToDisplay();
+        revealTimer = 0;
+    }
+
+    void ChangeImageCardToDisplay()
+    {
+        cardToDisplay.SetActive(true);
+        cardToDisplay.transform.GetChild(0).GetComponent<Image>().sprite = character.GetCardSprite();
     }
 
     public void SetOnTileId(int tileId)

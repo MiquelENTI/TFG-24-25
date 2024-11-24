@@ -9,23 +9,25 @@ public class CharactersManager : Singleton<CharactersManager>
     Dictionary<int, Character> charactersOnBoard;
     int currentId = 0;
 
+    // Fa falta?
+    Dictionary<int, Sprite> charactersCardSprite;
+
     private void Awake()
     {
         charactersOnBoard = new();
+        charactersCardSprite = new Dictionary<int, Sprite>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //foreach (var character in charactersOnBoard.Values)
-        //{
-        //    Debug.Log(character.GetId().ToString());
-        //}
+
     }
 
-    public void AddCharacter(Character character)
+    public void AddCharacter(Character character, Sprite cardSprite)
     {
         charactersOnBoard.Add(currentId,character);
+        charactersCardSprite.Add(currentId, cardSprite);
         character.SetId(currentId);
         currentId++;
     }
