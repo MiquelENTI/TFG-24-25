@@ -26,14 +26,16 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
             if (character.IsToSpawn())
             {
-                if (cellToMove.CanCharacterSpawn(character))
+                if (cellToMove.CanCharacterSpawn(character) && !cellToMove.IsOccupied())
                 {
                     Debug.Log("SPAWN");
                     character.DisableSpawn();
                     cellToMove.SetCharacter(character);
-                    cellToMove.SetOccupied(true);
+
                     character.SetOnTileId(cellId);
                     character.MoveToken(cellToMove.GetPosition());
+
+                    cellToMove.SetOccupied(true);
                     cellToMove.PrintStatus();
                     return;
                 }
@@ -45,11 +47,15 @@ public class MyEventHandler : Singleton<MyEventHandler>
                 Debug.Log("MOOOVE");
                 character.DecreaseMovement();
                 CellNode previousNode = CellNodeManager.Instance.GetNodeById(character.GetOnTileId());
+                
                 previousNode.RemoveCharacter();
-                previousNode.SetOccupied(false);
                 cellToMove.SetCharacter(character);
+
                 character.SetOnTileId(cellId);
                 character.MoveToken(cellToMove.GetPosition());
+
+                previousNode.SetOccupied(false);
+                cellToMove.SetOccupied(true);
             }
             else
             {

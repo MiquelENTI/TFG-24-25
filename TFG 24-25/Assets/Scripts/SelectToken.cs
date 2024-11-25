@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class SelectToken : MonoBehaviour
 {
-    float mouseZPos;
-    Vector3 mouseOffset;
-
     Plane plane;
-    Vector3 mousePosition2;
 
     int tileHovering = -1;
 
@@ -25,6 +21,7 @@ public class SelectToken : MonoBehaviour
     float revealTimer = 0;
     float timeToReveal = 0.7f;
     bool isDragging = false;
+    bool isOutsideBoard = true;
 
     private void Awake()
     {
@@ -48,6 +45,7 @@ public class SelectToken : MonoBehaviour
 
         if (plane.Raycast(ray, out var enter))
         {
+            Debug.Log("SOMETHING");
             mousePos = ray.GetPoint(enter);
             mousePos.y = 0.75f;
 
@@ -91,6 +89,11 @@ public class SelectToken : MonoBehaviour
             return; 
         }
 
+        if (isOutsideBoard)
+        {
+            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
+            return;
+        }
 
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
     }
@@ -105,7 +108,7 @@ public class SelectToken : MonoBehaviour
 
         if (revealTimer < timeToReveal)
         {
-            Debug.Log(revealTimer);
+            //Debug.Log(revealTimer);
             revealTimer += Time.deltaTime;
             return; 
         }
@@ -123,5 +126,13 @@ public class SelectToken : MonoBehaviour
     public void SetOnTileId(int tileId)
     {
         tileHovering = tileId;
+    }
+
+    public Character GetCharacter() 
+    { return character; }
+
+    public void SetOutsideBoard(bool isOutside)
+    {
+        isOutsideBoard = isOutside;
     }
 }
