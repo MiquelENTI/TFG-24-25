@@ -30,6 +30,7 @@ public class SelectToken : MonoBehaviour
     {
         character = new(MovementType.Omni, TeamType.BLUE, 1000, transform.gameObject, characterSprite);
         plane = new Plane(Vector3.up, Vector3.up);
+        cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
