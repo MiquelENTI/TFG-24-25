@@ -1,4 +1,3 @@
-using DilmerGames.Core.Singletons;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
@@ -11,8 +10,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
     private void Awake()
     {
-
-
         moveToken = new UnityEvent<int, int>();
         moveToken.AddListener((int cellId, int characterId) =>
         {
@@ -20,6 +17,8 @@ public class MyEventHandler : Singleton<MyEventHandler>
             // characterId --> Character thats moving
 
             Debug.Log("INVOKE");
+
+            // IF NOT MY TURN -> RETURN;
 
             CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
             Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
@@ -36,7 +35,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
                     character.MoveToken(cellToMove.GetPosition());
 
                     cellToMove.SetOccupied(true);
-                    cellToMove.PrintStatus();
                     return;
                 }
             }
@@ -61,7 +59,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
             {
                 character.MoveToken(CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition());
                 Debug.Log("NO?");
-                // return to last pos
             }
         });
     }

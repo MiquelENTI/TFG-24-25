@@ -10,7 +10,6 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
         if (other.gameObject.tag == "Token")
         {
             other.GetComponent<SelectToken>().SetOutsideBoard(true);
-            Debug.Log("OUTSIDE BOARD");
         }
     }
 
@@ -19,9 +18,6 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
         if (other.gameObject.tag == "Token")
         {
             other.GetComponent<SelectToken>().SetOutsideBoard(false);
-            Debug.Log("INSIDE BOARD");
         }
     }
-
-
 }

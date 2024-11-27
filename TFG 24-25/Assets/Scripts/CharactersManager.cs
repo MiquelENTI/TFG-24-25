@@ -1,4 +1,3 @@
-using DilmerGames.Core.Singletons;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,11 +32,25 @@ public class CharactersManager : Singleton<CharactersManager>
     }
     public void RemoveCharacter(int id)
     {
-        charactersOnBoard.Remove(currentId);
+        charactersOnBoard.Remove(id);
     }
 
     public Character GetCharacterInBoardById(int id)
     {
         return charactersOnBoard[id];
+    }
+
+    public List<Character> GetCharactersByColor(TeamType type)
+    {
+        List<Character> list = new List<Character>();
+
+        foreach (Character character in charactersOnBoard.Values)
+        {
+            if (character.GetTeamType() == type)
+            {
+                list.Add(character);
+            }
+        }
+        return list;
     }
 }

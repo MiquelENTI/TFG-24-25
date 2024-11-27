@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using DilmerGames.Core.Singletons;
 using TMPro;
 using UnityEngine;
 using System;
