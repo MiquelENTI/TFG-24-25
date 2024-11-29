@@ -1,22 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
 public enum MovementType { Basic, Diagonal, Omni}
 public enum TeamType { RED = 0, BLUE = 1}
+
+public struct CharacterStats
+{
+    public int hp;
+    public int dmg;
+    public int manaCost;
+    public int numOfMovements;
+    public int movementsLeft;
+    public MovementType movementType;
+
+    public CharacterStats(int _hp, int _dmg, int _manaCost, int _numOfMovements, MovementType _movementType)
+    {
+        hp = _hp;
+        dmg = _dmg;
+        manaCost = _manaCost;
+        numOfMovements = _numOfMovements;
+        movementsLeft = _numOfMovements;
+        movementType = _movementType;
+    }
+}
+
 public class Character
 {
-    int id;
-    List<CellConnection> directions;
-    TeamType teamType;
-    int onTile;
-    bool toSpawn = true;
-    int numOfMovements;
-    int movementsLeft;
+    protected int id;
+    protected CharacterStats stats;
+    protected List<CellConnection> directions;
 
-    GameObject token;
-    Sprite cardSprite;
+    protected TeamType teamType;
+    protected int onTile;
+
+    protected bool toSpawn = true;
+    protected bool canAttack = true;
+
+    protected GameObject token;
+    protected Sprite cardSprite;
 
     public int GetId()
     { return id; }
@@ -37,12 +61,12 @@ public class Character
     { return directions; }
 
     public int GetMovementsLeft()
-    { return movementsLeft; }
+    { return stats.movementsLeft; }
 
     public void DecreaseMovement()
-    { movementsLeft--; }
+    { stats.movementsLeft--; }
     void ResetMovementsLeft()
-    { movementsLeft = numOfMovements; }
+    { stats.movementsLeft = stats.numOfMovements; }
 
     public bool IsToSpawn() 
     { return toSpawn; }
@@ -50,6 +74,8 @@ public class Character
     public void DisableSpawn() 
     { toSpawn = false; }
 
+    public bool CanAttack()
+    { return canAttack; }
 
     public void MoveToken(Vector3 position)
     {  
@@ -57,13 +83,17 @@ public class Character
         token.transform.position = position;
     }
     
+    public GameObject GetToken()
+    { return token; }
+
     public Sprite GetCardSprite()
     { return cardSprite; }
 
-    public Character(MovementType movementType, TeamType teamType, int numOfMovements, GameObject token, Sprite cardSprite)
+    public Character(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite)
     {
+        stats = newStats;
         directions = new List<CellConnection>();
-        switch (movementType)
+        switch (newStats.movementType)
         {
             case MovementType.Basic:
                 directions.Add(CellConnection.UP);
@@ -91,8 +121,6 @@ public class Character
                 break;
         }
         this.teamType = teamType;
-        this.numOfMovements = numOfMovements;
-        movementsLeft = numOfMovements;
 
         CharactersManager.Instance.AddCharacter(this, cardSprite);
         this.token = token;
@@ -102,5 +130,89 @@ public class Character
     public void ResetStats()
     {
         ResetMovementsLeft();
+        canAttack = true;
+    }
+
+
+
+
+    public virtual void Effect()
+    {
+
+    }
+
+    public virtual void OnSpawn(CellNode cellToMove)
+    {
+        if (cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied())
+        {
+            Debug.Log("SPAWN");
+            DisableSpawn();
+            cellToMove.SetCharacter(this);
+
+            SetOnTileId(cellToMove.GetId());
+            MoveToken(cellToMove.GetPosition());
+
+            cellToMove.SetOccupied(true);
+        }
+    }
+    
+    public virtual void OnMovement(CellNode cellToMove)
+    {
+        canAttack = false;
+
+        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0) // Mana Cost
+        {
+            Debug.Log(teamType.ToString() + " MOOOVE");
+            DecreaseMovement();
+            CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+
+            previousNode.RemoveCharacter();
+            cellToMove.SetCharacter(this);
+
+            SetOnTileId(cellToMove.GetId());
+            MoveToken(cellToMove.GetPosition());
+
+            previousNode.SetOccupied(false);
+            cellToMove.SetOccupied(true);
+        }
+        else
+        {
+            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+            Debug.Log("NO?");
+        }
+    }
+
+    public virtual void OnStartTurn()
+    {
+
+    }
+    public virtual void OnEndTurn()
+    {
+
+    }
+
+    public virtual void OnDeath(Character attacker)
+    {
+        CharactersManager.Instance.RemoveCharacter(id);
+    }
+    public virtual void OnKillEnemy(Character enemy)
+    {
+
+    }
+    public virtual void OnAttack(Character attacker)
+    {
+
+    }
+    public virtual void Attack(Character enemy)
+    {
+        Debug.Log("ATTACK");
+        enemy.OnAttack(this);
+        enemy.stats.hp -= stats.dmg;
+
+        if(enemy.stats.hp <= 0)
+        {
+            OnKillEnemy(enemy);
+            enemy.OnDeath(this);
+        }
     }
 }

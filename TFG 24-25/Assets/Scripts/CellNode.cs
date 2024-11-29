@@ -25,11 +25,6 @@ public class CellNode
     }
 
 
-    /// <summary>
-    /// Check if the connection to the node exists
-    /// </summary>
-    /// <param name="cellConnection"></param>
-    /// <returns></returns>
     public bool CheckConnectionNode(CellConnection cellConnection)
     {
         return connectionDictionary.ContainsKey(cellConnection);
@@ -72,10 +67,15 @@ public class CellNode
             return false; 
         }
 
+        bool isAttacking = false;
         if (isOccupied)
         {
-            Debug.Log("Node to move is occupied by another character");
-            return false;
+            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
+            {
+                Debug.Log("Node to move is occupied by another character");
+                return false;
+            }
+            isAttacking = true;
         }
 
         foreach (CellConnection direction in directions)
@@ -85,15 +85,25 @@ public class CellNode
                 continue;
             }
 
-            Character character = connectionDictionary[direction].GetCharacter();
-            if (character == null)
+            Character characterMoving = connectionDictionary[direction].GetCharacter();
+            if (characterMoving == null)
             {
                 continue;
             }
-            if (character.GetId() != characterId)
+            if (characterMoving.GetId() != characterId)
             {
                 continue;
             }
+
+            if (isAttacking)
+            {
+                if (!characterMoving.CanAttack())
+                {
+                    characterMoving.Attack(this.character);
+                }
+                return false;
+            }
+
             return true;
         }
         return false;
@@ -129,6 +139,9 @@ public class CellNode
     {
         this.id = id;
     }
+
+    public int GetId()
+    { return id; }
 
     public void SetCharacter(Character character)
     { this.character = character; }

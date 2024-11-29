@@ -32,6 +32,7 @@ public class CharactersManager : Singleton<CharactersManager>
     }
     public void RemoveCharacter(int id)
     {
+        Destroy(charactersOnBoard[id].GetToken());
         charactersOnBoard.Remove(id);
     }
 
