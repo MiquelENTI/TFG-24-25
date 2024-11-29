@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using Photon.Pun;
 using Photon.Realtime;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
     private string roomName = "SalaDePrueba";
+
+    public GameObject playerPrefab;
+
+    // Define the two spawn positions
+    public Vector3 spawnPositionPlayer1 = new Vector3(11.8f, -8.7f, -0.14f);
+    public Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -3.33f);
 
     void Start()
     {
@@ -17,7 +22,6 @@ public class MatchManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Conectado a Photon.");
-
         CreateOrJoinRoom(roomName);
     }
 
@@ -25,7 +29,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Intentando unirse o crear la sala: " + roomName);
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2; 
+        roomOptions.MaxPlayers = 2;
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
@@ -43,6 +47,18 @@ public class MatchManager : MonoBehaviourPunCallbacks
         else
         {
             Debug.Log("Juego listo para empezar, ambos jugadores están en la sala.");
+        }
+
+        if (playerPrefab != null)
+        {
+            Vector3 spawnPosition = GetSpawnPosition();
+            Quaternion spawnRotation = GetSpawnRotation();
+
+            PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
+        }
+        else
+        {
+            Debug.LogError("Player prefab is missing.");
         }
     }
 
@@ -64,5 +80,28 @@ public class MatchManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Debug.Log("Jugador salió de la sala: " + otherPlayer.NickName);
+    }
+
+    private Vector3 GetSpawnPosition()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            return spawnPositionPlayer1;
+        }
+        else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            return spawnPositionPlayer2;
+        }
+        return Vector3.zero;
+    }
+
+    private Quaternion GetSpawnRotation()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        {
+            return Quaternion.Euler(0, 180, 0);
+        }
+
+        return Quaternion.identity;
     }
 }
