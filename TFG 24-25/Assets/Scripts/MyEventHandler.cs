@@ -23,43 +23,16 @@ public class MyEventHandler : Singleton<MyEventHandler>
             CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
             Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
+            
+
             if (character.IsToSpawn())
             {
-                if (cellToMove.CanCharacterSpawn(character) && !cellToMove.IsOccupied())
-                {
-                    Debug.Log("SPAWN");
-                    character.DisableSpawn();
-                    cellToMove.SetCharacter(character);
-
-                    character.SetOnTileId(cellId);
-                    character.MoveToken(cellToMove.GetPosition());
-
-                    cellToMove.SetOccupied(true);
-                    return;
-                }
-            }
-
-
-            if (cellToMove.CheckMultipleNodeForCharacter(character.GetDirections(), character.GetId()) && character.GetMovementsLeft() > 0)
-            {
-                Debug.Log("MOOOVE");
-                character.DecreaseMovement();
-                CellNode previousNode = CellNodeManager.Instance.GetNodeById(character.GetOnTileId());
+                character.OnSpawn(cellToMove);
                 
-                previousNode.RemoveCharacter();
-                cellToMove.SetCharacter(character);
-
-                character.SetOnTileId(cellId);
-                character.MoveToken(cellToMove.GetPosition());
-
-                previousNode.SetOccupied(false);
-                cellToMove.SetOccupied(true);
+                return;
             }
-            else
-            {
-                character.MoveToken(CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition());
-                Debug.Log("NO?");
-            }
+            
+            character.OnMovement(cellToMove);
         });
     }
 }

@@ -130,6 +130,9 @@ public class CellNode
         this.id = id;
     }
 
+    public int GetId()
+    { return id; }
+
     public void SetCharacter(Character character)
     { this.character = character; }
 

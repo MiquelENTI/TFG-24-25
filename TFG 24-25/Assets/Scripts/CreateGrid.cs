@@ -34,11 +34,8 @@ public class CreateGrid : MonoBehaviour
         CellNodeManager.Instance.SetGridSize(new Vector2(columns, rows));
         List<CellNode> nodeGrid = new();
 
-        //Vector3 centerGrid = new Vector3((columns/2.0f-0.5f)* 1 / 1.18f/10.0f, 0.5f ,-(rows / 2.0f - 0.5f) * 1 / 1.18f / 10.0f);
-
-
         Vector3 centerGrid = new Vector3((columns-1.0f) / 1.18f /2.0f / transform.localScale.x, 0f, -(rows-1.0f) / 1.18f / 2.0f / transform.localScale.z);
-        Vector3 gridSize = new Vector3(columns/ transform.localScale.x, 2f, rows / transform.localScale.z);
+        Vector3 gridSize = new Vector3(columns/ transform.localScale.x, 1f, rows / transform.localScale.z);
         transform.GetChild(1).GetComponent<BoxCollider>().center = centerGrid;
         transform.GetChild(1).GetComponent<BoxCollider>().size = gridSize;
 
@@ -49,7 +46,6 @@ public class CreateGrid : MonoBehaviour
             List<CellNode> row = new List<CellNode>();
             for (int j = 0; j < columns; j++) 
             {
-                //Vector3 position = new Vector3(j * 1/1.18f, 0.5f, -i * 1 / 1.18f);
                 Vector3 position = new Vector3(j /1.18f, 0.5f, -i / 1.18f);
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + i.ToString() + "-" + j.ToString();

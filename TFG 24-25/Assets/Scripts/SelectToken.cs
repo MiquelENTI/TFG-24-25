@@ -28,7 +28,8 @@ public class SelectToken : MonoBehaviour
     }
     void Start()
     {
-        character = new(MovementType.Omni, TeamType.BLUE, 1000, transform.gameObject, characterSprite);
+        CharacterStats stats = new CharacterStats(10,10,2,1000,MovementType.Omni);
+        character = new(stats, TeamType.BLUE, transform.gameObject, characterSprite);
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }
@@ -46,7 +47,6 @@ public class SelectToken : MonoBehaviour
 
         if (plane.Raycast(ray, out var enter))
         {
-            Debug.Log("SOMETHING");
             mousePos = ray.GetPoint(enter);
             mousePos.y = 0.75f;
 
