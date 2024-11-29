@@ -11,17 +11,7 @@ public class Tile : MonoBehaviour
     {
         if (other.gameObject.tag == "Token")
         {
-            Debug.Log("Entered " + tileId);
             other.GetComponent<SelectToken>().SetOnTileId(tileId);
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Token")
-    //    {
-    //        Debug.Log("Exit " + tileId);
-    //        other.GetComponent<SelectToken>().ResetOnTileId(tileId);
-    //    }
-    //}
 }

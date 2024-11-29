@@ -41,7 +41,7 @@ public class Character
 
     public void DecreaseMovement()
     { movementsLeft--; }
-    public void ResetMovementsLeft()
+    void ResetMovementsLeft()
     { movementsLeft = numOfMovements; }
 
     public bool IsToSpawn() 
@@ -97,5 +97,10 @@ public class Character
         CharactersManager.Instance.AddCharacter(this, cardSprite);
         this.token = token;
         this.cardSprite = cardSprite;
+    }
+
+    public void ResetStats()
+    {
+        ResetMovementsLeft();
     }
 }

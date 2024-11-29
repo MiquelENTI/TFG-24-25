@@ -66,10 +66,16 @@ public class CellNode
     // WIP
     public bool CheckMultipleNodeForCharacter(List<CellConnection> directions, int characterId)
     {
-        if (!IsConnected())
+        if (!isConnected)
         {
             Debug.Log("Node to move is disconnected from grid");
             return false; 
+        }
+
+        if (isOccupied)
+        {
+            Debug.Log("Node to move is occupied by another character");
+            return false;
         }
 
         foreach (CellConnection direction in directions)
@@ -135,6 +141,9 @@ public class CellNode
 
     public void SetOccupied(bool occupied)
     { isOccupied = occupied; }
+
+    public bool IsOccupied()
+    {  return isOccupied; }
 
     public bool IsConnected() 
     { return isConnected; }
