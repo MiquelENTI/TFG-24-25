@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
 public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -9,13 +10,17 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     Vector2 endPoint;
 
     [SerializeField] GameObject token;
+
+    [SerializeField] GameObject token2;
+
     bool tokenSpawn = false;
 
     Vector3 initialPosition;
 
-    void Start()
-    {
-    }
+    [SerializeField] Material blueMaterial;
+    [SerializeField] Material redMaterial;
+
+    void Start() { }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
@@ -29,27 +34,37 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         transform.position = new Vector3(transform.position.x, endPoint.y, transform.position.z);
 
-        
         if (transform.localPosition.y > -175.0f)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, -174.0f, transform.localPosition.z);
         }
-        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
         if (transform.localPosition.y > -175.0f)
         {
-            
-            Instantiate(token, new Vector3(2.16f, 0.75f, -3.95f), Quaternion.identity);
+            Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
+
+            GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? token.name : token2.name, spawnPosition, Quaternion.identity);
+
+            Renderer tokenRenderer = instantiatedToken.GetComponent<Renderer>();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                tokenRenderer.material = blueMaterial;
+                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "blue");
+            }
+            else
+            {
+                tokenRenderer.material = redMaterial;
+                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
+            }
+
             Destroy(gameObject);
         }
         else
         {
             transform.position = initialPosition;
         }
-        
     }
 }

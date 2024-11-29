@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Sergi2.unity
+    guid: d6fc74f0f292fd64c880022c2e36ecfb
   - enabled: 1
     path: Assets/Scenes/Sergi.unity
-    guid: d6fc74f0f292fd64c880022c2e36ecfb
-    path: Assets/Scenes/Miki.unity
-    guid: ecc2594c38cc759459e755f9e1c5841b
-  - enabled: 1
+    guid: 00ffa151e9130fa4aacfe423d72a41a6
   m_configObjects: {}
