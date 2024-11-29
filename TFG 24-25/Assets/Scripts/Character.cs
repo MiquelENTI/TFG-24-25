@@ -16,7 +16,7 @@ public struct CharacterStats
     public int movementsLeft;
     public MovementType movementType;
 
-    public CharacterStats(int _hp, int _dmg, int _manaCost, int _numOfMovements, MovementType _movementType)
+    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType)
     {
         hp = _hp;
         dmg = _dmg;
@@ -158,10 +158,10 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        canAttack = false;
-
         if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0) // Mana Cost
         {
+            canAttack = false;
+
             Debug.Log(teamType.ToString() + " MOOOVE");
             DecreaseMovement();
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
@@ -206,13 +206,31 @@ public class Character
     public virtual void Attack(Character enemy)
     {
         Debug.Log("ATTACK");
-        enemy.OnAttack(this);
         enemy.stats.hp -= stats.dmg;
 
+        enemy.OnAttack(this);
         if(enemy.stats.hp <= 0)
         {
             OnKillEnemy(enemy);
             enemy.OnDeath(this);
         }
+    }
+    
+    // Maybe Character parameter?
+    public void ReceiveDamage(int damage)
+    {
+        Debug.Log("RECEIVED DAMAGE:" + damage);
+        stats.hp -= damage;
+
+        if (stats.hp <= 0)
+        {
+            OnDeath(this);
+        }
+    }
+    public void DecreaseDamage(int amount)
+    {
+        stats.dmg -= amount;
+        if (stats.dmg <= 0)
+        { stats.dmg = 0; }
     }
 }

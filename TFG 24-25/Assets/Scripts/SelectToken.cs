@@ -31,7 +31,16 @@ public class SelectToken : MonoBehaviour
     void Start()
     {
         CharacterStats stats = new CharacterStats(10,10,2,1000,MovementType.Omni);
-        character = new(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+
+        if (IsBlue)
+        {
+            character = new Cavalier(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+        }
+        else
+        {
+            character = new MagicKarp(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+        }
+
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }
@@ -39,6 +48,10 @@ public class SelectToken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            CharactersManager.Instance.TriggerOnStartTurn();
+        }
     }
 
     Vector3 GetMouseWorldPos()

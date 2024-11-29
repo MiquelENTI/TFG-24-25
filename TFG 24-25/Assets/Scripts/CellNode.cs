@@ -30,6 +30,11 @@ public class CellNode
         return connectionDictionary.ContainsKey(cellConnection);
     }
 
+    public CellNode GetCellByDirection(CellConnection cellConnection)
+    {
+        return connectionDictionary[cellConnection];
+    }
+
     public bool CheckSingleNode(CellConnection direction, int characterId)
     {
         if (CheckConnectionNode(direction))
@@ -58,7 +63,7 @@ public class CellNode
         return true;
     }
 
-    // WIP
+    
     public bool CheckMultipleNodeForCharacter(List<CellConnection> directions, int characterId)
     {
         if (!isConnected)
@@ -97,7 +102,9 @@ public class CellNode
 
             if (isAttacking)
             {
-                if (!characterMoving.CanAttack())
+                
+                //if (characterMoving.CanAttack())
+                if (true)
                 {
                     characterMoving.Attack(this.character);
                 }
