@@ -23,7 +23,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
             CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
             Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
-            
 
             if (character.IsToSpawn())
             {

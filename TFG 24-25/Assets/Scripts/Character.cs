@@ -74,6 +74,8 @@ public class Character
     public void DisableSpawn() 
     { toSpawn = false; }
 
+    public bool CanAttack()
+    { return canAttack; }
 
     public void MoveToken(Vector3 position)
     {  
@@ -81,6 +83,9 @@ public class Character
         token.transform.position = position;
     }
     
+    public GameObject GetToken()
+    { return token; }
+
     public Sprite GetCardSprite()
     { return cardSprite; }
 
@@ -157,7 +162,7 @@ public class Character
 
         if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0) // Mana Cost
         {
-            Debug.Log("MOOOVE");
+            Debug.Log(teamType.ToString() + " MOOOVE");
             DecreaseMovement();
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
@@ -186,12 +191,28 @@ public class Character
 
     }
 
-    public virtual void OnDeath()
+    public virtual void OnDeath(Character attacker)
+    {
+        CharactersManager.Instance.RemoveCharacter(id);
+    }
+    public virtual void OnKillEnemy(Character enemy)
     {
 
     }
-    public virtual void OnKillEnemy()
+    public virtual void OnAttack(Character attacker)
     {
 
+    }
+    public virtual void Attack(Character enemy)
+    {
+        Debug.Log("ATTACK");
+        enemy.OnAttack(this);
+        enemy.stats.hp -= stats.dmg;
+
+        if(enemy.stats.hp <= 0)
+        {
+            OnKillEnemy(enemy);
+            enemy.OnDeath(this);
+        }
     }
 }

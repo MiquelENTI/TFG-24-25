@@ -23,13 +23,15 @@ public class SelectToken : MonoBehaviour
     bool isDragging = false;
     bool isOutsideBoard = true;
 
+    [SerializeField] bool IsBlue = true;
+
     private void Awake()
     {
     }
     void Start()
     {
         CharacterStats stats = new CharacterStats(10,10,2,1000,MovementType.Omni);
-        character = new(stats, TeamType.BLUE, transform.gameObject, characterSprite);
+        character = new(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }

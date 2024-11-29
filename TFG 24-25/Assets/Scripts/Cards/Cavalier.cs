@@ -12,7 +12,10 @@ public class Cavalier : Character
     public override void OnMovement(CellNode cellToMove)
     {
         base.OnMovement(cellToMove);
-        canAttack = true;
     }
-
+    public override void Attack(Character enemy)
+    {
+        canAttack = true;
+        base.Attack(enemy);
+    }
 }
