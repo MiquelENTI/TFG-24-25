@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3f88146e26986364f81dbd627624d928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04e6445dbef3404ab6d649cdd8e14fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1969260176476148749, guid: cb60f587dca7a3942acf05b7b882d9cf, type: 3}
+  playerPrefab: {fileID: 4894877133841640924, guid: cb60f587dca7a3942acf05b7b882d9cf, type: 3}
   spawnPositionPlayer1: {x: 11.8, y: -8.7, z: -0.14}
   spawnPositionPlayer2: {x: -8, y: -8.7, z: -3.33}
 --- !u!114 &643941742
@@ -1270,6 +1270,10 @@ PrefabInstance:
       propertyPath: cardToDisplay
       value: 
       objectReference: {fileID: 218900268}
+    - target: {fileID: 5287427387269271995, guid: 42840187367816f4da3315678e32de7c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5529811826817871949, guid: 42840187367816f4da3315678e32de7c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1318,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Token
       objectReference: {fileID: 0}
+    - target: {fileID: 9088630121007086712, guid: 42840187367816f4da3315678e32de7c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d3dbb78878e26e4d837462824e50b80, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
