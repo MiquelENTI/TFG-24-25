@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -30,33 +31,26 @@ public class CreateGrid : MonoBehaviour
 
     void InitGrid(float columns, float rows)
     {
-        Vector2 boardSize = new Vector2(board.transform.localScale.x, board.transform.localScale.z);
-        Vector2 cellSize = new(boardSize.x / columns, boardSize.y / rows);
-
-        //cell.transform.localScale = new Vector3(cellSize.x, cell.transform.localScale.y, cellSize.y);
-        //cell.transform.localScale = new Vector3(cellSize.x * 0.18f*columns, cell.transform.localScale.y, cellSize.y * 0.18f * rows);
-
-        Vector2 boardCorner = new Vector2(
-            board.transform.position.x, 
-            board.transform.position.z 
-            );
-
-        /*
-        Vector2 boardCorner = new Vector2(
-            board.transform.position.x + (boardSize.y / 2.0f - cellSize.y / 2.0f),
-            board.transform.position.z - (boardSize.x / 2.0f - cellSize.x / 2.0f)
-            );
-        */
-
         CellNodeManager.Instance.SetGridSize(new Vector2(columns, rows));
         List<CellNode> nodeGrid = new();
+
+        //Vector3 centerGrid = new Vector3((columns/2.0f-0.5f)* 1 / 1.18f/10.0f, 0.5f ,-(rows / 2.0f - 0.5f) * 1 / 1.18f / 10.0f);
+
+
+        Vector3 centerGrid = new Vector3((columns-1.0f) / 1.18f /2.0f / transform.localScale.x, 0f, -(rows-1.0f) / 1.18f / 2.0f / transform.localScale.z);
+        Vector3 gridSize = new Vector3(columns/ transform.localScale.x, 2f, rows / transform.localScale.z);
+        transform.GetChild(1).GetComponent<BoxCollider>().center = centerGrid;
+        transform.GetChild(1).GetComponent<BoxCollider>().size = gridSize;
+
+
 
         for (int i = 0; i < rows; i++)
         {
             List<CellNode> row = new List<CellNode>();
             for (int j = 0; j < columns; j++) 
             {
-                Vector3 position = new Vector3(j * 1/1.18f, 0.5f, -i * 1 / 1.18f);
+                //Vector3 position = new Vector3(j * 1/1.18f, 0.5f, -i * 1 / 1.18f);
+                Vector3 position = new Vector3(j /1.18f, 0.5f, -i / 1.18f);
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + i.ToString() + "-" + j.ToString();
                 obj.GetComponent<Tile>().tileId = (int)(i * rows + j);
@@ -69,16 +63,6 @@ public class CreateGrid : MonoBehaviour
         CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpawnableTiles(2);
         //CellNodeManager.Instance.PrintNodeGridStatus();
-        
-        // Map References
-
-        for (int i = 0; i < playerObjectReferences.Length; i++)
-        {
-            playerObjectReferences[i].transform.localScale = new Vector3(boardSize.x, 1, 1);
-        }
-        playerObjectReferences[0].transform.position = new Vector3(0, 0, -(boardSize.y / 2.0f + playerObjectReferences[0].transform.localScale.z / 2.0f));
-        playerObjectReferences[1].transform.position = new Vector3(0, 0, boardSize.y / 2.0f + playerObjectReferences[1].transform.localScale.z/2.0f);
-
     }
 
     void CreateModelBoard(int i, int j, float rows, float columns, Vector3 position)
