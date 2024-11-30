@@ -182,6 +182,26 @@ public class Character
         }
     }
 
+    protected void BypassMovement(int enemyOnTileId)
+    {
+        canAttack = false; // Delete or not?
+
+        Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
+        DecreaseMovement();
+
+        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(enemyOnTileId);
+        CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+
+        previousNode.RemoveCharacter();
+        cellToMove.SetCharacter(this);
+
+        SetOnTileId(cellToMove.GetId());
+        MoveToken(cellToMove.GetPosition());
+
+        previousNode.SetOccupied(false);
+        cellToMove.SetOccupied(true);
+    }
+
     public virtual void OnStartTurn()
     {
 
@@ -219,13 +239,13 @@ public class Character
     // Maybe Character parameter?
     public void ReceiveDamage(int damage)
     {
-        Debug.Log("RECEIVED DAMAGE:" + damage);
         stats.hp -= damage;
 
         if (stats.hp <= 0)
         {
             OnDeath(this);
         }
+        Debug.Log("RECEIVED DAMAGE:" + damage + " HP LEFT: " + stats.hp);
     }
     public void DecreaseDamage(int amount)
     {

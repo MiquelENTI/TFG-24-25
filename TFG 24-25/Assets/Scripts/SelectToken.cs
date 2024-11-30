@@ -30,7 +30,7 @@ public class SelectToken : MonoBehaviour
     }
     void Start()
     {
-        CharacterStats stats = new CharacterStats(10,10,2,1000,MovementType.Omni);
+        CharacterStats stats = new CharacterStats(0,10,10,1000,MovementType.Omni);
 
         if (IsBlue)
         {
@@ -38,7 +38,7 @@ public class SelectToken : MonoBehaviour
         }
         else
         {
-            character = new MagicKarp(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+            character = new Salmon(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
         }
 
         plane = new Plane(Vector3.up, Vector3.up);
@@ -48,9 +48,13 @@ public class SelectToken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.M))
         {
             CharactersManager.Instance.TriggerOnStartTurn();
+        }
+        if (Input.GetKeyUp(KeyCode.N))
+        {
+            CharactersManager.Instance.TriggerOnEndTurn();
         }
     }
 

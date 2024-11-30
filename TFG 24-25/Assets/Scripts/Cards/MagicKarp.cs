@@ -19,7 +19,6 @@ public class MagicKarp : Character
                 Character enemy = currentCell.GetCellByDirection(direction).GetCharacter();
                 if (enemy != null)
                 {
-                    Debug.Log(enemy.GetTeamType().ToString());
                     enemy.ReceiveDamage(9999);
                 }
             }
