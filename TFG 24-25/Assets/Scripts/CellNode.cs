@@ -151,10 +151,16 @@ public class CellNode
     { return id; }
 
     public void SetCharacter(Character character)
-    { this.character = character; }
+    { 
+        this.character = character; 
+        isOccupied = true;
+    }
 
     public void RemoveCharacter() 
-    { character = null; }
+    { 
+        character = null; 
+        isOccupied = false;
+    }
 
     public void SetSpawnable(CellSpawnable spawnable)
     { this.spawnable = spawnable; }

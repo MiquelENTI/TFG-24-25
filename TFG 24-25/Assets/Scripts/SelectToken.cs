@@ -30,7 +30,7 @@ public class SelectToken : MonoBehaviour
     }
     void Start()
     {
-        CharacterStats stats = new CharacterStats(0,10,10,1000,MovementType.Omni);
+        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Omni);
 
         if (IsBlue)
         {
@@ -38,7 +38,7 @@ public class SelectToken : MonoBehaviour
         }
         else
         {
-            character = new Salmon(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+            character = new Medusa(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
         }
 
         plane = new Plane(Vector3.up, Vector3.up);

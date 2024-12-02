@@ -15,6 +15,7 @@ public struct CharacterStats
     public int numOfMovements;
     public int movementsLeft;
     public MovementType movementType;
+    public bool stun;
 
     public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType)
     {
@@ -24,6 +25,7 @@ public struct CharacterStats
         numOfMovements = _numOfMovements;
         movementsLeft = _numOfMovements;
         movementType = _movementType;
+        stun = false;
     }
 }
 
@@ -158,7 +160,7 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0) // Mana Cost
+        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0 && !stats.stun) // Mana Cost
         {
             canAttack = false;
 
@@ -166,14 +168,11 @@ public class Character
             DecreaseMovement();
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-            previousNode.RemoveCharacter();
-            cellToMove.SetCharacter(this);
-
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
-            previousNode.SetOccupied(false);
-            cellToMove.SetOccupied(true);
+            cellToMove.SetCharacter(this);
+            previousNode.RemoveCharacter();
         }
         else
         {
@@ -192,14 +191,11 @@ public class Character
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(enemyOnTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-        previousNode.RemoveCharacter();
-        cellToMove.SetCharacter(this);
-
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
-        previousNode.SetOccupied(false);
-        cellToMove.SetOccupied(true);
+        cellToMove.SetCharacter(this);
+        previousNode.RemoveCharacter();
     }
 
     public virtual void OnStartTurn()
@@ -213,6 +209,8 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
+        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        currentCell.RemoveCharacter();
         CharactersManager.Instance.RemoveCharacter(id);
     }
     public virtual void OnKillEnemy(Character enemy)
@@ -225,6 +223,8 @@ public class Character
     }
     public virtual void Attack(Character enemy)
     {
+        if (stats.stun) { return; }
+
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;
 
@@ -252,5 +252,20 @@ public class Character
         stats.dmg -= amount;
         if (stats.dmg <= 0)
         { stats.dmg = 0; }
+    }
+
+    public void ApplyStun()
+    {
+        stats.stun = true;
+    }
+
+    public void RemoveStun()
+    {
+        stats.stun = false;
+    }
+
+    public void ApplyDOT()
+    {
+
     }
 }

@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardToDisplay: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: fabad8f2ebbb14a40af0c6daf6059c05, type: 3}
+  IsBlue: 1
 --- !u!54 &5856744156013239630
 Rigidbody:
   m_ObjectHideFlags: 0
