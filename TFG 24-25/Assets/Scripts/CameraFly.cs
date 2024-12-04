@@ -14,8 +14,6 @@ public class CameraFly : MonoBehaviour
 
     Vector3 velocity; // current velocity
 
-    [SerializeField] GameObject cameraLockText;
-
     static bool Focused
     {
         get => Cursor.lockState == CursorLockMode.Locked;
@@ -35,7 +33,6 @@ public class CameraFly : MonoBehaviour
 
     private void Awake()
     {
-        cameraLockText.transform.parent.gameObject.SetActive(true);
     }
 
     void Update()
@@ -43,7 +40,6 @@ public class CameraFly : MonoBehaviour
         if (Input.GetMouseButtonDown(2))
         {
             isDisabled = !isDisabled;
-            cameraLockText.SetActive(isDisabled);
             Focused = !isDisabled;
         }
 
