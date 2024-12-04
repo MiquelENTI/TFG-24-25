@@ -30,7 +30,7 @@ public class SelectToken : MonoBehaviour
     }
     void Start()
     {
-        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Omni);
+        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Diagonal);
 
         if (IsBlue)
         {
@@ -77,11 +77,15 @@ public class SelectToken : MonoBehaviour
     private void OnMouseDown()
     {
         mouseDownPos = GetMouseWorldPos();
+
+        CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
     }
 
     private void OnMouseDrag()
     {
         Vector3 newMousePos = GetMouseWorldPos();
+
+        
 
         SeeTokenCard();
 
@@ -115,6 +119,7 @@ public class SelectToken : MonoBehaviour
             return;
         }
 
+        CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
     }
 

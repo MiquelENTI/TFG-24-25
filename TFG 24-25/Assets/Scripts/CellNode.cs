@@ -16,10 +16,15 @@ public class CellNode
     bool isOccupied = false;
     bool isConnected = true;
     CellSpawnable spawnable = CellSpawnable.NONE;
+    Material cellMovementIndicator;
+    bool isCellMovementIndicatorVisble = false;
 
-    public CellNode(Vector3 position)
+    public CellNode(Vector3 position, GameObject movementIndicator)
     {  
         this.position = position;
+
+        cellMovementIndicator = movementIndicator.GetComponent<MeshRenderer>().material;
+        //ChangeMovementIndicatorVisibility();
 
         CellNodeManager.Instance.AddNode(this);
     }
@@ -181,6 +186,20 @@ public class CellNode
         { return true; }
         else 
         { return false; }
+    }
+
+    public void ChangeMovementIndicatorVisibility()
+    {
+        isCellMovementIndicatorVisble = !isCellMovementIndicatorVisble;
+
+        if (isCellMovementIndicatorVisble)
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 139.0f/256.0f);
+        }
+        else
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
+        }
     }
 
     public void PrintStatus()

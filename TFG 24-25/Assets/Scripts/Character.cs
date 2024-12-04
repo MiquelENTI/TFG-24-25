@@ -149,12 +149,11 @@ public class Character
         {
             Debug.Log("SPAWN");
             DisableSpawn();
-            cellToMove.SetCharacter(this);
 
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
-            cellToMove.SetOccupied(true);
+            cellToMove.SetCharacter(this);
         }
     }
     
