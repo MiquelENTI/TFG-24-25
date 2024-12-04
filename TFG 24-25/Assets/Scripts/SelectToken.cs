@@ -22,7 +22,18 @@ public class SelectToken : MonoBehaviour
 
     [SerializeField] bool IsBlue = true;
 
-    
+
+    PhotonView photonView;
+
+    private void Awake()
+    {
+        if (!TryGetComponent<PhotonView>(out photonView))
+        {
+            gameObject.AddComponent<PhotonView>();
+            photonView = GetComponent<PhotonView>();
+        }
+    }
+
     void Start()
     {
         CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Diagonal);
