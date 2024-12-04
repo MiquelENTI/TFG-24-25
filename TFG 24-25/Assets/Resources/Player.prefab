@@ -112,7 +112,6 @@ MonoBehaviour:
   lookSensitivity: 1
   dampingCoefficient: 5
   focusOnEnable: 0
-  cameraLockText: {fileID: 0}
 --- !u!1 &3465213936163291368
 GameObject:
   m_ObjectHideFlags: 0
