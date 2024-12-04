@@ -16,10 +16,15 @@ public class CellNode
     bool isOccupied = false;
     bool isConnected = true;
     CellSpawnable spawnable = CellSpawnable.NONE;
+    Material cellMovementIndicator;
+    bool isCellMovementIndicatorVisble = false;
 
-    public CellNode(Vector3 position)
+    public CellNode(Vector3 position, GameObject movementIndicator)
     {  
         this.position = position;
+
+        cellMovementIndicator = movementIndicator.GetComponent<MeshRenderer>().material;
+        //ChangeMovementIndicatorVisibility();
 
         CellNodeManager.Instance.AddNode(this);
     }
@@ -28,6 +33,11 @@ public class CellNode
     public bool CheckConnectionNode(CellConnection cellConnection)
     {
         return connectionDictionary.ContainsKey(cellConnection);
+    }
+
+    public CellNode GetCellByDirection(CellConnection cellConnection)
+    {
+        return connectionDictionary[cellConnection];
     }
 
     public bool CheckSingleNode(CellConnection direction, int characterId)
@@ -58,7 +68,7 @@ public class CellNode
         return true;
     }
 
-    // WIP
+    
     public bool CheckMultipleNodeForCharacter(List<CellConnection> directions, int characterId)
     {
         if (!isConnected)
@@ -97,7 +107,9 @@ public class CellNode
 
             if (isAttacking)
             {
-                if (!characterMoving.CanAttack())
+                
+                //if (characterMoving.CanAttack())
+                if (true)
                 {
                     characterMoving.Attack(this.character);
                 }
@@ -144,10 +156,16 @@ public class CellNode
     { return id; }
 
     public void SetCharacter(Character character)
-    { this.character = character; }
+    { 
+        this.character = character; 
+        isOccupied = true;
+    }
 
     public void RemoveCharacter() 
-    { character = null; }
+    { 
+        character = null; 
+        isOccupied = false;
+    }
 
     public void SetSpawnable(CellSpawnable spawnable)
     { this.spawnable = spawnable; }
@@ -168,6 +186,20 @@ public class CellNode
         { return true; }
         else 
         { return false; }
+    }
+
+    public void ChangeMovementIndicatorVisibility()
+    {
+        isCellMovementIndicatorVisble = !isCellMovementIndicatorVisble;
+
+        if (isCellMovementIndicatorVisble)
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 139.0f/256.0f);
+        }
+        else
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
+        }
     }
 
     public void PrintStatus()

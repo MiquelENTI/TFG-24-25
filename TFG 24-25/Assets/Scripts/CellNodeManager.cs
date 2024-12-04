@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class CellNodeManager : Singleton<CellNodeManager>
@@ -11,9 +12,18 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private Vector2 gridSize;
     private int currentId;
 
+    public UnityEvent<int> togglePossibleMovements;
+
     private void Awake()
     {
         nodeGrid = new List<CellNode>();
+
+        togglePossibleMovements = new UnityEvent<int>();
+
+        togglePossibleMovements.AddListener((int tileId) =>
+        {
+            ToggleVisibilityPossibleMovements(tileId);
+        });
     }
 
     public Vector2 GetGridSize() 
@@ -105,6 +115,40 @@ public class CellNodeManager : Singleton<CellNodeManager>
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
             nodeGrid[nodeGrid.Count - i-1].SetSpawnable(CellSpawnable.BLUE);
+        }
+    }
+
+    void ToggleVisibilityPossibleMovements(int tileId) // Character's OnTile
+    {
+        Character character = nodeGrid[tileId].GetCharacter();
+        CellNode centralCell = nodeGrid[tileId];
+
+        if(character == null) { return; }
+
+        foreach (CellConnection direction in character.GetDirections())
+        {
+            if (!centralCell.CheckConnectionNode(direction))
+            {
+                continue;
+            }
+
+            CellNode nextCell = centralCell.GetCellByDirection(direction);
+
+            Character isCharacter = nextCell.GetCharacter();
+            if (isCharacter != null)
+            {
+                if (isCharacter.GetTeamType() == character.GetTeamType())
+                {
+                    continue;
+                }
+                else
+                {
+                    // Set Cell Red and visible
+                    continue;
+                }
+            }
+
+            nextCell.ChangeMovementIndicatorVisibility();
         }
     }
 }

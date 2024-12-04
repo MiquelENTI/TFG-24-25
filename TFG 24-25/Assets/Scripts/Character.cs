@@ -15,8 +15,9 @@ public struct CharacterStats
     public int numOfMovements;
     public int movementsLeft;
     public MovementType movementType;
+    public bool stun;
 
-    public CharacterStats(int _hp, int _dmg, int _manaCost, int _numOfMovements, MovementType _movementType)
+    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType)
     {
         hp = _hp;
         dmg = _dmg;
@@ -24,6 +25,7 @@ public struct CharacterStats
         numOfMovements = _numOfMovements;
         movementsLeft = _numOfMovements;
         movementType = _movementType;
+        stun = false;
     }
 }
 
@@ -147,39 +149,52 @@ public class Character
         {
             Debug.Log("SPAWN");
             DisableSpawn();
-            cellToMove.SetCharacter(this);
 
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
-            cellToMove.SetOccupied(true);
+            cellToMove.SetCharacter(this);
         }
     }
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        canAttack = false;
-
-        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0) // Mana Cost
+        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0 && !stats.stun) // Mana Cost
         {
+            canAttack = false;
+
             Debug.Log(teamType.ToString() + " MOOOVE");
             DecreaseMovement();
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-            previousNode.RemoveCharacter();
-            cellToMove.SetCharacter(this);
-
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
-            previousNode.SetOccupied(false);
-            cellToMove.SetOccupied(true);
+            cellToMove.SetCharacter(this);
+            previousNode.RemoveCharacter();
         }
         else
         {
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO?");
         }
+    }
+
+    protected void BypassMovement(int enemyOnTileId)
+    {
+        canAttack = false; // Delete or not?
+
+        Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
+        DecreaseMovement();
+
+        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(enemyOnTileId);
+        CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+
+        SetOnTileId(cellToMove.GetId());
+        MoveToken(cellToMove.GetPosition());
+
+        cellToMove.SetCharacter(this);
+        previousNode.RemoveCharacter();
     }
 
     public virtual void OnStartTurn()
@@ -193,6 +208,8 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
+        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        currentCell.RemoveCharacter();
         CharactersManager.Instance.RemoveCharacter(id);
     }
     public virtual void OnKillEnemy(Character enemy)
@@ -205,14 +222,49 @@ public class Character
     }
     public virtual void Attack(Character enemy)
     {
+        if (stats.stun) { return; }
+
         Debug.Log("ATTACK");
-        enemy.OnAttack(this);
         enemy.stats.hp -= stats.dmg;
 
+        enemy.OnAttack(this);
         if(enemy.stats.hp <= 0)
         {
             OnKillEnemy(enemy);
             enemy.OnDeath(this);
         }
+    }
+    
+    // Maybe Character parameter?
+    public void ReceiveDamage(int damage)
+    {
+        stats.hp -= damage;
+
+        if (stats.hp <= 0)
+        {
+            OnDeath(this);
+        }
+        Debug.Log("RECEIVED DAMAGE:" + damage + " HP LEFT: " + stats.hp);
+    }
+    public void DecreaseDamage(int amount)
+    {
+        stats.dmg -= amount;
+        if (stats.dmg <= 0)
+        { stats.dmg = 0; }
+    }
+
+    public void ApplyStun()
+    {
+        stats.stun = true;
+    }
+
+    public void RemoveStun()
+    {
+        stats.stun = false;
+    }
+
+    public void ApplyDOT()
+    {
+
     }
 }

@@ -54,4 +54,20 @@ public class CharactersManager : Singleton<CharactersManager>
         }
         return list;
     }
+
+    public void TriggerOnStartTurn()
+    {
+        foreach(Character character in charactersOnBoard.Values)
+        {
+            character.OnStartTurn();
+        }
+    }
+    public void TriggerOnEndTurn()
+    {
+        Debug.Log("Trigger");
+        foreach (Character character in charactersOnBoard.Values)
+        {
+            character.OnEndTurn();
+        }
+    }
 }
