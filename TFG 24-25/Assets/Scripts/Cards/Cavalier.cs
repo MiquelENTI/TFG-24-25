@@ -9,6 +9,7 @@ public class Cavalier : Character
 
     public Cavalier(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
     {
+
     }
 
     public override void OnMovement(CellNode cellToMove)

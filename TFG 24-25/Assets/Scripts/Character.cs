@@ -16,8 +16,9 @@ public struct CharacterStats
     public int movementsLeft;
     public MovementType movementType;
     public bool stun;
+    public string description;
 
-    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType)
+    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
     {
         hp = _hp;
         dmg = _dmg;
@@ -26,6 +27,27 @@ public struct CharacterStats
         movementsLeft = _numOfMovements;
         movementType = _movementType;
         stun = false;
+        description = _description;
+    }
+
+    public int getHealth()
+    {
+        return hp;
+    }
+
+    public int getAttack()
+    {
+        return dmg;
+    }
+
+    public int getManaCost()
+    {
+        return manaCost;
+    }
+
+    public string getDescription()
+    {
+        return description;
     }
 }
 
@@ -42,7 +64,8 @@ public class Character
     protected bool canAttack = true;
 
     protected GameObject token;
-    protected Sprite cardSprite;
+    [SerializeField] public Sprite cardSprite;
+    [SerializeField] public string description;
 
     public int GetId()
     { return id; }
@@ -90,6 +113,26 @@ public class Character
 
     public Sprite GetCardSprite()
     { return cardSprite; }
+
+    public int GetHealth()
+    {
+        return stats.getHealth();
+    }
+
+    public int GetAttack()
+    {
+        return stats.getAttack();
+    }
+
+    public string GetDescription()
+    {
+        return stats.getDescription();
+    }
+
+    public int getManaCost()
+    {
+        return stats.getManaCost();
+    }
 
     public Character(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite)
     {
