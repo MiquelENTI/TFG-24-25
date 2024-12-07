@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviourPun
     public GameObject playerCamera;
     public GameObject menu;
     public Button endTurnButton;
+    public GameObject hand;
     private Text buttonText;
 
     void Start()
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviourPun
             buttonText.text = "Finalizar Turno";
             endTurnButton.interactable = photonView.IsMine;
         }
+
+        SetCardsDragState(photonView.IsMine);
     }
 
     void Update()
@@ -52,17 +55,36 @@ public class PlayerController : MonoBehaviourPun
             endTurnButton.interactable = false;
             buttonText.text = "Turno del oponente";
 
-            photonView.RPC("ActivateOtherPlayerButton", RpcTarget.Others);
+            SetCardsDragState(false);
+
+            photonView.RPC("ActivateOtherPlayerTurn", RpcTarget.Others);
         }
     }
 
     [PunRPC]
-    public void ActivateOtherPlayerButton()
+    public void ActivateOtherPlayerTurn()
     {
         if (photonView.IsMine)
         {
             endTurnButton.interactable = true;
             buttonText.text = "Finalizar Turno";
+
+            SetCardsDragState(true);
+        }
+    }
+
+    private void SetCardsDragState(bool state)
+    {
+        if (hand != null)
+        {
+            foreach (Transform card in hand.transform)
+            {
+                DragableUIObject dragableScript = card.GetComponent<DragableUIObject>();
+                if (dragableScript != null)
+                {
+                    dragableScript.enabled = state;
+                }
+            }
         }
     }
 }
