@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class PlayerController : MonoBehaviourPun
 {
     public GameObject playerCamera;
     public GameObject menu;
+    public Button endTurnButton;
+    private Text buttonText;
 
     void Start()
     {
@@ -23,6 +24,13 @@ public class PlayerController : MonoBehaviourPun
         {
             menu.SetActive(false);
         }
+
+        if (endTurnButton != null)
+        {
+            buttonText = endTurnButton.GetComponentInChildren<Text>();
+            buttonText.text = "Finalizar Turno";
+            endTurnButton.interactable = photonView.IsMine;
+        }
     }
 
     void Update()
@@ -34,6 +42,27 @@ public class PlayerController : MonoBehaviourPun
                 bool isActive = menu.activeSelf;
                 menu.SetActive(!isActive);
             }
+        }
+    }
+
+    public void EndTurn()
+    {
+        if (photonView.IsMine)
+        {
+            endTurnButton.interactable = false;
+            buttonText.text = "Turno del oponente";
+
+            photonView.RPC("ActivateOtherPlayerButton", RpcTarget.Others);
+        }
+    }
+
+    [PunRPC]
+    public void ActivateOtherPlayerButton()
+    {
+        if (photonView.IsMine)
+        {
+            endTurnButton.interactable = true;
+            buttonText.text = "Finalizar Turno";
         }
     }
 }
