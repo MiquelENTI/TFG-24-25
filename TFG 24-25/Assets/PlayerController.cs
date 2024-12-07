@@ -6,6 +6,7 @@ using Photon.Pun;
 public class PlayerController : MonoBehaviourPun
 {
     public GameObject playerCamera;
+    public GameObject menu;
 
     void Start()
     {
@@ -17,6 +18,22 @@ public class PlayerController : MonoBehaviourPun
         {
             playerCamera.SetActive(true);
         }
+
+        if (menu != null)
+        {
+            menu.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menu != null)
+            {
+                bool isActive = menu.activeSelf;
+                menu.SetActive(!isActive);
+            }
+        }
     }
 }
-
