@@ -178,7 +178,7 @@ public class Character
             Debug.Log("SPAWN");
             DisableSpawn();
 
-            playerStats.SubstractMana(stats.manaCost);
+            //playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
@@ -191,7 +191,7 @@ public class Character
     {
         if (cellToMove.CheckNodes(GetDirections(), id) && GetMovementsLeft() > 0 && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
-            playerStats.SubstractMana(stats.manaCost);
+            //playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
             Debug.Log(teamType.ToString() + " MOOOVE");
@@ -211,6 +211,7 @@ public class Character
         {
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO?");
+            cellToMove.PrintStatus();
         }
     }
 

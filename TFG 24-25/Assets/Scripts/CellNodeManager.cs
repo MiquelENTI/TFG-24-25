@@ -146,7 +146,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         for (int i = 0;i < gridSize.x * numSpawnableRows ;i++)
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
-            nodeGrid[nodeGrid.Count - i-1].SetSpawnable(CellSpawnable.BLUE);
+            nodeGrid[nodeGrid.Count - i-3].SetSpawnable(CellSpawnable.BLUE);
         }
     }
 
