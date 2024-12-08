@@ -6,6 +6,7 @@ public class PlayerStats : Singleton<PlayerStats>
 {
     int totalMana = 5;
     int currentMana = 5;
+    int playerId;
 
     void Start()
     {

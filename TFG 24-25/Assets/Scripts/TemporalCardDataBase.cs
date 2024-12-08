@@ -17,7 +17,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 17, new CharacterStats(4, 4, 21, 1000, MovementType.Basic, "Esto es un Terracotta Warrior") }, // Terracotta Warrior
         { 20, new CharacterStats(5, 7, 15, 1000, MovementType.Basic, "Esto es un Magic Karp") }, // Magic Karp
         { 22, new CharacterStats(1, 2, 7,  1000, MovementType.Basic, "Esto es un Chicken") },
-        { -1, new CharacterStats(0, 0, 99999, 0, MovementType.Basic) }, // DummyBase
+        { -1, new CharacterStats(0, 0, 99999, 0, MovementType.Basic, "") }, // DummyBase
     };
 
 

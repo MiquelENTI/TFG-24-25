@@ -11,6 +11,7 @@ public class SelectToken : MonoBehaviour
 
     // TEMP?
     Character character;
+    GameObject player;
     [SerializeField] GameObject cardToDisplay;
     public Sprite characterSprite;
 
