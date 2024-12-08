@@ -6,6 +6,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CharacterStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type
+        { -1, new CharacterStats(0, 0, 99999, 0, MovementType.Basic) }, // DummyBase
         { 1, new CharacterStats (0, 5, 8,  1000, MovementType.Basic) }, // Cavalier
         { 3, new CharacterStats (4, 9, 13, 1000, MovementType.Omni)  }, // Salmon
         { 5, new CharacterStats (1, 1, 1,  1000, MovementType.Omni)  }, // Fly
@@ -31,4 +32,24 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
     {
         
     }
+
+    public CharacterStats GetTemporalStats(int id)
+    {
+        return characterStats[id];
+    }
+
+    public List<CharacterCard> GetAllCharacters(int copies)
+    {
+        List<CharacterCard> temp = new();
+        for (int i = 0; i < copies; i++)
+        {
+            foreach (CharacterStats stats in characterStats.Values)
+            {
+                temp.Add(new CharacterCard(stats));
+            }
+        }
+        return temp;
+    }
+
+        
 }

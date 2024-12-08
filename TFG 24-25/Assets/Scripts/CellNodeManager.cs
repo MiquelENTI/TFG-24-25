@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 public class CellNodeManager : Singleton<CellNodeManager>
 {
     private List<CellNode> nodeGrid;
+    private CellNode redBaseNode;
+    private CellNode blueBaseNode;
     private Vector2 gridSize;
     private int currentId;
 
@@ -58,7 +60,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
-    public void CreateDefaultConnections()
+    public void CreateDefaultConnections(CellNode redBase, CellNode blueBase)
     {
         // -1,-1   0,-1   1,-1
         // -1, 0   0, 0   0, 0
@@ -78,19 +80,32 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
         Dictionary<Vector2Int, CellConnection> conversion = new Dictionary<Vector2Int, CellConnection> 
         {
-            { new Vector2Int(-1, 0),  CellConnection.UP},
-            { new Vector2Int(1, 0),  CellConnection.DOWN},
-            { new Vector2Int(0, -1),  CellConnection.LEFT},
-            { new Vector2Int(0, 1),  CellConnection.RIGHT},
+            { new Vector2Int(0, -1),  CellConnection.UP},
+            { new Vector2Int(0, 1),  CellConnection.DOWN},
+            { new Vector2Int(-1, 0),  CellConnection.LEFT},
+            { new Vector2Int(1, 0),  CellConnection.RIGHT},
             { new Vector2Int(-1, -1),  CellConnection.UPLEFT},
-            { new Vector2Int(-1, 1),  CellConnection.UPRIGHT},
-            { new Vector2Int(1, -1),  CellConnection.DOWNLEFT},
+            { new Vector2Int(1, -1),  CellConnection.UPRIGHT},
+            { new Vector2Int(-1, 1),  CellConnection.DOWNLEFT},
             { new Vector2Int(1, 1),  CellConnection.DOWNRIGHT}
         };
 
+        redBaseNode = redBase;
+        blueBaseNode = blueBase;
+
+        redBaseNode.IsBaseNode();
+        blueBaseNode.IsBaseNode();
+
+        redBaseNode.baseConnections = new();
+        blueBaseNode.baseConnections = new();
+
+        List<CellNode> redBaseNodes = new();
+        List<CellNode> blueBaseNodes = new();
+
         for (int j = 0; j < gridSize.y; j++) 
         {
-            for (int i = 0; i < gridSize.y; i++)
+            
+            for (int i = 0; i < gridSize.x; i++)
             {
                 foreach (Vector2Int direction in directions)
                 {
@@ -105,8 +120,25 @@ public class CellNodeManager : Singleton<CellNodeManager>
                         nodeGrid[currentNodeId].AddConnection(conversion[direction], nodeGrid[nodeToAddId]);
                     }
                 }
+
+                if (j == 0)
+                {
+                    nodeGrid[(int)((j * gridSize.y) + i)].AddConnection(CellConnection.UP, redBaseNode);
+                    redBaseNodes.Add(nodeGrid[(int)(j * gridSize.y) + i]);
+                }
+                else if (j == gridSize.y-1)
+                {
+                    nodeGrid[(int)(j * gridSize.y) + i].AddConnection(CellConnection.DOWN, blueBaseNode);
+                    blueBaseNodes.Add(nodeGrid[(int)(j * gridSize.y) + i]);
+                }
             }
         }
+
+        redBaseNode.AddConnectionToBase(CellConnection.DOWN, redBaseNodes);
+        blueBaseNode.AddConnectionToBase(CellConnection.UP, blueBaseNodes);
+
+        redBaseNode.PrintStatus();
+        blueBaseNode.PrintStatus();
     }
 
     public void CreateSpawnableTiles(int numSpawnableRows)

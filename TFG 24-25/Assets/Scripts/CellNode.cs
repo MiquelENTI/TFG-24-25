@@ -10,6 +10,10 @@ public enum CellSpawnable { NONE = -1, RED = 0, BLUE = 1}
 public class CellNode
 {
     Dictionary<CellConnection, CellNode> connectionDictionary = new();
+    
+    public Dictionary<CellConnection, List<CellNode>> baseConnections = null;
+    bool isBaseNode = false;
+
     int id;
     Vector3 position;
     Character character;
@@ -108,10 +112,11 @@ public class CellNode
             if (isAttacking)
             {
                 
-                //if (characterMoving.CanAttack())
+                //if (characterMoving.CanAttack()) // Already has manacost calculation
                 if (true)
                 {
                     characterMoving.Attack(this.character);
+                    
                 }
                 return false;
             }
@@ -121,9 +126,84 @@ public class CellNode
         return false;
     }
 
+    bool CheckMultipleNodeForCharacterFromBase(List<CellConnection> directions, int characterId)
+    {
+        for (int i = 0; i < baseConnections[CellConnection.DOWN].Count; i++)
+            baseConnections[CellConnection.DOWN][i].PrintStatus();
+
+        if (!isConnected)
+        {
+            Debug.Log("Node to move is disconnected from grid");
+            return false;
+        }
+
+        bool isAttacking = false;
+        if (isOccupied)
+        {
+            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
+            {
+                Debug.Log("Do not Attack Yourself!");
+                return false;
+            }
+            isAttacking = true;
+        }
+
+        CellConnection direction = CellConnection.DOWN;
+        if (character.GetTeamType() == TeamType.RED)
+        {
+            direction = CellConnection.DOWN;
+        }
+        else if (character.GetTeamType() == TeamType.BLUE)
+        {
+            direction = CellConnection.UP;
+        }
+
+        for (int i = 0; i < baseConnections[direction].Count; i++)
+        {
+
+            Character characterMoving = baseConnections[direction][i].GetCharacter();
+            if (characterMoving == null)
+            {
+                continue;
+            }
+            if (characterMoving.GetId() != characterId)
+            {
+                continue;
+            }
+
+            if (isAttacking)
+            {
+                //if (characterMoving.CanAttack())
+                if (true)
+                {
+                    characterMoving.Attack(this.character);
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool CheckNodes(List<CellConnection> directions, int characterId)
+    {
+        if (!isBaseNode)
+        {
+           return CheckMultipleNodeForCharacter(directions, characterId);
+        }
+        else
+        {
+           return CheckMultipleNodeForCharacterFromBase(directions, characterId);
+        }
+    }
+
     public void AddConnection(CellConnection cellMovement, CellNode cellNode)
     {
         connectionDictionary.Add(cellMovement, cellNode);
+    }
+
+    public void AddConnectionToBase(CellConnection cellMovement, List<CellNode> cellNodes)
+    {
+        baseConnections.Add(cellMovement, cellNodes);
     }
 
     public Character GetCharacter()
@@ -200,6 +280,11 @@ public class CellNode
         {
             cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
         }
+    }
+
+    public void IsBaseNode()
+    {
+        isBaseNode = true;
     }
 
     public void PrintStatus()

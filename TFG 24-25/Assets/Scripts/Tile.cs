@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
     {
         if (other.gameObject.tag == "Token")
         {
+            Debug.Log("ENTER: " + tileId);
             other.GetComponent<SelectToken>().SetOnTileId(tileId);
         }
     }

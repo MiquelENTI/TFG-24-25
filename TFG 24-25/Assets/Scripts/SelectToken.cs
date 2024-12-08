@@ -36,7 +36,8 @@ public class SelectToken : MonoBehaviour
 
     void Start()
     {
-        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Diagonal);
+        /*
+        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Omni);
 
         if (IsBlue)
         {
@@ -46,7 +47,7 @@ public class SelectToken : MonoBehaviour
         {
             character = new Medusa(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
         }
-
+        */
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }
@@ -129,6 +130,7 @@ public class SelectToken : MonoBehaviour
 
         CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
+        character.GetCharacterStats().PrintStats();
     }
 
     void SeeTokenCard()
@@ -161,6 +163,10 @@ public class SelectToken : MonoBehaviour
 
     public Character GetCharacter() { return character; }
 
+    public void SetCharacter(Character newCharacter)
+    {
+        character = newCharacter;
+    }
     public void SetOutsideBoard(bool isOutside)
     {
         isOutsideBoard = isOutside;
