@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Token
   - CardToDisplay
+  - RedHand
+  - BlueHand
+  - TileCollider
   layers:
   - Default
   - TransparentFX

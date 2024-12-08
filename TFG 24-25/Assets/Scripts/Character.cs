@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
 public enum MovementType { Basic, Diagonal, Omni}
 public enum TeamType { RED = 0, BLUE = 1}
@@ -27,6 +29,18 @@ public struct CharacterStats
         movementType = _movementType;
         stun = false;
     }
+
+    public void PrintStats()
+    {
+        Debug.Log
+        (
+        "HP: " + hp +
+        " | DMG: " + dmg +
+        " | Mana Cost: " + manaCost +
+        " | Num Of Movementst: " + numOfMovements +
+        " | Movement Type: " + movementType.ToString()
+        );
+    }
 }
 
 public class Character
@@ -43,6 +57,7 @@ public class Character
 
     protected GameObject token;
     protected Sprite cardSprite;
+    protected PlayerStats playerStats;
 
     public int GetId()
     { return id; }
@@ -77,7 +92,16 @@ public class Character
     { toSpawn = false; }
 
     public bool CanAttack()
-    { return canAttack; }
+    {
+        if (playerStats.GetCurrentMana() >= stats.manaCost)
+        {
+            return canAttack;
+        }
+        else
+        { 
+            return false;
+        }
+    }
 
     public void MoveToken(Vector3 position)
     {  
@@ -93,6 +117,7 @@ public class Character
 
     public Character(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite)
     {
+        playerStats = PlayerStats.Instance;
         stats = newStats;
         directions = new List<CellConnection>();
         switch (newStats.movementType)
@@ -135,7 +160,10 @@ public class Character
         canAttack = true;
     }
 
-
+    public CharacterStats GetCharacterStats()
+    {
+        return stats;
+    }
 
 
     public virtual void Effect()
@@ -145,10 +173,12 @@ public class Character
 
     public virtual void OnSpawn(CellNode cellToMove)
     {
-        if (cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied())
+        if (cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost)
         {
             Debug.Log("SPAWN");
             DisableSpawn();
+
+            //playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
@@ -159,8 +189,9 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckMultipleNodeForCharacter(GetDirections(), id) && GetMovementsLeft() > 0 && !stats.stun) // Mana Cost
+        if (cellToMove.CheckNodes(GetDirections(), id) && GetMovementsLeft() > 0 && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
+            //playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
             Debug.Log(teamType.ToString() + " MOOOVE");
@@ -172,11 +203,15 @@ public class Character
 
             cellToMove.SetCharacter(this);
             previousNode.RemoveCharacter();
+
+            previousNode.PrintStatus();
+            cellToMove.PrintStatus();
         }
         else
         {
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO?");
+            cellToMove.PrintStatus();
         }
     }
 
@@ -223,6 +258,8 @@ public class Character
     public virtual void Attack(Character enemy)
     {
         if (stats.stun) { return; }
+
+        playerStats.SubstractMana(stats.manaCost);
 
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;

@@ -9,9 +9,10 @@ public class Tile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Token")
+        if (other.gameObject.tag == "TileCollider")
         {
-            other.GetComponent<SelectToken>().SetOnTileId(tileId);
+            Debug.Log("ENTER: " + tileId);
+            other.transform.parent.GetComponent<SelectToken>().SetOnTileId(tileId);
         }
     }
 }
