@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardToDisplay: {fileID: 0}
-  characterSprite: {fileID: 21300000, guid: fabad8f2ebbb14a40af0c6daf6059c05, type: 3}
+  characterSprite: {fileID: 21300000, guid: 0d3e2db78970fdc419bd2b06346e56b3, type: 3}
   IsBlue: 0
 --- !u!54 &2683786068023774313
 Rigidbody:

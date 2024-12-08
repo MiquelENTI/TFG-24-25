@@ -15,13 +15,10 @@ public class SelectToken : MonoBehaviour
     public Sprite characterSprite;
 
     Vector3 mouseDownPos;
-    float revealTimer = 0;
-    float timeToReveal = 0.7f;
     bool isDragging = false;
     bool isOutsideBoard = true;
 
     [SerializeField] bool IsBlue = true;
-
 
     PhotonView photonView;
 
@@ -50,11 +47,29 @@ public class SelectToken : MonoBehaviour
         */
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
+        changeCardOnBoard();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(1)) // Clic derecho
+        {
+            if (!GetComponent<PhotonView>().IsMine)
+                return;
+
+            // Realizar Raycast desde la c�mara hacia la posici�n del rat�n
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit)) // Si el raycast colisiona con algo
+            {
+                if (hit.transform == transform) // Verifica si el objeto clickeado es este token
+                {
+                    SeeTokenCard();
+                }
+            }
+        }
+
         if (Input.GetKeyUp(KeyCode.M))
         {
             CharactersManager.Instance.TriggerOnStartTurn();
@@ -93,7 +108,6 @@ public class SelectToken : MonoBehaviour
             return;
 
         Vector3 newMousePos = GetMouseWorldPos();
-        SeeTokenCard();
 
         if (mouseDownPos != newMousePos)
         {
@@ -140,21 +154,61 @@ public class SelectToken : MonoBehaviour
             return;
         }
 
-        if (revealTimer < timeToReveal)
-        {
-            revealTimer += Time.deltaTime;
-            return;
-        }
-
         ChangeImageCardToDisplay();
-        revealTimer = 0;
     }
 
     void ChangeImageCardToDisplay()
     {
+        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
+
+        cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
+
+        cardToDisplay.transform.Find("HealthText").GetComponent<Text>().text = character.GetHealth().ToString();
+
+        cardToDisplay.transform.Find("ManaCostText").GetComponent<Text>().text = character.getManaCost().ToString();
+
+        cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
+
         cardToDisplay.SetActive(true);
-        cardToDisplay.transform.GetChild(0).GetComponent<Image>().sprite = character.GetCardSprite();
     }
+
+    void changeCardOnBoard()
+    {
+        if (character == null)
+        {
+            Debug.LogError("Character no ha sido inicializado.");
+            return;
+        }
+
+        Transform cardCanvas = transform.Find("Canvas");
+
+        if (cardCanvas != null)
+        {
+            Transform CardInBoard = cardCanvas.Find("CardInBoard");
+
+            if (CardInBoard != null)
+            {
+                Image cardImage = CardInBoard.Find("ImageSprite").GetComponent<Image>();
+                Text attackText = CardInBoard.Find("AttackText").GetComponent<Text>();
+                Text healthText = CardInBoard.Find("HealthText").GetComponent<Text>();
+                Text manaText = CardInBoard.Find("ManaCostText").GetComponent<Text>();
+
+                cardImage.sprite = character.GetCardSprite();
+                attackText.text = character.GetAttack().ToString();
+                healthText.text = character.GetHealth().ToString();
+                manaText.text = character.getManaCost().ToString();
+            }
+            else
+            {
+                Debug.LogError("No se encontr� el objeto 'CardInBoard' dentro del canvas.");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontr� el canvas.");
+        }
+    }
+
 
     public void SetOnTileId(int tileId)
     {

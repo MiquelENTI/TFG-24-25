@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterComponent : MonoBehaviour
+{
+    [SerializeField] private Sprite characterSprite;
+    private Character character;
+
+    public Sprite CharacterSprite => characterSprite;
+
+    public Character GetCharacter()
+    {
+        return character;
+    }
+
+    public void InitializeCharacter(CharacterStats stats, TeamType teamType, GameObject token)
+    {
+        character = new Character(stats, teamType, token, characterSprite);
+    }
+}
