@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TerracottaWarrior : Character
 {
+    int maxHp;
     bool hasMoved = false;
     public TerracottaWarrior(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
     {
+        maxHp = newStats.hp;
     }
 
     public override void OnEndTurn()
@@ -15,6 +17,10 @@ public class TerracottaWarrior : Character
         if (!hasMoved) 
         {
             stats.hp += 3;
+            if (stats.hp > maxHp)
+            {
+                stats.hp = maxHp;
+            }
         }
         hasMoved = false;
     }
