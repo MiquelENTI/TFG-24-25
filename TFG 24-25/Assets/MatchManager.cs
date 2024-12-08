@@ -53,6 +53,10 @@ public class MatchManager : MonoBehaviourPunCallbacks
             Vector3 spawnPosition = GetSpawnPosition();
             Quaternion spawnRotation = GetSpawnRotation();
 
+            if (spawnPosition == spawnPositionPlayer2)
+            {
+                playerPrefab.transform.GetChild(0).GetChild(0).GetChild(1).tag = "RedHand";
+            }
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
         }
         else
@@ -89,6 +93,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
         }
         else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
+
             return spawnPositionPlayer2;
         }
         return Vector3.zero;
