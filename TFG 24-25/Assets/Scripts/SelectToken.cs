@@ -181,35 +181,51 @@ public class SelectToken : MonoBehaviour
             return;
         }
 
+        int attack = character.GetAttack();
+        int health = character.GetHealth();
+        int manaCost = character.getManaCost();
+
+        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost);
+    }
+
+
+    [PunRPC]
+    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost)
+    {
+        if (character == null)
+        {
+            Debug.LogError("Character no ha sido inicializado.");
+            return;
+        }
+
         Transform cardCanvas = transform.Find("Canvas");
 
         if (cardCanvas != null)
         {
-            Transform CardInBoard = cardCanvas.Find("CardInBoard");
+            Transform cardInBoard = cardCanvas.Find("CardInBoard");
 
-            if (CardInBoard != null)
+            if (cardInBoard != null)
             {
-                Image cardImage = CardInBoard.Find("ImageSprite").GetComponent<Image>();
-                Text attackText = CardInBoard.Find("AttackText").GetComponent<Text>();
-                Text healthText = CardInBoard.Find("HealthText").GetComponent<Text>();
-                Text manaText = CardInBoard.Find("ManaCostText").GetComponent<Text>();
+                Image cardImage = cardInBoard.Find("ImageSprite").GetComponent<Image>();
+                Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
+                Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
+                Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
 
                 cardImage.sprite = character.GetCardSprite();
-                attackText.text = character.GetAttack().ToString();
-                healthText.text = character.GetHealth().ToString();
-                manaText.text = character.getManaCost().ToString();
+                attackText.text = attack.ToString();
+                healthText.text = health.ToString();
+                manaText.text = manaCost.ToString();
             }
             else
             {
-                Debug.LogError("No se encontr� el objeto 'CardInBoard' dentro del canvas.");
+                Debug.LogError("No se encontró el objeto 'CardInBoard' dentro del canvas.");
             }
         }
         else
         {
-            Debug.LogError("No se encontr� el canvas.");
+            Debug.LogError("No se encontró el canvas.");
         }
     }
-
 
     public void SetOnTileId(int tileId)
     {

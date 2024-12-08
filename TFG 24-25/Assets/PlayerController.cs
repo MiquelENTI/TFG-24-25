@@ -64,11 +64,11 @@ public class PlayerController : MonoBehaviourPun
     [PunRPC]
     public void ActivateOtherPlayerTurn()
     {
+        Debug.Log("RPC called on player with PhotonView ID: " + photonView.ViewID);
         if (photonView.IsMine)
         {
             endTurnButton.interactable = true;
             buttonText.text = "Finalizar Turno";
-
             SetCardsDragState(true);
         }
     }

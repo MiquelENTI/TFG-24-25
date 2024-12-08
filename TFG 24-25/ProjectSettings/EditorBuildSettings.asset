@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sergi2.unity
     guid: d6fc74f0f292fd64c880022c2e36ecfb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 029eb92f69141e9448dd884a15969c8d
   - enabled: 1
