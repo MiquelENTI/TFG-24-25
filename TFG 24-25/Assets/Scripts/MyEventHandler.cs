@@ -28,7 +28,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
         Debug.Log("INVOKE");
 
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
-        cellToMove.PrintStatus();
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         if (character.IsToSpawn())

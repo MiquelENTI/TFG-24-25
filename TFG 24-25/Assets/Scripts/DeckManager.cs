@@ -26,6 +26,8 @@ public class DeckManager : Singleton<DeckManager>
             Debug.Log("Pressed T");
             DrawCard();
         }
+
+        
     }
 
     void CreateDeck()

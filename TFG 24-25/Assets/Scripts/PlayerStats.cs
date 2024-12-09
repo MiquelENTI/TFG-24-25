@@ -6,8 +6,8 @@ public class PlayerStats : Singleton<PlayerStats>
 {
     int totalMana = 5;
     int currentMana = 5;
-    int playerId;
-
+    TeamType teamColor;
+    int score;
     void Start()
     {
         
@@ -37,5 +37,15 @@ public class PlayerStats : Singleton<PlayerStats>
     public int GetCurrentMana()
     {
         return currentMana;
+    }
+
+    public void IncreaseScore(TeamType attackerColor)
+    {
+        score++;
+        if (score >= 3)
+        {
+            Debug.Log("GAME OVER");
+            // GAME FINISH
+        }
     }
 }

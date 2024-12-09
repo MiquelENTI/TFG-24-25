@@ -247,8 +247,8 @@ public class Character
             cellToMove.SetCharacter(this);
             previousNode.RemoveCharacter();
 
-            previousNode.PrintStatus();
-            cellToMove.PrintStatus();
+            //previousNode.PrintStatus();
+            //cellToMove.PrintStatus();
         }
         else
         {
