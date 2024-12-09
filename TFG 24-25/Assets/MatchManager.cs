@@ -53,11 +53,32 @@ public class MatchManager : MonoBehaviourPunCallbacks
             Vector3 spawnPosition = GetSpawnPosition();
             Quaternion spawnRotation = GetSpawnRotation();
 
-            if (spawnPosition == spawnPositionPlayer2)
+            GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
+
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                playerPrefab.transform.GetChild(0).GetChild(0).GetChild(1).tag = "RedHand";
+                player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, true);
             }
-            PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
+            else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            {
+                player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, false);
+
+                player.GetComponent<PhotonView>().RPC("StartPlayer2", RpcTarget.AllBuffered);
+
+                Transform manCamera = player.transform.Find("Main Camera");
+                if (manCamera != null)
+                {
+                    Transform canvas = manCamera.Find("Canvas");
+                    if (canvas != null)
+                    {
+                        Transform hand = canvas.Find("Hand");
+                        if (hand != null)
+                        {
+                            hand.tag = "RedHand";
+                        }
+                    }
+                }
+            }
         }
         else
         {

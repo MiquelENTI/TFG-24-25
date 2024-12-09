@@ -43,6 +43,12 @@ MonoBehaviour:
   - SyncMaterial
   - ActivateOtherPlayerButton
   - ActivateOtherPlayerTurn
+  - ChangeCardOnBoard_RPC
+  - SetPlayerColor
+  - ReceiveCharacterData
+  - SendCharacterDataToOpponent
+  - UpdateTurn
+  - StartPlayer2
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
