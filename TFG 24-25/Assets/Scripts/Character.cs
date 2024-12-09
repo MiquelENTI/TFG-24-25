@@ -167,7 +167,32 @@ public class Character
         playerStats = PlayerStats.Instance;
         stats = newStats;
         directions = new List<CellConnection>();
-        switch (newStats.movementType)
+
+        ChangeMovementType(newStats.movementType);
+
+        this.teamType = teamType;
+
+        CharactersManager.Instance.AddCharacter(this, cardSprite);
+        this.token = token;
+        this.cardSprite = cardSprite;
+    }
+
+    public void ResetStats()
+    {
+        //ResetMovementsLeft();
+        canAttack = true;
+    }
+
+    public CharacterStats GetCharacterStats()
+    {
+        return stats;
+    }
+
+    public void ChangeMovementType(MovementType newType)
+    {
+        directions.Clear();
+
+        switch (newType)
         {
             case MovementType.Basic:
                 directions.Add(CellConnection.UP);
@@ -194,22 +219,6 @@ public class Character
             default:
                 break;
         }
-        this.teamType = teamType;
-
-        CharactersManager.Instance.AddCharacter(this, cardSprite);
-        this.token = token;
-        this.cardSprite = cardSprite;
-    }
-
-    public void ResetStats()
-    {
-        //ResetMovementsLeft();
-        canAttack = true;
-    }
-
-    public CharacterStats GetCharacterStats()
-    {
-        return stats;
     }
 
 

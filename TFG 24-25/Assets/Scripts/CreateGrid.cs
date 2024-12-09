@@ -44,7 +44,6 @@ public class CreateGrid : MonoBehaviour
 
         for (int i = 0; i < rows; i++)
         {
-            List<CellNode> row = new List<CellNode>();
             for (int j = 0; j < columns; j++) 
             {
                 Vector3 position = new Vector3(j /1.18f, 0.5f, -i / 1.18f);

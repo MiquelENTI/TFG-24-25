@@ -68,13 +68,13 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
         List<Vector2Int> directions = new List<Vector2Int>
         {
-            new Vector2Int(-1, 0),   // Up
-            new Vector2Int(1, 0),    // Down
-            new Vector2Int(0, -1),   // Left
-            new Vector2Int(0, 1),    // Right
+            new Vector2Int(0, -1),   // Up
+            new Vector2Int(0, 1),    // Down
+            new Vector2Int(-1, 0),   // Left
+            new Vector2Int(1, 0),    // Right
             new Vector2Int(-1, -1),  // Up-Left
-            new Vector2Int(-1, 1),   // Up-Right
-            new Vector2Int(1, -1),   // Down-Left
+            new Vector2Int(1, -1),   // Up-Right
+            new Vector2Int(-1, 1),   // Down-Left
             new Vector2Int(1, 1)     // Down-Right
         };
 
@@ -114,8 +114,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
                     if (newX >= 0 && newX < gridSize.x && newY >= 0 && newY < gridSize.y)
                     {
-                        int currentNodeId = (int)(j * gridSize.y) + i;
-                        int nodeToAddId = (int)(newY * gridSize.y) + newX;
+                        int currentNodeId = (int)(j * gridSize.x) + i;
+                        int nodeToAddId = (int)(newY * gridSize.x) + newX;
 
                         nodeGrid[currentNodeId].AddConnection(conversion[direction], nodeGrid[nodeToAddId]);
                     }
@@ -123,13 +123,13 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
                 if (j == 0)
                 {
-                    nodeGrid[(int)((j * gridSize.y) + i)].AddConnection(CellConnection.UP, redBaseNode);
-                    redBaseNodes.Add(nodeGrid[(int)(j * gridSize.y) + i]);
+                    nodeGrid[(int)((j * gridSize.x) + i)].AddConnection(CellConnection.UP, redBaseNode);
+                    redBaseNodes.Add(nodeGrid[(int)(j * gridSize.x) + i]);
                 }
                 else if (j == gridSize.y-1)
                 {
-                    nodeGrid[(int)(j * gridSize.y) + i].AddConnection(CellConnection.DOWN, blueBaseNode);
-                    blueBaseNodes.Add(nodeGrid[(int)(j * gridSize.y) + i]);
+                    nodeGrid[(int)(j * gridSize.x) + i].AddConnection(CellConnection.DOWN, blueBaseNode);
+                    blueBaseNodes.Add(nodeGrid[(int)(j * gridSize.x) + i]);
                 }
             }
         }

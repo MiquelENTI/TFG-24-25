@@ -25,12 +25,14 @@ public class HumanWerewolf : Character
 
     void ChangeForms()
     {
+        isHumanForm = !isHumanForm;
         if (isHumanForm)
         {
             stats.hp = (int)(stats.hp / 2.0f);
             stats.hp = Mathf.RoundToInt(stats.hp);
 
             stats.movementType = humanForm.movementType;
+            ChangeMovementType(stats.movementType);
             stats.dmg = humanForm.dmg;
 
             stats.PrintStats();
@@ -42,8 +44,9 @@ public class HumanWerewolf : Character
             stats.movementType = wereWolfForm.movementType;
             stats.dmg = wereWolfForm.dmg;
 
+            ChangeMovementType(stats.movementType);
             stats.PrintStats();
         }
-        isHumanForm = !isHumanForm;
+        
     }
 }
