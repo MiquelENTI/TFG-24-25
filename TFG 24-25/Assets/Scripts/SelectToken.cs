@@ -15,6 +15,8 @@ public class SelectToken : MonoBehaviour
     [SerializeField] GameObject cardToDisplay;
     public Sprite characterSprite;
 
+    [SerializeField] int TEMP_id;
+
     Vector3 mouseDownPos;
     bool isDragging = false;
     bool isOutsideBoard = true;
@@ -36,6 +38,8 @@ public class SelectToken : MonoBehaviour
 
     void Start()
     {
+        
+
         GameObject turnManagerObject = GameObject.Find("TurnManager");
         if (turnManagerObject != null)
         {
@@ -49,6 +53,9 @@ public class SelectToken : MonoBehaviour
         {
             Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
         }
+
+        character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
+
 
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
@@ -260,5 +267,45 @@ public class SelectToken : MonoBehaviour
     public void SetOutsideBoard(bool isOutside)
     {
         isOutsideBoard = isOutside;
+    }
+
+    Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
+    {
+        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        switch (id)
+        {
+            case 1:
+                return new Cavalier(stats, tokenTeam, instantiatedToken, null);
+            case 3:
+                return new Salmon(stats, tokenTeam, instantiatedToken, null);
+            case 5:
+                return new Fly(stats, tokenTeam, instantiatedToken, null);
+            case 6:
+                return new Turtle(stats, tokenTeam, instantiatedToken, null);
+            case 7:
+                return new Mimic(stats, tokenTeam, instantiatedToken, null);
+            case 10:
+                return new Medusa(stats, tokenTeam, instantiatedToken, null);
+            case 13:
+                return new Mummy(stats, tokenTeam, instantiatedToken, null);
+            case 16:
+                return new DeathHorseman(stats, tokenTeam, instantiatedToken, null);
+            case 17:
+                return new TerracottaWarrior(stats, tokenTeam, instantiatedToken, null);
+            case 20:
+                return new MagicKarp(stats, tokenTeam, instantiatedToken, null);
+            case 22:
+                return new Chicken(stats, tokenTeam, instantiatedToken, null);
+            case -1:
+                return new Dummy(stats, tokenTeam);
+            case 14:
+                return new TheGun(stats, tokenTeam, instantiatedToken, null);
+            case 15:
+                return new HumanWerewolf(stats, tokenTeam, instantiatedToken, null);
+            default:
+                Debug.LogError("NO CHARACTER RECOGNISED");
+                return new Character(stats, tokenTeam, instantiatedToken, null);
+        }
+
     }
 }

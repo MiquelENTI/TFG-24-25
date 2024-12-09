@@ -551,6 +551,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCard: {fileID: 6149997832755208218, guid: a8612301f7b0067428b2b2d1e5974832, type: 3}
+  cardsWarras:
+  - {fileID: 6149997832755208218, guid: ff18cc7a16ae31146933b4e1fbf7f539, type: 3}
+  - {fileID: 6149997832755208218, guid: f5ea37b1116d24042a2ad666aa594e8b, type: 3}
+  - {fileID: 6149997832755208218, guid: 233b584d23476da4ba88609fca5c39c0, type: 3}
+  - {fileID: 6149997832755208218, guid: 5d7aa100f0c822d4f89b6645ea7f9cad, type: 3}
+  - {fileID: 6149997832755208218, guid: 3b66c59a32ff5c743a3f8343439d0240, type: 3}
+  - {fileID: 6149997832755208218, guid: fbb9b8cd19e2be8439e0bc28655522e7, type: 3}
+  - {fileID: 6149997832755208218, guid: 459e39b09b6787043b45a9ff00a46ae9, type: 3}
+  - {fileID: 6149997832755208218, guid: d21a7eaa7d30d1c43909adb757a6e8b1, type: 3}
+  - {fileID: 6149997832755208218, guid: 427954586f4d7564f8abf1aba0c08207, type: 3}
+  - {fileID: 6149997832755208218, guid: 07c4eeb4937dbf044b0dfe6a3e7d49a4, type: 3}
+  - {fileID: 6149997832755208218, guid: 5a867b5dc4f6062468a3c05c8daad9b0, type: 3}
+  - {fileID: 6149997832755208218, guid: 2905b64c58b233b42986adb6a63db0d5, type: 3}
+  - {fileID: 6149997832755208218, guid: 58693aa07d8f6ac45bc0b3cd393ecd8a, type: 3}
 --- !u!4 &1293831302
 Transform:
   m_ObjectHideFlags: 0

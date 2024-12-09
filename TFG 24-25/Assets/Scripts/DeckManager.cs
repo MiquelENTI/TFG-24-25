@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
@@ -9,11 +10,19 @@ public class DeckManager : Singleton<DeckManager>
     [SerializeField] GameObject prefabCard;
     Queue<Cards> deck = new();
 
+    [SerializeField] List<GameObject> cardsWarras = new();
+    [SerializeField] Queue<GameObject> deckWarro = new();
+
     int teamTypeAlternator;
 
     private void Awake()
     {
-        CreateDeck();
+        Shuffle(cardsWarras);
+        for (int i = 0; i < cardsWarras.Count; i++)
+        {
+            deckWarro.Enqueue(cardsWarras[i]);
+        }
+        //CreateDeck();
     }
     void Start()
     {
@@ -27,7 +36,7 @@ public class DeckManager : Singleton<DeckManager>
         {
             Debug.Log("Pressed T");
             
-            TESTING_DrawCard();
+            DrawCardWarro();
             //DrawCard();
         }
 
@@ -45,6 +54,15 @@ public class DeckManager : Singleton<DeckManager>
         if (deck.Count == 0) { return; }
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         instantiatedCard.GetComponent<DragableUIObject>().SetDragableUIObject(deck.Dequeue());
+    }
+
+    public void DrawCardWarro()
+    {
+        if (deckWarro.Count == 0) { return; }
+        Debug.Log('1');
+        GameObject temp = deckWarro.Dequeue();
+        GameObject instantiatedCard = PhotonNetwork.Instantiate("Warro/"+temp.name, temp.transform.localPosition, Quaternion.identity);
+        instantiatedCard.transform.parent = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHand" : "RedHand").transform;
     }
 
     public void TESTING_DrawCard()

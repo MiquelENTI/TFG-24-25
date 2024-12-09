@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 5856744156013239630}
   - component: {fileID: 2945299001656198343}
   m_Layer: 0
-  m_Name: Token
+  m_Name: RedHumanWerewolf
   m_TagString: Token
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8236987784292183732}
-  m_LocalRotation: {x: -0, y: -0.00000008940696, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.23, y: 0.75, z: -4.02}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
@@ -589,7 +589,7 @@ Transform:
   - {fileID: 9007898544887815244}
   - {fileID: 997023265153929756}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &752484305614821727
 MeshFilter:
@@ -619,7 +619,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d3dbb78878e26e4d837462824e50b80, type: 2}
+  - {fileID: 2100000, guid: 3f88146e26986364f81dbd627624d928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -676,7 +676,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardToDisplay: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: edf6ed263482e4a48a4bdc09c314d80f, type: 3}
-  IsBlue: 1
+  TEMP_id: 15
+  IsBlue: 0
 --- !u!54 &5856744156013239630
 Rigidbody:
   m_ObjectHideFlags: 0

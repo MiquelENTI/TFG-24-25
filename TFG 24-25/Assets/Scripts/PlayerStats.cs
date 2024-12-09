@@ -48,4 +48,9 @@ public class PlayerStats : Singleton<PlayerStats>
             // GAME FINISH
         }
     }
+
+    public TeamType GetTeamType()
+    {
+        return teamColor;
+    }
 }
