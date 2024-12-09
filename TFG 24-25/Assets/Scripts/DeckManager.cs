@@ -36,7 +36,7 @@ public class DeckManager : Singleton<DeckManager>
 
     void CreateDeck()
     {
-        GenerateInDeck(14, 10);
+        GenerateInDeck(15, 10);
         //ShuffleDeck();
     }
 

@@ -165,7 +165,8 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 return new Dummy(card.GetCharacterStats(), tokenTeam);
             case "The Gun":
                 return new TheGun(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-
+            case "Human Werewolf":
+                return new HumanWerewolf(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
             default:
                 Debug.LogError("NO CHARACTER RECOGNISED");
                 return new Character(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);

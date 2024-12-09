@@ -16,7 +16,6 @@ public struct CharacterStats
     public int dmg;
     public int manaCost;
     public int numOfMovements;
-    public int movementsLeft;
     public MovementType movementType;
     public bool stun;
     public string description;
@@ -28,7 +27,6 @@ public struct CharacterStats
         dmg = _dmg;
         manaCost = _manaCost;
         numOfMovements = _numOfMovements;
-        movementsLeft = _numOfMovements;
         movementType = _movementType;
         stun = false;
         description = _description;
@@ -106,13 +104,13 @@ public class Character
     public List<CellConnection> GetDirections()
     { return directions; }
 
-    public int GetMovementsLeft()
-    { return stats.movementsLeft; }
+    //public int GetMovementsLeft()
+    //{ return stats.movementsLeft; }
 
-    public void DecreaseMovement()
-    { stats.movementsLeft--; }
-    void ResetMovementsLeft()
-    { stats.movementsLeft = stats.numOfMovements; }
+    //public void DecreaseMovement()
+    //{ stats.movementsLeft--; }
+    //void ResetMovementsLeft()
+    //{ stats.movementsLeft = stats.numOfMovements; }
 
     public bool IsToSpawn() 
     { return toSpawn; }
@@ -205,7 +203,7 @@ public class Character
 
     public void ResetStats()
     {
-        ResetMovementsLeft();
+        //ResetMovementsLeft();
         canAttack = true;
     }
 
@@ -238,13 +236,13 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckNodes(GetDirections(), id) && GetMovementsLeft() > 0 && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
+        if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
             //playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
             Debug.Log(teamType.ToString() + " MOOOVE");
-            DecreaseMovement();
+
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
             SetOnTileId(cellToMove.GetId());
@@ -269,7 +267,6 @@ public class Character
         canAttack = false; // Delete or not?
 
         Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
-        DecreaseMovement();
 
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);

@@ -19,6 +19,11 @@ public class TheGun : Character
         foreach (CellConnection direction in directions)
         {
             CellNode cellOnTile = CellNodeManager.Instance.GetNodeById(onTile);
+            if (!cellOnTile.CheckConnectionNode(direction))
+            {
+                continue;
+            }
+
             if (cellOnTile.GetCellByDirection(direction).GetId() == currentCellToMove.GetId())
             {
                 CellNode cellToMove = cellOnTile.GetCellByInverseDirection((int)direction);

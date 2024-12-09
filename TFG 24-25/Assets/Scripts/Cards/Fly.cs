@@ -7,4 +7,9 @@ public class Fly : Character
     public Fly(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
     {
     }
+
+    public override void OnMovement(CellNode cellToMove)
+    {
+        base.OnMovement(cellToMove);
+    }
 }

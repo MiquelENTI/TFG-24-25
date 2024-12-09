@@ -13,7 +13,8 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 7, new CharacterStats ("Mimic",2, 3, 6,  1000, MovementType.Basic, "Esto es un Mimic") }, // Mimic  (WIP)
         { 10, new CharacterStats("Medusa",3, 3, 12, 1000, MovementType.Basic, "Esto es una Medusa") }, // Medusa
         { 13, new CharacterStats("Mummy",3, 6, 23, 1000, MovementType.Basic, "Esto es una Mummy") }, // Mummy
-        { 14, new CharacterStats("The Gun",3, 7, 9, 1000, MovementType.Omni, "Esto es una The Gun") }, // The Gun
+        { 14, new CharacterStats("The Gun",3, 8, 9, 1000, MovementType.Omni, "Esto es una The Gun") }, // The Gun
+        { 15, new CharacterStats("Human Werewolf",3, 4, 8, 1000, MovementType.Basic, "Esto es una The Gun") }, // The Gun
         { 16, new CharacterStats("Death Horseman",3, 14, 4, 1000, MovementType.Basic, "Esto es un Death Horseman") }, // Death Horseman
         { 17, new CharacterStats("Terracotta Warrior",4, 4, 21, 1000, MovementType.Basic, "Esto es un Terracotta Warrior") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 7, 15, 1000, MovementType.Basic, "Esto es un Magic Karp") }, // Magic Karp

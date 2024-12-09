@@ -12,13 +12,13 @@ public class Turtle : Character
     public override void OnStartTurn()
     {
         canMove = !canMove;
+    }
+
+    public override void OnMovement(CellNode cellToMove)
+    {
         if (canMove)
         {
-            stats.movementsLeft = stats.numOfMovements;
-        }
-        else
-        {
-            stats.movementsLeft = 0;
+            base.OnMovement(cellToMove);
         }
     }
 }
