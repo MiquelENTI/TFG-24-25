@@ -214,9 +214,18 @@ public class CellNode
             return null;
     }
 
-    CellConnection GetInverseDirection(int cellConnection)
+    public CellConnection GetInverseDirection(int cellConnection)
     {
         return (CellConnection)(-cellConnection);
+    }
+
+    public CellNode GetCellByInverseDirection(int cellConnection)
+    {
+        if (CheckConnectionNode(GetInverseDirection(cellConnection)))
+        {
+            return connectionDictionary[GetInverseDirection(cellConnection)];
+        }
+        return null;
     }
 
     public void SetPosition(Vector3 pos)
@@ -285,6 +294,26 @@ public class CellNode
     public void IsBaseNode()
     {
         isBaseNode = true;
+    }
+
+    public CellNode GetCellByDirectionWithRange(CellNode currentCell, CellConnection direction, int range)
+    {
+        if (!currentCell.CheckConnectionNode(direction))
+        {
+            return null;
+        }
+
+        if (range > 0)
+        {
+            currentCell.GetCellByDirectionWithRange(currentCell.GetCellByDirection(direction), direction, range-1);
+        }
+        else
+        {
+            currentCell.PrintStatus();
+            return currentCell;
+        }
+
+        return null;
     }
 
     public void PrintStatus()

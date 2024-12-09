@@ -9,6 +9,8 @@ public class DeckManager : Singleton<DeckManager>
     [SerializeField] GameObject prefabCard;
     Queue<Cards> deck = new();
 
+    int teamTypeAlternator;
+
     private void Awake()
     {
         CreateDeck();
@@ -24,13 +26,18 @@ public class DeckManager : Singleton<DeckManager>
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Pressed T");
-            DrawCard();
+            
+            TESTING_DrawCard();
+            //DrawCard();
         }
+
+        
     }
 
     void CreateDeck()
     {
-        ShuffleDeck();
+        GenerateInDeck(15, 10);
+        //ShuffleDeck();
     }
 
     public void DrawCard()
@@ -38,6 +45,15 @@ public class DeckManager : Singleton<DeckManager>
         if (deck.Count == 0) { return; }
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         instantiatedCard.GetComponent<DragableUIObject>().SetDragableUIObject(deck.Dequeue());
+    }
+
+    public void TESTING_DrawCard()
+    {
+        if (deck.Count == 0) { return; }
+        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
+
+        instantiatedCard.GetComponent<DragableUIObject>().TESTING_SetDragableUIObject(deck.Dequeue(), teamTypeAlternator % 2 == 0 ? TeamType.BLUE : TeamType.RED);
+        teamTypeAlternator++;
     }
 
     public void ShuffleDeck()
@@ -74,5 +90,13 @@ public class DeckManager : Singleton<DeckManager>
         }
 
         return list;
+    }
+
+    void GenerateInDeck(int characterId, int amount)
+    {
+        for (int i = 0; i < amount; i++) 
+        {
+            deck.Enqueue(TemporalCardDataBase.Instance.GetCharacter(characterId));
+        }
     }
 }

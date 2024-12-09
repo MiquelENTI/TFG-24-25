@@ -44,7 +44,6 @@ public class CreateGrid : MonoBehaviour
 
         for (int i = 0; i < rows; i++)
         {
-            List<CellNode> row = new List<CellNode>();
             for (int j = 0; j < columns; j++) 
             {
                 Vector3 position = new Vector3(j /1.18f, 0.5f, -i / 1.18f);
@@ -68,8 +67,8 @@ public class CreateGrid : MonoBehaviour
         CellNode redBaseNode = new CellNode(obj2.transform.position, obj2);
         CellNode blueBaseNode = new CellNode(obj3.transform.position, obj3);
 
-        Character dummy = new Character(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.RED, null, null);
-        Character dummy2 = new Character(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.BLUE, null, null);
+        Dummy dummy = new Dummy(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.RED);
+        Dummy dummy2 = new Dummy(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.BLUE);
 
         redBaseNode.SetCharacter(dummy);
         blueBaseNode.SetCharacter(dummy2);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Photon.Pun;
+using UnityEditorInternal;
+using System.Xml.Serialization;
 
 public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -21,6 +23,8 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     [SerializeField] Material blueMaterial;
     [SerializeField] Material redMaterial;
 
+    TeamType TESTING_teamType;
+
     void Start() { }
 
     public void SetDragableUIObject(Cards newCard)
@@ -28,6 +32,13 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         card = newCard;
         transform.parent = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHand" : "RedHand").transform;
 
+    }
+
+    public void TESTING_SetDragableUIObject(Cards newCard, TeamType teamType)
+    {
+        card = newCard;
+        transform.parent = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHand" : "RedHand").transform;
+        TESTING_teamType = teamType;
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
@@ -52,7 +63,14 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         if (transform.localPosition.y > -175.0f)
         {
-            CreateCharacterOrActivateEffect();
+            if (TESTING_teamType == TeamType.RED || TESTING_teamType == TeamType.BLUE)
+            {
+                TESTING_CreateCharacterOrActivateEffect();
+            }
+            else
+            {
+                CreateCharacterOrActivateEffect();
+            }    
 
             Destroy(gameObject);
         }
@@ -82,11 +100,77 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
             }
 
-            instantiatedToken.GetComponent<SelectToken>().SetCharacter(new Character(card.GetCharacterStats(), tokenTeam, instantiatedToken, null));
+            instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
         }
         else
         {
            
         }
+    }
+    
+    public void TESTING_CreateCharacterOrActivateEffect()
+    {
+        if (card.IsCharacter())
+        {
+            Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
+            GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? token.name : token2.name, spawnPosition, Quaternion.identity);
+
+            Renderer tokenRenderer = instantiatedToken.GetComponent<Renderer>();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                tokenRenderer.material = blueMaterial;
+                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "blue");
+            }
+            else
+            {
+                tokenRenderer.material = redMaterial;
+                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
+            }
+
+            instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, TESTING_teamType, instantiatedToken));
+        }
+        else
+        {
+
+        }
+    }
+
+    Character CharacterClassSelector(string characterName, TeamType tokenTeam, GameObject instantiatedToken)
+    {
+        switch (characterName)
+        {
+            case "Cavalier":
+                return new Cavalier(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Salmon":
+                return new Salmon(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Fly":
+                return new Fly(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Turtle":
+                return new Turtle(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Mimic":
+                return new Mimic(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Medusa":
+                return new Medusa(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Mummy":
+                return new Mummy(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Death Horseman":
+                return new DeathHorseman(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Terracotta Warrior":
+                return new TerracottaWarrior(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Magic Karp":
+                return new MagicKarp(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Chicken":
+                return new Chicken(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Dummy":
+                return new Dummy(card.GetCharacterStats(), tokenTeam);
+            case "The Gun":
+                return new TheGun(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            case "Human Werewolf":
+                return new HumanWerewolf(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+            default:
+                Debug.LogError("NO CHARACTER RECOGNISED");
+                return new Character(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
+        }
+
     }
 }

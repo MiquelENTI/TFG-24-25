@@ -11,22 +11,22 @@ public enum TeamType { RED = 0, BLUE = 1}
 
 public struct CharacterStats
 {
+    public string name;
     public int hp;
     public int dmg;
     public int manaCost;
     public int numOfMovements;
-    public int movementsLeft;
     public MovementType movementType;
     public bool stun;
     public string description;
 
-    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
     {
+        name = _name;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
         numOfMovements = _numOfMovements;
-        movementsLeft = _numOfMovements;
         movementType = _movementType;
         stun = false;
         description = _description;
@@ -36,13 +36,17 @@ public struct CharacterStats
     {
         Debug.Log
         (
-        "HP: " + hp +
+        "Name : " + name +
+        " | HP: " + hp +
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
         " | Num Of Movementst: " + numOfMovements +
         " | Movement Type: " + movementType.ToString()
         );
     }
+
+    public string getName()
+    { return name; }
 
     public int getHealth()
     {
@@ -100,13 +104,13 @@ public class Character
     public List<CellConnection> GetDirections()
     { return directions; }
 
-    public int GetMovementsLeft()
-    { return stats.movementsLeft; }
+    //public int GetMovementsLeft()
+    //{ return stats.movementsLeft; }
 
-    public void DecreaseMovement()
-    { stats.movementsLeft--; }
-    void ResetMovementsLeft()
-    { stats.movementsLeft = stats.numOfMovements; }
+    //public void DecreaseMovement()
+    //{ stats.movementsLeft--; }
+    //void ResetMovementsLeft()
+    //{ stats.movementsLeft = stats.numOfMovements; }
 
     public bool IsToSpawn() 
     { return toSpawn; }
@@ -163,7 +167,32 @@ public class Character
         playerStats = PlayerStats.Instance;
         stats = newStats;
         directions = new List<CellConnection>();
-        switch (newStats.movementType)
+
+        ChangeMovementType(newStats.movementType);
+
+        this.teamType = teamType;
+
+        CharactersManager.Instance.AddCharacter(this, cardSprite);
+        this.token = token;
+        this.cardSprite = cardSprite;
+    }
+
+    public void ResetStats()
+    {
+        //ResetMovementsLeft();
+        canAttack = true;
+    }
+
+    public CharacterStats GetCharacterStats()
+    {
+        return stats;
+    }
+
+    public void ChangeMovementType(MovementType newType)
+    {
+        directions.Clear();
+
+        switch (newType)
         {
             case MovementType.Basic:
                 directions.Add(CellConnection.UP);
@@ -190,22 +219,6 @@ public class Character
             default:
                 break;
         }
-        this.teamType = teamType;
-
-        CharactersManager.Instance.AddCharacter(this, cardSprite);
-        this.token = token;
-        this.cardSprite = cardSprite;
-    }
-
-    public void ResetStats()
-    {
-        ResetMovementsLeft();
-        canAttack = true;
-    }
-
-    public CharacterStats GetCharacterStats()
-    {
-        return stats;
     }
 
 
@@ -232,13 +245,13 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckNodes(GetDirections(), id) && GetMovementsLeft() > 0 && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
+        if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
             //playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
             Debug.Log(teamType.ToString() + " MOOOVE");
-            DecreaseMovement();
+
             CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
             SetOnTileId(cellToMove.GetId());
@@ -247,8 +260,8 @@ public class Character
             cellToMove.SetCharacter(this);
             previousNode.RemoveCharacter();
 
-            previousNode.PrintStatus();
-            cellToMove.PrintStatus();
+            //previousNode.PrintStatus();
+            //cellToMove.PrintStatus();
         }
         else
         {
@@ -258,14 +271,13 @@ public class Character
         }
     }
 
-    protected void BypassMovement(int enemyOnTileId)
+    protected void BypassMovement(int otherTileId)
     {
         canAttack = false; // Delete or not?
 
         Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
-        DecreaseMovement();
 
-        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(enemyOnTileId);
+        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
         SetOnTileId(cellToMove.GetId());
@@ -302,7 +314,7 @@ public class Character
     {
         if (stats.stun) { return; }
 
-        playerStats.SubstractMana(stats.manaCost);
+        //playerStats.SubstractMana(stats.manaCost);
 
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;
