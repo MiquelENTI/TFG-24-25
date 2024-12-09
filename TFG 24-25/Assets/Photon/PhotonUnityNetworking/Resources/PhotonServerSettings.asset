@@ -43,6 +43,8 @@ MonoBehaviour:
   - SyncMaterial
   - ActivateOtherPlayerButton
   - ActivateOtherPlayerTurn
+  - ChangeCardOnBoard_RPC
+  - SetPlayerColor
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

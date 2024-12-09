@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviourPun
     public Button endTurnButton;
     public GameObject hand;
     private Text buttonText;
+    public bool IsBlue;
 
     void Start()
     {
@@ -34,6 +35,20 @@ public class PlayerController : MonoBehaviourPun
         }
 
         SetCardsDragState(photonView.IsMine);
+    }
+
+    [PunRPC]
+    public void SetPlayerColor(bool isBlue)
+    {
+        IsBlue = isBlue;
+        if (IsBlue)
+        {
+            Debug.Log("Este jugador es azul.");
+        }
+        else
+        {
+            Debug.Log("Este jugador es rojo.");
+        }
     }
 
     void Update()
