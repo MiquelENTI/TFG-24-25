@@ -23,6 +23,8 @@ public class SelectToken : MonoBehaviour
 
     PhotonView photonView;
 
+    private TurnManagerScript TurnManagerScript;
+
     private void Awake()
     {
         if (!TryGetComponent<PhotonView>(out photonView))
@@ -34,18 +36,20 @@ public class SelectToken : MonoBehaviour
 
     void Start()
     {
-        /*
-        CharacterStats stats = new CharacterStats(0,5,10,1000,MovementType.Omni);
-
-        if (IsBlue)
+        GameObject turnManagerObject = GameObject.Find("TurnManager");
+        if (turnManagerObject != null)
         {
-            character = new Cavalier(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+            TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
+            if (TurnManagerScript == null)
+            {
+                Debug.LogError("TurnManagerScript no encontrado en el GameObject 'turnmanager'.");
+            }
         }
         else
         {
-            character = new Medusa(stats, (TeamType)(IsBlue ? 1 : 0), transform.gameObject, characterSprite);
+            Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
         }
-        */
+
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
         changeCardOnBoard();
@@ -53,18 +57,17 @@ public class SelectToken : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) // Clic derecho
+        if (Input.GetMouseButtonDown(1))
         {
             if (!GetComponent<PhotonView>().IsMine)
                 return;
 
-            // Realizar Raycast desde la c�mara hacia la posici�n del rat�n
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit)) // Si el raycast colisiona con algo
+            if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform == transform) // Verifica si el objeto clickeado es este token
+                if (hit.transform == transform)
                 {
                     SeeTokenCard();
                 }
@@ -98,8 +101,13 @@ public class SelectToken : MonoBehaviour
         if (!GetComponent<PhotonView>().IsMine)
             return;
 
-        mouseDownPos = GetMouseWorldPos();
+        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        {
+            Debug.Log("No es el turno del jugador actual.");
+            return;
+        }
 
+        mouseDownPos = GetMouseWorldPos();
         CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
     }
 
@@ -107,6 +115,12 @@ public class SelectToken : MonoBehaviour
     {
         if (!GetComponent<PhotonView>().IsMine)
             return;
+
+        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        {
+            Debug.Log("No es el turno del jugador actual.");
+            return;
+        }
 
         Vector3 newMousePos = GetMouseWorldPos();
 
@@ -128,6 +142,12 @@ public class SelectToken : MonoBehaviour
     {
         if (!GetComponent<PhotonView>().IsMine)
             return;
+
+        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        {
+            Debug.Log("No es el turno del jugador actual.");
+            return;
+        }
 
         isDragging = false;
 
@@ -187,7 +207,6 @@ public class SelectToken : MonoBehaviour
 
         photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost);
     }
-
 
     [PunRPC]
     void ChangeCardOnBoard_RPC(int attack, int health, int manaCost)

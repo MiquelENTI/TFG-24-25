@@ -61,10 +61,10 @@ public class MatchManager : MonoBehaviourPunCallbacks
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                // Segundo jugador (rojo)
                 player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, false);
 
-                // Cambiar el tag de 'hand' a 'RedHand' en el segundo jugador
+                player.GetComponent<PhotonView>().RPC("StartPlayer2", RpcTarget.AllBuffered);
+
                 Transform manCamera = player.transform.Find("Main Camera");
                 if (manCamera != null)
                 {
