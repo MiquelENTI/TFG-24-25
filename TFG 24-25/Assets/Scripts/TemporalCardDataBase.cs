@@ -6,18 +6,19 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CharacterStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
-        { 1, new CharacterStats (0, 5, 8,  1000, MovementType.Basic, "Esto es un Cavalier") }, // Cavalier
-        { 3, new CharacterStats (4, 9, 13, 1000, MovementType.Omni, "Esto es un Salmon")  }, // Salmon
-        { 5, new CharacterStats (1, 1, 1,  1000, MovementType.Omni, "Esto es un Fly")  }, // Fly
-        { 6, new CharacterStats (2, 5, 18, 1000, MovementType.Basic, "Esto es una Turtle") }, // Turtle (WIP)
-        { 7, new CharacterStats (2, 3, 6,  1000, MovementType.Basic, "Esto es un Mimic") }, // Mimic  (WIP)
-        { 10, new CharacterStats(3, 3, 12, 1000, MovementType.Basic, "Esto es una Medusa") }, // Medusa
-        { 13, new CharacterStats(3, 6, 23, 1000, MovementType.Basic, "Esto es una Mummy") }, // Mummy
-        { 16, new CharacterStats(3, 14, 4, 1000, MovementType.Basic, "Esto es un Death Horseman") }, // Death Horseman
-        { 17, new CharacterStats(4, 4, 21, 1000, MovementType.Basic, "Esto es un Terracotta Warrior") }, // Terracotta Warrior
-        { 20, new CharacterStats(5, 7, 15, 1000, MovementType.Basic, "Esto es un Magic Karp") }, // Magic Karp
-        { 22, new CharacterStats(1, 2, 7,  1000, MovementType.Basic, "Esto es un Chicken") },
-        { -1, new CharacterStats(0, 0, 99999, 0, MovementType.Basic, "") }, // DummyBase
+        { 1, new CharacterStats ("Cavalier", 0, 5, 8,  1000, MovementType.Basic, "Esto es un Cavalier") }, // Cavalier
+        { 3, new CharacterStats ("Salmon", 4, 9, 13, 1000, MovementType.Omni, "Esto es un Salmon")  }, // Salmon
+        { 5, new CharacterStats ("Fly",1, 1, 1,  1000, MovementType.Omni, "Esto es un Fly")  }, // Fly
+        { 6, new CharacterStats ("Turtle",2, 5, 18, 1000, MovementType.Basic, "Esto es una Turtle") }, // Turtle (WIP)
+        { 7, new CharacterStats ("Mimic",2, 3, 6,  1000, MovementType.Basic, "Esto es un Mimic") }, // Mimic  (WIP)
+        { 10, new CharacterStats("Medusa",3, 3, 12, 1000, MovementType.Basic, "Esto es una Medusa") }, // Medusa
+        { 13, new CharacterStats("Mummy",3, 6, 23, 1000, MovementType.Basic, "Esto es una Mummy") }, // Mummy
+        { 14, new CharacterStats("The Gun",3, 7, 9, 1000, MovementType.Omni, "Esto es una The Gun") }, // The Gun
+        { 16, new CharacterStats("Death Horseman",3, 14, 4, 1000, MovementType.Basic, "Esto es un Death Horseman") }, // Death Horseman
+        { 17, new CharacterStats("Terracotta Warrior",4, 4, 21, 1000, MovementType.Basic, "Esto es un Terracotta Warrior") }, // Terracotta Warrior
+        { 20, new CharacterStats("Magic Karp",5, 7, 15, 1000, MovementType.Basic, "Esto es un Magic Karp") }, // Magic Karp
+        { 22, new CharacterStats("Chicken",1, 2, 7,  1000, MovementType.Basic, "Esto es un Chicken") }, // Chicken
+        { -1, new CharacterStats("Dummy",0, 0, 99999, 0, MovementType.Basic, "") }, // DummyBase
     };
 
 
@@ -51,5 +52,8 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         return temp;
     }
 
-        
+    public CharacterCard GetCharacter(int characterId)
+    {
+        return new CharacterCard(characterStats[characterId]);
+    }
 }

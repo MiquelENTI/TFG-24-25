@@ -11,6 +11,7 @@ public enum TeamType { RED = 0, BLUE = 1}
 
 public struct CharacterStats
 {
+    public string name;
     public int hp;
     public int dmg;
     public int manaCost;
@@ -20,8 +21,9 @@ public struct CharacterStats
     public bool stun;
     public string description;
 
-    public CharacterStats(int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
     {
+        name = _name;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
@@ -36,13 +38,17 @@ public struct CharacterStats
     {
         Debug.Log
         (
-        "HP: " + hp +
+        "Name : " + name +
+        " | HP: " + hp +
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
         " | Num Of Movementst: " + numOfMovements +
         " | Movement Type: " + movementType.ToString()
         );
     }
+
+    public string getName()
+    { return name; }
 
     public int getHealth()
     {
@@ -258,14 +264,14 @@ public class Character
         }
     }
 
-    protected void BypassMovement(int enemyOnTileId)
+    protected void BypassMovement(int otherTileId)
     {
         canAttack = false; // Delete or not?
 
         Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
         DecreaseMovement();
 
-        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(enemyOnTileId);
+        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
         SetOnTileId(cellToMove.GetId());
@@ -302,7 +308,7 @@ public class Character
     {
         if (stats.stun) { return; }
 
-        playerStats.SubstractMana(stats.manaCost);
+        //playerStats.SubstractMana(stats.manaCost);
 
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;

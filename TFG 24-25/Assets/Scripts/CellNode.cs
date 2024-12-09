@@ -214,9 +214,18 @@ public class CellNode
             return null;
     }
 
-    CellConnection GetInverseDirection(int cellConnection)
+    public CellConnection GetInverseDirection(int cellConnection)
     {
         return (CellConnection)(-cellConnection);
+    }
+
+    public CellNode GetCellByInverseDirection(int cellConnection)
+    {
+        if (CheckConnectionNode((CellConnection)cellConnection))
+        {
+            return connectionDictionary[GetInverseDirection(cellConnection)];
+        }
+        return null;
     }
 
     public void SetPosition(Vector3 pos)
