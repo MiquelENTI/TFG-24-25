@@ -66,8 +66,6 @@ public class SelectToken : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (!GetComponent<PhotonView>().IsMine)
-                return;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
