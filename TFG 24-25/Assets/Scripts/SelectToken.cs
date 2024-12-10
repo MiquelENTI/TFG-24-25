@@ -187,7 +187,7 @@ public class SelectToken : MonoBehaviour
 
     void ChangeImageCardToDisplay()
     {
-        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
+        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
 
         cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
 
@@ -232,12 +232,12 @@ public class SelectToken : MonoBehaviour
 
             if (cardInBoard != null)
             {
-                Image cardImage = cardInBoard.Find("ImageSprite").GetComponent<Image>();
+                // Image cardImage = cardInBoard.Find("ImageSprite").GetComponent<Image>();
                 Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
                 Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
                 Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
 
-                cardImage.sprite = character.GetCardSprite();
+                // cardImage.sprite = character.GetCardSprite();
                 attackText.text = attack.ToString();
                 healthText.text = health.ToString();
                 manaText.text = manaCost.ToString();

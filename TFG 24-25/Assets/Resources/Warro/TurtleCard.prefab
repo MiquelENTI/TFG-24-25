@@ -115,3 +115,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: {fileID: 8236987784292183732, guid: 62366304a82bb5646aa34124f5d3a998, type: 3}
   token2: {fileID: 8236987784292183732, guid: 0a1d0a6f6d1d39940aa7b2f7b9d4550b, type: 3}
+  blueMaterial: {fileID: 0}
+  redMaterial: {fileID: 0}
