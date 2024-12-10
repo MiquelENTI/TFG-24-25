@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviourPun
             {
                 TurnManagerScript.TurnManager();
             }
+
         }
     }
 
@@ -123,10 +124,13 @@ public class PlayerController : MonoBehaviourPun
         Debug.Log("RPC llamado para activar el turno del otro jugador. ID de PhotonView: " + photonView.ViewID);
 
         Debug.Log("El turno es del otro jugador. Habilitando su botón.");
+        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue ? TeamType.BLUE : TeamType.RED);
+
+        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue ? TeamType.RED : TeamType.BLUE);
+
         endTurnButton.interactable = true;
         buttonText.text = "Finalizar Turno";
         SetCardsDragState(true);
-        
     }
 
     public void SetCardsDragState(bool state)

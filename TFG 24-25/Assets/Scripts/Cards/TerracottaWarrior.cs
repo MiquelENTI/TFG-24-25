@@ -13,6 +13,7 @@ public class TerracottaWarrior : Character
 
     public override void OnStartTurn()
     {
+        Debug.Log("AAAAAAAAAAAAASDASDASDASDASDASD");
         base.OnStartTurn();
         if (!hasMoved) 
         {

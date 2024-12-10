@@ -70,4 +70,24 @@ public class CharactersManager : Singleton<CharactersManager>
             character.OnEndTurn();
         }
     }
+
+    public void ActivateEndTurnCharactersByColor(TeamType type)
+    {
+        var temp = GetCharactersByColor(type);
+
+        foreach (Character character in temp)
+        {
+            character.OnEndTurn();
+        }
+    }
+
+    public void ActivateStartTurnCharactersByColor(TeamType type)
+    {
+        var temp = GetCharactersByColor(type);
+
+        foreach (Character character in temp)
+        {
+            character.OnStartTurn();
+        }
+    }
 }
