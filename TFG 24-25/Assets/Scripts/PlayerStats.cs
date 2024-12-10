@@ -7,7 +7,7 @@ public class PlayerStats : Singleton<PlayerStats>
     int totalMana = 5;
     int currentMana = 5;
     TeamType teamColor;
-    int score;
+    int score = 0;
     void Start()
     {
         

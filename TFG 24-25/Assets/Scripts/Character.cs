@@ -86,6 +86,12 @@ public class Character
     [SerializeField] public string description;
     protected PlayerStats playerStats;
 
+    bool inScoreTile14 = false;
+    bool inScoreTile15 = false;
+    bool inScoreTile20 = false;
+    bool inScoreTile21 = false;
+
+
     public int GetId()
     { return id; }
 
@@ -261,7 +267,12 @@ public class Character
             previousNode.RemoveCharacter();
 
             //previousNode.PrintStatus();
-            //cellToMove.PrintStatus();
+            cellToMove.PrintStatus();
+
+            inScoreTile14 = false;
+            inScoreTile15 = false;
+            inScoreTile20 = false;
+            inScoreTile21 = false;
         }
         else
         {
@@ -289,7 +300,46 @@ public class Character
 
     public virtual void OnStartTurn()
     {
-
+        if (onTile == 14)
+        {
+            if (inScoreTile14)
+            {
+                PlayerStats.Instance.IncreaseScore(teamType);
+                inScoreTile14 = false;
+                return;
+            }
+            inScoreTile14 = true;
+        }
+        else if (onTile == 15)
+        {
+            if (inScoreTile15)
+            {
+                PlayerStats.Instance.IncreaseScore(teamType);
+                inScoreTile15 = false;
+                return;
+            }
+            inScoreTile15 = true;
+        }
+        else if (onTile == 20)
+        {
+            if (inScoreTile20)
+            {
+                PlayerStats.Instance.IncreaseScore(teamType);
+                inScoreTile20 = false;
+                return;
+            }
+            inScoreTile20 = true;
+        }
+        else if (onTile == 21)
+        {
+            if (inScoreTile21)
+            {
+                PlayerStats.Instance.IncreaseScore(teamType);
+                inScoreTile21 = false;
+                return;
+            }
+            inScoreTile21 = true;
+        }
     }
     public virtual void OnEndTurn()
     {

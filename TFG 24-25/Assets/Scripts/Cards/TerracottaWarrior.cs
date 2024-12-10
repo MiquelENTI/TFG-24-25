@@ -11,9 +11,9 @@ public class TerracottaWarrior : Character
         maxHp = newStats.hp;
     }
 
-    public override void OnEndTurn()
+    public override void OnStartTurn()
     {
-        base.OnEndTurn();
+        base.OnStartTurn();
         if (!hasMoved) 
         {
             stats.hp += 3;
