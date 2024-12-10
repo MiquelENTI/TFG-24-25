@@ -18,7 +18,20 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 16, new CharacterStats("Death Horseman",3, 14, 4, 1000, MovementType.Basic, "DEATH HORSEMAN") }, // Death Horseman
         { 17, new CharacterStats("Terracotta Warrior",4, 4, 21, 1000, MovementType.Basic, "TERRACOTTA WARRIOR\n\nAl permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 7, 15, 1000, MovementType.Basic, "MAGIC KARP\n\nDestruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
-        { 22, new CharacterStats("Chicken",1, 2, 7,  1000, MovementType.Basic, "CHICKEN\n\nAl recibir daño el atacante recibe 16 de daño") }, // Chicken
+        { 21, new CharacterStats("Chicken",1, 2, 7,  1000, MovementType.Basic, "CHICKEN\n\nAl recibir daño el atacante recibe 16 de daño") }, // Chicken
+        { 22, new CharacterStats("Radev",4, 11, 17,  1000, MovementType.Basic, "RADEV\n\nCiro Di Marzio") }, // Radev
+        { 23, new CharacterStats("Richard",5, 15, 20,  1000, MovementType.Basic, "RICHARD\n\nEl padrino") }, // Richard
+        { 24, new CharacterStats("Joan",3, 8, 15,  1000, MovementType.Basic, "JOAN\n\nS'esta passant el Halo") }, // Joan
+        { 25, new CharacterStats("Hugo",3, 6, 17,  1000, MovementType.Basic, "HUGO\n\n") }, // Hugo
+        { 26, new CharacterStats("Hector",3, 9, 12,  1000, MovementType.Basic, "HECTOR\n\n") }, // Hector
+        { 27, new CharacterStats("Coronado",2, 5, 8,  1000, MovementType.Basic, "CORONADO\n\n") }, // Coronado
+        { 28, new CharacterStats("Jaumandreu",2, 4, 10,  1000, MovementType.Basic, "JAUMANDREU\n\n") }, // Jaumandreu
+        { 29, new CharacterStats("Mokiel",1, 3, 5,  1000, MovementType.Basic, "MOKIEL\n\nJuga al Call of Duty (de Roblox)") }, // Mokiel
+        { 30, new CharacterStats("Pinsa",1, 3, 7,  1000, MovementType.Basic, "PINSA\n\nEl programador que no programa") }, // Pinsa
+        { 31, new CharacterStats("Sergi",2, 6, 7,  1000, MovementType.Basic, "SERGI\n\nBallarí professional de bachata") }, // Sergi
+        { 32, new CharacterStats("Ferryklk",3, 10, 10,  1000, MovementType.Basic, "FERRYKLK\n\nJugador professional del Habbo") }, // Ferryklk
+        { 33, new CharacterStats("Carla",4, 9, 21,  1000, MovementType.Basic, "CARLA\n\nTé un caball") }, // Carla
+        { 34, new CharacterStats("Kiku",5, 12, 24,  1000, MovementType.Basic, "KIKU\n\nEl otro artist") }, // Kiku
         { -1, new CharacterStats("Dummy",0, 0, 99999, 0, MovementType.Basic, "") }, // DummyBase
     };
 
