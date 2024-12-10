@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : Singleton<PlayerStats>
@@ -8,6 +9,8 @@ public class PlayerStats : Singleton<PlayerStats>
     int currentMana = 5;
     TeamType teamColor;
     int score = 0;
+    [SerializeField] TMP_Text manaText;
+
     void Start()
     {
         
@@ -22,11 +25,13 @@ public class PlayerStats : Singleton<PlayerStats>
     public void SubstractMana(int amount)
     {
         currentMana -= amount;
+        manaText.text = "CURRENT MANA: " + currentMana;
     }
 
     public void ResetMana()
     {
         currentMana = totalMana;
+        manaText.text = "CURRENT MANA: " + currentMana;
     }
 
     public void IncreaseTotalMana(int amount)
@@ -44,11 +49,6 @@ public class PlayerStats : Singleton<PlayerStats>
     public void IncreaseScore(TeamType attackerColor)
     {
         score++;
-        if (score >= 3)
-        {
-            Debug.Log("GAME OVER");
-            // GAME FINISH
-        }
     }
 
     public TeamType GetTeamType()

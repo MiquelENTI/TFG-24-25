@@ -17,7 +17,7 @@ public class TerracottaWarrior : Character
         base.OnStartTurn();
         if (!hasMoved) 
         {
-            stats.hp += 3;
+            stats.hp += 1;
             if (stats.hp > maxHp)
             {
                 stats.hp = maxHp;
