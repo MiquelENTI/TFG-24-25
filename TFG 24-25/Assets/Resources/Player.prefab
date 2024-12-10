@@ -2085,6 +2085,7 @@ MonoBehaviour:
   endTurnButton: {fileID: 3395721374827029134}
   hand: {fileID: 5562135840009242353}
   IsBlue: 0
+  score: 0
 --- !u!114 &1067328207013939427
 MonoBehaviour:
   m_ObjectHideFlags: 0

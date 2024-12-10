@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dummy : Character
 {
+
+
     public Dummy(CharacterStats newStats, TeamType teamType) : base(newStats, teamType, null, null)
     {
     }
@@ -14,7 +16,7 @@ public class Dummy : Character
         if (attacker.GetTeamType() != teamType) 
         {
             Debug.Log("INCREASING POINTS");
-            PlayerStats.Instance.IncreaseScore(attacker.GetTeamType());
+            scoreManager.UpdateScore(attacker.GetTeamType());
         }
     }
 }

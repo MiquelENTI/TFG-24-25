@@ -71,6 +71,8 @@ public struct CharacterStats
 
 public class Character
 {
+
+    protected ScoreManager scoreManager;
     protected int id;
     protected CharacterStats stats;
     protected List<CellConnection> directions;
@@ -170,6 +172,15 @@ public class Character
 
     public Character(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite)
     {
+        GameObject scoreManagerObject = GameObject.Find("ScoreManager");
+        if (scoreManagerObject != null)
+        {
+            scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
+        }
+        else
+        {
+            Debug.LogError("No se encontró el GameObject 'ScoreManager' en la escena.");
+        }
         playerStats = PlayerStats.Instance;
         stats = newStats;
         directions = new List<CellConnection>();
@@ -237,6 +248,7 @@ public class Character
     {
         if (cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost)
         {
+            
             Debug.Log("SPAWN");
             DisableSpawn();
 
@@ -304,7 +316,7 @@ public class Character
         {
             if (inScoreTile14)
             {
-                PlayerStats.Instance.IncreaseScore(teamType);
+                scoreManager.UpdateScore(teamType);
                 inScoreTile14 = false;
                 return;
             }
@@ -314,7 +326,7 @@ public class Character
         {
             if (inScoreTile15)
             {
-                PlayerStats.Instance.IncreaseScore(teamType);
+                scoreManager.UpdateScore(teamType);
                 inScoreTile15 = false;
                 return;
             }
@@ -324,7 +336,7 @@ public class Character
         {
             if (inScoreTile20)
             {
-                PlayerStats.Instance.IncreaseScore(teamType);
+                scoreManager.UpdateScore(teamType);
                 inScoreTile20 = false;
                 return;
             }
@@ -334,7 +346,7 @@ public class Character
         {
             if (inScoreTile21)
             {
-                PlayerStats.Instance.IncreaseScore(teamType);
+                scoreManager.UpdateScore(teamType);
                 inScoreTile21 = false;
                 return;
             }

@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviourPun
     public GameObject hand;
     private Text buttonText;
     public bool IsBlue;
+    public int score = 0;
 
     private TurnManagerScript TurnManagerScript;
+    private ScoreManager scoreManager;
 
     int turnCounter = 0;
     TeamType turnColor;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviourPun
     void Start()
     {
         GameObject turnManagerObject = GameObject.Find("TurnManager");
+
         if (turnManagerObject != null)
         {
             TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
@@ -30,6 +33,16 @@ public class PlayerController : MonoBehaviourPun
         else
         {
             Debug.LogError("No se encontró el GameObject 'TurnManager' en la escena.");
+        }
+
+        GameObject scoreManagerObject = GameObject.Find("ScoreManager");
+        if (scoreManagerObject != null)
+        {
+            scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
+        }
+        else
+        {
+            Debug.LogError("No se encontró el GameObject 'ScoreManager' en la escena.");
         }
 
         if (!photonView.IsMine)
@@ -105,6 +118,17 @@ public class PlayerController : MonoBehaviourPun
                 TurnManagerScript.TurnManager();
             }
 
+        }
+    }
+
+    public void increaseScore()
+    {
+        score++;
+        Debug.Log("Puntaje del jugador incrementado. Nuevo puntaje: " + score);
+
+        if (photonView.IsMine && scoreManager != null)
+        {
+            photonView.RPC("UpdateScore", RpcTarget.All, IsBlue);
         }
     }
 

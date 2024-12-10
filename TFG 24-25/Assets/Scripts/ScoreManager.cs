@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviourPun
 {
-    // Start is called before the first frame update
+    public int BlueScore;
+    public int RedScore;
+    public TMP_Text redText;
+    public TMP_Text blueText;
+
+
     void Start()
     {
-        
+        BlueScore = 0;
+        RedScore = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    [PunRPC]
+    public void UpdateScore(TeamType teamType)
     {
-        
+        if (teamType == TeamType.BLUE)
+        {
+            BlueScore++;
+            Debug.Log("Puntaje azul incrementado. Nuevo puntaje: " + BlueScore);
+            blueText.text = "Blue Score: " + BlueScore;
+        }
+        else
+        {
+            RedScore++;
+            Debug.Log("Puntaje rojo incrementado. Nuevo puntaje: " + RedScore);
+            redText.text = "Red Score: " + RedScore;
+        }
     }
 }
