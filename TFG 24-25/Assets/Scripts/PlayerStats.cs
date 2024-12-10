@@ -32,6 +32,8 @@ public class PlayerStats : Singleton<PlayerStats>
     public void IncreaseTotalMana(int amount)
     {
         totalMana += amount;
+        if (totalMana >= 10)
+        { totalMana = 10; }
     }
 
     public int GetCurrentMana()

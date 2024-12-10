@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviourPun
 
     private TurnManagerScript TurnManagerScript;
 
+    int turnCounter = 0;
+    TeamType turnColor;
+
     void Start()
     {
         GameObject turnManagerObject = GameObject.Find("TurnManager");
@@ -127,6 +130,31 @@ public class PlayerController : MonoBehaviourPun
         CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue ? TeamType.BLUE : TeamType.RED);
 
         CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue ? TeamType.RED : TeamType.BLUE);
+
+        if (turnCounter % 2 == 0)
+        {
+            turnColor = TeamType.BLUE;
+            if (turnCounter != 0)
+            {
+                PlayerStats.Instance.IncreaseTotalMana(1);
+            }
+        }
+        else
+        {
+            turnColor = TeamType.RED;
+        }
+        PlayerStats.Instance.ResetMana();
+
+        turnCounter++;
+
+        if (turnCounter >= 10) // PINSA KNOWS
+        {
+            // GAME OVER
+        }
+        else
+        {
+
+        }
 
         endTurnButton.interactable = true;
         buttonText.text = "Finalizar Turno";
