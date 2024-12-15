@@ -22,6 +22,6 @@ public class Cavalier : Character
     {
         // Add this character to the hand WIP
         base.OnDeath(attacker);
-        stats.manaCost++;
+        //stats.manaCost++;
     }
 }

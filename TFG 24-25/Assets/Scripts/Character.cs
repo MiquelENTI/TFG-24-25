@@ -252,7 +252,7 @@ public class Character
             Debug.Log("SPAWN");
             DisableSpawn();
 
-            //playerStats.SubstractMana(stats.manaCost);
+            playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
@@ -265,7 +265,7 @@ public class Character
     {
         if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
-            //playerStats.SubstractMana(stats.manaCost);
+            playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
             Debug.Log(teamType.ToString() + " MOOOVE");
@@ -376,7 +376,7 @@ public class Character
     {
         if (stats.stun) { return; }
 
-        //playerStats.SubstractMana(stats.manaCost);
+        playerStats.SubstractMana(stats.manaCost);
 
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;
