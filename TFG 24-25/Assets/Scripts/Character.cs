@@ -19,7 +19,7 @@ public struct CharacterStats
     public MovementType movementType;
     public bool stun;
     public string description;
-
+    public bool checkAllInRangeCells;
     public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
     {
         name = _name;
@@ -30,6 +30,7 @@ public struct CharacterStats
         movementType = _movementType;
         stun = false;
         description = _description;
+        checkAllInRangeCells = false;
     }
 
     public void PrintStats()

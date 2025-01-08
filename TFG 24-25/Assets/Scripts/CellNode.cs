@@ -83,10 +83,11 @@ public class CellNode
             return false; 
         }
 
+        Character characterMoving = CharactersManager.Instance.GetCharacterInBoardById(characterId);
         bool isAttacking = false;
         if (isOccupied)
         {
-            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
+            if (characterMoving.GetTeamType() == character.GetTeamType())
             {
                 Debug.Log("Node to move is occupied by another character");
                 return false;
@@ -94,108 +95,98 @@ public class CellNode
             isAttacking = true;
         }
 
+        if (!characterMoving.GetCharacterStats().checkAllInRangeCells)
+        {
+            // Casi tots els personatges
+            return CheckDirectionsForCharacterOnlyOneRange(directions, characterMoving, isAttacking);
+        }
+        else
+        {
+            // Grasshopper i personatges amb comportament similar entren aqui
+            return CheckDirectionsForCharacterWithAllRange(directions, characterMoving, isAttacking);
+        }
+    }
+
+    bool CheckDirectionsForCharacterWithAllRange(List<CellConnection> directions, Character characterMoving, bool isAttacking)
+    {
         foreach (CellConnection direction in directions)
         {
-            if (!CheckConnectionNode(direction))
+            for (int i = characterMoving.GetCharacterStats().numOfMovements; i > 0; i--)
             {
-                continue;
-            }
+                CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, i);
 
-            Character characterMoving = connectionDictionary[direction].GetCharacter();
-            if (characterMoving == null)
-            {
-                continue;
-            }
-            if (characterMoving.GetId() != characterId)
-            {
-                continue;
-            }
+                nodeChecking.PrintStatus();
 
-            if (isAttacking)
-            {
-                
-                //if (characterMoving.CanAttack()) // Already has manacost calculation
-                if (true)
+                if (nodeChecking == null)
                 {
-                    characterMoving.Attack(this.character);
-                    
+                    continue;
                 }
-                return false;
-            }
 
-            return true;
+                Character checkCharacterMoving = nodeChecking.connectionDictionary[direction].GetCharacter();
+
+                if (checkCharacterMoving == null)
+                {
+                    continue;
+                }
+                if (checkCharacterMoving.GetId() != characterMoving.GetId())
+                {
+                    continue;
+                }
+
+                if (isAttacking)
+                {
+                    if (characterMoving.CanAttack())
+                    {
+                        characterMoving.Attack(this.character);
+                    }
+                    return false;
+                }
+                return true;
+            }
         }
         return false;
     }
 
-    bool CheckMultipleNodeForCharacterFromBase(List<CellConnection> directions, int characterId)
+    bool CheckDirectionsForCharacterOnlyOneRange(List<CellConnection> directions, Character characterMoving, bool isAttacking)
     {
-        for (int i = 0; i < baseConnections[CellConnection.DOWN].Count; i++)
-            baseConnections[CellConnection.DOWN][i].PrintStatus();
-
-        if (!isConnected)
+        foreach (CellConnection direction in directions)
         {
-            Debug.Log("Node to move is disconnected from grid");
-            return false;
-        }
+            CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, characterMoving.GetCharacterStats().numOfMovements);
 
-        bool isAttacking = false;
-        if (isOccupied)
-        {
-            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
-            {
-                Debug.Log("Do not Attack Yourself!");
-                return false;
-            }
-            isAttacking = true;
-        }
+            nodeChecking.PrintStatus();
 
-        CellConnection direction = CellConnection.DOWN;
-        if (character.GetTeamType() == TeamType.RED)
-        {
-            direction = CellConnection.DOWN;
-        }
-        else if (character.GetTeamType() == TeamType.BLUE)
-        {
-            direction = CellConnection.UP;
-        }
-
-        for (int i = 0; i < baseConnections[direction].Count; i++)
-        {
-
-            Character characterMoving = baseConnections[direction][i].GetCharacter();
-            if (characterMoving == null)
+            if (nodeChecking == null)
             {
                 continue;
             }
-            if (characterMoving.GetId() != characterId)
+
+            Character checkCharacterMoving = nodeChecking.connectionDictionary[direction].GetCharacter();
+
+            if (checkCharacterMoving == null)
+            {
+                continue;
+            }
+            if (checkCharacterMoving.GetId() != characterMoving.GetId())
             {
                 continue;
             }
 
             if (isAttacking)
             {
-                //if (characterMoving.CanAttack())
-                if (true)
+                if (characterMoving.CanAttack())
                 {
                     characterMoving.Attack(this.character);
-                    return false;
                 }
+                return false;
             }
+            return true;
         }
         return false;
     }
 
     public bool CheckNodes(List<CellConnection> directions, int characterId)
     {
-        if (!isBaseNode)
-        {
-           return CheckMultipleNodeForCharacter(directions, characterId);
-        }
-        else
-        {
-           return CheckMultipleNodeForCharacterFromBase(directions, characterId);
-        }
+        return CheckMultipleNodeForCharacter(directions, characterId);
     }
 
     public void AddConnection(CellConnection cellMovement, CellNode cellNode)
@@ -291,11 +282,6 @@ public class CellNode
         {
             cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
         }
-    }
-
-    public void IsBaseNode()
-    {
-        isBaseNode = true;
     }
 
     public CellNode GetCellByDirectionWithRange(CellNode currentCell, CellConnection direction, int range)
