@@ -170,7 +170,7 @@ public class SelectToken : MonoBehaviour
 
         CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
-        character.GetCharacterStats().PrintStats();
+        //character.GetCharacterStats().PrintStats();
     }
 
     void SeeTokenCard()

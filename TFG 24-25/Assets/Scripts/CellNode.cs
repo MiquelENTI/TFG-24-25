@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 
 public enum CellConnection { UP = 1, DOWN = -1, RIGHT = 2, LEFT = -2, UPRIGHT = 3, DOWNLEFT = -3, UPLEFT = 4, DOWNRIGHT = -4 }
-
+public enum CellScoreType { NOPOINTS = 0, NORMAL = 1, QUICK = 2 }
 public enum CellSpawnable { NONE = -1, RED = 0, BLUE = 1}
 public class CellNode
 {
@@ -22,6 +22,8 @@ public class CellNode
     CellSpawnable spawnable = CellSpawnable.NONE;
     Material cellMovementIndicator;
     bool isCellMovementIndicatorVisble = false;
+    
+    CellScoreType scoreType = CellScoreType.NOPOINTS;
 
     public CellNode(Vector3 position, GameObject movementIndicator)
     {  
@@ -314,6 +316,16 @@ public class CellNode
         }
 
         return null;
+    }
+    
+    
+    public void SetScoreNode(CellScoreType type)
+    {
+        scoreType = type;
+    }
+    public CellScoreType GetScoreNode()
+    {
+        return scoreType;
     }
 
     public void PrintStatus()

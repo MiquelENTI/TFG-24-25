@@ -79,6 +79,7 @@ public class Character
 
     protected TeamType teamType;
     protected int onTile;
+    protected int previousTile;
 
     protected bool toSpawn = true;
     protected bool canAttack = true;
@@ -88,6 +89,7 @@ public class Character
     [SerializeField] public string description;
     protected PlayerStats playerStats;
 
+    bool canScore = false;
     bool inScoreTile14 = false;
     bool inScoreTile15 = false;
     bool inScoreTile20 = false;
@@ -255,6 +257,7 @@ public class Character
             playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
+            previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 
             cellToMove.SetCharacter(this);
@@ -270,8 +273,9 @@ public class Character
 
             Debug.Log(teamType.ToString() + " MOOOVE");
 
-            CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+            CellNode previousNode = CellNodeManager.Instance.GetNodeById(previousTile);
 
+            previousTile = onTile;
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
@@ -303,6 +307,7 @@ public class Character
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
+        previousTile = onTile;
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
@@ -310,48 +315,75 @@ public class Character
         previousNode.RemoveCharacter();
     }
 
+    void TileScoring()
+    {
+        CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
+
+        switch (node.GetScoreNode())
+        {
+            case CellScoreType.NORMAL:
+                if (canScore && previousTile == onTile)
+                {
+                    scoreManager.UpdateScore(teamType);
+                    canScore = false;
+                    return;
+                }
+                canScore = true;
+            break;
+
+            case CellScoreType.QUICK:
+                scoreManager.UpdateScore(teamType);
+            break;
+
+            default:
+                break;
+        }
+    }
+
     public virtual void OnStartTurn()
     {
-        if (onTile == 14)
-        {
-            if (inScoreTile14)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile14 = false;
-                return;
-            }
-            inScoreTile14 = true;
-        }
-        else if (onTile == 15)
-        {
-            if (inScoreTile15)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile15 = false;
-                return;
-            }
-            inScoreTile15 = true;
-        }
-        else if (onTile == 20)
-        {
-            if (inScoreTile20)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile20 = false;
-                return;
-            }
-            inScoreTile20 = true;
-        }
-        else if (onTile == 21)
-        {
-            if (inScoreTile21)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile21 = false;
-                return;
-            }
-            inScoreTile21 = true;
-        }
+        TileScoring();
+        Debug.Log("OnStartPassed");
+        //if (onTile == 14)
+        //{
+        //    if (inScoreTile14)
+        //    {
+        //        scoreManager.UpdateScore(teamType);
+        //        inScoreTile14 = false;
+        //        return;
+        //    }
+        //    inScoreTile14 = true;
+        //}
+        //else if (onTile == 15)
+        //{
+        //    if (inScoreTile15)
+        //    {
+        //        scoreManager.UpdateScore(teamType);
+        //        inScoreTile15 = false;
+        //        return;
+        //    }
+        //    inScoreTile15 = true;
+        //}
+        //else if (onTile == 20)
+        //{
+        //    if (inScoreTile20)
+        //    {
+        //        scoreManager.UpdateScore(teamType);
+        //        inScoreTile20 = false;
+        //        return;
+        //    }
+        //    inScoreTile20 = true;
+        //}
+        //else if (onTile == 21)
+        //{
+        //    if (inScoreTile21)
+        //    {
+        //        scoreManager.UpdateScore(teamType);
+        //        inScoreTile21 = false;
+        //        return;
+        //    }
+        //    inScoreTile21 = true;
+        //}
     }
     public virtual void OnEndTurn()
     {

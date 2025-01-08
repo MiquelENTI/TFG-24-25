@@ -17,12 +17,14 @@ public class DeckManager : Singleton<DeckManager>
 
     private void Awake()
     {
+        /*
         Shuffle(cardsWarras);
         for (int i = 0; i < cardsWarras.Count; i++)
         {
             deckWarro.Enqueue(cardsWarras[i]);
         }
-        //CreateDeck();
+        */
+        CreateDeck();
     }
     void Start()
     {
@@ -36,7 +38,7 @@ public class DeckManager : Singleton<DeckManager>
         {
             Debug.Log("Pressed T");
             
-            DrawCardWarro();
+            DrawCard();
             //DrawCard();
         }
 

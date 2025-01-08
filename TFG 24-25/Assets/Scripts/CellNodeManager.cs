@@ -9,8 +9,6 @@ using UnityEngine.UIElements;
 public class CellNodeManager : Singleton<CellNodeManager>
 {
     private List<CellNode> nodeGrid;
-    private CellNode redBaseNode;
-    private CellNode blueBaseNode;
     private Vector2 gridSize;
     private int currentId;
 
@@ -90,18 +88,6 @@ public class CellNodeManager : Singleton<CellNodeManager>
             { new Vector2Int(1, 1),  CellConnection.DOWNRIGHT}
         };
 
-        redBaseNode = redBase;
-        blueBaseNode = blueBase;
-
-        redBaseNode.IsBaseNode();
-        blueBaseNode.IsBaseNode();
-
-        redBaseNode.baseConnections = new();
-        blueBaseNode.baseConnections = new();
-
-        List<CellNode> redBaseNodes = new();
-        List<CellNode> blueBaseNodes = new();
-
         for (int j = 0; j < gridSize.y; j++) 
         {
             
@@ -121,33 +107,21 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     }
                 }
 
-                if (j == 0)
-                {
-                    nodeGrid[(int)((j * gridSize.x) + i)].AddConnection(CellConnection.UP, redBaseNode);
-                    redBaseNodes.Add(nodeGrid[(int)(j * gridSize.x) + i]);
-                }
-                else if (j == gridSize.y-1)
-                {
-                    nodeGrid[(int)(j * gridSize.x) + i].AddConnection(CellConnection.DOWN, blueBaseNode);
-                    blueBaseNodes.Add(nodeGrid[(int)(j * gridSize.x) + i]);
-                }
             }
         }
-
-        redBaseNode.AddConnectionToBase(CellConnection.DOWN, redBaseNodes);
-        blueBaseNode.AddConnectionToBase(CellConnection.UP, blueBaseNodes);
-
-        redBaseNode.PrintStatus();
-        blueBaseNode.PrintStatus();
     }
 
-    public void CreateSpawnableTiles(int numSpawnableRows)
+    public void CreateSpecialTiles(int numSpawnableRows)
     {
-        for (int i = 0;i < gridSize.x * numSpawnableRows ;i++)
+        for (int i = 0;i < gridSize.x * numSpawnableRows; i++)
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
             nodeGrid[nodeGrid.Count - i-3].SetSpawnable(CellSpawnable.BLUE);
         }
+
+        SetScoreNodes2x2();
+        //SetScoreNodes4x2();
+        //SetQuickScoreNodes();
     }
 
     void ToggleVisibilityPossibleMovements(int tileId) // Character's OnTile
@@ -182,5 +156,42 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
             nextCell.ChangeMovementIndicatorVisibility();
         }
+    }
+
+    void SetScoreNodes2x2()
+    {
+        nodeGrid[14].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[15].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[20].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[21].SetScoreNode(CellScoreType.NORMAL);
+    }
+
+    void SetScoreNodes4x2()
+    {
+        nodeGrid[13].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[14].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[15].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[16].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[19].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[20].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[21].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[22].SetScoreNode(CellScoreType.NORMAL);
+    }
+
+    void SetQuickScoreNodes()
+    {
+        nodeGrid[0].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[1].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[2].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[3].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[4].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[5].SetScoreNode(CellScoreType.QUICK);
+
+        nodeGrid[30].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[31].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[32].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[33].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[34].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[35].SetScoreNode(CellScoreType.QUICK);
     }
 }
