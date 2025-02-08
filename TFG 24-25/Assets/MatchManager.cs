@@ -1,3 +1,4 @@
+using System; // Añade esta línea para usar System.Guid
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using Photon.Realtime;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
-    private string roomName = "SalaDePrueba";
+    // private string roomName = "SalaDePrueba"; // Elimina el nombre de sala fijo
 
     public GameObject playerPrefab;
 
@@ -21,19 +22,33 @@ public class MatchManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Conectado a Photon.");
-        CreateOrJoinRoom(roomName);
+        JoinOrCreateRoom();
     }
 
-    public void CreateOrJoinRoom(string roomName)
+    public void JoinOrCreateRoom()
     {
-        Debug.Log("Intentando unirse o crear la sala: " + roomName);
+        Debug.Log("Intentando unirse a una sala aleatoria...");
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Debug.Log("No se pudo unir a una sala aleatoria, creando una nueva sala.");
+        CreateNewRoom();
+    }
+
+    void CreateNewRoom()
+    {
+        string roomName = "Sala_" + Guid.NewGuid().ToString();
+        Debug.Log("Creando nueva sala: " + roomName);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 2;
         roomOptions.IsVisible = true;
         roomOptions.IsOpen = true;
 
-        PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
+        PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
     }
+
 
     public override void OnJoinedRoom()
     {
@@ -93,17 +108,17 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log("Jugador entró a la sala: " + newPlayer.NickName);
+        Debug.Log("Jugador entró a la sala: " + newPlayer.NickName + " en sala: " + PhotonNetwork.CurrentRoom.Name);
 
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-            Debug.Log("Ambos jugadores están en la sala. Comenzando el juego...");
+            Debug.Log("Sala: " + PhotonNetwork.CurrentRoom.Name + " está llena. Comenzando el juego...");
         }
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        Debug.Log("Jugador salió de la sala: " + otherPlayer.NickName);
+        Debug.Log("Jugador salió de la sala: " + otherPlayer.NickName + " en sala: " + PhotonNetwork.CurrentRoom.Name);
     }
 
     private Vector3 GetSpawnPosition()

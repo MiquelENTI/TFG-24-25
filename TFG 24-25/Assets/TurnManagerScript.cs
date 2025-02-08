@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using TMPro;
 
 public class TurnManagerScript : MonoBehaviourPun
 {
     [SerializeField] bool IsBlue = true;
+    int turnCounter = 1;
 
     PhotonView photonView;
+
+    public TMP_Text turnCounterElement;
 
     private void Awake()
     {
@@ -44,6 +48,10 @@ public class TurnManagerScript : MonoBehaviourPun
     {
         IsBlue = newIsBlue;
         Debug.Log("El turno ha cambiado. Ahora es turno " + (IsBlue ? "Azul" : "Rojo"));
+        if(newIsBlue)        {
+            turnCounter++;
+            turnCounterElement.text = "Turn Number: " + turnCounter;
+        }
     }
 
     public bool getIsBlue()
