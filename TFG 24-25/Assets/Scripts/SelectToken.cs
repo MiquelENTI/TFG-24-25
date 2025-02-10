@@ -106,7 +106,7 @@ public class SelectToken : MonoBehaviour
         if (!GetComponent<PhotonView>().IsMine)
             return;
 
-        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        if (TurnManagerScript != null && TurnManagerScript.Instance.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
             return;

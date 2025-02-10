@@ -269,6 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190265392}
   - component: {fileID: 190265393}
+  - component: {fileID: 190265394}
   m_Layer: 0
   m_Name: RedHold
   m_TagString: RedHold
@@ -303,6 +304,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a099e86e43ab2b4cb1e9d8c0e09df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamType: 0
+  TEMP: {fileID: 0}
+--- !u!114 &190265394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190265391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &431476423
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1241294933}
   - component: {fileID: 1241294934}
+  - component: {fileID: 1241294935}
   m_Layer: 0
   m_Name: BlueHold
   m_TagString: BlueHold
@@ -893,6 +919,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a099e86e43ab2b4cb1e9d8c0e09df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamType: 1
+  TEMP: {fileID: 8236987784292183732, guid: 44c8cc010a05eee4aacd26c6b819b6e6, type: 3}
+--- !u!114 &1241294935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241294932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 5
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1256807047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,8 +1305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1423964214}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
-  redBase: {fileID: 2090676038}
-  blueBase: {fileID: 1350274496}
   GridSize: {x: 6, y: 6}
   cornerPrefab: {fileID: 5497220024947823353, guid: 5967d52bbb037ed408581af99ae90785, type: 3}
   edgePrefab: {fileID: 5680987117837267394, guid: 9074d848ecf4191478bd7200672acbd5, type: 3}

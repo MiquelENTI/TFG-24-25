@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class CardHold : MonoBehaviour
 {
-    TeamType teamType;
+    [SerializeField] TeamType teamType;
     List<GameObject> cards;
     float cardSize;
+
+    public GameObject TEMP;
+
+    PhotonView photonView;
 
     void Start()
     {
         cards = new List<GameObject>();
         cardSize = 1f;
+        photonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void SetTeamType(TeamType teamType)

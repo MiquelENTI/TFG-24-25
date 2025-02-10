@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3596010599827206926}
   - component: {fileID: 7913404354041366087}
   - component: {fileID: -1593013520869109873}
+  - component: {fileID: -8121625343111765459}
   m_Layer: 0
   m_Name: 3D Card
   m_TagString: Untagged
@@ -128,3 +129,15 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-8121625343111765459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917545703673450406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa3b8b5759f4594d86205b16fe04aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

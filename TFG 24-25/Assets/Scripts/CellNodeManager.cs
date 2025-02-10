@@ -13,16 +13,44 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private int currentId;
 
     public UnityEvent<int> togglePossibleMovements;
+    public UnityEvent<TeamType> togglePossibleSpawnTiles;
+
+    private List<CellNode> redSpawnTiles;
+    private List<CellNode> blueSpawnTiles;
 
     private void Awake()
     {
         nodeGrid = new List<CellNode>();
+        redSpawnTiles = new List<CellNode>();
+        blueSpawnTiles = new List<CellNode>();
 
         togglePossibleMovements = new UnityEvent<int>();
 
         togglePossibleMovements.AddListener((int tileId) =>
         {
             ToggleVisibilityPossibleMovements(tileId);
+        });
+
+        togglePossibleSpawnTiles = new UnityEvent<TeamType>();
+        togglePossibleSpawnTiles.AddListener((TeamType teamType) =>
+        {
+            switch (teamType)
+            {
+                case TeamType.RED:
+                    foreach (CellNode spawnableTile in redSpawnTiles)
+                    {
+                        spawnableTile.ChangeMovementIndicatorVisibility();
+                    }
+                    break;
+                case TeamType.BLUE:
+                    foreach (CellNode spawnableTile in blueSpawnTiles)
+                    {
+                        spawnableTile.ChangeMovementIndicatorVisibility();
+                    }
+                    break;
+                default:
+                    break;
+            }
         });
     }
 
@@ -116,7 +144,9 @@ public class CellNodeManager : Singleton<CellNodeManager>
         for (int i = 0;i < gridSize.x * numSpawnableRows; i++)
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
-            nodeGrid[nodeGrid.Count - i-3].SetSpawnable(CellSpawnable.BLUE);
+            redSpawnTiles.Add(nodeGrid[i]);
+            nodeGrid[nodeGrid.Count - i-1].SetSpawnable(CellSpawnable.BLUE);
+            blueSpawnTiles.Add(nodeGrid[nodeGrid.Count - i - 1]);
         }
 
         SetScoreNodes2x2();

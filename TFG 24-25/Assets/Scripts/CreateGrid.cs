@@ -11,9 +11,6 @@ public class CreateGrid : MonoBehaviour
 
     [SerializeField] GameObject cell;
 
-    [SerializeField] GameObject redBase;
-    [SerializeField] GameObject blueBase;
-
     [SerializeField] Vector2 GridSize;
 
     [SerializeField] GameObject cornerPrefab;
@@ -57,26 +54,8 @@ public class CreateGrid : MonoBehaviour
         }
 
 
-        // TEMP
-        cell.transform.localScale = new Vector3(rows*1.5f, 2f, columns/3f);
-
-        GameObject obj2 = Instantiate(cell, redBase.transform.position, Quaternion.identity, board.transform.GetChild(0));
-        obj2.GetComponent<Tile>().tileId = (int)(rows*columns);
-        GameObject obj3 = Instantiate(cell, blueBase.transform.position, Quaternion.identity, board.transform.GetChild(0));
-        obj3.GetComponent<Tile>().tileId = (int)(rows * columns)+1;
-        CellNode redBaseNode = new CellNode(obj2.transform.position, obj2);
-        CellNode blueBaseNode = new CellNode(obj3.transform.position, obj3);
-
-        Dummy dummy = new Dummy(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.RED);
-        Dummy dummy2 = new Dummy(TemporalCardDataBase.Instance.GetTemporalStats(-1), TeamType.BLUE);
-
-        redBaseNode.SetCharacter(dummy);
-        blueBaseNode.SetCharacter(dummy2);
-
-        // END TEMP
 
         CellNodeManager.Instance.CreateSpecialTiles(2);
-        CellNodeManager.Instance.CreateDefaultConnections(redBaseNode, blueBaseNode);
         //CellNodeManager.Instance.PrintNodeGridStatus();
     }
 
