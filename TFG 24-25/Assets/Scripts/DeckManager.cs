@@ -55,7 +55,12 @@ public class DeckManager : Singleton<DeckManager>
     {
         if (deck.Count == 0) { return; }
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-        instantiatedCard.GetComponent<DragableUIObject>().SetDragableUIObject(deck.Dequeue());
+
+
+        GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
+        instantiatedCard.transform.parent = cardHold.transform;
+        cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
+        //instantiatedCard.GetComponent<DragableUIObject>().SetDragableUIObject(deck.Dequeue());
     }
 
     public void DrawCardWarro()

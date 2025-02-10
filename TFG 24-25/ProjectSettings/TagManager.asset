@@ -9,6 +9,8 @@ TagManager:
   - RedHand
   - BlueHand
   - TileCollider
+  - RedHold
+  - BlueHold
   layers:
   - Default
   - TransparentFX
