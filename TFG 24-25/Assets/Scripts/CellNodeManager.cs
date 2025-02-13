@@ -141,7 +141,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
     public void CreateSpecialTiles(int numSpawnableRows)
     {
-        for (int i = 0;i < gridSize.x * numSpawnableRows; i++)
+        for (int i = 0; i < gridSize.x * numSpawnableRows; i++)
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
             redSpawnTiles.Add(nodeGrid[i]);

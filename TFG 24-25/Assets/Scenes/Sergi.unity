@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38948f91a27aaef48afbd66708b8ceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabCard: {fileID: 4917545703673450406, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
+  prefabCard: {fileID: 7913749586306197705, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   cardsWarras:
   - {fileID: 6149997832755208218, guid: ff18cc7a16ae31146933b4e1fbf7f539, type: 3}
   - {fileID: 6149997832755208218, guid: f5ea37b1116d24042a2ad666aa594e8b, type: 3}

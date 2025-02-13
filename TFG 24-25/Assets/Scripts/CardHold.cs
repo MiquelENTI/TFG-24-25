@@ -23,6 +23,14 @@ public class CardHold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            ReorganizeCards();
+            for (int i = 0; i < cards.Count; i++)
+            {
+                Debug.Log(cards[i].name);
+            }
+        }
     }
 
     public void SetTeamType(TeamType teamType)
@@ -37,11 +45,11 @@ public class CardHold : MonoBehaviour
     public void AddCardToHold(GameObject card)
     {
         cards.Add(card);
-        card.transform.localRotation = Quaternion.Euler(0,0,0);
+        //card.transform.localRotation = Quaternion.Euler(0,0,0);
         ReorganizeCards();
     }
 
-    void ReorganizeCards()
+    public void ReorganizeCards()
     {
         float padding = 0.1f;
         float totalLength = cards.Count * cardSize + (cards.Count-1)*padding;
@@ -50,11 +58,18 @@ public class CardHold : MonoBehaviour
 
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].transform.position = new Vector3(
+            MoveCard(cards[i], new Vector3(
                 transform.position.x - halfLength + (i * (cardSize + padding)),
                 transform.position.y,
-                transform.position.z);
-
+                transform.position.z));
+            Debug.Log("Card " + i + " POS: " + cards[i].transform.position);
         }
+    }
+    
+    void MoveCard(GameObject gameObject, Vector3 newPosition)
+    {
+        gameObject.transform.position = newPosition;
+        gameObject.transform.GetChild(0).localPosition = Vector3.zero;
+        gameObject.transform.GetChild(1).localPosition = Vector3.zero;
     }
 }

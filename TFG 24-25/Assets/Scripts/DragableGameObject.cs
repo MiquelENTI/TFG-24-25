@@ -12,11 +12,19 @@ public class DragableGameObject : MonoBehaviour
 
     CardHold cardHold;
 
+    GameObject spawnTileCollider;
+
+    public bool isInside = false;
+
+    int tileHovering;
+    bool isOutsideBoard = true;
+
 
     void Start()
     {
-        
-        cardHold = transform.parent.GetComponent<CardHold>();
+        cardHold = transform.parent.parent.GetComponent<CardHold>();
+
+        spawnTileCollider = transform.parent.GetChild(1).gameObject;
     }
 
     Vector3 GetMouseWorldPos()
@@ -26,14 +34,14 @@ public class DragableGameObject : MonoBehaviour
         if (plane.Raycast(ray, out var enter))
         {
             mousePos = ray.GetPoint(enter);
-            mousePos.y = 0.75f;
+            mousePos.y = 1.5f;
         }
         return mousePos;
     }
 
     private void OnMouseDown()
     {
-        if (!GetComponent<PhotonView>().IsMine)
+        if (!GetComponentInParent<PhotonView>().IsMine)
             return;
 
 
@@ -44,7 +52,7 @@ public class DragableGameObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (!GetComponent<PhotonView>().IsMine)
+        if (!GetComponentInParent<PhotonView>().IsMine)
             return;
 
         Vector3 newMousePos = GetMouseWorldPos();
@@ -55,12 +63,30 @@ public class DragableGameObject : MonoBehaviour
         }
 
         transform.position = newMousePos;
+        spawnTileCollider.transform.position = transform.position;
     }
 
     private void OnMouseUp()
     {
-
+        if (isOutsideBoard)
+        {
+            cardHold.ReorganizeCards();
+        }
+        else
+        {
+            // Spawn Token in tileHovering
+        }
         
         CellNodeManager.Instance.togglePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
+    }
+
+    public void SetOnTileId(int tileId)
+    {
+        tileHovering = tileId;
+    }
+
+    public void SetOutsideBoard(bool isOutside)
+    {
+        isOutsideBoard = isOutside;
     }
 }
