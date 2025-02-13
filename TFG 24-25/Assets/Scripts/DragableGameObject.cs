@@ -11,7 +11,7 @@ public class DragableGameObject : MonoBehaviour
     Plane plane = new Plane(Vector3.up, Vector3.up);
 
     CardHold cardHold;
-    PhotonView photonView;
+
 
     void Start()
     {
