@@ -13,6 +13,7 @@ public struct CharacterStats
 {
     public string name;
     public int hp;
+    public int maxHp;
     public int dmg;
     public int manaCost;
     public int numOfMovements;
@@ -23,6 +24,7 @@ public struct CharacterStats
     public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
     {
         name = _name;
+        maxHp = _hp;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
@@ -326,6 +328,7 @@ public class Character
                 if (canScore && previousTile == onTile)
                 {
                     scoreManager.UpdateScore(teamType);
+                    OnPointsScoring();
                     canScore = false;
                     return;
                 }
@@ -334,6 +337,7 @@ public class Character
 
             case CellScoreType.QUICK:
                 scoreManager.UpdateScore(teamType);
+                OnPointsScoring();
             break;
 
             default:
@@ -344,47 +348,8 @@ public class Character
     public virtual void OnStartTurn()
     {
         TileScoring();
+
         Debug.Log("OnStartPassed");
-        //if (onTile == 14)
-        //{
-        //    if (inScoreTile14)
-        //    {
-        //        scoreManager.UpdateScore(teamType);
-        //        inScoreTile14 = false;
-        //        return;
-        //    }
-        //    inScoreTile14 = true;
-        //}
-        //else if (onTile == 15)
-        //{
-        //    if (inScoreTile15)
-        //    {
-        //        scoreManager.UpdateScore(teamType);
-        //        inScoreTile15 = false;
-        //        return;
-        //    }
-        //    inScoreTile15 = true;
-        //}
-        //else if (onTile == 20)
-        //{
-        //    if (inScoreTile20)
-        //    {
-        //        scoreManager.UpdateScore(teamType);
-        //        inScoreTile20 = false;
-        //        return;
-        //    }
-        //    inScoreTile20 = true;
-        //}
-        //else if (onTile == 21)
-        //{
-        //    if (inScoreTile21)
-        //    {
-        //        scoreManager.UpdateScore(teamType);
-        //        inScoreTile21 = false;
-        //        return;
-        //    }
-        //    inScoreTile21 = true;
-        //}
     }
     public virtual void OnEndTurn()
     {
@@ -402,6 +367,11 @@ public class Character
 
     }
     public virtual void OnAttack(Character attacker)
+    {
+
+    }
+
+    public virtual void OnPointsScoring()
     {
 
     }
@@ -438,6 +408,12 @@ public class Character
         stats.dmg -= amount;
         if (stats.dmg <= 0)
         { stats.dmg = 0; }
+    }
+
+    public void Heal(int amount)
+    {
+        stats.hp += amount;
+        stats.hp = Mathf.Max(stats.hp, stats.maxHp);
     }
 
     public void ApplyStun()

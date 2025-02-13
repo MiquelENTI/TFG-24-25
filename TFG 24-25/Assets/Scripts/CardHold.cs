@@ -23,14 +23,6 @@ public class CardHold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.O))
-        {
-            ReorganizeCards();
-            for (int i = 0; i < cards.Count; i++)
-            {
-                Debug.Log(cards[i].name);
-            }
-        }
     }
 
     public void SetTeamType(TeamType teamType)
@@ -62,7 +54,6 @@ public class CardHold : MonoBehaviour
                 transform.position.x - halfLength + (i * (cardSize + padding)),
                 transform.position.y,
                 transform.position.z));
-            Debug.Log("Card " + i + " POS: " + cards[i].transform.position);
         }
     }
     

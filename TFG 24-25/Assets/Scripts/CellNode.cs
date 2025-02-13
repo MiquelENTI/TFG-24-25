@@ -46,6 +46,22 @@ public class CellNode
         return connectionDictionary[cellConnection];
     }
 
+    public List<CellNode> GetSurrondingCells()
+    {
+        List<CellNode> temp = new List<CellNode>();
+
+        temp.Add(GetCellByDirection(CellConnection.UP));
+        temp.Add(GetCellByDirection(CellConnection.UPRIGHT));
+        temp.Add(GetCellByDirection(CellConnection.RIGHT));
+        temp.Add(GetCellByDirection(CellConnection.DOWNRIGHT));
+        temp.Add(GetCellByDirection(CellConnection.DOWN));
+        temp.Add(GetCellByDirection(CellConnection.DOWNLEFT));
+        temp.Add(GetCellByDirection(CellConnection.LEFT));
+        temp.Add(GetCellByDirection(CellConnection.UPLEFT));
+
+        return temp;
+    }
+
     public bool CheckSingleNode(CellConnection direction, int characterId)
     {
         if (CheckConnectionNode(direction))
