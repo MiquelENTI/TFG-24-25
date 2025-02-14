@@ -19,17 +19,17 @@ public class ScoreManager : MonoBehaviourPun
     }
 
     [PunRPC]
-    public void UpdateScore(TeamType teamType)
+    public void UpdateScore(TeamType teamType, int amount)
     {
         if (teamType == TeamType.BLUE)
         {
-            BlueScore++;
+            BlueScore += amount;
             Debug.Log("Puntaje azul incrementado. Nuevo puntaje: " + BlueScore);
             blueText.text = "Blue Score: " + BlueScore;
         }
         else
         {
-            RedScore++;
+            RedScore += amount;
             Debug.Log("Puntaje rojo incrementado. Nuevo puntaje: " + RedScore);
             redText.text = "Red Score: " + RedScore;
         }

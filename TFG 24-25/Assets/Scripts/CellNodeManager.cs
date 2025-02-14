@@ -150,6 +150,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
 
         SetScoreNodes2x2();
+        SetEnemyScoreNodes();
         //SetScoreNodes4x2();
         //SetQuickScoreNodes();
     }
@@ -223,5 +224,22 @@ public class CellNodeManager : Singleton<CellNodeManager>
         nodeGrid[33].SetScoreNode(CellScoreType.QUICK);
         nodeGrid[34].SetScoreNode(CellScoreType.QUICK);
         nodeGrid[35].SetScoreNode(CellScoreType.QUICK);
+    }
+
+    void SetEnemyScoreNodes()
+    {
+        nodeGrid[0].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[1].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[2].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[3].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[4].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[5].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+
+        nodeGrid[30].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[31].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[32].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[33].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[34].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[35].SetScoreAmount(CellScoreAmount.ENEMYROWS);
     }
 }

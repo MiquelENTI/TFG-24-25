@@ -322,12 +322,17 @@ public class Character
     {
         CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
 
+        
+
         switch (node.GetScoreNode())
         {
             case CellScoreType.NORMAL:
+                // Prevent scoring in your own scoring tiles
+                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                { return; }
                 if (canScore && previousTile == onTile)
                 {
-                    scoreManager.UpdateScore(teamType);
+                    scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
                     OnPointsScoring();
                     canScore = false;
                     return;
@@ -336,7 +341,10 @@ public class Character
             break;
 
             case CellScoreType.QUICK:
-                scoreManager.UpdateScore(teamType);
+                // Prevent scoring in your own scoring tiles
+                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                { return; }
+                scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
                 OnPointsScoring();
             break;
 
