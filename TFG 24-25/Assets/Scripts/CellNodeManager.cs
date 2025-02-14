@@ -149,10 +149,10 @@ public class CellNodeManager : Singleton<CellNodeManager>
             blueSpawnTiles.Add(nodeGrid[nodeGrid.Count - i - 1]);
         }
 
-        SetScoreNodes2x2();
+        //SetScoreNodes2x2();
         SetEnemyScoreNodes();
-        //SetScoreNodes4x2();
-        //SetQuickScoreNodes();
+        SetScoreNodes4x2();
+        SetQuickScoreNodes();
     }
 
     void ToggleVisibilityPossibleMovements(int tileId) // Character's OnTile
@@ -199,14 +199,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
     void SetScoreNodes4x2()
     {
-        nodeGrid[13].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[14].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[15].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[16].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[19].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[20].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[21].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[22].SetScoreNode(CellScoreType.NORMAL);
+        nodeGrid[13].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[14].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[15].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[16].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[19].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[20].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[21].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[22].SetScoreNode(CellScoreType.QUICK);
     }
 
     void SetQuickScoreNodes()

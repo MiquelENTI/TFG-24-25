@@ -10,13 +10,4 @@ public class Dummy : Character
     {
     }
 
-    public override void OnAttack(Character attacker)
-    {
-        Debug.Log("DUMMY ATTACKED");
-        if (attacker.GetTeamType() != teamType) 
-        {
-            Debug.Log("INCREASING POINTS");
-            scoreManager.UpdateScore(attacker.GetTeamType());
-        }
-    }
 }
