@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Photon.Pun;
 using UnityEngine;
 
@@ -59,6 +60,7 @@ public class DragableGameObject : MonoBehaviour
 
     public void SetOutsideBoard(bool isOutside)
     {
+        Debug.Log("Activated");
         isOutsideBoard = isOutside;
     }
 }
