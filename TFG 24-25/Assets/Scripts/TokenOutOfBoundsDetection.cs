@@ -9,12 +9,12 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
     {
         if (other.gameObject.tag == "Token")
         {
-            other.GetComponent<SelectToken>().SetOutsideBoard(true);
+            other.GetComponent<TokenGameObject>().SetOutsideBoard(true);
         }
         else if (other.gameObject.tag == "SpawnTileCollider")
         {
             Debug.Log("OUTSIDE");
-            other.transform.parent.GetChild(0).GetComponent<DragableGameObject>().SetOutsideBoard(true);
+            other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOutsideBoard(true);
         }
     }
 
@@ -22,12 +22,12 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
     {
         if (other.gameObject.tag == "Token")
         {
-            other.GetComponent<SelectToken>().SetOutsideBoard(false);
+            other.GetComponent<TokenGameObject>().SetOutsideBoard(false);
         }
         else if (other.gameObject.tag == "SpawnTileCollider")
         {
             Debug.Log("INSIDE");
-            other.transform.parent.GetChild(0).GetComponent<DragableGameObject>().SetOutsideBoard(false);
+            other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOutsideBoard(false);
         }
     }
 }

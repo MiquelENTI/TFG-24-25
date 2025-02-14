@@ -2,32 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class DragableGameObject : MonoBehaviour
 {
-    Vector3 mouseDownPos;
-    bool isDragging = false;
-    Plane plane = new Plane(Vector3.up, Vector3.up);
+    protected Plane plane;
+    protected Vector3 mouseDownPos;
+    protected bool isDragging = false;
+    protected int tileHovering = -1;
+    
+    protected bool isOutsideBoard = true;
 
-    CardHold cardHold;
-
-    GameObject spawnTileCollider;
-
-    public bool isInside = false;
-
-    int tileHovering;
-    bool isOutsideBoard = true;
-
-
-    void Start()
-    {
-        cardHold = transform.parent.parent.GetComponent<CardHold>();
-
-        spawnTileCollider = transform.parent.GetChild(1).gameObject;
-    }
-
-    Vector3 GetMouseWorldPos()
+    protected Vector3 GetMouseWorldPos()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Vector3 mousePos = Vector3.zero;
@@ -39,18 +24,15 @@ public class DragableGameObject : MonoBehaviour
         return mousePos;
     }
 
-    private void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         if (!GetComponentInParent<PhotonView>().IsMine)
             return;
 
-
-
         mouseDownPos = GetMouseWorldPos();
-        CellNodeManager.Instance.togglePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
     }
 
-    private void OnMouseDrag()
+    protected virtual void OnMouseDrag()
     {
         if (!GetComponentInParent<PhotonView>().IsMine)
             return;
@@ -63,21 +45,11 @@ public class DragableGameObject : MonoBehaviour
         }
 
         transform.position = newMousePos;
-        spawnTileCollider.transform.position = transform.position;
     }
 
-    private void OnMouseUp()
+    protected virtual void OnMouseUp()
     {
-        if (isOutsideBoard)
-        {
-            cardHold.ReorganizeCards();
-        }
-        else
-        {
-            // Spawn Token in tileHovering
-        }
-        
-        CellNodeManager.Instance.togglePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
+        isDragging = false;
     }
 
     public void SetOnTileId(int tileId)

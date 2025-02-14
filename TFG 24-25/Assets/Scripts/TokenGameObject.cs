@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class SelectToken : MonoBehaviour
+public class TokenGameObject : DragableGameObject
 {
-    Plane plane;
-    int tileHovering = -1;
+    
 
     // TEMP?
     Character character;
@@ -17,9 +16,6 @@ public class SelectToken : MonoBehaviour
 
     [SerializeField] int TEMP_id;
 
-    Vector3 mouseDownPos;
-    bool isDragging = false;
-    bool isOutsideBoard = true;
 
     [SerializeField] bool IsBlue = true;
 
@@ -38,8 +34,6 @@ public class SelectToken : MonoBehaviour
 
     void Start()
     {
-        
-
         GameObject turnManagerObject = GameObject.Find("TurnManager");
         if (turnManagerObject != null)
         {
@@ -64,6 +58,7 @@ public class SelectToken : MonoBehaviour
 
     void Update()
     {
+        // See card Description
         if (Input.GetMouseButtonDown(1))
         {
 
@@ -79,32 +74,20 @@ public class SelectToken : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            CharactersManager.Instance.TriggerOnStartTurn();
-        }
-        if (Input.GetKeyUp(KeyCode.N))
-        {
-            CharactersManager.Instance.TriggerOnEndTurn();
-        }
+        //if (Input.GetKeyUp(KeyCode.M))
+        //{
+        //    CharactersManager.Instance.TriggerOnStartTurn();
+        //}
+        //if (Input.GetKeyUp(KeyCode.N))
+        //{
+        //    CharactersManager.Instance.TriggerOnEndTurn();
+        //}
     }
 
-    Vector3 GetMouseWorldPos()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector3 mousePos = Vector3.zero;
-        if (plane.Raycast(ray, out var enter))
-        {
-            mousePos = ray.GetPoint(enter);
-            mousePos.y = 0.75f;
-        }
-        return mousePos;
-    }
 
-    private void OnMouseDown()
+    protected override void OnMouseDown()
     {
-        if (!GetComponent<PhotonView>().IsMine)
-            return;
+        base.OnMouseDown();
 
         if (TurnManagerScript != null && TurnManagerScript.Instance.getIsBlue() != IsBlue)
         {
@@ -112,26 +95,17 @@ public class SelectToken : MonoBehaviour
             return;
         }
 
-        mouseDownPos = GetMouseWorldPos();
         CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
     }
 
-    private void OnMouseDrag()
+    protected override void OnMouseDrag()
     {
-        if (!GetComponent<PhotonView>().IsMine)
-            return;
+        base.OnMouseDrag();
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
             return;
-        }
-
-        Vector3 newMousePos = GetMouseWorldPos();
-
-        if (mouseDownPos != newMousePos)
-        {
-            isDragging = true;
         }
 
         if (cardToDisplay.activeSelf)
@@ -139,22 +113,17 @@ public class SelectToken : MonoBehaviour
             transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
             return;
         }
-
-        transform.position = newMousePos;
     }
 
-    private void OnMouseUp()
+    protected override void OnMouseUp()
     {
-        if (!GetComponent<PhotonView>().IsMine)
-            return;
+        base.OnMouseUp();
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
             return;
         }
-
-        isDragging = false;
 
         if (tileHovering == -1)
         {
@@ -251,20 +220,11 @@ public class SelectToken : MonoBehaviour
         }
     }
 
-    public void SetOnTileId(int tileId)
-    {
-        tileHovering = tileId;
-    }
-
     public Character GetCharacter() { return character; }
 
     public void SetCharacter(Character newCharacter)
     {
         character = newCharacter;
-    }
-    public void SetOutsideBoard(bool isOutside)
-    {
-        isOutsideBoard = isOutside;
     }
 
     Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)

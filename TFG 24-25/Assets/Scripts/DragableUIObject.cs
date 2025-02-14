@@ -100,7 +100,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
             }
 
-            instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+            instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
         }
         else
         {
@@ -117,7 +117,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
         GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? "Warro/"+token.name : "Warro/" + token2.name, spawnPosition, Quaternion.identity);
 
-        instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+        instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
     }
 
     public void TESTING_CreateCharacterOrActivateEffect()

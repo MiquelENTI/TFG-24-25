@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
         // Token has an emptyObject with collision and its tag is TileCollider
         if (other.gameObject.tag == "TileCollider")
         {
-            other.transform.parent.GetComponent<SelectToken>().SetOnTileId(tileId);
+            other.transform.parent.GetComponent<TokenGameObject>().SetOnTileId(tileId);
         }
         // Cards on Hand have an emptyObject with collision and its tag is SpawnTileCollider
         else if (other.gameObject.tag == "SpawnTileCollider")
@@ -21,7 +21,7 @@ public class Tile : MonoBehaviour
             {
                 Debug.Log("ASDASD");
                 other.transform.parent.GetChild(0).rotation = Quaternion.Euler(90, 0, 0);
-                other.transform.parent.GetChild(0).GetComponent<DragableGameObject>().SetOnTileId(tileId);
+                other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOnTileId(tileId);
             }
         }
     }
