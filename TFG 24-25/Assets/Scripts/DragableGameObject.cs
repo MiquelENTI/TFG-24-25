@@ -13,6 +13,7 @@ public class DragableGameObject : MonoBehaviour
     
     protected bool isOutsideBoard = true;
 
+    // Detect and Calculate Mouse World Position to Move Inside a Plane
     protected Vector3 GetMouseWorldPos()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -25,6 +26,7 @@ public class DragableGameObject : MonoBehaviour
         return mousePos;
     }
 
+    // When mouse is pressed down get an initial Mouse World Pos
     protected virtual void OnMouseDown()
     {
         if (!GetComponentInParent<PhotonView>().IsMine)
@@ -33,6 +35,7 @@ public class DragableGameObject : MonoBehaviour
         mouseDownPos = GetMouseWorldPos();
     }
 
+    // Calculate Mouse World Pos when dragging
     protected virtual void OnMouseDrag()
     {
         if (!GetComponentInParent<PhotonView>().IsMine)
@@ -47,20 +50,22 @@ public class DragableGameObject : MonoBehaviour
 
         transform.position = newMousePos;
     }
-
+    
+    // Cancel Dragging
     protected virtual void OnMouseUp()
     {
         isDragging = false;
     }
 
+    // Assign On Which Board Tile is the GameObject hovering
     public void SetOnTileId(int tileId)
     {
         tileHovering = tileId;
     }
 
+    // Bool that Indicates if the GameObject is inside the Board Space
     public void SetOutsideBoard(bool isOutside)
     {
-        Debug.Log("Activated");
         isOutsideBoard = isOutside;
     }
 }

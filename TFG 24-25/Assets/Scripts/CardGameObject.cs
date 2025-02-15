@@ -26,12 +26,14 @@ public class CardGameObject : DragableGameObject
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
+        // When Pressed, it Shows the possible Spawning Tiles
         CellNodeManager.Instance.togglePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
     }
 
     protected override void OnMouseDrag()
     {
         base.OnMouseDrag();
+        // When Dragging, the GameObject (Visible Card) Updates its Position and its Sibling, the Collider that Detects on Which Tile is it Hovering On.
         spawnTileCollider.transform.position = transform.position;
     }
 
@@ -39,6 +41,7 @@ public class CardGameObject : DragableGameObject
     {
         if (isOutsideBoard)
         {
+            // Returns to The Hand
             cardHold.ReorganizeCards();
         }
         else

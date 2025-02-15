@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro.Examples;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -24,33 +26,18 @@ public class CellNodeManager : Singleton<CellNodeManager>
         redSpawnTiles = new List<CellNode>();
         blueSpawnTiles = new List<CellNode>();
 
+        // Event that Triggers ToggleVisibilityPossibleMovements Function
         togglePossibleMovements = new UnityEvent<int>();
-
         togglePossibleMovements.AddListener((int tileId) =>
         {
             ToggleVisibilityPossibleMovements(tileId);
         });
 
+        // Event that Triggers ToggleVisibilityAvailableSpawnCells
         togglePossibleSpawnTiles = new UnityEvent<TeamType>();
         togglePossibleSpawnTiles.AddListener((TeamType teamType) =>
         {
-            switch (teamType)
-            {
-                case TeamType.RED:
-                    foreach (CellNode spawnableTile in redSpawnTiles)
-                    {
-                        spawnableTile.ChangeMovementIndicatorVisibility();
-                    }
-                    break;
-                case TeamType.BLUE:
-                    foreach (CellNode spawnableTile in blueSpawnTiles)
-                    {
-                        spawnableTile.ChangeMovementIndicatorVisibility();
-                    }
-                    break;
-                default:
-                    break;
-            }
+            ToggleVisibilityAvailableSpawnCells(teamType);
         });
     }
 
@@ -72,6 +59,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         currentId++;
     }
 
+    // Debugging Function to check all the CellNodes' status
     public void PrintNodeGridStatus()
     {
         if (nodeGrid == null)
@@ -86,12 +74,15 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
+    // Function that Creates All the CellNodes Connections
     public void CreateDefaultConnections(CellNode redBase, CellNode blueBase)
     {
+        // Vector2 Directions Reference
         // -1,-1   0,-1   1,-1
         // -1, 0   0, 0   0, 0
         // -1, 1   0, 1   1, 1
 
+        // List to Easily Convert i and j Loop Variables to a Vector2
         List<Vector2Int> directions = new List<Vector2Int>
         {
             new Vector2Int(0, -1),   // Up
@@ -104,6 +95,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
             new Vector2Int(1, 1)     // Down-Right
         };
 
+        // Dictionary to Convert a Vector2 to CellConnection
         Dictionary<Vector2Int, CellConnection> conversion = new Dictionary<Vector2Int, CellConnection> 
         {
             { new Vector2Int(0, -1),  CellConnection.UP},
@@ -116,9 +108,9 @@ public class CellNodeManager : Singleton<CellNodeManager>
             { new Vector2Int(1, 1),  CellConnection.DOWNRIGHT}
         };
 
+        // Loop that initializes all the connections between CellNodes
         for (int j = 0; j < gridSize.y; j++) 
         {
-            
             for (int i = 0; i < gridSize.x; i++)
             {
                 foreach (Vector2Int direction in directions)
@@ -139,8 +131,12 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
+    // Function that Sets Special Properties to the Existing Cells
     public void CreateSpecialTiles(int numSpawnableRows)
     {
+        // Assigns the CellSpawnable Properties to Be Able to Spawn Tokens
+        // Parameter Dictates how Many Rows each Player has to Spawn Tokens
+
         for (int i = 0; i < gridSize.x * numSpawnableRows; i++)
         {
             nodeGrid[i].SetSpawnable(CellSpawnable.RED);
@@ -155,8 +151,11 @@ public class CellNodeManager : Singleton<CellNodeManager>
         SetQuickScoreNodes();
     }
 
+    // Function that Higlihts all the Token's possible movements
     void ToggleVisibilityPossibleMovements(int tileId) // Character's OnTile
     {
+        // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
+
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
 
@@ -169,23 +168,53 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 continue;
             }
 
+            // Cell To Check
             CellNode nextCell = centralCell.GetCellByDirection(direction);
 
             Character isCharacter = nextCell.GetCharacter();
+
+            // If Character Exists
             if (isCharacter != null)
             {
+                // And are in the same Team Skip, cell is not highlighted
                 if (isCharacter.GetTeamType() == character.GetTeamType())
                 {
                     continue;
                 }
+                // Or are on different teams, cell is highlighted with attacking color
                 else
                 {
                     // Set Cell Red and visible
                     continue;
                 }
             }
-
+            // The cell is empty and is highlighted with movement color
             nextCell.ChangeMovementIndicatorVisibility();
+        }
+    }
+
+    // Function that Highlights all the Available SpawnTiles
+    void ToggleVisibilityAvailableSpawnCells(TeamType teamType)
+    {
+        // Parameter Determines Which Tiles to Highlight
+        switch (teamType)
+        {
+            case TeamType.RED:
+                // Highlight Red Spawn Tiles
+                foreach (CellNode spawnableTile in redSpawnTiles)
+                {
+                    spawnableTile.ChangeMovementIndicatorVisibility();
+                }
+                break;
+            case TeamType.BLUE:
+                // Highlight Red Spawn Tiles
+                foreach (CellNode spawnableTile in blueSpawnTiles)
+                {
+                    spawnableTile.ChangeMovementIndicatorVisibility();
+                }
+                break;
+            default:
+                break;
         }
     }
 
