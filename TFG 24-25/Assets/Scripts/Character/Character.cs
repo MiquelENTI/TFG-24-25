@@ -207,7 +207,7 @@ public class Character
         }
         else
         {
-            Debug.LogError("No se encontró el GameObject 'ScoreManager' en la escena.");
+            Debug.LogError("No se encontrï¿½ el GameObject 'ScoreManager' en la escena.");
         }
         playerStats = PlayerStats.Instance;
         stats = newStats;
@@ -284,8 +284,10 @@ public class Character
             SetOnTileId(cellToMove.GetId());
             //Debug.Log("ONTILE: " + onTile);
             MoveToken(cellToMove.GetPosition());
-
+            
             cellToMove.SetCharacter(this);
+
+            OnSpawnSFX();
         }
     }
     
@@ -316,6 +318,7 @@ public class Character
             //cellToMove.PrintStatus();
 
             return true;
+            OnMovementSFX();
         }
         else
         {
@@ -402,6 +405,8 @@ public class Character
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;
 
+        AttackSFX();
+
         enemy.OnAttack(this);
         if(enemy.stats.hp <= 0)
         {
@@ -453,4 +458,18 @@ public class Character
     {
 
     }
+    //ImplementaciÃ³ del so general per a cartes no identificades 
+    protected virtual void OnMovementSFX()
+    {
+    //FMODUnity.RuntimeManager.PlayOneShot("event:/New Event",token.transform.position);
+    }
+    protected virtual void AttackSFX()
+    {
+    // FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+    }
+    protected virtual void OnSpawnSFX()
+    {
+    // FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+    }
+
 }

@@ -25,6 +25,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{f3603b36-2191-4173-ad8d-5fd6587a104f}" />
 	<object class="SFXReverbEffect" id="{a7b4f214-ae6d-41bf-a11a-c50dbdc51b79}">
+<<<<<<< HEAD
 		<property name="decayTime">
 			<value>120</value>
 		</property>
@@ -66,4 +67,14 @@
 			<value>8750</value>
 		</property>
 	</object>
+=======
+		<property name="wetLevel">
+			<value>0</value>
+		</property>
+		<property name="dryLevel">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{d8995022-5418-4004-bd81-72e4989008ae}" />
+>>>>>>> f6bca3b (FMOD_IMPLEMENTATION)
 </objects>

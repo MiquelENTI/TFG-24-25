@@ -14,6 +14,8 @@ public class Medusa : Character
         enemy.ApplyStun();
         enemiesAttacked.Add(enemy);
         base.Attack(enemy);
+        //FMOD_ATTACK_MEDUSA
+    //FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
     }
 
     public override void OnDeath(Character attacker)
@@ -27,5 +29,13 @@ public class Medusa : Character
         }
 
         base.OnDeath(attacker);
+    }
+    protected override void OnMovementSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
     }
 }
