@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c55d54df-83cf-41b0-8103-a1180532760a}">
+		<property name="assetPath">
+			<value>FOC/Bonfire_as_ab_sl_OpenFireplace_00.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>17.753125000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{13423825-f2d5-46d5-ab0b-82e178c1cecc}</destination>
+		</relationship>
+	</object>
+</objects>

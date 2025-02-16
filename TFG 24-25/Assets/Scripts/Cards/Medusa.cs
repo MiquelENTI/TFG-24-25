@@ -32,10 +32,14 @@ public class Medusa : Character
     }
     protected override void OnMovementSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+        //FMODUnity.RuntimeManager.PlayOneShot("",token.transform.position);
     }
     protected override void AttackSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MEDUSA/MEDUSA_ATTACK",token.transform.position);
+    }
+    protected override void OnSpawnSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MEDUSA/MEDUSA_SELECTION",token.transform.position);
     }
 }

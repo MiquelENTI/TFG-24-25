@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="EventFolder" id="{6ec6f863-f6ed-4c24-b487-dbd7b1dae987}">
+<<<<<<< HEAD
 		<property name="color">
 			<value>Green</value>
 		</property>
+=======
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		<property name="name">
 			<value>SALMON</value>
 		</property>

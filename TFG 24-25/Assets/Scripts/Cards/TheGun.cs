@@ -44,4 +44,12 @@ public class TheGun : Character
 
         return true;
     }
+    protected override void AttackSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/CANON/CANON",token.transform.position);
+    }
+    protected virtual void OnSpawnSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/CANON/CANON_SELECTION",token.transform.position);
+    }
 }

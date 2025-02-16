@@ -461,15 +461,15 @@ public class Character
     //Implementació del so general per a cartes no identificades 
     protected virtual void OnMovementSFX()
     {
-    //FMODUnity.RuntimeManager.PlayOneShot("event:/New Event",token.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MOVEMENT_CARD",token.transform.position);
     }
     protected virtual void AttackSFX()
     {
-    // FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/STANDARD/STANDARD_ATTACK",token.transform.position);
     }
     protected virtual void OnSpawnSFX()
     {
-    // FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/STANDARD/STANDARD_SELLECTION",token.transform.position);
     }
 
 }

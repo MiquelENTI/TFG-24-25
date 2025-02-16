@@ -2,10 +2,17 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0e1f4304-2d8b-456a-9295-1fca8f046c8f}">
 		<property name="name">
+<<<<<<< HEAD
 			<value>Fly_Attack</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
+=======
+			<value>FLY_ATTACK</value>
+		</property>
+		<property name="outputFormat">
+			<value>0</value>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</property>
 		<relationship name="folder">
 			<destination>{cd2893f5-42c9-49da-9dd5-2f442e91174c}</destination>
@@ -53,7 +60,11 @@
 			<destination>{ca8a9106-25d0-4da0-9a15-3d4ed25be137}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b8d2a3b6-9bed-47e3-a162-8e0518728647}" />
@@ -90,7 +101,11 @@
 	<object class="MixerBusPanner" id="{ca8a9106-25d0-4da0-9a15-3d4ed25be137}" />
 	<object class="MultiSound" id="{6ef03429-8f86-4883-8763-94c460dfdf6e}">
 		<property name="length">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>3.9786666666666668</value>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</property>
 		<relationship name="modulators">
 			<destination>{12cc7176-d685-4d97-a313-96fad1e637d1}</destination>
@@ -100,12 +115,21 @@
 			<destination>{5afcd64e-d5d2-404f-81e1-e329e66ff9eb}</destination>
 		</relationship>
 		<relationship name="sounds">
+<<<<<<< HEAD
 			<destination>{643f7e12-8cbe-47e0-95b7-a083c3ad8053}</destination>
 			<destination>{6c4c7ef8-d35b-4862-8a87-2257dc8b7226}</destination>
 			<destination>{b0ba8542-d89c-40b4-b9ea-e0ebd6609b6e}</destination>
 			<destination>{0b4db561-287a-4e74-8268-a60936f0fec8}</destination>
 			<destination>{f535b8fd-c3af-4545-bea6-27dab1f56569}</destination>
 			<destination>{7408c9e7-081c-4ebf-a76e-3475a89799f9}</destination>
+=======
+			<destination>{5d9dd87d-ec11-4cc2-82f1-616a508e3096}</destination>
+			<destination>{41db894e-2342-4e6a-902b-e69c0cf0fa10}</destination>
+			<destination>{6e8f95d9-0799-484c-9f12-f07caf844eb2}</destination>
+			<destination>{b5eca9d9-fa84-4ca8-9d9e-83dd145aaa75}</destination>
+			<destination>{10852331-15db-458c-a0e2-9737757cc85b}</destination>
+			<destination>{9a123133-262f-4ba3-b4f7-ac33ba3be9f5}</destination>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{01373b6f-8402-4bf1-8dc6-8e05219fa394}">
@@ -125,7 +149,10 @@
 	<object class="MixerBusEffectChain" id="{ef3e8a93-a381-4623-9836-435e00a162e8}">
 		<relationship name="effects">
 			<destination>{91a01fdb-7d3c-43fc-8997-067de9cca4b6}</destination>
+<<<<<<< HEAD
 			<destination>{dddc509a-1787-42a5-88da-deec8251131f}</destination>
+=======
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{36a03fb8-bbfb-45d3-8259-2efc0896f6cf}" />
@@ -154,6 +181,7 @@
 			<destination>{f1af7221-80da-4315-8a10-3c6bd6a0ea84}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 	<object class="SingleSound" id="{643f7e12-8cbe-47e0-95b7-a083c3ad8053}">
 		<relationship name="audioFile">
 			<destination>{66bd2951-8fa1-4c00-b2e7-b7e80c24dc88}</destination>
@@ -182,6 +210,36 @@
 	<object class="SingleSound" id="{7408c9e7-081c-4ebf-a76e-3475a89799f9}">
 		<relationship name="audioFile">
 			<destination>{b08b1c79-dedb-4521-a6f2-fae6385a7176}</destination>
+=======
+	<object class="SingleSound" id="{5d9dd87d-ec11-4cc2-82f1-616a508e3096}">
+		<relationship name="audioFile">
+			<destination>{de52bc98-5656-4a04-a2cc-0e083100ebf8}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{41db894e-2342-4e6a-902b-e69c0cf0fa10}">
+		<relationship name="audioFile">
+			<destination>{b7db3318-c9f8-4cb4-bb46-be3ac7e8d874}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{6e8f95d9-0799-484c-9f12-f07caf844eb2}">
+		<relationship name="audioFile">
+			<destination>{7ca9665f-d15d-48fb-ae32-464a462c7087}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{b5eca9d9-fa84-4ca8-9d9e-83dd145aaa75}">
+		<relationship name="audioFile">
+			<destination>{84f6e28a-cf77-4715-b650-b831b3774e54}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{10852331-15db-458c-a0e2-9737757cc85b}">
+		<relationship name="audioFile">
+			<destination>{74efa0e3-cdcf-4d08-8673-af066933c1c4}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{9a123133-262f-4ba3-b4f7-ac33ba3be9f5}">
+		<relationship name="audioFile">
+			<destination>{e79817d7-e851-4d2d-b956-8683f7378d92}</destination>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b86e01c1-8a52-460d-86ed-5a3c3a0b6ee1}">
@@ -191,6 +249,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{af7e7181-6365-421d-89ae-7a793089b73c}" />
 	<object class="MixerBusFader" id="{91a01fdb-7d3c-43fc-8997-067de9cca4b6}" />
+<<<<<<< HEAD
 	<object class="SpatialiserEffect" id="{dddc509a-1787-42a5-88da-deec8251131f}">
 		<property name="minimumDistance">
 			<value>0</value>
@@ -205,6 +264,11 @@
 	<object class="AutomationPoint" id="{3834530e-f8ae-4d9e-aca8-18146e915e5b}">
 		<property name="position">
 			<value>0.038873563218390972</value>
+=======
+	<object class="AutomationPoint" id="{3834530e-f8ae-4d9e-aca8-18146e915e5b}">
+		<property name="position">
+			<value>2</value>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -215,7 +279,11 @@
 	</object>
 	<object class="AutomationPoint" id="{f1af7221-80da-4315-8a10-3c6bd6a0ea84}">
 		<property name="position">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>3.9786666666666668</value>
+>>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 		</property>
 		<property name="value">
 			<value>0</value>
