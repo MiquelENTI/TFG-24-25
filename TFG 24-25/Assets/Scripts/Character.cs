@@ -16,19 +16,19 @@ public struct CharacterStats
     public int maxHp;
     public int dmg;
     public int manaCost;
-    public int numOfMovements;
+    public int range;
     public MovementType movementType;
     public bool stun;
     public string description;
     public bool checkAllInRangeCells;
-    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, MovementType _movementType, string _description)
     {
         name = _name;
         maxHp = _hp;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
-        numOfMovements = _numOfMovements;
+        range = _range;
         movementType = _movementType;
         stun = false;
         description = _description;
@@ -43,7 +43,7 @@ public struct CharacterStats
         " | HP: " + hp +
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
-        " | Num Of Movementst: " + numOfMovements +
+        " | Range: " + range +
         " | Movement Type: " + movementType.ToString()
         );
     }
@@ -93,10 +93,6 @@ public class Character
     protected PlayerStats playerStats;
 
     bool canScore = false;
-    bool inScoreTile14 = false;
-    bool inScoreTile15 = false;
-    bool inScoreTile20 = false;
-    bool inScoreTile21 = false;
 
 
     public int GetId()
@@ -286,12 +282,7 @@ public class Character
             previousNode.RemoveCharacter();
 
             //previousNode.PrintStatus();
-            cellToMove.PrintStatus();
-
-            inScoreTile14 = false;
-            inScoreTile15 = false;
-            inScoreTile20 = false;
-            inScoreTile21 = false;
+            //cellToMove.PrintStatus();
         }
         else
         {
@@ -357,7 +348,7 @@ public class Character
     {
         TileScoring();
 
-        Debug.Log("OnStartPassed");
+        //Debug.Log("OnStartPassed");
     }
     public virtual void OnEndTurn()
     {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Bson;
 using TMPro.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -26,6 +28,9 @@ public class CellNode
     
     CellScoreType scoreType = CellScoreType.NOPOINTS;
     CellScoreAmount scoreAmount = CellScoreAmount.NORMAL;
+
+    // New Movement
+    public Vector2 positionInGrid;
 
     public CellNode(Vector3 position, GameObject movementIndicator)
     {  
@@ -129,7 +134,7 @@ public class CellNode
     {
         foreach (CellConnection direction in directions)
         {
-            for (int i = characterMoving.GetCharacterStats().numOfMovements; i > 0; i--)
+            for (int i = characterMoving.GetCharacterStats().range; i > 0; i--)
             {
                 CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, i);
 
@@ -169,7 +174,7 @@ public class CellNode
     {
         foreach (CellConnection direction in directions)
         {
-            CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, characterMoving.GetCharacterStats().numOfMovements);
+            CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, characterMoving.GetCharacterStats().range);
 
             nodeChecking.PrintStatus();
 
@@ -367,6 +372,86 @@ public class CellNode
                 " |  Spawnable: " + spawnable.ToString());
         }
         
+    }
+
+    bool NewMovement(int characterId)
+    {
+        if (!isConnected)
+        {
+            Debug.Log("Node to move is disconnected from grid");
+            return false;
+        }
+
+        Character characterMoving = CharactersManager.Instance.GetCharacterInBoardById(characterId);
+        bool isAttacking = false;
+        if (isOccupied)
+        {
+            if (characterMoving.GetTeamType() == character.GetTeamType())
+            {
+                Debug.Log("Node to move is occupied by another character");
+                return false;
+            }
+            isAttacking = true;
+        }
+
+        CellNode characterTile = CellNodeManager.Instance.GetNodeById(characterMoving.GetOnTileId());
+
+        Vector2 diff = positionInGrid - characterTile.positionInGrid;
+
+        diff.x = Mathf.Abs(diff.x);
+        diff.y = Mathf.Abs(diff.y);
+
+        Debug.Log("Diff on Enemy and Character: " + diff);
+
+        if (diff.x > character.GetCharacterStats().range || diff.y > character.GetCharacterStats().range)
+        { return false; }
+
+        switch (character.GetCharacterStats().movementType)
+        {
+            case MovementType.Basic:
+                if (diff.x == 0 ||  diff.y == 0)
+                {
+                    if (isAttacking)
+                    {
+                        if (characterMoving.CanAttack())
+                        {
+                            characterMoving.Attack(this.character);
+                        }
+                        return false;
+                    }
+                    return true;
+                }
+                break;
+            case MovementType.Diagonal:
+                if (diff.x == diff.y)
+                {
+                    if (isAttacking)
+                    {
+                        if (characterMoving.CanAttack())
+                        {
+                            characterMoving.Attack(this.character);
+                        }
+                        return false;
+                    }
+                    return true;
+                }
+                break;
+            case MovementType.Omni:
+                if (diff.x == 0 || diff.y == 0 || (diff.x == diff.y))
+                {
+                    if (isAttacking)
+                    {
+                        if (characterMoving.CanAttack())
+                        {
+                            characterMoving.Attack(this.character);
+                        }
+                        return false;
+                    }
+                    return true;
+                }
+                break;
+        }
+        return true;
     }
 
 }

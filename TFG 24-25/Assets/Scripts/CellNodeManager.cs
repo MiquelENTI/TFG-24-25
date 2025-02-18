@@ -20,6 +20,9 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private List<CellNode> redSpawnTiles;
     private List<CellNode> blueSpawnTiles;
 
+    // New Movement
+    public Dictionary<Vector2, CellNode> nodeGrid2D;
+
     private void Awake()
     {
         nodeGrid = new List<CellNode>();
@@ -39,6 +42,9 @@ public class CellNodeManager : Singleton<CellNodeManager>
         {
             ToggleVisibilityAvailableSpawnCells(teamType);
         });
+
+        // New Movement
+        nodeGrid2D = new Dictionary<Vector2, CellNode>();
     }
 
     public Vector2 GetGridSize() 
@@ -127,6 +133,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     }
                 }
 
+                // New Movement
+                nodeGrid2D.Add(new Vector2(i,j), nodeGrid[j * (int)gridSize.y + i]);
             }
         }
     }
