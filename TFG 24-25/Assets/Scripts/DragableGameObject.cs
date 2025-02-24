@@ -13,46 +13,49 @@ public class DragableGameObject : MonoBehaviour
     
     protected bool isOutsideBoard = true;
 
-    // Detect and Calculate Mouse World Position to Move Inside a Plane
-    protected Vector3 GetMouseWorldPos()
+    protected PlayerInputs playerInputs;
+    protected WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
+
+    protected virtual void Awake()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Vector3 mousePos = Vector3.zero;
-        if (plane.Raycast(ray, out var enter))
+        playerInputs = new PlayerInputs();
+    }
+
+    protected virtual void Start()
+    {
+        playerInputs.Gameplay.MouseLeftClick.started += _ => LeftMouseDownAction();
+        playerInputs.Gameplay.MouseLeftClick.canceled += _ => LeftMouseUpAction();
+    }
+
+    // Detect and Calculate Mouse World Position to Move Inside a Plane
+    protected virtual void GetMouseWorldPos(string colliderTag)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
+        
+        RaycastHit hit;
+
+        Debug.Log("1");
+
+        if (Physics.Raycast(ray, out hit))
         {
-            mousePos = ray.GetPoint(enter);
-            mousePos.y = 1.5f;
+            Debug.Log("2");
+            if (hit.collider != null && hit.collider.tag == colliderTag)
+            {
+                Debug.Log("3");
+                StartCoroutine(DragUpdate(hit.collider.gameObject));
+            }
         }
-        return mousePos;
     }
 
     // When mouse is pressed down get an initial Mouse World Pos
-    protected virtual void OnMouseDown()
+    protected virtual void LeftMouseDownAction()
     {
         if (!GetComponentInParent<PhotonView>().IsMine)
             return;
-
-        mouseDownPos = GetMouseWorldPos();
     }
 
-    // Calculate Mouse World Pos when dragging
-    protected virtual void OnMouseDrag()
-    {
-        if (!GetComponentInParent<PhotonView>().IsMine)
-            return;
-
-        Vector3 newMousePos = GetMouseWorldPos();
-
-        if (mouseDownPos != newMousePos)
-        {
-            isDragging = true;
-        }
-
-        transform.position = newMousePos;
-    }
-    
     // Cancel Dragging
-    protected virtual void OnMouseUp()
+    protected virtual void LeftMouseUpAction()
     {
         isDragging = false;
     }
@@ -67,5 +70,35 @@ public class DragableGameObject : MonoBehaviour
     public void SetOutsideBoard(bool isOutside)
     {
         isOutsideBoard = isOutside;
+    }
+
+    private void OnEnable()
+    {
+        playerInputs.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInputs.Disable();
+    }
+
+    protected virtual IEnumerator DragUpdate(GameObject clickedGameObject)
+    {
+        Vector3 mousePos = Vector3.zero;
+
+        isDragging = true;
+
+        while (playerInputs.Gameplay.MouseLeftClick.ReadValue<float>() != 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
+
+            if (plane.Raycast(ray, out var enter))
+            {
+                mousePos = ray.GetPoint(enter);
+                mousePos.y = 1.5f;
+                clickedGameObject.transform.position = mousePos;
+                yield return waitForFixedUpdate;
+            }
+        }
     }
 }

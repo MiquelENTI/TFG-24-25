@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
         {
             //if (!other.GetComponent<DragableGameObject>().isInside)
             {
-                Debug.Log("ASDASD");
+                Debug.Log("ASDASD"); 
                 other.transform.parent.GetChild(0).rotation = Quaternion.Euler(90, 0, 0);
                 other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOnTileId(tileId);
             }

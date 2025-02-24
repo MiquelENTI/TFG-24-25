@@ -15,7 +15,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private int currentId;
 
     public UnityEvent<int> togglePossibleMovements;
-    public UnityEvent<TeamType> togglePossibleSpawnTiles;
+    public UnityEvent<TeamType> hidePossibleSpawnTiles;
+    public UnityEvent<TeamType> showPossibleSpawnTiles;
 
     private List<CellNode> redSpawnTiles;
     private List<CellNode> blueSpawnTiles;
@@ -37,10 +38,17 @@ public class CellNodeManager : Singleton<CellNodeManager>
         });
 
         // Event that Triggers ToggleVisibilityAvailableSpawnCells
-        togglePossibleSpawnTiles = new UnityEvent<TeamType>();
-        togglePossibleSpawnTiles.AddListener((TeamType teamType) =>
+        showPossibleSpawnTiles = new UnityEvent<TeamType>();
+        showPossibleSpawnTiles.AddListener((TeamType teamType) =>
         {
-            ToggleVisibilityAvailableSpawnCells(teamType);
+            ToggleVisibilityAvailableSpawnCells(teamType, true);
+        });
+
+        // Event that Triggers ToggleVisibilityAvailableSpawnCells
+        hidePossibleSpawnTiles = new UnityEvent<TeamType>();
+        hidePossibleSpawnTiles.AddListener((TeamType teamType) =>
+        {
+            ToggleVisibilityAvailableSpawnCells(teamType, false);
         });
 
         // New Movement
@@ -219,6 +227,30 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 foreach (CellNode spawnableTile in blueSpawnTiles)
                 {
                     spawnableTile.ChangeMovementIndicatorVisibility();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
+    {
+        // Parameter Determines Which Tiles to Highlight
+        switch (teamType)
+        {
+            case TeamType.RED:
+                // Highlight Red Spawn Tiles
+                foreach (CellNode spawnableTile in redSpawnTiles)
+                {
+                    spawnableTile.ChangeMovementIndicatorVisibility(state);
+                }
+                break;
+            case TeamType.BLUE:
+                // Highlight Red Spawn Tiles
+                foreach (CellNode spawnableTile in blueSpawnTiles)
+                {
+                    spawnableTile.ChangeMovementIndicatorVisibility(state);
                 }
                 break;
             default:

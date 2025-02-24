@@ -23,8 +23,10 @@ public class TokenGameObject : DragableGameObject
 
     private TurnManagerScript TurnManagerScript;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         if (!TryGetComponent<PhotonView>(out photonView))
         {
             gameObject.AddComponent<PhotonView>();
@@ -32,8 +34,10 @@ public class TokenGameObject : DragableGameObject
         }
     }
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         GameObject turnManagerObject = GameObject.Find("TurnManager");
         if (turnManagerObject != null)
         {
@@ -85,22 +89,14 @@ public class TokenGameObject : DragableGameObject
     }
 
 
-    protected override void OnMouseDown()
-    {
-        base.OnMouseDown();
 
-        if (TurnManagerScript != null && TurnManagerScript.Instance.getIsBlue() != IsBlue)
-        {
-            Debug.Log("No es el turno del jugador actual.");
-            return;
-        }
+    protected override void LeftMouseDownAction()
+    {
+        base.LeftMouseDownAction();
 
         CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
-    }
 
-    protected override void OnMouseDrag()
-    {
-        base.OnMouseDrag();
+        GetMouseWorldPos("TokenGameObject");
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
@@ -115,10 +111,10 @@ public class TokenGameObject : DragableGameObject
         }
     }
 
-    protected override void OnMouseUp()
+    protected override void LeftMouseUpAction()
     {
-        base.OnMouseUp();
-
+        base.LeftMouseUpAction();
+    
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");

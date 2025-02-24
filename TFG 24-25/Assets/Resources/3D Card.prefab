@@ -110,8 +110,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5297252162963420526}
   - {fileID: 3258085627719738298}
+  - {fileID: 5297252162963420526}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 2724274358760060294}
   m_Layer: 0
   m_Name: 3D Card Model
-  m_TagString: Untagged
+  m_TagString: CardGameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa3b8b5759f4594d86205b16fe04aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnTileCollider: {fileID: 0}
 --- !u!54 &2724274358760060294
 Rigidbody:
   m_ObjectHideFlags: 0

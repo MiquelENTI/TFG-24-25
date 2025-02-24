@@ -12,6 +12,8 @@ TagManager:
   - RedHold
   - BlueHold
   - SpawnTileCollider
+  - CardGameObject
+  - TokenGameObject
   layers:
   - Default
   - TransparentFX

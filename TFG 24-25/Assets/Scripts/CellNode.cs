@@ -310,6 +310,20 @@ public class CellNode
         }
     }
 
+    public void ChangeMovementIndicatorVisibility(bool state)
+    {
+        isCellMovementIndicatorVisble = state;
+
+        if (isCellMovementIndicatorVisble && character == null)
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 139.0f / 256.0f);
+        }
+        else
+        {
+            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
+        }
+    }
+
     public CellNode GetCellByDirectionWithRange(CellNode currentCell, CellConnection direction, int range)
     {
         if (!currentCell.CheckConnectionNode(direction))
