@@ -63,4 +63,10 @@ public class CardHold : MonoBehaviour
         gameObject.transform.GetChild(0).localPosition = Vector3.zero;
         gameObject.transform.GetChild(1).localPosition = Vector3.zero;
     }
+
+    public void DestroyCard(GameObject cardToDestroy)
+    {
+        Destroy(cardToDestroy);
+        ReorganizeCards();
+    }
 }

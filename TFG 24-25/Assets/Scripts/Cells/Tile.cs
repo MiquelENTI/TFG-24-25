@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
         // Token has an emptyObject with collision and its tag is TileCollider
         if (other.gameObject.tag == "TileCollider")
         {
-            other.transform.parent.GetComponent<TokenGameObject>().SetOnTileId(tileId);
+            other.transform.parent.GetChild(0).GetComponent<TokenGameObject>().SetOnTileId(tileId);
         }
         // Cards on Hand have an emptyObject with collision and its tag is SpawnTileCollider
         else if (other.gameObject.tag == "SpawnTileCollider")

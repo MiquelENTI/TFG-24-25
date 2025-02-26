@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             Debug.LogError("No se encontr� GameObject con Tag 'SpawnManager' para el CardGameController!");
         }
+
         if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
         {
             int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
@@ -120,7 +122,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
             Renderer tokenRenderer = instantiatedToken.GetComponent<Renderer>();
 
-            instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+            //instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
         }
         else
         {
@@ -137,7 +139,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
         GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? "Warro/"+token.name : "Warro/" + token2.name, spawnPosition, Quaternion.identity);
 
-        instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+        //instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
     }
 
     public void TESTING_CreateCharacterOrActivateEffect()

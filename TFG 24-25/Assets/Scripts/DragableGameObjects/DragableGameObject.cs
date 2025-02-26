@@ -16,6 +16,8 @@ public class DragableGameObject : MonoBehaviour
     protected PlayerInputs playerInputs;
     protected WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
 
+    protected GameObject gameObjectSelected; // Warrada, mira de ferho millor
+
     protected virtual void Awake()
     {
         playerInputs = new PlayerInputs();
@@ -43,6 +45,7 @@ public class DragableGameObject : MonoBehaviour
             {
                 Debug.Log("3");
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
+                gameObjectSelected = hit.collider.gameObject;
             }
         }
     }
@@ -95,7 +98,7 @@ public class DragableGameObject : MonoBehaviour
             if (plane.Raycast(ray, out var enter))
             {
                 mousePos = ray.GetPoint(enter);
-                mousePos.y = 1.5f;
+                mousePos.y = 0.5f;
                 clickedGameObject.transform.position = mousePos;
                 yield return waitForFixedUpdate;
             }

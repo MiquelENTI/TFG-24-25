@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Unity.VisualScripting;
@@ -13,6 +13,11 @@ public class CardGameObject : DragableGameObject
 
     public GameObject spawnTileCollider;
 
+
+    [SerializeField] List<int> possibleCharacterNamesToAssign = new List<int>();
+    int randomCharacterName = 1;
+    public SpawnCardController gameController;
+
     protected override void Awake()
     {
         base.Awake();
@@ -25,6 +30,29 @@ public class CardGameObject : DragableGameObject
         plane = new Plane(Vector3.up, Vector3.up);
         cardHold = transform.parent.parent.GetComponent<CardHold>();
         spawnTileCollider = transform.parent.GetChild(1).gameObject;
+
+
+
+        GameObject spawnManagerGO = GameObject.Find("SpawnManager");
+        if (spawnManagerGO != null)
+        {
+            gameController = spawnManagerGO.GetComponent<SpawnCardController>();
+            if (gameController == null)
+            {
+                Debug.LogError("No se encontr el componente CardGameController en SpawnManager!");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontr GameObject con Tag 'SpawnManager' para el CardGameController!");
+        }
+
+        if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
+        {
+            int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
+            randomCharacterName = possibleCharacterNamesToAssign[randomIndex];
+            Debug.Log("Nombre de personaje seleccionado aleatoriamente: " + randomCharacterName);
+        }
     }
 
 
@@ -53,7 +81,12 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
-            // Spawn Token in tileHovering
+            if (gameObject == gameObjectSelected)
+            {
+                // Spawn Token in tileHovering
+                RequestCharacterInstantiation();
+                cardHold.DestroyCard(gameObject);
+            }
         }
         
         CellNodeManager.Instance.hidePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
@@ -84,4 +117,17 @@ public class CardGameObject : DragableGameObject
 
     public GameObject GetSpawnTileCollider()
     { return spawnTileCollider; }
+
+    void RequestCharacterInstantiation()
+    {
+        if (gameController != null)
+        {
+            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {randomCharacterName}");
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, randomCharacterName, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
+        }
+        else
+        {
+            Debug.LogError("GameController no asignado en DragableUIObject!");
+        }
+    }
 }

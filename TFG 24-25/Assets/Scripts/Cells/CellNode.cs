@@ -120,12 +120,12 @@ public class CellNode
 
         if (!characterMoving.GetCharacterStats().checkAllInRangeCells)
         {
-            // Casi tots els personatges
+            // Grasshopper i personatges amb comportament similar entren aqui
             return CheckDirectionsForCharacterOnlyOneRange(directions, characterMoving, isAttacking);
         }
         else
         {
-            // Grasshopper i personatges amb comportament similar entren aqui
+            // Casi tots els personatges
             return CheckDirectionsForCharacterWithAllRange(directions, characterMoving, isAttacking);
         }
     }
@@ -209,7 +209,9 @@ public class CellNode
 
     public bool CheckNodes(List<CellConnection> directions, int characterId)
     {
-        return CheckMultipleNodeForCharacter(directions, characterId);
+        //return NewMovement(characterId);
+        //return CheckMultipleNodeForCharacter(directions, characterId);
+        return FunctionalMovement(directions, characterId);
     }
 
     public void AddConnection(CellConnection cellMovement, CellNode cellNode)
@@ -417,10 +419,10 @@ public class CellNode
 
         Debug.Log("Diff on Enemy and Character: " + diff);
 
-        if (diff.x > character.GetCharacterStats().range || diff.y > character.GetCharacterStats().range)
+        if (diff.x > characterMoving.GetCharacterStats().range || diff.y > characterMoving.GetCharacterStats().range)
         { return false; }
 
-        switch (character.GetCharacterStats().movementType)
+        switch (characterMoving.GetCharacterStats().movementType)
         {
             case MovementType.Basic:
                 if (diff.x == 0 ||  diff.y == 0)
@@ -466,6 +468,64 @@ public class CellNode
                 break;
         }
         return true;
+    }
+
+    public bool FunctionalMovement(List<CellConnection> directions, int characterId)
+    {
+        if (!isConnected)
+        {
+            Debug.Log("Node to move is disconnected from grid");
+            return false;
+        }
+
+        bool isAttacking = false;
+        if (isOccupied)
+        {
+            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
+            {
+                Debug.Log("Node to move is occupied by another character");
+                return false;
+            }
+            isAttacking = true;
+        }
+
+        Debug.Log("DIRECTIONS COUNT: " + directions.Count);
+        Debug.Log("ConnectionDictionary: " + connectionDictionary.Count);
+
+        foreach (CellConnection direction in directions)
+        {
+            if (!CheckConnectionNode(direction))
+            {
+                Debug.Log("ENTRES AQUI?");
+                continue;
+            }
+
+            Character characterMoving = connectionDictionary[direction].GetCharacter();
+            if (characterMoving == null)
+            {
+                continue;
+            }
+            if (characterMoving.GetId() != characterId)
+            {
+                continue;
+            }
+
+            Debug.Log("IS ATTACKING? " + isAttacking);
+            if (isAttacking)
+            {
+
+                //if (characterMoving.CanAttack()) // Already has manacost calculation
+                if (true)
+                {
+                    characterMoving.Attack(this.character);
+
+                }
+                return false;
+            }
+
+            return true;
+        }
+        return false;
     }
 
 }

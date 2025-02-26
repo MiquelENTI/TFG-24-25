@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5228726996071527305}
   - component: {fileID: 6022026675558919140}
   - component: {fileID: 8040787835485122723}
-  - component: {fileID: 4428032640830150529}
+  - component: {fileID: 3097874286981217545}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -101,7 +101,7 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &4428032640830150529
+--- !u!114 &3097874286981217545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe63deb4c5440874b9cab1e24a4200ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  token: {fileID: 8236987784292183732, guid: 932fcabaaef0f5744bc95c75c7cd5255, type: 3}
-  token2: {fileID: 3282628143598415564, guid: 16400bdf7d21874419f61f38ac2fdd4e, type: 3}
-  possibleCharacterNamesToAssign: 0100000003000000050000000600000007000000
+  token: {fileID: 0}
+  token2: {fileID: 0}
+  possibleCharacterNamesToAssign: 
   gameController: {fileID: 0}

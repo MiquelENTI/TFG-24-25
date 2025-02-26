@@ -10,7 +10,7 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         
-        if (other.gameObject.tag == "Token" || other.gameObject.tag == "SpawnTileCollider")
+        if (other.gameObject.tag == "TokenGameObject" || other.gameObject.tag == "SpawnTileCollider")
         {
             other.transform.parent.GetChild(0).GetComponent<DragableGameObject>().SetOutsideBoard(true);
         }
@@ -18,7 +18,7 @@ public class TokenOutOfBoundsDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Token" || other.gameObject.tag == "SpawnTileCollider")
+        if (other.gameObject.tag == "TokenGameObject" || other.gameObject.tag == "SpawnTileCollider")
         {
             other.transform.parent.GetChild(0).GetComponent<DragableGameObject>().SetOutsideBoard(false);
         }

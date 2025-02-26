@@ -15,12 +15,13 @@ public class SpawnCardController : MonoBehaviourPun
     void Start() { }
 
     [PunRPC]
-    public void InstantiateCharacterTokenRPC(string tokenNameToInstantiate, int characterIdToAssign, int initiatingPlayerActorNumber)
+    public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId)
     {
         Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
 
         TeamType tokenTeam = PhotonNetwork.LocalPlayer.IsMasterClient ? TeamType.BLUE : TeamType.RED;
-        Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.LocalPlayer.IsMasterClient ? -3.95f : -0.5f);
+
+        Vector3 spawnPosition = new Vector3(0, -1000, 0);
 
         GameObject tokenPrefabToUse = tokenTeam == TeamType.BLUE ? tokenPrefabBlue : tokenPrefabRed;
         string prefabPath = tokenTeam == TeamType.BLUE ? tokenPrefabBlue.name : tokenPrefabRed.name;
@@ -31,7 +32,7 @@ public class SpawnCardController : MonoBehaviourPun
         if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)
         {
             GameObject instantiatedToken = PhotonNetwork.Instantiate(prefabPath, spawnPosition, Quaternion.identity);
-            PhotonView tokenPhotonView = instantiatedToken.GetComponent<PhotonView>();
+            PhotonView tokenPhotonView = instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>();
             if (tokenPhotonView != null)
             {
                 Debug.Log($"[SpawnCardController - AFTER INSTANTIATE] Token instanciado, PhotonView ID: {tokenPhotonView.ViewID}, Owner ActorNr: {tokenPhotonView.OwnerActorNr}, IsMine: {tokenPhotonView.IsMine}, Instantiated for Team: {tokenTeam}");
@@ -41,10 +42,12 @@ public class SpawnCardController : MonoBehaviourPun
                 Debug.LogError("¡El prefab del token instanciado no tiene un PhotonView!");
             }
 
-            SelectToken selectTokenScript = instantiatedToken.GetComponent<SelectToken>();
-            if (selectTokenScript != null)
+            TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
+            if (tokenGameObjectScript != null)
             {
-                instantiatedToken.GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
+                instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
+
+                MyEventHandler.Instance.RPC_MoveToken(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId());
             }
             else
             {

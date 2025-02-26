@@ -54,7 +54,7 @@ public class CreateGrid : MonoBehaviour
         }
 
 
-
+        CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpecialTiles(2);
         //CellNodeManager.Instance.PrintNodeGridStatus();
     }

@@ -143,6 +143,7 @@ public class Character
     {  
         position.y = 0.5f;
         token.transform.position = position;
+        token.transform.parent.GetChild(1).transform.position = position;
     }
     
     public GameObject GetToken()
@@ -256,6 +257,7 @@ public class Character
             playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
+            Debug.Log("ONTILE: " + onTile);
             previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 
@@ -265,7 +267,10 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
+        GetCharacterStats().PrintStats();
+
+        if (cellToMove.CheckNodes(GetDirections(), id))
+        //if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
             playerStats.SubstractMana(stats.manaCost);
             canAttack = false;

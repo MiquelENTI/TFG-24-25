@@ -89,7 +89,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Creates All the CellNodes Connections
-    public void CreateDefaultConnections(CellNode redBase, CellNode blueBase)
+    public void CreateDefaultConnections()
     {
         // Vector2 Directions Reference
         // -1,-1   0,-1   1,-1

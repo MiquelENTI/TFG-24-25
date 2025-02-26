@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using System.Linq;
 
 public class TokenGameObject : DragableGameObject
 {
@@ -23,15 +24,13 @@ public class TokenGameObject : DragableGameObject
 
     private TurnManagerScript TurnManagerScript;
 
+    public GameObject tileCollider;
+
     protected override void Awake()
     {
         base.Awake();
 
-        if (!TryGetComponent<PhotonView>(out photonView))
-        {
-            gameObject.AddComponent<PhotonView>();
-            photonView = GetComponent<PhotonView>();
-        }
+        photonView = transform.GetComponent<PhotonView>();
     }
 
     protected override void Start()
@@ -77,6 +76,8 @@ public class TokenGameObject : DragableGameObject
                 }
             }
         }
+
+        //Debug.Log(tileHovering);
 
         //if (Input.GetKeyUp(KeyCode.M))
         //{
@@ -137,6 +138,32 @@ public class TokenGameObject : DragableGameObject
         MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
         //character.GetCharacterStats().PrintStats();
     }
+
+    protected override IEnumerator DragUpdate(GameObject clickedGameObject)
+    {
+        Vector3 mousePos = Vector3.zero;
+
+        isDragging = true;
+
+        while (playerInputs.Gameplay.MouseLeftClick.ReadValue<float>() != 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
+
+            if (plane.Raycast(ray, out var enter))
+            {
+                mousePos = ray.GetPoint(enter);
+                mousePos.y = 0.5f;
+
+                clickedGameObject.transform.position = mousePos;
+                clickedGameObject.GetComponent<TokenGameObject>().GetTileCollider().transform.position = clickedGameObject.transform.position;
+
+                yield return waitForFixedUpdate;
+            }
+        }
+    }
+
+    public GameObject GetTileCollider()
+    { return tileCollider; }
 
     void SeeTokenCard()
     {
@@ -231,6 +258,8 @@ public class TokenGameObject : DragableGameObject
     {
         character = newCharacter;
     }
+
+    
 
     Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
     {
