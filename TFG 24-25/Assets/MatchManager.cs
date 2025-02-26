@@ -1,4 +1,4 @@
-using System; // Añade esta línea para usar System.Guid
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +7,11 @@ using Photon.Realtime;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
-    // private string roomName = "SalaDePrueba"; // Elimina el nombre de sala fijo
-
     public GameObject playerPrefab;
-
     public Vector3 spawnPositionPlayer1 = new Vector3(11.8f, -8.7f, -0.14f);
     public Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -4.15f);
+
+    public TurnManagerScript turnManager;
 
     void Start()
     {
@@ -69,6 +68,16 @@ public class MatchManager : MonoBehaviourPunCallbacks
             Quaternion spawnRotation = GetSpawnRotation();
 
             GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
+
+            if (turnManager != null)
+            {
+                turnManager.RegisterPlayer(player);
+            }
+            else
+            {
+                Debug.LogError("TurnManager no está asignado en MatchManager. Asegúrate de asignarlo en el Inspector.");
+            }
+
 
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
@@ -129,7 +138,6 @@ public class MatchManager : MonoBehaviourPunCallbacks
         }
         else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
-
             return spawnPositionPlayer2;
         }
         return Vector3.zero;

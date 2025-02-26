@@ -6,11 +6,16 @@ using TMPro;
 
 public class TurnManagerScript : MonoBehaviourPun
 {
-    [SerializeField] bool IsBlue = true;
+    [SerializeField] private bool IsBlue = true;
     int turnCounter = 1;
 
-    PhotonView photonView;
+    [SerializeField] public GameObject player1GameObject;
+    [SerializeField] public GameObject player2GameObject;
 
+    private bool player1Registered = false;
+    private bool player2Registered = false;
+
+    PhotonView photonView;
     public TMP_Text turnCounterElement;
 
     private void Awake()
@@ -30,6 +35,27 @@ public class TurnManagerScript : MonoBehaviourPun
         }
     }
 
+    public void RegisterPlayer(GameObject playerGameObject)
+    {
+        if (!player1Registered)
+        {
+            player1GameObject = playerGameObject;
+            player1Registered = true;
+            Debug.Log("Player 1 registrado en TurnManager: " + playerGameObject.name);
+        }
+        else if (!player2Registered)
+        {
+            player2GameObject = playerGameObject;
+            player2Registered = true;
+            Debug.Log("Player 2 registrado en TurnManager: " + playerGameObject.name);
+        }
+        else
+        {
+            Debug.LogWarning("Ya se han registrado Player 1 y Player 2. No se pueden registrar más jugadores a través de este TurnManager.");
+        }
+    }
+
+
     public void TurnManager()
     {
         if (photonView == null)
@@ -47,12 +73,50 @@ public class TurnManagerScript : MonoBehaviourPun
     public void UpdateTurn(bool newIsBlue)
     {
         IsBlue = newIsBlue;
-        Debug.Log("El turno ha cambiado. Ahora es turno " + (IsBlue ? "Azul" : "Rojo"));
-        if(newIsBlue)        {
+        Debug.Log("Turno cambiado. Ahora es turno " + (IsBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
+
+        if (newIsBlue)
+        {
             turnCounter++;
             turnCounterElement.text = "Turn Number: " + turnCounter;
         }
+
+        UpdatePlayerCanvas();
     }
+
+    private void UpdatePlayerCanvas()
+    {
+        if (player1GameObject != null && player2GameObject != null)
+        {
+            Canvas canvasPlayer1 = player1GameObject.GetComponentInChildren<Canvas>();
+            Canvas canvasPlayer2 = player2GameObject.GetComponentInChildren<Canvas>();
+
+            if (canvasPlayer1 != null && canvasPlayer2 != null)
+            {
+                if (IsBlue)
+                {
+                    canvasPlayer1.enabled = true;
+                    canvasPlayer2.enabled = false;
+                    Debug.Log("Turno de Player 1. Canvas de Player 1 activado, Canvas de Player 2 desactivado.");
+                }
+                else
+                {
+                    canvasPlayer2.enabled = true;
+                    canvasPlayer1.enabled = false;
+                    Debug.Log("Turno de Player 2. Canvas de Player 2 activado, Canvas de Player 1 desactivado.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Uno o ambos jugadores no tienen un Canvas en sus GameObjects hijos.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player 1 o Player 2 no han sido registrados todavía en TurnManager.");
+        }
+    }
+
 
     public bool getIsBlue()
     {

@@ -54,7 +54,7 @@ public class SelectToken : MonoBehaviour
             Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
         }
 
-        character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
+        // character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
 
 
         plane = new Plane(Vector3.up, Vector3.up);
@@ -211,6 +211,15 @@ public class SelectToken : MonoBehaviour
         int manaCost = character.getManaCost();
 
         photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost);
+    }
+
+    [PunRPC]
+    public void SetCharacterRPC(int characterId, int teamTypeInt)
+    {
+        TeamType tokenTeam = (TeamType)teamTypeInt;
+        Character characterToAssign = CharacterClassSelector(characterId, tokenTeam, gameObject);
+        SetCharacter(characterToAssign);
+        changeCardOnBoard();
     }
 
     [PunRPC]

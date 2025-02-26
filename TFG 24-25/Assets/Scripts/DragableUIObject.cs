@@ -17,14 +17,37 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     bool tokenSpawn = false;
 
+    [SerializeField] List<int> possibleCharacterNamesToAssign = new List<int>();
+    int randomCharacterName = 1;
+
     Vector3 initialPosition;
 
-    [SerializeField] Material blueMaterial;
-    [SerializeField] Material redMaterial;
+    public SpawnCardController gameController;
 
     TeamType TESTING_teamType;
 
-    void Start() { }
+    void Start()
+    {
+        GameObject spawnManagerGO = GameObject.Find("SpawnManager");
+        if (spawnManagerGO != null)
+        {
+            gameController = spawnManagerGO.GetComponent<SpawnCardController>();
+            if (gameController == null)
+            {
+                Debug.LogError("No se encontró el componente CardGameController en SpawnManager!");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontró GameObject con Tag 'SpawnManager' para el CardGameController!");
+        }
+        if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
+        {
+            int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
+            randomCharacterName = possibleCharacterNamesToAssign[randomIndex];
+            Debug.Log("Nombre de personaje seleccionado aleatoriamente: " + randomCharacterName);
+        }
+    }
 
     public void SetDragableUIObject(Cards newCard)
     {
@@ -62,21 +85,27 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         if (transform.localPosition.y > -175.0f)
         {
-            //if (TESTING_teamType == TeamType.RED || TESTING_teamType == TeamType.BLUE)
-            //{
-            //    TESTING_CreateCharacterOrActivateEffect();
-            //}
-            //else
-            //{
-            Debug.Log("WARRO?");
-            CreateCharacterOrActivateEffectWarro();
-            //}    
-
+            Debug.Log("Carta jugada, solicitando instanciar personaje: " + randomCharacterName);
+            RequestCharacterInstantiation();
             Destroy(gameObject);
         }
         else
         {
             transform.position = initialPosition;
+        }
+    }
+
+
+    void RequestCharacterInstantiation()
+    {
+        if (gameController != null)
+        {
+            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {randomCharacterName}");
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, "TokenPrefabName", randomCharacterName, PhotonNetwork.LocalPlayer.ActorNumber);
+        }
+        else
+        {
+            Debug.LogError("GameController no asignado en DragableUIObject!");
         }
     }
 
@@ -90,16 +119,6 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? token.name : token2.name, spawnPosition, Quaternion.identity);
 
             Renderer tokenRenderer = instantiatedToken.GetComponent<Renderer>();
-            if (PhotonNetwork.IsMasterClient)
-            {
-                tokenRenderer.material = blueMaterial;
-                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "blue");
-            }
-            else
-            {
-                tokenRenderer.material = redMaterial;
-                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
-            }
 
             //instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
         }
@@ -130,16 +149,6 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? token.name : token2.name, spawnPosition, Quaternion.identity);
 
             Renderer tokenRenderer = instantiatedToken.GetComponent<Renderer>();
-            if (PhotonNetwork.IsMasterClient)
-            {
-                tokenRenderer.material = blueMaterial;
-                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "blue");
-            }
-            else
-            {
-                tokenRenderer.material = redMaterial;
-                instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
-            }
 
             //instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, TESTING_teamType, instantiatedToken));
         }
@@ -148,47 +157,5 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         }
         */
-    }
-
-    Character CharacterClassSelector(string characterName, TeamType tokenTeam, GameObject instantiatedToken)
-    {
-        return null;
-        /*
-        switch (characterName)
-        {
-            case "Cavalier":
-                return new Cavalier(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Salmon":
-                return new Salmon(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Fly":
-                return new Fly(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Turtle":
-                return new Turtle(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Mimic":
-                return new Mimic(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Medusa":
-                return new Medusa(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Mummy":
-                return new Mummy(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Death Horseman":
-                return new DeathHorseman(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Terracotta Warrior":
-                return new TerracottaWarrior(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Magic Karp":
-                return new MagicKarp(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Chicken":
-                return new Chicken(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Dummy":
-                return new Dummy(card.GetCharacterStats(), tokenTeam);
-            case "The Gun":
-                return new TheGun(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            case "Human Werewolf":
-                return new HumanWerewolf(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-            default:
-                Debug.LogError("NO CHARACTER RECOGNISED");
-                return new Character(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
-        }
-        */
-
     }
 }

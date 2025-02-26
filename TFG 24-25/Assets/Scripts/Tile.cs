@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
     {
         if (other.gameObject.tag == "TileCollider")
         {
-            Debug.Log("ENTER: " + tileId);
+            // Debug.Log("ENTER: " + tileId);
             other.transform.parent.GetComponent<SelectToken>().SetOnTileId(tileId);
         }
     }
