@@ -19,11 +19,10 @@ public class DeckManager : Singleton<DeckManager>
     {
         /*
         Shuffle(cardsWarras);
-        for (int i = 0; i < cardsWarras.Count; i++)
+        /*for (int i = 0; i < cardsWarras.Count; i++)
         {
             deckWarro.Enqueue(cardsWarras[i]);
-        }
-        */
+        }*/
         CreateDeck();
     }
     void Start()
@@ -38,8 +37,8 @@ public class DeckManager : Singleton<DeckManager>
         {
             Debug.Log("Pressed T");
             
+            // DrawCardWarro();
             DrawCard();
-            //DrawCard();
         }
 
         
@@ -48,7 +47,7 @@ public class DeckManager : Singleton<DeckManager>
     void CreateDeck()
     {
         GenerateInDeck(15, 10);
-        //ShuffleDeck();
+        ShuffleDeck();
     }
 
     public void DrawCard()

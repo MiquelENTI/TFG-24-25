@@ -115,5 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: {fileID: 8236987784292183732, guid: 124f3284ca0c5904986f4f752e16dfa4, type: 3}
   token2: {fileID: 8236987784292183732, guid: 650c9018c6f8d0b4caac10274b9c3e72, type: 3}
+  characterNameToAssign: 
   blueMaterial: {fileID: 2100000, guid: 9d3dbb78878e26e4d837462824e50b80, type: 2}
   redMaterial: {fileID: 2100000, guid: 3f88146e26986364f81dbd627624d928, type: 2}
+  gameController: {fileID: 0}

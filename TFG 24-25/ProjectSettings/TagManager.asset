@@ -9,6 +9,7 @@ TagManager:
   - RedHand
   - BlueHand
   - TileCollider
+  - SpawnManager
   - RedHold
   - BlueHold
   - SpawnTileCollider
