@@ -9,6 +9,11 @@ TagManager:
   - RedHand
   - BlueHand
   - TileCollider
+  - RedHold
+  - BlueHold
+  - SpawnTileCollider
+  - CardGameObject
+  - TokenGameObject
   layers:
   - Default
   - TransparentFX

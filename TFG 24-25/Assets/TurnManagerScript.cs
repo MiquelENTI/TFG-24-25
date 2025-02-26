@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class TurnManagerScript : MonoBehaviourPun
+public class TurnManagerScript : Singleton<TurnManagerScript>
 {
     [SerializeField] bool IsBlue = true;
 

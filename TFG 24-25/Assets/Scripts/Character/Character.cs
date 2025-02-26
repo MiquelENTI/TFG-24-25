@@ -13,23 +13,26 @@ public struct CharacterStats
 {
     public string name;
     public int hp;
+    public int maxHp;
     public int dmg;
     public int manaCost;
-    public int numOfMovements;
+    public int range;
     public MovementType movementType;
     public bool stun;
     public string description;
-
-    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _numOfMovements, MovementType _movementType, string _description)
+    public bool checkAllInRangeCells;
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, MovementType _movementType, string _description)
     {
         name = _name;
+        maxHp = _hp;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
-        numOfMovements = _numOfMovements;
+        range = _range;
         movementType = _movementType;
         stun = false;
         description = _description;
+        checkAllInRangeCells = false;
     }
 
     public void PrintStats()
@@ -40,7 +43,7 @@ public struct CharacterStats
         " | HP: " + hp +
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
-        " | Num Of Movementst: " + numOfMovements +
+        " | Range: " + range +
         " | Movement Type: " + movementType.ToString()
         );
     }
@@ -79,6 +82,7 @@ public class Character
 
     protected TeamType teamType;
     protected int onTile;
+    protected int previousTile;
 
     protected bool toSpawn = true;
     protected bool canAttack = true;
@@ -88,10 +92,7 @@ public class Character
     [SerializeField] public string description;
     protected PlayerStats playerStats;
 
-    bool inScoreTile14 = false;
-    bool inScoreTile15 = false;
-    bool inScoreTile20 = false;
-    bool inScoreTile21 = false;
+    bool canScore = false;
 
 
     public int GetId()
@@ -255,6 +256,7 @@ public class Character
             playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
+            previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 
             cellToMove.SetCharacter(this);
@@ -270,8 +272,9 @@ public class Character
 
             Debug.Log(teamType.ToString() + " MOOOVE");
 
-            CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+            CellNode previousNode = CellNodeManager.Instance.GetNodeById(previousTile);
 
+            previousTile = onTile;
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
@@ -279,12 +282,7 @@ public class Character
             previousNode.RemoveCharacter();
 
             //previousNode.PrintStatus();
-            cellToMove.PrintStatus();
-
-            inScoreTile14 = false;
-            inScoreTile15 = false;
-            inScoreTile20 = false;
-            inScoreTile21 = false;
+            //cellToMove.PrintStatus();
         }
         else
         {
@@ -303,6 +301,7 @@ public class Character
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
+        previousTile = onTile;
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
@@ -310,48 +309,46 @@ public class Character
         previousNode.RemoveCharacter();
     }
 
+    void TileScoring()
+    {
+        CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
+
+        
+
+        switch (node.GetScoreNode())
+        {
+            case CellScoreType.NORMAL:
+                // Prevent scoring in your own scoring tiles
+                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                { return; }
+                if (canScore && previousTile == onTile)
+                {
+                    scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
+                    OnPointsScoring();
+                    canScore = false;
+                    return;
+                }
+                canScore = true;
+            break;
+
+            case CellScoreType.QUICK:
+                // Prevent scoring in your own scoring tiles
+                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                { return; }
+                scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
+                OnPointsScoring();
+            break;
+
+            default:
+                break;
+        }
+    }
+
     public virtual void OnStartTurn()
     {
-        if (onTile == 14)
-        {
-            if (inScoreTile14)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile14 = false;
-                return;
-            }
-            inScoreTile14 = true;
-        }
-        else if (onTile == 15)
-        {
-            if (inScoreTile15)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile15 = false;
-                return;
-            }
-            inScoreTile15 = true;
-        }
-        else if (onTile == 20)
-        {
-            if (inScoreTile20)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile20 = false;
-                return;
-            }
-            inScoreTile20 = true;
-        }
-        else if (onTile == 21)
-        {
-            if (inScoreTile21)
-            {
-                scoreManager.UpdateScore(teamType);
-                inScoreTile21 = false;
-                return;
-            }
-            inScoreTile21 = true;
-        }
+        TileScoring();
+
+        //Debug.Log("OnStartPassed");
     }
     public virtual void OnEndTurn()
     {
@@ -369,6 +366,11 @@ public class Character
 
     }
     public virtual void OnAttack(Character attacker)
+    {
+
+    }
+
+    public virtual void OnPointsScoring()
     {
 
     }
@@ -405,6 +407,12 @@ public class Character
         stats.dmg -= amount;
         if (stats.dmg <= 0)
         { stats.dmg = 0; }
+    }
+
+    public void Heal(int amount)
+    {
+        stats.hp += amount;
+        stats.hp = Mathf.Max(stats.hp, stats.maxHp);
     }
 
     public void ApplyStun()

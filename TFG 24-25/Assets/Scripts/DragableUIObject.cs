@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Photon.Pun;
-using UnityEditorInternal;
-using System.Xml.Serialization;
-using TreeEditor;
 
 public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -30,7 +27,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void SetDragableUIObject(Cards newCard)
     {
-        //card = newCard;
+        card = newCard;
         transform.parent = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHand" : "RedHand").transform;
 
     }
@@ -71,7 +68,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             //else
             //{
             Debug.Log("WARRO?");
-            CreateCharacterOrActivateEffectWarro();
+            CreateCharacterOrActivateEffect();
             //}    
 
             Destroy(gameObject);
@@ -103,7 +100,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 instantiatedToken.GetComponent<PhotonView>().RPC("SyncMaterial", RpcTarget.OthersBuffered, "red");
             }
 
-            //instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+            instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
         }
         else
         {
@@ -120,12 +117,12 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
         GameObject instantiatedToken = PhotonNetwork.Instantiate(PhotonNetwork.IsMasterClient ? "Warro/"+token.name : "Warro/" + token2.name, spawnPosition, Quaternion.identity);
 
-            //instantiatedToken.GetComponent<SelectToken>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
+        instantiatedToken.GetComponent<TokenGameObject>().SetCharacter(CharacterClassSelector(card.GetCharacterStats().name, tokenTeam, instantiatedToken));
     }
 
     public void TESTING_CreateCharacterOrActivateEffect()
     {
-        /*
+        
         if (card.IsCharacter())
         {
             Vector3 spawnPosition = new Vector3(2.16f, 0.75f, PhotonNetwork.IsMasterClient ? -3.95f : -0.5f);
@@ -149,13 +146,13 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
 
         }
-        */
+        
     }
 
     Character CharacterClassSelector(string characterName, TeamType tokenTeam, GameObject instantiatedToken)
     {
-        return null;
-        /*
+        //return null;
+        
         switch (characterName)
         {
             case "Cavalier":
@@ -190,7 +187,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 Debug.LogError("NO CHARACTER RECOGNISED");
                 return new Character(card.GetCharacterStats(), tokenTeam, instantiatedToken, null);
         }
-        */
+        
 
     }
 }

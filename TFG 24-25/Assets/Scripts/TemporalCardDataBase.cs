@@ -22,9 +22,9 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 22, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "RADEV\n\nCiro Di Marzio") }, // Radev
         { 23, new CharacterStats("Richard",5, 15, 20,  1, MovementType.Basic, "RICHARD\n\nEl padrino") }, // Richard
         { 24, new CharacterStats("Joan",3, 8, 15,  1, MovementType.Basic, "JOAN\n\nS'esta passant el Halo") }, // Joan
-        { 25, new CharacterStats("Hugo",3, 6, 17,  1, MovementType.Basic, "HUGO\n\n") }, // Hugo
-        { 26, new CharacterStats("Hector",3, 9, 12,  1, MovementType.Basic, "HECTOR\n\n") }, // Hector
-        { 27, new CharacterStats("Coronado",2, 5, 8,  1, MovementType.Basic, "CORONADO\n\n") }, // Coronado
+        { 25, new CharacterStats("Leech",3, 3, 7,  1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuació, enemics a una casella reben 1 de mal\n\n") }, // Hugo
+        { 26, new CharacterStats("Berserker",3, 6, 5,  1, MovementType.Basic, "Si esta en una casella de puntuació, fa +2 d'atac\n\n") }, // Hector
+        { 27, new CharacterStats("Hydra? TBC",4, 7, 9,  1, MovementType.Basic, "Si esta en una casella de puntuació, es cura la quantitat de punts obtinguts\n\n") }, // Coronado
         { 28, new CharacterStats("Jaumandreu",2, 4, 10,  1, MovementType.Basic, "JAUMANDREU\n\n") }, // Jaumandreu
         { 29, new CharacterStats("Mokiel",1, 3, 5,  1, MovementType.Basic, "MOKIEL\n\nJuga al Call of Duty (de Roblox)") }, // Mokiel
         { 30, new CharacterStats("Pinsa",1, 3, 7,  1, MovementType.Basic, "PINSA\n\nEl programador que no programa") }, // Pinsa
