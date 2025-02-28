@@ -257,7 +257,7 @@ public class Character
             playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
-            Debug.Log("ONTILE: " + onTile);
+            //Debug.Log("ONTILE: " + onTile);
             previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 

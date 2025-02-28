@@ -75,6 +75,9 @@ public class DragableGameObject : MonoBehaviour
         isOutsideBoard = isOutside;
     }
 
+    public int GetTileHovering()
+    { return tileHovering; }
+
     private void OnEnable()
     {
         playerInputs.Enable();

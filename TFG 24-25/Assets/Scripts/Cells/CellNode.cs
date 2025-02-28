@@ -489,14 +489,10 @@ public class CellNode
             isAttacking = true;
         }
 
-        Debug.Log("DIRECTIONS COUNT: " + directions.Count);
-        Debug.Log("ConnectionDictionary: " + connectionDictionary.Count);
-
         foreach (CellConnection direction in directions)
         {
             if (!CheckConnectionNode(direction))
             {
-                Debug.Log("ENTRES AQUI?");
                 continue;
             }
 
@@ -510,7 +506,7 @@ public class CellNode
                 continue;
             }
 
-            Debug.Log("IS ATTACKING? " + isAttacking);
+            //Debug.Log("IS ATTACKING? " + isAttacking);
             if (isAttacking)
             {
 

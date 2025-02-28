@@ -26,6 +26,8 @@ public class TokenGameObject : DragableGameObject
 
     public GameObject tileCollider;
 
+    private Character characterSelected;
+
     protected override void Awake()
     {
         base.Awake();
@@ -95,14 +97,21 @@ public class TokenGameObject : DragableGameObject
     {
         base.LeftMouseDownAction();
 
-        CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
-
         GetMouseWorldPos("TokenGameObject");
+
+        if (gameObjectSelected == null)
+        { return; }
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
             return;
+        }
+
+        characterSelected = gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter();
+        if (isDragging)
+        {
+            CellNodeManager.Instance.showPossibleMovements.Invoke(characterSelected.GetOnTileId());
         }
 
         if (cardToDisplay.activeSelf)
@@ -115,16 +124,12 @@ public class TokenGameObject : DragableGameObject
     protected override void LeftMouseUpAction()
     {
         base.LeftMouseUpAction();
-    
+
+        
+
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
-            return;
-        }
-
-        if (tileHovering == -1)
-        {
-            Debug.Log("TileID is -1");
             return;
         }
 
@@ -133,9 +138,18 @@ public class TokenGameObject : DragableGameObject
             transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
             return;
         }
+        else
+        {
+            if (character.GetId() == characterSelected.GetId())
+            {
+                //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
 
-        CellNodeManager.Instance.togglePossibleMovements.Invoke(character.GetOnTileId());
-        MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
+                CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
+                MyEventHandler.Instance.moveToken.Invoke(tileHovering, characterSelected.GetId());
+            }
+        }
+
+        
         //character.GetCharacterStats().PrintStats();
     }
 

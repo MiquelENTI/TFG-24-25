@@ -13,11 +13,15 @@ public class CardHold : MonoBehaviour
 
     PhotonView photonView;
 
+    int currentId;
+
     void Start()
     {
         cards = new List<GameObject>();
         cardSize = 1f;
         photonView = GetComponent<PhotonView>();
+
+        currentId = 0;
     }
 
     // Update is called once per frame
@@ -37,8 +41,11 @@ public class CardHold : MonoBehaviour
     public void AddCardToHold(GameObject card)
     {
         cards.Add(card);
-        //card.transform.localRotation = Quaternion.Euler(0,0,0);
         ReorganizeCards();
+        card.transform.GetChild(0).GetComponent<CardGameObject>().SetCardId(currentId);
+        currentId++;
+
+        Debug.Log("CardID: " + card.transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() + " CurrentID: " + currentId);
     }
 
     public void ReorganizeCards()
@@ -64,9 +71,19 @@ public class CardHold : MonoBehaviour
         gameObject.transform.GetChild(1).localPosition = Vector3.zero;
     }
 
-    public void DestroyCard(GameObject cardToDestroy)
+    public void DestroyCard(int cardToDestroy)
     {
-        Destroy(cardToDestroy);
-        ReorganizeCards();
+        
+        for (int i = 0; i < cards.Count; i++)
+        {
+            if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
+            {
+                Destroy(cards[i]);
+                cards.RemoveAt(i);
+                ReorganizeCards();
+                break;
+            }
+        }
+
     }
 }

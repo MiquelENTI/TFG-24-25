@@ -10,6 +10,7 @@ public class CardGameObject : DragableGameObject
     //Plane plane = new Plane(Vector3.up, Vector3.up);
 
     CardHold cardHold;
+    int cardId;
 
     public GameObject spawnTileCollider;
 
@@ -74,6 +75,9 @@ public class CardGameObject : DragableGameObject
     {
         base.LeftMouseUpAction();
 
+        if (gameObjectSelected == null)
+        { return; }
+
         if (isOutsideBoard)
         {
             // Returns to The Hand
@@ -81,11 +85,19 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
-            if (gameObject == gameObjectSelected)
+            // Verify If its the card selected
+            if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
             {
-                // Spawn Token in tileHovering
-                RequestCharacterInstantiation();
-                cardHold.DestroyCard(gameObject);
+                // Spawn Token in tileHovering if is empty
+                if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied())
+                {
+                    RequestCharacterInstantiation();
+                    cardHold.DestroyCard(cardId);
+                }
+                else
+                {
+                    cardHold.ReorganizeCards();
+                }    
             }
         }
         
@@ -130,4 +142,9 @@ public class CardGameObject : DragableGameObject
             Debug.LogError("GameController no asignado en DragableUIObject!");
         }
     }
+
+    public void SetCardId(int id)
+    { cardId = id; }
+    public int GetCardId() 
+    { return cardId; }
 }

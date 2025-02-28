@@ -14,7 +14,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private Vector2 gridSize;
     private int currentId;
 
-    public UnityEvent<int> togglePossibleMovements;
+    public UnityEvent<int> hidePossibleMovements;
+    public UnityEvent<int> showPossibleMovements;
     public UnityEvent<TeamType> hidePossibleSpawnTiles;
     public UnityEvent<TeamType> showPossibleSpawnTiles;
 
@@ -31,10 +32,16 @@ public class CellNodeManager : Singleton<CellNodeManager>
         blueSpawnTiles = new List<CellNode>();
 
         // Event that Triggers ToggleVisibilityPossibleMovements Function
-        togglePossibleMovements = new UnityEvent<int>();
-        togglePossibleMovements.AddListener((int tileId) =>
+        
+        showPossibleMovements = new UnityEvent<int>();
+        showPossibleMovements.AddListener((int tileId) =>
         {
-            ToggleVisibilityPossibleMovements(tileId);
+            ToggleVisibilityPossibleMovements(tileId, true);
+        });
+        hidePossibleMovements = new UnityEvent<int>();
+        hidePossibleMovements.AddListener((int tileId) =>
+        {
+            ToggleVisibilityPossibleMovements(tileId, false);
         });
 
         // Event that Triggers ToggleVisibilityAvailableSpawnCells
@@ -168,14 +175,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Higlihts all the Token's possible movements
-    void ToggleVisibilityPossibleMovements(int tileId) // Character's OnTile
+    void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
     {
         // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
 
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
 
-        if(character == null) { return; }
+        if (character == null) { return; }
 
         foreach (CellConnection direction in character.GetDirections())
         {
@@ -205,35 +212,11 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 }
             }
             // The cell is empty and is highlighted with movement color
-            nextCell.ChangeMovementIndicatorVisibility();
+            nextCell.ChangeMovementIndicatorVisibility(state);
         }
     }
 
     // Function that Highlights all the Available SpawnTiles
-    void ToggleVisibilityAvailableSpawnCells(TeamType teamType)
-    {
-        // Parameter Determines Which Tiles to Highlight
-        switch (teamType)
-        {
-            case TeamType.RED:
-                // Highlight Red Spawn Tiles
-                foreach (CellNode spawnableTile in redSpawnTiles)
-                {
-                    spawnableTile.ChangeMovementIndicatorVisibility();
-                }
-                break;
-            case TeamType.BLUE:
-                // Highlight Red Spawn Tiles
-                foreach (CellNode spawnableTile in blueSpawnTiles)
-                {
-                    spawnableTile.ChangeMovementIndicatorVisibility();
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
     void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
     {
         // Parameter Determines Which Tiles to Highlight
