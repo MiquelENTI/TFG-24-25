@@ -17,9 +17,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
         moveToken.AddListener((int cellId, int characterId) =>
         {
-            InvokeMoveToken(cellId, characterId);
-
-            photonView.RPC("RPC_MoveToken", RpcTarget.Others, cellId, characterId);
+            photonView.RPC("RPC_MoveToken", RpcTarget.All, cellId, characterId);
         });
     }
 

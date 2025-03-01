@@ -267,11 +267,12 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        GetCharacterStats().PrintStats();
+        //GetCharacterStats().PrintStats();
 
         if (cellToMove.CheckNodes(GetDirections(), id))
         //if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
+            GetCharacterStats().PrintStats();
             playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 

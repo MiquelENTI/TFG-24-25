@@ -32,9 +32,10 @@ public class CellNode
     // New Movement
     public Vector2 positionInGrid;
 
-    public CellNode(Vector3 position, GameObject movementIndicator)
+    public CellNode(Vector3 position, GameObject movementIndicator, int x, int y)
     {  
         this.position = position;
+        positionInGrid = new Vector2(x, y);
 
         cellMovementIndicator = movementIndicator.GetComponent<MeshRenderer>().material;
         //ChangeMovementIndicatorVisibility();
@@ -209,9 +210,9 @@ public class CellNode
 
     public bool CheckNodes(List<CellConnection> directions, int characterId)
     {
-        //return NewMovement(characterId);
+        return NewMovement(characterId);
         //return CheckMultipleNodeForCharacter(directions, characterId);
-        return FunctionalMovement(directions, characterId);
+        //return FunctionalMovement(directions, characterId);
     }
 
     public void AddConnection(CellConnection cellMovement, CellNode cellNode)
@@ -417,15 +418,21 @@ public class CellNode
         diff.x = Mathf.Abs(diff.x);
         diff.y = Mathf.Abs(diff.y);
 
-        Debug.Log("Diff on Enemy and Character: " + diff);
+        //Debug.Log("Diff on Enemy and Character: " + diff + "POSITIONS: " + positionInGrid + " - " + characterTile.positionInGrid);
 
         if (diff.x > characterMoving.GetCharacterStats().range || diff.y > characterMoving.GetCharacterStats().range)
-        { return false; }
+        {
+            Debug.Log("ENTERED IF RANGE");
+            return false; }
 
+        //Debug.Log("Character Range: " + characterMoving.GetCharacterStats().range);
+
+        //Debug.Log(characterMoving.GetCharacterStats().movementType.ToSafeString());
         switch (characterMoving.GetCharacterStats().movementType)
         {
             case MovementType.Basic:
-                if (diff.x == 0 ||  diff.y == 0)
+            {
+                if (diff.x == 0.0f || diff.y == 0.0f)
                 {
                     if (isAttacking)
                     {
@@ -438,7 +445,9 @@ public class CellNode
                     return true;
                 }
                 break;
+            }
             case MovementType.Diagonal:
+            {
                 if (diff.x == diff.y)
                 {
                     if (isAttacking)
@@ -452,8 +461,10 @@ public class CellNode
                     return true;
                 }
                 break;
+            }
             case MovementType.Omni:
-                if (diff.x == 0 || diff.y == 0 || (diff.x == diff.y))
+            {
+                if (diff.x == 0.0f || diff.y == 0.0f || (diff.x == diff.y))
                 {
                     if (isAttacking)
                     {
@@ -466,8 +477,10 @@ public class CellNode
                     return true;
                 }
                 break;
+            }
+                
         }
-        return true;
+        return false;
     }
 
     public bool FunctionalMovement(List<CellConnection> directions, int characterId)
