@@ -206,13 +206,15 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
-                        continue;
+                        // If character can jump, continue
+                        break;
                     }
                     // Or are on different teams, cell is highlighted with attacking color
                     else
                     {
                         // Set Cell Red and visible
-                        continue;
+                        // If character can jump, continue
+                        break;
                     }
                 }
                 // The cell is empty and is highlighted with movement color
