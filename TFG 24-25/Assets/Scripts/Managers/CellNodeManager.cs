@@ -186,33 +186,38 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
         foreach (CellConnection direction in character.GetDirections())
         {
-            if (!centralCell.CheckConnectionNode(direction))
+            CellNode nextCell = centralCell;
+
+            for (int i = 0; i<character.GetCharacterStats().range; i++)
             {
-                continue;
-            }
-
-            // Cell To Check
-            CellNode nextCell = centralCell.GetCellByDirection(direction);
-
-            Character isCharacter = nextCell.GetCharacter();
-
-            // If Character Exists
-            if (isCharacter != null)
-            {
-                // And are in the same Team Skip, cell is not highlighted
-                if (isCharacter.GetTeamType() == character.GetTeamType())
+                if (!nextCell.CheckConnectionNode(direction))
                 {
                     continue;
                 }
-                // Or are on different teams, cell is highlighted with attacking color
-                else
+
+                // Cell To Check
+                nextCell = nextCell.GetCellByDirection(direction);
+
+                Character isCharacter = nextCell.GetCharacter();
+
+                // If Character Exists
+                if (isCharacter != null)
                 {
-                    // Set Cell Red and visible
-                    continue;
+                    // And are in the same Team Skip, cell is not highlighted
+                    if (isCharacter.GetTeamType() == character.GetTeamType())
+                    {
+                        continue;
+                    }
+                    // Or are on different teams, cell is highlighted with attacking color
+                    else
+                    {
+                        // Set Cell Red and visible
+                        continue;
+                    }
                 }
+                // The cell is empty and is highlighted with movement color
+                nextCell.ChangeMovementIndicatorVisibility(state);
             }
-            // The cell is empty and is highlighted with movement color
-            nextCell.ChangeMovementIndicatorVisibility(state);
         }
     }
 
