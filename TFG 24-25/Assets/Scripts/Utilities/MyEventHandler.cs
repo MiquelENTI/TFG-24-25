@@ -18,6 +18,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
         moveToken.AddListener((int cellId, int characterId) =>
         {
             photonView.RPC("RPC_MoveToken", RpcTarget.All, cellId, characterId);
+            Debug.Log("TRIGGERED MOVE");
         });
     }
 
@@ -27,6 +28,8 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
+
+        Debug.Log("FROM: " + character.GetOnTileId() + " TO: " + cellId);
 
         if (character.IsToSpawn())
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
+using UnityEditor.Compilation;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
@@ -267,8 +268,6 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        //GetCharacterStats().PrintStats();
-
         if (cellToMove.CheckNodes(GetDirections(), id))
         //if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
@@ -276,18 +275,21 @@ public class Character
             playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
-            Debug.Log(teamType.ToString() + " MOOOVE");
+            //Debug.Log(teamType.ToString() + " MOOOVE");
+            
+            CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
-            CellNode previousNode = CellNodeManager.Instance.GetNodeById(previousTile);
-
-            previousTile = onTile;
             SetOnTileId(cellToMove.GetId());
             MoveToken(cellToMove.GetPosition());
 
             cellToMove.SetCharacter(this);
-            previousNode.RemoveCharacter();
 
+            //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
+            //Debug.Log("Previous After");
             //previousNode.PrintStatus();
+            //Debug.Log("OnTIle AFter");
+            //CellNodeManager.Instance.GetNodeById(onTile).PrintStatus();
+            //Debug.Log("CellToMove After");
             //cellToMove.PrintStatus();
         }
         else
