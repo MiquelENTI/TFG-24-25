@@ -59,7 +59,8 @@ public class CardGameObject : DragableGameObject
 
     protected override void LeftMouseDownAction()
     {
-        base.LeftMouseDownAction();
+        if (!GetComponentInParent<PhotonView>().IsMine)
+            return;
 
 
         // When Dragging, the GameObject (Visible Card) Updates its Position and its Sibling, the Collider that Detects on Which Tile is it Hovering On.
@@ -73,8 +74,6 @@ public class CardGameObject : DragableGameObject
 
     protected override void LeftMouseUpAction()
     {
-        base.LeftMouseUpAction();
-
         if (gameObjectSelected == null)
         { return; }
 

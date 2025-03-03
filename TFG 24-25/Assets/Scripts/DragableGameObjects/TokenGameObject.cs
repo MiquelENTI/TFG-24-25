@@ -95,7 +95,8 @@ public class TokenGameObject : DragableGameObject
 
     protected override void LeftMouseDownAction()
     {
-        base.LeftMouseDownAction();
+        if (!GetComponentInParent<PhotonView>().IsMine)
+            return;
 
         GetMouseWorldPos("TokenGameObject");
 

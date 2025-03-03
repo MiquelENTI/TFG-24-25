@@ -6,7 +6,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CharacterStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
-        { 1, new CharacterStats ("Cavalier", 0, 5, 8,  1, MovementType.Basic, "CAVALIER\n\nPuede moverse y atacar en el mismo turno") }, // Cavalier
+        { 1, new CharacterStats ("Cavalier", 0, 5, 8,  1, MovementType.Omni, "CAVALIER\n\nPuede moverse y atacar en el mismo turno") }, // Cavalier
         { 3, new CharacterStats ("Salmon", 4, 9, 13, 1, MovementType.Omni, "SALMON\n\nAl matar a un enemigo, se mueve a la casilla del enemigo y esta pierde 2 hp")  }, // Salmon
         { 5, new CharacterStats ("Fly",1, 1, 1,  1, MovementType.Omni, "FLY")  }, // Fly
         { 6, new CharacterStats ("Turtle",2, 5, 18, 1, MovementType.Basic, "TURTLE\n\nSe mueve cada dos turnos (se mueve, descansa, se mueve...)") }, // Turtle (WIP)
@@ -19,7 +19,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 17, new CharacterStats("Terracotta Warrior",4, 4, 21, 1, MovementType.Basic, "TERRACOTTA WARRIOR\n\nAl permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 7, 15, 1, MovementType.Basic, "MAGIC KARP\n\nDestruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
         { 21, new CharacterStats("Chicken",1, 2, 7,  1, MovementType.Basic, "CHICKEN\n\nAl recibir daño el atacante recibe 16 de daño") }, // Chicken
-        { 22, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "RADEV\n\nCiro Di Marzio") }, // Radev
+        { 22, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "RADEV\n\nSe Queda") }, // Radev
         { 23, new CharacterStats("Richard",5, 15, 20,  1, MovementType.Basic, "RICHARD\n\nEl padrino") }, // Richard
         { 24, new CharacterStats("Joan",3, 8, 15,  1, MovementType.Basic, "JOAN\n\nS'esta passant el Halo") }, // Joan
         { 25, new CharacterStats("Leech",3, 3, 7,  1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuació, enemics a una casella reben 1 de mal\n\n") }, // Hugo
