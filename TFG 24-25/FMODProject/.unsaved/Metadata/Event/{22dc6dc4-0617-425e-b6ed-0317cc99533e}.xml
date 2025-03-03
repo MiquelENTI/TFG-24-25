@@ -144,7 +144,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>0.5</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

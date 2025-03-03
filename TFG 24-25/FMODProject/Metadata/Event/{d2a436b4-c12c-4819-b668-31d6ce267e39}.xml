@@ -36,11 +36,17 @@
 			<destination>{2a87f5c8-b84e-40ca-a04b-69f4e69590f3}</destination>
 		</relationship>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+		<relationship name="banks">
+			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
+		</relationship>
+>>>>>>> 296ba50 (SOUND CARD STANDARD)
 	</object>
 	<object class="EventMixer" id="{bcfeaa12-ba62-42db-ba61-daa496279862}">
 		<relationship name="masterBus">

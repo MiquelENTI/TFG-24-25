@@ -163,7 +163,6 @@
 		<property name="timelockedOffset">
 			<value>2</value>
 		</property>
-		<property name="name" />
 		<relationship name="modulators">
 			<destination>{406a0ecf-308e-4d6b-8e9d-83073082a964}</destination>
 			<destination>{e04b677c-35bf-44ca-a6bd-2ecec0292b29}</destination>
