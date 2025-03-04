@@ -7,12 +7,9 @@ using System.Linq;
 
 public class TokenGameObject : DragableGameObject
 {
-    
-
     // TEMP?
-    Character character;
     GameObject player;
-    [SerializeField] GameObject cardToDisplay;
+    
     public Sprite characterSprite;
 
     [SerializeField] int TEMP_id;
@@ -65,20 +62,6 @@ public class TokenGameObject : DragableGameObject
     void Update()
     {
         // See card Description
-        if (Input.GetMouseButtonDown(1))
-        {
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.transform == transform)
-                {
-                    SeeTokenCard();
-                }
-            }
-        }
 
         //Debug.Log(tileHovering);
 
@@ -178,31 +161,6 @@ public class TokenGameObject : DragableGameObject
 
     public GameObject GetTileCollider()
     { return tileCollider; }
-
-    void SeeTokenCard()
-    {
-        if (isDragging || cardToDisplay.activeSelf)
-        {
-            return;
-        }
-
-        ChangeImageCardToDisplay();
-    }
-
-    void ChangeImageCardToDisplay()
-    {
-        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
-
-        cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
-
-        cardToDisplay.transform.Find("HealthText").GetComponent<Text>().text = character.GetHealth().ToString();
-
-        cardToDisplay.transform.Find("ManaCostText").GetComponent<Text>().text = character.getManaCost().ToString();
-
-        cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
-
-        cardToDisplay.SetActive(true);
-    }
 
     void changeCardOnBoard()
     {

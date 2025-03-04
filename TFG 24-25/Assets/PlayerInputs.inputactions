@@ -1,5 +1,5 @@
 {
-    "name": "Inputs",
+    "name": "PlayerInputs",
     "maps": [
         {
             "name": "Gameplay",
@@ -9,6 +9,15 @@
                     "name": "MouseLeftClick",
                     "type": "Button",
                     "id": "d70a2c62-1b4d-43fa-940c-62ba0d6ba9b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseRightClick",
+                    "type": "Button",
+                    "id": "afdb2a3d-40cd-45b9-9ece-1924e6bb9215",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -44,6 +53,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a389b896-1388-4af0-8d19-9d3ca53ccc11",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "MouseRightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

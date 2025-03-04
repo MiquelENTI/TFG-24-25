@@ -93,7 +93,7 @@ public class DeckManager : Singleton<DeckManager>
             {
                 characterIds.Remove(charactersToExclude[i]);
             }
-            Debug.Log("Character To Remove: " + charactersToExclude[i]);
+            //Debug.Log("Character To Remove: " + charactersToExclude[i]);
         }
 
         Shuffle(characterIds);
@@ -101,10 +101,10 @@ public class DeckManager : Singleton<DeckManager>
         for (int i = 0; i < characterIds.Count; i++)
         {
             deck.Enqueue(characterIds[i]);
-            Debug.Log("CharacterId: " + characterIds[i]);
+            //Debug.Log("CharacterId: " + characterIds[i]);
         }
 
-        Debug.Log("Number of Cards in Deck = " + deck.Count);
+        //Debug.Log("Number of Cards in Deck = " + deck.Count);
     }
 
     private IList<T> Shuffle<T>(IList<T> list)
