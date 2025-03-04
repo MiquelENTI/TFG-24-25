@@ -96,18 +96,19 @@ public class TokenGameObject : DragableGameObject
 
     protected override void LeftMouseDownAction()
     {
-        base.LeftMouseDownAction();
-
-        GetMouseWorldPos("TokenGameObject");
-
-        if (gameObjectSelected == null)
-        { return; }
+        if (!GetComponentInParent<PhotonView>().IsMine)
+            return;
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
             return;
         }
+
+        GetMouseWorldPos("TokenGameObject");
+
+        if (gameObjectSelected == null)
+        { return; }
 
         characterSelected = gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter();
         if (isDragging)
@@ -125,8 +126,6 @@ public class TokenGameObject : DragableGameObject
     protected override void LeftMouseUpAction()
     {
         base.LeftMouseUpAction();
-
-        
 
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {

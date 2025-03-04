@@ -52,6 +52,8 @@ public class CardGameObject : DragableGameObject
     {
         base.LeftMouseDownAction();
 
+        if (!GetComponentInParent<PhotonView>().IsMine)
+            return;
 
         // When Dragging, the GameObject (Visible Card) Updates its Position and its Sibling, the Collider that Detects on Which Tile is it Hovering On.
         GetMouseWorldPos("CardGameObject");
