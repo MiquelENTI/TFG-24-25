@@ -37,7 +37,7 @@ public class CameraFly : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetKeyUp(KeyCode.Tab))
         {
             isDisabled = !isDisabled;
             Focused = !isDisabled;

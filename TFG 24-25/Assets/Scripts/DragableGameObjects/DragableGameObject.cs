@@ -27,6 +27,9 @@ public class DragableGameObject : MonoBehaviour
     {
         playerInputs.Gameplay.MouseLeftClick.started += _ => LeftMouseDownAction();
         playerInputs.Gameplay.MouseLeftClick.canceled += _ => LeftMouseUpAction();
+
+        playerInputs.Gameplay.MouseLeftClick.started += _ => RightClickDownAction();
+        playerInputs.Gameplay.MouseLeftClick.canceled += _ => RightClickUpAction();
     }
 
     // Detect and Calculate Mouse World Position to Move Inside a Plane
@@ -60,6 +63,16 @@ public class DragableGameObject : MonoBehaviour
     protected virtual void LeftMouseUpAction()
     {
         isDragging = false;
+    }
+
+    protected virtual void RightClickDownAction()
+    {
+
+    }
+
+    protected virtual void RightClickUpAction()
+    {
+
     }
 
     // Assign On Which Board Tile is the GameObject hovering
