@@ -330,6 +330,172 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &307971059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5929700f9f9322943ac544fd6a20c5d8, type: 3}
+  m_PrefabInstance: {fileID: 1837117490}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307971062}
+  - component: {fileID: 307971061}
+  - component: {fileID: 307971060}
+  m_Layer: 0
+  m_Name: Wizard_Merged_Def (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &307971060
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 5929700f9f9322943ac544fd6a20c5d8, type: 3}
+  m_PrefabInstance: {fileID: 1837117490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307971059}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d9ca06e719fcf694faec4396b4467bc1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &307971061
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: 5929700f9f9322943ac544fd6a20c5d8, type: 3}
+  m_PrefabInstance: {fileID: 1837117490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307971059}
+  m_Mesh: {fileID: -8388596439132820765, guid: 5929700f9f9322943ac544fd6a20c5d8, type: 3}
+--- !u!4 &307971062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5929700f9f9322943ac544fd6a20c5d8, type: 3}
+  m_PrefabInstance: {fileID: 1837117490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307971059}
+  m_LocalRotation: {x: 0.010340109, y: -0.9741683, z: -0.22254826, w: 0.0368996}
+  m_LocalPosition: {x: 2.13, y: -2.53, z: 2.28}
+  m_LocalScale: {x: 1.125775, y: 1.125775, z: 1.125775}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -25.648, y: -175.132, z: -2.325}
+--- !u!1 &341063374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31febc8e91243714398ba764855772b3, type: 3}
+  m_PrefabInstance: {fileID: 162417487}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341063377}
+  - component: {fileID: 341063376}
+  - component: {fileID: 341063375}
+  m_Layer: 0
+  m_Name: DoubleHands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &341063375
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 31febc8e91243714398ba764855772b3, type: 3}
+  m_PrefabInstance: {fileID: 162417487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341063374}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c7d02fb5e0d66ab4d931987b0636cf91, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &341063376
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: 31febc8e91243714398ba764855772b3, type: 3}
+  m_PrefabInstance: {fileID: 162417487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341063374}
+  m_Mesh: {fileID: 3972928275970900125, guid: 31febc8e91243714398ba764855772b3, type: 3}
+--- !u!4 &341063377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31febc8e91243714398ba764855772b3, type: 3}
+  m_PrefabInstance: {fileID: 162417487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341063374}
+  m_LocalRotation: {x: -0, y: -0.019011842, z: -0.9998193, w: 0}
+  m_LocalPosition: {x: 2.0640674, y: 0.5895503, z: -0.69}
+  m_LocalScale: {x: 0.320842, y: 0.320842, z: 0.320842}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -177.821, y: -180, z: 0}
 --- !u!1 &431476423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,8 +1229,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66, y: 1, z: 0.66}
-  m_Center: {x: 0.22, y: 0.5, z: -0.22}
+  m_Size: {x: 0.8407905, y: 1, z: 0.8393754}
+  m_Center: {x: 0.3547456, y: 0, z: -0.35379195}
 --- !u!114 &1225199845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,33 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCard: {fileID: 7913749586306197705, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
-  cardsWarras:
-  - {fileID: 6149997832755208218, guid: ff18cc7a16ae31146933b4e1fbf7f539, type: 3}
-  - {fileID: 6149997832755208218, guid: f5ea37b1116d24042a2ad666aa594e8b, type: 3}
-  - {fileID: 6149997832755208218, guid: 233b584d23476da4ba88609fca5c39c0, type: 3}
-  - {fileID: 6149997832755208218, guid: 5d7aa100f0c822d4f89b6645ea7f9cad, type: 3}
-  - {fileID: 6149997832755208218, guid: 3b66c59a32ff5c743a3f8343439d0240, type: 3}
-  - {fileID: 6149997832755208218, guid: fbb9b8cd19e2be8439e0bc28655522e7, type: 3}
-  - {fileID: 6149997832755208218, guid: 459e39b09b6787043b45a9ff00a46ae9, type: 3}
-  - {fileID: 6149997832755208218, guid: d21a7eaa7d30d1c43909adb757a6e8b1, type: 3}
-  - {fileID: 6149997832755208218, guid: 427954586f4d7564f8abf1aba0c08207, type: 3}
-  - {fileID: 6149997832755208218, guid: 07c4eeb4937dbf044b0dfe6a3e7d49a4, type: 3}
-  - {fileID: 6149997832755208218, guid: 5a867b5dc4f6062468a3c05c8daad9b0, type: 3}
-  - {fileID: 6149997832755208218, guid: 2905b64c58b233b42986adb6a63db0d5, type: 3}
-  - {fileID: 6149997832755208218, guid: 58693aa07d8f6ac45bc0b3cd393ecd8a, type: 3}
-  - {fileID: 6149997832755208218, guid: 0cc9642d354c4234aaa825dcb2b809ac, type: 3}
-  - {fileID: 6149997832755208218, guid: 066a9d7ee8339c6439d54408f232d3a3, type: 3}
-  - {fileID: 6149997832755208218, guid: 8f1e90cb0c563d647a3eef6b2c120b53, type: 3}
-  - {fileID: 6149997832755208218, guid: 2656a4460ff2796498c49b6d2522c3a7, type: 3}
-  - {fileID: 6149997832755208218, guid: 8ce47ef7e7413bc45a30664f3debe089, type: 3}
-  - {fileID: 6149997832755208218, guid: d84b623b14fcd7845bd9b30fb5d2ff3e, type: 3}
-  - {fileID: 6149997832755208218, guid: a8547310dd79f044786d6dfa00124e59, type: 3}
-  - {fileID: 6149997832755208218, guid: c18ce8dbb3103464cbda31f0f7dc2575, type: 3}
-  - {fileID: 6149997832755208218, guid: 16a8b264d9b177c428a9b912d53cb4cb, type: 3}
-  - {fileID: 6149997832755208218, guid: fd25670edb089b444add94b970d9242b, type: 3}
-  - {fileID: 6149997832755208218, guid: 7a3edc1146a113747a009926805eb7c9, type: 3}
-  - {fileID: 6149997832755208218, guid: f013a37fd1cc14c48952e30cbec563f1, type: 3}
-  - {fileID: 6149997832755208218, guid: c55cccd7991a5564fabf56adc4969b2c, type: 3}
+  charactersToExclude: 
 --- !u!4 &1293831302
 Transform:
   m_ObjectHideFlags: 0

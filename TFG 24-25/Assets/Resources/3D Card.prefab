@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTileCollider: {fileID: 0}
-  possibleCharacterNamesToAssign: 
   gameController: {fileID: 0}
 --- !u!54 &2724274358760060294
 Rigidbody:

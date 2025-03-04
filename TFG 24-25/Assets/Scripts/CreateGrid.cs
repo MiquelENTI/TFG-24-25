@@ -34,8 +34,8 @@ public class CreateGrid : MonoBehaviour
 
         Vector3 centerGrid = new Vector3((columns-1.0f) / 1.18f /2.0f / transform.localScale.x, 0f, -(rows-1.0f) / 1.18f / 2.0f / transform.localScale.z);
         Vector3 gridSize = new Vector3(columns/ transform.localScale.x, 1f, rows / transform.localScale.z+0.43f);
-        transform.GetChild(1).GetComponent<BoxCollider>().center = centerGrid;
-        transform.GetChild(1).GetComponent<BoxCollider>().size = gridSize;
+        //transform.GetChild(1).GetComponent<BoxCollider>().center = centerGrid;
+        //transform.GetChild(1).GetComponent<BoxCollider>().size = gridSize;
 
         cell.transform.localScale = new Vector3(1.2f, 0.5f, 1.2f);
 

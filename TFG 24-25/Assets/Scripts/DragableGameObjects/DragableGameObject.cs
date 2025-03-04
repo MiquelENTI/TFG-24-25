@@ -53,8 +53,7 @@ public class DragableGameObject : MonoBehaviour
     // When mouse is pressed down get an initial Mouse World Pos
     protected virtual void LeftMouseDownAction()
     {
-        if (!GetComponentInParent<PhotonView>().IsMine)
-            return;
+        
     }
 
     // Cancel Dragging
