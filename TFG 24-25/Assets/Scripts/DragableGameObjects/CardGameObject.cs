@@ -21,6 +21,7 @@ public class CardGameObject : DragableGameObject
     {
         base.Awake();
 
+        
     }
     protected override void Start()
     {
@@ -142,7 +143,11 @@ public class CardGameObject : DragableGameObject
     { return cardId; }
 
     public void SetCharacterToSpawnId(int id)
-    { characterIdToSpawn = id; }
+    { 
+        characterIdToSpawn = id;
+        // Info To Display it on Card
+        character = new Character(TemporalCardDataBase.Instance.GetTemporalStats(id), TeamType.BLUE, null, null);
+    }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
 }
