@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class DragableGameObject : MonoBehaviour
 {
@@ -16,11 +18,15 @@ public class DragableGameObject : MonoBehaviour
     protected PlayerInputs playerInputs;
     protected WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
 
-    protected GameObject gameObjectSelected; // Warrada, mira de ferho millor
+    protected GameObject gameObjectSelected; // mirar de ferho millor
 
+    protected Character character;
+
+    [SerializeField] protected GameObject cardToDisplay;
     protected virtual void Awake()
     {
         playerInputs = new PlayerInputs();
+        cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
     }
 
     protected virtual void Start()
@@ -28,8 +34,8 @@ public class DragableGameObject : MonoBehaviour
         playerInputs.Gameplay.MouseLeftClick.started += _ => LeftMouseDownAction();
         playerInputs.Gameplay.MouseLeftClick.canceled += _ => LeftMouseUpAction();
 
-        playerInputs.Gameplay.MouseLeftClick.started += _ => RightClickDownAction();
-        playerInputs.Gameplay.MouseLeftClick.canceled += _ => RightClickUpAction();
+        playerInputs.Gameplay.MouseRightClick.started += _ => RightClickDownAction();
+        playerInputs.Gameplay.MouseRightClick.canceled += _ => RightClickUpAction();
     }
 
     // Detect and Calculate Mouse World Position to Move Inside a Plane
@@ -67,7 +73,16 @@ public class DragableGameObject : MonoBehaviour
 
     protected virtual void RightClickDownAction()
     {
+        Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform == transform)
+            {
+                SeeTokenCard();
+            }
+        }
     }
 
     protected virtual void RightClickUpAction()
@@ -118,5 +133,39 @@ public class DragableGameObject : MonoBehaviour
                 yield return waitForFixedUpdate;
             }
         }
+    }
+
+    void SeeTokenCard()
+    {
+        if (isDragging || cardToDisplay.activeSelf)
+        {
+            return;
+        }
+
+        ChangeImageCardToDisplay();
+    }
+
+    void ChangeImageCardToDisplay()
+    {
+        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
+
+        Debug.Log(cardToDisplay.name);
+        character.GetCharacterStats().PrintStats();
+
+        cardToDisplay.SetActive(true);
+
+        
+
+        cardToDisplay.transform.GetChild(1).GetComponent<TMP_Text>().text = character.GetHealth().ToString();
+
+        cardToDisplay.transform.GetChild(2).GetComponent<TMP_Text>().text = character.GetAttack().ToString();
+
+        cardToDisplay.transform.GetChild(3).GetComponent<TMP_Text>().text = character.GetDescription();
+
+        cardToDisplay.transform.GetChild(4).GetComponent<TMP_Text>().text = character.getManaCost().ToString();
+
+        cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>().text = character.GetCharacterStats().name;
+
+        
     }
 }

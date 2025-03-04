@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "MouseRightClick",
+                    "type": "Button",
+                    "id": "afdb2a3d-40cd-45b9-9ece-1924e6bb9215",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MousePosition",
                     "type": "Value",
                     "id": "ba81b3b7-542e-4429-9f65-c21baba3548e",
@@ -22,15 +31,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "MouseRightClick",
-                    "type": "Button",
-                    "id": "f022760f-c62d-4f1e-904e-c3408353d0ea",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "",
-                    "id": "5a4ee487-95bc-4716-8629-afe77cf1fc97",
+                    "id": "a389b896-1388-4af0-8d19-9d3ca53ccc11",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
