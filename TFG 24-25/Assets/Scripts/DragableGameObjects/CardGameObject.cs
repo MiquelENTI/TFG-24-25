@@ -14,9 +14,7 @@ public class CardGameObject : DragableGameObject
 
     public GameObject spawnTileCollider;
 
-
-    [SerializeField] List<int> possibleCharacterNamesToAssign = new List<int>();
-    int randomCharacterName = 1;
+    int characterIdToSpawn = 1;
     public SpawnCardController gameController;
 
     protected override void Awake()
@@ -46,13 +44,6 @@ public class CardGameObject : DragableGameObject
         else
         {
             Debug.LogError("No se encontr GameObject con Tag 'SpawnManager' para el CardGameController!");
-        }
-
-        if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
-        {
-            int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
-            randomCharacterName = possibleCharacterNamesToAssign[randomIndex];
-            Debug.Log("Nombre de personaje seleccionado aleatoriamente: " + randomCharacterName);
         }
     }
 
@@ -134,8 +125,8 @@ public class CardGameObject : DragableGameObject
     {
         if (gameController != null)
         {
-            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {randomCharacterName}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, randomCharacterName, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
+            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {characterIdToSpawn}");
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, characterIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
         }
         else
         {
@@ -147,4 +138,9 @@ public class CardGameObject : DragableGameObject
     { cardId = id; }
     public int GetCardId() 
     { return cardId; }
+
+    public void SetCharacterToSpawnId(int id)
+    { characterIdToSpawn = id; }
+    public int GetCharacterToSpawnId()
+    { return characterIdToSpawn; }
 }

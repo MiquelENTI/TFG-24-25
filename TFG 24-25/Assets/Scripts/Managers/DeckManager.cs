@@ -8,21 +8,35 @@ using UnityEngine;
 public class DeckManager : Singleton<DeckManager>
 {
     [SerializeField] GameObject prefabCard;
-    Queue<Cards> deck = new();
+    [SerializeField] Queue<int> deck = new();
+    [SerializeField] List<int> charactersToExclude;
 
-    [SerializeField] List<GameObject> cardsWarras = new();
-    [SerializeField] Queue<GameObject> deckWarro = new();
+    int amountOfCardCopies = 2;
 
     int teamTypeAlternator;
 
     private void Awake()
     {
-        /*
-        Shuffle(cardsWarras);
-        /*for (int i = 0; i < cardsWarras.Count; i++)
+        charactersToExclude = new() 
         {
-            deckWarro.Enqueue(cardsWarras[i]);
-        }*/
+            6, // Turtle, Problems with its effect
+            7, // Mimic, Problems with its effect
+            50, // Prototype Cards
+            51,// Prototype Cards
+            52,// Prototype Cards
+            53,// Prototype Cards
+            54,// Prototype Cards
+            55,// Prototype Cards
+            56,// Prototype Cards
+            57,// Prototype Cards
+            58,// Prototype Cards
+            59,// Prototype Cards
+            60,// Prototype Cards
+            61,// Prototype Cards
+            62, // Prototype Cards
+            
+            -1, //Dummy
+        };
         CreateDeck();
     }
     void Start()
@@ -46,7 +60,6 @@ public class DeckManager : Singleton<DeckManager>
 
     void CreateDeck()
     {
-        GenerateInDeck(15, 10);
         ShuffleDeck();
     }
 
@@ -54,50 +67,44 @@ public class DeckManager : Singleton<DeckManager>
     {
         if (deck.Count == 0) { return; }
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-
+        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCharacterToSpawnId(deck.Dequeue());
 
         GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
         instantiatedCard.transform.parent = cardHold.transform;
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
-        //instantiatedCard.GetComponent<DragableUIObject>().SetDragableUIObject(deck.Dequeue());
     }
 
-    public void DrawCardWarro()
-    {
-        if (deckWarro.Count == 0) { return; }
-        Debug.Log('1');
-        GameObject temp = deckWarro.Dequeue();
-        GameObject instantiatedCard = PhotonNetwork.Instantiate("Warro/"+temp.name, temp.transform.localPosition, Quaternion.identity);
-        instantiatedCard.transform.parent = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHand" : "RedHand").transform;
-    }
+    //public void TESTING_DrawCard()
+    //{
+    //    if (deck.Count == 0) { return; }
+    //    GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
 
-    public void TESTING_DrawCard()
-    {
-        if (deck.Count == 0) { return; }
-        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-
-        instantiatedCard.GetComponent<DragableUIObject>().TESTING_SetDragableUIObject(deck.Dequeue(), teamTypeAlternator % 2 == 0 ? TeamType.BLUE : TeamType.RED);
-        teamTypeAlternator++;
-    }
+    //    instantiatedCard.GetComponent<DragableUIObject>().TESTING_SetDragableUIObject(deck.Dequeue(), teamTypeAlternator % 2 == 0 ? TeamType.BLUE : TeamType.RED);
+    //    teamTypeAlternator++;
+    //}
 
     public void ShuffleDeck()
     {
-        List<CharacterCard> tempList = TemporalCardDataBase.Instance.GetAllCharacters(2);
-        List<Cards> cards =  new();
-        foreach (Cards card in tempList) 
-        {
-            cards.Add(card);
-        }
-        Debug.Log("Number of Cards = " + cards.Count);
+        List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCardCopies);
 
-        Shuffle(cards);
-
-        for (int i = 0; i < cards.Count; i++)
+        for (int i = 0; i < charactersToExclude.Count; i++)
         {
-            deck.Enqueue(cards[i]);
+            for (int j = 0; j < amountOfCardCopies; j++)
+            {
+                characterIds.Remove(charactersToExclude[i]);
+            }
+            Debug.Log("Character To Remove: " + charactersToExclude[i]);
         }
 
-        Debug.Log("Number of Cards in Deck = " + cards.Count);
+        Shuffle(characterIds);
+
+        for (int i = 0; i < characterIds.Count; i++)
+        {
+            deck.Enqueue(characterIds[i]);
+            Debug.Log("CharacterId: " + characterIds[i]);
+        }
+
+        Debug.Log("Number of Cards in Deck = " + deck.Count);
     }
 
     private IList<T> Shuffle<T>(IList<T> list)
@@ -114,13 +121,5 @@ public class DeckManager : Singleton<DeckManager>
         }
 
         return list;
-    }
-
-    void GenerateInDeck(int characterId, int amount)
-    {
-        for (int i = 0; i < amount; i++) 
-        {
-            deck.Enqueue(TemporalCardDataBase.Instance.GetCharacter(characterId));
-        }
     }
 }

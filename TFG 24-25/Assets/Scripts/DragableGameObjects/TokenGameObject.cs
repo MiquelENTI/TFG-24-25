@@ -31,7 +31,7 @@ public class TokenGameObject : DragableGameObject
     protected override void Awake()
     {
         base.Awake();
-
+        
         photonView = transform.GetComponent<PhotonView>();
     }
 
@@ -59,6 +59,7 @@ public class TokenGameObject : DragableGameObject
         plane = new Plane(Vector3.up, Vector3.up);
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
         changeCardOnBoard();
+        transform.parent.name = character.GetCharacterStats().name;
     }
 
     void Update()

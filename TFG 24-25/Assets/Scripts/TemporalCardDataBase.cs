@@ -18,20 +18,28 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 16, new CharacterStats("Death Horseman",3, 14, 4, 1, MovementType.Basic, "DEATH HORSEMAN") }, // Death Horseman
         { 17, new CharacterStats("Terracotta Warrior",4, 4, 21, 1, MovementType.Basic, "TERRACOTTA WARRIOR\n\nAl permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 7, 15, 1, MovementType.Basic, "MAGIC KARP\n\nDestruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
-        { 21, new CharacterStats("Chicken",1, 2, 7,  1, MovementType.Basic, "CHICKEN\n\nAl recibir daño el atacante recibe 16 de daño") }, // Chicken
-        { 22, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "RADEV\n\nCiro Di Marzio") }, // Radev
-        { 23, new CharacterStats("Richard",5, 15, 20,  1, MovementType.Basic, "RICHARD\n\nEl padrino") }, // Richard
-        { 24, new CharacterStats("Joan",3, 8, 15,  1, MovementType.Basic, "JOAN\n\nS'esta passant el Halo") }, // Joan
-        { 25, new CharacterStats("Leech",3, 3, 7,  1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuació, enemics a una casella reben 1 de mal\n\n") }, // Hugo
-        { 26, new CharacterStats("Berserker",3, 6, 5,  1, MovementType.Basic, "Si esta en una casella de puntuació, fa +2 d'atac\n\n") }, // Hector
-        { 27, new CharacterStats("Hydra? TBC",4, 7, 9,  1, MovementType.Basic, "Si esta en una casella de puntuació, es cura la quantitat de punts obtinguts\n\n") }, // Coronado
-        { 28, new CharacterStats("Jaumandreu",2, 4, 10,  1, MovementType.Basic, "JAUMANDREU\n\n") }, // Jaumandreu
-        { 29, new CharacterStats("Mokiel",1, 3, 5,  1, MovementType.Basic, "MOKIEL\n\nJuga al Call of Duty (de Roblox)") }, // Mokiel
-        { 30, new CharacterStats("Pinsa",1, 3, 7,  1, MovementType.Basic, "PINSA\n\nEl programador que no programa") }, // Pinsa
-        { 31, new CharacterStats("Sergi",2, 6, 7,  1, MovementType.Basic, "SERGI\n\nBallarí professional de bachata") }, // Sergi
-        { 32, new CharacterStats("Ferryklk",3, 10, 10,  1, MovementType.Basic, "FERRYKLK\n\nJugador professional del Habbo") }, // Ferryklk
-        { 33, new CharacterStats("Carla",4, 9, 21,  1, MovementType.Basic, "CARLA\n\nTé un caball") }, // Carla
-        { 34, new CharacterStats("Kiku",5, 12, 24,  1, MovementType.Basic, "KIKU\n\nEl otro artist") }, // Kiku
+        { 21, new CharacterStats("Archer",1, 2, 7,  1, MovementType.Basic, "ARCHER\n\nTe 2 de rang d'atac") }, // Archer
+        { 22, new CharacterStats("Chicken",1, 2, 7,  1, MovementType.Basic, "CHICKEN\n\nAl recibir daño el atacante recibe 16 de daño") }, // Chicken
+        { 25, new CharacterStats("Leech",3, 3, 7,  1, MovementType.Basic, "LEECH\n\nINICI DEL TORN: si esta en una casella de puntuació, enemics a una casella reben 1 de mal\n\n") }, // Leech
+        { 26, new CharacterStats("Berserker",3, 6, 5,  1, MovementType.Basic, "BERSERKER\n\nSi esta en una casella de puntuació, fa +2 d'atac\n\n") }, // Berserker
+        { 27, new CharacterStats("Hydra",4, 7, 9,  1, MovementType.Basic, "HYDRA\n\nSi esta en una casella de puntuació, es cura la quantitat de punts obtinguts\n\n") }, // Hydra
+        
+        
+
+        { 50, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "RADEV\n\nCiro Di Marzio") }, // Radev
+        { 51, new CharacterStats("Richard",5, 15, 20,  1, MovementType.Basic, "RICHARD\n\nEl padrino") }, // Richard
+        { 52, new CharacterStats("Joan",3, 8, 15,  1, MovementType.Basic, "JOAN\n\nS'esta passant el Halo") }, // Joan
+        { 53, new CharacterStats("Hugo",3, 6, 9,  1, MovementType.Basic, "HUGO\n\n") }, // Hugo
+        { 54, new CharacterStats("Hector",3, 7, 6,  1, MovementType.Basic, "HECTOR\n\n") }, // Hector
+        { 55, new CharacterStats("Coronado",2, 5, 4,  1, MovementType.Basic, "CORONADO\n\n") }, // Coronado
+        { 56, new CharacterStats("Jaumandreu",2, 4, 10,  1, MovementType.Basic, "JAUMANDREU\n\n") }, // Jaumandreu
+        { 57, new CharacterStats("Mokiel",1, 3, 5,  1, MovementType.Basic, "MOKIEL\n\nJuga al Call of Duty (de Roblox)") }, // Mokiel
+        { 58, new CharacterStats("Pinsa",1, 3, 7,  1, MovementType.Basic, "PINSA\n\nEl programador que no programa") }, // Pinsa
+        { 59, new CharacterStats("Sergi",2, 6, 7,  1, MovementType.Basic, "SERGI\n\nBallarí professional de bachata") }, // Sergi
+        { 60, new CharacterStats("Ferryklk",3, 10, 10,  1, MovementType.Basic, "FERRYKLK\n\nJugador professional del Habbo") }, // Ferryklk
+        { 61, new CharacterStats("Carla",4, 9, 21,  1, MovementType.Basic, "CARLA\n\nTé un caball") }, // Carla
+        { 62, new CharacterStats("Kiku",5, 12, 24,  1, MovementType.Basic, "KIKU\n\nEl otro artist") }, // Kiku
+
         { -1, new CharacterStats("Dummy",0, 0, 99999, 0, MovementType.Basic, "") }, // DummyBase
     };
 
@@ -53,14 +61,14 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         return characterStats[id];
     }
 
-    public List<CharacterCard> GetAllCharacters(int copies)
+    public List<int> GetAllCharacters(int copies)
     {
-        List<CharacterCard> temp = new();
+        List<int> temp = new();
         for (int i = 0; i < copies; i++)
         {
-            foreach (CharacterStats stats in characterStats.Values)
+            foreach (var keyPair in characterStats)
             {
-                temp.Add(new CharacterCard(stats));
+                temp.Add(keyPair.Key);
             }
         }
         return temp;
