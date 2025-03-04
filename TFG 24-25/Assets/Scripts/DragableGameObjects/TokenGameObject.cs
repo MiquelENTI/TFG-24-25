@@ -28,6 +28,8 @@ public class TokenGameObject : DragableGameObject
 
     private Character characterSelected;
 
+    [SerializeField] Transform cardCanvas;
+
     protected override void Awake()
     {
         base.Awake();
@@ -201,6 +203,8 @@ public class TokenGameObject : DragableGameObject
 
         cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
 
+        cardToDisplay.transform.Find("NomText").GetComponent<Text>().text = character.GetName().ToString();
+
         cardToDisplay.SetActive(true);
     }
 
@@ -215,8 +219,9 @@ public class TokenGameObject : DragableGameObject
         int attack = character.GetAttack();
         int health = character.GetHealth();
         int manaCost = character.getManaCost();
+        string name = character.GetName();
 
-        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost);
+        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost, name);
     }
 
     [PunRPC]
@@ -229,15 +234,13 @@ public class TokenGameObject : DragableGameObject
     }
 
     [PunRPC]
-    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost)
+    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
     {
         if (character == null)
         {
             Debug.LogError("Character no ha sido inicializado.");
             return;
         }
-
-        Transform cardCanvas = transform.Find("Canvas");
 
         if (cardCanvas != null)
         {
@@ -249,11 +252,13 @@ public class TokenGameObject : DragableGameObject
                 Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
                 Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
                 Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
+                Text nameText = cardInBoard.Find("NameText").GetComponent<Text>();
 
                 // cardImage.sprite = character.GetCardSprite();
                 attackText.text = attack.ToString();
                 healthText.text = health.ToString();
                 manaText.text = manaCost.ToString();
+                nameText.text = name.ToString();
             }
             else
             {
