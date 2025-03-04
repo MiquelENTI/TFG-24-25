@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
-using UnityEditor.Compilation;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
@@ -83,7 +82,6 @@ public class Character
 
     protected TeamType teamType;
     protected int onTile;
-    protected int previousTile;
 
     protected bool toSpawn = true;
     protected bool canAttack = true;
@@ -130,14 +128,7 @@ public class Character
 
     public bool CanAttack()
     {
-        if (playerStats.GetCurrentMana() >= stats.manaCost)
-        {
-            return canAttack;
-        }
-        else
-        { 
-            return false;
-        }
+        return playerStats.GetCurrentMana() >= stats.manaCost ? canAttack : false;
     }
 
     public void MoveToken(Vector3 position)
@@ -259,7 +250,6 @@ public class Character
 
             SetOnTileId(cellToMove.GetId());
             //Debug.Log("ONTILE: " + onTile);
-            previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 
             cellToMove.SetCharacter(this);
@@ -309,7 +299,6 @@ public class Character
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-        previousTile = onTile;
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
@@ -329,7 +318,7 @@ public class Character
                 // Prevent scoring in your own scoring tiles
                 if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
                 { return; }
-                if (canScore && previousTile == onTile)
+                if (canScore)
                 {
                     scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
                     OnPointsScoring();

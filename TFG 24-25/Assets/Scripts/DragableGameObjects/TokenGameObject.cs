@@ -141,12 +141,19 @@ public class TokenGameObject : DragableGameObject
         }
         else
         {
-            if (character.GetId() == characterSelected.GetId())
+            try
             {
-                //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
+                if (character.GetId() == characterSelected.GetId())
+                {
+                    //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
 
-                CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
-                MyEventHandler.Instance.moveToken.Invoke(tileHovering, characterSelected.GetId());
+                    CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
+                    MyEventHandler.Instance.moveToken.Invoke(tileHovering, characterSelected.GetId());
+                }
+            }
+            catch
+            {
+
             }
         }
 

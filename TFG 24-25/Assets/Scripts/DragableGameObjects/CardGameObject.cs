@@ -16,7 +16,7 @@ public class CardGameObject : DragableGameObject
 
 
     [SerializeField] List<int> possibleCharacterNamesToAssign = new List<int>();
-    int randomCharacterName = 1;
+    int randomCharacterName = 7;
     public SpawnCardController gameController;
 
     protected override void Awake()
@@ -84,19 +84,26 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
-            // Verify If its the card selected
-            if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
+            try
             {
-                // Spawn Token in tileHovering if is empty
-                if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied())
+                // Verify If its the card selected
+                if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
                 {
-                    RequestCharacterInstantiation();
-                    cardHold.DestroyCard(cardId);
+                    // Spawn Token in tileHovering if is empty
+                    if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied()) // Afegir comprobacio de mana
+                    {
+                        RequestCharacterInstantiation();
+                        cardHold.DestroyCard(cardId);
+                    }
+                    else
+                    {
+                        cardHold.ReorganizeCards();
+                    }
                 }
-                else
-                {
-                    cardHold.ReorganizeCards();
-                }    
+            }
+            catch
+            {
+
             }
         }
         

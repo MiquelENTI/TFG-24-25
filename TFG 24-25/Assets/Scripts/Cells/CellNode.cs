@@ -403,11 +403,13 @@ public class CellNode
         bool isAttacking = false;
         if (isOccupied)
         {
+            /*
             if (characterMoving.GetTeamType() == character.GetTeamType())
             {
                 Debug.Log("Node to move is occupied by another character");
                 return false;
             }
+            */
             isAttacking = true;
         }
 

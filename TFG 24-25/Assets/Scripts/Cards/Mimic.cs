@@ -15,6 +15,8 @@ public class Mimic : Character
 
         // Enemy draws a cards 
         attacker.ReceiveDamage(9999);
+        Debug.Log("11");
         ReceiveDamage(9999);
+        Debug.Log("12");
     }
 }

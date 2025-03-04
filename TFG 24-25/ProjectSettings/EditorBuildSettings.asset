@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 029eb92f69141e9448dd884a15969c8d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sergi.unity
     guid: 00ffa151e9130fa4aacfe423d72a41a6
+  - enabled: 1
+    path: Assets/Scenes/Miki5.unity
+    guid: a48577686d16ce54a9a0406b19856211
   m_configObjects: {}
