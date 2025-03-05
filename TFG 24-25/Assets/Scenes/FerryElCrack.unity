@@ -187,6 +187,7 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: eb3039b58b20b2448ad5d8922077d7dd, type: 3}
   TEMP_id: 0
   IsBlue: 0
+  tileCollider: {fileID: 0}
 --- !u!65 &73555011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1240,8 +1241,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172549082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 1, z: 6}
+  m_LocalPosition: {x: 1.715, y: 0.51, z: 0.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1660583652}
@@ -1263,8 +1264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1172549082}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
-  redBase: {fileID: 0}
-  blueBase: {fileID: 0}
   GridSize: {x: 6, y: 6}
   cornerPrefab: {fileID: 5497220024947823353, guid: 5967d52bbb037ed408581af99ae90785, type: 3}
   edgePrefab: {fileID: 5680987117837267394, guid: 9074d848ecf4191478bd7200672acbd5, type: 3}
@@ -1570,7 +1569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333527960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.72, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1596,8 +1595,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66, y: 1, z: 0.66}
-  m_Center: {x: 0.22, y: 0.5, z: -0.22}
+  m_Size: {x: 0.8342383, y: 0.33000004, z: 0.83141243}
+  m_Center: {x: 0.35259032, y: 0.5, z: -0.35264295}
 --- !u!114 &1333527963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,7 +2002,7 @@ Transform:
   m_GameObject: {fileID: 1660583651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1172549086}
@@ -2100,8 +2099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: {fileID: 8236987784292183732, guid: 42840187367816f4da3315678e32de7c, type: 3}
   token2: {fileID: 0}
-  blueMaterial: {fileID: 0}
-  redMaterial: {fileID: 0}
+  possibleCharacterNamesToAssign: 
+  gameController: {fileID: 0}
 --- !u!1 &1872847658
 GameObject:
   m_ObjectHideFlags: 0

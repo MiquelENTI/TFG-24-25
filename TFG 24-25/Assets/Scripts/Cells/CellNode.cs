@@ -23,7 +23,7 @@ public class CellNode
     bool isOccupied = false;
     bool isConnected = true;
     CellSpawnable spawnable = CellSpawnable.NONE;
-    Material cellMovementIndicator;
+    GameObject cellMovementIndicator;
     bool isCellMovementIndicatorVisble = false;
     
     CellScoreType scoreType = CellScoreType.NOPOINTS;
@@ -37,7 +37,7 @@ public class CellNode
         this.position = position;
         positionInGrid = new Vector2(x, y);
 
-        cellMovementIndicator = movementIndicator.GetComponent<MeshRenderer>().material;
+        cellMovementIndicator = movementIndicator.transform.GetChild(0).gameObject;
         //ChangeMovementIndicatorVisibility();
 
         CellNodeManager.Instance.AddNode(this);
@@ -303,28 +303,14 @@ public class CellNode
     {
         isCellMovementIndicatorVisble = !isCellMovementIndicatorVisble;
 
-        if (isCellMovementIndicatorVisble)
-        {
-            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 139.0f/256.0f);
-        }
-        else
-        {
-            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
-        }
+        cellMovementIndicator.SetActive(isCellMovementIndicatorVisble);
     }
 
     public void ChangeMovementIndicatorVisibility(bool state)
     {
         isCellMovementIndicatorVisble = state;
 
-        if (isCellMovementIndicatorVisble && character == null)
-        {
-            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 139.0f / 256.0f);
-        }
-        else
-        {
-            cellMovementIndicator.color = new Color(cellMovementIndicator.color.r, cellMovementIndicator.color.g, cellMovementIndicator.color.b, 0);
-        }
+        cellMovementIndicator.SetActive(isCellMovementIndicatorVisble);
     }
 
     public CellNode GetCellByDirectionWithRange(CellNode currentCell, CellConnection direction, int range)
