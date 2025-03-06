@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class CardGameObject : DragableGameObject
 {
@@ -21,6 +22,8 @@ public class CardGameObject : DragableGameObject
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private TMP_Text attackText; 
     [SerializeField] private TMP_Text cardDescriptionText;
+
+    [SerializeField] private Image illustrationImage;
 
     protected override void Awake()
     {
@@ -67,6 +70,19 @@ public class CardGameObject : DragableGameObject
         healthText.text = stats.getHealthToString();
         attackText.text = stats.getAttackToString();
         cardDescriptionText.text = stats.getDescription();
+
+        string imageName = "cardsprites/ilustracions/" + stats.getName();
+
+        Sprite cardSprite = Resources.Load<Sprite>(imageName);
+
+        if (cardSprite != null)
+        {
+            illustrationImage.sprite = cardSprite;
+        }
+        else
+        {
+            Debug.LogError("No se encontró la imagen: " + imageName);
+        }
     }
 
     protected override void LeftMouseDownAction()

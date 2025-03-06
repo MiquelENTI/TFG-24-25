@@ -193,6 +193,8 @@ public class TokenGameObject : DragableGameObject
 
     void ChangeImageCardToDisplay()
     {
+        string imageName = "cardsprites/ilustracions/" + character.GetName().ToString();
+
         // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
 
         cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
@@ -204,6 +206,8 @@ public class TokenGameObject : DragableGameObject
         cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
 
         cardToDisplay.transform.Find("NomText").GetComponent<Text>().text = character.GetName().ToString();
+
+        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = Resources.Load<Sprite>(imageName);
 
         cardToDisplay.SetActive(true);
     }
@@ -248,13 +252,14 @@ public class TokenGameObject : DragableGameObject
 
             if (cardInBoard != null)
             {
-                // Image cardImage = cardInBoard.Find("ImageSprite").GetComponent<Image>();
+                Image cardImage = cardInBoard.Find("Ilustracio").GetComponent<Image>();
                 Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
                 Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
                 Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
                 Text nameText = cardInBoard.Find("NameText").GetComponent<Text>();
+                
 
-                // cardImage.sprite = character.GetCardSprite();
+                cardImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + name);
                 attackText.text = attack.ToString();
                 healthText.text = health.ToString();
                 manaText.text = manaCost.ToString();
