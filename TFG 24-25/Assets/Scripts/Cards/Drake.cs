@@ -38,8 +38,7 @@ public class Drake : Character
 
         Tuple<CellConnection, CellConnection> diagonals = translateDirection[attackDirection];
 
-
-
-        onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter().ReceiveDamage();
+        onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter().ReceiveDamage(splashDamage);
+        onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(splashDamage);
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 
 public enum MovementType { Basic, Diagonal, Omni}
+
 public enum TeamType { RED = 0, BLUE = 1}
 
 public struct CharacterStats
@@ -22,7 +23,8 @@ public struct CharacterStats
     public bool stun;
     public string description;
     public bool checkAllInRangeCells;
-    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, MovementType _movementType, string _description)
+    public int scoreMultiplier;
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, int _scoreMult, MovementType _movementType, string _description)
     {
         name = _name;
         maxHp = _hp;
@@ -30,6 +32,7 @@ public struct CharacterStats
         dmg = _dmg;
         manaCost = _manaCost;
         range = _range;
+        scoreMultiplier = _scoreMult;
         movementType = _movementType;
         stun = false;
         description = _description;
@@ -268,7 +271,7 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckNodes(GetDirections(), id))
+        if (cellToMove.CheckNodes(id))
         //if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
             GetCharacterStats().PrintStats();
@@ -331,7 +334,7 @@ public class Character
                 { return; }
                 if (canScore && previousTile == onTile)
                 {
-                    scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
+                    scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount() * stats.scoreMultiplier);
                     OnPointsScoring();
                     canScore = false;
                     return;
@@ -343,7 +346,7 @@ public class Character
                 // Prevent scoring in your own scoring tiles
                 if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
                 { return; }
-                scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount());
+                scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount() * stats.scoreMultiplier);
                 OnPointsScoring();
             break;
 
