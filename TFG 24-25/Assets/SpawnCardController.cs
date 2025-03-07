@@ -68,7 +68,7 @@ public class SpawnCardController : MonoBehaviourPun
         CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(id);
         switch (id)
         {
-            case 1:
+            case 2:
                 return new Cavalier(stats, tokenTeam, instantiatedToken, null);
             case 3:
                 return new Salmon(stats, tokenTeam, instantiatedToken, null);
