@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Berserker : Character
 {
-    int originalAttack = 6;
+    int originalAttack;
     int boostedAttack = 8;
 
 
     public Berserker(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
     {
+        originalAttack = newStats.dmg;
     }
 
     public override void OnMovement(CellNode cellToMove)
