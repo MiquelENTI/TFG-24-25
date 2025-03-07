@@ -29,8 +29,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
-        Debug.Log("FROM: " + character.GetOnTileId() + " TO: " + cellId);
-
         if (character.IsToSpawn())
         {
             character.OnSpawn(cellToMove);
