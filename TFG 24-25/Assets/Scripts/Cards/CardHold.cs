@@ -18,7 +18,7 @@ public class CardHold : MonoBehaviour
     void Start()
     {
         cards = new List<GameObject>();
-        cardSize = 1f;
+        cardSize = 0.1f;
         photonView = GetComponent<PhotonView>();
 
         currentId = 0;

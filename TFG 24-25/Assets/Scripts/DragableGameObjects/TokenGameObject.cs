@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using System.Linq;
+using System;
 
 public class TokenGameObject : DragableGameObject
 {
@@ -24,6 +25,8 @@ public class TokenGameObject : DragableGameObject
     public GameObject tileCollider;
 
     private Character characterSelected;
+
+    
 
     protected override void Awake()
     {
@@ -52,8 +55,9 @@ public class TokenGameObject : DragableGameObject
 
         // character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
 
-
-        plane = new Plane(Vector3.up, Vector3.up);
+        planeDisplacement = 0.5f;
+        objectDisplacement = 0.05f;
+        plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
         changeCardOnBoard();
         transform.parent.name = character.GetCharacterStats().name;
@@ -149,7 +153,7 @@ public class TokenGameObject : DragableGameObject
             if (plane.Raycast(ray, out var enter))
             {
                 mousePos = ray.GetPoint(enter);
-                mousePos.y = 0.5f;
+                mousePos.y = planeDisplacement + objectDisplacement;
 
                 clickedGameObject.transform.position = mousePos;
                 clickedGameObject.GetComponent<TokenGameObject>().GetTileCollider().transform.position = clickedGameObject.transform.position;

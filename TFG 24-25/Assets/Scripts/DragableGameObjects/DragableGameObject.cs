@@ -9,6 +9,9 @@ using UnityEngine.TextCore.Text;
 public class DragableGameObject : MonoBehaviour
 {
     protected Plane plane;
+    protected float planeDisplacement;
+    protected float objectDisplacement;
+
     protected Vector3 mouseDownPos;
     protected bool isDragging = false;
     protected int tileHovering = -1;
@@ -128,7 +131,7 @@ public class DragableGameObject : MonoBehaviour
             if (plane.Raycast(ray, out var enter))
             {
                 mousePos = ray.GetPoint(enter);
-                mousePos.y = 0.5f;
+                mousePos.y = -1.5f;
                 clickedGameObject.transform.position = mousePos;
                 yield return waitForFixedUpdate;
             }

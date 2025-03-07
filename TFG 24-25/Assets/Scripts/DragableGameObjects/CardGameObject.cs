@@ -26,8 +26,9 @@ public class CardGameObject : DragableGameObject
     protected override void Start()
     {
         base.Start();
-
-        plane = new Plane(Vector3.up, Vector3.up);
+        planeDisplacement = 0.5f;
+        objectDisplacement = 0.1f;
+        plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         cardHold = transform.parent.parent.GetComponent<CardHold>();
         spawnTileCollider = transform.parent.GetChild(1).gameObject;
 
@@ -111,7 +112,7 @@ public class CardGameObject : DragableGameObject
             if (plane.Raycast(ray, out var enter))
             {
                 mousePos = ray.GetPoint(enter);
-                mousePos.y = 1.5f;
+                mousePos.y = planeDisplacement + objectDisplacement;
 
                 clickedGameObject.transform.position = mousePos;
                 clickedGameObject.GetComponent<CardGameObject>().GetSpawnTileCollider().transform.position = mousePos;

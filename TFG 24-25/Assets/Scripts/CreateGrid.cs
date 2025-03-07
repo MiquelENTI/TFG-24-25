@@ -39,6 +39,9 @@ public class CreateGrid : MonoBehaviour
 
         cell.transform.localScale = new Vector3(1.2f, 0.5f, 1.2f);
 
+        // Adjust Board to table
+        //board.transform.GetChild(0).transform.localPosition = new Vector3(1.715f, 0.51f, 0.33f);
+
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++) 
@@ -48,14 +51,13 @@ public class CreateGrid : MonoBehaviour
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + j.ToString() + "-" + i.ToString();
                 obj.GetComponent<Tile>().tileId = (int)(i * rows + j);
-                CellNode node = new CellNode(obj.transform.position, obj, j,i);
+                CellNode node = new CellNode(position, obj, j,i);
 
                 CreateModelBoard(i, j, rows,columns, position);
             }
         }
 
-        // Adjust Board to table
-        board.transform.GetChild(0).transform.localPosition = new Vector3(1.715f, 0.51f, 0.33f);
+        
 
         CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpecialTiles(2);
