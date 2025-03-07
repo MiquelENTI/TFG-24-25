@@ -5,12 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class ReplayData
 {
+    public Queue<int> deck;
     public Queue<string> inputs;
 
-    public ReplayData(Queue<string> actionsToSave)
+    public ReplayData()
     {
+        deck = new Queue<int>();
         inputs = new Queue<string>();
-
-        inputs = actionsToSave;
     }
 }

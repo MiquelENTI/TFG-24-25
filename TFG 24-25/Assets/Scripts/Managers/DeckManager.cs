@@ -73,6 +73,7 @@ public class DeckManager : Singleton<DeckManager>
     void CreateDeck()
     {
         ShuffleDeck();
+        SaveData.Instance.SaveDeck(deck);
     }
 
     [PunRPC]
