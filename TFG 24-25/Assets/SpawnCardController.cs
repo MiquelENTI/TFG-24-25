@@ -104,7 +104,12 @@ public class SpawnCardController : MonoBehaviourPun
                 return new Kamikaze(stats, tokenTeam, instantiatedToken, null);
             case 35:
                 return new Drake(stats, tokenTeam, instantiatedToken, null);
-
+            case 37:
+                return new Samurai(stats, tokenTeam, instantiatedToken, null);
+            case 38:
+                return new Giant(stats, tokenTeam, instantiatedToken, null);
+            case 39:
+                return new Ant(stats, tokenTeam, instantiatedToken, null);
 
 
 

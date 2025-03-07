@@ -368,6 +368,8 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
+        MyEventHandler.Instance.InvokeSamuraiEffect(teamType);
+
         CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
         currentCell.RemoveCharacter();
         CharactersManager.Instance.RemoveCharacter(id);
