@@ -3,10 +3,14 @@
 	<object class="Event" id="{d2a436b4-c12c-4819-b668-31d6ce267e39}">
 		<property name="name">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>Salmon_selection</value>
 =======
 			<value>SALMON_ATTACK</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<value>Salmon_selection</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -77,24 +81,36 @@
 	<object class="MarkerTrack" id="{57d820b5-797b-4a88-a4c0-a35ae783bbfa}" />
 	<object class="GroupTrack" id="{18f190ff-0a74-4266-9159-a2722bd4453a}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<relationship name="modules">
 			<destination>{88ed5038-9e5d-4e20-9c1f-acf14afe7652}</destination>
 		</relationship>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+		<relationship name="modules">
+			<destination>{88ed5038-9e5d-4e20-9c1f-acf14afe7652}</destination>
+		</relationship>
+>>>>>>> a42ee89 (Fmod Refet)
 		<relationship name="mixerGroup">
 			<destination>{be2cbf9b-d3f2-4d46-befb-552c0f728411}</destination>
 		</relationship>
 	</object>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="Timeline" id="{2a87f5c8-b84e-40ca-a04b-69f4e69590f3}">
 		<relationship name="modules">
 			<destination>{88ed5038-9e5d-4e20-9c1f-acf14afe7652}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 =======
 	<object class="Timeline" id="{2a87f5c8-b84e-40ca-a04b-69f4e69590f3}" />
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="EventMixerMaster" id="{bd2cb743-342d-4c75-83a2-f827f65be8af}">
 		<relationship name="effectChain">
 			<destination>{7961e507-dbb6-41bc-9932-e52fb496bf02}</destination>
@@ -113,6 +129,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{d532ec2e-cffe-47d0-accb-4146137a1622}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="SingleSound" id="{88ed5038-9e5d-4e20-9c1f-acf14afe7652}">
 		<property name="length">
 			<value>2.6076666666666668</value>
@@ -124,8 +143,11 @@
 			<destination>{f5156e83-0caf-4942-ac7c-81d5301bebd0}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="EventMixerGroup" id="{be2cbf9b-d3f2-4d46-befb-552c0f728411}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -148,6 +170,9 @@
 	<object class="MixerBusPanner" id="{170ef267-169e-4c16-8348-30e0144bea05}" />
 	<object class="MixerBusFader" id="{69d217c6-a334-4285-9e88-6e750598e913}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="RandomizerModulator" id="{64e71b80-0120-4671-b9e7-92505e8a1b47}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
@@ -156,8 +181,11 @@
 			<value>22</value>
 		</property>
 	</object>
+<<<<<<< HEAD
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{06ee93f9-c67f-4fe2-bf76-798302c1a331}">
 		<relationship name="effects">
 			<destination>{4d9a9841-0382-4e2d-acc5-7964066ee4fd}</destination>

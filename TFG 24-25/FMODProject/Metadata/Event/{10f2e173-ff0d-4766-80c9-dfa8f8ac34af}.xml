@@ -3,6 +3,7 @@
 	<object class="Event" id="{10f2e173-ff0d-4766-80c9-dfa8f8ac34af}">
 		<property name="name">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>Medusa_selection</value>
 		</property>
 		<property name="outputFormat">
@@ -13,6 +14,12 @@
 		<property name="outputFormat">
 			<value>0</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<value>Medusa_selection</value>
+		</property>
+		<property name="outputFormat">
+			<value>2</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<relationship name="folder">
 			<destination>{3fdc50d9-8eca-43cb-9773-e1c06b9bc93e}</destination>
@@ -37,9 +44,12 @@
 			<destination>{e0d073b8-08c0-4539-9871-ef1380a1220b}</destination>
 			<destination>{8b7a97e7-47d0-44b3-81b5-748e35082622}</destination>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			<destination>{ddc34eaf-69f1-4815-9f0c-39bfa4fe90e0}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="timeline">
 			<destination>{5d49629c-a84a-479a-8607-542c0f2da60c}</destination>
@@ -78,10 +88,14 @@
 	<object class="GroupTrack" id="{2c4f7cd4-d949-4c9b-8b92-6cbd1438b84e}">
 		<relationship name="modules">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{c3e03423-d203-4a9d-9051-96127c04cbf7}</destination>
 =======
 			<destination>{850e343c-a99a-4bac-9efd-4ad067a92d46}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{c3e03423-d203-4a9d-9051-96127c04cbf7}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{14ad7c50-12e4-4e25-85a0-49d36049d7df}</destination>
@@ -90,10 +104,14 @@
 	<object class="GroupTrack" id="{e0d073b8-08c0-4539-9871-ef1380a1220b}">
 		<relationship name="modules">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{6f28979a-06cb-4da9-bb6f-3734e8604f32}</destination>
 =======
 			<destination>{b986ce96-329f-4632-ac29-a1b895a82539}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{6f28979a-06cb-4da9-bb6f-3734e8604f32}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{118a9814-7459-4a6b-ae11-51e22e503f0c}</destination>
@@ -102,15 +120,20 @@
 	<object class="GroupTrack" id="{8b7a97e7-47d0-44b3-81b5-748e35082622}">
 		<relationship name="modules">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{528a1f8e-521a-4bda-914b-20974d180e81}</destination>
 =======
 			<destination>{9fef8a54-7824-41fe-b745-fa6a904d2062}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{528a1f8e-521a-4bda-914b-20974d180e81}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{f1ce8e7f-1c3f-4756-8438-f2d25003b729}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<object class="Timeline" id="{5d49629c-a84a-479a-8607-542c0f2da60c}">
 		<relationship name="modules">
@@ -133,6 +156,13 @@
 			<destination>{9fef8a54-7824-41fe-b745-fa6a904d2062}</destination>
 			<destination>{9ffd36c5-565b-41ca-b354-02895b821352}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+	<object class="Timeline" id="{5d49629c-a84a-479a-8607-542c0f2da60c}">
+		<relationship name="modules">
+			<destination>{c3e03423-d203-4a9d-9051-96127c04cbf7}</destination>
+			<destination>{6f28979a-06cb-4da9-bb6f-3734e8604f32}</destination>
+			<destination>{528a1f8e-521a-4bda-914b-20974d180e81}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b3a23236-511c-4bb9-9bae-287a5fe67b29}">
@@ -153,6 +183,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{44a838cc-a7a3-48cd-90b3-3b9803b70b4b}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<object class="SingleSound" id="{c3e03423-d203-4a9d-9051-96127c04cbf7}">
 		<property name="length">
 			<value>11.571354166666667</value>
@@ -161,15 +192,19 @@
 			<destination>{7da76dce-bbbc-49fd-b878-ff370bd7dfd3}</destination>
 =======
 	<object class="SingleSound" id="{850e343c-a99a-4bac-9efd-4ad067a92d46}">
+=======
+	<object class="SingleSound" id="{c3e03423-d203-4a9d-9051-96127c04cbf7}">
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="length">
-			<value>10</value>
+			<value>11.571354166666667</value>
 		</property>
-		<relationship name="fadeOutCurve">
-			<destination>{ff33309c-d715-4c2a-b088-c4ed2896589e}</destination>
-		</relationship>
 		<relationship name="audioFile">
+<<<<<<< HEAD
 			<destination>{03668c67-c33e-4fa5-bf81-2b3256671f40}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{7da76dce-bbbc-49fd-b878-ff370bd7dfd3}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{14ad7c50-12e4-4e25-85a0-49d36049d7df}">
@@ -187,6 +222,7 @@
 		</relationship>
 	</object>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<object class="SingleSound" id="{6f28979a-06cb-4da9-bb6f-3734e8604f32}">
 		<property name="length">
 			<value>11.571354166666667</value>
@@ -195,22 +231,19 @@
 			<destination>{38d21be4-46aa-4d8d-8225-e67b6812ba0f}</destination>
 =======
 	<object class="SingleSound" id="{b986ce96-329f-4632-ac29-a1b895a82539}">
+=======
+	<object class="SingleSound" id="{6f28979a-06cb-4da9-bb6f-3734e8604f32}">
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="length">
-			<value>6</value>
+			<value>11.571354166666667</value>
 		</property>
-		<property name="timelockedOffset">
-			<value>0.33432392273402678</value>
-		</property>
-		<relationship name="modulators">
-			<destination>{ca1b0bf6-d421-404e-b514-28792c1d68dd}</destination>
-			<destination>{4c62b5f5-2ec7-4403-bbbb-ac5ed9012daf}</destination>
-		</relationship>
-		<relationship name="fadeOutCurve">
-			<destination>{61af422f-a270-479f-a218-41e498c8ba81}</destination>
-		</relationship>
 		<relationship name="audioFile">
+<<<<<<< HEAD
 			<destination>{06eb529a-0e52-405a-8301-f0cdc0533d8c}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{38d21be4-46aa-4d8d-8225-e67b6812ba0f}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{118a9814-7459-4a6b-ae11-51e22e503f0c}">
@@ -228,6 +261,7 @@
 		</relationship>
 	</object>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<object class="SingleSound" id="{528a1f8e-521a-4bda-914b-20974d180e81}">
 		<property name="length">
 			<value>11.571354166666667</value>
@@ -236,19 +270,19 @@
 			<destination>{f70454e4-515b-4716-8e50-9871ac7ea9c9}</destination>
 =======
 	<object class="SingleSound" id="{9fef8a54-7824-41fe-b745-fa6a904d2062}">
+=======
+	<object class="SingleSound" id="{528a1f8e-521a-4bda-914b-20974d180e81}">
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="length">
-			<value>6</value>
+			<value>11.571354166666667</value>
 		</property>
-		<relationship name="modulators">
-			<destination>{0bc236c0-695e-42d2-a19c-4acb50119093}</destination>
-			<destination>{b0809c54-2a50-4d43-8cfb-e5abc723c640}</destination>
-		</relationship>
-		<relationship name="fadeOutCurve">
-			<destination>{5cf60e0e-d8bf-4a75-b5f9-2993be4b1fd4}</destination>
-		</relationship>
 		<relationship name="audioFile">
+<<<<<<< HEAD
 			<destination>{4ac62532-ee30-4dec-81d4-b1a0fa4a4163}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{f70454e4-515b-4716-8e50-9871ac7ea9c9}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f1ce8e7f-1c3f-4756-8438-f2d25003b729}">
@@ -265,6 +299,7 @@
 			<destination>{b3a23236-511c-4bb9-9bae-287a5fe67b29}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<object class="MixerBusEffectChain" id="{9878e063-3b3b-4866-8220-e96d4fe49174}">
 		<relationship name="effects">
@@ -307,10 +342,17 @@
 		<relationship name="effects">
 			<destination>{bfaeb9b6-1238-4b09-a28d-3cd237155097}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+	<object class="MixerBusEffectChain" id="{9878e063-3b3b-4866-8220-e96d4fe49174}">
+		<relationship name="effects">
+			<destination>{bfaeb9b6-1238-4b09-a28d-3cd237155097}</destination>
+			<destination>{82aee89e-6ce6-4dba-ba3e-315f3f0c9bb2}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8b0f6083-1759-4daa-b427-0a86ea1daa00}" />
 	<object class="MixerBusFader" id="{a58f5c28-207c-4679-b8ca-0d32d19b716b}" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	<object class="FadeCurve" id="{ff33309c-d715-4c2a-b088-c4ed2896589e}">
@@ -322,12 +364,15 @@
 		</relationship>
 	</object>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{630ea0ac-1cce-4387-bbeb-e58a36beaa3f}">
 		<relationship name="effects">
 			<destination>{dcbd0f2a-844e-4357-a54f-68ebb331beb3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ee825825-5241-4844-8afc-41a6c99e0c96}" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	<object class="RandomizerModulator" id="{ca1b0bf6-d421-404e-b514-28792c1d68dd}">
@@ -355,12 +400,15 @@
 		</relationship>
 	</object>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{ab5b713b-7af9-426b-9a03-25fe14fcd9ef}">
 		<relationship name="effects">
 			<destination>{244cc360-ada3-420d-bb6f-ef0dba7c6bfa}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d5d1e405-db29-431b-a519-d6343bd968f5}" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	<object class="RandomizerModulator" id="{0bc236c0-695e-42d2-a19c-4acb50119093}">
@@ -388,12 +436,15 @@
 		</relationship>
 	</object>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{46d7a64e-b03d-4dd5-a2ad-a3e3b783c4ef}">
 		<relationship name="effects">
 			<destination>{18b37ff2-358d-426d-8973-90c96b4ce304}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2ec3aa28-2f6b-4a4d-9f14-3c09bad00787}" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<object class="MixerBusFader" id="{bfaeb9b6-1238-4b09-a28d-3cd237155097}" />
 	<object class="SpatialiserEffect" id="{82aee89e-6ce6-4dba-ba3e-315f3f0c9bb2}">
@@ -447,67 +498,27 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7b5408fa-1b85-46d8-8fda-b7c1ea27d979}" />
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusFader" id="{bfaeb9b6-1238-4b09-a28d-3cd237155097}" />
-	<object class="AutomationPoint" id="{40ffdf7c-a11b-4e9f-9a36-f1a7502a21b1}">
-		<property name="position">
-			<value>8.5</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-		<property name="curveShape">
-			<value>0.25471893</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{e889b7ee-c7e2-4391-8852-3ca152296a39}">
-		<property name="position">
+	<object class="SpatialiserEffect" id="{82aee89e-6ce6-4dba-ba3e-315f3f0c9bb2}">
+		<property name="maximumDistance">
 			<value>10</value>
 		</property>
-		<property name="value">
-			<value>0</value>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>13</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{dcbd0f2a-844e-4357-a54f-68ebb331beb3}" />
-	<object class="AutomationPoint" id="{6f44bc39-3fbc-4015-bf15-07155fc7e2a3}">
-		<property name="position">
-			<value>4.5</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-		<property name="curveShape">
-			<value>0.25471893</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{74febf89-3d09-4367-94e7-776de1fe05f5}">
-		<property name="position">
-			<value>6</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-	</object>
 	<object class="MixerBusFader" id="{244cc360-ada3-420d-bb6f-ef0dba7c6bfa}" />
-	<object class="AutomationPoint" id="{3640475a-ea06-41d5-b994-c9dc6a89a0b9}">
-		<property name="position">
-			<value>4</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-		<property name="curveShape">
-			<value>0.25471893</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{7330d358-2404-46cb-9c79-c038e584020b}">
-		<property name="position">
-			<value>6</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-	</object>
 	<object class="MixerBusFader" id="{18b37ff2-358d-426d-8973-90c96b4ce304}" />
+<<<<<<< HEAD
 	<object class="AutomationPoint" id="{9c6a91f5-77c3-4e53-9238-edb0f85ab5d9}">
 		<property name="position">
 			<value>4.5</value>
@@ -529,4 +540,6 @@
 	</object>
 	<object class="MixerBusFader" id="{1fc379ed-b1f2-493f-bef3-e9868202a2ab}" />
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 </objects>

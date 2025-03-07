@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0e7f75d5-5af6-4d30-9fac-6a626bb1550f}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>MIMIC/Mimic_mimic_03.wav</value>
+=======
+			<value>MIMIC/Mimic_as_ui_so_card_mimic_03.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

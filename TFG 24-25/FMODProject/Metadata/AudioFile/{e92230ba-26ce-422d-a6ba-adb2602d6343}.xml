@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e92230ba-26ce-422d-a6ba-adb2602d6343}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>FLASH/Flash_card_flash_01.wav</value>
+=======
+			<value>FLASH/Flash_as_ui_so_card_flash_01.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

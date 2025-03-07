@@ -55,7 +55,11 @@
 			<destination>{b5b37076-3371-4482-b251-55f55252192b}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{17697880-486c-4cf5-aac5-8e0dd91790f1}" />
@@ -205,11 +209,16 @@
 	<object class="MixerBusPanner" id="{7ed4a23a-772c-4f06-8e9c-8fa2ea0dc054}" />
 	<object class="MixerBusFader" id="{6fbd740e-f7b0-49ff-bc96-b217b86da525}" />
 	<object class="SpatialiserEffect" id="{2cf990c5-4814-4185-8092-20e4b72acea9}">
+<<<<<<< HEAD
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
 			<value>2</value>
+=======
+		<property name="maximumDistance">
+			<value>10</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

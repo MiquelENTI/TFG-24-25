@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f70454e4-515b-4716-8e50-9871ac7ea9c9}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>Medusa/Snake_medusa_02.wav</value>
+=======
+			<value>Medusa/Snake_as_ui_so_card_medusa_02.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

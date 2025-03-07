@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c1f52376-ef24-4941-88e3-d16ed6af3927}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>PICHI/Attack/Tweet_Scream__pichi_attack_00.wav</value>
+=======
+			<value>PICHI/Attack/Tweet_Scream_as_ui_so_card_pichi_attack_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -56,7 +56,11 @@
 			<destination>{fecda685-0aa6-48e5-a561-54a488d38a8e}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{40dda6a9-3312-41cf-8ab7-a866d1520734}" />
@@ -205,7 +209,11 @@
 	</object>
 	<object class="EventMixerGroup" id="{6577cd5b-a436-4fe0-aa85-694478fb1923}">
 		<property name="volume">
+<<<<<<< HEAD
 			<value>-12.5</value>
+=======
+			<value>-15</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -267,7 +275,11 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
+<<<<<<< HEAD
 			<value>8</value>
+=======
+			<value>19</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 	</object>
 	<object class="FadeCurve" id="{940543ee-0d98-448c-9b19-bb9e8d14ad2a}">
@@ -297,7 +309,11 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
+<<<<<<< HEAD
 			<value>7.5</value>
+=======
+			<value>15</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 	</object>
 	<object class="FadeCurve" id="{c86c8c25-c462-47eb-aedb-daf321a7170f}">
@@ -327,7 +343,11 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
+<<<<<<< HEAD
 			<value>7.5</value>
+=======
+			<value>16</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 	</object>
 	<object class="FadeCurve" id="{69327940-25aa-4ed8-9f6d-8f1f34ae6b90}">
@@ -357,7 +377,11 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
+<<<<<<< HEAD
 			<value>8</value>
+=======
+			<value>19</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 	</object>
 	<object class="FadeCurve" id="{b3ea7f7e-27aa-45b1-ae2d-000c072ba455}">
@@ -384,15 +408,26 @@
 	<object class="MixerBusPanner" id="{681d62a2-f331-44cd-a13c-57669e704cce}" />
 	<object class="MixerBusFader" id="{0410da0e-19f6-4f6b-b9b2-39475858fef5}" />
 	<object class="SpatialiserEffect" id="{ac877e42-486a-427a-9b9d-6682c4981766}">
+<<<<<<< HEAD
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
 			<value>2</value>
+=======
+		<property name="maximumDistance">
+			<value>10</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
+=======
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="soundSize">
 			<value>13</value>
 		</property>

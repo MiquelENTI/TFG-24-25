@@ -55,7 +55,11 @@
 			<destination>{266c5475-2b39-4188-8f66-f672e1a44b45}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{26267012-7615-427b-a3d8-557613503a50}" />
@@ -247,11 +251,16 @@
 	<object class="MixerBusPanner" id="{e59649cd-48dd-4dae-8f2b-52ac8617cdcb}" />
 	<object class="MixerBusFader" id="{c5b2ebac-0814-45a7-89a8-bf012434522b}" />
 	<object class="SpatialiserEffect" id="{27b5d211-1f37-4281-9e24-ce9e31690f5c}">
+<<<<<<< HEAD
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
 			<value>2</value>
+=======
+		<property name="maximumDistance">
+			<value>10</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
@@ -260,7 +269,11 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
+<<<<<<< HEAD
 			<value>14</value>
+=======
+			<value>13</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{57d07d79-9a50-49f2-b189-a4f814b5a774}" />

@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7916f864-f2f5-45ae-8e21-1fcca12dcce4}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>Mummy/Footsteps_mummy_00.wav</value>
+=======
+			<value>Mummy/Footsteps_as_ui_so_card_mummy_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

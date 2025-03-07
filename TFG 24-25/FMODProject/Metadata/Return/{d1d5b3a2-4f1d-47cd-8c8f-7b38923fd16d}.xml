@@ -26,6 +26,7 @@
 	<object class="MixerBusPanner" id="{f3603b36-2191-4173-ad8d-5fd6587a104f}" />
 	<object class="SFXReverbEffect" id="{a7b4f214-ae6d-41bf-a11a-c50dbdc51b79}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="decayTime">
 			<value>120</value>
 		</property>
@@ -68,13 +69,60 @@
 		</property>
 	</object>
 =======
+=======
+		<property name="bypass">
+			<value>true</value>
+		</property>
+		<property name="decayTime">
+			<value>600</value>
+		</property>
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="wetLevel">
 			<value>0</value>
 		</property>
 		<property name="dryLevel">
 			<value>-80</value>
 		</property>
+		<relationship name="automators">
+			<destination>{ed007e30-87a3-40f2-91f2-06a48781adf0}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d8995022-5418-4004-bd81-72e4989008ae}" />
+<<<<<<< HEAD
 >>>>>>> f6bca3b (FMOD_IMPLEMENTATION)
+=======
+	<object class="Automator" id="{ed007e30-87a3-40f2-91f2-06a48781adf0}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>decayTime</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{8ed4245a-1b05-4538-a4f5-cf68e914a752}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{8ed4245a-1b05-4538-a4f5-cf68e914a752}">
+		<relationship name="parameter">
+			<destination>{55c6a9a9-5637-470f-b511-8d53149c4c00}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{9119d7ac-6c14-4481-99cb-ecb2ce7927b7}</destination>
+			<destination>{9912c77f-1319-479d-8923-e4f7df08554f}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{9119d7ac-6c14-4481-99cb-ecb2ce7927b7}">
+		<property name="position">
+			<value>5</value>
+		</property>
+		<property name="value">
+			<value>5000</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9912c77f-1319-479d-8923-e4f7df08554f}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>100</value>
+		</property>
+	</object>
+>>>>>>> a42ee89 (Fmod Refet)
 </objects>

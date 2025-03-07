@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f5156e83-0caf-4942-ac7c-81d5301bebd0}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>SALMON/Salmon_table_salmon_00.wav</value>
+=======
+			<value>SALMON/Salmon_table_as_ui_so_card_salmon_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

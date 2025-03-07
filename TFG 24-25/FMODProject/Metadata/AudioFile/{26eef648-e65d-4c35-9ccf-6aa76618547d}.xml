@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{26eef648-e65d-4c35-9ccf-6aa76618547d}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>FOC/Bonfire_OpenFireplace_00.wav</value>
+=======
+			<value>FOC/Bonfire_as_ab_sl_OpenFireplace_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

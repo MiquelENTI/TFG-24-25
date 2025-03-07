@@ -12,10 +12,14 @@
 		</property>
 		<property name="outputFormat">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2</value>
 =======
 			<value>0</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<value>2</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<relationship name="folder">
 			<destination>{0f661c41-41ae-4bc3-9d41-3a5c8292267b}</destination>
@@ -52,12 +56,18 @@
 	</object>
 	<object class="MasterTrack" id="{f3cefcf4-8fe5-4bd8-a23a-b3d9446920b5}">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 		<relationship name="modules">
 			<destination>{d065e570-591a-4f9d-a0a3-86ac5082171e}</destination>
 			<destination>{eec9fc7c-b4b6-41ad-bf6c-c9905f8989ad}</destination>
 		</relationship>
+<<<<<<< HEAD
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 		<relationship name="mixerGroup">
 			<destination>{1cc40776-518a-474f-8330-af2c4db2e7cf}</destination>
 		</relationship>
@@ -86,12 +96,18 @@
 	<object class="GroupTrack" id="{d538b9b0-8274-4d6e-8fad-f838c4c77778}">
 		<relationship name="modules">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}</destination>
 			<destination>{d9f9ad68-e424-48fa-8f33-ec676f12377c}</destination>
 			<destination>{5b6965cd-5bd6-4d6b-92e7-81b81a446194}</destination>
 =======
 			<destination>{8d9c1683-af75-415a-8ca4-35cd706f8e67}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}</destination>
+			<destination>{d9f9ad68-e424-48fa-8f33-ec676f12377c}</destination>
+			<destination>{5b6965cd-5bd6-4d6b-92e7-81b81a446194}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{0189f256-a1e7-4904-b287-42344e1b7c25}</destination>
@@ -100,10 +116,14 @@
 	<object class="Timeline" id="{f939ed47-f925-4956-a7ce-0b3b2f31de91}">
 		<relationship name="modules">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}</destination>
 =======
 			<destination>{8d9c1683-af75-415a-8ca4-35cd706f8e67}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}</destination>
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 		<relationship name="markers">
 			<destination>{54769dbe-df73-4cb9-a4cb-b7fdfe3b07d6}</destination>
@@ -121,6 +141,9 @@
 		</relationship>
 	</object>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="TransitionSourceSound" id="{d065e570-591a-4f9d-a0a3-86ac5082171e}">
 		<property name="length">
 			<value>0</value>
@@ -134,8 +157,11 @@
 			<value>0</value>
 		</property>
 	</object>
+<<<<<<< HEAD
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{a3fb45d9-d67c-45e4-82b6-c2f8ae9895f0}">
 		<relationship name="effects">
 			<destination>{c0779a75-89b0-4a33-b5b7-30fd858def0f}</destination>
@@ -143,15 +169,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{60447849-7654-4178-a379-d74ff5524c75}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<object class="SingleSound" id="{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}">
 =======
 	<object class="SingleSound" id="{8d9c1683-af75-415a-8ca4-35cd706f8e67}">
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+	<object class="SingleSound" id="{e09ac558-71aa-4b3c-9249-7a4cf90f9ba7}">
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="length">
 			<value>17.753125000000001</value>
 		</property>
 		<relationship name="audioFile">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 			<destination>{26eef648-e65d-4c35-9ccf-6aa76618547d}</destination>
 		</relationship>
 	</object>
@@ -166,18 +199,25 @@
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{c698423e-cbb2-4e48-8962-133d3949b303}</destination>
+<<<<<<< HEAD
 =======
 			<destination>{c55d54df-83cf-41b0-8103-a1180532760a}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0189f256-a1e7-4904-b287-42344e1b7c25}">
 		<property name="name">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>LLAR DE FOC</value>
 =======
 			<value>Audio 1</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<value>LLAR DE FOC</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<relationship name="effectChain">
 			<destination>{7662a75c-a54a-4bb2-a727-0bdee0b3f7a8}</destination>
@@ -195,10 +235,14 @@
 		</property>
 		<property name="length">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>17.5</value>
 =======
 			<value>17.753125000000001</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<value>17.5</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<relationship name="timeline">
 			<destination>{f939ed47-f925-4956-a7ce-0b3b2f31de91}</destination>
@@ -207,11 +251,17 @@
 			<destination>{80de6778-d23a-4633-a9c7-e7a0b86f9a0f}</destination>
 		</relationship>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<relationship name="transitionTimeline">
 			<destination>{9be3029f-2b6f-450a-9bf4-808511664232}</destination>
 		</relationship>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+		<relationship name="transitionTimeline">
+			<destination>{9be3029f-2b6f-450a-9bf4-808511664232}</destination>
+		</relationship>
+>>>>>>> a42ee89 (Fmod Refet)
 	</object>
 	<object class="MixerBusEffectChain" id="{51b9c1db-3d22-4d9a-a606-122820c9bb2f}">
 		<relationship name="effects">
@@ -221,6 +271,9 @@
 	<object class="MixerBusPanner" id="{0932240b-193a-4283-bffa-dc8cdf468241}" />
 	<object class="MixerBusFader" id="{c0779a75-89b0-4a33-b5b7-30fd858def0f}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="TransitionDestinationFadeInCurve" id="{c698423e-cbb2-4e48-8962-133d3949b303}">
 		<relationship name="startPoint">
 			<destination>{53f5a2c9-427a-48d2-a4bb-abce9fdd65d4}</destination>
@@ -232,6 +285,7 @@
 			<destination>{d9f9ad68-e424-48fa-8f33-ec676f12377c}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 	<object class="MixerBusEffectChain" id="{7662a75c-a54a-4bb2-a727-0bdee0b3f7a8}">
 		<relationship name="effects">
 			<destination>{a8c7f989-210c-4df0-8e38-127a274a5e43}</destination>
@@ -286,13 +340,63 @@
 		</property>
 	</object>
 =======
+=======
+>>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusEffectChain" id="{7662a75c-a54a-4bb2-a727-0bdee0b3f7a8}">
 		<relationship name="effects">
 			<destination>{a8c7f989-210c-4df0-8e38-127a274a5e43}</destination>
+			<destination>{29c0385d-45d9-4c58-9f33-96b14f45a8a6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f0cacb30-bbd4-4ff0-9cd8-ec4e9e5d192a}" />
+	<object class="TransitionTimeline" id="{9be3029f-2b6f-450a-9bf4-808511664232}">
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="modules">
+			<destination>{d9f9ad68-e424-48fa-8f33-ec676f12377c}</destination>
+			<destination>{5b6965cd-5bd6-4d6b-92e7-81b81a446194}</destination>
+			<destination>{d065e570-591a-4f9d-a0a3-86ac5082171e}</destination>
+			<destination>{eec9fc7c-b4b6-41ad-bf6c-c9905f8989ad}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{2a54e66f-e769-4c10-8b63-fdfa346ea519}" />
+	<object class="AutomationPoint" id="{53f5a2c9-427a-48d2-a4bb-abce9fdd65d4}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.2547189</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{c8455e18-e631-45c7-b26a-4942da4aa462}">
+		<property name="position">
+			<value>0.5</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{a8c7f989-210c-4df0-8e38-127a274a5e43}" />
+<<<<<<< HEAD
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+	<object class="SpatialiserEffect" id="{29c0385d-45d9-4c58-9f33-96b14f45a8a6}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>13</value>
+		</property>
+	</object>
+>>>>>>> a42ee89 (Fmod Refet)
 </objects>

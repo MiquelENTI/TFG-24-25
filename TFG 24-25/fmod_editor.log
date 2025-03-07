@@ -6,7 +6,7 @@
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7f987dc20608 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x34d4e3008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,4 +15,282 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x38f35e7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38c4cf338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38c4cf408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38c4cf444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38c4cf514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x138e80888
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Salmon_table_as_ui_so_card_salmon_00', format=5, channels=1, frequency=48000, lengthbytes=24736, lengthpcm=125168, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.601193.
+[LOG] SystemI::createSound                     : filename = FMODProject/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3b5fff458, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3b5fff458
+[LOG] SystemI::createSoundInternal             :     Create name='FMODProject/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x3b5fff720
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fly_as_ui_sl_card_fly_06', format=5, channels=1, frequency=48000, lengthbytes=723264, lengthpcm=4122864, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.270044.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3b5fff458
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba87ac58, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba87ac58
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba87ac58
+[LOG] SystemI::createSound                     : filename = FMODProject/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba0a8498, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba0a8498
+[LOG] SystemI::createSoundInternal             :     Create name='FMODProject/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x3ba0a6d10
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fly_as_ui_sl_card_fly_06', format=5, channels=1, frequency=48000, lengthbytes=723264, lengthpcm=4122864, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.270044.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba0a8498
+[LOG] SoundI::release                          : Fly_as_ui_sl_card_fly_06 (0x3b5fff458)
+[LOG] SoundI::release                          :     Fly_as_ui_sl_card_fly_06 (0x3ba875328)
+[LOG] SoundI::release                          :     Fly_as_ui_sl_card_fly_06 (0x3ba87ac58)
+[LOG] SoundI::release                          : Fly_as_ui_sl_card_fly_06 (0x3ba0a8498)
+[LOG] SoundI::release                          :     Fly_as_ui_sl_card_fly_06 (0x3ba6477c8)
+[LOG] SoundI::release                          :     Fly_as_ui_sl_card_fly_06 (0x3ba63a778)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x38f35e7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38c4cf338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38c4cf408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38c4cf444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38c4cf514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x3ba5796b8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flash_as_ui_so_card_flash_00', format=5, channels=1, frequency=48000, lengthbytes=14528, lengthpcm=125440, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.277650.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x38f35e7f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x38c4cf338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x38c4cf408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x38c4cf444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x38c4cf514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x3ba5796b8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flash_as_ui_so_card_flash_01', format=5, channels=2, frequency=48000, lengthbytes=43136, lengthpcm=190704, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.313486.
+[LOG] SystemI::createSound                     : filename = FMODProject/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba6d0fd8, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba6d0fd8
+[LOG] SystemI::createSoundInternal             :     Create name='FMODProject/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x3ba6d12a0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SeeTheFuture_as_ui_so_card_stf_00', format=5, channels=2, frequency=48000, lengthbytes=170528, lengthpcm=845999, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.211881.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba6d0fd8
+[LOG] SystemI::createSound                     : filename = FMODProject/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba59b2a8, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba59b2a8
+[LOG] SystemI::createSoundInternal             :     Create name='FMODProject/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x3ba5c2280
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SeeTheFuture_as_ui_so_card_stf_00', format=5, channels=2, frequency=48000, lengthbytes=170528, lengthpcm=845999, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.211881.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba59b2a8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3ba8d0198, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3ba8d0198
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3ba8d0198
+[LOG] SoundI::release                          : SeeTheFuture_as_ui_so_card_stf_00 (0x3ba6d0fd8)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x38a6a7048)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x389e053c8)
+[LOG] SystemI::createSound                     : filename = FMODProject/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x38a655c18, queue head = 0x3b5fff888, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x38a655c18
+[LOG] SystemI::createSoundInternal             :     Create name='FMODProject/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1652704
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23680
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x38a655ee0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SeeTheFuture_as_ui_so_card_stf_00', format=5, channels=2, frequency=48000, lengthbytes=170528, lengthpcm=845999, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.211881.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x38a655c18
+[LOG] SoundI::release                          : SeeTheFuture_as_ui_so_card_stf_00 (0x3ba59b2a8)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x3a0ee99e8)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x3ba8d0198)
+[LOG] SoundI::release                          : SeeTheFuture_as_ui_so_card_stf_00 (0x38a655c18)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x3ba5c23b8)
+[LOG] SoundI::release                          :     SeeTheFuture_as_ui_so_card_stf_00 (0x148e66f98)
+[LOG] SoundI::release                          :  (0x139261948)
+[LOG] SoundI::release                          :     Salmon_table_as_ui_so_card_salmon_00 (0x13925eef8)
+[LOG] SoundI::release                          :  (0x3ba57cbe8)
+[LOG] SoundI::release                          :     Flash_as_ui_so_card_flash_00 (0x3ba57cd58)
+[LOG] SoundI::release                          :  (0x3ba57d078)
+[LOG] SoundI::release                          :     Flash_as_ui_so_card_flash_01 (0x3ba57d1e8)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed

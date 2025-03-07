@@ -2,11 +2,17 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EventFolder" id="{3fdc50d9-8eca-43cb-9773-e1c06b9bc93e}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="color">
 			<value>Green</value>
 		</property>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+		<property name="color">
+			<value>Green</value>
+		</property>
+>>>>>>> a42ee89 (Fmod Refet)
 		<property name="name">
 			<value>MEDUSA</value>
 		</property>

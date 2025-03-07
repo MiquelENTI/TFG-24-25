@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ac97af03-3e11-4383-8c31-c7ad6fe0aac0}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>Medusa/Freezing_medusa_00.wav</value>
+=======
+			<value>Medusa/Freezing_as_ui_so_card_medusa_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

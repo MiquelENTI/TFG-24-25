@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{28aa27cf-db25-4493-b891-676f98c3cc88}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>TheGun/Wheel_canon_ 00.wav</value>
+=======
+			<value>TheGun/Wheel_as_ui_so_card_canon_ 00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

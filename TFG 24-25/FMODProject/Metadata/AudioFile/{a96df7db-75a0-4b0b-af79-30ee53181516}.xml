@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a96df7db-75a0-4b0b-af79-30ee53181516}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>PICHI/Attack/Flap_pichi_attack_00.wav</value>
+=======
+			<value>PICHI/Attack/Flap_as_ui_so_card_pichi_attack_00.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{3fadaad1-63e2-4cf5-81db-c3cf1bd4f3ae}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>PICHI/Selección Carta/Tweet_pichi_selection_00-consolidated.wav</value>
+=======
+			<value>PICHI/Selección Carta/Tweet_as_ui_so_card_pichi_selection_00-consolidated.wav</value>
+>>>>>>> a42ee89 (Fmod Refet)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
