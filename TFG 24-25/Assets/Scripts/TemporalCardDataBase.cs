@@ -29,6 +29,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 
         { 35, new CharacterStats("Dragon",3, 3, 7,  1, 1, MovementType.Basic, "Ataca tambe a les diagonals adjacents de la direccio d'atac\n\n") }, // Hydra
 
+        { 38, new CharacterStats("Giant",5, 6, 11,  1, 1, MovementType.Basic, "Quan es mou fa 2 de mal a tots els personatges adjacents\n\n") }, // Hydra
         { 39, new CharacterStats("Ant",2, 1, 4,  1, 2, MovementType.Omni, "Per cada personatge (aliat o enemic) adjecent rep 1 d'atac\n\n") }, // Hydra
         
         
