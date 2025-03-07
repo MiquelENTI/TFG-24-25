@@ -25,6 +25,11 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 27, new CharacterStats("Hydra",4, 7, 9,  1, MovementType.Basic, "Si esta en una casella de puntuació, es cura la quantitat de punts obtinguts\n\n") }, // Hydra
         
         
+        { 32, new CharacterStats("Kamikaze",2, 9, 3,  1, MovementType.Basic, "Quan mata a un enemic destrueix aquesta carta\n\n") }, // Hydra
+
+        { 35, new CharacterStats("Dragon",3, 3, 7,  1, MovementType.Basic, "Ataca tambe a les diagonals adjacents de la direccio d'atac\n\n") }, // Hydra
+        
+        
 
         { 50, new CharacterStats("Radev",4, 11, 17,  1, MovementType.Basic, "Ciro Di Marzio") }, // Radev
         { 51, new CharacterStats("Richard",5, 15, 20,  1, MovementType.Basic, "El padrino") }, // Richard
