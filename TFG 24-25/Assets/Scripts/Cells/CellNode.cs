@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json.Bson;
@@ -13,9 +14,6 @@ public enum CellSpawnable { NONE = -1, RED = 0, BLUE = 1}
 public class CellNode
 {
     Dictionary<CellConnection, CellNode> connectionDictionary = new();
-    
-    public Dictionary<CellConnection, List<CellNode>> baseConnections = null;
-    bool isBaseNode = false;
 
     int id;
     Vector3 position;
@@ -98,131 +96,14 @@ public class CellNode
         return true;
     }
 
-    
-    public bool CheckMultipleNodeForCharacter(List<CellConnection> directions, int characterId)
-    {
-        if (!isConnected)
-        {
-            Debug.Log("Node to move is disconnected from grid");
-            return false; 
-        }
-
-        Character characterMoving = CharactersManager.Instance.GetCharacterInBoardById(characterId);
-        bool isAttacking = false;
-        if (isOccupied)
-        {
-            if (characterMoving.GetTeamType() == character.GetTeamType())
-            {
-                Debug.Log("Node to move is occupied by another character");
-                return false;
-            }
-            isAttacking = true;
-        }
-
-        if (!characterMoving.GetCharacterStats().checkAllInRangeCells)
-        {
-            // Grasshopper i personatges amb comportament similar entren aqui
-            return CheckDirectionsForCharacterOnlyOneRange(directions, characterMoving, isAttacking);
-        }
-        else
-        {
-            // Casi tots els personatges
-            return CheckDirectionsForCharacterWithAllRange(directions, characterMoving, isAttacking);
-        }
-    }
-
-    bool CheckDirectionsForCharacterWithAllRange(List<CellConnection> directions, Character characterMoving, bool isAttacking)
-    {
-        foreach (CellConnection direction in directions)
-        {
-            for (int i = characterMoving.GetCharacterStats().range; i > 0; i--)
-            {
-                CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, i);
-
-                nodeChecking.PrintStatus();
-
-                if (nodeChecking == null)
-                {
-                    continue;
-                }
-
-                Character checkCharacterMoving = nodeChecking.connectionDictionary[direction].GetCharacter();
-
-                if (checkCharacterMoving == null)
-                {
-                    continue;
-                }
-                if (checkCharacterMoving.GetId() != characterMoving.GetId())
-                {
-                    continue;
-                }
-
-                if (isAttacking)
-                {
-                    if (characterMoving.CanAttack())
-                    {
-                        characterMoving.Attack(this.character);
-                    }
-                    return false;
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-    bool CheckDirectionsForCharacterOnlyOneRange(List<CellConnection> directions, Character characterMoving, bool isAttacking)
-    {
-        foreach (CellConnection direction in directions)
-        {
-            CellNode nodeChecking = GetCellByDirectionWithRange(this, direction, characterMoving.GetCharacterStats().range);
-
-            nodeChecking.PrintStatus();
-
-            if (nodeChecking == null)
-            {
-                continue;
-            }
-
-            Character checkCharacterMoving = nodeChecking.connectionDictionary[direction].GetCharacter();
-
-            if (checkCharacterMoving == null)
-            {
-                continue;
-            }
-            if (checkCharacterMoving.GetId() != characterMoving.GetId())
-            {
-                continue;
-            }
-
-            if (isAttacking)
-            {
-                if (characterMoving.CanAttack())
-                {
-                    characterMoving.Attack(this.character);
-                }
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public bool CheckNodes(List<CellConnection> directions, int characterId)
+    public bool CheckNodes(int characterId)
     {
         return NewMovement(characterId);
-        //return CheckMultipleNodeForCharacter(directions, characterId);
-        //return FunctionalMovement(directions, characterId);
     }
 
     public void AddConnection(CellConnection cellMovement, CellNode cellNode)
     {
         connectionDictionary.Add(cellMovement, cellNode);
-    }
-
-    public void AddConnectionToBase(CellConnection cellMovement, List<CellNode> cellNodes)
-    {
-        baseConnections.Add(cellMovement, cellNodes);
     }
 
     public Character GetCharacter()
@@ -243,6 +124,26 @@ public class CellNode
         if (CheckConnectionNode(GetInverseDirection(cellConnection)))
         {
             return connectionDictionary[GetInverseDirection(cellConnection)];
+        }
+        return null;
+    }
+
+    public Tuple<int, CellConnection> GetDirectionToCellByRange(int cellId, int range)
+    {
+        List<CellNode> surroundingCells = GetSurrondingCells();
+        foreach (var direction in connectionDictionary)
+        {
+            CellNode nextCell = this;
+            for (int i = 0; i < range; i++)
+            {
+                // Cell To Check
+                nextCell = nextCell.GetCellByDirection(direction.Key);
+
+                if (nextCell.id == cellId)
+                {
+                    return Tuple.Create(cellId, direction.Key);
+                }
+            }
         }
         return null;
     }
@@ -313,27 +214,6 @@ public class CellNode
         cellMovementIndicator.SetActive(isCellMovementIndicatorVisble);
     }
 
-    public CellNode GetCellByDirectionWithRange(CellNode currentCell, CellConnection direction, int range)
-    {
-        if (!currentCell.CheckConnectionNode(direction))
-        {
-            return null;
-        }
-
-        if (range > 0)
-        {
-            currentCell.GetCellByDirectionWithRange(currentCell.GetCellByDirection(direction), direction, range-1);
-        }
-        else
-        {
-            currentCell.PrintStatus();
-            return currentCell;
-        }
-
-        return null;
-    }
-    
-    
     public void SetScoreNode(CellScoreType type)
     {
         scoreType = type;
@@ -467,59 +347,4 @@ public class CellNode
         }
         return false;
     }
-
-    public bool FunctionalMovement(List<CellConnection> directions, int characterId)
-    {
-        if (!isConnected)
-        {
-            Debug.Log("Node to move is disconnected from grid");
-            return false;
-        }
-
-        bool isAttacking = false;
-        if (isOccupied)
-        {
-            if (CharactersManager.Instance.GetCharacterInBoardById(characterId).GetTeamType() == character.GetTeamType())
-            {
-                Debug.Log("Node to move is occupied by another character");
-                return false;
-            }
-            isAttacking = true;
-        }
-
-        foreach (CellConnection direction in directions)
-        {
-            if (!CheckConnectionNode(direction))
-            {
-                continue;
-            }
-
-            Character characterMoving = connectionDictionary[direction].GetCharacter();
-            if (characterMoving == null)
-            {
-                continue;
-            }
-            if (characterMoving.GetId() != characterId)
-            {
-                continue;
-            }
-
-            //Debug.Log("IS ATTACKING? " + isAttacking);
-            if (isAttacking)
-            {
-
-                //if (characterMoving.CanAttack()) // Already has manacost calculation
-                if (true)
-                {
-                    characterMoving.Attack(this.character);
-
-                }
-                return false;
-            }
-
-            return true;
-        }
-        return false;
-    }
-
 }
