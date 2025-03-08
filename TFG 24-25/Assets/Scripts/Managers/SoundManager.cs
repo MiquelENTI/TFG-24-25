@@ -11,6 +11,8 @@ public class SoundManager : Singleton<SoundManager>
         sfxDictionary=new()
         {
         //CARDS
+        {9999,},
+        {9999,},
            //Salmon
            {00,"event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
            {01,},
@@ -18,7 +20,7 @@ public class SoundManager : Singleton<SoundManager>
            {02,"event:/SFX/UI/CARDS/FLY/Fly_Attack"},
            {03,"event:/SFX/UI/CARDS/FLY/Fly_Selection"},
            //Turtle
-           {04,},
+           {04,"event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
            {05,},
            // Mimic
            {06,"event:/SFX/UI/CARDS/MIMIC/Mimic_Attack"},
@@ -37,28 +39,28 @@ public class SoundManager : Singleton<SoundManager>
            {15,"event:/SFX/UI/CARDS/THE GUN/TheGun_selection"},
            // Human/Werewolf
            {16,},
-           {17,},
+           {17,"event:/SFX/UI/CARDS/WAREWOLF/Howl"},
            // Death Horseman
            {18,},
-           {19,},
+           {19,"event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select"},
            // Terracotta Warrior
            {20,},
-           {21,},
+           {21,"event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select"},
            // Fantasma
            {22,},
            {23,},
            // Grasshopper
-           {24,},
+           {24,"event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select"},
            {25,},
            // Magic Karp
            {26,},
            {27,},
            // Archer
-           {28,},
-           {29,},
+           {28,"event:/SFX/UI/CARDS/ARCHER/Archer_attack"},
+           {29,"event:/SFX/UI/CARDS/ARCHER/Archer_Select"},
            // Chicken
-           {30,},
-           {31,},
+           {30,"event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack"},
+           {31,"event:/SFX/UI/CARDS/CHICKEN/Chicken_select"},
            // Leech
            {32,},
            {33,},
@@ -105,11 +107,23 @@ public class SoundManager : Singleton<SoundManager>
            //Flash
            {000,"event:/SFX/UI/EFFECTS/Flash/FLASH"},
            //Bowling Ball
-           //Instant Transmission
-           //Possession
+           {001,"event:/SFX/UI/CARDS/BOWLING/Pleno"},
+           {002,"event:/SFX/UI/CARDS/BOWLING/Inici_Bowling"},
+           {003,"event:/SFX/UI/CARDS/BOWLING/Bowling_movement"},
            //Mana Bottle
+           {004,"event:/SFX/UI/MANA/Drink_Mana"},
+           //Canvi de torn
+           {005,"event:/SFX/UI/CANVI DE TORN/Whisper"},
            //Return
            //C4 del medievo
+           //Instant Transmission
+           //Possession
+
+        //AMBIENT
+           //Roomtone
+           {0000,"event:/SFX/AMBIENT/ROOMTONE"},
+           //Bonfire
+           {0001,"event:/SFX/AMBIENT/BONFIRE"},
 
 
           

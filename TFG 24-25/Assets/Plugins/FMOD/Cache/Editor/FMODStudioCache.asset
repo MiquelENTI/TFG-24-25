@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9111162937153991656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
+  Guid:
+    Data1: -1978109115
+    Data2: 1174688455
+    Data3: 1276673441
+    Data4: 1847671146
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 101991
 --- !u!114 &-8824726384324790061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +96,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638769691952107794
+  lastModified: 638769991043488355
   FileSizes:
   - Name: Desktop
-    Value: 1979904
+    Value: 4552384
   Exists: 1
 --- !u!114 &-6833839539742696063
 MonoBehaviour:
@@ -101,6 +128,111 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6703
+--- !u!114 &-5705224980803646184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select
+  Guid:
+    Data1: -1342085625
+    Data2: 1254621408
+    Data3: 804495239
+    Data4: 1545287166
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1763
+--- !u!114 &-5491940732813974109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/BOWLING/Pleno
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/BOWLING/Pleno
+  Guid:
+    Data1: -1333371440
+    Data2: 1128314748
+    Data3: 1705618048
+    Data4: 1366817997
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1554
+--- !u!114 &-5325660656478526003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/RT60
+  m_EditorClassIdentifier: 
+  Name: RT60
+  StudioPath: parameter:/RT60
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 3415376268
+    data2: 1025728923
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5235087302348820298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
+  Guid:
+    Data1: -1684525416
+    Data2: 1298309566
+    Data3: -958921577
+    Data4: -1015100740
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1842
 --- !u!114 &-4875932691727379573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,11 +275,119 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638769691952120026
+  lastModified: 638769991043502589
   FileSizes:
   - Name: Desktop
-    Value: 1638
+    Value: 2420
   Exists: 1
+--- !u!114 &-4422700652043900420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/WAREWOLF/Howl
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/WAREWOLF/Howl
+  Guid:
+    Data1: 665138889
+    Data2: 1287082248
+    Data3: 1480665514
+    Data4: -113962873
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2496
+--- !u!114 &-3900884633152702053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
+  Guid:
+    Data1: 2125677807
+    Data2: 1080992663
+    Data3: 1734080158
+    Data4: 1239800274
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3484912978632944530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
+  Guid:
+    Data1: -929886967
+    Data2: 1231172565
+    Data3: -737548361
+    Data4: 17915594
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1437
+--- !u!114 &-3420830711644414619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/MANA/Drink_Mana
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/MANA/Drink_Mana
+  Guid:
+    Data1: 1320533049
+    Data2: 1340335908
+    Data3: -1809048129
+    Data4: 307954529
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1966
 --- !u!114 &-1935061830582507614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +415,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &-1056750833154121989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_Select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/ARCHER/Archer_Select
+  Guid:
+    Data1: 924272241
+    Data2: 1097883554
+    Data3: -1486527583
+    Data4: -410045363
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1321
 --- !u!114 &-542678830152173319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +469,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3973
+--- !u!114 &-500821746009133753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AMBIENT/ROOMTONE
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENT/ROOMTONE
+  Guid:
+    Data1: 1860700176
+    Data2: 1144748228
+    Data3: 1483625137
+    Data4: 1267618951
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 166706
 --- !u!114 &-163073605615587848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +546,6 @@ MonoBehaviour:
   - {fileID: -1935061830582507614}
   - {fileID: -8824726384324790061}
   - {fileID: 42411174634105933}
-  - {fileID: 2969553780690704580}
   - {fileID: 2221530083567787456}
   - {fileID: 3006857475622986513}
   - {fileID: -6833839539742696063}
@@ -261,12 +554,28 @@ MonoBehaviour:
   - {fileID: 2722255143135379710}
   - {fileID: 5303604604530333896}
   - {fileID: 829190916393502227}
-  EditorParameters: []
+  - {fileID: -5705224980803646184}
+  - {fileID: -3484912978632944530}
+  - {fileID: -500821746009133753}
+  - {fileID: 1872538113136795843}
+  - {fileID: -3420830711644414619}
+  - {fileID: -9111162937153991656}
+  - {fileID: 4295401964879122242}
+  - {fileID: -1056750833154121989}
+  - {fileID: 3511326003300010978}
+  - {fileID: -5235087302348820298}
+  - {fileID: 7305142340567438620}
+  - {fileID: 8507867051811762473}
+  - {fileID: -4422700652043900420}
+  - {fileID: -5491940732813974109}
+  - {fileID: -3900884633152702053}
+  EditorParameters:
+  - {fileID: -5325660656478526003}
   MasterBanks:
   - {fileID: -7461150170883479937}
   StringsBanks:
   - {fileID: -4698760797654769124}
-  cacheTime: 638769691952120026
+  cacheTime: 638769991043502589
   cacheVersion: 131621
 --- !u!114 &42411174634105933
 MonoBehaviour:
@@ -376,6 +685,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &1872538113136795843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
+  Guid:
+    Data1: -358029784
+    Data2: 1104192059
+    Data3: 2090169506
+    Data4: -2043592601
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3815
 --- !u!114 &2221530083567787456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,33 +820,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7256
---- !u!114 &2969553780690704580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/EFFECTS/SeeTheFuture/SeeTheFuture
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/EFFECTS/SeeTheFuture/SeeTheFuture
-  Guid:
-    Data1: -483072100
-    Data2: 1176844169
-    Data3: -1605434961
-    Data4: -840715375
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 17278
 --- !u!114 &3006857475622986513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +874,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &3511326003300010978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/ARCHER/Archer_attack
+  Guid:
+    Data1: 672075150
+    Data2: 1175839648
+    Data3: -951879540
+    Data4: -1013401230
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1125
 --- !u!114 &3552300373220124683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +955,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5571
+--- !u!114 &4295401964879122242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/TURTLE/Turtle_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/TURTLE/Turtle_select
+  Guid:
+    Data1: -923044522
+    Data2: 1109419118
+    Data3: -1956949624
+    Data4: 488547251
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &5303604604530333896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +1036,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5500
+--- !u!114 &7305142340567438620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CANVI DE TORN/Whisper
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CANVI DE TORN/Whisper
+  Guid:
+    Data1: -307875157
+    Data2: 1302402879
+    Data3: 533341112
+    Data4: -169503081
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &7472436044224387888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,3 +1090,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 17753
+--- !u!114 &8507867051811762473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
+  Guid:
+    Data1: -460635216
+    Data2: 1306527500
+    Data3: 1243729079
+    Data4: 936190727
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000

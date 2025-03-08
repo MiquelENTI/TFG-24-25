@@ -31,9 +31,12 @@
 		<relationship name="timeline">
 			<destination>{baeb9929-f9af-45c3-aeca-b2deca3a65c9}</destination>
 		</relationship>
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
+=======
+>>>>>>> 77e0364 (Implementació de SFX)
 	</object>
 	<object class="EventMixer" id="{ee10f8c5-2ea7-4630-bda3-c8be78917ff3}">
 		<relationship name="masterBus">
@@ -53,7 +56,11 @@
 			<destination>{e17b2bc9-3da4-41ff-82d2-06c3c7c743f8}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e1570df8-b544-4ab5-bf89-162852e8beb2}" />

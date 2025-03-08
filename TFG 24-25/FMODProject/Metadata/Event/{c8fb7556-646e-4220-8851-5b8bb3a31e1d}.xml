@@ -31,9 +31,12 @@
 		<relationship name="timeline">
 			<destination>{4045928a-51ad-4118-82a9-a8687976b033}</destination>
 		</relationship>
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
+=======
+>>>>>>> 77e0364 (Implementació de SFX)
 	</object>
 	<object class="EventMixer" id="{4df962c3-54e3-4cad-b17e-8feae4ce93fc}">
 		<relationship name="masterBus">
@@ -53,7 +56,11 @@
 			<destination>{e89dc272-d6a7-4b83-818a-8ec5129e9f7c}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b954bb76-80c7-48db-b2fc-233a8f39cfbe}" />
@@ -90,7 +97,11 @@
 	<object class="MixerBusPanner" id="{e89dc272-d6a7-4b83-818a-8ec5129e9f7c}" />
 	<object class="SingleSound" id="{4d266950-be8d-4576-a881-7805f8c07228}">
 		<property name="length">
+<<<<<<< HEAD
 			<value>2.5</value>
+=======
+			<value>4</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<relationship name="modulators">
 			<destination>{662c2017-324d-4535-8101-eab31f3b885e}</destination>
@@ -106,9 +117,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a4e4ed08-46f6-416e-976b-895dc1c66b1d}">
+<<<<<<< HEAD
 		<property name="volume">
 			<value>5.5</value>
 		</property>
+=======
+>>>>>>> 77e0364 (Implementació de SFX)
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -166,11 +180,21 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>0.600000024</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
+=======
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+>>>>>>> 77e0364 (Implementació de SFX)
 	</object>
 	<object class="AutomationPoint" id="{9cdaa875-46b9-492e-8edd-3d660abe93eb}">
 		<property name="position">
@@ -193,7 +217,11 @@
 	</object>
 	<object class="AutomationPoint" id="{e4080975-3dcb-4d61-9470-d3fa0333cbb6}">
 		<property name="position">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>3.5</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -204,7 +232,11 @@
 	</object>
 	<object class="AutomationPoint" id="{9ed85bbf-50ed-4bce-9279-0ce27de5bb0d}">
 		<property name="position">
+<<<<<<< HEAD
 			<value>2.5</value>
+=======
+			<value>4</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="value">
 			<value>0</value>

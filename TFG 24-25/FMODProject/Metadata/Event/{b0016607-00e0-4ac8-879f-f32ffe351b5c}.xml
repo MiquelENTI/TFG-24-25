@@ -31,9 +31,12 @@
 		<relationship name="timeline">
 			<destination>{68c40fa3-3b10-41f3-b44d-0e79bcc20e1c}</destination>
 		</relationship>
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
+=======
+>>>>>>> 77e0364 (Implementació de SFX)
 	</object>
 	<object class="EventMixer" id="{b60099ad-256b-4f56-8bff-83b0df3dbebe}">
 		<relationship name="masterBus">
@@ -53,7 +56,11 @@
 			<destination>{1b2c0c6b-ea26-4b50-9db7-34b474557f75}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{26754b0f-d5ee-419a-8582-7be366db2718}" />
@@ -169,7 +176,11 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>0.600000024</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

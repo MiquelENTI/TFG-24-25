@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{442144f2-d2e4-4298-8d88-fee7261043f2}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>APAGAR VELA _ CANVI DE TORN/Whisper_stop_candle_rr02.wav</value>
+=======
+			<value>APAGAR VELA _ CANVI DE TORN/Whisper_as_ui_so_sop_candle_rr02.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b234fbbb-80c5-401e-b20d-188d51497545}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>TURTLE /Fantasia_Turtle_Turtle_00.wav</value>
+=======
+			<value>TURTLE /Fantasia_Turtle_as_ui_so_card_Turtle_00.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

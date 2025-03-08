@@ -31,9 +31,12 @@
 		<relationship name="timeline">
 			<destination>{05ed9d23-d448-4471-954a-3ff9268298aa}</destination>
 		</relationship>
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
+=======
+>>>>>>> 77e0364 (Implementació de SFX)
 	</object>
 	<object class="EventMixer" id="{245fa277-fd41-4f71-8971-6fe291cdb863}">
 		<relationship name="masterBus">
@@ -53,7 +56,11 @@
 			<destination>{dc159601-6b36-47f7-9e82-7b538002f12f}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{467304f2-0bfa-4d7d-b255-6054e784ddb6}" />
@@ -166,11 +173,21 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>2</value>
+=======
+			<value>0.600000024</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
+=======
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+>>>>>>> 77e0364 (Implementació de SFX)
 		<property name="soundSize">
 			<value>13</value>
 		</property>

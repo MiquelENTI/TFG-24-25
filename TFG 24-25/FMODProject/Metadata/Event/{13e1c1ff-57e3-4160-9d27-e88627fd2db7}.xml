@@ -2,11 +2,17 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{13e1c1ff-57e3-4160-9d27-e88627fd2db7}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="color">
 			<value>Green</value>
 		</property>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+		<property name="color">
+			<value>Green</value>
+		</property>
+>>>>>>> 77e0364 (Implementació de SFX)
 		<property name="name">
 			<value>BONFIRE</value>
 		</property>

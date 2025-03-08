@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{41aff9b0-acbf-481a-8af6-aaf67addb0cb}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>Terracota Warrior/Tablero/Tarracota_TerracotaWarrior_00.wav</value>
+=======
+			<value>Terracota Warrior/Tablero/Tarracota_as_ui_so_card_TerracotaWarrior_00.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

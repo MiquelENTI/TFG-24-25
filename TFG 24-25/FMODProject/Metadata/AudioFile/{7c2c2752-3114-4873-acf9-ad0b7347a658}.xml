@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7c2c2752-3114-4873-acf9-ad0b7347a658}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>ROOMTONE/Roomtone_Taverna_00.wav</value>
+=======
+			<value>ROOMTONE/Roomtone_as_ab_sl_Taverna_Ambience_00.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

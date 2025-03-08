@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{6f5c9a81-cf2e-43e3-bc3c-5c0ab197a6fd}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>BOWLING/TABLERO/Bowling_card_bowling_select_00.wav</value>
+=======
+			<value>BOWLING/TABLERO/Bowling_as_ui_so_card_bowling_select_00.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

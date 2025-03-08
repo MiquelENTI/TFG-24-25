@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b9e712a9-b561-4de5-88ea-22adfb72c397}">
 		<property name="assetPath">
+<<<<<<< HEAD
 			<value>GRASSHOPPER/Grosshopper_00.wav</value>
+=======
+			<value>GRASSHOPPER/Grosshopper_as_ui_sl_card_Grosshopper_00.wav</value>
+>>>>>>> 77e0364 (Implementació de SFX)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
