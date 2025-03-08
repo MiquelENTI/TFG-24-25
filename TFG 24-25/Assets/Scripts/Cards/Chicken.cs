@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chicken : Character
 {
-    int counterDamage = 16;
+    int counterDamage = 5;
     public Chicken(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
     {
     }

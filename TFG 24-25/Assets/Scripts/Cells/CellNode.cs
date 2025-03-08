@@ -275,6 +275,7 @@ public class CellNode
                 return false;
             }
             isAttacking = true;
+            Debug.Log("IsAttacking");
         }
 
         CellNode characterTile = CellNodeManager.Instance.GetNodeById(characterMoving.GetOnTileId());

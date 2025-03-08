@@ -328,25 +328,32 @@ public class Character
         switch (node.GetScoreNode())
         {
             case CellScoreType.NORMAL:
-                // Prevent scoring in your own scoring tiles
-                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
-                { return; }
-                if (canScore && previousTile == onTile)
                 {
-                    scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount() * stats.scoreMultiplier);
-                    OnPointsScoring();
-                    canScore = false;
-                    return;
+                    // Prevent scoring in your own scoring tiles
+                    if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                    { return; }
+                    if (canScore && previousTile == onTile)
+                    {
+                        int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
+                        scoreManager.UpdateScore(teamType, pointsToScore);
+                        OnPointsScoring(pointsToScore);
+                        canScore = false;
+                        return;
+                    }
+                    canScore = true;
                 }
-                canScore = true;
+                
             break;
 
             case CellScoreType.QUICK:
-                // Prevent scoring in your own scoring tiles
-                if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
-                { return; }
-                scoreManager.UpdateScore(teamType, (int)node.GetScoreAmount() * stats.scoreMultiplier);
-                OnPointsScoring();
+                {
+                    // Prevent scoring in your own scoring tiles
+                    if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+                    { return; }
+                    int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
+                    scoreManager.UpdateScore(teamType, pointsToScore);
+                    OnPointsScoring(pointsToScore);
+                }
             break;
 
             default:
@@ -382,7 +389,7 @@ public class Character
 
     }
 
-    public virtual void OnPointsScoring()
+    public virtual void OnPointsScoring(int pointsScored)
     {
 
     }

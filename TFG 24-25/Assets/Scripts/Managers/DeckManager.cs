@@ -4,6 +4,7 @@ using Photon.Pun;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public enum DeckMode { NONE, WHITELIST, BLACKLIST }
 public class DeckManager : Singleton<DeckManager>
@@ -97,8 +98,13 @@ public class DeckManager : Singleton<DeckManager>
     {
         List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCardCopies);
 
-        List<int> characterIdsBlackList = characterIds;
+        List<int> characterIdsBlackList = new();
         List<int> characterIdsWhiteList = new();
+
+        for (int i = 0; i < characterIds.Count; i++)
+        {
+            characterIdsBlackList.Add(characterIds[i]);
+        }
 
         if (deckmode != DeckMode.NONE)
         {
