@@ -52,13 +52,20 @@ public class CardGameObject : DragableGameObject
 
     protected override void LeftMouseDownAction()
     {
-        base.LeftMouseDownAction();
-
-        if (!GetComponentInParent<PhotonView>().IsMine)
+        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        {
+            Debug.Log("No es el turno del jugador actual.");
             return;
+        }
 
         // When Dragging, the GameObject (Visible Card) Updates its Position and its Sibling, the Collider that Detects on Which Tile is it Hovering On.
         GetMouseWorldPos("CardGameObject");
+
+        if (gameObjectSelected == null)
+        { return; }
+
+        if (!gameObjectSelected.GetComponent<PhotonView>().IsMine)
+        { return; }
 
         if (isDragging)
         {
@@ -147,7 +154,7 @@ public class CardGameObject : DragableGameObject
     { 
         characterIdToSpawn = id;
         // Info To Display it on Card
-        character = new Character(TemporalCardDataBase.Instance.GetTemporalStats(id), TeamType.BLUE, null, null);
+        //character = new Character(TemporalCardDataBase.Instance.GetTemporalStats(id), TeamType.BLUE, null, null);
     }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }

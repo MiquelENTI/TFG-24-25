@@ -25,6 +25,9 @@ public class DragableGameObject : MonoBehaviour
 
     protected Character character;
 
+    protected TurnManagerScript TurnManagerScript;
+    [SerializeField] protected bool IsBlue;
+
     [SerializeField] protected GameObject cardToDisplay;
     protected virtual void Awake()
     {
@@ -39,6 +42,22 @@ public class DragableGameObject : MonoBehaviour
 
         playerInputs.Gameplay.MouseRightClick.started += _ => RightClickDownAction();
         playerInputs.Gameplay.MouseRightClick.canceled += _ => RightClickUpAction();
+
+        GameObject turnManagerObject = GameObject.Find("TurnManager");
+        if (turnManagerObject != null)
+        {
+            TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
+            if (TurnManagerScript == null)
+            {
+                Debug.LogError("TurnManagerScript no encontrado en el GameObject 'turnmanager'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
+        }
+
+        IsBlue = PhotonNetwork.IsMasterClient ? true : false;
     }
 
     // Detect and Calculate Mouse World Position to Move Inside a Plane
@@ -56,8 +75,27 @@ public class DragableGameObject : MonoBehaviour
             if (hit.collider != null && hit.collider.tag == colliderTag)
             {
                 Debug.Log("3");
-                StartCoroutine(DragUpdate(hit.collider.gameObject));
                 gameObjectSelected = hit.collider.gameObject;
+
+                if ((gameObjectSelected.GetComponent<DragableGameObject>().IsBlue == gameObjectSelected.GetComponent<DragableGameObject>().TurnManagerScript.getIsBlue()) && gameObjectSelected.GetComponent<PhotonView>().IsMine)
+                {
+                    Debug.Log("4");
+                    StartCoroutine(DragUpdate(hit.collider.gameObject));
+                }
+                
+                //if (gameObjectSelected.GetComponent<DragableGameObject>().IsBlue)
+                //{
+                //    Debug.Log("4");
+                //    if (gameObjectSelected.GetComponent<DragableGameObject>().TurnManagerScript.getIsBlue())
+                //    {
+                //        Debug.Log("5");
+                //        if (gameObjectSelected.GetComponent<PhotonView>().IsMine)
+                //        {
+                //            Debug.Log("6");
+                //            StartCoroutine(DragUpdate(hit.collider.gameObject));
+                //        }
+                //    }
+                //}
             }
         }
     }

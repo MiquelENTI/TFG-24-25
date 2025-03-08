@@ -16,11 +16,9 @@ public class TokenGameObject : DragableGameObject
     [SerializeField] int TEMP_id;
 
 
-    [SerializeField] bool IsBlue = true;
 
     PhotonView photonView;
 
-    private TurnManagerScript TurnManagerScript;
 
     public GameObject tileCollider;
 
@@ -83,9 +81,6 @@ public class TokenGameObject : DragableGameObject
 
     protected override void LeftMouseDownAction()
     {
-        if (!GetComponentInParent<PhotonView>().IsMine)
-            return;
-
         if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
         {
             Debug.Log("No es el turno del jugador actual.");
@@ -95,6 +90,9 @@ public class TokenGameObject : DragableGameObject
         GetMouseWorldPos("TokenGameObject");
 
         if (gameObjectSelected == null)
+        { return; }
+
+        if (!gameObjectSelected.GetComponent<PhotonView>().IsMine)
         { return; }
 
         characterSelected = gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter();
@@ -114,11 +112,11 @@ public class TokenGameObject : DragableGameObject
     {
         base.LeftMouseUpAction();
 
-        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
-        {
-            Debug.Log("No es el turno del jugador actual.");
-            return;
-        }
+        //if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
+        //{
+        //    Debug.Log("No es el turno del jugador actual.");
+        //    return;
+        //}
 
         if (isOutsideBoard)
         {
@@ -132,7 +130,8 @@ public class TokenGameObject : DragableGameObject
                 //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
 
                 CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
-                MyEventHandler.Instance.moveToken.Invoke(tileHovering, characterSelected.GetId());
+                MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
+                Debug.Log("CharacterSelectedID: " + characterSelected.GetId());
             }
         }
 

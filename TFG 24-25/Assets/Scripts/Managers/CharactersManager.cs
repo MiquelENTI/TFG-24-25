@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class CharactersManager : Singleton<CharactersManager>
         charactersOnBoard.Add(currentId,character);
         charactersCardSprite.Add(currentId, cardSprite);
         character.SetId(currentId);
+
+        Debug.Log("CharactersManager CurrentID:" + currentId);
         currentId++;
     }
     public void RemoveCharacter(int id)

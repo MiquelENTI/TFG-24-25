@@ -45,7 +45,7 @@ public class CardHold : MonoBehaviour
         card.transform.GetChild(0).GetComponent<CardGameObject>().SetCardId(currentId);
         currentId++;
 
-        Debug.Log("CardID: " + card.transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() + " CurrentID: " + currentId);
+        //Debug.Log("CardID: " + card.transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() + " CurrentID: " + currentId);
     }
 
     public void ReorganizeCards()
