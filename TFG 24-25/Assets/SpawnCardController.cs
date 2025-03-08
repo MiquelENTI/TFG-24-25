@@ -21,7 +21,7 @@ public class SpawnCardController : MonoBehaviourPun
 
         TeamType tokenTeam = PhotonNetwork.LocalPlayer.IsMasterClient ? TeamType.BLUE : TeamType.RED;
 
-        Vector3 spawnPosition = new Vector3(0, -1000, 0);
+        Vector3 spawnPosition = new Vector3(2, 0, 0);
 
         GameObject tokenPrefabToUse = tokenTeam == TeamType.BLUE ? tokenPrefabBlue : tokenPrefabRed;
         string prefabPath = tokenTeam == TeamType.BLUE ? tokenPrefabBlue.name : tokenPrefabRed.name;
@@ -47,7 +47,7 @@ public class SpawnCardController : MonoBehaviourPun
             {
                 instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
 
-                MyEventHandler.Instance.RPC_MoveToken(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId());
+                MyEventHandler.Instance.moveToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId());
             }
             else
             {

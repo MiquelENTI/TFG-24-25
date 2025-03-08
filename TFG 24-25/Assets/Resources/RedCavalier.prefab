@@ -253,10 +253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0b4814f761030479a03fd50709f650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBlue: 0
   cardToDisplay: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: edf6ed263482e4a48a4bdc09c314d80f, type: 3}
   TEMP_id: 1
-  IsBlue: 0
   tileCollider: {fileID: 107403703900830869}
 --- !u!54 &2614872735940336508
 Rigidbody:

@@ -5,11 +5,16 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
+public enum DeckMode { NONE, WHITELIST, BLACKLIST }
 public class DeckManager : Singleton<DeckManager>
-{
+{   
+    [SerializeField] DeckMode deckmode = DeckMode.NONE;
+
     [SerializeField] GameObject prefabCard;
     [SerializeField] Queue<int> deck = new();
-    [SerializeField] List<int> charactersToExclude;
+    [SerializeField] List<int> characterBlackList;
+    [SerializeField] List<int> characterWhiteList;
+
 
     int amountOfCardCopies = 2;
 
@@ -17,25 +22,30 @@ public class DeckManager : Singleton<DeckManager>
 
     private void Awake()
     {
-        charactersToExclude = new() 
+        characterBlackList = new() 
         {
-            6, // Turtle, Problems with its effect
-            7, // Mimic, Problems with its effect
+            6,  // Turtle, Problems with its effect
+            7,  // Mimic, Problems with its effect
             50, // Prototype Cards
-            51,// Prototype Cards
-            52,// Prototype Cards
-            53,// Prototype Cards
-            54,// Prototype Cards
-            55,// Prototype Cards
-            56,// Prototype Cards
-            57,// Prototype Cards
-            58,// Prototype Cards
-            59,// Prototype Cards
-            60,// Prototype Cards
-            61,// Prototype Cards
+            51, // Prototype Cards
+            52, // Prototype Cards
+            53, // Prototype Cards
+            54, // Prototype Cards
+            55, // Prototype Cards
+            56, // Prototype Cards
+            57, // Prototype Cards
+            58, // Prototype Cards
+            59, // Prototype Cards
+            60, // Prototype Cards
+            61, // Prototype Cards
             62, // Prototype Cards
             
             -1, //Dummy
+        };
+
+        characterWhiteList = new()
+        {
+            39
         };
         CreateDeck();
     }
@@ -87,13 +97,46 @@ public class DeckManager : Singleton<DeckManager>
     {
         List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCardCopies);
 
-        for (int i = 0; i < charactersToExclude.Count; i++)
+        List<int> characterIdsBlackList = characterIds;
+        List<int> characterIdsWhiteList = new();
+
+        if (deckmode != DeckMode.NONE)
         {
-            for (int j = 0; j < amountOfCardCopies; j++)
+            for (int i = 0; i < amountOfCardCopies; i++)
             {
-                characterIds.Remove(charactersToExclude[i]);
+                if (deckmode == DeckMode.BLACKLIST)
+                {
+                    for (int j = 0; j < characterBlackList.Count; j++)
+                    {
+                        characterIdsBlackList.Remove(characterBlackList[j]);
+                        //Debug.Log("Character To Remove: " + characterBlackList[i]);
+                    }
+                }
+                else if (deckmode == DeckMode.WHITELIST)
+                {
+                    for (int j = 0; j < characterWhiteList.Count; j++)
+                    {
+                        characterIdsWhiteList.Add(characterWhiteList[j]);
+                        //Debug.Log("Character To Add: " + characterWhiteList[i]);
+                    }
+                }
             }
-            //Debug.Log("Character To Remove: " + charactersToExclude[i]);
+
+            switch (deckmode)
+            {
+                case DeckMode.WHITELIST:
+                    {
+                        characterIds.Clear();
+                        characterIds = characterIdsWhiteList;
+                    }
+                    break;
+                case DeckMode.BLACKLIST:
+                    {
+                        characterIds.Clear();
+                        characterIds = characterIdsBlackList;
+                    }
+                    break;
+            }
         }
 
         Shuffle(characterIds);
