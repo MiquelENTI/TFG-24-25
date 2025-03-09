@@ -5,7 +5,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public enum DeckMode { NONE, WHITELIST, BLACKLIST }
+public enum DeckMode { NONE, WHITELIST, BLACKLIST, WORKING }
 public class DeckManager : Singleton<DeckManager>
 {   
     [SerializeField] DeckMode deckmode = DeckMode.NONE;
@@ -14,6 +14,8 @@ public class DeckManager : Singleton<DeckManager>
     [SerializeField] Queue<int> deck = new();
     [SerializeField] List<int> characterBlackList;
     [SerializeField] List<int> characterWhiteList;
+    [SerializeField] List<int> characterWorkingList;
+
 
 
     int amountOfCardCopies = 2;
@@ -46,6 +48,11 @@ public class DeckManager : Singleton<DeckManager>
         characterWhiteList = new()
         {
             39
+        };
+
+        characterWorkingList = new()
+        {
+            16,
         };
         CreateDeck();
     }
@@ -99,6 +106,7 @@ public class DeckManager : Singleton<DeckManager>
 
         List<int> characterIdsBlackList = characterIds;
         List<int> characterIdsWhiteList = new();
+        List<int> characterIdsWorkingList = new();
 
         if (deckmode != DeckMode.NONE)
         {
@@ -120,6 +128,14 @@ public class DeckManager : Singleton<DeckManager>
                         //Debug.Log("Character To Add: " + characterWhiteList[i]);
                     }
                 }
+                else if (deckmode == DeckMode.WORKING)
+                {
+                    for (int j = 0; j < characterWorkingList.Count; j++)
+                    {
+                        characterIdsWorkingList.Add(characterWorkingList[j]);
+                        //Debug.Log("Character To Add: " + characterWorkingList[i]);
+                    }
+                }
             }
 
             switch (deckmode)
@@ -134,6 +150,12 @@ public class DeckManager : Singleton<DeckManager>
                     {
                         characterIds.Clear();
                         characterIds = characterIdsBlackList;
+                    }
+                    break;
+                case DeckMode.WORKING:
+                    {
+                        characterIds.Clear();
+                        characterIds = characterIdsWorkingList;
                     }
                     break;
             }

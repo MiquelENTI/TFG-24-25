@@ -4315,7 +4315,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 4894877133841640924, guid: 75a857df28b36234fb4910db3cb799b1, type: 3}
   spawnPositionPlayer1: {x: 11.8, y: -8.7, z: -0.14}
   spawnPositionPlayer2: {x: -8, y: -8.7, z: -3.33}
-  turnManager: {fileID: 0}
+  turnManager: {fileID: 1256807049}
 --- !u!114 &643941742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9425,10 +9425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38948f91a27aaef48afbd66708b8ceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckmode: 1
-  prefabCard: {fileID: 4007946270398369442, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
+  deckmode: 3
+  prefabCard: {fileID: 4335443431014593374, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 
   characterWhiteList: 
+  characterWorkingList: 
 --- !u!4 &1293831302
 Transform:
   m_ObjectHideFlags: 0

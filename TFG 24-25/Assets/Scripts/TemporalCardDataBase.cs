@@ -19,7 +19,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, MovementType.Basic, "Al permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, MovementType.Basic, "Destruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
         { 21, new CharacterStats("Archer",3, 3, 6,  1, 1, MovementType.Omni, "Te 2 de rang d'atac") }, // Archer
-        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 2, MovementType.Basic, "Al recibir da�o el atacante recibe 16 de da�o") }, // Chicken
+        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 2, MovementType.Basic, "Al recibir da�o el atacante recibe 5 de da�o") }, // Chicken
         { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuaci�, enemics a una casella reben 1 de mal\n\n") }, // Leech
         { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaci�, fa +2 d'atac\n\n") }, // Berserker
         { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaci�, es cura la quantitat de punts obtinguts\n\n") }, // Hydra

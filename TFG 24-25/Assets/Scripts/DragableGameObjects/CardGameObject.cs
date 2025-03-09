@@ -14,7 +14,7 @@ public class CardGameObject : DragableGameObject
 
     public GameObject spawnTileCollider;
 
-    int characterIdToSpawn = 1;
+    int characterIdToSpawn = -10;
     public SpawnCardController gameController;
 
     [SerializeField] private TMP_Text nameText;
@@ -53,19 +53,15 @@ public class CardGameObject : DragableGameObject
             Debug.LogError("No se encontró GameObject con Tag 'SpawnManager' para el CardGameController!");
         }
 
-        if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
+        if (characterIdToSpawn != -10)
         {
-            int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
-            randomCharacterName = possibleCharacterNamesToAssign[randomIndex];
-            Debug.Log("Nombre de personaje seleccionado aleatoriamente: " + randomCharacterName);
-
             UpdateCardText();
         }
     }
 
     void UpdateCardText()
     {
-        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(randomCharacterName);
+        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
 
         nameText.text = stats.getName();
         healthText.text = stats.getHealthToString();
