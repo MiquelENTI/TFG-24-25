@@ -9,7 +9,7 @@ public enum DeckMode { NONE, WHITELIST, BLACKLIST, WORKING }
 public class DeckManager : Singleton<DeckManager>
 {   
     [SerializeField] DeckMode deckmode = DeckMode.NONE;
-
+    [SerializeField] int amountOfCopies = 2;
     [SerializeField] GameObject prefabCard;
     [SerializeField] Queue<int> deck = new();
     [SerializeField] List<int> characterBlackList;
@@ -18,7 +18,7 @@ public class DeckManager : Singleton<DeckManager>
 
 
 
-    int amountOfCardCopies = 2;
+    
 
     int teamTypeAlternator;
 
@@ -45,15 +45,9 @@ public class DeckManager : Singleton<DeckManager>
             -1, //Dummy
         };
 
-        characterWhiteList = new()
-        {
-            39
-        };
+        characterWhiteList = new();
 
-        characterWorkingList = new()
-        {
-            16,
-        };
+        characterWorkingList = new();
         CreateDeck();
     }
     void Start()

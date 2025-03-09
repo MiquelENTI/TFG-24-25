@@ -9425,10 +9425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38948f91a27aaef48afbd66708b8ceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckmode: 3
+  deckmode: 1
+  amountOfCardCopies: 2
   prefabCard: {fileID: 4335443431014593374, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 
-  characterWhiteList: 
+  characterWhiteList: 10000000
   characterWorkingList: 
 --- !u!4 &1293831302
 Transform:
