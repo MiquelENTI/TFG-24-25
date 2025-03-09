@@ -32,11 +32,17 @@
 			<destination>{bbb99d0b-b75a-4127-979d-1affaccd489d}</destination>
 		</relationship>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<relationship name="banks">
 			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
 		</relationship>
 =======
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+		<relationship name="banks">
+			<destination>{c2105566-e59c-4b6d-95fd-f2c1f23b190e}</destination>
+		</relationship>
+>>>>>>> b94f9f3 (Card durations sound modification)
 	</object>
 	<object class="EventMixer" id="{8083a1fe-d727-4e2e-8355-d7bfedf74094}">
 		<relationship name="masterBus">
