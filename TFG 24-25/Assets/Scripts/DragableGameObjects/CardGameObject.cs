@@ -1,14 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class CardGameObject : DragableGameObject
 {
-    //Plane plane = new Plane(Vector3.up, Vector3.up);
-
     CardHold cardHold;
     int cardId;
 
@@ -17,12 +17,19 @@ public class CardGameObject : DragableGameObject
     int characterIdToSpawn = 1;
     public SpawnCardController gameController;
 
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text attackText; 
+    [SerializeField] private TMP_Text cardDescriptionText;
+
+    [SerializeField] private Image illustrationImage;
+
     protected override void Awake()
     {
         base.Awake();
+    }
 
         
-    }
     protected override void Start()
     {
         base.Start();
@@ -32,23 +39,52 @@ public class CardGameObject : DragableGameObject
         cardHold = transform.parent.parent.GetComponent<CardHold>();
         spawnTileCollider = transform.parent.GetChild(1).gameObject;
 
-
-
         GameObject spawnManagerGO = GameObject.Find("SpawnManager");
         if (spawnManagerGO != null)
         {
             gameController = spawnManagerGO.GetComponent<SpawnCardController>();
             if (gameController == null)
             {
-                Debug.LogError("No se encontr el componente CardGameController en SpawnManager!");
+                Debug.LogError("No se encontró el componente CardGameController en SpawnManager!");
             }
         }
         else
         {
-            Debug.LogError("No se encontr GameObject con Tag 'SpawnManager' para el CardGameController!");
+            Debug.LogError("No se encontró GameObject con Tag 'SpawnManager' para el CardGameController!");
+        }
+
+        if (possibleCharacterNamesToAssign != null && possibleCharacterNamesToAssign.Count > 0)
+        {
+            int randomIndex = Random.Range(0, possibleCharacterNamesToAssign.Count);
+            randomCharacterName = possibleCharacterNamesToAssign[randomIndex];
+            Debug.Log("Nombre de personaje seleccionado aleatoriamente: " + randomCharacterName);
+
+            UpdateCardText();
         }
     }
 
+    void UpdateCardText()
+    {
+        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(randomCharacterName);
+
+        nameText.text = stats.getName();
+        healthText.text = stats.getHealthToString();
+        attackText.text = stats.getAttackToString();
+        cardDescriptionText.text = stats.getDescription();
+
+        string imageName = "cardsprites/ilustracions/" + stats.getName();
+
+        Sprite cardSprite = Resources.Load<Sprite>(imageName);
+
+        if (cardSprite != null)
+        {
+            illustrationImage.sprite = cardSprite;
+        }
+        else
+        {
+            Debug.LogError("No se encontró la imagen: " + imageName);
+        }
+    }
 
     protected override void LeftMouseDownAction()
     {
@@ -58,7 +94,6 @@ public class CardGameObject : DragableGameObject
             return;
         }
 
-        // When Dragging, the GameObject (Visible Card) Updates its Position and its Sibling, the Collider that Detects on Which Tile is it Hovering On.
         GetMouseWorldPos("CardGameObject");
 
         if (gameObjectSelected == null)
@@ -82,15 +117,12 @@ public class CardGameObject : DragableGameObject
 
         if (isOutsideBoard)
         {
-            // Returns to The Hand
             cardHold.ReorganizeCards();
         }
         else
         {
-            // Verify If its the card selected
             if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
             {
-                // Spawn Token in tileHovering if is empty
                 if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied())
                 {
                     RequestCharacterInstantiation();
@@ -99,10 +131,10 @@ public class CardGameObject : DragableGameObject
                 else
                 {
                     cardHold.ReorganizeCards();
-                }    
+                }
             }
         }
-        
+
         CellNodeManager.Instance.hidePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
     }
 
@@ -147,7 +179,7 @@ public class CardGameObject : DragableGameObject
 
     public void SetCardId(int id)
     { cardId = id; }
-    public int GetCardId() 
+    public int GetCardId()
     { return cardId; }
 
     public void SetCharacterToSpawnId(int id)

@@ -24,7 +24,7 @@ public class TokenGameObject : DragableGameObject
 
     private Character characterSelected;
 
-    
+    [SerializeField] Transform cardCanvas;
 
     protected override void Awake()
     {
@@ -165,6 +165,37 @@ public class TokenGameObject : DragableGameObject
     public GameObject GetTileCollider()
     { return tileCollider; }
 
+    void SeeTokenCard()
+    {
+        if (isDragging || cardToDisplay.activeSelf)
+        {
+            return;
+        }
+
+        ChangeImageCardToDisplay();
+    }
+
+    void ChangeImageCardToDisplay()
+    {
+        string imageName = "cardsprites/ilustracions/" + character.GetName().ToString();
+
+        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
+
+        cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
+
+        cardToDisplay.transform.Find("HealthText").GetComponent<Text>().text = character.GetHealth().ToString();
+
+        cardToDisplay.transform.Find("ManaCostText").GetComponent<Text>().text = character.getManaCost().ToString();
+
+        cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
+
+        cardToDisplay.transform.Find("NomText").GetComponent<Text>().text = character.GetName().ToString();
+
+        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = Resources.Load<Sprite>(imageName);
+
+        cardToDisplay.SetActive(true);
+    }
+
     void changeCardOnBoard()
     {
         if (character == null)
@@ -176,8 +207,9 @@ public class TokenGameObject : DragableGameObject
         int attack = character.GetAttack();
         int health = character.GetHealth();
         int manaCost = character.getManaCost();
+        string name = character.GetName();
 
-        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost);
+        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost, name);
     }
 
     [PunRPC]
@@ -190,7 +222,7 @@ public class TokenGameObject : DragableGameObject
     }
 
     [PunRPC]
-    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost)
+    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
     {
         if (character == null)
         {
@@ -198,23 +230,24 @@ public class TokenGameObject : DragableGameObject
             return;
         }
 
-        Transform cardCanvas = transform.Find("Canvas");
-
         if (cardCanvas != null)
         {
             Transform cardInBoard = cardCanvas.Find("CardInBoard");
 
             if (cardInBoard != null)
             {
-                // Image cardImage = cardInBoard.Find("ImageSprite").GetComponent<Image>();
+                Image cardImage = cardInBoard.Find("Ilustracio").GetComponent<Image>();
                 Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
                 Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
                 Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
+                Text nameText = cardInBoard.Find("NameText").GetComponent<Text>();
+                
 
-                // cardImage.sprite = character.GetCardSprite();
+                cardImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + name);
                 attackText.text = attack.ToString();
                 healthText.text = health.ToString();
                 manaText.text = manaCost.ToString();
+                nameText.text = name.ToString();
             }
             else
             {

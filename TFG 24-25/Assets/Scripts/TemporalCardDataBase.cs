@@ -19,10 +19,10 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, MovementType.Basic, "Al permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, MovementType.Basic, "Destruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
         { 21, new CharacterStats("Archer",3, 3, 6,  1, 1, MovementType.Omni, "Te 2 de rang d'atac") }, // Archer
-        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 2, MovementType.Basic, "Al recibir daño el atacante recibe 16 de daño") }, // Chicken
-        { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuació, enemics a una casella reben 1 de mal\n\n") }, // Leech
-        { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, MovementType.Basic, "Si esta en una casella de puntuació, fa +2 d'atac\n\n") }, // Berserker
-        { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, MovementType.Basic, "Si esta en una casella de puntuació, es cura la quantitat de punts obtinguts\n\n") }, // Hydra
+        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 2, MovementType.Basic, "Al recibir daï¿½o el atacante recibe 16 de daï¿½o") }, // Chicken
+        { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuaciï¿½, enemics a una casella reben 1 de mal\n\n") }, // Leech
+        { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaciï¿½, fa +2 d'atac\n\n") }, // Berserker
+        { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaciï¿½, es cura la quantitat de punts obtinguts\n\n") }, // Hydra
         
         
         { 32, new CharacterStats("Kamikaze",2, 9, 3,  1, 2, MovementType.Basic, "Quan mata a un enemic destrueix aquesta carta\n\n") }, // Hydra
@@ -44,9 +44,9 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 56, new CharacterStats("Jaumandreu",2, 4, 10,  1, 1, MovementType.Basic, "") }, // Jaumandreu
         { 57, new CharacterStats("Mokiel",1, 3, 5,  1, 1, MovementType.Basic, "Juga al Call of Duty (de Roblox)") }, // Mokiel
         { 58, new CharacterStats("Pinsa",1, 3, 7,  1, 1, MovementType.Basic, "El programador que no programa") }, // Pinsa
-        { 59, new CharacterStats("Sergi",2, 6, 7,  1, 1, MovementType.Basic, "Ballarí professional de bachata") }, // Sergi
+        { 59, new CharacterStats("Sergi",2, 6, 7,  1, 1, MovementType.Basic, "Ballarï¿½ professional de bachata") }, // Sergi
         { 60, new CharacterStats("Ferryklk",3, 10, 10,  1, 1, MovementType.Basic, "Jugador professional del Habbo") }, // Ferryklk
-        { 61, new CharacterStats("Carla",4, 9, 21,  1, 1, MovementType.Basic, "Té un caball") }, // Carla
+        { 61, new CharacterStats("Carla",4, 9, 21,  1, 1, MovementType.Basic, "Tï¿½ un caball") }, // Carla
         { 62, new CharacterStats("Kiku",5, 12, 24,  1, 1, MovementType.Basic, "El otro artist") }, // Kiku
 
         { -1, new CharacterStats("Dummy",0, 0, 99999, 0, 0, MovementType.Basic, "") }, // DummyBase

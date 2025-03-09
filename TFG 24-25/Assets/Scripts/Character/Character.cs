@@ -54,11 +54,25 @@ public struct CharacterStats
     public string getName()
     { return name; }
 
+    public string getHealthToString()
+    {
+        return hp.ToString();
+    }
+
     public int getHealth()
     {
         return hp;
     }
 
+    public string getAttackToString()
+    {
+        return dmg.ToString();
+    }
+
+    public int getManaCostToString()
+    {
+        return manaCost;
+    }
     public int getAttack()
     {
         return dmg;
@@ -168,6 +182,11 @@ public class Character
     public string GetDescription()
     {
         return stats.getDescription();
+    }
+
+    public string GetName()
+    {
+        return stats.getName();
     }
 
     public int getManaCost()
