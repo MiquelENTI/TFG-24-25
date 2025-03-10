@@ -15,7 +15,7 @@ public class TokenGameObject : DragableGameObject
 
     [SerializeField] int TEMP_id;
 
-
+    private Character character;
 
     PhotonView photonView;
 
@@ -37,26 +37,10 @@ public class TokenGameObject : DragableGameObject
     {
         base.Start();
 
-        GameObject turnManagerObject = GameObject.Find("TurnManager");
-        if (turnManagerObject != null)
-        {
-            TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
-            if (TurnManagerScript == null)
-            {
-                Debug.LogError("TurnManagerScript no encontrado en el GameObject 'turnmanager'.");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
-        }
-
-        // character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
-
         planeDisplacement = 0.5f;
         objectDisplacement = 0.05f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
-        cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
+        
         changeCardOnBoard();
         transform.parent.name = character.GetCharacterStats().name;
     }
@@ -112,12 +96,6 @@ public class TokenGameObject : DragableGameObject
     {
         base.LeftMouseUpAction();
 
-        //if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
-        //{
-        //    Debug.Log("No es el turno del jugador actual.");
-        //    return;
-        //}
-
         if (isOutsideBoard)
         {
             transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
@@ -165,35 +143,11 @@ public class TokenGameObject : DragableGameObject
     public GameObject GetTileCollider()
     { return tileCollider; }
 
-    void SeeTokenCard()
+    public override void UpdateCardToDisplayText()
     {
-        if (isDragging || cardToDisplay.activeSelf)
-        {
-            return;
-        }
+        characterStats = character.GetCharacterStats();
 
-        ChangeImageCardToDisplay();
-    }
-
-    void ChangeImageCardToDisplay()
-    {
-        string imageName = "cardsprites/ilustracions/" + character.GetName().ToString();
-
-        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
-
-        cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
-
-        cardToDisplay.transform.Find("HealthText").GetComponent<Text>().text = character.GetHealth().ToString();
-
-        cardToDisplay.transform.Find("ManaCostText").GetComponent<Text>().text = character.getManaCost().ToString();
-
-        cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
-
-        cardToDisplay.transform.Find("NomText").GetComponent<Text>().text = character.GetName().ToString();
-
-        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = Resources.Load<Sprite>(imageName);
-
-        cardToDisplay.SetActive(true);
+        base.UpdateCardToDisplayText();
     }
 
     void changeCardOnBoard()
@@ -218,6 +172,10 @@ public class TokenGameObject : DragableGameObject
         TeamType tokenTeam = (TeamType)teamTypeInt;
         Character characterToAssign = CharacterClassSelector(characterId, tokenTeam, gameObject);
         SetCharacter(characterToAssign);
+
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+
         changeCardOnBoard();
     }
 
@@ -265,6 +223,7 @@ public class TokenGameObject : DragableGameObject
     public void SetCharacter(Character newCharacter)
     {
         character = newCharacter;
+        characterStats = character.GetCharacterStats();
     }
 
     

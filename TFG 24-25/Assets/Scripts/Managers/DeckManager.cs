@@ -45,9 +45,9 @@ public class DeckManager : Singleton<DeckManager>
             -1, //Dummy
         };
 
-        characterWhiteList = new();
+        //characterWhiteList = new();
 
-        characterWorkingList = new();
+        //characterWorkingList = new();
         CreateDeck();
     }
     void Start()
@@ -96,7 +96,7 @@ public class DeckManager : Singleton<DeckManager>
 
     public void ShuffleDeck()
     {
-        List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCardCopies);
+        List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCopies);
 
         List<int> characterIdsBlackList = characterIds;
         List<int> characterIdsWhiteList = new();
@@ -104,7 +104,7 @@ public class DeckManager : Singleton<DeckManager>
 
         if (deckmode != DeckMode.NONE)
         {
-            for (int i = 0; i < amountOfCardCopies; i++)
+            for (int i = 0; i < amountOfCopies; i++)
             {
                 if (deckmode == DeckMode.BLACKLIST)
                 {

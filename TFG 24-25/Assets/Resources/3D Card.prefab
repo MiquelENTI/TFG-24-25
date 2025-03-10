@@ -1210,11 +1210,6 @@ MonoBehaviour:
   cardToDisplay: {fileID: 0}
   spawnTileCollider: {fileID: 0}
   gameController: {fileID: 0}
-  nameText: {fileID: 6904005644165121870}
-  healthText: {fileID: 1154231193715599459}
-  attackText: {fileID: 4507473554498501611}
-  cardDescriptionText: {fileID: 4564113674768698482}
-  illustrationImage: {fileID: 1922374523706541275}
 --- !u!114 &3813915821800789454
 MonoBehaviour:
   m_ObjectHideFlags: 0

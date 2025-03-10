@@ -17,12 +17,6 @@ public class CardGameObject : DragableGameObject
     int characterIdToSpawn = -10;
     public SpawnCardController gameController;
 
-    [SerializeField] private TMP_Text nameText;
-    [SerializeField] private TMP_Text healthText;
-    [SerializeField] private TMP_Text attackText; 
-    [SerializeField] private TMP_Text cardDescriptionText;
-
-    [SerializeField] private Image illustrationImage;
 
     protected override void Awake()
     {
@@ -55,32 +49,14 @@ public class CardGameObject : DragableGameObject
 
         if (characterIdToSpawn != -10)
         {
-            UpdateCardText();
+            //UpdateCardToDisplayText();
         }
     }
 
-    void UpdateCardText()
-    {
-        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
-
-        nameText.text = stats.getName();
-        healthText.text = stats.getHealthToString();
-        attackText.text = stats.getAttackToString();
-        cardDescriptionText.text = stats.getDescription();
-
-        string imageName = "cardsprites/ilustracions/" + stats.getName();
-
-        Sprite cardSprite = Resources.Load<Sprite>(imageName);
-
-        if (cardSprite != null)
-        {
-            illustrationImage.sprite = cardSprite;
-        }
-        else
-        {
-            Debug.LogError("No se encontró la imagen: " + imageName);
-        }
-    }
+    //public override void UpdateCardToDisplayText()
+    //{
+        
+    //}
 
     protected override void LeftMouseDownAction()
     {
@@ -182,7 +158,9 @@ public class CardGameObject : DragableGameObject
     { 
         characterIdToSpawn = id;
         // Info To Display it on Card
-        //character = new Character(TemporalCardDataBase.Instance.GetTemporalStats(id), TeamType.BLUE, null, null);
+        characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
     }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
