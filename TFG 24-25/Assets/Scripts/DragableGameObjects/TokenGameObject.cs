@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using System.Linq;
 using System;
+using TMPro;
 
 public class TokenGameObject : DragableGameObject
 {
@@ -15,7 +16,7 @@ public class TokenGameObject : DragableGameObject
 
     [SerializeField] int TEMP_id;
 
-
+    private Character character;
 
     PhotonView photonView;
 
@@ -37,28 +38,12 @@ public class TokenGameObject : DragableGameObject
     {
         base.Start();
 
-        GameObject turnManagerObject = GameObject.Find("TurnManager");
-        if (turnManagerObject != null)
-        {
-            TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
-            if (TurnManagerScript == null)
-            {
-                Debug.LogError("TurnManagerScript no encontrado en el GameObject 'turnmanager'.");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
-        }
-
-        // character = CharacterClassSelector(TEMP_id, IsBlue ? TeamType.BLUE : TeamType.RED, gameObject);
-
         planeDisplacement = 0.5f;
         objectDisplacement = 0.05f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
-        cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
-        changeCardOnBoard();
+        
         transform.parent.name = character.GetCharacterStats().name;
+        UpdateCardOnBoardText();
     }
 
     void Update()
@@ -74,6 +59,10 @@ public class TokenGameObject : DragableGameObject
         //if (Input.GetKeyUp(KeyCode.N))
         //{
         //    CharactersManager.Instance.TriggerOnEndTurn();
+        //}
+        //if (Input.GetKeyUp(KeyCode.I))
+        //{
+        //    UpdateCardOnBoardText();
         //}
     }
 
@@ -111,12 +100,6 @@ public class TokenGameObject : DragableGameObject
     protected override void LeftMouseUpAction()
     {
         base.LeftMouseUpAction();
-
-        //if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
-        //{
-        //    Debug.Log("No es el turno del jugador actual.");
-        //    return;
-        //}
 
         if (isOutsideBoard)
         {
@@ -165,51 +148,38 @@ public class TokenGameObject : DragableGameObject
     public GameObject GetTileCollider()
     { return tileCollider; }
 
-    void SeeTokenCard()
+    public override void InitCardOnBoardText()
     {
-        if (isDragging || cardToDisplay.activeSelf)
-        {
-            return;
-        }
-
-        ChangeImageCardToDisplay();
+        cob_AtkText = transform.GetChild(0).GetChild(0).GetChild(7).GetComponent<TMP_Text>();
+        cob_HpText = transform.GetChild(0).GetChild(0).GetChild(6).GetComponent<TMP_Text>();
+        cob_ManaText = transform.GetChild(0).GetChild(0).GetChild(8).GetComponent<TMP_Text>(); // Falta mana
+        cob_NameText = transform.GetChild(0).GetChild(0).GetChild(9).GetComponent<TMP_Text>();
+        cob_CardSprite = transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Image>();
+        //cig_MovementSprite = transform.GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
     }
 
-    void ChangeImageCardToDisplay()
+    public override void UpdateCardToDisplayText()
     {
-        string imageName = "cardsprites/ilustracions/" + character.GetName().ToString();
+        characterStats = character.GetCharacterStats();
 
-        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
-
-        cardToDisplay.transform.Find("AttackText").GetComponent<Text>().text = character.GetAttack().ToString();
-
-        cardToDisplay.transform.Find("HealthText").GetComponent<Text>().text = character.GetHealth().ToString();
-
-        cardToDisplay.transform.Find("ManaCostText").GetComponent<Text>().text = character.getManaCost().ToString();
-
-        cardToDisplay.transform.Find("DescriptionText").GetComponent<Text>().text = character.GetDescription().ToString();
-
-        cardToDisplay.transform.Find("NomText").GetComponent<Text>().text = character.GetName().ToString();
-
-        cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = Resources.Load<Sprite>(imageName);
-
-        cardToDisplay.SetActive(true);
+        base.UpdateCardToDisplayText();
     }
 
-    void changeCardOnBoard()
+    public override void UpdateCardOnBoardText()
     {
-        if (character == null)
-        {
-            Debug.LogError("Character no ha sido inicializado.");
-            return;
-        }
+        //if (character == null)
+        //{
+        //    Debug.LogError("Character no ha sido inicializado.");
+        //    return;
+        //}
 
-        int attack = character.GetAttack();
-        int health = character.GetHealth();
-        int manaCost = character.getManaCost();
-        string name = character.GetName();
+        //int attack = character.GetAttack();
+        //int health = character.GetHealth();
+        //int manaCost = character.getManaCost();
+        //string name = character.GetName();
 
-        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost, name);
+        //photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost, name);
+        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All);
     }
 
     [PunRPC]
@@ -218,46 +188,26 @@ public class TokenGameObject : DragableGameObject
         TeamType tokenTeam = (TeamType)teamTypeInt;
         Character characterToAssign = CharacterClassSelector(characterId, tokenTeam, gameObject);
         SetCharacter(characterToAssign);
-        changeCardOnBoard();
+
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+            
+        //UpdateCardOnBoardText();
     }
 
     [PunRPC]
-    void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
+    //void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
+    void ChangeCardOnBoard_RPC()
     {
-        if (character == null)
-        {
-            Debug.LogError("Character no ha sido inicializado.");
-            return;
-        }
+        cob_AtkText.text = character.GetAttack().ToString();
 
-        if (cardCanvas != null)
-        {
-            Transform cardInBoard = cardCanvas.Find("CardInBoard");
+        cob_HpText.text = character.GetHealth().ToString();
 
-            if (cardInBoard != null)
-            {
-                Image cardImage = cardInBoard.Find("Ilustracio").GetComponent<Image>();
-                Text attackText = cardInBoard.Find("AttackText").GetComponent<Text>();
-                Text healthText = cardInBoard.Find("HealthText").GetComponent<Text>();
-                Text manaText = cardInBoard.Find("ManaCostText").GetComponent<Text>();
-                Text nameText = cardInBoard.Find("NameText").GetComponent<Text>();
-                
+        cob_ManaText.text = character.getManaCost().ToString();
 
-                cardImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + name);
-                attackText.text = attack.ToString();
-                healthText.text = health.ToString();
-                manaText.text = manaCost.ToString();
-                nameText.text = name.ToString();
-            }
-            else
-            {
-                Debug.LogError("No se encontró el objeto 'CardInBoard' dentro del canvas.");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se encontró el canvas.");
-        }
+        cob_NameText.text = character.GetName();
+
+        cob_CardSprite.sprite = cardSprite;
     }
 
     public Character GetCharacter() { return character; }
@@ -265,6 +215,7 @@ public class TokenGameObject : DragableGameObject
     public void SetCharacter(Character newCharacter)
     {
         character = newCharacter;
+        characterStats = character.GetCharacterStats();
     }
 
     

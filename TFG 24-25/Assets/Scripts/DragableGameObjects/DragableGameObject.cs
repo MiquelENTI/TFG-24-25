@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Photon.Pun;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class DragableGameObject : MonoBehaviour
 {
@@ -23,16 +25,35 @@ public class DragableGameObject : MonoBehaviour
 
     protected GameObject gameObjectSelected; // mirar de ferho millor
 
-    protected Character character;
+    protected CharacterStats characterStats;
 
     protected TurnManagerScript TurnManagerScript;
     [SerializeField] protected bool IsBlue;
 
     [SerializeField] protected GameObject cardToDisplay;
+    protected TMP_Text ctd_AtkText;
+    protected TMP_Text ctd_HpText;
+    protected TMP_Text ctd_NameText;
+    protected TMP_Text ctd_ManaText;
+    protected Image ctd_CardSprite;
+    protected Image ctd_MovementSprite;
+
+    protected TMP_Text cob_AtkText;
+    protected TMP_Text cob_HpText;
+    protected TMP_Text cob_NameText;
+    protected TMP_Text cob_ManaText;
+    protected Image cob_CardSprite;
+    protected Image cob_MovementSprite;
+
+    protected Sprite cardSprite;
+    protected Sprite movementSprite;
+
     protected virtual void Awake()
     {
         playerInputs = new PlayerInputs();
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
+        InitCardToDisplayText();
+        InitCardOnBoardText();
     }
 
     protected virtual void Start()
@@ -82,20 +103,6 @@ public class DragableGameObject : MonoBehaviour
                     Debug.Log("4");
                     StartCoroutine(DragUpdate(hit.collider.gameObject));
                 }
-                
-                //if (gameObjectSelected.GetComponent<DragableGameObject>().IsBlue)
-                //{
-                //    Debug.Log("4");
-                //    if (gameObjectSelected.GetComponent<DragableGameObject>().TurnManagerScript.getIsBlue())
-                //    {
-                //        Debug.Log("5");
-                //        if (gameObjectSelected.GetComponent<PhotonView>().IsMine)
-                //        {
-                //            Debug.Log("6");
-                //            StartCoroutine(DragUpdate(hit.collider.gameObject));
-                //        }
-                //    }
-                //}
             }
         }
     }
@@ -103,7 +110,6 @@ public class DragableGameObject : MonoBehaviour
     // When mouse is pressed down get an initial Mouse World Pos
     protected virtual void LeftMouseDownAction()
     {
-        
     }
 
     // Cancel Dragging
@@ -122,13 +128,14 @@ public class DragableGameObject : MonoBehaviour
             if (hit.transform == transform)
             {
                 SeeTokenCard();
+                ToggleCardToDisplay(true);
             }
         }
     }
 
     protected virtual void RightClickUpAction()
     {
-
+        ToggleCardToDisplay(false);
     }
 
     // Assign On Which Board Tile is the GameObject hovering
@@ -183,30 +190,68 @@ public class DragableGameObject : MonoBehaviour
             return;
         }
 
-        ChangeImageCardToDisplay();
+        UpdateCardToDisplayText();
     }
 
-    void ChangeImageCardToDisplay()
+    void InitCardToDisplayText()
     {
-        // cardToDisplay.transform.Find("ImageSprite").GetComponent<Image>().sprite = character.GetCardSprite();
-
-        Debug.Log(cardToDisplay.name);
-        character.GetCharacterStats().PrintStats();
-
-        cardToDisplay.SetActive(true);
-
+        ctd_AtkText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
+        ctd_HpText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
+        ctd_NameText = cardToDisplay.transform.GetChild(3).GetComponent<TMP_Text>();
+        ctd_ManaText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
+        ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
+        //ctd_MovementSprite = cardToDisplay.transform.GetChild(7).GetComponent<Image>(); // Esperar a Sergi
         
+    }
 
-        cardToDisplay.transform.GetChild(1).GetComponent<TMP_Text>().text = character.GetHealth().ToString();
+    public virtual void InitCardOnBoardText()
+    {
 
-        cardToDisplay.transform.GetChild(2).GetComponent<TMP_Text>().text = character.GetAttack().ToString();
+    }
 
-        cardToDisplay.transform.GetChild(3).GetComponent<TMP_Text>().text = character.GetDescription();
+    public virtual void UpdateCardToDisplayText()
+    {
+        // 0 -> Card Sprite
+        // 1 -> Name Container
+        // 2 -> DMG Container
+        // 3 -> Name
+        // 4 -> HP Container
+        // 5 -> HP
+        // 6 -> DMG
+        // 7 -> Mana
+        // 8 -> Description
 
-        cardToDisplay.transform.GetChild(4).GetComponent<TMP_Text>().text = character.getManaCost().ToString();
+        //characterStats.PrintStats();
 
-        cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>().text = character.GetCharacterStats().name;
+        ctd_AtkText.text = characterStats.dmg.ToString();
 
-        
+        ctd_HpText.text = characterStats.hp.ToString();
+
+        ctd_ManaText.text = characterStats.manaCost.ToString();
+
+        ctd_NameText.text = characterStats.name;
+
+        // Potser fer funcio a part per canviar sprite
+        ctd_CardSprite.sprite = cardSprite;
+
+        //ctd_MovementSprite.sprite = movementSprite;
+    }
+
+    public virtual void UpdateCardOnBoardText()
+    {
+        cob_AtkText.text = characterStats.dmg.ToString();
+
+        cob_HpText.text = characterStats.hp.ToString();
+
+        cob_ManaText.text = characterStats.manaCost.ToString();
+
+        cob_NameText.text = characterStats.name;
+
+        cob_CardSprite.sprite = cardSprite;
+    }
+
+    public void ToggleCardToDisplay(bool state)
+    {
+        cardToDisplay.SetActive(state);
     }
 }
