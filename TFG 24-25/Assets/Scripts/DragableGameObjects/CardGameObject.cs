@@ -49,7 +49,7 @@ public class CardGameObject : DragableGameObject
 
         if (characterIdToSpawn != -10)
         {
-            //UpdateCardToDisplayText();
+            UpdateCardOnBoardText();
         }
     }
 
@@ -164,4 +164,15 @@ public class CardGameObject : DragableGameObject
     }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
+
+    public override void InitCardOnBoardText()
+    {
+        cob_AtkText = transform.GetChild(0).GetChild(6).GetComponent<TMP_Text>();
+        cob_HpText = transform.GetChild(0).GetChild(7).GetComponent<TMP_Text>();
+        cob_ManaText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
+        cob_NameText = transform.GetChild(0).GetChild(8).GetComponent<TMP_Text>();
+        cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
+        cob_MovementSprite = transform.GetChild(0).GetChild(5).GetComponent<Image>();
+
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Photon.Pun;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
@@ -36,6 +37,14 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text ctd_ManaText;
     protected Image ctd_CardSprite;
     protected Image ctd_MovementSprite;
+
+    protected TMP_Text cob_AtkText;
+    protected TMP_Text cob_HpText;
+    protected TMP_Text cob_NameText;
+    protected TMP_Text cob_ManaText;
+    protected Image cob_CardSprite;
+    protected Image cob_MovementSprite;
+
     protected Sprite cardSprite;
     protected Sprite movementSprite;
 
@@ -44,6 +53,7 @@ public class DragableGameObject : MonoBehaviour
         playerInputs = new PlayerInputs();
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
         InitCardToDisplayText();
+        InitCardOnBoardText();
     }
 
     protected virtual void Start()
@@ -185,13 +195,18 @@ public class DragableGameObject : MonoBehaviour
 
     void InitCardToDisplayText()
     {
-        ctd_AtkText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
-        ctd_HpText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
+        ctd_AtkText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
+        ctd_HpText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
         ctd_NameText = cardToDisplay.transform.GetChild(3).GetComponent<TMP_Text>();
         ctd_ManaText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
         ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
         //ctd_MovementSprite = cardToDisplay.transform.GetChild(7).GetComponent<Image>(); // Esperar a Sergi
         
+    }
+
+    public virtual void InitCardOnBoardText()
+    {
+
     }
 
     public virtual void UpdateCardToDisplayText()
@@ -220,6 +235,19 @@ public class DragableGameObject : MonoBehaviour
         ctd_CardSprite.sprite = cardSprite;
 
         //ctd_MovementSprite.sprite = movementSprite;
+    }
+
+    public virtual void UpdateCardOnBoardText()
+    {
+        cob_AtkText.text = characterStats.dmg.ToString();
+
+        cob_HpText.text = characterStats.hp.ToString();
+
+        cob_ManaText.text = characterStats.manaCost.ToString();
+
+        cob_NameText.text = characterStats.name;
+
+        cob_CardSprite.sprite = cardSprite;
     }
 
     public void ToggleCardToDisplay(bool state)
