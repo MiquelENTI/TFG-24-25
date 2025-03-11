@@ -146,8 +146,6 @@ public class Character
 
     public bool CanAttack()
     {
-        return true;
-
         if (playerStats.GetCurrentMana() >= stats.manaCost)
         {
             return canAttack;

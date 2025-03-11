@@ -97,7 +97,9 @@ public class CardGameObject : DragableGameObject
         {
             if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
             {
-                if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied())
+                CharacterStats characterStats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
+
+                if (!CellNodeManager.Instance.GetNodeById(tileHovering).IsOccupied() && PlayerStats.Instance.GetCurrentMana() >= characterStats.manaCost)
                 {
                     RequestCharacterInstantiation();
                     cardHold.DestroyCard(cardId);
