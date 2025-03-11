@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tokenPrefabBlue: {fileID: 8236987784292183732, guid: cd10928736021b947af0ad6e30752b57, type: 3}
-  tokenPrefabRed: {fileID: 8236987784292183732, guid: c789feb689ee84e4293da71a2ee35287, type: 3}
+  tokenPrefabRed: {fileID: 8236987784292183732, guid: 6789227a21d2f5546aee7680ff10ace8, type: 3}
   blueMaterial: {fileID: 2100000, guid: b7d67d7d7ddb88542b23886a4b496c77, type: 2}
   redMaterial: {fileID: 2100000, guid: b957742c5b9bfd441b9b330c8b55d0c5, type: 2}
 --- !u!114 &258275269
@@ -9506,7 +9506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38948f91a27aaef48afbd66708b8ceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckmode: 0
+  deckmode: 2
   amountOfCopies: 2
   prefabCard: {fileID: 4335443431014593374, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 

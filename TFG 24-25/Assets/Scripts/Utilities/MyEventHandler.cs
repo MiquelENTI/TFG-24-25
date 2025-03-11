@@ -24,7 +24,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
         moveToken.AddListener((int cellId, int characterId) =>
         {
-            photonView.RPC("RPC_MoveToken", RpcTarget.All, cellId, characterId);
+            photonView.RPC("RPC_MoveToken", RpcTarget.AllBuffered, cellId, characterId);
             Debug.Log("TRIGGERED MOVE");
         });
 

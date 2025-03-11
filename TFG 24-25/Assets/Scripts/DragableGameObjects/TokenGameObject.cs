@@ -218,14 +218,14 @@ public class TokenGameObject : DragableGameObject
         characterStats = character.GetCharacterStats();
     }
 
-    
+
 
     Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
     {
         CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(id);
         switch (id)
         {
-            case 1:
+            case 2:
                 return new Cavalier(stats, tokenTeam, instantiatedToken, null);
             case 3:
                 return new Salmon(stats, tokenTeam, instantiatedToken, null);
@@ -239,6 +239,10 @@ public class TokenGameObject : DragableGameObject
                 return new Medusa(stats, tokenTeam, instantiatedToken, null);
             case 13:
                 return new Mummy(stats, tokenTeam, instantiatedToken, null);
+            case 14:
+                return new TheGun(stats, tokenTeam, instantiatedToken, null);
+            case 15:
+                return new HumanWerewolf(stats, tokenTeam, instantiatedToken, null);
             case 16:
                 return new DeathHorseman(stats, tokenTeam, instantiatedToken, null);
             case 17:
@@ -247,12 +251,30 @@ public class TokenGameObject : DragableGameObject
                 return new MagicKarp(stats, tokenTeam, instantiatedToken, null);
             case 22:
                 return new Chicken(stats, tokenTeam, instantiatedToken, null);
+            case 25:
+                return new Leech(stats, tokenTeam, instantiatedToken, null);
+            case 26:
+                return new Berserker(stats, tokenTeam, instantiatedToken, null);
+            case 27:
+                return new Hydra(stats, tokenTeam, instantiatedToken, null);
+            case 32:
+                return new Kamikaze(stats, tokenTeam, instantiatedToken, null);
+            case 35:
+                return new Drake(stats, tokenTeam, instantiatedToken, null);
+            case 37:
+                return new Samurai(stats, tokenTeam, instantiatedToken, null);
+            case 38:
+                return new Giant(stats, tokenTeam, instantiatedToken, null);
+            case 39:
+                return new Ant(stats, tokenTeam, instantiatedToken, null);
+
+
+
+
+
+
             case -1:
                 return new Dummy(stats, tokenTeam);
-            case 14:
-                return new TheGun(stats, tokenTeam, instantiatedToken, null);
-            case 15:
-                return new HumanWerewolf(stats, tokenTeam, instantiatedToken, null);
             default:
                 Debug.LogError("NO CHARACTER RECOGNISED");
                 return new Character(stats, tokenTeam, instantiatedToken, null);

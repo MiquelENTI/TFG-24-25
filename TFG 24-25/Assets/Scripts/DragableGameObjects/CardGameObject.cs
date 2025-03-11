@@ -66,6 +66,8 @@ public class CardGameObject : DragableGameObject
             return;
         }
 
+        Debug.Log(cardHold.name);
+
         GetMouseWorldPos("CardGameObject");
 
         if (gameObjectSelected == null)
