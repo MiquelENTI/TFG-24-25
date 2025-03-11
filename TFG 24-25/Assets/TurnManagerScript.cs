@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using Unity.Netcode;
 
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
@@ -70,6 +71,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsBlue = !IsBlue;
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
+        photonView.RPC("DrawCardOther", RpcTarget.Others, 1);
     }
 
     [PunRPC]
@@ -133,5 +135,14 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public bool getIsBlue()
     {
         return IsBlue;
+    }
+
+    [PunRPC]
+    public void DrawCardOther(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            DeckManager.Instance.DrawCard();
+        }
     }
 }
