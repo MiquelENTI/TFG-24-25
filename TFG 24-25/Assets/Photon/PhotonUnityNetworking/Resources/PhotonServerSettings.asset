@@ -54,6 +54,7 @@ MonoBehaviour:
   - SetCharacterRPC
   - RPC_ActivateSamuraiEffect
   - DrawCardOther
+  - DrawCardRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

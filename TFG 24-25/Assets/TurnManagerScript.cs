@@ -19,6 +19,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     PhotonView photonView;
     public TMP_Text turnCounterElement;
 
+    int drawCardsStart = 5;
+
     int blueMana;
     int redMana;
 
@@ -46,6 +48,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             player1GameObject = playerGameObject;
             player1Registered = true;
             Debug.Log("Player 1 registrado en TurnManager: " + playerGameObject.name);
+            photonView.RPC("DrawCardRPC", RpcTarget.AllBuffered, drawCardsStart);
         }
         else if (!player2Registered)
         {
@@ -71,7 +74,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsBlue = !IsBlue;
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
-        photonView.RPC("DrawCardOther", RpcTarget.Others, 1);
+        photonView.RPC("DrawCardRPC", RpcTarget.Others, 1);
     }
 
     [PunRPC]
@@ -138,7 +141,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     }
 
     [PunRPC]
-    public void DrawCardOther(int amount)
+    public void DrawCardRPC(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
