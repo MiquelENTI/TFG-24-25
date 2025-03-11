@@ -342,7 +342,7 @@ public class Character
     {
         CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
 
-        
+        Debug.Log("ENTERING TILE SCORING");
 
         switch (node.GetScoreNode())
         {

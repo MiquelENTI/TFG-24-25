@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using Unity.Netcode;
 
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
@@ -17,6 +18,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
     PhotonView photonView;
     public TMP_Text turnCounterElement;
+
+    int drawCardsStart = 5;
+
+    int blueMana;
+    int redMana;
 
     private void Awake()
     {
@@ -42,6 +48,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             player1GameObject = playerGameObject;
             player1Registered = true;
             Debug.Log("Player 1 registrado en TurnManager: " + playerGameObject.name);
+            photonView.RPC("DrawCardRPC", RpcTarget.AllBuffered, drawCardsStart);
         }
         else if (!player2Registered)
         {
@@ -67,6 +74,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsBlue = !IsBlue;
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
+        photonView.RPC("DrawCardRPC", RpcTarget.Others, 1);
     }
 
     [PunRPC]
@@ -77,9 +85,18 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         if (newIsBlue)
         {
+            Debug.Log("isBlueTurn: " + newIsBlue);
+            PlayerStats.Instance.IncreaseTotalMana(1);
             turnCounter++;
-            turnCounterElement.text = "Turn Number: " + turnCounter;
+            //turnCounterElement.text = "Turn Number: " + turnCounter;
         }
+
+        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
+        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue);
+
+        Debug.Log("TO RESET MANA");
+
+        PlayerStats.Instance.ResetMana();
 
         UpdatePlayerCanvas();
     }
@@ -121,5 +138,14 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public bool getIsBlue()
     {
         return IsBlue;
+    }
+
+    [PunRPC]
+    public void DrawCardRPC(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            DeckManager.Instance.DrawCard();
+        }
     }
 }

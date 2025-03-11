@@ -8,7 +8,6 @@ public class PlayerStats : Singleton<PlayerStats>
     int totalMana = 5;
     int currentMana = 5;
     TeamType teamColor;
-    int score = 0;
     [SerializeField] TMP_Text manaText;
 
     void Start()
@@ -44,11 +43,6 @@ public class PlayerStats : Singleton<PlayerStats>
     public int GetCurrentMana()
     {
         return currentMana;
-    }
-
-    public void IncreaseScore(TeamType attackerColor)
-    {
-        score++;
     }
 
     public TeamType GetTeamType()

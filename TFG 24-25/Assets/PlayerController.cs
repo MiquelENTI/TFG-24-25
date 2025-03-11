@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviourPun
             endTurnButton.interactable = photonView.IsMine;
         }
 
-        SetCardsDragState(photonView.IsMine);
     }
 
     [PunRPC]
@@ -87,7 +86,6 @@ public class PlayerController : MonoBehaviourPun
                 buttonText = endTurnButton.GetComponentInChildren<Text>();
                 buttonText.text = "Esperando al otro jugador...";
             }
-            SetCardsDragState(false);
         }
     }
 
@@ -100,24 +98,6 @@ public class PlayerController : MonoBehaviourPun
                 bool isActive = menu.activeSelf;
                 menu.SetActive(!isActive);
             }
-        }
-    }
-
-    public void EndTurn()
-    {
-        if (photonView.IsMine)
-        {
-            endTurnButton.interactable = false;
-            buttonText.text = "Turno del oponente";
-            SetCardsDragState(false);
-
-            photonView.RPC("ActivateOtherPlayerTurn", RpcTarget.All);
-
-            if (TurnManagerScript != null)
-            {
-                TurnManagerScript.TurnManager();
-            }
-
         }
     }
 
@@ -141,7 +121,6 @@ public class PlayerController : MonoBehaviourPun
             endTurnButton.interactable = false;
             buttonText = endTurnButton.GetComponentInChildren<Text>();
             buttonText.text = "Finalizar Turno";
-            SetCardsDragState(false);
         }
     }
 
@@ -151,16 +130,16 @@ public class PlayerController : MonoBehaviourPun
         Debug.Log("RPC llamado para activar el turno del otro jugador. ID de PhotonView: " + photonView.ViewID);
 
         Debug.Log("El turno es del otro jugador. Habilitando su botón.");
-        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue ? TeamType.BLUE : TeamType.RED);
+        //CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue ? TeamType.BLUE : TeamType.RED);
 
-        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue ? TeamType.RED : TeamType.BLUE);
+        //CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue ? TeamType.RED : TeamType.BLUE);
 
         if (turnCounter % 2 == 0)
         {
             turnColor = TeamType.BLUE;
             if (turnCounter != 0)
             {
-                PlayerStats.Instance.IncreaseTotalMana(1);
+                
             }
         }
         else
@@ -182,21 +161,5 @@ public class PlayerController : MonoBehaviourPun
 
         endTurnButton.interactable = true;
         buttonText.text = "Finalizar Turno";
-        SetCardsDragState(true);
-    }
-
-    public void SetCardsDragState(bool state)
-    {
-        if (hand != null)
-        {
-            foreach (Transform card in hand.transform)
-            {
-                DragableUIObject dragableScript = card.GetComponent<DragableUIObject>();
-                if (dragableScript != null)
-                {
-                    dragableScript.enabled = state;
-                }
-            }
-        }
     }
 }

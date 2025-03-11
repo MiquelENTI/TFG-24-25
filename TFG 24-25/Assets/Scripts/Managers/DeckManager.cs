@@ -58,9 +58,9 @@ public class DeckManager : Singleton<DeckManager>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("Pressed T");
+            //Debug.Log("Pressed T");
             
             // DrawCardWarro();
             DrawCard();
@@ -84,15 +84,6 @@ public class DeckManager : Singleton<DeckManager>
         instantiatedCard.transform.parent = cardHold.transform;
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
     }
-
-    //public void TESTING_DrawCard()
-    //{
-    //    if (deck.Count == 0) { return; }
-    //    GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-
-    //    instantiatedCard.GetComponent<DragableUIObject>().TESTING_SetDragableUIObject(deck.Dequeue(), teamTypeAlternator % 2 == 0 ? TeamType.BLUE : TeamType.RED);
-    //    teamTypeAlternator++;
-    //}
 
     public void ShuffleDeck()
     {
