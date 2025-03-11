@@ -13,6 +13,6 @@ public class Salmon : Character
         base.OnKillEnemy(enemy);
 
         BypassMovement(enemy.GetOnTileId());
-        ReceiveDamage(3);
+        ReceiveDamage(1);
     }
 }

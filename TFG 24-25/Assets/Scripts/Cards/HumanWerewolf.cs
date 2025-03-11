@@ -11,8 +11,8 @@ public class HumanWerewolf : Character
     {
         humanForm = newStats;
         wereWolfForm = newStats;
-        wereWolfForm.dmg = 9;
-        wereWolfForm.hp = 16;
+        wereWolfForm.dmg = 8;
+        wereWolfForm.hp = 8;
         wereWolfForm.movementType = MovementType.Omni;
     }
 
