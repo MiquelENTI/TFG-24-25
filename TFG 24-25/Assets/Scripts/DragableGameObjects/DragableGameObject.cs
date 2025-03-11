@@ -88,19 +88,19 @@ public class DragableGameObject : MonoBehaviour
         
         RaycastHit hit;
 
-        Debug.Log("1");
+       // Debug.Log("1");
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             if (hit.collider != null && hit.collider.tag == colliderTag)
             {
-                Debug.Log("3");
+                //Debug.Log("3");
                 gameObjectSelected = hit.collider.gameObject;
 
                 if ((gameObjectSelected.GetComponent<DragableGameObject>().IsBlue == gameObjectSelected.GetComponent<DragableGameObject>().TurnManagerScript.getIsBlue()) && gameObjectSelected.GetComponent<PhotonView>().IsMine)
                 {
-                    Debug.Log("4");
+                    //Debug.Log("4");
                     StartCoroutine(DragUpdate(hit.collider.gameObject));
                 }
             }

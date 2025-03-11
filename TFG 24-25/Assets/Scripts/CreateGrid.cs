@@ -61,7 +61,7 @@ public class CreateGrid : MonoBehaviour
 
         CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpecialTiles(2);
-        //CellNodeManager.Instance.PrintNodeGridStatus();
+        CellNodeManager.Instance.PrintNodeGridStatus();
     }
 
     void CreateModelBoard(int i, int j, float rows, float columns, Vector3 position)

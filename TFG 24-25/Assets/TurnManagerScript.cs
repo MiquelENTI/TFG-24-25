@@ -18,6 +18,9 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     PhotonView photonView;
     public TMP_Text turnCounterElement;
 
+    int blueMana;
+    int redMana;
+
     private void Awake()
     {
         if (!TryGetComponent<PhotonView>(out photonView))
@@ -77,9 +80,18 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         if (newIsBlue)
         {
+            Debug.Log("isBlueTurn: " + newIsBlue);
+            PlayerStats.Instance.IncreaseTotalMana(1);
             turnCounter++;
-            turnCounterElement.text = "Turn Number: " + turnCounter;
+            //turnCounterElement.text = "Turn Number: " + turnCounter;
         }
+
+        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
+        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue);
+
+        Debug.Log("TO RESET MANA");
+
+        PlayerStats.Instance.ResetMana();
 
         UpdatePlayerCanvas();
     }

@@ -30,7 +30,6 @@ public class CharactersManager : Singleton<CharactersManager>
         charactersCardSprite.Add(currentId, cardSprite);
         character.SetId(currentId);
 
-        Debug.Log("CharactersManager CurrentID:" + currentId);
         currentId++;
     }
     public void RemoveCharacter(int id)
@@ -74,8 +73,10 @@ public class CharactersManager : Singleton<CharactersManager>
         }
     }
 
-    public void ActivateEndTurnCharactersByColor(TeamType type)
+    public void ActivateEndTurnCharactersByColor(bool isBlue)
     {
+        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
+
         var temp = GetCharactersByColor(type);
 
         foreach (Character character in temp)
@@ -84,8 +85,10 @@ public class CharactersManager : Singleton<CharactersManager>
         }
     }
 
-    public void ActivateStartTurnCharactersByColor(TeamType type)
+    public void ActivateStartTurnCharactersByColor(bool isBlue)
     {
+        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
+
         var temp = GetCharactersByColor(type);
 
         foreach (Character character in temp)

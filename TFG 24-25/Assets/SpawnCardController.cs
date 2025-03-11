@@ -17,7 +17,7 @@ public class SpawnCardController : MonoBehaviourPun
     [PunRPC]
     public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId)
     {
-        Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
+        //Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
 
         TeamType tokenTeam = PhotonNetwork.LocalPlayer.IsMasterClient ? TeamType.BLUE : TeamType.RED;
 
@@ -26,7 +26,7 @@ public class SpawnCardController : MonoBehaviourPun
         GameObject tokenPrefabToUse = tokenTeam == TeamType.BLUE ? tokenPrefabBlue : tokenPrefabRed;
         string prefabPath = tokenTeam == TeamType.BLUE ? tokenPrefabBlue.name : tokenPrefabRed.name;
 
-        Debug.Log($"[SpawnCardController - BEFORE CONDITION] Prefab Path: {prefabPath}, Spawn Position: {spawnPosition}, Token Team: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, Condition: (LocalPlayer.ActorNumber == initiatingPlayerActorNumber) = {(PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)}"); // **NUEVO LOG - ANTES DEL IF**
+        //Debug.Log($"[SpawnCardController - BEFORE CONDITION] Prefab Path: {prefabPath}, Spawn Position: {spawnPosition}, Token Team: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, Condition: (LocalPlayer.ActorNumber == initiatingPlayerActorNumber) = {(PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)}"); // **NUEVO LOG - ANTES DEL IF**
 
 
         if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)
@@ -35,7 +35,7 @@ public class SpawnCardController : MonoBehaviourPun
             PhotonView tokenPhotonView = instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>();
             if (tokenPhotonView != null)
             {
-                Debug.Log($"[SpawnCardController - AFTER INSTANTIATE] Token instanciado, PhotonView ID: {tokenPhotonView.ViewID}, Owner ActorNr: {tokenPhotonView.OwnerActorNr}, IsMine: {tokenPhotonView.IsMine}, Instantiated for Team: {tokenTeam}");
+                //Debug.Log($"[SpawnCardController - AFTER INSTANTIATE] Token instanciado, PhotonView ID: {tokenPhotonView.ViewID}, Owner ActorNr: {tokenPhotonView.OwnerActorNr}, IsMine: {tokenPhotonView.IsMine}, Instantiated for Team: {tokenTeam}");
             }
             else
             {
@@ -59,7 +59,7 @@ public class SpawnCardController : MonoBehaviourPun
             Debug.Log($"[SpawnCardController - ELSE BRANCH] Cliente no iniciador (ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}), NO instanciando token. InitiatingPlayerActorNr: {initiatingPlayerActorNumber}"); // **LOG EXISTENTE - EN EL ELSE**
         }
 
-        Debug.Log($"[SpawnCardController - AFTER CONDITION] Controlador procesó InstantiateCharacterTokenRPC para Personaje: {characterIdToAssign}, Equipo: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}"); // **NUEVO LOG - DESPUÉS DEL IF**
+        //Debug.Log($"[SpawnCardController - AFTER CONDITION] Controlador procesó InstantiateCharacterTokenRPC para Personaje: {characterIdToAssign}, Equipo: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}"); // **NUEVO LOG - DESPUÉS DEL IF**
 
     }
 

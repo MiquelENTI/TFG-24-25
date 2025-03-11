@@ -17,12 +17,8 @@ public class Tile : MonoBehaviour
         // Cards on Hand have an emptyObject with collision and its tag is SpawnTileCollider
         else if (other.gameObject.tag == "SpawnTileCollider")
         {
-            //if (!other.GetComponent<DragableGameObject>().isInside)
-            {
-                Debug.Log("ASDASD"); 
-                other.transform.parent.GetChild(0).rotation = Quaternion.Euler(90, 0, 0);
-                other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOnTileId(tileId);
-            }
+            other.transform.parent.GetChild(0).rotation = Quaternion.Euler(90, 0, 0);
+            other.transform.parent.GetChild(0).GetComponent<CardGameObject>().SetOnTileId(tileId);
         }
     }
 

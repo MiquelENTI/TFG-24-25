@@ -242,7 +242,9 @@ public class CellNode
             " |  IsOccupied: " + isOccupied.ToString() +
             " by: " + GetCharacter().GetId().ToString() +
             " |  IsConnected: " + isConnected.ToString() +
-            " |  Spawnable: " + spawnable.ToString());
+            " |  Spawnable: " + spawnable.ToString() +
+            " |  ScoreMode: " + scoreType.ToString() +
+            " |  ScoreAmount: " + scoreAmount.ToString());
         }
 
         catch 
@@ -252,7 +254,9 @@ public class CellNode
                 " |  Num of Connections: " + connectionDictionary.Count +
                 " |  IsOccupied: " + isOccupied.ToString() +
                 " |  IsConnected: " + isConnected.ToString() +
-                " |  Spawnable: " + spawnable.ToString());
+                " |  Spawnable: " + spawnable.ToString() +
+                " |  ScoreMode: " + scoreType.ToString() +
+                " |  ScoreAmount: " + scoreAmount.ToString());
         }
         
     }

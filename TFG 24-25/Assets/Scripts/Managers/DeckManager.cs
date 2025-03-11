@@ -60,7 +60,7 @@ public class DeckManager : Singleton<DeckManager>
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("Pressed T");
+            //Debug.Log("Pressed T");
             
             // DrawCardWarro();
             DrawCard();
