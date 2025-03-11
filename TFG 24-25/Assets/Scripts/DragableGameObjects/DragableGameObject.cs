@@ -35,6 +35,7 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text ctd_HpText;
     protected TMP_Text ctd_NameText;
     protected TMP_Text ctd_ManaText;
+    protected TMP_Text ctd_Description;
     protected Image ctd_CardSprite;
     protected Image ctd_MovementSprite;
 
@@ -79,6 +80,11 @@ public class DragableGameObject : MonoBehaviour
         }
 
         IsBlue = PhotonNetwork.IsMasterClient ? true : false;
+
+        if (!IsBlue)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180.0f, 0));
+        }
     }
 
     // Detect and Calculate Mouse World Position to Move Inside a Plane
@@ -195,10 +201,11 @@ public class DragableGameObject : MonoBehaviour
 
     void InitCardToDisplayText()
     {
-        ctd_AtkText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
-        ctd_HpText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
-        ctd_NameText = cardToDisplay.transform.GetChild(3).GetComponent<TMP_Text>();
-        ctd_ManaText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
+        ctd_AtkText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
+        ctd_HpText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
+        ctd_NameText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
+        ctd_ManaText = cardToDisplay.transform.GetChild(8).GetComponent<TMP_Text>();
+        ctd_Description = cardToDisplay.transform.GetChild(9).GetComponent<TMP_Text>();
         ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
         //ctd_MovementSprite = cardToDisplay.transform.GetChild(7).GetComponent<Image>(); // Esperar a Sergi
         
@@ -230,6 +237,8 @@ public class DragableGameObject : MonoBehaviour
         ctd_ManaText.text = characterStats.manaCost.ToString();
 
         ctd_NameText.text = characterStats.name;
+
+        ctd_Description.text = characterStats.description;
 
         // Potser fer funcio a part per canviar sprite
         ctd_CardSprite.sprite = cardSprite;

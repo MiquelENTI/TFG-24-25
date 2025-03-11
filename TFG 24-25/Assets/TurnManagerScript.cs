@@ -19,7 +19,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     PhotonView photonView;
     public TMP_Text turnCounterElement;
 
-    int drawCardsStart = 5;
+    int drawCardsStart = 2;
 
     int blueMana;
     int redMana;

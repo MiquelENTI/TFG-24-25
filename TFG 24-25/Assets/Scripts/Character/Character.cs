@@ -146,6 +146,8 @@ public class Character
 
     public bool CanAttack()
     {
+        return true;
+
         if (playerStats.GetCurrentMana() >= stats.manaCost)
         {
             return canAttack;
@@ -450,7 +452,11 @@ public class Character
     public void Heal(int amount)
     {
         stats.hp += amount;
-        stats.hp = Mathf.Max(stats.hp, stats.maxHp);
+
+        if (stats.hp > stats.maxHp)
+        {
+            stats.hp = stats.maxHp;
+        }
     }
 
     public void ApplyStun()

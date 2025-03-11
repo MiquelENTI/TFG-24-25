@@ -330,7 +330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b95219cd4eb7866498500696ffe423cd, type: 2}
+  - {fileID: 2100000, guid: 3f88146e26986364f81dbd627624d928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1137,7 +1137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5529811826817871949}
   m_Layer: 0
-  m_Name: BlueCavalier
+  m_Name: RedToken
   m_TagString: Token
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,7 +1158,7 @@ Transform:
   - {fileID: 4509700021868961116}
   - {fileID: 997023265153929756}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8539311926852956679
 GameObject:

@@ -27,8 +27,8 @@ public class DeckManager : Singleton<DeckManager>
     {
         characterBlackList = new() 
         {
-            6,  // Turtle, Problems with its effect
-            7,  // Mimic, Problems with its effect
+            //6,  // Turtle, Problems with its effect
+            //7,  // Mimic, Problems with its effect
             50, // Prototype Cards
             51, // Prototype Cards
             52, // Prototype Cards
