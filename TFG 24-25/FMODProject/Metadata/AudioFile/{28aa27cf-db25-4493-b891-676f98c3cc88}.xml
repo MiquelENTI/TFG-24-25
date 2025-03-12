@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{28aa27cf-db25-4493-b891-676f98c3cc88}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>TheGun/Wheel_canon_ 00.wav</value>
 =======
 			<value>TheGun/Wheel_as_ui_so_card_canon_ 00.wav</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>TheGun/Wheel_canon_ 00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

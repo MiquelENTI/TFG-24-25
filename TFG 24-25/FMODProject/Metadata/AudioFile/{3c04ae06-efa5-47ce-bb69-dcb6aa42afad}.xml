@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{3c04ae06-efa5-47ce-bb69-dcb6aa42afad}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>FLASH/Flash_card_flash_00.wav</value>
 =======
 			<value>FLASH/Flash_as_ui_so_card_flash_00.wav</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>FLASH/Flash_card_flash_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

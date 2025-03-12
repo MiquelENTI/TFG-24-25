@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{b9e712a9-b561-4de5-88ea-22adfb72c397}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>GRASSHOPPER/Grosshopper_00.wav</value>
 =======
 			<value>GRASSHOPPER/Grosshopper_as_ui_sl_card_Grosshopper_00.wav</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>GRASSHOPPER/Grosshopper_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

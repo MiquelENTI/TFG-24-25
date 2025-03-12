@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{270ef1de-7d56-4b6a-bde1-e0b21f44605f}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>ARCHER/TAULER/Throw_bow_card_archer_select_00.wav</value>
 =======
 			<value>ARCHER/TAULER/Throw_bow_as_ui_so_card_archer_select_00.wav</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>ARCHER/TAULER/Throw_bow_card_archer_select_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

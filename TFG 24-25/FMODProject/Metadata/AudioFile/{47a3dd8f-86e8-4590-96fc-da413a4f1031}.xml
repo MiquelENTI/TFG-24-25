@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{47a3dd8f-86e8-4590-96fc-da413a4f1031}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>MIMIC/Mimic_mimic_01.wav</value>
 =======
 			<value>MIMIC/Mimic_as_ui_so_card_mimic_01.wav</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>MIMIC/Mimic_mimic_01.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

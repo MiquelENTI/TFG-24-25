@@ -17,4 +17,18 @@ public class Mimic : Character
         attacker.ReceiveDamage(9999);
         ReceiveDamage(9999);
     }
+
+     //Implementació del so en relacio al SoundManager 
+    protected override void OnMovementSFX()
+    {
+
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(006, token.transform.position);
+    }
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(007, token.transform.position);
+    }
 }

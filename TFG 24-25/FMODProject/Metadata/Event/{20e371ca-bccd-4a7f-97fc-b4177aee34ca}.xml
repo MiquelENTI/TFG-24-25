@@ -210,6 +210,7 @@
 	<object class="MixerBusFader" id="{6fbd740e-f7b0-49ff-bc96-b217b86da525}" />
 	<object class="SpatialiserEffect" id="{2cf990c5-4814-4185-8092-20e4b72acea9}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
@@ -219,6 +220,13 @@
 		<property name="maximumDistance">
 			<value>10</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>0.600000024</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

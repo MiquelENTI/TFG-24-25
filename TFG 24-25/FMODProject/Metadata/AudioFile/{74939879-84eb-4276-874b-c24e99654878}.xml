@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{74939879-84eb-4276-874b-c24e99654878}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>SeeTheFuture/SeeTheFuture_00.wav</value>
 =======
 			<value>SeeTheFuture/SeeTheFuture_as_ui_so_card_stf_00.wav</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>SeeTheFuture/SeeTheFuture_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

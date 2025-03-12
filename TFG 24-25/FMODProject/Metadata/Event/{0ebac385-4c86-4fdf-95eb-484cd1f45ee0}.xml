@@ -252,6 +252,7 @@
 	<object class="MixerBusFader" id="{c5b2ebac-0814-45a7-89a8-bf012434522b}" />
 	<object class="SpatialiserEffect" id="{27b5d211-1f37-4281-9e24-ce9e31690f5c}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
@@ -261,6 +262,13 @@
 		<property name="maximumDistance">
 			<value>10</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>0.600000024</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
@@ -270,10 +278,14 @@
 		</property>
 		<property name="soundSize">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>14</value>
 =======
 			<value>13</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>14</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{57d07d79-9a50-49f2-b189-a4f814b5a774}" />

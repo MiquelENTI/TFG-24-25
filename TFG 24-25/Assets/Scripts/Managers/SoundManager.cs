@@ -6,114 +6,117 @@ public class SoundManager : Singleton<SoundManager>
 {
     // Listado de efectos de sonidos de CARTAS
     Dictionary<int, string> sfxDictionary;
+    // Listado de Musicas
+    Dictionary<int, string> musicDictionary;
+
     void Awake ()
     {
         sfxDictionary=new()
         {
         //CARDS
-        {9999,},
-        {9999,},
+        {3000,""},
+        {3001,""},
            //Salmon
-           {00,"event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
-           {01,},
+           {000,"event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
+           {001,""},
            //Fly
-           {02,"event:/SFX/UI/CARDS/FLY/Fly_Attack"},
-           {03,"event:/SFX/UI/CARDS/FLY/Fly_Selection"},
+           {002,"event:/SFX/UI/CARDS/FLY/Fly_Attack"},
+           {003,"event:/SFX/UI/CARDS/FLY/Fly_Selection"},
            //Turtle
-           {04,"event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
-           {05,},
+           {004,"event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
+           {005,""},
            // Mimic
-           {06,"event:/SFX/UI/CARDS/MIMIC/Mimic_Attack"},
-           {07,"event:/SFX/UI/CARDS/MIMIC/Mimic_Selecction"},
+           {006,"event:/SFX/UI/CARDS/MIMIC/Mimic_Attack"},
+           {007,"event:/SFX/UI/CARDS/MIMIC/Mimic_Selecction"},
            // Pichí
-           {08,"event:/SFX/UI/CARDS/PICHI/Pichi_Attack"},
-           {09,"event:/SFX/UI/CARDS/PICHI/Pichi_Selection"},
+           {008,"event:/SFX/UI/CARDS/PICHI/Pichi_Attack"},
+           {009,"event:/SFX/UI/CARDS/PICHI/Pichi_Selection"},
            // Medusa
-           {10,"event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack"},
-           {11,"event:/SFX/UI/CARDS/MEDUSA/Medusa_selection"},
+           {010,"event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack"},
+           {011,"event:/SFX/UI/CARDS/MEDUSA/Medusa_selection"},
            // Mummy
-           {12,"event:/SFX/UI/CARDS/MUMMY/Mummy_Attack"},
-           {13,"event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction"},
+           {012,"event:/SFX/UI/CARDS/MUMMY/Mummy_Attack"},
+           {013,"event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction"},
            // The Gun
-           {14,"event:/SFX/UI/CARDS/THE GUN/TheGun_Attack"},
-           {15,"event:/SFX/UI/CARDS/THE GUN/TheGun_selection"},
+           {014,"event:/SFX/UI/CARDS/THE GUN/TheGun_Attack"},
+           {015,"event:/SFX/UI/CARDS/THE GUN/TheGun_selection"},
            // Human/Werewolf
-           {16,},
-           {17,"event:/SFX/UI/CARDS/WAREWOLF/Howl"},
+           {016,""},
+           {017,"event:/SFX/UI/CARDS/WAREWOLF/Howl"},
            // Death Horseman
-           {18,},
-           {19,"event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select"},
+           {018,""},
+           {019,"event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select"},
            // Terracotta Warrior
-           {20,},
-           {21,"event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select"},
+           {020,""},
+           {021,"event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select"},
            // Fantasma
-           {22,},
-           {23,},
+           {022,""},
+           {023,""},
            // Grasshopper
-           {24,"event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select"},
-           {25,},
-           // Magic Karp
-           {26,},
-           {27,},
+           {024,"event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select"},
+          //{25,},
+          //Magic Karp
+           {026,""},
+           {027,""},
            // Archer
-           {28,"event:/SFX/UI/CARDS/ARCHER/Archer_attack"},
-           {29,"event:/SFX/UI/CARDS/ARCHER/Archer_Select"},
+           {028,"event:/SFX/UI/CARDS/ARCHER/Archer_attack"},
+           {029,"event:/SFX/UI/CARDS/ARCHER/Archer_Select"},
            // Chicken
-           {30,"event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack"},
-           {31,"event:/SFX/UI/CARDS/CHICKEN/Chicken_select"},
+           {030,"event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack"},
+           {031,"event:/SFX/UI/CARDS/CHICKEN/Chicken_select"},
            // Leech
-           {32,},
-           {33,},
+           {032,""},
+           {033,""},
            // Berserker
-           {34,},
-           {35,},
+           {034,""},
+           {035,""},
            // Hydra
-           {36,},
-           {37,},
+           {036,""},
+           {037,""},
            // Zombie
-           {38,},
-           {39,},
+           {038,""},
+           {039,""},
            // Necromancer
-           {40,},
-           {41,},
+           {040,""},
+           {041,""},
            // Pocholo
-           {42,},
-           {43,},
+           {042,""},
+           {043,""},
            // Charybdis
-           {44,},
-           {45,},
+           {044,""},
+           {045,""},
            // Kamikaze
-           {46,},
-           {47,},
+           {046,""},
+           {047,""},
            // Dragon
-           {48,},
-           {49,},
+           {048,""},
+           {049,""},
            // Lacus
-           {50,},
-           {51,},
+           {050,""},
+           {051,""},
            // Samurai
-           {52,},
-           {53,},
+           {052,""},
+           {053,""},
            // Giant
-           {54,},
-           {55,},
+           {054,""},
+           {055,""},
            // Ant
-           {56,},
-           {57,},
+           {056,""},
+           {057,""},
           
     
         
         //EFFECTS
            //Flash
-           {000,"event:/SFX/UI/EFFECTS/Flash/FLASH"},
+           {1000,"event:/SFX/UI/EFFECTS/Flash/FLASH"},
            //Bowling Ball
-           {001,"event:/SFX/UI/CARDS/BOWLING/Pleno"},
-           {002,"event:/SFX/UI/CARDS/BOWLING/Inici_Bowling"},
-           {003,"event:/SFX/UI/CARDS/BOWLING/Bowling_movement"},
+           {1001,"event:/SFX/UI/CARDS/BOWLING/Pleno"},
+           {1002,"event:/SFX/UI/CARDS/BOWLING/Inici_Bowling"},
+           {1003,"event:/SFX/UI/CARDS/BOWLING/Bowling_movement"},
            //Mana Bottle
-           {004,"event:/SFX/UI/MANA/Drink_Mana"},
+           {1004,"event:/SFX/UI/MANA/Drink_Mana"},
            //Canvi de torn
-           {005,"event:/SFX/UI/CANVI DE TORN/Whisper"},
+           {1005,"event:/SFX/UI/CANVI DE TORN/Whisper"},
            //Return
            //C4 del medievo
            //Instant Transmission
@@ -121,20 +124,34 @@ public class SoundManager : Singleton<SoundManager>
 
         //AMBIENT
            //Roomtone
-           {0000,"event:/SFX/AMBIENT/ROOMTONE"},
+           {2000,"event:/SFX/AMBIENT/ROOMTONE"},
            //Bonfire
-           {0001,"event:/SFX/AMBIENT/BONFIRE"},
-
-
+           {2001,"event:/SFX/AMBIENT/BONFIRE"},
           
         };     
+
+         musicDictionary=new()
+        {
+        // Listado de MUSICA
+           //Taverna
+           {3000,"event:/MUSIC/GAMEPLAY/Gameplay"},
+           //Menú
+           {3001,"event:/MUSIC/MENU/Menu"},
+          
+        };   
+
+        PlayMusic(3000);
     }
-    public void PlaySFX (int index, Vector3 position)
+
+
+   public void PlaySFX (int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index],position);
     }
 
-    // Listado de MUSICA
-    //Dictionary<int,?????????????> musicDictionary;
+   public void PlayMusic (int index)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],GameObject.Find("Board").transform.position);
     
+    }
 }

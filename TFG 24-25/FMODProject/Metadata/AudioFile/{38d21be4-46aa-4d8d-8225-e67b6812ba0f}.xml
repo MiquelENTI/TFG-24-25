@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{38d21be4-46aa-4d8d-8225-e67b6812ba0f}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>Medusa/Snake_medusa_01.wav</value>
 =======
 			<value>Medusa/Snake_as_ui_so_card_medusa_01.wav</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>Medusa/Snake_medusa_01.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

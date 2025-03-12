@@ -44,12 +44,18 @@ public class TheGun : Character
 
         return true;
     }
+   
+   //Implementació del so en relacio al SoundManager 
+    protected override void OnMovementSFX()
+    {
+
+    }
     protected override void AttackSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/CANON/CANON",token.transform.position);
+        SoundManager.Instance.PlaySFX(014, token.transform.position);
     }
-    protected virtual void OnSpawnSFX()
+    protected override void OnSpawnSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/CANON/CANON_SELECTION",token.transform.position);
+        SoundManager.Instance.PlaySFX(015, token.transform.position);
     }
 }

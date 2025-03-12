@@ -57,7 +57,11 @@
 			<destination>{f0342ee7-dba9-4df1-9f58-89ac4d0feb21}</destination>
 		</relationship>
 		<relationship name="output">
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+=======
+			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{016ba9b5-0600-40d2-9c9b-0ba794a346a8}" />
@@ -98,7 +102,11 @@
 	</object>
 	<object class="TransitionDestinationSound" id="{79fb2ba4-3f51-4eae-8daf-8efdde2f3dcd}">
 		<property name="start">
+<<<<<<< HEAD
 			<value>2.5</value>
+=======
+			<value>1</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="length">
 			<value>0</value>
@@ -127,6 +135,7 @@
 			<destination>{8f18f825-b264-4414-9c9c-97cb445ee091}</destination>
 		</relationship>
 	</object>
+<<<<<<< HEAD
 	<object class="TransitionSourceSound" id="{f3e72cfa-1d32-40d7-ae95-84ebf7fa9e10}">
 		<property name="length">
 			<value>2.5</value>
@@ -136,6 +145,10 @@
 		<property name="start">
 			<value>0.5</value>
 		</property>
+=======
+	<object class="TransitionSourceSound" id="{f3e72cfa-1d32-40d7-ae95-84ebf7fa9e10}" />
+	<object class="TransitionDestinationSound" id="{bc38ad72-5801-40d8-8445-c2a851b60a52}">
+>>>>>>> 28c0d1c (Musica de Fons)
 		<property name="length">
 			<value>2</value>
 		</property>
@@ -145,7 +158,11 @@
 	</object>
 	<object class="EventMixerGroup" id="{6b0897af-cee9-4e71-b211-841263f8230d}">
 		<property name="volume">
+<<<<<<< HEAD
 			<value>-17</value>
+=======
+			<value>-14.5</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -165,7 +182,11 @@
 			<value>0</value>
 		</property>
 		<property name="length">
+<<<<<<< HEAD
 			<value>88.5</value>
+=======
+			<value>89</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<relationship name="timeline">
 			<destination>{37c4e94b-e961-4746-84ff-e27455aa1917}</destination>
@@ -215,9 +236,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{97791cb5-337c-4c1b-aeb5-7b30be0a4536}" />
 	<object class="TransitionTimeline" id="{bc11eb6d-7403-46c4-b684-33b29160b15d}">
+<<<<<<< HEAD
 		<property name="length">
 			<value>2.5</value>
 		</property>
+=======
+>>>>>>> 28c0d1c (Musica de Fons)
 		<relationship name="modules">
 			<destination>{f3e72cfa-1d32-40d7-ae95-84ebf7fa9e10}</destination>
 			<destination>{bc38ad72-5801-40d8-8445-c2a851b60a52}</destination>
@@ -266,7 +290,11 @@
 	</object>
 	<object class="AutomationPoint" id="{c5e1022c-ad33-459d-96c0-f23aa6cdfb76}">
 		<property name="position">
+<<<<<<< HEAD
 			<value>0.5</value>
+=======
+			<value>0</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -277,7 +305,11 @@
 	</object>
 	<object class="AutomationPoint" id="{ae3a464e-77e0-4fb9-8d7b-af7f09e581d7}">
 		<property name="position">
+<<<<<<< HEAD
 			<value>1.5</value>
+=======
+			<value>0.5</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="value">
 			<value>1</value>

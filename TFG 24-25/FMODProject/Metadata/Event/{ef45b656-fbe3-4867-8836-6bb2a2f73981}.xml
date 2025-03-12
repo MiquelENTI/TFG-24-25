@@ -765,6 +765,7 @@
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
+<<<<<<< HEAD
 		<property name="maximumDistance">
 			<value>2</value>
 		</property>
@@ -904,8 +905,10 @@
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 =======
 	<object class="SpatialiserEffect" id="{3371717d-3db4-4429-9923-477e338be2ab}">
+=======
+>>>>>>> 28c0d1c (Musica de Fons)
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>0.600000024</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

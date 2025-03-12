@@ -420,6 +420,7 @@
 		</property>
 		<property name="soundSize">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>13.5</value>
 		</property>
 	</object>
@@ -431,6 +432,9 @@
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
 =======
 			<value>13</value>
+=======
+			<value>13.5</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9ad28800-190e-4479-ab50-e29c9ebdc7b3}" />

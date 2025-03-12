@@ -13,4 +13,18 @@ public class Chicken : Character
     {
         attacker.ReceiveDamage(counterDamage);
     }
+
+    //Implementació del so en relacio al SoundManager 
+    protected override void OnMovementSFX()
+    {
+
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(030, token.transform.position);
+    }
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(031, token.transform.position);
+    }
 }

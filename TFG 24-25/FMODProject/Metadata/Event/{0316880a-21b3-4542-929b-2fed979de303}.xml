@@ -268,9 +268,16 @@
 			<value>2</value>
 =======
 	<object class="SpatialiserEffect" id="{66aa675e-dcc0-4148-84c9-ff5f12065bcb}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>10</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>0.600000024</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

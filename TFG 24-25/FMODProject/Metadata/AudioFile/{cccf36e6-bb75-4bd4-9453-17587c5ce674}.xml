@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{cccf36e6-bb75-4bd4-9453-17587c5ce674}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>BOWLING/FINAL/Pleno_card_bowling_final_00.wav</value>
 =======
 			<value>BOWLING/FINAL/Pleno_as_ui_so_card_bowling_final_00.wav</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>BOWLING/FINAL/Pleno_card_bowling_final_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

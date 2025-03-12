@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9201679933915151797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/MENU/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/MENU/Menu
+  Guid:
+    Data1: 1124853427
+    Data2: 1178567522
+    Data3: 1356798601
+    Data4: 1123767129
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 156000
 --- !u!114 &-9111162937153991656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +123,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638769991043488355
+  lastModified: 638773341618262090
   FileSizes:
   - Name: Desktop
-    Value: 4552384
+    Value: 7435136
   Exists: 1
 --- !u!114 &-6833839539742696063
 MonoBehaviour:
@@ -128,6 +155,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6703
+--- !u!114 &-6250765082595438276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/GAMEPLAY/Gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/GAMEPLAY/Gameplay
+  Guid:
+    Data1: 1963097260
+    Data2: 1306182862
+    Data3: -1906698564
+    Data4: -43910900
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92000
 --- !u!114 &-5705224980803646184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,10 +329,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638769991043502589
+  lastModified: 638773341618279472
   FileSizes:
   - Name: Desktop
-    Value: 2420
+    Value: 2538
   Exists: 1
 --- !u!114 &-4422700652043900420
 MonoBehaviour:
@@ -569,13 +623,15 @@ MonoBehaviour:
   - {fileID: -4422700652043900420}
   - {fileID: -5491940732813974109}
   - {fileID: -3900884633152702053}
+  - {fileID: -6250765082595438276}
+  - {fileID: -9201679933915151797}
   EditorParameters:
   - {fileID: -5325660656478526003}
   MasterBanks:
   - {fileID: -7461150170883479937}
   StringsBanks:
   - {fileID: -4698760797654769124}
-  cacheTime: 638769991043502589
+  cacheTime: 638773341618279472
   cacheVersion: 131621
 --- !u!114 &42411174634105933
 MonoBehaviour:

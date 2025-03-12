@@ -502,8 +502,11 @@
 >>>>>>> a42ee89 (Fmod Refet)
 	<object class="MixerBusFader" id="{bfaeb9b6-1238-4b09-a28d-3cd237155097}" />
 	<object class="SpatialiserEffect" id="{82aee89e-6ce6-4dba-ba3e-315f3f0c9bb2}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>0.600000024</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

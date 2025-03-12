@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
+using UnityEditor.Compilation;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 
 public enum MovementType { Basic, Diagonal, Omni}
-
 public enum TeamType { RED = 0, BLUE = 1}
 
 public struct CharacterStats
@@ -461,15 +461,15 @@ public class Character
     //Implementació del so general per a cartes no identificades 
     protected virtual void OnMovementSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MOVEMENT_CARD",token.transform.position);
+        Debug.Log("OnMovementSFX");
     }
     protected virtual void AttackSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/STANDARD/STANDARD_ATTACK",token.transform.position);
+        Debug.Log("AttackSFX");
     }
     protected virtual void OnSpawnSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/STANDARD/STANDARD_SELLECTION",token.transform.position);
+        Debug.Log("OnSpawnSFX");
     }
 
 }

@@ -3,10 +3,14 @@
 	<object class="AudioFile" id="{8705d53a-1c53-4d90-b1e1-0afe2ccc870e}">
 		<property name="assetPath">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>MANA /Drink_Mana_00.wav</value>
 =======
 			<value>MANA /Drink_Mana_as_ui_so_card_Mana_00.wav</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>MANA /Drink_Mana_00.wav</value>
+>>>>>>> 28c0d1c (Musica de Fons)
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

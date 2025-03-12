@@ -18,4 +18,20 @@ public class Mummy : Character
 
         return true;
     }
+   
+    //Implementació del so en relacio al SoundManager 
+    protected override void OnMovementSFX()
+    {
+
+    }
+    protected override void AttackSFX()
+    {
+        base.AttackSFX();
+        SoundManager.Instance.PlaySFX(012, token.transform.position);
+    }
+    protected override void OnSpawnSFX()
+    {
+        base.OnSpawnSFX();
+        SoundManager.Instance.PlaySFX(013, token.transform.position);
+    }
 }

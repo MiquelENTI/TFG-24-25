@@ -14,8 +14,6 @@ public class Medusa : Character
         enemy.ApplyStun();
         enemiesAttacked.Add(enemy);
         base.Attack(enemy);
-        //FMOD_ATTACK_MEDUSA
-    //FMODUnity.RuntimeManager.PlayOneShot("event:/MEDUSA",token.transform.position);
     }
 
     public override void OnDeath(Character attacker)
@@ -30,16 +28,19 @@ public class Medusa : Character
 
         base.OnDeath(attacker);
     }
+  
+  //Implementació del so en relacio al SoundManager 
     protected override void OnMovementSFX()
     {
-        //FMODUnity.RuntimeManager.PlayOneShot("",token.transform.position);
+
     }
     protected override void AttackSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MEDUSA/MEDUSA_ATTACK",token.transform.position);
+        SoundManager.Instance.PlaySFX(010, token.transform.position);
     }
     protected override void OnSpawnSFX()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/UI/CARDS/MEDUSA/MEDUSA_SELECTION",token.transform.position);
+        SoundManager.Instance.PlaySFX(011, token.transform.position);
     }
+
 }
