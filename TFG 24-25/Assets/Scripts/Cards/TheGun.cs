@@ -9,7 +9,7 @@ public class TheGun : Character
     CellNode cellToMoveAfterAttack;
     CellConnection directionToMove;
     bool moveAfterAttack = false;
-    public TheGun(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public TheGun(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

@@ -18,12 +18,14 @@ public struct CharacterStats
     public int dmg;
     public int manaCost;
     public int range;
+    public int currentMoves;
+    public int totalMoves;
     public MovementType movementType;
     public bool stun;
     public string description;
     public bool checkAllInRangeCells;
     public int scoreMultiplier;
-    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, int _scoreMult, MovementType _movementType, string _description)
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, int _totalMoves, int _scoreMult, MovementType _movementType, string _description)
     {
         name = _name;
         maxHp = _hp;
@@ -31,6 +33,8 @@ public struct CharacterStats
         dmg = _dmg;
         manaCost = _manaCost;
         range = _range;
+        currentMoves = _totalMoves;
+        totalMoves = _totalMoves;
         scoreMultiplier = _scoreMult;
         movementType = _movementType;
         stun = false;
@@ -47,6 +51,8 @@ public struct CharacterStats
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
         " | Range: " + range +
+        " | CurrentMoves: " + currentMoves +
+        " | TotalMoves: " + totalMoves +
         " | Movement Type: " + movementType.ToString()
         );
     }
@@ -104,8 +110,6 @@ public class Character
     protected bool canAttack = true;
 
     protected GameObject token;
-    [SerializeField] public Sprite cardSprite;
-    [SerializeField] public string description;
     protected PlayerStats playerStats;
 
     bool canScore = false;
@@ -169,9 +173,6 @@ public class Character
     public GameObject GetToken()
     { return token; }
 
-    public Sprite GetCardSprite()
-    { return cardSprite; }
-
     public int GetHealth()
     {
         return stats.getHealth();
@@ -197,7 +198,7 @@ public class Character
         return stats.getManaCost();
     }
 
-    public Character(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite)
+    public Character(CharacterStats newStats, TeamType teamType, GameObject token)
     {
         GameObject scoreManagerObject = GameObject.Find("ScoreManager");
         if (scoreManagerObject != null)
@@ -216,15 +217,14 @@ public class Character
 
         this.teamType = teamType;
 
-        CharactersManager.Instance.AddCharacter(this, cardSprite);
+        CharactersManager.Instance.AddCharacter(this);
         this.token = token;
-        this.cardSprite = cardSprite;
     }
 
     public void ResetStats()
     {
-        //ResetMovementsLeft();
         canAttack = true;
+        stats.currentMoves = stats.totalMoves;
     }
 
     public CharacterStats GetCharacterStats()
@@ -291,11 +291,12 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun) || CharactersManager.Instance.GetBypassMana())
+        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && stats.currentMoves > 0) || CharactersManager.Instance.GetBypassMana())
         {
             //GetCharacterStats().PrintStats();
             playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
+            stats.currentMoves--;
 
             //Debug.Log(teamType.ToString() + " MOOOVE");
             
@@ -359,6 +360,7 @@ public class Character
 
     public virtual void OnStartTurn()
     {
+        ResetStats();
         TileScoring();
     }
     public virtual void OnEndTurn()

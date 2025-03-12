@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicKarp : Character
 {
-    public MagicKarp(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public MagicKarp(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

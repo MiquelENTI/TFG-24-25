@@ -6,7 +6,7 @@ public class Ant : Character
 {
     int originalAttack;
     int currentAttack;
-    public Ant(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Ant(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
         originalAttack = newStats.dmg;
     }

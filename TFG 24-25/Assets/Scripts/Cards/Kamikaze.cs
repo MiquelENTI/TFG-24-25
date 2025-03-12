@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kamikaze : Character
 {
-    public Kamikaze(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Kamikaze(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

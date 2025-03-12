@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathHorseman : Character
 {
-    public DeathHorseman(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public DeathHorseman(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 }

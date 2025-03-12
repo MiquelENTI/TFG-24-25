@@ -26,10 +26,9 @@ public class CharactersManager : Singleton<CharactersManager>
 
     }
 
-    public void AddCharacter(Character character, Sprite cardSprite)
+    public void AddCharacter(Character character)
     {
         charactersOnBoard.Add(currentId,character);
-        charactersCardSprite.Add(currentId, cardSprite);
         character.SetId(currentId);
 
         currentId++;

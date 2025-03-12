@@ -17,7 +17,7 @@ public class Drake : Character
         { CellConnection.DOWN, Tuple.Create(CellConnection.DOWNLEFT, CellConnection.DOWNRIGHT) },
     };
 
-    public Drake(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Drake(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
         splashDamage = stats.dmg;
     }
