@@ -5,7 +5,7 @@ using UnityEngine;
 public class Medusa : Character
 {
     List<Character> enemiesAttacked = new();
-    public Medusa(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Medusa(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Mimic : Character
 {
-    public Mimic(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Mimic(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

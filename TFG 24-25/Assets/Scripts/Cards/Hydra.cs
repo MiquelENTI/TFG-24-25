@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hydra : Character
 {
-    public Hydra(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Hydra(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Salmon : Character
 {
-    public Salmon(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Salmon(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

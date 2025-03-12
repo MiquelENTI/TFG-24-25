@@ -19,7 +19,7 @@ public class CharacterComponent : MonoBehaviour
 
     public void InitializeCharacter(CharacterStats stats, TeamType teamType, GameObject token)
     {
-        character = new Character(stats, teamType, token, characterSprite);
+        character = new Character(stats, teamType, token);
     }
 
     InputField testInputField;

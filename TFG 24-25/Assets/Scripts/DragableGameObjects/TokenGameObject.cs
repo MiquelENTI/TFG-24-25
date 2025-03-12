@@ -226,47 +226,47 @@ public class TokenGameObject : DragableGameObject
         switch (id)
         {
             case 2:
-                return new Cavalier(stats, tokenTeam, instantiatedToken, null);
+                return new Cavalier(stats, tokenTeam, instantiatedToken);
             case 3:
-                return new Salmon(stats, tokenTeam, instantiatedToken, null);
+                return new Salmon(stats, tokenTeam, instantiatedToken);
             case 5:
-                return new Fly(stats, tokenTeam, instantiatedToken, null);
+                return new Fly(stats, tokenTeam, instantiatedToken);
             case 6:
-                return new Turtle(stats, tokenTeam, instantiatedToken, null);
+                return new Turtle(stats, tokenTeam, instantiatedToken);
             case 7:
-                return new Mimic(stats, tokenTeam, instantiatedToken, null);
+                return new Mimic(stats, tokenTeam, instantiatedToken);
             case 10:
-                return new Medusa(stats, tokenTeam, instantiatedToken, null);
+                return new Medusa(stats, tokenTeam, instantiatedToken);
             case 13:
-                return new Mummy(stats, tokenTeam, instantiatedToken, null);
+                return new Mummy(stats, tokenTeam, instantiatedToken);
             case 14:
-                return new TheGun(stats, tokenTeam, instantiatedToken, null);
+                return new TheGun(stats, tokenTeam, instantiatedToken);
             case 15:
-                return new HumanWerewolf(stats, tokenTeam, instantiatedToken, null);
+                return new HumanWerewolf(stats, tokenTeam, instantiatedToken);
             case 16:
-                return new DeathHorseman(stats, tokenTeam, instantiatedToken, null);
+                return new DeathHorseman(stats, tokenTeam, instantiatedToken);
             case 17:
-                return new TerracottaWarrior(stats, tokenTeam, instantiatedToken, null);
+                return new TerracottaWarrior(stats, tokenTeam, instantiatedToken);
             case 20:
-                return new MagicKarp(stats, tokenTeam, instantiatedToken, null);
+                return new MagicKarp(stats, tokenTeam, instantiatedToken);
             case 22:
-                return new Chicken(stats, tokenTeam, instantiatedToken, null);
+                return new Chicken(stats, tokenTeam, instantiatedToken);
             case 25:
-                return new Leech(stats, tokenTeam, instantiatedToken, null);
+                return new Leech(stats, tokenTeam, instantiatedToken);
             case 26:
-                return new Berserker(stats, tokenTeam, instantiatedToken, null);
+                return new Berserker(stats, tokenTeam, instantiatedToken);
             case 27:
-                return new Hydra(stats, tokenTeam, instantiatedToken, null);
+                return new Hydra(stats, tokenTeam, instantiatedToken);
             case 32:
-                return new Kamikaze(stats, tokenTeam, instantiatedToken, null);
+                return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
-                return new Drake(stats, tokenTeam, instantiatedToken, null);
+                return new Drake(stats, tokenTeam, instantiatedToken);
             case 37:
-                return new Samurai(stats, tokenTeam, instantiatedToken, null);
+                return new Samurai(stats, tokenTeam, instantiatedToken);
             case 38:
-                return new Giant(stats, tokenTeam, instantiatedToken, null);
+                return new Giant(stats, tokenTeam, instantiatedToken);
             case 39:
-                return new Ant(stats, tokenTeam, instantiatedToken, null);
+                return new Ant(stats, tokenTeam, instantiatedToken);
 
 
 
@@ -277,7 +277,7 @@ public class TokenGameObject : DragableGameObject
                 return new Dummy(stats, tokenTeam);
             default:
                 Debug.LogError("NO CHARACTER RECOGNISED");
-                return new Character(stats, tokenTeam, instantiatedToken, null);
+                return new Character(stats, tokenTeam, instantiatedToken);
         }
 
     }

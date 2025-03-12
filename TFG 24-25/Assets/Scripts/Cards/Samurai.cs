@@ -7,7 +7,7 @@ public class Samurai : Character
     int bonusDmg = 0;
     int maxDmg = 8;
 
-    public Samurai(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public Samurai(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 

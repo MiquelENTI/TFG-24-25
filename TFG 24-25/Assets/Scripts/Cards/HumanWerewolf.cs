@@ -7,7 +7,7 @@ public class HumanWerewolf : Character
     CharacterStats humanForm;
     CharacterStats wereWolfForm;
     bool isHumanForm = true;
-    public HumanWerewolf(CharacterStats newStats, TeamType teamType, GameObject token, Sprite cardSprite) : base(newStats, teamType, token, cardSprite)
+    public HumanWerewolf(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
         humanForm = newStats;
         wereWolfForm = newStats;
