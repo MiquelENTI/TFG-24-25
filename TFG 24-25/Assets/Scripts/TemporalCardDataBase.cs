@@ -14,9 +14,9 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 10, new CharacterStats("Medusa",3, 3, 6, 1, 1, 1, MovementType.Basic, "Al atacar stunea, al morir esta carta quita stuns de los enemigos atacados") }, // Medusa
         { 13, new CharacterStats("Mummy",3, 5, 12, 1, 1, 1, MovementType.Basic, "Al moverse pierde 1 hp y 1 dmg") }, // Mummy
         { 14, new CharacterStats("The Gun",3, 7, 4, 1, 1, 1, MovementType.Omni, "Al atacar se mueve en direccion contraria al ataque") }, // The Gun
-        { 15, new CharacterStats("Human Werewolf",3, 4, 4, 1, 1, 1, MovementType.Basic, "Al moverse se cambian sus estadisticas") }, // The Gun
+        { 15, new CharacterStats("Human Werewolf",3, 4, 4, 1, 1, 1, MovementType.Basic, "Al moverse se intercambian sus estadisticas") }, // The Gun
         { 16, new CharacterStats("Death Horseman",3, 12, 2, 1, 1, 1, MovementType.Basic, "") }, // Death Horseman
-        { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, 1, MovementType.Basic, "Al permanecer immobil durante un turno, regenera 3 hp") }, // Terracotta Warrior
+        { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, 1, MovementType.Basic, "Al permanecer en una casilla de puntuacion, se cura los puntos conseguidos") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, 1, MovementType.Basic, "Destruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
         { 21, new CharacterStats("Archer",3, 3, 6,  1, 1, 1, MovementType.Omni, "Te 2 de rang d'atac") }, // Archer
         { 22, new CharacterStats("Chicken",1, 2, 3, 1, 1, 2, MovementType.Basic, "Al recibir da�o el atacante recibe 5 de da�o") }, // Chicken

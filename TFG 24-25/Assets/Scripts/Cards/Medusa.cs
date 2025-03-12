@@ -20,7 +20,10 @@ public class Medusa : Character
     {
         foreach (Character enemy in enemiesAttacked)
         {
-            enemy.RemoveStun();
+            if (enemy != null)
+            {
+                enemy.RemoveStun();
+            }
         }
 
         base.OnDeath(attacker);
