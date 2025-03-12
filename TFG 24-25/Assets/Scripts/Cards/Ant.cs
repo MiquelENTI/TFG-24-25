@@ -18,11 +18,14 @@ public class Ant : Character
         CalculateCurrentAttack(cellToMove);
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
 
         CalculateCurrentAttack(cellToMove);
+
+        return true;
     }
 
     public override void OnStartTurn()

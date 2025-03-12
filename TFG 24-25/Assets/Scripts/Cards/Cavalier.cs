@@ -12,10 +12,14 @@ public class Cavalier : Character
 
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
         canAttack = true;
-        base.OnMovement(cellToMove);
+
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
+        return true;
     }
 
     public override void OnDeath(Character attacker)

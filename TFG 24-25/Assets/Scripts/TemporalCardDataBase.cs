@@ -8,7 +8,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
         { 2, new CharacterStats ("Cavalier", 0, 5, 5, 1, 1, 1, MovementType.Basic, "Puede moverse y atacar en el mismo turno") }, // Cavalier
         { 3, new CharacterStats ("Salmon", 4, 8, 7, 1, 1, 1, MovementType.Omni, "Al matar a un enemigo, se mueve a la casilla del enemigo y esta pierde 2 hp")  }, // Salmon
-        { 5, new CharacterStats ("Fly",1, 1, 1,  1, 2, 2, MovementType.Omni, "")  }, // Fly
+        { 5, new CharacterStats ("Fly",1, 1, 1,  2, 1, 2, MovementType.Omni, "")  }, // Fly
         { 6, new CharacterStats ("Turtle",2, 5, 9, 1, 1, 1, MovementType.Basic, "Se mueve cada dos turnos (se mueve, descansa, se mueve...)") }, // Turtle (WIP)
         { 7, new CharacterStats ("Mimic",2, 3, 2, 1, 1, 2, MovementType.Basic, "Cuando le atacan, se destruyen esta carta y el atacante") }, // Mimic  (WIP)
         { 10, new CharacterStats("Medusa",3, 3, 6, 1, 1, 1, MovementType.Basic, "Al atacar stunea, al morir esta carta quita stuns de los enemigos atacados") }, // Medusa

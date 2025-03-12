@@ -39,14 +39,19 @@ public class TheGun : Character
         }
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
         currentCellToMove = cellToMove;
-        base.OnMovement(cellToMove);
+        
         if (moveAfterAttack)
         {
             BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)directionToMove).GetId());
             moveAfterAttack = false;
         }
+
+        return true;
     }
 }

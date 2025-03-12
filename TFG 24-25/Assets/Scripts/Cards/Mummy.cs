@@ -8,10 +8,14 @@ public class Mummy : Character
     {
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
         DecreaseDamage(1);
         ReceiveDamage(1);
+
+        return true;
     }
 }

@@ -8,8 +8,11 @@ public class Fly : Character
     {
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
+        return true;
     }
 }

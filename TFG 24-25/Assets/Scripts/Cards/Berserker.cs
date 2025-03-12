@@ -13,17 +13,19 @@ public class Berserker : Character
         originalAttack = newStats.dmg;
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
 
         if (CellNodeManager.Instance.GetNodeById(onTile).GetScoreNode() == CellScoreType.NOPOINTS)
         { 
             stats.dmg = originalAttack;
-            return; 
+            return true; 
         }
 
         stats.dmg = boostedAttack;
 
+        return true;
     }
 }

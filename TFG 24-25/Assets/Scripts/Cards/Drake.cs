@@ -22,10 +22,14 @@ public class Drake : Character
         splashDamage = stats.dmg;
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
         this.cellToMove = cellToMove;
-        base.OnMovement(cellToMove);
+
+        return true;
     }
 
     public override void Attack(Character enemy)

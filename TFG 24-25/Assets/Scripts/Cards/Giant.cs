@@ -8,9 +8,10 @@ public class Giant : Character
     {
     }
 
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
 
         List<CellNode> surrondingCells = cellToMove.GetSurrondingCells();
 
@@ -21,5 +22,7 @@ public class Giant : Character
                 surrondingCell.GetCharacter().ReceiveDamage(2);
             }
         }
+
+        return true;
     }
 }

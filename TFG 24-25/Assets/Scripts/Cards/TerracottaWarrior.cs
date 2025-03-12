@@ -7,9 +7,12 @@ public class TerracottaWarrior : Character
     public TerracottaWarrior(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
-    public override void OnMovement(CellNode cellToMove)
+    public override bool OnMovement(CellNode cellToMove)
     {
-        base.OnMovement(cellToMove);
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
+        return true;
     }
 
     public override void OnPointsScoring(int pointsScored)

@@ -289,7 +289,7 @@ public class Character
         }
     }
     
-    public virtual void OnMovement(CellNode cellToMove)
+    public virtual bool OnMovement(CellNode cellToMove)
     {
         if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && stats.currentMoves > 0) || CharactersManager.Instance.GetBypassMana())
         {
@@ -314,12 +314,16 @@ public class Character
             //CellNodeManager.Instance.GetNodeById(onTile).PrintStatus();
             //Debug.Log("CellToMove After");
             //cellToMove.PrintStatus();
+
+            return true;
         }
         else
         {
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO?");
             cellToMove.PrintStatus();
+
+            return false;
         }
     }
 
