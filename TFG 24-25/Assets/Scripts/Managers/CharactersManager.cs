@@ -12,6 +12,8 @@ public class CharactersManager : Singleton<CharactersManager>
     // Fa falta?
     Dictionary<int, Sprite> charactersCardSprite;
 
+    [SerializeField] bool bypassMana;
+
     private void Awake()
     {
         charactersOnBoard = new();
@@ -96,4 +98,7 @@ public class CharactersManager : Singleton<CharactersManager>
             character.OnStartTurn();
         }
     }
+
+    public bool GetBypassMana()
+    { return bypassMana; }
 }

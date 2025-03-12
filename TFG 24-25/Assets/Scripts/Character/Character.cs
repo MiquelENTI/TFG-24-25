@@ -99,7 +99,6 @@ public class Character
 
     protected TeamType teamType;
     protected int onTile;
-    protected int previousTile;
 
     protected bool toSpawn = true;
     protected bool canAttack = true;
@@ -149,6 +148,10 @@ public class Character
         if (playerStats.GetCurrentMana() >= stats.manaCost)
         {
             return canAttack;
+        }
+        else if (CharactersManager.Instance.GetBypassMana())
+        {
+            return true;
         }
         else
         { 
@@ -270,7 +273,7 @@ public class Character
 
     public virtual void OnSpawn(CellNode cellToMove)
     {
-        if (cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost)
+        if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
             
             Debug.Log("SPAWN");
@@ -280,7 +283,6 @@ public class Character
 
             SetOnTileId(cellToMove.GetId());
             //Debug.Log("ONTILE: " + onTile);
-            previousTile = onTile;
             MoveToken(cellToMove.GetPosition());
 
             cellToMove.SetCharacter(this);
@@ -289,10 +291,9 @@ public class Character
     
     public virtual void OnMovement(CellNode cellToMove)
     {
-        if (cellToMove.CheckNodes(id))
-        //if (cellToMove.CheckNodes(GetDirections(), id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
+        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun) || CharactersManager.Instance.GetBypassMana())
         {
-            GetCharacterStats().PrintStats();
+            //GetCharacterStats().PrintStats();
             playerStats.SubstractMana(stats.manaCost);
             canAttack = false;
 
@@ -330,7 +331,6 @@ public class Character
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
         CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-        previousTile = onTile;
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
@@ -344,47 +344,22 @@ public class Character
 
         Debug.Log("ENTERING TILE SCORING");
 
-        switch (node.GetScoreNode())
+
+        if (node.GetScoreNode() == CellScoreType.QUICK)
         {
-            case CellScoreType.NORMAL:
-                {
-                    // Prevent scoring in your own scoring tiles
-                    if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
-                    { return; }
-                    if (canScore && previousTile == onTile)
-                    {
-                        int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
-                        scoreManager.UpdateScore(teamType, pointsToScore);
-                        OnPointsScoring(pointsToScore);
-                        canScore = false;
-                        return;
-                    }
-                    canScore = true;
-                }
-                
-            break;
+            // Prevent scoring in your own scoring tiles
+            if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+            { return; }
 
-            case CellScoreType.QUICK:
-                {
-                    // Prevent scoring in your own scoring tiles
-                    if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
-                    { return; }
-                    int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
-                    scoreManager.UpdateScore(teamType, pointsToScore);
-                    OnPointsScoring(pointsToScore);
-                }
-            break;
-
-            default:
-                break;
+            int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
+            scoreManager.UpdateScore(teamType, pointsToScore);
+            OnPointsScoring(pointsToScore);
         }
     }
 
     public virtual void OnStartTurn()
     {
         TileScoring();
-
-        //Debug.Log("OnStartPassed");
     }
     public virtual void OnEndTurn()
     {
@@ -429,7 +404,6 @@ public class Character
         }
     }
     
-    // Maybe Character parameter?
     public void ReceiveDamage(int damage)
     {
         stats.hp -= damage;
@@ -460,11 +434,13 @@ public class Character
     public void ApplyStun()
     {
         stats.stun = true;
+        Debug.Log("CHARACTER STUNNED!");
     }
 
     public void RemoveStun()
     {
         stats.stun = false;
+        Debug.Log("CHARACTER NOT STUNNED!");
     }
 
     public void ApplyDOT()
