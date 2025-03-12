@@ -44,5 +44,6 @@ public class Ant : Character
                 currentAttack++;
             }
         }
+        stats.dmg = currentAttack;
     }
 }

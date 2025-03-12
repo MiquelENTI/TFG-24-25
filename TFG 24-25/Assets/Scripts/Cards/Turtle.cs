@@ -16,9 +16,17 @@ public class Turtle : Character
 
     public override void OnMovement(CellNode cellToMove)
     {
+        Debug.Log("CANMOVE: " + canMove);
+
+        stats.PrintStats();
+
         if (canMove)
         {
             base.OnMovement(cellToMove);
+        }
+        else
+        {
+            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
         }
     }
 }
