@@ -6,9 +6,6 @@ public class TheGun : Character
 {
     CellNode currentCellToMove;
 
-    CellNode cellToMoveAfterAttack;
-    CellConnection directionToMove;
-    bool moveAfterAttack = false;
     public TheGun(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
@@ -32,8 +29,7 @@ public class TheGun : Character
 
                 if (!cellToMove.IsOccupied())
                 {
-                    moveAfterAttack = true;
-                    directionToMove = direction;
+                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction).GetId());
                 }
             }
         }
@@ -41,16 +37,10 @@ public class TheGun : Character
 
     public override bool OnMovement(CellNode cellToMove)
     {
+        currentCellToMove = cellToMove;
+
         if (!base.OnMovement(cellToMove))
         { return false; }
-
-        currentCellToMove = cellToMove;
-        
-        if (moveAfterAttack)
-        {
-            BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)directionToMove).GetId());
-            moveAfterAttack = false;
-        }
 
         return true;
     }
