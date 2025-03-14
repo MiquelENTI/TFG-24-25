@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileId: 0
+  nonSelectedMaterial: {fileID: 2100000, guid: 819bfa0eea9510c4e82948a96e0126fe, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 3407b348653cc604d90f2ed18007bb9f, type: 2}
 --- !u!54 &619673063578962332
 Rigidbody:
   m_ObjectHideFlags: 0
