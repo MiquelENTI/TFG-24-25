@@ -86,7 +86,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         if (newIsBlue)
         {
             Debug.Log("isBlueTurn: " + newIsBlue);
-            PlayerStats.Instance.IncreaseTotalMana(1);
+            //PlayerStats.Instance.IncreaseTotalMana(1);
             turnCounter++;
             //turnCounterElement.text = "Turn Number: " + turnCounter;
         }
@@ -139,6 +139,9 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         return IsBlue;
     }
+
+    public int GetIsBlueInt()
+    { return IsBlue ? 1 : 0; }
 
     [PunRPC]
     public void DrawCardRPC(int amount)
