@@ -15,6 +15,10 @@ public class CardHold : MonoBehaviour
 
     int currentId;
 
+    GameObject playerCam;
+
+    Vector3 defaultCardRotation;
+
     void Start()
     {
         cards = new List<GameObject>();
@@ -84,6 +88,31 @@ public class CardHold : MonoBehaviour
                 break;
             }
         }
+    }
 
+    public void LookToPlayerCam()
+    {
+        for (int i = 0; i < cards.Count; i++)
+        {
+            cards[i].transform.LookAt(playerCam.transform.position);
+        }
+    }
+
+    public void DefaultCardRotation()
+    {
+        for (int i = 0; i < cards.Count; i++)
+        {
+            cards[i].transform.rotation = Quaternion.Euler(defaultCardRotation);
+        }
+    }
+
+    public void AssignPlayerCam(GameObject playerCam)
+    {
+        this.playerCam = playerCam; 
+    }
+
+    public void SetDefaultCardRotation(Vector3 defaultCardRotation)
+    {
+        this.defaultCardRotation = defaultCardRotation;
     }
 }

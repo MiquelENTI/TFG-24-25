@@ -84,6 +84,7 @@ public class DeckManager : Singleton<DeckManager>
         GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
         instantiatedCard.transform.parent = cardHold.transform;
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
+        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
     }
 
     public void ShuffleDeck()
