@@ -414,6 +414,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>2</value>
 =======
 		<property name="maximumDistance">
@@ -426,16 +427,22 @@
 		<property name="maximumDistance">
 			<value>2</value>
 >>>>>>> 28c0d1c (Musica de Fons)
+=======
+			<value>1.60000002</value>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		<property name="soundSize">
 			<value>13</value>
 		</property>

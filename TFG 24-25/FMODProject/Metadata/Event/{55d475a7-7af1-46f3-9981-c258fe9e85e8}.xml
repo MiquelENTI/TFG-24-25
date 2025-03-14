@@ -299,6 +299,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>2</value>
 =======
 		<property name="maximumDistance">
@@ -311,10 +312,14 @@
 		<property name="maximumDistance">
 			<value>2</value>
 >>>>>>> 28c0d1c (Musica de Fons)
+=======
+			<value>1</value>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<property name="soundSize">
 			<value>0.100000001</value>
@@ -325,6 +330,10 @@
 		<property name="soundSize">
 			<value>13</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+		<property name="soundSize">
+			<value>0.100000001</value>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{dbe35722-6f8a-491a-996f-ca6b7b452f61}">

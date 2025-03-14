@@ -134,9 +134,9 @@ public class SoundManager : Singleton<SoundManager>
         {
         // Listado de MUSICA
            //Taverna
-           {3000,"event:/MUSIC/GAMEPLAY/Gameplay"},
+           //{3000,"event:/MUSIC/GAMEPLAY/Gameplay"},
            //Menú
-           {3001,"event:/MUSIC/MENU/Menu"},
+           //{3001,"event:/MUSIC/MENU/Menu"},
           
         };   
 
@@ -151,7 +151,7 @@ public class SoundManager : Singleton<SoundManager>
 
    public void PlayMusic (int index)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],GameObject.Find("Board").transform.position);
+        //FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],GameObject.Find("Board").transform.position);
     
     }
 }

@@ -33,5 +33,6 @@ public class Mummy : Character
     {
         base.OnSpawnSFX();
         SoundManager.Instance.PlaySFX(013, token.transform.position);
+        Debug.Log("Distancia: " + Vector3.Distance(Camera.main.transform.position, token.transform.position));
     }
 }

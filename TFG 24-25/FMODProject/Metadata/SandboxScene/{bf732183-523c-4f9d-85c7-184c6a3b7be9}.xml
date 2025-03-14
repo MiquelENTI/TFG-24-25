@@ -3,10 +3,14 @@
 	<object class="SandboxScene" id="{bf732183-523c-4f9d-85c7-184c6a3b7be9}">
 		<property name="name">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>Mummy</value>
 =======
 			<value>New Scene</value>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<value>Mummy</value>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</property>
 		<relationship name="folder">
 			<destination>{46a2219d-9b62-4dcf-aa76-73bdbeb63899}</destination>
@@ -19,14 +23,19 @@
 		</relationship>
 		<relationship name="emitters">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}</destination>
 =======
 			<destination>{71076835-6644-4869-bbea-e5bf929f1447}</destination>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<destination>{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}</destination>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</relationship>
 	</object>
 	<object class="MarkerTrack" id="{e73c33a0-a3ed-4f3e-b6f7-f14fc1ee3b2e}" />
 	<object class="Timeline" id="{14e254ca-8d1a-4551-8b27-75d1326dffd6}" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<object class="SandboxEmitter" id="{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}">
 		<property name="positionX">
@@ -42,18 +51,25 @@
 			<destination>{c59199ed-8bc6-433b-96d0-fbb457dab06d}</destination>
 =======
 	<object class="SandboxEmitter" id="{71076835-6644-4869-bbea-e5bf929f1447}">
+=======
+	<object class="SandboxEmitter" id="{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}">
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		<property name="positionX">
-			<value>0.109176047</value>
+			<value>0.0703770816</value>
 		</property>
 		<property name="positionZ">
-			<value>-0.0264992248</value>
+			<value>0.00722125405</value>
 		</property>
 		<property name="rotationY">
-			<value>-12.5471163</value>
+			<value>91.6138382</value>
 		</property>
 		<relationship name="event">
+<<<<<<< HEAD
 			<destination>{1b4a9085-4003-4c4d-b85c-9a672fbdd842}</destination>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<destination>{c59199ed-8bc6-433b-96d0-fbb457dab06d}</destination>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</relationship>
 	</object>
 </objects>

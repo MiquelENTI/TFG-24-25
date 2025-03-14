@@ -206,10 +206,14 @@
 		<relationship name="effects">
 			<destination>{05d10ce7-0f93-4da7-a541-7977773d509b}</destination>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{7a6a2ae6-1aba-4c5c-a435-4bd8723b510b}</destination>
 =======
 			<destination>{85313db2-4c33-44e1-9881-31de580462ee}</destination>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+			<destination>{7a6a2ae6-1aba-4c5c-a435-4bd8723b510b}</destination>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{158b5749-2979-4501-b349-54bd016f66ce}" />
@@ -263,6 +267,7 @@
 	<object class="MixerBusPanner" id="{014ef78e-f0cf-4204-a9a4-f01dde9e2f76}" />
 	<object class="MixerBusFader" id="{05d10ce7-0f93-4da7-a541-7977773d509b}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<object class="SpatialiserEffect" id="{7a6a2ae6-1aba-4c5c-a435-4bd8723b510b}">
 		<property name="minimumDistance">
 			<value>0</value>
@@ -271,20 +276,28 @@
 			<value>2</value>
 =======
 	<object class="SpatialiserEffect" id="{85313db2-4c33-44e1-9881-31de580462ee}">
+=======
+	<object class="SpatialiserEffect" id="{7a6a2ae6-1aba-4c5c-a435-4bd8723b510b}">
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 <<<<<<< HEAD
 			<value>10</value>
 >>>>>>> a42ee89 (Fmod Refet)
 =======
 			<value>0.600000024</value>
 >>>>>>> 28c0d1c (Musica de Fons)
+=======
+			<value>1</value>
+>>>>>>> 3144adf (WIP on feature/FMOD)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		<property name="extentMode">
@@ -294,6 +307,8 @@
 			<value>13.5</value>
 		</property>
 >>>>>>> a42ee89 (Fmod Refet)
+=======
+>>>>>>> 3144adf (WIP on feature/FMOD)
 	</object>
 	<object class="MixerBusFader" id="{d14ec13b-7594-47cc-a71a-0372ff4e52ca}" />
 	<object class="MixerBusFader" id="{43d8eb58-62b9-4dbe-9500-108f84273fba}" />
