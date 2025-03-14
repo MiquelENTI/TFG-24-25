@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerStats : Singleton<PlayerStats>
 {
-    int totalMana = 5;
-    int currentMana = 5;
+    int totalMana = 15;
+    int currentMana = 15;
     TeamType teamColor;
     [SerializeField] TMP_Text manaText;
 
