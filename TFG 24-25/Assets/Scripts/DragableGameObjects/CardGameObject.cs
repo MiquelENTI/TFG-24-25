@@ -53,10 +53,17 @@ public class CardGameObject : DragableGameObject
         }
     }
 
-    //public override void UpdateCardToDisplayText()
-    //{
-        
-    //}
+    private void Update()
+    {
+        if (playerInputs.Gameplay.MousePosition.ReadValue<Vector2>().y < 460.0f)
+        {
+            cardHold.LookToPlayerCam();
+        }
+        else
+        {
+            cardHold.DefaultCardRotation();
+        }
+    }
 
     protected override void LeftMouseDownAction()
     {
