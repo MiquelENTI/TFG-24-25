@@ -123,10 +123,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638775587232844390
+  lastModified: 638777635876523276
   FileSizes:
   - Name: Desktop
-    Value: 7435136
+    Value: 7516096
   Exists: 1
 --- !u!114 &-6833839539742696063
 MonoBehaviour:
@@ -329,10 +329,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638775587232861959
+  lastModified: 638777635876542156
   FileSizes:
   - Name: Desktop
-    Value: 2538
+    Value: 2584
   Exists: 1
 --- !u!114 &-4422700652043900420
 MonoBehaviour:
@@ -387,7 +387,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 1937
 --- !u!114 &-3484912978632944530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,13 +625,14 @@ MonoBehaviour:
   - {fileID: -3900884633152702053}
   - {fileID: -6250765082595438276}
   - {fileID: -9201679933915151797}
+  - {fileID: 5503527091489392222}
   EditorParameters:
   - {fileID: -5325660656478526003}
   MasterBanks:
   - {fileID: -7461150170883479937}
   StringsBanks:
   - {fileID: -4698760797654769124}
-  cacheTime: 638775587232861959
+  cacheTime: 638777635876542156
   cacheVersion: 131621
 --- !u!114 &42411174634105933
 MonoBehaviour:
@@ -1037,7 +1038,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4000
+  Length: 2500
 --- !u!114 &5303604604530333896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1066,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3259
+--- !u!114 &5503527091489392222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TOKEN MOVEMENT
+  m_EditorClassIdentifier: 
+  Path: event:/TOKEN MOVEMENT
+  Guid:
+    Data1: -1822008150
+    Data2: 1274413352
+    Data3: 311989685
+    Data4: -1823688823
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 334
 --- !u!114 &6160191681341958999
 MonoBehaviour:
   m_ObjectHideFlags: 0

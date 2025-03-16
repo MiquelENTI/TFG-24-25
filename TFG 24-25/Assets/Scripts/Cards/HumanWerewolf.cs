@@ -53,17 +53,17 @@ public class HumanWerewolf : Character
         
     }
 
-    //Implementació del so en relacio al SoundManager 
+    /*Implementació del so en relacio al SoundManager 
     protected override void OnMovementSFX()
     {
 
     }
     protected override void AttackSFX()
     {
-        SoundManager.Instance.PlaySFX(017, token.transform.position);
+        
     }
     protected override void OnSpawnSFX()
     {
-        SoundManager.Instance.PlaySFX(017, token.transform.position);
-    }
+        
+    }*/
 }

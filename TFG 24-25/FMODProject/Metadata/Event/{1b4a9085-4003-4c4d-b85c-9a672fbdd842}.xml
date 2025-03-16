@@ -81,10 +81,14 @@
 		</relationship>
 		<relationship name="output">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
 =======
 			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{bd1f8eb7-753f-4b34-98bb-909eea7aa108}" />

@@ -64,10 +64,14 @@
 		</relationship>
 		<relationship name="output">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
 =======
 			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ec149ef1-f4f3-4caa-afc2-c573e443c96e}" />
@@ -257,20 +261,27 @@
 		</property>
 		<property name="maximumDistance">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2</value>
 =======
 			<value>0.600000024</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>2</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		<property name="soundSize">
 			<value>13</value>
 		</property>

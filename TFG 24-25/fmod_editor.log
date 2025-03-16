@@ -6,7 +6,7 @@
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x40aee8008 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x416d69008 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,4 +15,152 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::initThread                       : Init FMOD profiler thread (recv). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] Thread::initThread                       : Init FMOD profiler thread (send). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] LiveUpdate::clientConnected              : client = 0x33bd33e08
+[LOG] LiveUpdate::readPacket                   : Recieved init packet from client 0x33bd33e08
+[LOG] LiveUpdate::readPacket                   : Accepting init message for client 0x33bd33e08
+[LOG] LiveUpdate::transitionToConnected        : 
+[LOG] Manager::sendConnectTimeHash             : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::acceptInitPacket             : Client 0x33bd33e08 connected, entering connected state
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40f960568
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Fantasia_Turtle_Turtle_00', format=5, channels=1, frequency=48000, lengthbytes=36928, lengthpcm=216000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.366606.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40e5fa8d8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='479434-Moving_King_01', format=5, channels=2, frequency=48000, lengthbytes=6176, lengthpcm=34743, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.253711.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40e5fa8d8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='479431-Moving_Castle-Rook_04', format=5, channels=2, frequency=48000, lengthbytes=16032, lengthpcm=84427, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.540610.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40e5fa8d8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='479429-Moving_Castle-Rook_02', format=5, channels=2, frequency=48000, lengthbytes=22112, lengthpcm=117256, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.661788.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40e5fa8d8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='479202-Bishop_Capturing_A_Knight_With_Movements_02', format=5, channels=2, frequency=48000, lengthbytes=17536, lengthpcm=81711, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.617564.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7441312
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 74784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x330b227f4
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x3da47b338
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x3da47b408
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x3da47b444
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x3da47b514
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x40e5fa8d8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='479423-Moving_Bishop_01', format=5, channels=2, frequency=48000, lengthbytes=13440, lengthpcm=71544, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.622743.
+[LOG] SoundI::release                          : TAVERNA (0x41003cc18)
+[LOG] SoundI::release                          :     TAVERNA (0x40a244258)
+[LOG] SoundI::release                          :     TAVERNA (0x40a2443e8)
+[LOG] SoundI::release                          :  (0x40f95fe98)
+[LOG] SoundI::release                          :     Fantasia_Turtle_Turtle_00 (0x40f960cf8)
+[LOG] SoundI::release                          :  (0x408532e98)
+[LOG] SoundI::release                          :     479429-Moving_Castle-Rook_02 (0x40ca36958)
+[LOG] SoundI::release                          :  (0x4085e3468)
+[LOG] SoundI::release                          :     479202-Bishop_Capturing_A_Knight_With_Movements_02 (0x40faeffa8)
+[LOG] SoundI::release                          :  (0x40c2d1428)
+[LOG] SoundI::release                          :     479423-Moving_Bishop_01 (0x40fa8e3c8)
+[LOG] SoundI::release                          :  (0x400963688)
+[LOG] SoundI::release                          :     479434-Moving_King_01 (0x408eb1c68)
+[LOG] SoundI::release                          :  (0x4085d8398)
+[LOG] SoundI::release                          :     479431-Moving_Castle-Rook_04 (0x408dc9d08)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

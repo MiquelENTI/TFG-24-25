@@ -63,10 +63,14 @@
 		</relationship>
 		<relationship name="output">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
 =======
 			<destination>{7153cdae-9a69-4eef-a3ec-18fe710bda09}</destination>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<destination>{1d745a17-85e0-4c58-92a3-0757f1d76ce3}</destination>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b954bb76-80c7-48db-b2fc-233a8f39cfbe}" />
@@ -104,10 +108,14 @@
 	<object class="SingleSound" id="{4d266950-be8d-4576-a881-7805f8c07228}">
 		<property name="length">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2.5</value>
 =======
 			<value>4</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>2.5</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<relationship name="modulators">
 			<destination>{662c2017-324d-4535-8101-eab31f3b885e}</destination>
@@ -124,11 +132,17 @@
 	</object>
 	<object class="EventMixerGroup" id="{a4e4ed08-46f6-416e-976b-895dc1c66b1d}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="volume">
 			<value>5.5</value>
 		</property>
 =======
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+		<property name="volume">
+			<value>5.5</value>
+		</property>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -187,20 +201,27 @@
 		</property>
 		<property name="maximumDistance">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2</value>
 =======
 			<value>0.600000024</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>2</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 	</object>
 	<object class="AutomationPoint" id="{9cdaa875-46b9-492e-8edd-3d660abe93eb}">
 		<property name="position">
@@ -224,10 +245,14 @@
 	<object class="AutomationPoint" id="{e4080975-3dcb-4d61-9470-d3fa0333cbb6}">
 		<property name="position">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2</value>
 =======
 			<value>3.5</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>2</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -239,10 +264,14 @@
 	<object class="AutomationPoint" id="{9ed85bbf-50ed-4bce-9279-0ce27de5bb0d}">
 		<property name="position">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2.5</value>
 =======
 			<value>4</value>
 >>>>>>> 77e0364 (Implementació de SFX)
+=======
+			<value>2.5</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<property name="value">
 			<value>0</value>

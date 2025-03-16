@@ -317,8 +317,8 @@ public class Character
             //Debug.Log("CellToMove After");
             //cellToMove.PrintStatus();
 
-            return true;
             OnMovementSFX();
+            return true;
         }
         else
         {
@@ -461,15 +461,17 @@ public class Character
     //Implementació del so general per a cartes no identificades 
     protected virtual void OnMovementSFX()
     {
-        Debug.Log("OnMovementSFX");
+        SoundManager.Instance.PlaySFX(003000002, token.transform.position);
+
     }
+        
     protected virtual void AttackSFX()
     {
-        Debug.Log("AttackSFX");
+        SoundManager.Instance.PlaySFX(003000000, token.transform.position);
     }
+    
     protected virtual void OnSpawnSFX()
     {
-        Debug.Log("OnSpawnSFX");
+        SoundManager.Instance.PlaySFX(003000001, token.transform.position);
     }
-
 }

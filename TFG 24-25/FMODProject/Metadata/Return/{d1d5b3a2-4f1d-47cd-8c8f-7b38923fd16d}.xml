@@ -27,6 +27,7 @@
 	<object class="SFXReverbEffect" id="{a7b4f214-ae6d-41bf-a11a-c50dbdc51b79}">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="decayTime">
 			<value>120</value>
 		</property>
@@ -82,46 +83,54 @@
 		</property>
 		<property name="dryLevel">
 			<value>-80</value>
+=======
+		<property name="decayTime">
+			<value>120</value>
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		</property>
 		<relationship name="automators">
-			<destination>{ed007e30-87a3-40f2-91f2-06a48781adf0}</destination>
+			<destination>{4df99bd5-121b-433e-ac45-dfdf2bfad85d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d8995022-5418-4004-bd81-72e4989008ae}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f6bca3b (FMOD_IMPLEMENTATION)
 =======
 	<object class="Automator" id="{ed007e30-87a3-40f2-91f2-06a48781adf0}">
+=======
+	<object class="Automator" id="{4df99bd5-121b-433e-ac45-dfdf2bfad85d}">
+>>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
 		<property name="nameOfPropertyBeingAutomated">
 			<value>decayTime</value>
 		</property>
 		<relationship name="automationCurves">
-			<destination>{8ed4245a-1b05-4538-a4f5-cf68e914a752}</destination>
+			<destination>{647c97c5-6620-47f0-8cfc-d310b11c4c44}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationCurve" id="{8ed4245a-1b05-4538-a4f5-cf68e914a752}">
+	<object class="AutomationCurve" id="{647c97c5-6620-47f0-8cfc-d310b11c4c44}">
 		<relationship name="parameter">
 			<destination>{55c6a9a9-5637-470f-b511-8d53149c4c00}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{9119d7ac-6c14-4481-99cb-ecb2ce7927b7}</destination>
-			<destination>{9912c77f-1319-479d-8923-e4f7df08554f}</destination>
+			<destination>{22b51c9b-074d-4c9c-bd4d-35aadfdaa3bc}</destination>
+			<destination>{d5878539-4f44-48df-bda7-ce0c862f7bf5}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationPoint" id="{9119d7ac-6c14-4481-99cb-ecb2ce7927b7}">
+	<object class="AutomationPoint" id="{22b51c9b-074d-4c9c-bd4d-35aadfdaa3bc}">
 		<property name="position">
-			<value>5</value>
+			<value>0</value>
 		</property>
 		<property name="value">
 			<value>5000</value>
 		</property>
 	</object>
-	<object class="AutomationPoint" id="{9912c77f-1319-479d-8923-e4f7df08554f}">
+	<object class="AutomationPoint" id="{d5878539-4f44-48df-bda7-ce0c862f7bf5}">
 		<property name="position">
-			<value>0</value>
+			<value>5</value>
 		</property>
 		<property name="value">
-			<value>100</value>
+			<value>20000</value>
 		</property>
 	</object>
 >>>>>>> a42ee89 (Fmod Refet)

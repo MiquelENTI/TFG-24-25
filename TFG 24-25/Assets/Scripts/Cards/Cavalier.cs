@@ -28,11 +28,17 @@ public class Cavalier : Character
         base.OnDeath(attacker);
         //stats.manaCost++;
     }
-      protected override void OnSpawnSFX()
+    /*Implementació del so en relacio al SoundManager 
+    protected override void OnMovementSFX()
     {
-        base.OnSpawnSFX();
-        SoundManager.Instance.PlaySFX(013, token.transform.position);
-        Debug.Log("Distancia: " + Vector3.Distance(Camera.main.transform.localPosition, token.transform.position));
-        Debug.Log(token.transform.position);
+
     }
+    protected override void AttackSFX()
+    {
+        
+    }
+    protected override void OnSpawnSFX()
+    {
+        
+    }*/
 }
