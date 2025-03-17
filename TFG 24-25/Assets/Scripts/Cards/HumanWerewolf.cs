@@ -52,4 +52,11 @@ public class HumanWerewolf : Character
         }
         
     }
+
+    //Implementació del so general per a cartes no identificades 
+        
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003015002, token.transform.position);
+    }
 }

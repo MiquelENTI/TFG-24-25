@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Globalization;
+using UnityEditor.Compilation;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 
 public enum MovementType { Basic, Diagonal, Omni}
-
 public enum TeamType { RED = 0, BLUE = 1}
 
 public struct CharacterStats
@@ -207,7 +207,7 @@ public class Character
         }
         else
         {
-            Debug.LogError("No se encontró el GameObject 'ScoreManager' en la escena.");
+            Debug.LogError("No se encontrï¿½ el GameObject 'ScoreManager' en la escena.");
         }
         playerStats = PlayerStats.Instance;
         stats = newStats;
@@ -284,8 +284,10 @@ public class Character
             SetOnTileId(cellToMove.GetId());
             //Debug.Log("ONTILE: " + onTile);
             MoveToken(cellToMove.GetPosition());
-
+            
             cellToMove.SetCharacter(this);
+
+            OnSpawnSFX();
         }
     }
     
@@ -315,6 +317,7 @@ public class Character
             //Debug.Log("CellToMove After");
             //cellToMove.PrintStatus();
 
+            OnMovementSFX();
             return true;
         }
         else
@@ -402,6 +405,8 @@ public class Character
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;
 
+        AttackSFX();
+
         enemy.OnAttack(this);
         if(enemy.stats.hp <= 0)
         {
@@ -452,5 +457,21 @@ public class Character
     public void ApplyDOT()
     {
 
+    }
+    //ImplementaciÃ³ del so general per a cartes no identificades 
+    protected virtual void OnMovementSFX()
+    {
+        SoundManager.Instance.PlaySFX(003000002, token.transform.position);
+
+    }
+        
+    protected virtual void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003000000, token.transform.position);
+    }
+    
+    protected virtual void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003000001, token.transform.position);
     }
 }

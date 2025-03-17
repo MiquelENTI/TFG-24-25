@@ -28,4 +28,9 @@ public class Cavalier : Character
         base.OnDeath(attacker);
         //stats.manaCost++;
     }
+     //Implementació del so general per a cartes no identificades 
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003016002, token.transform.position);
+    }
 }

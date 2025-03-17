@@ -28,4 +28,16 @@ public class Medusa : Character
 
         base.OnDeath(attacker);
     }
+  
+  //Implementació del so general per a cartes no identificades 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003010001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003010002, token.transform.position);
+    }
 }

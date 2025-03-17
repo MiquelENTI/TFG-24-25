@@ -32,4 +32,16 @@ public class Turtle : Character
 
         return true;
     }
+  
+    //Implementació del so general per a cartes no identificades 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003006001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003006002, token.transform.position);
+    }
 }

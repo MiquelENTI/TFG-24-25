@@ -15,4 +15,15 @@ public class Fly : Character
 
         return true;
     }
+    //Implementació del so general per a cartes no identificades 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003005001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003005001, token.transform.position);
+    }
 }

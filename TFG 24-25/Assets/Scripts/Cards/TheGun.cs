@@ -44,4 +44,16 @@ public class TheGun : Character
 
         return true;
     }
+   
+     //Implementació del so general per a cartes no identificades 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003014001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003014002, token.transform.position);
+    }
 }

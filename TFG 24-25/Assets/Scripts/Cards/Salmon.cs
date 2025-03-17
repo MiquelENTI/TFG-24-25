@@ -15,4 +15,7 @@ public class Salmon : Character
         BypassMovement(enemy.GetOnTileId());
         ReceiveDamage(1);
     }
+     
+
 }
+ 
