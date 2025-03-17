@@ -4453,7 +4453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04e6445dbef3404ab6d649cdd8e14fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 4894877133841640924, guid: 75a857df28b36234fb4910db3cb799b1, type: 3}
+  playerPrefab: {fileID: 4894877133841640924, guid: fc8c501390fdd444989696956514bb92, type: 3}
   spawnPositionPlayer1: {x: 0.29824275, y: 1.236404, z: -1.323052}
   spawnPositionPlayer2: {x: 0.4257408, y: 1.236404, z: 0.643667}
   turnManager: {fileID: 1256807049}
