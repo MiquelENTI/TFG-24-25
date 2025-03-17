@@ -11,6 +11,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene(2);
+    }
 
     public void ExitGame()
     {
