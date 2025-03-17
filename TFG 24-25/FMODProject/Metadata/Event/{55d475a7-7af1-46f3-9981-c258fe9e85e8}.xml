@@ -304,6 +304,7 @@
 		</property>
 		<property name="maximumDistance">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>2</value>
 =======
 		<property name="maximumDistance">
@@ -319,6 +320,9 @@
 =======
 			<value>1</value>
 >>>>>>> 3144adf (WIP on feature/FMOD)
+=======
+			<value>2</value>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

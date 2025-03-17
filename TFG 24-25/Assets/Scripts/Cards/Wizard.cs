@@ -15,4 +15,16 @@ public class Wizard : Character
     {
         // Launch Fireball
     }
+    //Implementació del so general per a cartes no identificades 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003001001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003001002, token.transform.position);
+    }
+
 }

@@ -238,8 +238,12 @@
 			<value>0.099999994</value>
 		</property>
 		<property name="maximumDistance">
+<<<<<<< HEAD
 			<value>0.600000024</value>
 >>>>>>> 28c0d1c (Musica de Fons)
+=======
+			<value>2</value>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

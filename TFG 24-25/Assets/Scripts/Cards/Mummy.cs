@@ -19,17 +19,15 @@ public class Mummy : Character
         return true;
     }
    
-   /*Implementació del so en relacio al SoundManager 
-    protected override void OnMovementSFX()
-    {
-
-    }
+    //Implementació del so general per a cartes no identificades 
+        
     protected override void AttackSFX()
     {
-        
+        SoundManager.Instance.PlaySFX(003013001, token.transform.position);
     }
+    
     protected override void OnSpawnSFX()
     {
-        
-    }*/
+        SoundManager.Instance.PlaySFX(003013002, token.transform.position);
+    }
 }

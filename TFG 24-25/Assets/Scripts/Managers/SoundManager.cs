@@ -27,8 +27,8 @@ public class SoundManager : Singleton<SoundManager>
            {003000002,"event:/TOKEN MOVEMENT"},
 
            // Wizard
-           {003001001, ""},
-           {003001002, ""},
+           {003001001, "event:/SFX/UI/CARDS/WIZZART/Wizzart_attack"},
+           {003001002, "event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown"},
            {003001003, ""},
 
            // Cavalier
@@ -38,7 +38,7 @@ public class SoundManager : Singleton<SoundManager>
 
            // Salmon
            {003003001, "event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
-           {003003002, ""},
+           {003003002, "event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
            {003003003, ""},
 
            // Flash

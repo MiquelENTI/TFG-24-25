@@ -14,17 +14,15 @@ public class Chicken : Character
         attacker.ReceiveDamage(counterDamage);
     }
 
-    /*Implementació del so en relacio al SoundManager 
-    protected override void OnMovementSFX()
-    {
-
-    }
+    //Implementació del so general per a cartes no identificades 
+        
     protected override void AttackSFX()
     {
-        
+        SoundManager.Instance.PlaySFX(003022001, token.transform.position);
     }
+    
     protected override void OnSpawnSFX()
     {
-        
-    }*/
+        SoundManager.Instance.PlaySFX(003022002, token.transform.position);
+    }
 }

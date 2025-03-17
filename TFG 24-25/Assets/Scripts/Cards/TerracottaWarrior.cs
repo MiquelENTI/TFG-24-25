@@ -22,17 +22,10 @@ public class TerracottaWarrior : Character
         Heal(pointsScored);
     }
 
-    /*Implementació del so en relacio al SoundManager 
-    protected override void OnMovementSFX()
-    {
-
-    }
-    protected override void AttackSFX()
-    {
+    //Implementació del so general per a cartes no identificades 
         
-    }
     protected override void OnSpawnSFX()
     {
-        
-    }*/
+        SoundManager.Instance.PlaySFX(003017002, token.transform.position);
+    }
 }

@@ -123,11 +123,17 @@
 	</object>
 	<object class="EventMixerMaster" id="{c576002f-4095-4cd0-b7c9-9b9267f45c4f}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="volume">
 			<value>1</value>
 		</property>
 =======
 >>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
+=======
+		<property name="volume">
+			<value>1</value>
+		</property>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		<relationship name="effectChain">
 			<destination>{3f46d079-c712-44ea-b683-5aa164f37c94}</destination>
 		</relationship>
@@ -318,11 +324,17 @@
 	</object>
 	<object class="EventMixerGroup" id="{4842d0c6-16b4-4931-87b1-b8c61eb647eb}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<property name="volume">
 			<value>1</value>
 		</property>
 =======
 >>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
+=======
+		<property name="volume">
+			<value>1</value>
+		</property>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		<property name="name">
 			<value>Audio 6</value>
 		</property>
@@ -464,6 +476,7 @@
 	<object class="SpatialiserEffect" id="{d2011a10-2605-43de-bd9d-ed741e46db3a}">
 		<property name="minimumDistance">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
@@ -474,6 +487,12 @@
 		<property name="maximumDistance">
 			<value>2.60000014</value>
 >>>>>>> 9e53fe8 (Modificació Soundmanager + Sons Standard)
+=======
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>2.4000001</value>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</property>
 		<property name="overrideRange">
 			<value>true</value>

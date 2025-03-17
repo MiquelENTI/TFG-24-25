@@ -123,10 +123,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638777635876523276
+  lastModified: 638778471251144204
   FileSizes:
   - Name: Desktop
-    Value: 7516096
+    Value: 7822944
   Exists: 1
 --- !u!114 &-6833839539742696063
 MonoBehaviour:
@@ -308,7 +308,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7461150170883479937}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -329,10 +329,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638777635876542156
+  lastModified: 638778471251167108
   FileSizes:
   - Name: Desktop
-    Value: 2584
+    Value: 2696
   Exists: 1
 --- !u!114 &-4422700652043900420
 MonoBehaviour:
@@ -442,6 +442,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1966
+--- !u!114 &-2947849376421128937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
+  Guid:
+    Data1: -1997492228
+    Data2: 1136021068
+    Data3: -1744830064
+    Data4: -986401298
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
 --- !u!114 &-1935061830582507614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +496,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &-1431352333222560926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
+  Guid:
+    Data1: -63004015
+    Data2: 1125522369
+    Data3: -316979547
+    Data4: 1111657120
+  Banks:
+  - {fileID: -7461150170883479937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
 --- !u!114 &-1056750833154121989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,13 +680,15 @@ MonoBehaviour:
   - {fileID: -6250765082595438276}
   - {fileID: -9201679933915151797}
   - {fileID: 5503527091489392222}
+  - {fileID: -1431352333222560926}
+  - {fileID: -2947849376421128937}
   EditorParameters:
   - {fileID: -5325660656478526003}
   MasterBanks:
   - {fileID: -7461150170883479937}
   StringsBanks:
   - {fileID: -4698760797654769124}
-  cacheTime: 638777635876542156
+  cacheTime: 638778471251167108
   cacheVersion: 131621
 --- !u!114 &42411174634105933
 MonoBehaviour:

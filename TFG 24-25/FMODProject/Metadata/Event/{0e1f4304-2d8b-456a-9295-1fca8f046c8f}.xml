@@ -8,6 +8,7 @@
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
+<<<<<<< HEAD
 =======
 			<value>FLY_ATTACK</value>
 =======
@@ -17,6 +18,8 @@
 		<property name="outputFormat">
 			<value>0</value>
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</property>
 		<relationship name="folder">
 			<destination>{cd2893f5-42c9-49da-9dd5-2f442e91174c}</destination>
@@ -168,9 +171,13 @@
 		<relationship name="effects">
 			<destination>{91a01fdb-7d3c-43fc-8997-067de9cca4b6}</destination>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<destination>{dddc509a-1787-42a5-88da-deec8251131f}</destination>
 =======
 >>>>>>> 76afe64 (IMPLEMENTATION OF SOUNDCART)
+=======
+			<destination>{dddc509a-1787-42a5-88da-deec8251131f}</destination>
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{36a03fb8-bbfb-45d3-8259-2efc0896f6cf}" />
@@ -276,6 +283,9 @@
 	<object class="MixerBusPanner" id="{af7e7181-6365-421d-89ae-7a793089b73c}" />
 	<object class="MixerBusFader" id="{91a01fdb-7d3c-43fc-8997-067de9cca4b6}" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6118d96 (Sons Cartes individuals)
 	<object class="SpatialiserEffect" id="{dddc509a-1787-42a5-88da-deec8251131f}">
 		<property name="minimumDistance">
 			<value>0</value>

@@ -59,6 +59,7 @@
 		</property>
 		<property name="value">
 			<value>2000</value>
+<<<<<<< HEAD
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d5878539-4f44-48df-bda7-ce0c862f7bf5}">
@@ -123,6 +124,8 @@
 		</property>
 		<property name="value">
 			<value>5000</value>
+=======
+>>>>>>> 6118d96 (Sons Cartes individuals)
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d5878539-4f44-48df-bda7-ce0c862f7bf5}">
@@ -130,7 +133,7 @@
 			<value>5</value>
 		</property>
 		<property name="value">
-			<value>20000</value>
+			<value>8750</value>
 		</property>
 	</object>
 >>>>>>> a42ee89 (Fmod Refet)

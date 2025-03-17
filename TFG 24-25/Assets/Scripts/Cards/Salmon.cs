@@ -16,20 +16,6 @@ public class Salmon : Character
         ReceiveDamage(1);
     }
      
-     
-   /*Implementació del so en relacio al SoundManager 
-    protected override void OnMovementSFX()
-    {
-
-    }
-    protected override void AttackSFX()
-    {
-        
-    }
-    protected override void OnSpawnSFX()
-    {
-        
-    }*/
 
 }
  
