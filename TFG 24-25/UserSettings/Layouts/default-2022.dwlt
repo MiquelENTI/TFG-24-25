@@ -20,10 +20,14 @@ MonoBehaviour:
     height: 997
   m_ShowMode: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Hierarchy
 =======
   m_Title: Project
 >>>>>>> origin/feature/Modelos3D
+=======
+  m_Title: Scene
+>>>>>>> origin/Sergi
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -113,11 +117,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
+<<<<<<< HEAD
   - {fileID: 12}
+=======
+  - {fileID: 11}
+>>>>>>> origin/Sergi
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 947
   m_MinSize: {x: 400, y: 100}
@@ -128,6 +137,14 @@ MonoBehaviour:
 =======
   controlID: 115
 >>>>>>> origin/feature/Modelos3D
+=======
+    width: 2560
+    height: 1307.3334
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 43
+>>>>>>> origin/Sergi
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,15 +159,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
-<<<<<<< HEAD
-  - {fileID: 11}
-=======
   - {fileID: 10}
+<<<<<<< HEAD
 >>>>>>> origin/feature/Modelos3D
+=======
+>>>>>>> origin/Sergi
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1411
 =======
@@ -165,6 +183,14 @@ MonoBehaviour:
 =======
   controlID: 56
 >>>>>>> origin/feature/Modelos3D
+=======
+    width: 1961.3334
+    height: 1307.3334
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 44
+>>>>>>> origin/Sergi
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,13 +207,17 @@ MonoBehaviour:
   - {fileID: 8}
   - {fileID: 9}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 10}
 =======
 >>>>>>> origin/feature/Modelos3D
+=======
+>>>>>>> origin/Sergi
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1411
     height: 602
@@ -203,6 +233,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 57
 >>>>>>> origin/feature/Modelos3D
+=======
+    width: 1961.3334
+    height: 877.3333
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 45
+>>>>>>> origin/Sergi
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,8 +259,13 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 452
     height: 602
+=======
+    width: 286.66666
+    height: 877.3333
+>>>>>>> origin/Sergi
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
@@ -258,6 +301,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 452
     y: 0
     width: 478
@@ -271,13 +315,26 @@ MonoBehaviour:
     y: 0
     width: 1064
     height: 675
+=======
+    x: 286.66666
+    y: 0
+    width: 1674.6667
+    height: 877.3333
+>>>>>>> origin/Sergi
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
+<<<<<<< HEAD
   - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
+=======
+  - {fileID: 15}
+  - {fileID: 12}
+  m_Selected: 0
+  m_LastSelected: 1
+>>>>>>> origin/Sergi
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -294,18 +351,28 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 675
     width: 1593
     height: 272
+=======
+    y: 877.3333
+    width: 1961.3334
+    height: 430.00006
+>>>>>>> origin/Sergi
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 16}
   m_Panes:
+<<<<<<< HEAD
 >>>>>>> origin/feature/Modelos3D
+=======
+>>>>>>> origin/Sergi
   - {fileID: 16}
   - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &10
 =======
@@ -416,6 +483,9 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
+=======
+--- !u!114 &11
+>>>>>>> origin/Sergi
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,6 +500,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1411
     y: 0
     width: 509
@@ -439,6 +510,17 @@ MonoBehaviour:
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
+=======
+    x: 1961.3334
+    y: 0
+    width: 598.6666
+    height: 1307.3334
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+>>>>>>> origin/Sergi
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &13
@@ -461,10 +543,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 930
     y: 73
     width: 479
     height: 581
+=======
+    x: 286.6667
+    y: 72.66667
+    width: 1673.3334
+    height: 855.6667
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -517,16 +606,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 479
       height: 560
     m_Scale: {x: 0.24947916, y: 0.24947916}
     m_Translation: {x: 239.5, y: 280}
+=======
+      width: 1673.3334
+      height: 834.6667
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 836.6667, y: 417.33334}
+>>>>>>> origin/Sergi
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -960
       y: -1122.3383
       width: 1920
@@ -534,6 +631,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.24947916
   m_LastWindowPixelSize: {x: 479, y: 581}
+=======
+      x: -836.6667
+      y: -417.33334
+      width: 1673.3334
+      height: 834.6667
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 2510, y: 1283.5}
+>>>>>>> origin/Sergi
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -560,9 +666,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 73
     width: 451
     height: 581
+=======
+    y: 72.66667
+    width: 285.66666
+    height: 856.3333
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -576,9 +688,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: b8240200
       m_LastClickedID: 140472
       m_ExpandedIDs: 3e8fe7ffe88fe7ff3a94e7ff469ee7fff09ee7ff66a3e7ff5e49e8ff084ae8ff7a4ee8ffb084e8ff5a85e8ffc889e8ff148ee8fffcc4efffa6c5efff18caefff385efdffe25efdff5063fdff7e5dfeff285efeff9a62feff3a0cffffe40cffff5211ffff104cffffba4cffff2851ffff1cfbffff
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: e254ffffa057ffffa4ce0000bcce0000dcce000062cf0000
+>>>>>>> origin/Sergi
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -624,7 +742,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
+<<<<<<< HEAD
     width: 451
+=======
+    width: 418
+>>>>>>> origin/Sergi
     height: 581
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -638,8 +760,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d779268e
-    m_LastClickedID: -1910081065
+    m_SelectedIDs: 
+    m_LastClickedID: 0
     m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -693,6 +815,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 452
     y: 73
     width: 476
@@ -703,6 +826,12 @@ MonoBehaviour:
     width: 1062
     height: 654
 >>>>>>> origin/feature/Modelos3D
+=======
+    x: 286.6667
+    y: 72.66667
+    width: 1672.6667
+    height: 856.3333
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -718,10 +847,14 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffset: {x: -166, y: -26}
 =======
       snapOffset: {x: -171, y: -26}
 >>>>>>> origin/feature/Modelos3D
+=======
+      snapOffset: {x: -166, y: -26.666687}
+>>>>>>> origin/Sergi
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -1073,7 +1206,11 @@ MonoBehaviour:
       sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+<<<<<<< HEAD
   m_Gizmos: 0
+=======
+  m_Gizmos: 1
+>>>>>>> origin/Sergi
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 0
   m_SceneLighting: 1
@@ -1083,6 +1220,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 589.6595, y: 465.9497, z: 155.01685}
     speed: 2
     m_Value: {x: 589.6595, y: 465.9497, z: 155.01685}
@@ -1091,6 +1229,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -33.380665, y: -20.2442, z: 11.5805435}
 >>>>>>> origin/feature/Modelos3D
+=======
+    m_Target: {x: 807.86584, y: 198.45639, z: -1295.6354}
+    speed: 2
+    m_Value: {x: 807.86584, y: 198.45639, z: -1295.6354}
+>>>>>>> origin/Sergi
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1118,9 +1261,9 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1132,6 +1275,7 @@ MonoBehaviour:
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_ShowGrid: 0
     m_GridAxis: 1
@@ -1157,11 +1301,25 @@ MonoBehaviour:
     speed: 2
     m_Value: 21.475266
 >>>>>>> origin/feature/Modelos3D
+=======
+    m_ShowGrid: 1
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: 0.08110218, y: -0.00588435, z: -0.00047075222, w: -0.99671715}
+    speed: 2
+    m_Value: {x: 0.081100464, y: -0.0043891417, z: -0.00034908843, w: -0.99669623}
+  m_Size:
+    m_Target: 0.04282622
+    speed: 2
+    m_Value: 0.04484421
+>>>>>>> origin/Sergi
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Speed: 0.36082
     m_SpeedNormalized: 0.17999999
@@ -1169,6 +1327,10 @@ MonoBehaviour:
     m_Speed: 0.36081997
     m_SpeedNormalized: 0.17999998
 >>>>>>> origin/feature/Modelos3D
+=======
+    m_Speed: 2
+    m_SpeedNormalized: 1
+>>>>>>> origin/Sergi
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1180,10 +1342,14 @@ MonoBehaviour:
     m_DynamicClip: 1
     m_OcclusionCulling: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSceneViewRotation: {x: -0.23585203, y: -0.18038823, z: 0.044614688, w: -0.9538702}
 =======
   m_LastSceneViewRotation: {x: 0.374017, y: -0.054618496, z: 0.022537898, w: 0.9248992}
 >>>>>>> origin/feature/Modelos3D
+=======
+  m_LastSceneViewRotation: {x: 0.17286038, y: -0.5314461, z: 0.111515775, w: 0.82152337}
+>>>>>>> origin/Sergi
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -1261,6 +1427,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb55afc2c109f42f2af37941a8c9300e, type: 3}
   m_Name: 
@@ -1407,6 +1574,8 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+=======
+>>>>>>> origin/Sergi
   m_EditorHideFlags: 1
   m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -1421,6 +1590,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 675
     width: 1410
     height: 324
@@ -1429,6 +1599,11 @@ MonoBehaviour:
     width: 1592
     height: 251
 >>>>>>> origin/feature/Modelos3D
+=======
+    y: 950
+    width: 1960.3334
+    height: 409.00006
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1451,10 +1626,14 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts/Cards
 =======
     - Assets/Models/NewTablle/Table3.0
 >>>>>>> origin/feature/Modelos3D
+=======
+    - Assets/Resources/UI/Menu UI/buttons/clicked
+>>>>>>> origin/Sergi
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1463,12 +1642,17 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/Scripts/Cards
+=======
+  - Assets/Resources/UI/Menu UI/buttons/clicked
+>>>>>>> origin/Sergi
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lokyy\Desktop\Repos Git\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 26890000
     m_LastClickedID: 35110
@@ -1485,6 +1669,12 @@ MonoBehaviour:
     m_LastClickedID: 38188
     m_ExpandedIDs: 0000000050910000529100005491000056910000589100005a9100005c9100005e91000060910000629100006491000066910000689100006a9100006c9100006e91000070910000729100007491000076910000789100007a9100007c9100007e91000080910000829100008491000086910000889100008a9100008c91000080940000c29400002c95000000ca9a3bffffff7f
 >>>>>>> origin/feature/Modelos3D
+=======
+    scrollPos: {x: 0, y: 170.33331}
+    m_SelectedIDs: 9ecf0000
+    m_LastClickedID: 53150
+    m_ExpandedIDs: 00000000eccd0000eecd0000f0cd000012ce000092cf000096cf00009acf000000ca9a3b
+>>>>>>> origin/Sergi
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1513,10 +1703,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000006a88000000ca9a3bffffff7f
 =======
     m_ExpandedIDs: 0000000050910000529100005491000056910000589100005a9100005c9100005e91000060910000629100006491000066910000689100006a9100006c9100006e91000070910000729100007491000076910000789100007a9100007c9100007e91000080910000829100008491000086910000889100008a9100008c910000
 >>>>>>> origin/feature/Modelos3D
+=======
+    m_ExpandedIDs: 00000000eccd0000eecd0000f0cd0000
+>>>>>>> origin/Sergi
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1545,10 +1739,14 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000606a0000d66600008a610000186300002a630000e08200002c83000000000000
 =======
     m_ExpandedInstanceIDs: c6230000c2690000f26a000000000000f09e0000469f0000
 >>>>>>> origin/feature/Modelos3D
+=======
+    m_ExpandedInstanceIDs: c6230000606a0000d66600008a610000186300002a63000000000000
+>>>>>>> origin/Sergi
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1580,11 +1778,11 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 210
-<<<<<<< HEAD
---- !u!114 &19
-=======
 --- !u!114 &17
+<<<<<<< HEAD
 >>>>>>> origin/feature/Modelos3D
+=======
+>>>>>>> origin/Sergi
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1606,6 +1804,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 675
     width: 1410
     height: 324
@@ -1614,6 +1813,11 @@ MonoBehaviour:
     width: 1356
     height: 251
 >>>>>>> origin/feature/Modelos3D
+=======
+    y: 949.3334
+    width: 1961
+    height: 409.6667
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1624,11 +1828,11 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-<<<<<<< HEAD
---- !u!114 &20
-=======
 --- !u!114 &18
+<<<<<<< HEAD
 >>>>>>> origin/feature/Modelos3D
+=======
+>>>>>>> origin/Sergi
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1649,6 +1853,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1411
     y: 73
     width: 508
@@ -1659,6 +1864,12 @@ MonoBehaviour:
     width: 326
     height: 636
 >>>>>>> origin/feature/Modelos3D
+=======
+    x: 1961.3334
+    y: 72.66667
+    width: 597.6666
+    height: 1286.3334
+>>>>>>> origin/Sergi
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
