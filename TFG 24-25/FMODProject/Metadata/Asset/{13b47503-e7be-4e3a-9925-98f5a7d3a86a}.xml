@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{13b47503-e7be-4e3a-9925-98f5a7d3a86a}">
+		<property name="assetPath">
+			<value>Moviment dels TOKENS/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{13423825-f2d5-46d5-ab0b-82e178c1cecc}</destination>
+		</relationship>
+	</object>
+</objects>

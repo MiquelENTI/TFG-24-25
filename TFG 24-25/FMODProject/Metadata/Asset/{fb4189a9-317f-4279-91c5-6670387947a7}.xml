@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{fb4189a9-317f-4279-91c5-6670387947a7}">
+		<property name="assetPath">
+			<value>ARCHER/ATTACK/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{13423825-f2d5-46d5-ab0b-82e178c1cecc}</destination>
+		</relationship>
+	</object>
+</objects>

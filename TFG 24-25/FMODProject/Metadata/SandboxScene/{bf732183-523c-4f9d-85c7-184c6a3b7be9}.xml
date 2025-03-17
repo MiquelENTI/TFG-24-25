@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SandboxScene" id="{bf732183-523c-4f9d-85c7-184c6a3b7be9}">
+		<property name="name">
+			<value>Mummy</value>
+		</property>
+		<relationship name="folder">
+			<destination>{46a2219d-9b62-4dcf-aa76-73bdbeb63899}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{e73c33a0-a3ed-4f3e-b6f7-f14fc1ee3b2e}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{14e254ca-8d1a-4551-8b27-75d1326dffd6}</destination>
+		</relationship>
+		<relationship name="emitters">
+			<destination>{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}</destination>
+		</relationship>
+	</object>
+	<object class="MarkerTrack" id="{e73c33a0-a3ed-4f3e-b6f7-f14fc1ee3b2e}" />
+	<object class="Timeline" id="{14e254ca-8d1a-4551-8b27-75d1326dffd6}" />
+	<object class="SandboxEmitter" id="{d5705f9f-6b3b-45be-b321-843e1ac5b5f0}">
+		<property name="positionX">
+			<value>0.0703770816</value>
+		</property>
+		<property name="positionZ">
+			<value>0.00722125405</value>
+		</property>
+		<property name="rotationY">
+			<value>91.6138382</value>
+		</property>
+		<relationship name="event">
+			<destination>{c59199ed-8bc6-433b-96d0-fbb457dab06d}</destination>
+		</relationship>
+	</object>
+</objects>
