@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sergi2.unity
     guid: d6fc74f0f292fd64c880022c2e36ecfb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 029eb92f69141e9448dd884a15969c8d
   - enabled: 0
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Unified Scene.unity
     guid: 2a9623a6d3b07034a80a0ac2a4b0975f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 7c24ea02a365862458f684a3333ef834
   m_configObjects: {}
