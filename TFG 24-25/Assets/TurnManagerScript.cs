@@ -24,6 +24,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     int blueMana;
     int redMana;
 
+
+    public ScoreManager scoreManager; 
+    public GameObject finalCanvas;
+    public TMP_Text winnerText;
+
     private void Awake()
     {
         if (!TryGetComponent<PhotonView>(out photonView))
@@ -38,6 +43,33 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         {
             Debug.LogError("El PhotonView no está asignado correctamente en el GameObject");
             return;
+        }
+
+        if (scoreManager == null)
+        {
+            scoreManager = FindObjectOfType<ScoreManager>();
+            if (scoreManager == null)
+            {
+                Debug.LogError("ScoreManager no encontrado en la escena.");
+            }
+        }
+
+        if (finalCanvas == null)
+        {
+            finalCanvas = GameObject.Find("Final Canvas");
+            if (finalCanvas == null)
+            {
+                Debug.LogError("Final Canvas no encontrado en la escena.");
+            }
+        }
+
+        if (winnerText == null && finalCanvas != null)
+        {
+            winnerText = finalCanvas.transform.Find("Winner").GetComponent<TMP_Text>();
+            if (winnerText == null)
+            {
+                Debug.LogError("Winner Text no encontrado como hijo de Final Canvas.");
+            }
         }
     }
 
@@ -88,7 +120,26 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             Debug.Log("isBlueTurn: " + newIsBlue);
             //PlayerStats.Instance.IncreaseTotalMana(1);
             turnCounter++;
-            //turnCounterElement.text = "Turn Number: " + turnCounter;
+            turnCounterElement.text = "Turn Number: " + turnCounter;
+
+            if (turnCounter > 10)
+            {
+                Debug.Log("Blue score is: " + scoreManager.BlueScore);
+                Debug.Log("Red score is: " + scoreManager.RedScore);
+
+                finalCanvas.SetActive(true);
+
+                if (scoreManager.BlueScore > scoreManager.RedScore)
+                {
+                    winnerText.text = "Blue Wins!";
+                    winnerText.color = Color.blue;
+                }
+                else if (scoreManager.RedScore > scoreManager.BlueScore)
+                {
+                    winnerText.text = "Red Wins!";
+                    winnerText.color = Color.red;
+                }
+            }
         }
 
         CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
