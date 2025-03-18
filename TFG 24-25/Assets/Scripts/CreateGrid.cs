@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,10 +14,13 @@ public class CreateGrid : MonoBehaviour
 
     [SerializeField] Vector2 GridSize;
 
-    [SerializeField] GameObject cornerPrefab;
-    [SerializeField] GameObject edgePrefab;
+    [SerializeField] GameObject cornerPointPrefab;
+    [SerializeField] GameObject edgeDarkPrefab;
+    [SerializeField] GameObject edgeWhitePrefab;
+    [SerializeField] GameObject edgePointPrefab;
     [SerializeField] GameObject centralPrefab;
-
+    [SerializeField] GameObject centralPointPrefab;
+    
     void Start()
     {
         InitGrid(GridSize.x,GridSize.y);
@@ -71,20 +75,20 @@ public class CreateGrid : MonoBehaviour
             if (j == 0)
             {
                 // Instantiate Corner TopLeft
-                GameObject obj = Instantiate(cornerPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Corner Top Left";
                 obj.transform.rotation = Quaternion.Euler(0, -90, 0);
             }
             else if (j == columns - 1)
             {
                 // Instantiate Corner TopRight
-                GameObject obj = Instantiate(cornerPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Corner Top Right";
             }
             else
             {
                 // Instantiate SideTop
-                GameObject obj = Instantiate(edgePrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(edgePointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Edge Top";
                 obj.transform.rotation = Quaternion.Euler(0, -90, 0);
             }
@@ -94,21 +98,21 @@ public class CreateGrid : MonoBehaviour
             if (j == 0)
             {
                 // Instantiate Corner BotLeft
-                GameObject obj = Instantiate(cornerPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Corner Bot Left";
                 obj.transform.rotation = Quaternion.Euler(0, -180, 0);
             }
             else if (j == columns - 1)
             {
                 // Instantiate Corner BotRight
-                GameObject obj = Instantiate(cornerPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Corner Bot Right";
                 obj.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
             else
             {
                 // Instantiate SideBot
-                GameObject obj = Instantiate(edgePrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                GameObject obj = Instantiate(edgePointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Edge Bot";
                 obj.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
@@ -116,22 +120,53 @@ public class CreateGrid : MonoBehaviour
         else if (j == 0)
         {
             // Instantiate SideLeft
-            GameObject obj = Instantiate(edgePrefab, position, Quaternion.identity, board.transform.GetChild(0));
-            obj.name = "Edge Left";
-            obj.transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (i == 1 || i == 4) // Dark
+            {
+                GameObject obj = Instantiate(edgeDarkPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Edge Left Dark";
+                obj.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            if (i == 2 || i == 3) // White
+            {
+                GameObject obj = Instantiate(edgeWhitePrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Edge Left White";
+                obj.transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            
         }
         else if (j == columns - 1)
         {
             // Instantiate SideRight
-            GameObject obj = Instantiate(edgePrefab, position, Quaternion.identity, board.transform.GetChild(0));
-            obj.name = "Edge Right";
+            if (i == 1 || i == 4) // Dark
+            {
+                GameObject obj = Instantiate(edgeDarkPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Edge Right Dark";
+            }
+            if (i == 2 || i == 3) // White
+            {
+                GameObject obj = Instantiate(edgeWhitePrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Edge Right White";
+            }
+
         }
-        else 
+        else
         {
-            // Instantiate Inside
-            GameObject obj = Instantiate(centralPrefab, position, Quaternion.identity, board.transform.GetChild(0));
-            obj.name = "Central";
+            Debug.Log("POS: " + i + " " + j);
+            if (i == 1 || i == 4)
+            {
+                // Instantiate Inside
+                GameObject obj = Instantiate(centralPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Central";
+            }
+            else if (i == 2 || i == 3)
+            {
+                // Instantiate Inside
+                GameObject obj = Instantiate(centralPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
+                obj.name = "Central Points";
+            }
         }
+        /*
         
+        */
     }
 }
