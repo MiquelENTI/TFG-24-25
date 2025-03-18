@@ -6,32 +6,32 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CharacterStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
-        { 2, new CharacterStats ("Cavalier", 3, 5, 5, 1, 1, 1, MovementType.Basic, "Puede moverse y atacar en el mismo turno") }, // Cavalier
-        { 3, new CharacterStats ("Salmon", 4, 8, 7, 1, 1, 1, MovementType.Omni, "Al matar a un enemigo, se mueve a la casilla del enemigo y esta pierde 2 hp")  }, // Salmon
+        { 2, new CharacterStats ("Cavalier", 3, 5, 5, 1, 1, 1, MovementType.Basic, "This can move and attack in the same turn.") }, // Cavalier
+        { 3, new CharacterStats ("Salmon", 4, 8, 7, 1, 1, 1, MovementType.Omni, "When this kills an enemy card it moves to that location. Each kill -1 health.")  }, // Salmon
         { 5, new CharacterStats ("Fly",1, 1, 1,  2, 1, 2, MovementType.Omni, "")  }, // Fly
         { 6, new CharacterStats ("Turtle",2, 5, 9, 1, 1, 1, MovementType.Basic, "Se mueve cada dos turnos (se mueve, descansa, se mueve...)") }, // Turtle (WIP)
         { 7, new CharacterStats ("Mimic",2, 3, 2, 1, 1, 2, MovementType.Basic, "Cuando le atacan, se destruyen esta carta y el atacante") }, // Mimic  (WIP)
-        { 10, new CharacterStats("Medusa",3, 3, 6, 1, 1, 1, MovementType.Basic, "Al atacar stunea, al morir esta carta quita stuns de los enemigos atacados") }, // Medusa
-        { 13, new CharacterStats("Mummy",3, 5, 12, 1, 1, 1, MovementType.Basic, "Al moverse pierde 1 hp y 1 dmg") }, // Mummy
-        { 14, new CharacterStats("The Gun",3, 7, 4, 1, 1, 1, MovementType.Omni, "Al atacar se mueve en direccion contraria al ataque") }, // The Gun
-        { 15, new CharacterStats("Human Werewolf",3, 4, 4, 1, 1, 1, MovementType.Basic, "Al moverse se intercambian sus estadisticas") }, // The Gun
+        { 10, new CharacterStats("Medusa",3, 3, 6, 1, 1, 1, MovementType.Basic, "If this attacks an enemy monster put a mark. Cards with this mark cannot move or attack. When this dies remove all marks.") }, // Medusa
+        { 13, new CharacterStats("Mummy",3, 5, 12, 1, 1, 1, MovementType.Basic, "Each time this moves put -1 attack and HP") }, // Mummy
+        { 14, new CharacterStats("The Gun",3, 7, 4, 1, 1, 1, MovementType.Omni, "When this attacks, it moves in the opposite direction.") }, // The Gun
+        { 15, new CharacterStats("Human Werewolf",3, 4, 4, 1, 1, 1, MovementType.Basic, "This is summoned as Human. Every time this moves flip the card. It changes Stats") }, // The Gun
         { 16, new CharacterStats("Death Horseman",3, 12, 2, 1, 1, 1, MovementType.Basic, "") }, // Death Horseman
-        { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, 1, MovementType.Basic, "Al permanecer en una casilla de puntuacion, se cura los puntos conseguidos") }, // Terracotta Warrior
-        { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, 1, MovementType.Basic, "Destruye las cartas a rango basico (aliadas tambien)") }, // Magic Karp
+        { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, 1, MovementType.Basic, "When this scores, it heals as much HP as points scored.") }, // Terracotta Warrior
+        { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, 1, MovementType.Basic, "On Start Turn destroy cards on orthogonal range (allies too)") }, // Magic Karp
         { 21, new CharacterStats("Archer",3, 3, 6,  1, 1, 1, MovementType.Omni, "Te 2 de rang d'atac") }, // Archer
-        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 1, 2, MovementType.Basic, "Al recibir da�o el atacante recibe 5 de da�o") }, // Chicken
-        { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, 1, MovementType.Basic, "INICI DEL TORN: si esta en una casella de puntuaci�, enemics a una casella reben 1 de mal\n\n") }, // Leech
-        { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaci�, fa +2 d'atac\n\n") }, // Berserker
-        { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, 1, MovementType.Basic, "Si esta en una casella de puntuaci�, es cura la quantitat de punts obtinguts\n\n") }, // Hydra
+        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 1, 2, MovementType.Basic, "If this is attacked this does a counter attack of 5 attack.") }, // Chicken
+        { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, 1, MovementType.Basic, "On turn start if this is on a scoring tile, deal 1 damage to all surrounding enemy cards.") }, // Leech
+        { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, 1, MovementType.Basic, "If this is on a scoring tile, +2 attack.") }, // Berserker
+        { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
         
         
-        { 32, new CharacterStats("Kamikaze",2, 9, 3, 1, 1, 2, MovementType.Basic, "Quan mata a un enemic destrueix aquesta carta\n\n") }, // Hydra
+        { 32, new CharacterStats("Kamikaze",2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card it destroys itself.") }, // Hydra
 
-        { 35, new CharacterStats("Dragon",3, 3, 7, 1, 1, 1, MovementType.Basic, "Ataca tambe a les diagonals adjacents de la direccio d'atac\n\n") }, // Hydra
+        { 35, new CharacterStats("Dragon",3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Hydra
     
-        { 37, new CharacterStats("Samurai",3, 5, 7, 1, 1, 1, MovementType.Basic, "Quan mor un aliat, consegueix 1 d'atac, 8 maxim\n\n") }, // Hydra
-        { 38, new CharacterStats("Giant",5, 6, 11, 1, 1, 1, MovementType.Basic, "Quan es mou fa 2 de mal a tots els personatges adjacents\n\n") }, // Hydra
-        { 39, new CharacterStats("Ant",2, 1, 4, 1, 1, 2, MovementType.Omni, "Per cada personatge (aliat o enemic) adjecent rep 1 d'atac\n\n") }, // Hydra
+        { 37, new CharacterStats("Samurai",3, 5, 7, 1, 1, 1, MovementType.Basic, "Quan mor un aliat, consegueix 1 d'atac, 8 maxim") }, // Hydra
+        { 38, new CharacterStats("Giant",5, 6, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Hydra
+        { 39, new CharacterStats("Ant",2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it. (allies and enemies)") }, // Hydra
         
         
 
