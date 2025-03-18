@@ -299,7 +299,7 @@ public class Character
             stats.currentMoves--;
 
             //Debug.Log(teamType.ToString() + " MOOOVE");
-            
+
             CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
             SetOnTileId(cellToMove.GetId());
@@ -322,6 +322,8 @@ public class Character
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO?");
             cellToMove.PrintStatus();
+
+            
 
             return false;
         }

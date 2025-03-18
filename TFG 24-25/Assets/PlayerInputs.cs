@@ -53,6 +53,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ToggleOnBoard"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0771f62-d8f2-496d-ac0e-50a091aa8300"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""MouseRightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""edd6f2f7-265e-40d6-9117-076cc465d75f"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""ToggleOnBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +121,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
                 }
             ]
         }
@@ -111,6 +136,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay_MouseLeftClick = m_Gameplay.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_Gameplay_MouseRightClick = m_Gameplay.FindAction("MouseRightClick", throwIfNotFound: true);
         m_Gameplay_MousePosition = m_Gameplay.FindAction("MousePosition", throwIfNotFound: true);
+        m_Gameplay_ToggleOnBoard = m_Gameplay.FindAction("ToggleOnBoard", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -175,6 +201,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_MouseLeftClick;
     private readonly InputAction m_Gameplay_MouseRightClick;
     private readonly InputAction m_Gameplay_MousePosition;
+    private readonly InputAction m_Gameplay_ToggleOnBoard;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
@@ -182,6 +209,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @MouseLeftClick => m_Wrapper.m_Gameplay_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_Gameplay_MouseRightClick;
         public InputAction @MousePosition => m_Wrapper.m_Gameplay_MousePosition;
+        public InputAction @ToggleOnBoard => m_Wrapper.m_Gameplay_ToggleOnBoard;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -200,6 +228,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @ToggleOnBoard.started += instance.OnToggleOnBoard;
+            @ToggleOnBoard.performed += instance.OnToggleOnBoard;
+            @ToggleOnBoard.canceled += instance.OnToggleOnBoard;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -213,6 +244,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @ToggleOnBoard.started -= instance.OnToggleOnBoard;
+            @ToggleOnBoard.performed -= instance.OnToggleOnBoard;
+            @ToggleOnBoard.canceled -= instance.OnToggleOnBoard;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -244,5 +278,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnToggleOnBoard(InputAction.CallbackContext context);
     }
 }
