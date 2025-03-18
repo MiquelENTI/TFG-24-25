@@ -275,8 +275,8 @@ public class Character
     {
         if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
-            
             Debug.Log("SPAWN");
+            stats.currentMoves = 0;
             DisableSpawn();
 
             playerStats.SubstractMana(stats.manaCost);
