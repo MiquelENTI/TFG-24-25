@@ -44695,9 +44695,12 @@ MonoBehaviour:
   board: {fileID: 1643901579}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
   GridSize: {x: 6, y: 6}
-  cornerPrefab: {fileID: 5497220024947823353, guid: 5967d52bbb037ed408581af99ae90785, type: 3}
-  edgePrefab: {fileID: 5680987117837267394, guid: 9074d848ecf4191478bd7200672acbd5, type: 3}
-  centralPrefab: {fileID: 699617074503451487, guid: 36d97a99b6e16b9449761c9f24d95618, type: 3}
+  cornerPointPrefab: {fileID: 1328978554650317836, guid: 5d64773b9b330e34eaf58274d40091a5, type: 3}
+  edgeDarkPrefab: {fileID: 5519599502171961328, guid: b4b32aff08b0ea14ea15c98f4573975c, type: 3}
+  edgeWhitePrefab: {fileID: 1987291774460552710, guid: 17a083b18c153594d8f7e2601d13c0d2, type: 3}
+  edgePointPrefab: {fileID: 7648225049024050087, guid: a02b0de2c367cc6448c575c08f630e04, type: 3}
+  centralPrefab: {fileID: 5505107137162230560, guid: a0002521a0a91144da7b9f4b325b2bb4, type: 3}
+  centralPointPrefab: {fileID: 2813526968995299667, guid: 6592d280acd7fcc42aa74f3e5f1decaf, type: 3}
 --- !u!4 &1643901581
 Transform:
   m_ObjectHideFlags: 0
