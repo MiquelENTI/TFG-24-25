@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviourPun
 
         if (endTurnButton != null)
         {
-            buttonText = endTurnButton.GetComponentInChildren<Text>();
-            buttonText.text = "Finalizar Turno";
             endTurnButton.interactable = photonView.IsMine;
         }
 
