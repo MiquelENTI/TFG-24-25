@@ -271,6 +271,7 @@ public class DragableGameObject : MonoBehaviour
         {
             cob_CardSprite.sprite = null;
         }
+        cob_MovementSprite.sprite = movementSprite;
     }
 
     public void ToggleCardToDisplay(bool state)
