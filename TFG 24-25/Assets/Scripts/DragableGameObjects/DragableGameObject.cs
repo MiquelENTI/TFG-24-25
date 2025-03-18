@@ -201,13 +201,13 @@ public class DragableGameObject : MonoBehaviour
 
     void InitCardToDisplayText()
     {
-        ctd_AtkText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
-        ctd_HpText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
-        ctd_NameText = cardToDisplay.transform.GetChild(5).GetComponent<TMP_Text>();
-        ctd_ManaText = cardToDisplay.transform.GetChild(8).GetComponent<TMP_Text>();
-        ctd_Description = cardToDisplay.transform.GetChild(9).GetComponent<TMP_Text>();
+        ctd_AtkText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
+        ctd_HpText = cardToDisplay.transform.GetChild(8).GetComponent<TMP_Text>();
+        ctd_NameText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
+        ctd_ManaText = cardToDisplay.transform.GetChild(9).GetComponent<TMP_Text>();
+        ctd_Description = cardToDisplay.transform.GetChild(10).GetComponent<TMP_Text>();
         ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
-        //ctd_MovementSprite = cardToDisplay.transform.GetChild(7).GetComponent<Image>(); // Esperar a Sergi
+        ctd_MovementSprite = cardToDisplay.transform.GetChild(11).GetComponent<Image>();
         
     }
 
@@ -250,7 +250,7 @@ public class DragableGameObject : MonoBehaviour
             ctd_CardSprite.sprite = null;
         }
 
-        //ctd_MovementSprite.sprite = movementSprite;
+        ctd_MovementSprite.sprite = movementSprite;
     }
 
     public virtual void UpdateCardOnBoardText()

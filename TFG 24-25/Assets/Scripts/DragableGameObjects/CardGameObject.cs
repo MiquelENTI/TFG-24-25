@@ -177,6 +177,7 @@ public class CardGameObject : DragableGameObject
         {
             cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
         }
+        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
@@ -188,7 +189,6 @@ public class CardGameObject : DragableGameObject
         cob_ManaText = transform.GetChild(0).GetChild(10).GetComponent<TMP_Text>();
         cob_NameText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
         cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
-        cob_MovementSprite = transform.GetChild(0).GetChild(6).GetComponent<Image>();
-
+        cob_MovementSprite = transform.GetChild(0).GetChild(12).GetComponent<Image>();
     }
 }
