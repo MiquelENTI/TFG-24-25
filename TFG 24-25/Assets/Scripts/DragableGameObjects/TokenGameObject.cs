@@ -190,9 +190,11 @@ public class TokenGameObject : DragableGameObject
         SetCharacter(characterToAssign);
 
         cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        if (cardSprite == null)
+        {
+            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
+        }
         //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
-            
-        //UpdateCardOnBoardText();
     }
 
     [PunRPC]

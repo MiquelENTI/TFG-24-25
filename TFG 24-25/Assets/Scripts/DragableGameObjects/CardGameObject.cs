@@ -173,6 +173,10 @@ public class CardGameObject : DragableGameObject
         characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
         cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
         //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        if (cardSprite == null)
+        {
+            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
+        }
     }
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }

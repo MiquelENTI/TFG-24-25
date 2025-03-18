@@ -241,7 +241,14 @@ public class DragableGameObject : MonoBehaviour
         ctd_Description.text = characterStats.description;
 
         // Potser fer funcio a part per canviar sprite
-        ctd_CardSprite.sprite = cardSprite;
+        if (cardSprite != null)
+        {
+            ctd_CardSprite.sprite = cardSprite;
+        }
+        else
+        {
+            ctd_CardSprite.sprite = null;
+        }
 
         //ctd_MovementSprite.sprite = movementSprite;
     }
@@ -256,7 +263,14 @@ public class DragableGameObject : MonoBehaviour
 
         cob_NameText.text = characterStats.name;
 
-        cob_CardSprite.sprite = cardSprite;
+        if (cardSprite != null)
+        {
+            cob_CardSprite.sprite = cardSprite;
+        }
+        else
+        {
+            cob_CardSprite.sprite = null;
+        }
     }
 
     public void ToggleCardToDisplay(bool state)
