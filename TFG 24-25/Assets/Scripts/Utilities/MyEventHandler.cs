@@ -53,11 +53,17 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
         if (bypassSpawn)
         {
-            character.BypassSpawn(cellToMove);
+
+            if (character.OnSpawn(cellToMove))
+            {
+                SaveData.Instance.SaveNewAction("M" + characterId + cellId);
+            }
+            return;
         }
-        else
+
+        if (character.OnMovement(cellToMove))
         {
-            character.OnSpawn(cellToMove);
+            SaveData.Instance.SaveNewAction("M" + characterId + cellId);
         }
     }
 

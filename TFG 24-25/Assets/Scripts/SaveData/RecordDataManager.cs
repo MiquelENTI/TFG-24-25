@@ -17,6 +17,6 @@ public class RankingManager : MonoBehaviour
 
     public void SaveMatchData(int matchNum)
     {
-        SaveData.Save(actions, matchNum);
+        SaveData.Instance.Save(matchNum);
     }
 }

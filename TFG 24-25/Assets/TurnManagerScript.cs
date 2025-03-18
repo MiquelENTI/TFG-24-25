@@ -115,6 +115,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [PunRPC]
     public void UpdateTurn(bool newIsBlue)
     {
+        SaveData.Instance.SaveNewAction("T");
+
         IsBlue = newIsBlue;
         Debug.Log("Turno cambiado. Ahora es turno " + (IsBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
 

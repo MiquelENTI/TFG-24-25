@@ -17,6 +17,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 43
     width: 1920
     height: 997
@@ -58,15 +59,24 @@ MonoBehaviour:
   m_Title: Scene
 >>>>>>> feature/Modelos3D
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     y: 43.2
     width: 1536
     height: 820.8
   m_ShowMode: 4
+<<<<<<< HEAD
   m_Title: Console
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+  m_Title: Project
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -91,6 +101,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 1920
@@ -118,6 +129,10 @@ MonoBehaviour:
     height: 820.8
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+    width: 1536
+    height: 820.8
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -143,6 +158,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
 =======
 =======
@@ -163,6 +179,9 @@ MonoBehaviour:
     width: 1536
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+    width: 1536
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -183,6 +202,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     y: 977
@@ -211,6 +231,10 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+    y: 800.8
+    width: 1536
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -234,7 +258,10 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
 <<<<<<< HEAD
 <<<<<<< Updated upstream
     width: 2560
@@ -280,18 +307,33 @@ MonoBehaviour:
 =======
   controlID: 8179
 =======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
     width: 1536
     height: 770.8
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 51
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+  controlID: 100
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -306,15 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
-<<<<<<< HEAD
   - {fileID: 10}
-=======
-<<<<<<< HEAD
-  - {fileID: 11}
-=======
-  - {fileID: 10}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_Position:
     serializedVersion: 2
     x: 0
@@ -325,6 +359,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1320
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -377,18 +412,33 @@ MonoBehaviour:
 =======
   controlID: 8180
 =======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
     width: 1195.2
     height: 770.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 52
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+  controlID: 42
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,13 +454,6 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8}
   - {fileID: 9}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  - {fileID: 10}
-=======
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_Position:
     serializedVersion: 2
     x: 0
@@ -434,6 +477,7 @@ MonoBehaviour:
 =======
   controlID: 10816
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
@@ -475,18 +519,32 @@ MonoBehaviour:
 =======
   controlID: 8181
 =======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
     width: 1195.2
     height: 495.2
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 43
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -505,12 +563,15 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 307
     height: 594
   m_MinSize: {x: 640, y: 580}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     width: 461
     height: 563
@@ -545,6 +606,8 @@ MonoBehaviour:
   m_LastSelected: 0
 >>>>>>> feature/Onboarding
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     width: 293.6
     height: 495.2
   m_MinSize: {x: 201, y: 221}
@@ -556,9 +619,12 @@ MonoBehaviour:
   - {fileID: 14}
   m_Selected: 1
   m_LastSelected: 0
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -575,8 +641,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 307
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     x: 461
 =======
@@ -610,6 +679,8 @@ MonoBehaviour:
 =======
   - {fileID: 17}
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     x: 293.6
     y: 0
     width: 901.6
@@ -620,9 +691,12 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_Selected: 0
   m_LastSelected: 2
 --- !u!114 &10
@@ -634,6 +708,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -644,57 +719,34 @@ MonoBehaviour:
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: GameView
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: ConsoleWindow
 <<<<<<< HEAD
 =======
 >>>>>>> 0697a2b (Singletone i deckSave)
+=======
+  m_Name: ProjectBrowser
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 866
-=======
-    x: 930
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 0
-    width: 452
-    height: 602
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
-=======
-    x: 0
-    y: 675
-    width: 1593
-    height: 272
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 17}
-  - {fileID: 18}
->>>>>>> feature/Modelos3D
-  m_Selected: 0
-=======
     x: 0
     y: 495.2
     width: 1195.2
     height: 275.59998
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 1
->>>>>>> 0697a2b (Singletone i deckSave)
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -703,20 +755,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
 >>>>>>> feature/Onboarding
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-  m_Name: ProjectBrowser
-=======
   m_Name: 
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> c110dbc (Singletone i deckSave)
+=======
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 594
     width: 1275
@@ -753,6 +809,8 @@ MonoBehaviour:
 =======
   m_ActualView: {fileID: 18}
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     x: 1195.2
     y: 0
     width: 340.80005
@@ -760,19 +818,11 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_Panes:
   - {fileID: 17}
-  - {fileID: 18}
-<<<<<<< HEAD
->>>>>>> Stashed changes
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &11
-=======
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 =======
     x: 1593
     y: 0
@@ -787,13 +837,15 @@ MonoBehaviour:
 =======
   controlID: 4056
 >>>>>>> origin/feature/Modelos3D
---- !u!114 &12
-<<<<<<< HEAD
->>>>>>> feature/Onboarding
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
+--- !u!114 &12
+>>>>>>> 96ba862 (Created Scene & movement recorded)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,6 +854,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -843,51 +896,23 @@ MonoBehaviour:
 =======
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb55afc2c109f42f2af37941a8c9300e, type: 3}
+=======
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 600, y: 300}
+  m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-<<<<<<< Updated upstream
     m_Text: Game
     m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 692.6667
-    y: 72.66667
-    width: 1266
-    height: 858.3333
-=======
-    m_Text: PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 414
-=======
-    x: 930
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 73
-    width: 902
-=======
-    x: 866
-    y: 73
-    width: 450
->>>>>>> feature/Onboarding
-    height: 581
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
     x: 293.6
     y: 73.6
     width: 899.6
     height: 474.2
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -898,18 +923,13 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-<<<<<<< Updated upstream
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
-  m_TargetSize: {x: 1920, y: 1080}
-=======
   m_TargetSize: {x: 899.6, y: 453.2}
->>>>>>> 0697a2b (Singletone i deckSave)
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -918,34 +938,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-<<<<<<< HEAD
-  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
-=======
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
->>>>>>> 0697a2b (Singletone i deckSave)
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-<<<<<<< HEAD
-    m_HBaseRangeMin: -640
-    m_HBaseRangeMax: 640
-    m_VBaseRangeMin: -360
-    m_VBaseRangeMax: 360
-=======
-<<<<<<< HEAD
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
-=======
     m_HBaseRangeMin: -359.84
     m_HBaseRangeMax: 359.84
     m_VBaseRangeMin: -181.28001
     m_VBaseRangeMax: 181.28001
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -963,63 +965,16 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-<<<<<<< HEAD
-      width: 1266
-      height: 837.3333
-    m_Scale: {x: 0.9890625, y: 0.9890625}
-    m_Translation: {x: 633, y: 418.66666}
-=======
-      width: 450
-      height: 560
-    m_Scale: {x: 0.234375, y: 0.23437501}
-    m_Translation: {x: 225, y: 280}
->>>>>>> feature/Onboarding
-=======
-      width: 479
-      height: 560
-    m_Scale: {x: 0.24947916, y: 0.24947916}
-    m_Translation: {x: 239.5, y: 280}
-=======
       width: 899.6
       height: 453.2
     m_Scale: {x: 1.5, y: 1.5}
     m_Translation: {x: 449.8, y: 226.59998}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      x: -640
-      y: -423.29648
-      width: 1280
-      height: 846.59296
-    m_MinimalGUI: 1
-  m_defaultScale: 0.9890625
-  m_LastWindowPixelSize: {x: 1899, y: 1287.5}
-=======
-      x: -960
-      y: -1194.6666
-      width: 1920
-      height: 2389.3333
-    m_MinimalGUI: 1
-  m_defaultScale: 0.234375
-  m_LastWindowPixelSize: {x: 450, y: 581}
->>>>>>> feature/Onboarding
-=======
-      x: -960
-      y: -1122.3383
-      width: 1920
-      height: 2244.6765
-    m_MinimalGUI: 1
-  m_defaultScale: 0.24947916
-  m_LastWindowPixelSize: {x: 479, y: 581}
-=======
       x: -299.86667
       y: -151.06665
       width: 599.73334
@@ -1027,156 +982,12 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1124.5, y: 592.75}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
-<<<<<<< HEAD
-=======
-  m_ActionMapsTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 935185ad
-    m_LastClickedID: -1383771757
-    m_ExpandedIDs: 00000000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-  m_ActionsTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fca6d09e
-    m_LastClickedID: -1630492932
-    m_ExpandedIDs: b6503b9c935185ad881fe9db31ad2f15ad63c959ad213e6b
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: ToggleOnBoard
-      m_OriginalName: ToggleOnBoard
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 1506370477
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 0
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 9}
-    m_SearchString: 
-  m_ControlPickerViewState:
-    m_AdvancedDropdownState:
-      states:
-      - itemId: 371857150
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
-      - itemId: 403810634
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
-      - itemId: 378383742
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-      - itemId: -376880915
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
-      - itemId: -1542029941
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-      - itemId: -630248049
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-      - itemId: 316249331
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
-      - itemId: 656259478
-        selectedIndex: 2
-        scroll: {x: 0, y: 0}
-    m_ManualPathEditMode: 0
-  m_ActionAssetManager:
-    m_AssetObjectForEditing: {fileID: 0}
-    m_ImportedAssetObject: {fileID: -944628639613478452, guid: 068412b09e8d6dd43b83b991d181996b, type: 3}
-    m_AssetGUID: 068412b09e8d6dd43b83b991d181996b
-    m_ImportedAssetJson: "{\n    \"name\": \"PlayerInputs\",\n    \"maps\": [\n       
-      {\n            \"name\": \"Gameplay\",\n            \"id\": \"74dae919-1ea3-4bc7-98c0-35a4b166ad36\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"MouseLeftClick\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"d70a2c62-1b4d-43fa-940c-62ba0d6ba9b2\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"MouseRightClick\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"afdb2a3d-40cd-45b9-9ece-1924e6bb9215\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"MousePosition\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"ba81b3b7-542e-4429-9f65-c21baba3548e\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                }\n            ],\n            \"bindings\": [\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"c5eaafe3-1b5f-48e1-9f41-756bae83cc88\",\n                   
-      \"path\": \"<Mouse>/leftButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"MouseLeftClick\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"2169a0f7-8399-4ab3-8b26-b2b1609190f3\",\n                   
-      \"path\": \"<Mouse>/position\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"MousePosition\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"a389b896-1388-4af0-8d19-9d3ca53ccc11\",\n                   
-      \"path\": \"<Mouse>/rightButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"MouseRightClick\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
-      ],\n    \"controlSchemes\": [\n        {\n            \"name\": \"PC\",\n           
-      \"bindingGroup\": \"PC\",\n            \"devices\": [\n                {\n                   
-      \"devicePath\": \"<Mouse>\",\n                    \"isOptional\": false,\n                   
-      \"isOR\": false\n                }\n            ]\n        }\n    ]\n}"
-    m_IsDirty: 0
-  m_Toolbar:
-    m_IsDirty: 0
-    m_SelectedControlSchemeIndex: 0
-    m_SelectedDeviceRequirementIndex: -1
-    m_ControlSchemes:
-    - m_Name: PC
-      m_BindingGroup: PC
-      m_DeviceRequirements:
-      - m_ControlPath: <Mouse>
-        m_Flags: 0
-      - m_ControlPath: <Keyboard>
-        m_Flags: 1
-    m_SearchText: 
-  m_DirtyTitle:
-    m_Text: (*) PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Title:
-    m_Text: PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
->>>>>>> Stashed changes
 --- !u!114 &13
-=======
-<<<<<<< HEAD
---- !u!114 &14
-=======
---- !u!114 &13
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1197,30 +1008,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    y: 72.66667
-    width: 691.6667
-    height: 858.3333
-=======
-=======
->>>>>>> 54d5d66 (Scripts added)
-=======
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 73
-    width: 413
-    height: 581
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
     y: 73.6
     width: 292.6
     height: 474.2
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1234,46 +1024,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ee65fefffc6cfeffa88afeffb2c4feff64f6feffe809ffff1a0effffd871ffffa273ffff54b5ffff20fbffff647a0000a09000003a91000086940000e0980000b4de00007ee000005af600006c1101003c120100
-=======
-      m_SelectedIDs: d4790000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 60d6faff62e5fafff2e5faff7aedfaff1ceffaff0003fbff9619fbff9a2dfbff2445fbff785bfbff325cfbff865efbff7c61fbffa863fbff0084fbff668bfbffd8aafbff6eaffbff70bbfbffe4c3fbff1afbffff1cfbffffde7f000024520100105301001a5701009a610100047b01008e8c01007a8d0100849101003ee70100
->>>>>>> Stashed changes
-=======
-      m_SelectedIDs: 7c790000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 98efffffbef0ffff3af5ffff1cfbffff
->>>>>>> feature/Onboarding
-=======
-      m_SelectedIDs: b8240200
-      m_LastClickedID: 140472
-      m_ExpandedIDs: 3e8fe7ffe88fe7ff3a94e7ff469ee7fff09ee7ff66a3e7ff5e49e8ff084ae8ff7a4ee8ffb084e8ff5a85e8ffc889e8ff148ee8fffcc4efffa6c5efff18caefff385efdffe25efdff5063fdff7e5dfeff285efeff9a62feff3a0cffffe40cffff5211ffff104cffffba4cffff2851ffff1cfbffff
-=======
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: bcf9ffff
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
+      m_ExpandedIDs: d6f4ffff22f8ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: SoundManager
+        m_OriginalName: SoundManager
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 37046
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -1283,27 +1050,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
-<<<<<<< HEAD
-=======
-    y: 657
-    width: 327
-    height: 290
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 0
->>>>>>> feature/Modelos3D
 --- !u!114 &14
-=======
-<<<<<<< HEAD
---- !u!114 &15
-=======
---- !u!114 &14
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1311,6 +1058,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_EditorHideFlags: 0
@@ -1610,7 +1358,12 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> 0697a2b (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -1624,11 +1377,14 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 307
     y: 73
     width: 966
     height: 573
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     x: 461
     y: 73
@@ -1659,14 +1415,22 @@ MonoBehaviour:
 >>>>>>> Stashed changes
 =======
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     x: 293.6
     y: 73.6
     width: 899.6
     height: 474.2
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1682,8 +1446,11 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffset: {x: -171, y: -26}
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
       snapOffset: {x: -170.40002, y: -26.666687}
 =======
@@ -1701,7 +1468,13 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+      snapOffset: {x: -170.40002, y: -26.666687}
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -1814,10 +1587,13 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       snapOffset: {x: 67.5, y: 86}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
       snapOffset: {x: 67.5, y: -190}
       snapOffsetDelta: {x: 0, y: 0}
@@ -1839,7 +1615,15 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+      snapOffset: {x: 67.5, y: -190}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 2
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
       id: Orientation
       index: 0
       layout: 4
@@ -2081,6 +1865,7 @@ MonoBehaviour:
       sizeOverriden: 0
     - dockPosition: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       containerId: overlay-toolbar__top
       floating: 0
@@ -2137,6 +1922,7 @@ MonoBehaviour:
       sizeOverriden: 0
     - dockPosition: 1
 >>>>>>> 1427dda (Scripts added)
+<<<<<<< HEAD
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
@@ -2272,6 +2058,12 @@ MonoBehaviour:
       collapsed: 0
 <<<<<<< HEAD
 =======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
       displayed: 0
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
@@ -2285,8 +2077,8 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
->>>>>>> 0697a2b (Singletone i deckSave)
       displayed: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
       snapOffset: {x: 48, y: 48}
 =======
@@ -2296,6 +2088,9 @@ MonoBehaviour:
       snapOffset: {x: 48, y: 48}
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+      snapOffset: {x: 48, y: 48}
+>>>>>>> 96ba862 (Created Scene & movement recorded)
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
@@ -2310,12 +2105,6 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-<<<<<<< HEAD
-=======
-      displayed: 1
->>>>>>> 482cf64 (Scripts added)
-=======
->>>>>>> 0697a2b (Singletone i deckSave)
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -2336,7 +2125,16 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 80.61263, y: -25.196707, z: -52.12544}
+=======
+<<<<<<< HEAD
+    m_Target: {x: -0.18514925, y: -9.624266, z: 13.422381}
+=======
+<<<<<<< HEAD
+    m_Target: {x: 1.5764408, y: 0.7056179, z: -1.8217697}
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
     speed: 2
 <<<<<<< HEAD
     m_Value: {x: 80.61263, y: -25.196707, z: -52.12544}
@@ -2347,6 +2145,11 @@ MonoBehaviour:
 <<<<<<< HEAD
     m_Value: {x: 1.5764408, y: 0.7056179, z: -1.8217697}
 =======
+=======
+    m_Target: {x: -14.485966, y: -5.665067, z: -2.034436}
+    speed: 2
+<<<<<<< HEAD
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     m_Value: {x: 1007.2952, y: 487.76874, z: 14.77356}
 =======
     m_Target: {x: 0.13074428, y: 0.34061915, z: 0.10849595}
@@ -2380,9 +2183,21 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+    m_Value: {x: -14.485966, y: -5.665067, z: -2.034436}
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2428,9 +2243,28 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.06217774, y: 0.871582, z: -0.114659496, w: 0.4725277}
     speed: 2
     m_Value: {x: 0.062179282, y: 0.8716036, z: -0.11466234, w: 0.47253942}
+=======
+<<<<<<< HEAD
+    m_Target: {x: -0.30435264, y: 0.016586516, z: -0.0053011165, w: -0.95239}
+    speed: 2
+    m_Value: {x: -0.30435562, y: 0.016586678, z: -0.005301168, w: -0.9523993}
+=======
+<<<<<<< HEAD
+    m_Target: {x: -0.06699587, y: 0.9262386, z: -0.19772069, w: -0.31384742}
+    speed: 2
+    m_Value: {x: -0.06699587, y: 0.9262386, z: -0.19772069, w: -0.31384742}
+=======
+    m_Target: {x: -0.12095005, y: 0.74841094, z: -0.142235, w: -0.63641375}
+    speed: 2
+<<<<<<< HEAD
+    m_Value: {x: 0.069114916, y: 0.024038475, z: 0.0016730374, w: -0.9973177}
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_Size:
     m_Target: 50.256973
     speed: 2
@@ -2496,21 +2330,37 @@ MonoBehaviour:
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.077387996, y: 0.89155185, z: -0.16666925, w: -0.41396603}
+=======
+    m_Value: {x: -0.12094999, y: 0.7484106, z: -0.14223492, w: -0.63641346}
+>>>>>>> c454dda (Created Scene & movement recorded)
   m_Size:
     m_Target: 10
     speed: 2
     m_Value: 10
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -2533,6 +2383,10 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -2544,11 +2398,16 @@ MonoBehaviour:
     m_DynamicClip: 1
     m_OcclusionCulling: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
   m_LastSceneViewRotation: {x: 0.28395137, y: -0.16994871, z: 0.05116637, w: 0.9421305}
 =======
+=======
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
 <<<<<<< HEAD
   m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
 =======
@@ -2566,8 +2425,17 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -2575,8 +2443,11 @@ MonoBehaviour:
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &16
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
 --- !u!114 &15
 =======
@@ -2600,7 +2471,13 @@ MonoBehaviour:
 --- !u!114 &15
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+--- !u!114 &15
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3678,10 +3555,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 667
     width: 1274
     height: 332
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     y: 636
     width: 1319
@@ -3709,7 +3589,15 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+    y: 568.8
+    width: 1194.2
+    height: 254.59998
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -3743,6 +3631,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     - Assets
 =======
@@ -3765,9 +3654,21 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+    - Assets/Scripts/Utilities
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -3784,6 +3685,7 @@ MonoBehaviour:
 <<<<<<< HEAD
   - Assets/Scripts/Cards
 =======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3871,11 +3773,15 @@ MonoBehaviour:
     m_ExpandedIDs: 000000006a880000d688000000ca9a3bffffff7f
 =======
   - Assets/Scripts/DragableGameObjects
+=======
+  - Assets/Scripts/Utilities
+>>>>>>> c454dda (Created Scene & movement recorded)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Pau\Desktop\kraken\TFG\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 101.400024}
     m_SelectedIDs: 3c800000
     m_LastClickedID: 32828
@@ -3883,9 +3789,24 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+    scrollPos: {x: 0, y: 133.40002}
+    m_SelectedIDs: 08840000
+    m_LastClickedID: 33800
+    m_ExpandedIDs: 00000000dc830000f483000000ca9a3b
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3925,6 +3846,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     m_ExpandedIDs: 00000000ca7a0000cc7a0000ce7a0000d07a0000d27a0000
 =======
@@ -3947,9 +3869,21 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+=======
+    m_ExpandedIDs: 00000000dc830000
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3987,6 +3921,7 @@ MonoBehaviour:
 =======
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 0
 <<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
@@ -3994,7 +3929,10 @@ MonoBehaviour:
 =======
     m_ExpandedInstanceIDs: c6230000606a0000d66600008a610000186300002a63000000000000
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000606a0000d66600008a610000186300002a630000e08200002c83000000000000
 >>>>>>> Stashed changes
 =======
@@ -4012,8 +3950,17 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> 4de90da (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+    m_ExpandedInstanceIDs: c6230000c8cb000024a70000
+>>>>>>> c454dda (Created Scene & movement recorded)
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4029,15 +3976,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-<<<<<<< HEAD
       m_ClientGUIView: {fileID: 10}
-=======
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 11}
-=======
-      m_ClientGUIView: {fileID: 10}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -4048,6 +3987,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_DirectoriesAreaWidth: 207
@@ -4090,8 +4030,18 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+  m_DirectoriesAreaWidth: 207
+--- !u!114 &16
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4113,15 +4063,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 667
     width: 1274
     height: 332
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     y: 636
     width: 1319
     height: 363
 =======
+=======
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
 <<<<<<< HEAD
     y: 729
     width: 1319
@@ -4149,8 +4104,19 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+    y: 568.8
+    width: 1194.2
+    height: 254.59998
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -4162,11 +4128,16 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &19
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
 --- !u!114 &18
 =======
+=======
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
 <<<<<<< HEAD
 --- !u!114 &17
 =======
@@ -4187,8 +4158,17 @@ MonoBehaviour:
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> c110dbc (Singletone i deckSave)
+<<<<<<< HEAD
 >>>>>>> 46cba0c (Singletone i deckSave)
+=======
+=======
+=======
+--- !u!114 &17
+>>>>>>> 96ba862 (Created Scene & movement recorded)
+>>>>>>> 8e0b66d (Created Scene & movement recorded)
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4209,8 +4189,11 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1275
 =======
+=======
+>>>>>>> d17cdf0 (Created Scene & movement recorded)
 <<<<<<< HEAD
     x: 1320
 =======
@@ -4239,13 +4222,18 @@ MonoBehaviour:
 >>>>>>> Stashed changes
 =======
 =======
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
     x: 1195.2001
     y: 73.6
     width: 339.80005
     height: 749.8
+<<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
 >>>>>>> df54bd3 (Singletone i deckSave)
+=======
+>>>>>>> 96ba862 (Created Scene & movement recorded)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

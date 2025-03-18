@@ -6,15 +6,13 @@ using System.Collections.Generic;
 public class SaveData: Singleton<SaveData>
 {
     ReplayData data;
-    int match;
 
     SaveData()
     {
-        this.data = new ReplayData(); 
-        this.match = -1;
+        data = new ReplayData(); 
     }
 
-    public void Save()
+    public void Save(int match)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.dataPath + "/save" + match + ".dat";

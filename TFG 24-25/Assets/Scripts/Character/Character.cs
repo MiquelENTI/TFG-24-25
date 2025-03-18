@@ -185,8 +185,9 @@ public class Character
 
     }
 
-    public virtual void OnSpawn(CellNode cellToMove)
+    public virtual bool OnSpawn(CellNode cellToMove)
     {
+
         if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
             Debug.Log("SPAWN");
@@ -205,6 +206,10 @@ public class Character
             OnSpawnVFX();
 
             DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
+        }
+        else
+        {
+            return false;
         }
         else
         {
