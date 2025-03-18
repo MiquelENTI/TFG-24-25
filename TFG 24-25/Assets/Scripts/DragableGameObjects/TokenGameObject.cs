@@ -194,7 +194,8 @@ public class TokenGameObject : DragableGameObject
         {
             cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
         }
-        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+
+        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
 
     [PunRPC]
