@@ -56,14 +56,14 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
             if (character.OnSpawn(cellToMove))
             {
-                SaveData.Instance.SaveNewAction("M" + characterId + cellId);
+                SaveData.Instance.SaveNewAction("M" + characterId + "/" + cellId);
             }
             return;
         }
 
         if (character.OnMovement(cellToMove))
         {
-            SaveData.Instance.SaveNewAction("M" + characterId + cellId);
+            SaveData.Instance.SaveNewAction("M" + characterId + "/" + cellId);
         }
     }
 

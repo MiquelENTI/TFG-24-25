@@ -7,6 +7,8 @@ public class SaveData: Singleton<SaveData>
 {
     ReplayData data;
 
+    public string pathFolder = "/save";
+
     SaveData()
     {
         data = new ReplayData(); 
@@ -15,7 +17,7 @@ public class SaveData: Singleton<SaveData>
     public void Save(int match)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.dataPath + "/save" + match + ".dat";
+        string path = Application.dataPath + pathFolder + match + ".dat";
         FileStream fileStream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(fileStream, data);
@@ -34,16 +36,16 @@ public class SaveData: Singleton<SaveData>
 
     public ReplayData LoadReplay(int match)
     {
-        string path = Application.dataPath + "/save" + match + ".dat";
+        string path = Application.dataPath + pathFolder + match + ".dat";
         if(File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream fileStream = new FileStream(path, FileMode.Open);
 
-            ReplayData data = formatter.Deserialize(fileStream) as ReplayData;
+            ReplayData replayData = formatter.Deserialize(fileStream) as ReplayData;
             fileStream.Close();
 
-            return data;
+            return replayData;
         }
         else
         {

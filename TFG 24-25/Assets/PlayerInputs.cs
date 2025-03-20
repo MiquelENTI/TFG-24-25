@@ -62,6 +62,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextReplayAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""b33d6907-d02d-45b3-a70b-a162d4aadb86"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -106,6 +115,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""ToggleOnBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a87148d-9fcd-483d-bd59-ad253c7e2f88"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""NextReplayAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1991,6 +2011,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_XRILeftHand_PinchPosition = m_XRILeftHand.FindAction("Pinch Position", throwIfNotFound: true);
         m_XRILeftHand_PokePosition = m_XRILeftHand.FindAction("Poke Position", throwIfNotFound: true);
         m_XRILeftHand_PokeRotation = m_XRILeftHand.FindAction("Poke Rotation", throwIfNotFound: true);
+        // Gameplay
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_MouseLeftClick = m_Gameplay.FindAction("MouseLeftClick", throwIfNotFound: true);
+        m_Gameplay_MouseRightClick = m_Gameplay.FindAction("MouseRightClick", throwIfNotFound: true);
+        m_Gameplay_MousePosition = m_Gameplay.FindAction("MousePosition", throwIfNotFound: true);
+        m_Gameplay_ToggleOnBoard = m_Gameplay.FindAction("ToggleOnBoard", throwIfNotFound: true);
+        m_Gameplay_NextReplayAction = m_Gameplay.FindAction("NextReplayAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -2057,6 +2084,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Mouse_Position;
     private readonly InputAction m_Mouse_ToggleOnBoard;
     public struct MouseActions
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
+    private readonly InputAction m_Gameplay_MouseLeftClick;
+    private readonly InputAction m_Gameplay_MouseRightClick;
+    private readonly InputAction m_Gameplay_MousePosition;
+    private readonly InputAction m_Gameplay_ToggleOnBoard;
+    private readonly InputAction m_Gameplay_NextReplayAction;
+    public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
         public MouseActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
@@ -2065,6 +2101,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Position => m_Wrapper.m_Mouse_Position;
         public InputAction @ToggleOnBoard => m_Wrapper.m_Mouse_ToggleOnBoard;
         public InputActionMap Get() { return m_Wrapper.m_Mouse; }
+        public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MouseLeftClick => m_Wrapper.m_Gameplay_MouseLeftClick;
+        public InputAction @MouseRightClick => m_Wrapper.m_Gameplay_MouseRightClick;
+        public InputAction @MousePosition => m_Wrapper.m_Gameplay_MousePosition;
+        public InputAction @ToggleOnBoard => m_Wrapper.m_Gameplay_ToggleOnBoard;
+        public InputAction @NextReplayAction => m_Wrapper.m_Gameplay_NextReplayAction;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
@@ -2085,6 +2128,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ToggleOnBoard.started += instance.OnToggleOnBoard;
             @ToggleOnBoard.performed += instance.OnToggleOnBoard;
             @ToggleOnBoard.canceled += instance.OnToggleOnBoard;
+            @NextReplayAction.started += instance.OnNextReplayAction;
+            @NextReplayAction.performed += instance.OnNextReplayAction;
+            @NextReplayAction.canceled += instance.OnNextReplayAction;
         }
 
         private void UnregisterCallbacks(IMouseActions instance)
@@ -2101,6 +2147,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ToggleOnBoard.started -= instance.OnToggleOnBoard;
             @ToggleOnBoard.performed -= instance.OnToggleOnBoard;
             @ToggleOnBoard.canceled -= instance.OnToggleOnBoard;
+            @NextReplayAction.started -= instance.OnNextReplayAction;
+            @NextReplayAction.performed -= instance.OnNextReplayAction;
+            @NextReplayAction.canceled -= instance.OnNextReplayAction;
         }
 
         public void RemoveCallbacks(IMouseActions instance)
@@ -2793,6 +2842,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnPosition(InputAction.CallbackContext context);
         void OnToggleOnBoard(InputAction.CallbackContext context);
+        void OnNextReplayAction(InputAction.CallbackContext context);
     }
     public interface IXRIHeadActions
     {

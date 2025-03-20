@@ -195,6 +195,11 @@ public class DeckManager : Singleton<DeckManager>
         //Debug.Log("Number of Cards in Deck = " + deck.Count);
     }
 
+    public void SetReplayDeck(Queue<int> replayDeck)
+    {
+        deck = replayDeck;
+    }
+
     private IList<T> Shuffle<T>(IList<T> list)
     {
         System.Random rng = new System.Random();
