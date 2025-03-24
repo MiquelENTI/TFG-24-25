@@ -56,44 +56,20 @@ public class CellNode
     {
         List<CellNode> temp = new List<CellNode>();
 
-        temp.Add(GetCellByDirection(CellConnection.UP));
-        temp.Add(GetCellByDirection(CellConnection.UPRIGHT));
-        temp.Add(GetCellByDirection(CellConnection.RIGHT));
-        temp.Add(GetCellByDirection(CellConnection.DOWNRIGHT));
-        temp.Add(GetCellByDirection(CellConnection.DOWN));
-        temp.Add(GetCellByDirection(CellConnection.DOWNLEFT));
-        temp.Add(GetCellByDirection(CellConnection.LEFT));
-        temp.Add(GetCellByDirection(CellConnection.UPLEFT));
+        for (int i = 1; i < 5; i++)
+        {
+            int inverseDirection = i * -1;
+            if (CheckConnectionNode((CellConnection)i))
+            {
+                temp.Add(GetCellByDirection((CellConnection)i));
+            }
+            if (CheckConnectionNode((CellConnection)inverseDirection))
+            {
+                temp.Add(GetCellByDirection((CellConnection)inverseDirection));
+            }
+        }
 
         return temp;
-    }
-
-    public bool CheckSingleNode(CellConnection direction, int characterId)
-    {
-        if (CheckConnectionNode(direction))
-        {
-            Debug.Log("Node is disconnected from grid");
-            return false;
-        }
-        if (connectionDictionary[direction].IsConnected())
-        {
-            Debug.Log("Node is not connected to this node");
-            return false;
-        }
-
-        Character character = connectionDictionary[GetInverseDirection((int)direction)].GetCharacter();
-        if (character == null)
-        {
-            Debug.Log("Character is not in the direction");
-            return false;
-        }
-        if (character.GetId() != characterId)
-        {
-            Debug.Log("Wrong Character");
-            return false;
-        }
-
-        return true;
     }
 
     public bool CheckNodes(int characterId)
@@ -131,19 +107,73 @@ public class CellNode
     public Tuple<int, CellConnection> GetDirectionToCellByRange(int cellId, int range)
     {
         List<CellNode> surroundingCells = GetSurrondingCells();
+
         foreach (var direction in connectionDictionary)
         {
             CellNode nextCell = this;
             for (int i = 0; i < range; i++)
             {
                 // Cell To Check
-                nextCell = nextCell.GetCellByDirection(direction.Key);
+                if (!nextCell.CheckConnectionNode(direction.Key))
+                {
+                    break;
+                }
 
+                nextCell = nextCell.GetCellByDirection(direction.Key);
                 if (nextCell.id == cellId)
                 {
-                    return Tuple.Create(cellId, direction.Key);
+                    return Tuple.Create(i, direction.Key);
                 }
             }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Returns: If Character is Found on the way to the CellNode, Distance
+    /// </summary>
+    /// <param name="cellId"></param>
+    /// <param name="range"></param>
+    /// <returns></returns>
+    public Tuple<bool, int> CheckIsCharacterOnTheWay(int cellId, int range)
+    {
+        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
+
+        CellNode cellToCheck = GetCellByDirection(direction.Item2);
+
+        for (int i = 1; i < direction.Item1; i++)
+        {
+            //Debug.Log("Checking in Distance " + i);
+            if (cellToCheck.GetCharacter() != null)
+            {
+                //Debug.Log("Encountered Character at " + i);
+                return Tuple.Create(true, i);
+            }
+            cellToCheck = cellToCheck.GetCellByDirection(direction.Item2);
+        }
+        //Debug.Log("NO Encounter");
+        return Tuple.Create(false, 0);
+    }
+
+    /// <summary>
+    /// Returns: Distance, Direction, Character Detected
+    /// </summary>
+    /// <param name="cellId"></param>
+    /// <param name="range"></param>
+    /// <returns></returns>
+    public Tuple<int, CellConnection, Character> CheckForCharacterOnTheWay(int cellId, int range)
+    {
+        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
+
+        CellNode cellToCheck = GetCellByDirection(direction.Item2);
+
+        for (int i = 1; i < direction.Item1; i++)
+        {
+            if (cellToCheck.GetCharacter() != null)
+            {
+                return Tuple.Create(i,direction.Item2, cellToCheck.character);
+            }
+            cellToCheck = GetCellByDirection(direction.Item2);
         }
         return null;
     }
@@ -285,16 +315,17 @@ public class CellNode
         CellNode characterTile = CellNodeManager.Instance.GetNodeById(characterMoving.GetOnTileId());
 
         Vector2 diff = positionInGrid - characterTile.positionInGrid;
-
+        
         diff.x = Mathf.Abs(diff.x);
         diff.y = Mathf.Abs(diff.y);
 
         //Debug.Log("Diff on Enemy and Character: " + diff + "POSITIONS: " + positionInGrid + " - " + characterTile.positionInGrid);
 
-        if (diff.x > characterMoving.GetCharacterStats().range || diff.y > characterMoving.GetCharacterStats().range)
+        if ((diff.x > characterMoving.GetCharacterStats().movementRange || diff.y > characterMoving.GetCharacterStats().movementRange) && !isAttacking)
         {
             Debug.Log("ENTERED IF RANGE");
             return false; }
+
 
         //Debug.Log("Character Range: " + characterMoving.GetCharacterStats().range);
 
@@ -305,15 +336,7 @@ public class CellNode
             {
                 if (diff.x == 0.0f || diff.y == 0.0f)
                 {
-                    if (isAttacking)
-                    {
-                        if (characterMoving.CanAttack())
-                        {
-                            characterMoving.Attack(this.character);
-                        }
-                        return false;
-                    }
-                    return true;
+                    return CanAttackOrMoveLogic(isAttacking, characterMoving, diff);
                 }
                 break;
             }
@@ -321,15 +344,7 @@ public class CellNode
             {
                 if (diff.x == diff.y)
                 {
-                    if (isAttacking)
-                    {
-                        if (characterMoving.CanAttack())
-                        {
-                            characterMoving.Attack(this.character);
-                        }
-                        return false;
-                    }
-                    return true;
+                    return CanAttackOrMoveLogic(isAttacking, characterMoving, diff);
                 }
                 break;
             }
@@ -337,19 +352,41 @@ public class CellNode
             {
                 if (diff.x == 0.0f || diff.y == 0.0f || (diff.x == diff.y))
                 {
-                    if (isAttacking)
-                    {
-                        if (characterMoving.CanAttack())
-                        {
-                            characterMoving.Attack(this.character);
-                        }
-                        return false;
-                    }
-                    return true;
+                    return CanAttackOrMoveLogic(isAttacking, characterMoving, diff);
                 }
                 break;
             }
         }
+        return false;
+    }
+
+    bool CanAttackOrMoveLogic(bool isAttacking, Character characterMoving, Vector2 diff)
+    {
+        if (!isAttacking)
+        {
+            return !CheckIsCharacterOnTheWay(characterMoving.GetOnTileId(), characterMoving.GetCharacterStats().movementRange).Item1;
+        }
+
+        if (!characterMoving.CanAttack())
+        {
+            //Debug.Log("CANNOT ATTACK");
+            return false;
+        
+        }
+
+        if (diff.x <= characterMoving.GetCharacterStats().attackRange || diff.y <= characterMoving.GetCharacterStats().attackRange)
+        {   
+            var temp = CheckIsCharacterOnTheWay(characterMoving.GetOnTileId(), characterMoving.GetCharacterStats().attackRange);
+
+            //Debug.Log("TEMP: " + temp.Item1 + " " + temp.Item2);
+
+            if (temp.Item1 == false)
+            {
+                //Debug.Log("Attacking");
+                characterMoving.Attack(this.character);
+            }
+        }
+
         return false;
     }
 }

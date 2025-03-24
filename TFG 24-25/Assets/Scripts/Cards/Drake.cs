@@ -38,7 +38,7 @@ public class Drake : Character
 
         CellNode onTileNode = CellNodeManager.Instance.GetNodeById(onTile);
 
-        CellConnection attackDirection = onTileNode.GetDirectionToCellByRange(cellToMove.GetId(), stats.range).Item2;
+        CellConnection attackDirection = onTileNode.GetDirectionToCellByRange(cellToMove.GetId(), stats.attackRange).Item2;
 
         Tuple<CellConnection, CellConnection> diagonals = translateDirection[attackDirection];
 

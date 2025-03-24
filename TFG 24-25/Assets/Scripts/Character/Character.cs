@@ -16,24 +16,22 @@ public struct CharacterStats
     public int maxHp;
     public int dmg;
     public int manaCost;
-    public int range;
-    public int currentMoves;
-    public int totalMoves;
+    public int movementRange;
+    public int attackRange;
     public MovementType movementType;
     public bool stun;
     public string description;
     public bool checkAllInRangeCells;
     public int scoreMultiplier;
-    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _range, int _totalMoves, int _scoreMult, MovementType _movementType, string _description)
+    public CharacterStats(string _name, int _manaCost, int _dmg, int _hp, int _movementRange, int _attackRange, int _scoreMult, MovementType _movementType, string _description)
     {
         name = _name;
         maxHp = _hp;
         hp = _hp;
         dmg = _dmg;
         manaCost = _manaCost;
-        range = _range;
-        currentMoves = _totalMoves;
-        totalMoves = _totalMoves;
+        movementRange = _movementRange;
+        attackRange = _attackRange;
         scoreMultiplier = _scoreMult;
         movementType = _movementType;
         stun = false;
@@ -49,9 +47,8 @@ public struct CharacterStats
         " | HP: " + hp +
         " | DMG: " + dmg +
         " | Mana Cost: " + manaCost +
-        " | Range: " + range +
-        " | CurrentMoves: " + currentMoves +
-        " | TotalMoves: " + totalMoves +
+        " | Movement Range: " + movementRange +
+        " | Attack Range: " + attackRange +
         " | Movement Type: " + movementType.ToString()
         );
     }
@@ -112,7 +109,7 @@ public class Character
     protected PlayerStats playerStats;
 
     bool canScore = false;
-
+    bool canMove = false;
 
     public int GetId()
     { return id; }
@@ -223,7 +220,7 @@ public class Character
     public void ResetStats()
     {
         canAttack = true;
-        stats.currentMoves = stats.totalMoves;
+        canMove = true;
     }
 
     public CharacterStats GetCharacterStats()
@@ -275,7 +272,9 @@ public class Character
         if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
             Debug.Log("SPAWN");
-            stats.currentMoves = 0;
+
+            canMove = false;
+
             DisableSpawn();
 
             playerStats.SubstractMana(stats.manaCost);
@@ -292,12 +291,13 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && stats.currentMoves > 0) || CharactersManager.Instance.GetBypassMana())
+        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || CharactersManager.Instance.GetBypassMana())
         {
             //GetCharacterStats().PrintStats();
             playerStats.SubstractMana(stats.manaCost);
+
             canAttack = false;
-            stats.currentMoves--;
+            canMove = false;
 
             //Debug.Log(teamType.ToString() + " MOOOVE");
 
