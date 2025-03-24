@@ -151,7 +151,6 @@ public class CreateGrid : MonoBehaviour
         }
         else
         {
-            Debug.Log("POS: " + i + " " + j);
             if (i == 1 || i == 4)
             {
                 // Instantiate Inside
@@ -165,8 +164,5 @@ public class CreateGrid : MonoBehaviour
                 obj.name = "Central Points";
             }
         }
-        /*
-        
-        */
     }
 }

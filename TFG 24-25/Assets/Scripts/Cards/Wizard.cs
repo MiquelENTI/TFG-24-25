@@ -13,7 +13,7 @@ public class Wizard : Character
 
     public override void Effect() 
     {
-        // Launch Fireball
+        
     }
     //Implementació del so general per a cartes no identificades 
         

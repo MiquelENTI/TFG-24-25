@@ -228,6 +228,8 @@ public class TokenGameObject : DragableGameObject
         CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(id);
         switch (id)
         {
+            case 1:
+                return new Wizard(stats, tokenTeam, instantiatedToken);
             case 2:
                 return new Cavalier(stats, tokenTeam, instantiatedToken);
             case 3:
@@ -252,6 +254,8 @@ public class TokenGameObject : DragableGameObject
                 return new TerracottaWarrior(stats, tokenTeam, instantiatedToken);
             case 20:
                 return new MagicKarp(stats, tokenTeam, instantiatedToken);
+            case 21:
+                return new Archer(stats, tokenTeam, instantiatedToken);
             case 22:
                 return new Chicken(stats, tokenTeam, instantiatedToken);
             case 25:

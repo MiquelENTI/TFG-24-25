@@ -6,32 +6,33 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CharacterStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
-        { 2, new CharacterStats ("Cavalier", 3, 5, 5, 1, 1, 1, MovementType.Basic, "This can move and attack in the same turn.") }, // Cavalier
-        { 3, new CharacterStats ("Salmon", 4, 8, 7, 1, 1, 1, MovementType.Omni, "When this kills an enemy card it moves to that location. Each kill -1 health.")  }, // Salmon
-        { 5, new CharacterStats ("Fly",1, 1, 1,  2, 1, 2, MovementType.Omni, "Pzzzzzzzzzzzzzzzt")  }, // Fly
-        { 6, new CharacterStats ("Turtle",2, 5, 9, 1, 1, 1, MovementType.Basic, "This moves every 2 turns)") }, // Turtle (WIP)
-        { 7, new CharacterStats ("Mimic",2, 3, 2, 1, 1, 2, MovementType.Basic, "When this is attacked destroy both the attacking card and this. Then the opponent draws a card.") }, // Mimic  (WIP)
-        { 10, new CharacterStats("Medusa",3, 3, 6, 1, 1, 1, MovementType.Basic, "When this attacks a monster that monster is petrified. It can't move or attack. When this dies remove the curse from all cards.") }, // Medusa
-        { 13, new CharacterStats("Mummy",3, 5, 12, 1, 1, 1, MovementType.Basic, "Each time this moves -1 attack and HP") }, // Mummy
-        { 14, new CharacterStats("The Gun",3, 7, 4, 1, 1, 1, MovementType.Omni, "When this attacks, it moves to the opposite direction.") }, // The Gun
-        { 15, new CharacterStats("Human Werewolf",3, 4, 4, 1, 1, 1, MovementType.Basic, "This is summoned as Human. Every time this moves flip the card.") }, // The Gun
-        { 16, new CharacterStats("Death Horseman",3, 12, 2, 1, 1, 1, MovementType.Basic, "¿Cuando pagan?") }, // Death Horseman
-        { 17, new CharacterStats("Terracotta Warrior",4, 5, 11, 1, 1, 1, MovementType.Basic, "When this scores, it heals as much HP as points scored.") }, // Terracotta Warrior
-        { 20, new CharacterStats("Magic Karp",5, 6, 8, 1, 1, 1, MovementType.Basic, "When your turn starts, destroy all cards on orthogonal range") }, // Magic Karp
-        { 21, new CharacterStats("Archer",3, 3, 6,  1, 1, 1, MovementType.Omni, "This can attack at two tiles range") }, // Archer
-        { 22, new CharacterStats("Chicken",1, 2, 3, 1, 1, 2, MovementType.Basic, "When this is attacked it deals 5 damage to the attacker.") }, // Chicken
-        { 25, new CharacterStats("Leech",3, 3, 7, 1, 1, 1, MovementType.Basic, "When your turn starts, if this is on a scoring tile, deal 1 damage to all surrounding enemy cards.") }, // Leech
-        { 26, new CharacterStats("Berserker",3, 6, 5, 1, 1, 1, MovementType.Basic, "If this is on a scoring tile, +2 attack.") }, // Berserker
-        { 27, new CharacterStats("Hydra",4, 7, 8, 1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
+        { 1, new CharacterStats ("Wizard",              3, 2,  2,  1, 8, 1, MovementType.Basic, "This has infinite Attack Range.") }, // Cavalier
+        { 2, new CharacterStats ("Cavalier",            3, 5,  5,  1, 1, 1, MovementType.Basic, "This can move and attack in the same turn.") }, // Cavalier
+        { 3, new CharacterStats ("Salmon",              4, 8,  7,  1, 1, 1, MovementType.Omni, "When this kills an enemy card it moves to that location. Each kill -1 health.")  }, // Salmon
+        { 5, new CharacterStats ("Fly",                 1, 1,  1,  2, 1, 2, MovementType.Omni, "Pzzzzzzzzzzzzzzzt")  }, // Fly
+        { 6, new CharacterStats ("Turtle",              2, 5,  9,  1, 1, 1, MovementType.Basic, "This moves every 2 turns)") }, // Turtle (WIP)
+        { 7, new CharacterStats ("Mimic",               2, 3,  2,  1, 1, 2, MovementType.Basic, "When this is attacked destroy both the attacking card and this. Then the opponent draws a card.") }, // Mimic  (WIP)
+        { 10, new CharacterStats("Medusa",              3, 3,  6,  1, 1, 1, MovementType.Basic, "When this attacks a monster that monster is petrified. It can't move or attack. When this dies remove the curse from all cards.") }, // Medusa
+        { 13, new CharacterStats("Mummy",               3, 5,  12, 1, 1, 1, MovementType.Basic, "Each time this moves -1 attack and HP") }, // Mummy
+        { 14, new CharacterStats("The Gun",             3, 7,  4,  1, 1, 1, MovementType.Omni, "When this attacks, it moves to the opposite direction.") }, // The Gun
+        { 15, new CharacterStats("Human Werewolf",      3, 4,  4,  1, 1, 1, MovementType.Basic, "This is summoned as Human. Every time this moves flip the card.") }, // The Gun
+        { 16, new CharacterStats("Death Horseman",      3, 12, 2,  1, 1, 1, MovementType.Basic, "¿Cuando pagan?") }, // Death Horseman
+        { 17, new CharacterStats("Terracotta Warrior",  4, 5,  11, 1, 1, 1, MovementType.Basic, "When this scores, it heals as much HP as points scored.") }, // Terracotta Warrior
+        { 20, new CharacterStats("Magic Karp",          5, 6,  8,  1, 1, 1, MovementType.Basic, "When your turn starts, destroy all cards on orthogonal range") }, // Magic Karp
+        { 21, new CharacterStats("Archer",              3, 3,  6,  1, 2, 1, MovementType.Omni, "This can attack at two tiles range") }, // Archer
+        { 22, new CharacterStats("Chicken",             1, 2,  3,  1, 1, 2, MovementType.Basic, "When this is attacked it deals 5 damage to the attacker.") }, // Chicken
+        { 25, new CharacterStats("Leech",               3, 3,  7,  1, 1, 1, MovementType.Basic, "When your turn starts, if this is on a scoring tile, deal 1 damage to all surrounding enemy cards.") }, // Leech
+        { 26, new CharacterStats("Berserker",           3, 6,  5,  1, 1, 1, MovementType.Basic, "If this is on a scoring tile, +2 attack.") }, // Berserker
+        { 27, new CharacterStats("Hydra",               4, 7,  8,  1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
         
         
-        { 32, new CharacterStats("Kamikaze",2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
+        { 32, new CharacterStats("Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
 
-        { 35, new CharacterStats("Dragon",3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
+        { 35, new CharacterStats("Dragon",              3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
     
-        { 37, new CharacterStats("Samurai",3, 5, 7, 1, 1, 1, MovementType.Basic, "Each time one of your monsters dies this gains 1 attack. Max 8.") }, // Samurai
-        { 38, new CharacterStats("Giant",5, 6, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
-        { 39, new CharacterStats("Ant",2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
+        { 37, new CharacterStats("Samurai",             3, 5, 7, 1, 1, 1, MovementType.Basic, "Each time one of your monsters dies this gains 1 attack. Max 8.") }, // Samurai
+        { 38, new CharacterStats("Giant",               5, 6, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
+        { 39, new CharacterStats("Ant",                 2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
         
         
 

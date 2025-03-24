@@ -188,7 +188,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         {
             CellNode nextCell = centralCell;
 
-            for (int i = 0; i<character.GetCharacterStats().range; i++)
+            for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
             {
                 if (!nextCell.CheckConnectionNode(direction))
                 {
