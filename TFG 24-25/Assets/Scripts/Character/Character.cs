@@ -104,6 +104,7 @@ public class Character
 
     protected bool toSpawn = true;
     protected bool canAttack = true;
+    protected bool disarmAttack = false;
 
     protected GameObject token;
     protected PlayerStats playerStats;
@@ -145,9 +146,9 @@ public class Character
 
     public bool CanAttack()
     {
-        if (playerStats.GetCurrentMana() >= stats.manaCost)
+        if (playerStats.GetCurrentMana() >= stats.manaCost && !disarmAttack)
         {
-            return canAttack;
+            return true;
         }
         else if (CharactersManager.Instance.GetBypassMana())
         {
@@ -273,7 +274,7 @@ public class Character
         {
             Debug.Log("SPAWN");
 
-            canMove = false;
+            DisableAttackAndMovement();
 
             DisableSpawn();
 
@@ -296,8 +297,7 @@ public class Character
             //GetCharacterStats().PrintStats();
             playerStats.SubstractMana(stats.manaCost);
 
-            canAttack = false;
-            canMove = false;
+            DisableAttackAndMovement();
 
             //Debug.Log(teamType.ToString() + " MOOOVE");
 
@@ -453,6 +453,17 @@ public class Character
     {
         stats.stun = false;
         Debug.Log("CHARACTER NOT STUNNED!");
+    }
+
+    public void SetDisarmAttack(bool state)
+    {
+        disarmAttack = state;
+    }
+
+    public void DisableAttackAndMovement()
+    {
+        canAttack = false;
+        canMove = false;
     }
 
     public void ApplyDOT()

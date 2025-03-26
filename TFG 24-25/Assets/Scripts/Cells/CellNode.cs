@@ -306,7 +306,7 @@ public class CellNode
             if (characterMoving.GetTeamType() == character.GetTeamType())
             {
                 Debug.Log("Node to move is occupied by another character");
-                return false;
+                //return false;
             }
             isAttacking = true;
             Debug.Log("IsAttacking");
@@ -384,6 +384,7 @@ public class CellNode
             {
                 //Debug.Log("Attacking");
                 characterMoving.Attack(this.character);
+                characterMoving.DisableAttackAndMovement();
             }
         }
 

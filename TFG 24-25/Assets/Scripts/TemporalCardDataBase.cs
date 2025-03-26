@@ -12,6 +12,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 5, new CharacterStats ("Fly",                 1, 1,  1,  2, 1, 2, MovementType.Omni, "Pzzzzzzzzzzzzzzzt")  }, // Fly
         { 6, new CharacterStats ("Turtle",              2, 5,  9,  1, 1, 1, MovementType.Basic, "This moves every 2 turns)") }, // Turtle (WIP)
         { 7, new CharacterStats ("Mimic",               2, 3,  2,  1, 1, 2, MovementType.Basic, "When this is attacked destroy both the attacking card and this. Then the opponent draws a card.") }, // Mimic  (WIP)
+        { 8, new CharacterStats ("Pichi",               5, 1,  7,  1, 1, 1, MovementType.Basic, "When this attacks an enemy monster, that monster can't attack next turn..") }, // Mimic  (WIP)
         { 10, new CharacterStats("Medusa",              3, 3,  6,  1, 1, 1, MovementType.Basic, "When this attacks a monster that monster is petrified. It can't move or attack. When this dies remove the curse from all cards.") }, // Medusa
         { 13, new CharacterStats("Mummy",               3, 5,  12, 1, 1, 1, MovementType.Basic, "Each time this moves -1 attack and HP") }, // Mummy
         { 14, new CharacterStats("The Gun",             3, 7,  4,  1, 1, 1, MovementType.Omni, "When this attacks, it moves to the opposite direction.") }, // The Gun

@@ -240,6 +240,8 @@ public class TokenGameObject : DragableGameObject
                 return new Turtle(stats, tokenTeam, instantiatedToken);
             case 7:
                 return new Mimic(stats, tokenTeam, instantiatedToken);
+            case 8:
+                return new Pichi(stats, tokenTeam, instantiatedToken);
             case 10:
                 return new Medusa(stats, tokenTeam, instantiatedToken);
             case 13:
