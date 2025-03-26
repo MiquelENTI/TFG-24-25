@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9201679933915151797
+--- !u!114 &-8114625740809482171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,98 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/MENU/Menu
+  m_Name: event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack
   m_EditorClassIdentifier: 
-  Path: event:/MUSIC/MENU/Menu
+  Path: event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack
   Guid:
-    Data1: 1124853427
-    Data2: 1178567522
-    Data3: 1356798601
-    Data4: 1123767129
+    Data1: -280644010
+    Data2: 1214774243
+    Data3: -1301596536
+    Data4: -2126907486
   Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 156000
---- !u!114 &-9144613102471457136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638786163942534788
-  FileSizes:
-  - Name: Desktop
-    Value: 2696
-  Exists: 1
---- !u!114 &-9111162937153991656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
-  Guid:
-    Data1: -1978109115
-    Data2: 1174688455
-    Data3: 1276673441
-    Data4: 1847671146
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 101991
---- !u!114 &-8824726384324790061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MEDUSA/Medusa_selection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MEDUSA/Medusa_selection
-  Guid:
-    Data1: 284352883
-    Data2: 1197932301
-    Data3: -1461728896
-    Data4: -1355502344
-  Banks:
-  - {fileID: 7737572241670198087}
+  - {fileID: 6181025416848688478}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 11571
---- !u!114 &-8153394127401969477
+  Length: 8000
+--- !u!114 &-7990008351523224752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,24 +37,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/EFFECTS/Flash/FLASH
+  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_attack
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/EFFECTS/Flash/FLASH
+  Path: event:/SFX/UI/CARDS/ARCHER/Archer_attack
   Guid:
-    Data1: -1945005269
-    Data2: 1299605566
-    Data3: -1753413979
-    Data4: 512706616
+    Data1: 672075150
+    Data2: 1175839648
+    Data3: -951879540
+    Data4: -1013401230
   Banks:
-  - {fileID: 7737572241670198087}
+  - {fileID: 6181025416848688478}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3973
---- !u!114 &-6833839539742696063
+  Length: 1125
+--- !u!114 &-7795498656074864476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +73,7 @@ MonoBehaviour:
     Data3: 1279847317
     Data4: -530647855
   Banks:
-  - {fileID: 7737572241670198087}
+  - {fileID: 6181025416848688478}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -155,7 +81,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6703
---- !u!114 &-6250765082595438276
+--- !u!114 &-7760681761142781161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,24 +91,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MUSIC/GAMEPLAY/Gameplay
+  m_Name: event:/SFX/UI/CARDS/WAREWOLF/Howl
   m_EditorClassIdentifier: 
-  Path: event:/MUSIC/GAMEPLAY/Gameplay
+  Path: event:/SFX/UI/CARDS/WAREWOLF/Howl
   Guid:
-    Data1: 1963097260
-    Data2: 1306182862
-    Data3: -1906698564
-    Data4: -43910900
+    Data1: 665138889
+    Data2: 1287082248
+    Data3: 1480665514
+    Data4: -113962873
   Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 92000
---- !u!114 &-5705224980803646184
+  Length: 2496
+--- !u!114 &-6588972874532700124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/MANA/Drink_Mana
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/MANA/Drink_Mana
+  Guid:
+    Data1: 1320533049
+    Data2: 1340335908
+    Data3: -1809048129
+    Data4: 307954529
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1966
+--- !u!114 &-6566318525177543665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
+  Guid:
+    Data1: 2125677807
+    Data2: 1080992663
+    Data3: 1734080158
+    Data4: 1239800274
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1937
+--- !u!114 &-6500046645372483852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +181,7 @@ MonoBehaviour:
     Data3: 804495239
     Data4: 1545287166
   Banks:
-  - {fileID: 7737572241670198087}
+  - {fileID: 6181025416848688478}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -209,7 +189,277 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1763
---- !u!114 &-5491940732813974109
+--- !u!114 &-6494617000581521395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TOKEN MOVEMENT
+  m_EditorClassIdentifier: 
+  Path: event:/TOKEN MOVEMENT
+  Guid:
+    Data1: -1822008150
+    Data2: 1274413352
+    Data3: 311989685
+    Data4: -1823688823
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 334
+--- !u!114 &-5893433768178629401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/GAMEPLAY/Gameplay
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/GAMEPLAY/Gameplay
+  Guid:
+    Data1: 1963097260
+    Data2: 1306182862
+    Data3: -1906698564
+    Data4: -43910900
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92000
+--- !u!114 &-4783689207854876107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AMBIENT/BONFIRE
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENT/BONFIRE
+  Guid:
+    Data1: 333562367
+    Data2: 1096832995
+    Data3: -2031605859
+    Data4: -1221722841
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17753
+--- !u!114 &-4347949337560954356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
+  Guid:
+    Data1: -63004015
+    Data2: 1125522369
+    Data3: -316979547
+    Data4: 1111657120
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &-4149691637756963605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/MEDUSA/Medusa_selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/MEDUSA/Medusa_selection
+  Guid:
+    Data1: 284352883
+    Data2: 1197932301
+    Data3: -1461728896
+    Data4: -1355502344
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11571
+--- !u!114 &-4003821468892493898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
+  Guid:
+    Data1: -1684525416
+    Data2: 1298309566
+    Data3: -958921577
+    Data4: -1015100740
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1842
+--- !u!114 &-3600970258699173281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/MIMIC/Mimic_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/MIMIC/Mimic_Attack
+  Guid:
+    Data1: 1621047747
+    Data2: 1125890866
+    Data3: -656032108
+    Data4: 404973761
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3567522371849304324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AMBIENT/ROOMTONE
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENT/ROOMTONE
+  Guid:
+    Data1: 1860700176
+    Data2: 1144748228
+    Data3: 1483625137
+    Data4: 1267618951
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 166706
+--- !u!114 &-3162635850097943515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CANVI DE TORN/Whisper
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CANVI DE TORN/Whisper
+  Guid:
+    Data1: -307875157
+    Data2: 1302402879
+    Data3: 533341112
+    Data4: -169503081
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-2231571047825561331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/EFFECTS/Flash/FLASH
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/EFFECTS/Flash/FLASH
+  Guid:
+    Data1: -1945005269
+    Data2: 1299605566
+    Data3: -1753413979
+    Data4: 512706616
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3973
+--- !u!114 &-981201911777501946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,7 +478,7 @@ MonoBehaviour:
     Data3: 1705618048
     Data4: 1366817997
   Banks:
-  - {fileID: 7737572241670198087}
+  - {fileID: 6181025416848688478}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -236,7 +486,563 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1554
---- !u!114 &-5325660656478526003
+--- !u!114 &-468739093882934681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
+  Guid:
+    Data1: -929886967
+    Data2: 1231172565
+    Data3: -737548361
+    Data4: 17915594
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1437
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 6372898643741134257}
+  - {fileID: 6181025416848688478}
+  EditorEvents:
+  - {fileID: 1692773044545491668}
+  - {fileID: -6500046645372483852}
+  - {fileID: -468739093882934681}
+  - {fileID: 3971755970025149524}
+  - {fileID: -3567522371849304324}
+  - {fileID: 5191048764381668451}
+  - {fileID: -2231571047825561331}
+  - {fileID: -6588972874532700124}
+  - {fileID: 5377125273289471582}
+  - {fileID: 588399397237434087}
+  - {fileID: -8114625740809482171}
+  - {fileID: 6622210824770814010}
+  - {fileID: -4149691637756963605}
+  - {fileID: 518262715434178319}
+  - {fileID: -7795498656074864476}
+  - {fileID: -7990008351523224752}
+  - {fileID: -4347949337560954356}
+  - {fileID: -4003821468892493898}
+  - {fileID: 2316474327971391496}
+  - {fileID: -6494617000581521395}
+  - {fileID: -3162635850097943515}
+  - {fileID: -5893433768178629401}
+  - {fileID: 8029370366086134166}
+  - {fileID: 5826932884237698022}
+  - {fileID: 5111402740058694813}
+  - {fileID: -3600970258699173281}
+  - {fileID: -7760681761142781161}
+  - {fileID: 953260768180990405}
+  - {fileID: -981201911777501946}
+  - {fileID: 3062454939914905767}
+  - {fileID: 5540370400201889409}
+  - {fileID: -6566318525177543665}
+  - {fileID: 1556987414986882283}
+  - {fileID: 7978583801026392243}
+  - {fileID: -4783689207854876107}
+  EditorParameters:
+  - {fileID: 9213471074062848215}
+  MasterBanks:
+  - {fileID: 6181025416848688478}
+  StringsBanks:
+  - {fileID: 6372898643741134257}
+  cacheTime: 638786163942534788
+  cacheVersion: 131846
+--- !u!114 &518262715434178319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/THE GUN/TheGun_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/THE GUN/TheGun_Attack
+  Guid:
+    Data1: 457871493
+    Data2: 1280131075
+    Data3: 1738169528
+    Data4: 1121500463
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6756
+--- !u!114 &588399397237434087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/TURTLE/Turtle_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/TURTLE/Turtle_select
+  Guid:
+    Data1: -923044522
+    Data2: 1109419118
+    Data3: -1956949624
+    Data4: 488547251
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &953260768180990405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/PICHI/Pichi_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/PICHI/Pichi_Attack
+  Guid:
+    Data1: 551776714
+    Data2: 1249885389
+    Data3: 397737111
+    Data4: -902500742
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3313
+--- !u!114 &1556987414986882283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/FLY/Fly_Selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/FLY/Fly_Selection
+  Guid:
+    Data1: 1097031159
+    Data2: 1100652465
+    Data3: 484962735
+    Data4: 110529219
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85893
+--- !u!114 &1692773044545491668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/FLY/Fly_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/FLY/Fly_Attack
+  Guid:
+    Data1: 236929796
+    Data2: 1164586379
+    Data3: -903899758
+    Data4: -1888746353
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &2316474327971391496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/MUMMY/Mummy_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/MUMMY/Mummy_Attack
+  Guid:
+    Data1: 1439987111
+    Data2: 1190361841
+    Data3: 1489142169
+    Data4: -393896194
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3382
+--- !u!114 &3062454939914905767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/PICHI/Pichi_Selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/PICHI/Pichi_Selection
+  Guid:
+    Data1: 2119337194
+    Data2: 1145130809
+    Data3: -336718697
+    Data4: -2108946295
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3259
+--- !u!114 &3971755970025149524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/THE GUN/TheGun_selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/THE GUN/TheGun_selection
+  Guid:
+    Data1: 51808266
+    Data2: 1161961907
+    Data3: -315647086
+    Data4: 65248663
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
+--- !u!114 &5111402740058694813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/SALMON/Salmon_selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/SALMON/Salmon_selection
+  Guid:
+    Data1: -760990028
+    Data2: 1209647404
+    Data3: -701405002
+    Data4: 964568782
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2607
+--- !u!114 &5191048764381668451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
+  Guid:
+    Data1: -358029784
+    Data2: 1104192059
+    Data3: 2090169506
+    Data4: -2043592601
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3815
+--- !u!114 &5377125273289471582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select
+  Guid:
+    Data1: -1978109115
+    Data2: 1174688455
+    Data3: 1276673441
+    Data4: 1847671146
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 101991
+--- !u!114 &5540370400201889409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction
+  Guid:
+    Data1: -980313619
+    Data2: 1127975878
+    Data3: -1258565482
+    Data4: 1840306775
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3773
+--- !u!114 &5826932884237698022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/MENU/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/MENU/Menu
+  Guid:
+    Data1: 1124853427
+    Data2: 1178567522
+    Data3: 1356798601
+    Data4: 1123767129
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 156000
+--- !u!114 &6181025416848688478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  Name: Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638786163942516093
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6372898643741134257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.strings.bank
+  Name: Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638786163942534788
+  FileSizes:
+  - Name: 
+    Value: 2696
+  Exists: 1
+--- !u!114 &6622210824770814010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_Select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/ARCHER/Archer_Select
+  Guid:
+    Data1: 924272241
+    Data2: 1097883554
+    Data3: -1486527583
+    Data4: -410045363
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1321
+--- !u!114 &7978583801026392243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
+  Guid:
+    Data1: -1997492228
+    Data2: 1136021068
+    Data3: -1744830064
+    Data4: -986401298
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &8029370366086134166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
+  Guid:
+    Data1: -460635216
+    Data2: 1306527500
+    Data3: 1243729079
+    Data4: 936190727
+  Banks:
+  - {fileID: 6181025416848688478}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &9213471074062848215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,1000 +1066,3 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-5235087302348820298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/BOWLING/Bowling_movement
-  Guid:
-    Data1: -1684525416
-    Data2: 1298309566
-    Data3: -958921577
-    Data4: -1015100740
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1842
---- !u!114 &-4875932691727379573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/FLY/Fly_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/FLY/Fly_Attack
-  Guid:
-    Data1: 236929796
-    Data2: 1164586379
-    Data3: -903899758
-    Data4: -1888746353
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-4422700652043900420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/WAREWOLF/Howl
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/WAREWOLF/Howl
-  Guid:
-    Data1: 665138889
-    Data2: 1287082248
-    Data3: 1480665514
-    Data4: -113962873
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2496
---- !u!114 &-3900884633152702053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_select
-  Guid:
-    Data1: 2125677807
-    Data2: 1080992663
-    Data3: 1734080158
-    Data4: 1239800274
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1937
---- !u!114 &-3484912978632944530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack
-  Guid:
-    Data1: -929886967
-    Data2: 1231172565
-    Data3: -737548361
-    Data4: 17915594
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1437
---- !u!114 &-3420830711644414619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/MANA/Drink_Mana
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/MANA/Drink_Mana
-  Guid:
-    Data1: 1320533049
-    Data2: 1340335908
-    Data3: -1809048129
-    Data4: 307954529
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1966
---- !u!114 &-2947849376421128937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_attack
-  Guid:
-    Data1: -1997492228
-    Data2: 1136021068
-    Data3: -1744830064
-    Data4: -986401298
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3500
---- !u!114 &-1935061830582507614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack
-  Guid:
-    Data1: -280644010
-    Data2: 1214774243
-    Data3: -1301596536
-    Data4: -2126907486
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8000
---- !u!114 &-1431352333222560926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown
-  Guid:
-    Data1: -63004015
-    Data2: 1125522369
-    Data3: -316979547
-    Data4: 1111657120
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2500
---- !u!114 &-1056750833154121989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_Select
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/ARCHER/Archer_Select
-  Guid:
-    Data1: 924272241
-    Data2: 1097883554
-    Data3: -1486527583
-    Data4: -410045363
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1321
---- !u!114 &-542678830152173319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/FLASH
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/FLASH
-  Guid:
-    Data1: -1945005269
-    Data2: 1299605566
-    Data3: -1753413979
-    Data4: 512706616
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3973
---- !u!114 &-500821746009133753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/AMBIENT/ROOMTONE
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/AMBIENT/ROOMTONE
-  Guid:
-    Data1: 1860700176
-    Data2: 1144748228
-    Data3: 1483625137
-    Data4: 1267618951
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 166706
---- !u!114 &-163073605615587848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/FLAY/FLY_SELECTION
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/FLAY/FLY_SELECTION
-  Guid:
-    Data1: 1097031159
-    Data2: 1100652465
-    Data3: 484962735
-    Data4: 110529219
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 70972
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -9144613102471457136}
-  - {fileID: 7737572241670198087}
-  EditorEvents:
-  - {fileID: 7472436044224387888}
-  - {fileID: -4875932691727379573}
-  - {fileID: 6160191681341958999}
-  - {fileID: -8153394127401969477}
-  - {fileID: -1935061830582507614}
-  - {fileID: -8824726384324790061}
-  - {fileID: 42411174634105933}
-  - {fileID: 2221530083567787456}
-  - {fileID: 3006857475622986513}
-  - {fileID: -6833839539742696063}
-  - {fileID: 2576208016468039914}
-  - {fileID: 1799821369739090139}
-  - {fileID: 2722255143135379710}
-  - {fileID: 5303604604530333896}
-  - {fileID: 829190916393502227}
-  - {fileID: -5705224980803646184}
-  - {fileID: -3484912978632944530}
-  - {fileID: -500821746009133753}
-  - {fileID: 1872538113136795843}
-  - {fileID: -3420830711644414619}
-  - {fileID: -9111162937153991656}
-  - {fileID: 4295401964879122242}
-  - {fileID: -1056750833154121989}
-  - {fileID: 3511326003300010978}
-  - {fileID: -5235087302348820298}
-  - {fileID: 7305142340567438620}
-  - {fileID: 8507867051811762473}
-  - {fileID: -4422700652043900420}
-  - {fileID: -5491940732813974109}
-  - {fileID: -3900884633152702053}
-  - {fileID: -6250765082595438276}
-  - {fileID: -9201679933915151797}
-  - {fileID: 5503527091489392222}
-  - {fileID: -1431352333222560926}
-  - {fileID: -2947849376421128937}
-  EditorParameters:
-  - {fileID: -5325660656478526003}
-  MasterBanks:
-  - {fileID: 7737572241670198087}
-  StringsBanks:
-  - {fileID: -9144613102471457136}
-  cacheTime: 638786163942534788
-  cacheVersion: 131621
---- !u!114 &42411174634105933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/THE GUN/TheGun_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/THE GUN/TheGun_Attack
-  Guid:
-    Data1: 457871493
-    Data2: 1280131075
-    Data3: 1738169528
-    Data4: 1121500463
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 6756
---- !u!114 &829190916393502227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction
-  Guid:
-    Data1: -980313619
-    Data2: 1127975878
-    Data3: -1258565482
-    Data4: 1840306775
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3773
---- !u!114 &1029488878628246294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/AMBIENT/BONFIRE
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/AMBIENT/BONFIRE
-  Guid:
-    Data1: 333562367
-    Data2: 1096832995
-    Data3: -2031605859
-    Data4: -1221722841
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 17753
---- !u!114 &1799821369739090139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MIMIC/Mimic_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MIMIC/Mimic_Attack
-  Guid:
-    Data1: 1621047747
-    Data2: 1125890866
-    Data3: -656032108
-    Data4: 404973761
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &1872538113136795843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select
-  Guid:
-    Data1: -358029784
-    Data2: 1104192059
-    Data3: 2090169506
-    Data4: -2043592601
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3815
---- !u!114 &2221530083567787456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/SALMON/Salmon_selection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/SALMON/Salmon_selection
-  Guid:
-    Data1: -760990028
-    Data2: 1209647404
-    Data3: -701405002
-    Data4: 964568782
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2607
---- !u!114 &2576208016468039914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MUMMY/Mummy_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MUMMY/Mummy_Attack
-  Guid:
-    Data1: 1439987111
-    Data2: 1190361841
-    Data3: 1489142169
-    Data4: -393896194
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3382
---- !u!114 &2722255143135379710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/PICHI/Pichi_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/PICHI/Pichi_Attack
-  Guid:
-    Data1: 551776714
-    Data2: 1249885389
-    Data3: 397737111
-    Data4: -902500742
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3313
---- !u!114 &2933058512026751387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/CANON
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/CANON
-  Guid:
-    Data1: 457871493
-    Data2: 1280131075
-    Data3: 1738169528
-    Data4: 1121500463
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 7256
---- !u!114 &3006857475622986513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/FLY/Fly_Selection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/FLY/Fly_Selection
-  Guid:
-    Data1: 1097031159
-    Data2: 1100652465
-    Data3: 484962735
-    Data4: 110529219
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 85893
---- !u!114 &3245209372483028642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MEDUSA/MEDUSA_SELECTION
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MEDUSA/MEDUSA_SELECTION
-  Guid:
-    Data1: 284352883
-    Data2: 1197932301
-    Data3: -1461728896
-    Data4: -1355502344
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 10000
---- !u!114 &3511326003300010978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/ARCHER/Archer_attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/ARCHER/Archer_attack
-  Guid:
-    Data1: 672075150
-    Data2: 1175839648
-    Data3: -951879540
-    Data4: -1013401230
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1125
---- !u!114 &3552300373220124683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/FLAY/FLY_ATTACK
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/FLAY/FLY_ATTACK
-  Guid:
-    Data1: 236929796
-    Data2: 1164586379
-    Data3: -903899758
-    Data4: -1888746353
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3978
---- !u!114 &4039192898841216244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/MEDUSA/MEDUSA_ATTACK
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/MEDUSA/MEDUSA_ATTACK
-  Guid:
-    Data1: -280644010
-    Data2: 1214774243
-    Data3: -1301596536
-    Data4: -2126907486
-  Banks:
-  - {fileID: -7461150170883479937}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5571
---- !u!114 &4295401964879122242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/TURTLE/Turtle_select
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/TURTLE/Turtle_select
-  Guid:
-    Data1: -923044522
-    Data2: 1109419118
-    Data3: -1956949624
-    Data4: 488547251
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2500
---- !u!114 &5303604604530333896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/PICHI/Pichi_Selection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/PICHI/Pichi_Selection
-  Guid:
-    Data1: 2119337194
-    Data2: 1145130809
-    Data3: -336718697
-    Data4: -2108946295
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3259
---- !u!114 &5503527091489392222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TOKEN MOVEMENT
-  m_EditorClassIdentifier: 
-  Path: event:/TOKEN MOVEMENT
-  Guid:
-    Data1: -1822008150
-    Data2: 1274413352
-    Data3: 311989685
-    Data4: -1823688823
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 334
---- !u!114 &6160191681341958999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/THE GUN/TheGun_selection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/THE GUN/TheGun_selection
-  Guid:
-    Data1: 51808266
-    Data2: 1161961907
-    Data3: -315647086
-    Data4: 65248663
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5500
---- !u!114 &7305142340567438620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CANVI DE TORN/Whisper
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CANVI DE TORN/Whisper
-  Guid:
-    Data1: -307875157
-    Data2: 1302402879
-    Data3: 533341112
-    Data4: -169503081
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
---- !u!114 &7472436044224387888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/AMBIENT/BONFIRE
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/AMBIENT/BONFIRE
-  Guid:
-    Data1: 333562367
-    Data2: 1096832995
-    Data3: -2031605859
-    Data4: -1221722841
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 17753
---- !u!114 &7737572241670198087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638786163942516093
-  FileSizes:
-  - Name: Desktop
-    Value: 7822944
-  Exists: 1
---- !u!114 &8507867051811762473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/CARDS/BOWLING/Inici_Bowling
-  Guid:
-    Data1: -460635216
-    Data2: 1306527500
-    Data3: 1243729079
-    Data4: 936190727
-  Banks:
-  - {fileID: 7737572241670198087}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000

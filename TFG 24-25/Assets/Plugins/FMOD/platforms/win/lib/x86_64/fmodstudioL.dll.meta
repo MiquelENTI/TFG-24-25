@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8af3c20c0e13048cab909fa2a033ffeb
+guid: 0f985b25a81f742fcbfe080fe28e58e7
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,16 +14,11 @@ PluginImporter:
   - first:
       Any: 
     second:
-<<<<<<< HEAD
       enabled: 0
-=======
-      enabled: 1
->>>>>>> feature/Onboarding
       settings: {}
   - first:
       Editor: Editor
     second:
-<<<<<<< HEAD
       enabled: 1
       settings:
         CPU: x86_64
@@ -33,11 +28,6 @@ PluginImporter:
     second:
       enabled: 1
       settings: {}
-=======
-      enabled: 0
-      settings:
-        DefaultValueInitialized: true
->>>>>>> feature/Onboarding
   userData: 
   assetBundleName: 
   assetBundleVariant: 
