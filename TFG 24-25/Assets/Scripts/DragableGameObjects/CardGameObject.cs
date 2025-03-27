@@ -177,6 +177,22 @@ public class CardGameObject : DragableGameObject
         }
         movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
+
+    public void SetCharacterToSpawnId_ManaCostIncrease(int id)
+    {
+        characterIdToSpawn = id;
+        // Info To Display it on Card
+        characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        characterStats.manaCost++;
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        if (cardSprite == null)
+        {
+            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
+        }
+        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
+    }
+
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
 

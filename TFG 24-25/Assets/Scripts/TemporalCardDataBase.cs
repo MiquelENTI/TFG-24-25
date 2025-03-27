@@ -27,6 +27,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 25, new CharacterStats("Leech",               3, 3,  7,  1, 1, 1, MovementType.Basic, "When your turn starts, if this is on a scoring tile, deal 1 damage to all surrounding enemy cards.") }, // Leech
         { 26, new CharacterStats("Berserker",           3, 6,  5,  1, 1, 1, MovementType.Basic, "If this is on a scoring tile, +2 attack.") }, // Berserker
         { 27, new CharacterStats("Hydra",               4, 7,  8,  1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
+        { 28, new CharacterStats("Zombie",              1, 2,  1,  1, 1, 1, MovementType.Omni, "When this is killed, This returns to your hand.") }, // Hydra
         
         
         { 32, new CharacterStats("Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
@@ -74,6 +75,18 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         return characterStats[id];
     }
 
+    public int GetTemporalStatsIdByName(string name)
+    {
+        foreach (var stats in characterStats)
+        {
+            if (stats.Value.name == name)
+            {
+                return stats.Key; 
+            }
+        }
+        return -1;
+    }
+
     public List<int> GetAllCharacters(int copies)
     {
         List<int> temp = new();
@@ -85,10 +98,5 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
             }
         }
         return temp;
-    }
-
-    public CharacterCard GetCharacter(int characterId)
-    {
-        return new CharacterCard(characterStats[characterId]);
     }
 }

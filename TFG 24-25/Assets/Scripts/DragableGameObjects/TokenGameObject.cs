@@ -270,6 +270,8 @@ public class TokenGameObject : DragableGameObject
                 return new Berserker(stats, tokenTeam, instantiatedToken);
             case 27:
                 return new Hydra(stats, tokenTeam, instantiatedToken);
+            case 28:
+                return new Zombie(stats, tokenTeam, instantiatedToken);
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
