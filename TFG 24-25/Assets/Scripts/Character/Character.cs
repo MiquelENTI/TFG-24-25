@@ -109,8 +109,8 @@ public class Character
     protected GameObject token;
     protected PlayerStats playerStats;
 
-    bool canScore = false;
-    bool canMove = false;
+    protected bool canScore = false;
+    protected bool canMove = false;
 
     public int GetId()
     { return id; }
@@ -333,18 +333,17 @@ public class Character
 
     protected void BypassMovement(int otherTileId)
     {
-        canAttack = false; // Delete or not?
+        DisableAttackAndMovement();
 
         Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
 
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
-        CellNode previousNode = CellNodeManager.Instance.GetNodeById(onTile);
+        CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
         cellToMove.SetCharacter(this);
-        previousNode.RemoveCharacter();
     }
 
     void TileScoring()
