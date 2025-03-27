@@ -245,7 +245,7 @@ public class SoundManager : Singleton<SoundManager>
         
         };   
         board = GameObject.Find("Board");
-        PlayMusic(002000001);
+        //PlayMusic(002000001);
     }
 
 

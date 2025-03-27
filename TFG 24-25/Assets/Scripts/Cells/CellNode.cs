@@ -352,7 +352,7 @@ public class CellNode
             {
                 if (diff.x == 0.0f || diff.y == 0.0f || (diff.x == diff.y))
                 {
-                    return CanAttackOrMoveLogic(isAttacking, characterMoving, diff);
+                    return characterMoving.GetJumpMove() ? CanAttackOrMoveLogicJump(isAttacking, characterMoving, diff) : CanAttackOrMoveLogic(isAttacking, characterMoving, diff);
                 }
                 break;
             }
@@ -386,6 +386,30 @@ public class CellNode
                 characterMoving.Attack(this.character);
                 characterMoving.DisableAttackAndMovement();
             }
+        }
+
+        return false;
+    }
+
+    bool CanAttackOrMoveLogicJump(bool isAttacking, Character characterMoving, Vector2 diff)
+    {
+        if (!isAttacking && (diff.x == characterMoving.GetCharacterStats().movementRange || diff.y == characterMoving.GetCharacterStats().movementRange))
+        {
+            return true;
+        }
+
+        if (!characterMoving.CanAttack())
+        {
+            //Debug.Log("CANNOT ATTACK");
+            return false;
+
+        }
+
+        if (diff.x == characterMoving.GetCharacterStats().attackRange || diff.y == characterMoving.GetCharacterStats().attackRange)
+        {
+            Debug.Log("Attacking");
+            characterMoving.Attack(this.character);
+            characterMoving.DisableAttackAndMovement();
         }
 
         return false;

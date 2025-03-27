@@ -112,6 +112,8 @@ public class Character
     protected bool canScore = false;
     protected bool canMove = false;
 
+    protected bool jumpMove = false;
+
     public int GetId()
     { return id; }
 
@@ -292,32 +294,41 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if ((cellToMove.CheckNodes(id) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || CharactersManager.Instance.GetBypassMana())
+        if (playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove)
         {
-            //GetCharacterStats().PrintStats();
-            playerStats.SubstractMana(stats.manaCost);
+            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana())
+            {
+                //GetCharacterStats().PrintStats();
+                playerStats.SubstractMana(stats.manaCost);
 
-            DisableAttackAndMovement();
+                DisableAttackAndMovement();
 
-            //Debug.Log(teamType.ToString() + " MOOOVE");
+                //Debug.Log(teamType.ToString() + " MOOOVE");
 
-            CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
+                CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
-            SetOnTileId(cellToMove.GetId());
-            MoveToken(cellToMove.GetPosition());
+                SetOnTileId(cellToMove.GetId());
+                MoveToken(cellToMove.GetPosition());
 
-            cellToMove.SetCharacter(this);
+                cellToMove.SetCharacter(this);
 
-            //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
-            //Debug.Log("Previous After");
-            //previousNode.PrintStatus();
-            //Debug.Log("OnTIle AFter");
-            //CellNodeManager.Instance.GetNodeById(onTile).PrintStatus();
-            //Debug.Log("CellToMove After");
-            //cellToMove.PrintStatus();
+                //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
+                //Debug.Log("Previous After");
+                //previousNode.PrintStatus();
+                //Debug.Log("OnTIle AFter");
+                //CellNodeManager.Instance.GetNodeById(onTile).PrintStatus();
+                //Debug.Log("CellToMove After");
+                //cellToMove.PrintStatus();
 
-            OnMovementSFX();
-            return true;
+                OnMovementSFX();
+                return true;
+            }
+            else
+            {
+                MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+                Debug.Log("NO?");
+                cellToMove.PrintStatus();
+            }
         }
         else
         {
@@ -325,10 +336,8 @@ public class Character
             Debug.Log("NO?");
             cellToMove.PrintStatus();
 
-            
-
-            return false;
         }
+        return false;
     }
 
     protected void BypassMovement(int otherTileId)
@@ -464,6 +473,9 @@ public class Character
         canAttack = false;
         canMove = false;
     }
+
+    public bool GetJumpMove()
+    { return jumpMove; }
 
     public void ApplyDOT()
     {

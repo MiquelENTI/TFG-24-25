@@ -256,6 +256,8 @@ public class TokenGameObject : DragableGameObject
                 return new TerracottaWarrior(stats, tokenTeam, instantiatedToken);
             case 18:
                 return new Ghost(stats, tokenTeam, instantiatedToken);
+            case 19:
+                return new Grasshopper(stats, tokenTeam, instantiatedToken);
             case 20:
                 return new MagicKarp(stats, tokenTeam, instantiatedToken);
             case 21:

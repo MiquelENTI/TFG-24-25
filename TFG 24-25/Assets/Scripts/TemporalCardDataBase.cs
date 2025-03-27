@@ -20,6 +20,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 16, new CharacterStats("Death Horseman",      3, 12, 2,  1, 1, 1, MovementType.Basic, "¿Cuando pagan?") }, // Death Horseman
         { 17, new CharacterStats("Terracotta Warrior",  4, 5,  11, 1, 1, 1, MovementType.Basic, "When this scores, it heals as much HP as points scored.") }, // Terracotta Warrior
         { 18, new CharacterStats("Ghost",               2, 3,  5,  1, 1, 1, MovementType.Basic, "This can move from one side of the board to the other.") }, // Terracotta Warrior
+        { 19, new CharacterStats("GrassHopper",         2, 5,  3,  2, 2, 2, MovementType.Omni,  "This can only move or attack to omnidirectional x2.") }, // Terracotta Warrior
         { 20, new CharacterStats("Magic Karp",          5, 6,  8,  1, 1, 1, MovementType.Basic, "When your turn starts, destroy all cards on orthogonal range") }, // Magic Karp
         { 21, new CharacterStats("Archer",              3, 3,  6,  1, 2, 1, MovementType.Omni, "This can attack at two tiles range") }, // Archer
         { 22, new CharacterStats("Chicken",             1, 2,  3,  1, 1, 2, MovementType.Basic, "When this is attacked it deals 5 damage to the attacker.") }, // Chicken
