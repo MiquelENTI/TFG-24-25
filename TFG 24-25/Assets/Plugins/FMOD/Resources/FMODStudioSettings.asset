@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
   HasSourceProject: 0
-  HasPlatforms: 1
+  HasPlatforms: 0
   sourceProjectPath: ../../TFG/TFG-FMOD/FMODProject/FMODProject.fspro
   sourceBankPath: FMOD
   sourceBankPathUnformatted: 
@@ -572,7 +572,7 @@ MonoBehaviour:
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  CurrentVersion: 131846
+  CurrentVersion: 131623
   HideSetupWizard: 1
   LastEventReferenceScanVersion: 131621
   Platforms:

@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
       value: 050852045d070a0d5c0f542146210f444e154b727b71743129714b35bab0326b
       flags: 0
     RecentlyUsedSceneGuid-1:
@@ -24,6 +25,8 @@ EditorUserSettings:
       value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
       flags: 0
     RecentlyUsedSceneGuid-6:
+=======
+>>>>>>> 58435e5 (FMOD_SOUND)
       value: 51500d505706080d095d0e7247730c44174f482b7c2925622c7d1f63bbb7613e
       flags: 0
     vcSharedLogLevel:
