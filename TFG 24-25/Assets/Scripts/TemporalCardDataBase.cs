@@ -33,11 +33,12 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 31, new CharacterStats("Charybdis",           3, 5,  7,  1, 1, 1, MovementType.Omni, "You summon this on a monster and this swallows it. When this dies it leaves that card on the tile this died.") }, // Hydra
         { 32, new CharacterStats("Kamikaze",            2, 9,  3,  1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
 
-        { 35, new CharacterStats("Dragon",              3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
-        { 36, new CharacterStats("Lacus",               4, 6, 7, 1, 1, 1, MovementType.Basic, "This moves or attacks every turn to the direction is facing. Spend mana to change direction. If this hits a wall destroy this.") }, // Samurai
-        { 37, new CharacterStats("Samurai",             3, 5, 7, 1, 1, 1, MovementType.Basic, "Each time one of your monsters dies this gains 1 attack. Max 8.") }, // Samurai
-        { 38, new CharacterStats("Giant",               5, 6, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
-        { 39, new CharacterStats("Ant",                 2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
+        { 35, new CharacterStats("Dragon",              3, 3,  7,  1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
+        { 36, new CharacterStats("Lacus",               4, 6,  7,  1, 1, 1, MovementType.Basic, "This moves or attacks every turn to the direction is facing. Spend mana to change direction. If this hits a wall destroy this.") }, // Samurai
+        { 37, new CharacterStats("Samurai",             3, 5,  7,  1, 1, 1, MovementType.Basic, "Each time one of your monsters dies this gains 1 attack. Max 8.") }, // Samurai
+        { 38, new CharacterStats("Giant",               5, 6,  11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
+        { 39, new CharacterStats("Ant",                 2, 1,  4,  1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
+        { 40, new CharacterStats("Wyvern",              2, 10, 9,  1, 1, 1, MovementType.Omni, "If this makes an attack this turn, it can't move or attack next turn.") }, // Ant
         
         
 

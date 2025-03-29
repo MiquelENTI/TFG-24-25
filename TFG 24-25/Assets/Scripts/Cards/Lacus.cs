@@ -33,7 +33,7 @@ public class Lacus : Character
             return; 
         }
 
-        if (infrontCharacter.GetTeamType() != teamType)
+        if (infrontCharacter.GetTeamType() == teamType)
         {
             return;
         }

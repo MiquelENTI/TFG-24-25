@@ -289,6 +289,8 @@ public class TokenGameObject : DragableGameObject
                 return new Giant(stats, tokenTeam, instantiatedToken);
             case 39:
                 return new Ant(stats, tokenTeam, instantiatedToken);
+            case 40:
+                return new Wyvern(stats, tokenTeam, instantiatedToken);
 
 
 
