@@ -275,6 +275,8 @@ public class TokenGameObject : DragableGameObject
                 return new Necromancer(stats, tokenTeam, instantiatedToken);
             case 30:
                 return new Pocholo(stats, tokenTeam, instantiatedToken);
+            case 31:
+                return new Charybdis(stats, tokenTeam, instantiatedToken);
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:

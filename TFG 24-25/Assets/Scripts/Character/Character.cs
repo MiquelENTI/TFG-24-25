@@ -488,6 +488,13 @@ public class Character
     public bool GetJumpMove()
     { return jumpMove; }
 
+    public void DestroyCharacter()
+    {
+        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        currentCell.RemoveCharacter();
+        CharactersManager.Instance.RemoveCharacter(id);
+    }
+
     public void ApplyDOT()
     {
 
