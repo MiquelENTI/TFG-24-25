@@ -29,6 +29,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 27, new CharacterStats("Hydra",               4, 7,  8,  1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
         { 28, new CharacterStats("Zombie",              1, 2,  1,  1, 1, 1, MovementType.Omni, "When this is killed, This returns to your hand.") }, // Hydra
         { 29, new CharacterStats("Necromancer",         5, 6,  11, 1, 1, 1, MovementType.Basic, "When this kills a card, transform that card into a zombie of your control.") }, // Hydra
+        { 30, new CharacterStats("Pocholo",             2, 1,  4,  2, 2, 2, MovementType.Omni, "If an enemy card moves close to this, this moves to the opposite direction.") }, // Hydra
         
         
         { 32, new CharacterStats("Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze

@@ -34668,7 +34668,7 @@ MonoBehaviour:
   amountOfCopies: 10
   prefabCard: {fileID: 4335443431014593374, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 
-  characterWhiteList: 1d000000
+  characterWhiteList: 1e000000
   characterWorkingList: 010000000200000003000000050000000a0000000d0000000e0000000f0000001000000011000000140000001500000016000000190000001a0000001b00000020000000230000002600000027000000
 --- !u!4 &1293831302
 Transform:
@@ -38356,6 +38356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToken:
+    m_PersistentCalls:
+      m_Calls: []
+  spawnToken:
     m_PersistentCalls:
       m_Calls: []
   samuraiEffectRed:

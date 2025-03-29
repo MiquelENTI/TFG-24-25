@@ -273,6 +273,8 @@ public class TokenGameObject : DragableGameObject
                 return new Zombie(stats, tokenTeam, instantiatedToken);
             case 29:
                 return new Necromancer(stats, tokenTeam, instantiatedToken);
+            case 30:
+                return new Pocholo(stats, tokenTeam, instantiatedToken);
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
