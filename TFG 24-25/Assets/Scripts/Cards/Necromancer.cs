@@ -18,7 +18,7 @@ public class Necromancer : Character
         Debug.Log("TILE: " + tileToSpawnZombie);
         base.OnKillEnemy(enemy);
         Debug.Log("TILE: " + tileToSpawnZombie);
-        spawnManager.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, 28, PhotonNetwork.LocalPlayer.ActorNumber, tileToSpawnZombie);
+        spawnManager.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, 28, PhotonNetwork.LocalPlayer.ActorNumber, tileToSpawnZombie, true);
 
     }
 }

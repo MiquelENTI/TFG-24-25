@@ -102,7 +102,6 @@ public class Character
     protected TeamType teamType;
     protected int onTile;
 
-    protected bool toSpawn = true;
     protected bool canAttack = true;
     protected bool disarmAttack = false;
 
@@ -139,12 +138,6 @@ public class Character
     //{ stats.movementsLeft--; }
     //void ResetMovementsLeft()
     //{ stats.movementsLeft = stats.numOfMovements; }
-
-    public bool IsToSpawn() 
-    { return toSpawn; }
-
-    public void DisableSpawn() 
-    { toSpawn = false; }
 
     public bool CanAttack()
     {
@@ -278,8 +271,6 @@ public class Character
 
             DisableAttackAndMovement();
 
-            DisableSpawn();
-
             playerStats.SubstractMana(stats.manaCost);
 
             SetOnTileId(cellToMove.GetId());
@@ -359,6 +350,19 @@ public class Character
         MoveToken(cellToMove.GetPosition());
 
         cellToMove.SetCharacter(this);
+    }
+
+    public void BypassSpawn(CellNode cellToMove)
+    {
+        DisableAttackAndMovement();
+
+        SetOnTileId(cellToMove.GetId());
+        //Debug.Log("ONTILE: " + onTile);
+        MoveToken(cellToMove.GetPosition());
+
+        cellToMove.SetCharacter(this);
+
+        OnSpawnSFX();
     }
 
     void TileScoring()

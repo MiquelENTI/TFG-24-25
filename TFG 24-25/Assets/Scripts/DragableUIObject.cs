@@ -103,7 +103,7 @@ public class DragableUIObject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (gameController != null)
         {
             Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {randomCharacterName}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, "TokenPrefabName", randomCharacterName, PhotonNetwork.LocalPlayer.ActorNumber);
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, "TokenPrefabName", randomCharacterName, PhotonNetwork.LocalPlayer.ActorNumber, false);
         }
         else
         {

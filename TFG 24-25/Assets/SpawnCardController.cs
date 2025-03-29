@@ -15,7 +15,7 @@ public class SpawnCardController : MonoBehaviourPun
     void Start() { }
 
     [PunRPC]
-    public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId)
+    public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId, bool bypassSpawn)
     {
         //Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
 
@@ -47,7 +47,7 @@ public class SpawnCardController : MonoBehaviourPun
             {
                 instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
 
-                MyEventHandler.Instance.moveToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId());
+                MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
             }
             else
             {
