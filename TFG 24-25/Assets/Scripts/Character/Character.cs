@@ -422,7 +422,6 @@ public class Character
         if (stats.stun) { return; }
 
         playerStats.SubstractMana(stats.manaCost);
-        DisableAttackAndMovement();
 
         Debug.Log("ATTACK");
         enemy.stats.hp -= stats.dmg;

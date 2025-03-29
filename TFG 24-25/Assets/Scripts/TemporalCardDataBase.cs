@@ -31,7 +31,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 29, new CharacterStats("Necromancer",         5, 6,  11, 1, 1, 1, MovementType.Basic, "When this kills a card, transform that card into a zombie of your control.") }, // Hydra
         { 30, new CharacterStats("Pocholo",             2, 1,  4,  2, 2, 2, MovementType.Omni, "If an enemy card moves close to this, this moves to the opposite direction.") }, // Hydra
         { 31, new CharacterStats("Charybdis",           3, 5,  7,  1, 1, 1, MovementType.Omni, "You summon this on a monster and this swallows it. When this dies it leaves that card on the tile this died.") }, // Hydra
-        { 32, new CharacterStats("Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
+        { 32, new CharacterStats("Kamikaze",            2, 9,  3,  1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
 
         { 35, new CharacterStats("Dragon",              3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
         { 36, new CharacterStats("Lacus",               4, 6, 7, 1, 1, 1, MovementType.Basic, "This moves or attacks every turn to the direction is facing. Spend mana to change direction. If this hits a wall destroy this.") }, // Samurai

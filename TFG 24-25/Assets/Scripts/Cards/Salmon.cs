@@ -12,8 +12,11 @@ public class Salmon : Character
     {
         base.OnKillEnemy(enemy);
 
-        BypassMovement(enemy.GetOnTileId());
-        ReceiveDamage(1);
+        if (enemy.GetName() != "Charybdis")
+        {
+            BypassMovement(enemy.GetOnTileId());
+            ReceiveDamage(1);
+        }
     }
      
 
