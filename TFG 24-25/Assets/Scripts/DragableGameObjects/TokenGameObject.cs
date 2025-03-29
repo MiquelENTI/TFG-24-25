@@ -281,6 +281,8 @@ public class TokenGameObject : DragableGameObject
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
                 return new Drake(stats, tokenTeam, instantiatedToken);
+            case 36:
+                return new Lacus(stats, tokenTeam, instantiatedToken);
             case 37:
                 return new Samurai(stats, tokenTeam, instantiatedToken);
             case 38:
