@@ -223,6 +223,16 @@ public class CellNode
 
     public bool CanCharacterSpawn(Character character)
     {
+        try
+        {
+
+            Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString() + " " + this.character.GetName());
+        }
+        catch
+        {
+            Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString());
+        }
+
         // At the moment like this, in the future do return if statement
         if((CellSpawnable)character.GetTeamType() == spawnable && this.character == null)
         { return true; }

@@ -114,7 +114,6 @@ public class TokenGameObject : DragableGameObject
 
                 CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
                 MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
-                Debug.Log("CharacterSelectedID: " + characterSelected.GetId());
             }
         }
 
@@ -272,6 +271,8 @@ public class TokenGameObject : DragableGameObject
                 return new Hydra(stats, tokenTeam, instantiatedToken);
             case 28:
                 return new Zombie(stats, tokenTeam, instantiatedToken);
+            case 29:
+                return new Necromancer(stats, tokenTeam, instantiatedToken);
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:

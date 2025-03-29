@@ -290,6 +290,12 @@ public class Character
 
             OnSpawnSFX();
         }
+        else
+        {
+            stats.PrintStats();
+            cellToMove.PrintStatus();
+            //Debug.Log("ZOMBIE??");
+        }
     }
     
     public virtual bool OnMovement(CellNode cellToMove)
@@ -326,14 +332,14 @@ public class Character
             else
             {
                 MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
-                Debug.Log("NO?");
+                Debug.Log("NO? 2");
                 cellToMove.PrintStatus();
             }
         }
         else
         {
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
-            Debug.Log("NO?");
+            Debug.Log("NO? 1");
             cellToMove.PrintStatus();
 
         }
@@ -386,11 +392,13 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
-        MyEventHandler.Instance.InvokeSamuraiEffect(teamType);
+        //MyEventHandler.Instance.InvokeSamuraiEffect(teamType);
 
         CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
         currentCell.RemoveCharacter();
         CharactersManager.Instance.RemoveCharacter(id);
+
+        attacker.OnKillEnemy(this);
     }
     public virtual void OnKillEnemy(Character enemy)
     {
@@ -419,7 +427,6 @@ public class Character
         enemy.OnAttack(this);
         if(enemy.stats.hp <= 0)
         {
-            OnKillEnemy(enemy);
             enemy.OnDeath(this);
         }
     }
