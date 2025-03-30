@@ -36,7 +36,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
         
     }
 
-    private void InvokeMoveToken(int cellId, int characterId)
+    public void InvokeMoveToken(int cellId, int characterId)
     {
         Debug.Log("INVOKE");
 
@@ -44,28 +44,26 @@ public class MyEventHandler : Singleton<MyEventHandler>
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         character.OnMovement(cellToMove);
+
+        SaveData.Instance.SaveNewAction("M" + cellId + "/" + characterId);
     }
 
-    private void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
+    public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
     {
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         if (bypassSpawn)
         {
-
-            if (character.OnSpawn(cellToMove))
-            {
-                SaveData.Instance.SaveNewAction("M" + characterId + "/" + cellId);
-            }
-            return;
+            character.BypassSpawn(cellToMove);
         }
-
-        if (character.OnMovement(cellToMove))
+        else
         {
-            SaveData.Instance.SaveNewAction("M" + characterId + "/" + cellId);
-        }
+            character.OnSpawn(cellToMove);
+            SaveData.Instance.SaveNewAction("S" + cellId + "/" + characterId);
+        } 
     }
+
 
     [PunRPC]
     public void RPC_MoveToken(int cellId, int characterId)

@@ -129,8 +129,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
             if (turnCounter > 10)
             {
-                SaveData.Instance.Save(0);
+                
+                SaveData.Instance.Save();
 
+                
                 Debug.Log("Blue score is: " + scoreManager.BlueScore);
                 Debug.Log("Red score is: " + scoreManager.RedScore);
 

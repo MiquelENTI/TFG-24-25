@@ -4,33 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Sergi2.unity
-    guid: d6fc74f0f292fd64c880022c2e36ecfb
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: 029eb92f69141e9448dd884a15969c8d
-  - enabled: 0
-    path: Assets/Scenes/Sergi.unity
-    guid: 00ffa151e9130fa4aacfe423d72a41a6
-  - enabled: 1
-    path: Assets/Scenes/Unified Scene.unity
-    guid: 2a9623a6d3b07034a80a0ac2a4b0975f
-  - enabled: 0
-    path: Assets/Scenes/Credits.unity
-    guid: 7c24ea02a365862458f684a3333ef834
-<<<<<<< HEAD
+  m_Scenes: []
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: caa2630ccaeb5224ca24a9e269387d93, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1f61d8fe6ce454a4298673745075f745, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a43d1a4e4fcfc5846850ee9fa10d74a8, type: 2}
-=======
-  - enabled: 0
-    path: Assets/Scenes/ReplayScene.unity
-    guid: b602ae2c738a7b849b4ba600fb150727
-  m_configObjects: {}
->>>>>>> ce75837 (Load test and movement recorded)

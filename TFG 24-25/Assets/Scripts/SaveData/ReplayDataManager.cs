@@ -13,11 +13,11 @@ public class RankingManager : MonoBehaviour
     void Start()
     {
         replayData = new ReplayData();
-        GetReplayMatchData(0);
+        GetReplayMatchData(1);
 
         for (int i = 0; i <= replayData.inputs.Count; i++)
         {
-            Debug.Log(replayData.deck.Dequeue().ToString());
+            Debug.Log(replayData.inputs.Dequeue().ToString());
         }
     }
 
@@ -42,6 +42,8 @@ public class RankingManager : MonoBehaviour
 
         char nextChar = newInput.ToCharArray()[0];
 
+        newInput.Remove(0);
+
         switch (nextChar)
         {
             case 'T':
@@ -53,7 +55,11 @@ public class RankingManager : MonoBehaviour
                 break;
             case 'M':
                 string[] movementIds = newInput.Split('/');
-                MyEventHandler.Instance.RPC_MoveToken(Int32.Parse(movementIds[0]), Int32.Parse(movementIds[1]));
+                MyEventHandler.Instance.InvokeMoveToken(Int32.Parse(movementIds[0]), Int32.Parse(movementIds[1]));
+                break;
+            case 'S':
+                string[] spawnIds = newInput.Split('/');
+                MyEventHandler.Instance.InvokeSpawnToken(Int32.Parse(spawnIds[0]), Int32.Parse(spawnIds[1]), false);
                 break;
         }
     }

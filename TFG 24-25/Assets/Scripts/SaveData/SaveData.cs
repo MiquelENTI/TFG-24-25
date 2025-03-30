@@ -14,10 +14,23 @@ public class SaveData: Singleton<SaveData>
         data = new ReplayData(); 
     }
 
-    public void Save(int match)
+    public void Save()
     {
+
+        bool fileExits = true;
+        int nFile = 0;
+
+        while (fileExits)
+        {
+            fileExits = SaveData.Instance.CheckFileExists(nFile);
+
+            if (fileExits)
+                nFile++;
+        }
+
+
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.dataPath + pathFolder + match + ".dat";
+        string path = Application.dataPath + pathFolder + nFile + ".dat";
         FileStream fileStream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(fileStream, data);
@@ -51,6 +64,11 @@ public class SaveData: Singleton<SaveData>
         {
             return null;
         }
-        
+    }
+
+    private bool CheckFileExists(int match)
+    {
+        string path = Application.dataPath + pathFolder + match + ".dat";
+        return File.Exists(path);
     }
 }

@@ -209,13 +209,10 @@ public class Character
         }
         else
         {
-            return false;
-        }
-        else
-        {
             stats.PrintStats();
             cellToMove.PrintStatus();
             //Debug.Log("ZOMBIE??");
+            return false;
         }
     }
     
