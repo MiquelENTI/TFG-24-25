@@ -105,10 +105,19 @@ public class CardGameObject : DragableGameObject
                 CharacterStats characterStats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
                 CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
 
-                if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= characterStats.manaCost)
+
+                if ((int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= characterStats.manaCost)
                 {
-                    RequestCharacterInstantiation();
-                    cardHold.DestroyCard(cardId);
+                    if (!cellToSpawn.IsOccupied() && characterIdToSpawn != 31)
+                    {
+                        RequestCharacterInstantiation();
+                        cardHold.DestroyCard(cardId);
+                    }
+                    else if (characterIdToSpawn == 31 && cellToSpawn.IsOccupied())
+                    {
+                        RequestCharacterInstantiation();
+                        cardHold.DestroyCard(cardId);
+                    }
                 }
                 else
                 {
@@ -151,7 +160,7 @@ public class CardGameObject : DragableGameObject
         if (gameController != null)
         {
             Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {characterIdToSpawn}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, characterIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, characterIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
         }
         else
         {
@@ -177,6 +186,22 @@ public class CardGameObject : DragableGameObject
         }
         movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
+
+    public void SetCharacterToSpawnId_ManaCostIncrease(int id)
+    {
+        characterIdToSpawn = id;
+        // Info To Display it on Card
+        characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        characterStats.manaCost++;
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        if (cardSprite == null)
+        {
+            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
+        }
+        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
+    }
+
     public int GetCharacterToSpawnId()
     { return characterIdToSpawn; }
 

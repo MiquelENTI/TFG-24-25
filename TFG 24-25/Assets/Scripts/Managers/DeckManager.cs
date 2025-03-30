@@ -87,6 +87,24 @@ public class DeckManager : Singleton<DeckManager>
         cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
     }
 
+    public void BoardIntoHandDraw(string characterName)
+    {
+        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
+        if (characterName == "Wizard" || characterName == "Cavalier")
+        {
+            instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCharacterToSpawnId_ManaCostIncrease(TemporalCardDataBase.Instance.GetTemporalStatsIdByName(characterName));
+        }
+        else // Zombie
+        { 
+            instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCharacterToSpawnId(TemporalCardDataBase.Instance.GetTemporalStatsIdByName(characterName));
+        }
+
+        GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
+        instantiatedCard.transform.parent = cardHold.transform;
+        cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
+        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
+    }
+
     public void ShuffleDeck()
     {
         List<int> characterIds = TemporalCardDataBase.Instance.GetAllCharacters(amountOfCopies);

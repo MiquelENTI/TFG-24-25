@@ -70,7 +70,15 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
     public CellNode GetNodeById(int id)
     {
-        return nodeGrid[id];
+        //Debug.Log("HOVERING: " + id);
+        try
+        {
+            return nodeGrid[id];
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     public void AddNode(CellNode node)

@@ -24,9 +24,8 @@ public class Cavalier : Character
 
     public override void OnDeath(Character attacker)
     {
-        // Add this character to the hand WIP
+        DeckManager.Instance.BoardIntoHandDraw(stats.name);
         base.OnDeath(attacker);
-        //stats.manaCost++;
     }
      //Implementació del so general per a cartes no identificades 
     protected override void OnSpawnSFX()

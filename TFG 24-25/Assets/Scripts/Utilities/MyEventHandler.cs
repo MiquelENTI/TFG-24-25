@@ -9,6 +9,7 @@ using UnityEngine.TextCore.Text;
 public class MyEventHandler : Singleton<MyEventHandler>
 {
     public UnityEvent<int, int> moveToken;
+    public UnityEvent<int, int, bool> spawnToken;
 
     public UnityEvent samuraiEffectRed;
     public UnityEvent samuraiEffectBlue;
@@ -18,6 +19,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
     {
         photonView = GetComponent<PhotonView>();
         moveToken = new UnityEvent<int, int>();
+        spawnToken = new UnityEvent<int, int, bool>();
 
         samuraiEffectRed = new();
         samuraiEffectBlue = new();
@@ -28,6 +30,10 @@ public class MyEventHandler : Singleton<MyEventHandler>
             Debug.Log("TRIGGERED MOVE");
         });
 
+        spawnToken.AddListener((int cellId, int characterId, bool bypassSpawn) =>
+        {
+            photonView.RPC("RPC_SpawnToken", RpcTarget.AllBuffered, cellId, characterId, bypassSpawn);
+        });
         
     }
 
@@ -38,19 +44,34 @@ public class MyEventHandler : Singleton<MyEventHandler>
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
-        if (character.IsToSpawn())
+        character.OnMovement(cellToMove);
+    }
+
+    private void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
+    {
+        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
+        Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
+
+        if (bypassSpawn)
+        {
+            character.BypassSpawn(cellToMove);
+        }
+        else
         {
             character.OnSpawn(cellToMove);
-            return;
         }
-
-        character.OnMovement(cellToMove);
     }
 
     [PunRPC]
     public void RPC_MoveToken(int cellId, int characterId)
     {
         InvokeMoveToken(cellId, characterId);
+    }
+
+    [PunRPC]
+    public void RPC_SpawnToken(int cellId, int characterId, bool bypassSpawn)
+    {
+        InvokeSpawnToken(cellId, characterId, bypassSpawn);
     }
 
     public void StartSamuraiEffect(TeamType teamType)

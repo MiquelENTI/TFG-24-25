@@ -114,7 +114,6 @@ public class TokenGameObject : DragableGameObject
 
                 CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
                 MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
-                Debug.Log("CharacterSelectedID: " + characterSelected.GetId());
             }
         }
 
@@ -240,6 +239,8 @@ public class TokenGameObject : DragableGameObject
                 return new Turtle(stats, tokenTeam, instantiatedToken);
             case 7:
                 return new Mimic(stats, tokenTeam, instantiatedToken);
+            case 8:
+                return new Pichi(stats, tokenTeam, instantiatedToken);
             case 10:
                 return new Medusa(stats, tokenTeam, instantiatedToken);
             case 13:
@@ -252,6 +253,10 @@ public class TokenGameObject : DragableGameObject
                 return new DeathHorseman(stats, tokenTeam, instantiatedToken);
             case 17:
                 return new TerracottaWarrior(stats, tokenTeam, instantiatedToken);
+            case 18:
+                return new Ghost(stats, tokenTeam, instantiatedToken);
+            case 19:
+                return new Grasshopper(stats, tokenTeam, instantiatedToken);
             case 20:
                 return new MagicKarp(stats, tokenTeam, instantiatedToken);
             case 21:
@@ -264,16 +269,28 @@ public class TokenGameObject : DragableGameObject
                 return new Berserker(stats, tokenTeam, instantiatedToken);
             case 27:
                 return new Hydra(stats, tokenTeam, instantiatedToken);
+            case 28:
+                return new Zombie(stats, tokenTeam, instantiatedToken);
+            case 29:
+                return new Necromancer(stats, tokenTeam, instantiatedToken);
+            case 30:
+                return new Pocholo(stats, tokenTeam, instantiatedToken);
+            case 31:
+                return new Charybdis(stats, tokenTeam, instantiatedToken);
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
                 return new Drake(stats, tokenTeam, instantiatedToken);
+            case 36:
+                return new Lacus(stats, tokenTeam, instantiatedToken);
             case 37:
                 return new Samurai(stats, tokenTeam, instantiatedToken);
             case 38:
                 return new Giant(stats, tokenTeam, instantiatedToken);
             case 39:
                 return new Ant(stats, tokenTeam, instantiatedToken);
+            case 40:
+                return new Wyvern(stats, tokenTeam, instantiatedToken);
 
 
 

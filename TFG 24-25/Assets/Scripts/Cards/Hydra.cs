@@ -8,9 +8,9 @@ public class Hydra : Character
     {
     }
 
-    public override void OnAttack(Character attacker)
+    public override void OnAttacked(Character attacker)
     {
-        base.OnAttack(attacker);
+        base.OnAttacked(attacker);
         stats.dmg++;
     }
 }

@@ -15,8 +15,15 @@ public class Wizard : Character
     {
         
     }
+
+    public override void OnDeath(Character attacker)
+    {
+        DeckManager.Instance.BoardIntoHandDraw(stats.name);
+        base.OnDeath(attacker);
+    }
+
     //Implementació del so general per a cartes no identificades 
-        
+
     protected override void AttackSFX()
     {
         SoundManager.Instance.PlaySFX(003001001, token.transform.position);
