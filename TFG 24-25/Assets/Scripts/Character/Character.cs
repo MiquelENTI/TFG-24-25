@@ -408,9 +408,14 @@ public class Character
     {
 
     }
-    public virtual void OnAttack(Character attacker)
+    public virtual void OnAttacked(Character attacker)
     {
+        stats.hp -= attacker.stats.dmg;
 
+        if (stats.hp <= 0)
+        {
+            OnDeath(attacker);
+        }
     }
 
     public virtual void OnPointsScoring(int pointsScored)
@@ -424,15 +429,11 @@ public class Character
         playerStats.SubstractMana(stats.manaCost);
 
         Debug.Log("ATTACK");
-        enemy.stats.hp -= stats.dmg;
+        
 
         AttackSFX();
 
-        enemy.OnAttack(this);
-        if(enemy.stats.hp <= 0)
-        {
-            enemy.OnDeath(this);
-        }
+        enemy.OnAttacked(this);
     }
     
     public void ReceiveDamage(int damage)

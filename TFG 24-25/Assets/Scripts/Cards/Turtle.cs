@@ -4,37 +4,32 @@ using UnityEngine;
 
 public class Turtle : Character
 {
-    bool canMove = true;
+    int damageReduction = 3;
+
+
     public Turtle(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
 
-    public override void OnStartTurn()
+    public override void OnAttacked(Character attacker)
     {
-        canMove = !canMove;
-    }
+        int enemyDamage = attacker.GetCharacterStats().dmg;
 
-    public override bool OnMovement(CellNode cellToMove)
-    {
-        Debug.Log("CANMOVE: " + canMove);
-
-        stats.PrintStats();
-
-        if (canMove)
+        if (enemyDamage - damageReduction < 0)
         {
-            if (!base.OnMovement(cellToMove))
-            { return false; }
-        }
-        else
-        {
-            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+            enemyDamage = 0;
         }
 
-        return true;
+        stats.hp -= enemyDamage;
+
+        if (stats.hp <= 0)
+        {
+            OnDeath(attacker);
+        }
     }
-  
+
     //Implementació del so general per a cartes no identificades 
-        
+
     protected override void AttackSFX()
     {
         SoundManager.Instance.PlaySFX(003006001, token.transform.position);

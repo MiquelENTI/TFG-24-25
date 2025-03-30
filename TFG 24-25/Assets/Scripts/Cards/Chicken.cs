@@ -9,9 +9,11 @@ public class Chicken : Character
     {
     }
 
-    public override void OnAttack(Character attacker)
+    public override void OnAttacked(Character attacker)
     {
         attacker.ReceiveDamage(counterDamage);
+
+        base.OnAttacked(attacker);
     }
 
     //Implementació del so general per a cartes no identificades 
