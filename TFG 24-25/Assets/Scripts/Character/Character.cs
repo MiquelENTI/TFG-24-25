@@ -93,7 +93,6 @@ public struct CharacterStats
 
 public class Character
 {
-
     protected ScoreManager scoreManager;
     protected int id;
     protected CharacterStats stats;
