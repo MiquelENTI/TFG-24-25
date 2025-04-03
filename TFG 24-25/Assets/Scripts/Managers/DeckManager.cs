@@ -79,7 +79,7 @@ public class DeckManager : Singleton<DeckManager>
     {
         if (deck.Count == 0) { return; }
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCharacterToSpawnId(deck.Dequeue());
+        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
 
         GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
         instantiatedCard.transform.parent = cardHold.transform;
@@ -96,7 +96,7 @@ public class DeckManager : Singleton<DeckManager>
         }
         else // Zombie
         { 
-            instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCharacterToSpawnId(TemporalCardDataBase.Instance.GetTemporalStatsIdByName(characterName));
+            instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(TemporalCardDataBase.Instance.GetTemporalStatsIdByName(characterName));
         }
 
         GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");

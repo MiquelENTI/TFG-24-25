@@ -14,7 +14,7 @@ public class CardGameObject : DragableGameObject
 
     public GameObject spawnTileCollider;
 
-    int characterIdToSpawn = -10;
+    int cardIdToSpawn = -10;
     public SpawnCardController gameController;
 
 
@@ -47,7 +47,7 @@ public class CardGameObject : DragableGameObject
             Debug.LogError("No se encontró GameObject con Tag 'SpawnManager' para el CardGameController!");
         }
 
-        if (characterIdToSpawn != -10)
+        if (cardIdToSpawn != -10)
         {
             UpdateCardOnBoardText();
         }
@@ -102,26 +102,42 @@ public class CardGameObject : DragableGameObject
         {
             if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
             {
-                CharacterStats characterStats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
-                CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
-
-
-                if ((int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= characterStats.manaCost)
+                CardStats cardStats = TemporalCardDataBase.Instance.GetTemporalStats(-1).Item2;
+                if (TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item1)
                 {
-                    if (!cellToSpawn.IsOccupied() && characterIdToSpawn != 31)
+                    cardStats = TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item2;
+                }
+                else
+                {
+                    Debug.LogError("STATS DE CARTA NO ENCONTRADAS");
+                    return;
+                }
+
+                if (cardStats.cardType == CardType.CHARACTER)
+                {
+                    CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
+
+                    if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                     {
                         RequestCharacterInstantiation();
                         cardHold.DestroyCard(cardId);
                     }
-                    else if (characterIdToSpawn == 31 && cellToSpawn.IsOccupied())
+                    else
                     {
-                        RequestCharacterInstantiation();
-                        cardHold.DestroyCard(cardId);
+                        cardHold.ReorganizeCards();
                     }
                 }
                 else
                 {
-                    cardHold.ReorganizeCards();
+                    if (PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
+                    {
+                        RequestEffectActivation();
+                        cardHold.DestroyCard(cardId);
+                    }
+                    else
+                    {
+                        cardHold.ReorganizeCards();
+                    }
                 }
             }
         }
@@ -159,8 +175,8 @@ public class CardGameObject : DragableGameObject
     {
         if (gameController != null)
         {
-            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {characterIdToSpawn}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, characterIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
+            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
         }
         else
         {
@@ -168,30 +184,55 @@ public class CardGameObject : DragableGameObject
         }
     }
 
+    void RequestEffectActivation()
+    {
+        Debug.Log("CARTA ACTIVADA");
+    }
+
     public void SetCardId(int id)
     { cardId = id; }
     public int GetCardId()
     { return cardId; }
 
-    public void SetCharacterToSpawnId(int id)
+    public void SetCardToSpawnId(int id)
     { 
-        characterIdToSpawn = id;
+        cardIdToSpawn = id;
         // Info To Display it on Card
-        characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
-        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
-        //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+
+
+        if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item1)
+        {
+            Debug.Log("ENTERED TRUE");
+            if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item2.cardType == CardType.CHARACTER)
+            {
+                characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
+                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+                movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
+            }
+            else
+            {
+                effectStats = (EffectStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
+                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + effectStats.name);
+                movementSprite = Resources.Load<Sprite>("cardsprites/" + MovementType.Omni.ToString());
+            }
+        }
+        else
+        {
+            Debug.Log("ENTERED FALSE");
+            return;
+        }
+
         if (cardSprite == null)
         {
             cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
         }
-        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
 
     public void SetCharacterToSpawnId_ManaCostIncrease(int id)
     {
-        characterIdToSpawn = id;
+        cardIdToSpawn = id;
         // Info To Display it on Card
-        characterStats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
         characterStats.manaCost++;
         cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
         //movementSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
@@ -203,7 +244,7 @@ public class CardGameObject : DragableGameObject
     }
 
     public int GetCharacterToSpawnId()
-    { return characterIdToSpawn; }
+    { return cardIdToSpawn; }
 
     public override void InitCardOnBoardText()
     {

@@ -10,8 +10,6 @@ public class SpawnCardController : MonoBehaviourPun
     [SerializeField] Material blueMaterial;
     [SerializeField] Material redMaterial;
 
-    Cards card;
-
     void Start() { }
 
     [PunRPC]

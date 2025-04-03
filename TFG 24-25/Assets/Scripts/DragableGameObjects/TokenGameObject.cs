@@ -224,7 +224,7 @@ public class TokenGameObject : DragableGameObject
 
     Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
     {
-        CharacterStats stats = TemporalCardDataBase.Instance.GetTemporalStats(id);
+        CharacterStats stats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
         switch (id)
         {
             case 1:
