@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:TFG 24-25/Assets/Scripts/Cards/Charybdis.cs.meta
 guid: 5ff6478d37abd83469406a2752f092f8
+========
+guid: bda82e130a17398478fd700cee09aabc
+>>>>>>>> Stashed changes:TFG 24-25/Assets/Scripts/Effects/Effects.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

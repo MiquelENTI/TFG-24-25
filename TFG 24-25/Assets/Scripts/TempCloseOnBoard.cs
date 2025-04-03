@@ -6,7 +6,6 @@ using UnityEngine;
 public class TempCloseOnBoard : MonoBehaviour
 {
     protected PlayerInputs playerInputs;
-    bool asddds = true;
 
     [SerializeField] List<GameObject> onboardObjects = new List<GameObject>();
 

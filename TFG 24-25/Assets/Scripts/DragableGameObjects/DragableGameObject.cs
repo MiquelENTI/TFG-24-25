@@ -26,6 +26,7 @@ public class DragableGameObject : MonoBehaviour
     protected GameObject gameObjectSelected; // mirar de ferho millor
 
     protected CharacterStats characterStats;
+    protected EffectStats effectStats;
 
     protected TurnManagerScript TurnManagerScript;
     [SerializeField] protected bool IsBlue;
@@ -230,15 +231,30 @@ public class DragableGameObject : MonoBehaviour
 
         //characterStats.PrintStats();
 
-        ctd_AtkText.text = characterStats.dmg.ToString();
+        try
+        {
+            ctd_AtkText.text = characterStats.dmg.ToString();
 
-        ctd_HpText.text = characterStats.hp.ToString();
+            ctd_HpText.text = characterStats.hp.ToString();
 
-        ctd_ManaText.text = characterStats.manaCost.ToString();
+            ctd_ManaText.text = characterStats.manaCost.ToString();
 
-        ctd_NameText.text = characterStats.name;
+            ctd_NameText.text = characterStats.name;
 
-        ctd_Description.text = characterStats.description;
+            ctd_Description.text = characterStats.description;
+        }
+        catch 
+        {
+            ctd_AtkText.text = "0";
+
+            ctd_HpText.text = "0";
+
+            ctd_ManaText.text = effectStats.manaCost.ToString();
+
+            ctd_NameText.text = effectStats.name;
+
+            ctd_Description.text = effectStats.description;
+        }
 
         // Potser fer funcio a part per canviar sprite
         if (cardSprite != null)
@@ -255,13 +271,26 @@ public class DragableGameObject : MonoBehaviour
 
     public virtual void UpdateCardOnBoardText()
     {
-        cob_AtkText.text = characterStats.dmg.ToString();
+        try
+        {
+            cob_AtkText.text = characterStats.dmg.ToString();
 
-        cob_HpText.text = characterStats.hp.ToString();
+            cob_HpText.text = characterStats.hp.ToString();
 
-        cob_ManaText.text = characterStats.manaCost.ToString();
+            cob_ManaText.text = characterStats.manaCost.ToString();
 
-        cob_NameText.text = characterStats.name;
+            cob_NameText.text = characterStats.name;
+        }
+        catch
+        {
+            cob_AtkText.text = "0";
+
+            cob_HpText.text = "0";
+
+            cob_ManaText.text = effectStats.manaCost.ToString();
+
+            cob_NameText.text = effectStats.name;
+        }
 
         if (cardSprite != null)
         {
