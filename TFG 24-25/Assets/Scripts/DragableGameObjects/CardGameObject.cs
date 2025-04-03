@@ -202,6 +202,7 @@ public class CardGameObject : DragableGameObject
 
         if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item1)
         {
+            Debug.Log("ENTERED TRUE");
             if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item2.cardType == CardType.CHARACTER)
             {
                 characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
@@ -217,6 +218,7 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
+            Debug.Log("ENTERED FALSE");
             return;
         }
 
@@ -252,35 +254,5 @@ public class CardGameObject : DragableGameObject
         cob_NameText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
         cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
         cob_MovementSprite = transform.GetChild(0).GetChild(12).GetComponent<Image>();
-    }
-
-    void SpawnCharacter()
-    {
-        CharacterStats characterStats = TemporalCardDataBase.Instance.GetTemporalStats(characterIdToSpawn);
-        CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
-
-
-        if ((int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= characterStats.manaCost)
-        {
-            if (!cellToSpawn.IsOccupied() && characterIdToSpawn != 31)
-            {
-                RequestCharacterInstantiation();
-                cardHold.DestroyCard(cardId);
-            }
-            else if (characterIdToSpawn == 31 && cellToSpawn.IsOccupied())
-            {
-                RequestCharacterInstantiation();
-                cardHold.DestroyCard(cardId);
-            }
-        }
-        else
-        {
-            cardHold.ReorganizeCards();
-        }
-    }
-
-    void SpawnEffect()
-    {
-
     }
 }
