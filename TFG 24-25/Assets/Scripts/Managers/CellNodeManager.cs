@@ -256,6 +256,26 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
+    
+    public void InvokeShowPossibleSpawnTiles(bool isBlue)
+    {
+        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
+        showPossibleSpawnTiles.Invoke(type);
+    }
+    public void InvokeShowPossibleSpawnTiles(TeamType teamType)
+    {
+        showPossibleSpawnTiles.Invoke(teamType);
+    }
+    public void InvokeHidePossibleSpawnTiles(bool isBlue)
+    {
+        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
+        hidePossibleSpawnTiles.Invoke(type);
+    }
+    public void InvokeHidePossibleSpawnTiles(TeamType teamType)
+    {
+        hidePossibleSpawnTiles.Invoke(teamType);
+    }
+
     void SetScoreNodes2x2()
     {
         nodeGrid[14].SetScoreNode(CellScoreType.NORMAL);

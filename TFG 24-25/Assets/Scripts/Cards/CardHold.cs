@@ -115,4 +115,7 @@ public class CardHold : MonoBehaviour
     {
         this.defaultCardRotation = defaultCardRotation;
     }
+
+    public Camera GetPlayerCamera()
+    { return playerCam.GetComponent<Camera>(); }
 }

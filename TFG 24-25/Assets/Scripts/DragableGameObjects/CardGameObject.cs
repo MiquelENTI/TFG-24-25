@@ -53,46 +53,9 @@ public class CardGameObject : DragableGameObject
         }
     }
 
-    private void Update()
+    public override void CheckIsOutsideBoard()
     {
-        if (playerInputs.Gameplay.MousePosition.ReadValue<Vector2>().y < 460.0f)
-        {
-            cardHold.LookToPlayerCam();
-        }
-        else
-        {
-            cardHold.DefaultCardRotation();
-        }
-    }
-
-    protected override void LeftMouseDownAction()
-    {
-        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
-        {
-            Debug.Log("No es el turno del jugador actual.");
-            return;
-        }
-
-        GetMouseWorldPos("CardGameObject");
-
-        if (gameObjectSelected == null)
-        { return; }
-
-        if (!gameObjectSelected.GetComponent<PhotonView>().IsMine)
-        { return; }
-
-        if (isDragging)
-        {
-            CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(cardHold.GetTeamType());
-        }
-    }
-
-    protected override void LeftMouseUpAction()
-    {
-        base.LeftMouseUpAction();
-
-        if (gameObjectSelected == null)
-        { return; }
+        CellNodeManager.Instance.InvokeHidePossibleSpawnTiles(IsBlue);
 
         if (isOutsideBoard)
         {
@@ -100,75 +63,47 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
-            if (cardId == gameObjectSelected.GetComponent<CardGameObject>().GetCardId())
+            CardStats cardStats = TemporalCardDataBase.Instance.GetTemporalStats(-1).Item2;
+            if (TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item1)
             {
-                CardStats cardStats = TemporalCardDataBase.Instance.GetTemporalStats(-1).Item2;
-                if (TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item1)
+                cardStats = TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item2;
+            }
+            else
+            {
+                Debug.LogError("STATS DE CARTA NO ENCONTRADAS");
+                return;
+            }
+
+            if (cardStats.cardType == CardType.CHARACTER)
+            {
+                CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
+
+                if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                 {
-                    cardStats = TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item2;
+                    RequestCharacterInstantiation();
+                    cardHold.DestroyCard(cardId);
                 }
                 else
                 {
-                    Debug.LogError("STATS DE CARTA NO ENCONTRADAS");
-                    return;
-                }
-
-                if (cardStats.cardType == CardType.CHARACTER)
-                {
-                    CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
-
-                    if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
-                    {
-                        RequestCharacterInstantiation();
-                        cardHold.DestroyCard(cardId);
-                    }
-                    else
-                    {
-                        cardHold.ReorganizeCards();
-                    }
-                }
-                else
-                {
-                    if (PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
-                    {
-                        RequestEffectActivation();
-                        cardHold.DestroyCard(cardId);
-                    }
-                    else
-                    {
-                        cardHold.ReorganizeCards();
-                    }
+                    cardHold.ReorganizeCards();
                 }
             }
-        }
-
-        CellNodeManager.Instance.hidePossibleSpawnTiles.Invoke(cardHold.GetTeamType());
-    }
-
-    protected override IEnumerator DragUpdate(GameObject clickedGameObject)
-    {
-        Vector3 mousePos = Vector3.zero;
-
-        isDragging = true;
-
-        while (playerInputs.Gameplay.MouseLeftClick.ReadValue<float>() != 0)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
-
-            if (plane.Raycast(ray, out var enter))
+            else
             {
-                mousePos = ray.GetPoint(enter);
-                mousePos.y = planeDisplacement + objectDisplacement;
-
-                clickedGameObject.transform.position = mousePos;
-                clickedGameObject.GetComponent<CardGameObject>().GetSpawnTileCollider().transform.position = mousePos;
-
-                yield return waitForFixedUpdate;
+                if (PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
+                {
+                    RequestEffectActivation();
+                    cardHold.DestroyCard(cardId);
+                }
+                else
+                {
+                    cardHold.ReorganizeCards();
+                }
             }
         }
     }
 
-    public GameObject GetSpawnTileCollider()
+    public override GameObject GetTileCollider()
     { return spawnTileCollider; }
 
     void RequestCharacterInstantiation()
@@ -176,7 +111,7 @@ public class CardGameObject : DragableGameObject
         if (gameController != null)
         {
             Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering);
+            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
         }
         else
         {
