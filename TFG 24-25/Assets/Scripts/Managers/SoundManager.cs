@@ -24,62 +24,57 @@ public class SoundManager : Singleton<SoundManager>
            //Selección General para cartas sin sonido propio
            {003000000,"event:/SFX/UI/CARDS/ARCHER/Archer_attack"},
            {003000001,"event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
-           {003000002,"event:/TOKEN MOVEMENT"},
+           {003000002,"event:/SFX/UI/MoveToken"},
 
            // Wizard
-           {003001001, "event:/SFX/UI/CARDS/WIZZART/Wizzart_attack"},
-           {003001002, "event:/SFX/UI/CARDS/WIZZART/Wizzart_Spown"},
-           {003001003, ""},
+           {003001001, "event:/SFX/CARTAS/MONSTERS/WIZZART/Wizzart_attack"},
+           {003001002, "event:/SFX/CARTAS/MONSTERS/WIZZART/Wizzart_Spown"},
 
            // Cavalier
-           {003002001, ""},
-           {003002002, ""},
-           {003002003, ""},
+           {003002001, "event:/SFX/CARTAS/MONSTERS/CAVALIER/CAVALIER_ATTACK"},
+           {003002002, "event:/SFX/CARTAS/MONSTERS/CAVALIER/CAVALIER_SELECT"},
 
            // Salmon
-           {003003001, "event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
-           {003003002, "event:/SFX/UI/CARDS/SALMON/Salmon_selection"},
-           {003003003, ""},
+           {003003001, "event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection"},
+           {003003002, "event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection"},
 
-           // Flash
-           {003004001, "event:/SFX/UI/EFFECTS/Flash/FLASH"},
-           {003004002, ""},
-           {003004003, ""},
+           // Flash (Falta Implementar perque no se on estan els efectes)
+           {003004001, "event:/SFX/CARTAS/EFFECTS/Flash/FLASH"},
+           
 
-           // Fly
-           {003005001, "event:/SFX/UI/CARDS/FLY/Fly_Attack"},
-           {003005002, "event:/SFX/UI/CARDS/FLY/Fly_Selection"},
-           {003005003, ""},
+           // Fly (Falta fer el objecte per aplicar el so de posicionamenty al taulell)
+           {003005001, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack"},
+           {003005002, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection"},
+           
 
            // Turtle
-           {003006001, "event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
-           {003006002, "event:/SFX/UI/CARDS/TURTLE/Turtle_select"},
-           {003006003, ""},
+           {003006001, "event:/SFX/CARTAS/MONSTERS/TURTLE/Turtle_Attack"},
+           {003006002, "event:/SFX/CARTAS/MONSTERS/TURTLE/Turtle_select"},
+           
 
            // Mimic
-           {003007001, "event:/SFX/UI/CARDS/MIMIC/Mimic_Attack"},
-           {003007002, "event:/SFX/UI/CARDS/MIMIC/Mimic_Selecction"},
-           {003007003, ""},
+           {003007001, "event:/SFX/CARTAS/MONSTERS/MIMIC/Mimic_Attack"},
+           {003007002, "event:/SFX/CARTAS/MONSTERS/MIMIC/Mimic_Selecction"},
+           
 
            // Pichi
-           {003008001, "event:/SFX/UI/CARDS/PICHI/Pichi_Attack"},
-           {003008002, "event:/SFX/UI/CARDS/PICHI/Pichi_Selection"},
-           {003008003, ""},
+           {003008001, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Attack"},
+           {003008002, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Selection"},
+           
 
            // Bowling Ball
-           {003009001, "event:/SFX/UI/CARDS/BOWLING/Pleno"},
-           {003009002, "event:/SFX/UI/CARDS/BOWLING/Inici_Bowling"},
-           {003009003, "event:/SFX/UI/CARDS/BOWLING/Bowling_movement"},
+           {003009001, "event:/SFX/CARTAS/MONSTERS/BOWLING/Pleno"},
+           {003009002, "event:/SFX/CARTAS/MONSTERS/BOWLING/Inici_Bowling"},
+           {003009003, "event:/SFX/CARTAS/MONSTERS/BOWLING/Bowling_movement"},
 
            // Medusa
-           {003010001, "event:/SFX/UI/CARDS/MEDUSA/Medusa_Attack"},
-           {003010002, "event:/SFX/UI/CARDS/MEDUSA/Medusa_selection"},
-           {003010003, ""},
-
-           // Instant Transmission
+           {003010001, "event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_Attack"},
+           {003010002, "event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_selection"},
+            
+            // ALGUNA CARTA SERÁ
            {003011001, ""},
            {003011002, ""},
-           {003011003, ""},
+           
 
            // Possession
            {003012001, ""},
@@ -87,28 +82,28 @@ public class SoundManager : Singleton<SoundManager>
            {003012003, ""},
 
            // Mummy
-           {003013001, "event:/SFX/UI/CARDS/MUMMY/Mummy_Attack"},
-           {003013002, "event:/SFX/UI/CARDS/MUMMY/Mummy_Selecction"},
-           {003013003, ""},
+           {003013001, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Attack"},
+           {003013002, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Selecction"},
+           
 
            // The Gun
-           {003014001, "event:/SFX/UI/CARDS/THE GUN/TheGun_Attack"},
-           {003014002, "event:/SFX/UI/CARDS/THE GUN/TheGun_selection"},
-           {003014003, ""},
+           {003014001, "event:/SFX/CARTAS/MONSTERS/THE GUN/TheGun_Attack"},
+           {003014002, "event:/SFX/CARTAS/MONSTERS/THE GUN/TheGun_selection"},
+           
 
-           // Human/Werewolf
+           // Human/Werewolf 
            {003015001, ""},
-           {003015002, "event:/SFX/UI/CARDS/WAREWOLF/Howl"},
-           {003015003, ""},
+           {003015002, "event:/SFX/CARTAS/MONSTERS/WAREWOLF/Howl"},
+           
 
-           // Death Horseman
+           // Death Horseman (Falta attack)
            {003016001, ""},
-           {003016002, "event:/SFX/UI/CARDS/DEATHHORSEMAN/DeathHorseman_select"},
-           {003016003, ""},
+           {003016002, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select"},
+           
 
-           // Terracotta Warrior
-           {003017001, ""},
-           {003017002, "event:/SFX/UI/CARDS/TARRACOTA_WARRIOR/Tarracota_select"},
+           // Terracotta Warrior 
+           {003017001, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_ATTACK"},
+           {003017002, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_SELECT"},
            {003017003, ""},
 
            // Fantasma
@@ -116,9 +111,9 @@ public class SoundManager : Singleton<SoundManager>
            {003018002, ""},
            {003018003, ""},
 
-           // Grasshopper
+           // Grasshopper (Falta implementar igual que la FLY)
            {003019001, ""},
-           {003019002, "event:/SFX/UI/CARDS/GRASSHOPPER/Grasshopper_select"},
+           {003019002, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_select"},
            {003019003, ""},
 
            // Magic Karp
@@ -127,17 +122,17 @@ public class SoundManager : Singleton<SoundManager>
            {003020003, ""},
 
            // Archer
-           {003021001, "event:/SFX/UI/CARDS/ARCHER/Archer_attack"},
-           {003021002, "event:/SFX/UI/CARDS/ARCHER/Archer_Select"},
+           {003021001, "event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_attack"},
+           {003021002, "event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_Select"},
            {003021003, ""},
            
            // Chicken
-           {003022001, "event:/SFX/UI/CARDS/CHICKEN/Chicken_Attack"},
-           {003022002, "event:/SFX/UI/CARDS/CHICKEN/Chicken_select"},
+           {003022001, "event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_Attack"},
+           {003022002, "event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_select"},
            {003022003, ""},
            
            // Mana Bottle
-           {003023001, "event:/SFX/UI/MANA/Drink_Mana"},
+           {003023001, "event:/SFX/CARTAS/MANA/Drink_Mana"},
            {003023002, ""},
            {003023003, ""},
            
@@ -147,23 +142,23 @@ public class SoundManager : Singleton<SoundManager>
            {003024003, ""},
            
            // Leech
-           {003025001, ""},
+           {003025001, "event:/SFX/CARTAS/MONSTERS/LEECH/LEECH"},
            {003025002, ""},
            {003025003, ""},
            
            // Berserker
-           {003026001, ""},
-           {003026002, ""},
+           {003026001, "event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_ATACK"},
+           {003026002, "event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_SELECT"},
            {003026003, ""},
            
            // Hydra
-           {003027001, ""},
-           {003027002, ""},
+           {003027001, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK"},
+           {003027002, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_SELECT"},
            {003027003, ""},
            
-           // Zombie
-           {003028001, ""},
-           {003028002, ""},
+           // Zombie (SONS MUMMY)
+           {003028001, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Attack"},
+           {003028002, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Selecction"},
            {003028003, ""},
            
            // Necromancer
@@ -171,9 +166,9 @@ public class SoundManager : Singleton<SoundManager>
            {003029002, ""},
            {003029003, ""},
            
-           // Pocholo
-           {003030001, ""},
-           {003030002, ""},
+           // Pocholo (SONS PICHI)
+           {003030001, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Attack"},
+           {003030002, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Selection"},
            {003030003, ""},
            
            // Charybdis
@@ -192,7 +187,7 @@ public class SoundManager : Singleton<SoundManager>
            {003033003, ""},
            
            // Dragon
-           {003034001, ""},
+           {003034001, "event:/SFX/CARTAS/MONSTERS/DRAGON/DRAGON"},
            {003034002, ""},
            {003034003, ""},
            
@@ -207,8 +202,8 @@ public class SoundManager : Singleton<SoundManager>
            {003036003, ""},
            
            // Giant
-           {003037001, ""},
-           {003037002, ""},
+           {003037001, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_ATTACK"},
+           {003037002, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_SELECT"},
            {003037003, ""},
            
            // Ant
@@ -232,14 +227,14 @@ public class SoundManager : Singleton<SoundManager>
         {
         // AMBIENT
             // Roomtone
-            {001001001, "event:/SFX/AMBIENT/ROOMTONE"},
+            {001001001, "event:/SFX/AMBIENTES/ROOMTONE"},
             // Bonfire
-            {001000002, "event:/SFX/AMBIENT/BONFIRE"},
+            {001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE"},
             // Canvi de torn 
-            {001000003, "event:/SFX/UI/CANVI DE TORN/Whisper"},
+            {001000003, ""},
         // MUSICA
             // Taverna (Gameplay)
-            {002000001, "event:/MUSIC/GAMEPLAY/Gameplay"},
+            {002000001, "event:/MUSIC/GAMEPLAY/Taverna"},
             // Menú
             {002000002, "event:/MUSIC/MENU/Menu"},
         

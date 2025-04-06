@@ -28,4 +28,16 @@ public class Berserker : Character
 
         return true;
     }
+
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026002, token.transform.position);
+    }
 }

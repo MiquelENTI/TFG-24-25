@@ -18,7 +18,17 @@ public class Salmon : Character
             ReceiveDamage(1);
         }
     }
-     
+      //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003003001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003003002, token.transform.position);
+    }
 
 }
  

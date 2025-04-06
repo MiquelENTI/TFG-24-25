@@ -8,7 +8,13 @@ public class DeathHorseman : Character
     {
     }
    
-    //Implementació del so general per a cartes no identificades
+     //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003016002, token.transform.position);
+    }
+    
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003016002, token.transform.position);

@@ -18,8 +18,7 @@ public class Mimic : Character
         ReceiveDamage(9999);
     }
 
-   //Implementació del so general per a cartes no identificades 
-        
+   //Implementació del so 
     protected override void AttackSFX()
     {
         SoundManager.Instance.PlaySFX(003007001, token.transform.position);
