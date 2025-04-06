@@ -31,7 +31,7 @@ public class CardGameObject : DragableGameObject
         objectDisplacement = 0.1f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         cardHold = transform.parent.parent.GetComponent<CardHold>();
-        spawnTileCollider = transform.parent.GetChild(1).gameObject;
+        spawnTileCollider = transform.GetChild(1).gameObject;
 
         GameObject spawnManagerGO = GameObject.Find("SpawnManager");
         if (spawnManagerGO != null)

@@ -12,6 +12,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     private DragableGameObject lastInteractedObject;
 
+    private RayCastTile rayCastTile;
+
     void Start()
     {
         playerInputs.Mouse.LeftClick.started += _ => LeftMouseDownAction();
@@ -23,7 +25,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     void Update()
     {
-        if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 460.0f)
+        if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
         {
             cardHold.LookToPlayerCam();
         }
@@ -54,7 +56,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)lastInteractedObject;
                     CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
-                    Debug.Log("SHOW ONTILEID FROM NEW RAYCAST SCRIPT: " + temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
@@ -143,6 +144,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
         plane = lastInteractedObject.GetPlane();
 
+        rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
+
         while (playerInputs.Mouse.LeftClick.ReadValue<float>() != 0)
         {
             Ray ray = playerCamera.ScreenPointToRay(playerInputs.Mouse.Position.ReadValue<Vector2>());
@@ -153,6 +156,9 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 mousePos.y = lastInteractedObject.GetObjectDisplacement();
                 lastInteractedObject.transform.position = mousePos;
                 lastInteractedObject.GetTileCollider().transform.position = mousePos;
+
+                rayCastTile.UpdateRayCast();
+
                 yield return waitForFixedUpdate;
             }
         }

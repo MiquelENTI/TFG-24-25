@@ -72,7 +72,8 @@ public class CardHold : MonoBehaviour
     {
         gameObject.transform.position = newPosition;
         gameObject.transform.GetChild(0).localPosition = Vector3.zero;
-        gameObject.transform.GetChild(1).localPosition = Vector3.zero;
+        Debug.Log(gameObject.transform.GetChild(0).GetChild(1).name);
+        gameObject.transform.GetChild(0).GetChild(1).localPosition = Vector3.zero;
     }
 
     public void DestroyCard(int cardToDestroy)
