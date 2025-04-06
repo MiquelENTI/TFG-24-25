@@ -10,9 +10,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     private bool isDragging = false;
 
-    private DragableGameObject lastInteractedObject;
-
-    private RayCastTile rayCastTile;
+    private WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
 
     void Start()
     {
@@ -155,7 +153,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 mousePos = ray.GetPoint(enter);
                 mousePos.y = lastInteractedObject.GetObjectDisplacement();
                 lastInteractedObject.transform.position = mousePos;
-                lastInteractedObject.GetTileCollider().transform.position = mousePos;
 
                 rayCastTile.UpdateRayCast();
 

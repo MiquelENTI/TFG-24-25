@@ -25,7 +25,7 @@ public class RayCastSpawnTile : RayCastTile
         {
             Tile onTile = hit.transform.GetComponent<Tile>();
 
-            Debug.Log(onTile.gameObject.name + " : ");
+            //Debug.Log(onTile.gameObject.name + " : ");
             //Debug.Log(onTile.gameObject.name + " : " + previousTile.gameObject.name);
 
             if (onTile.tileId != previousTile.tileId)
@@ -34,7 +34,7 @@ public class RayCastSpawnTile : RayCastTile
                 onTile.EnterRaycast();
                 previousTile = onTile;
                 transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
-                transform.parent.localRotation = Quaternion.Euler(90, 0, 0);
+                //transform.parent.localRotation = Quaternion.Euler(90, 0, 0);
                 Debug.Log("ON TILE: " + onTile.tileId);
             }
         }

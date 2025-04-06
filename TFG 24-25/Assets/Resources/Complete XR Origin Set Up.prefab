@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 4134505312059479865}
   - component: {fileID: 6742322101809628762}
   - component: {fileID: 5337332720444313164}
+  - component: {fileID: 3827926315998511675}
   m_Layer: 0
   m_Name: Complete XR Origin Set Up
   m_TagString: Untagged
@@ -877,6 +878,20 @@ MonoBehaviour:
   hand: {fileID: 0}
   IsBlue: 0
   score: 0
+--- !u!114 &3827926315998511675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313654230448209575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e40f5efb85abb40afe3fa3c21ad86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left_position: {fileID: 0}
+  left_rotation: {fileID: 0}
 --- !u!1 &8578164012232038566
 GameObject:
   m_ObjectHideFlags: 0

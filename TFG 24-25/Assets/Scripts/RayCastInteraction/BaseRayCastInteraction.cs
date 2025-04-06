@@ -10,9 +10,11 @@ public class BaseRayCastInteraction : MonoBehaviour
     protected TurnManagerScript turnManagerScript;
     protected CardHold cardHold;
 
-    protected WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
-
     protected Camera playerCamera;
+
+    protected DragableGameObject lastInteractedObject;
+
+    protected RayCastTile rayCastTile;
 
     private void Awake()
     {

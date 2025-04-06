@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Unity.VisualScripting;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
@@ -12,6 +13,8 @@ public class MatchManager : MonoBehaviourPunCallbacks
     public Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -4.15f);
 
     public TurnManagerScript turnManager;
+
+    public bool isPCVersion = true;
 
     void Start()
     {
@@ -68,6 +71,15 @@ public class MatchManager : MonoBehaviourPunCallbacks
             Quaternion spawnRotation = GetSpawnRotation();
 
             GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
+
+            if (playerPrefab.name == "Player")
+            {
+                isPCVersion = true;
+            }
+            else
+            {
+                isPCVersion = false;
+            }
 
             if (turnManager != null)
             {
@@ -151,5 +163,10 @@ public class MatchManager : MonoBehaviourPunCallbacks
         }
 
         return Quaternion.identity;
+    }
+
+    public void SetIsPCVersion(bool state)
+    {
+        isPCVersion = state;
     }
 }

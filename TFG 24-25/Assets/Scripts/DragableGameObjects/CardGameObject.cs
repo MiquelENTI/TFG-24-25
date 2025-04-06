@@ -63,6 +63,7 @@ public class CardGameObject : DragableGameObject
         }
         else
         {
+            Debug.Log("NOT OUTSIDE BOARD");
             CardStats cardStats = TemporalCardDataBase.Instance.GetTemporalStats(-1).Item2;
             if (TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item1)
             {
