@@ -14,7 +14,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
     public TurnManagerScript turnManager;
 
-    public bool isPCVersion = true;
+    
 
     void Start()
     {
@@ -72,13 +72,13 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
             GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
 
-            if (playerPrefab.name == "Player")
+            if (playerPrefab.name == "Player") // PREVENT STRANGE VR BEHAVIOR
             {
-                isPCVersion = true;
+                TurnManagerScript.Instance.isPCVersion = true;
             }
             else
             {
-                isPCVersion = false;
+                TurnManagerScript.Instance.isPCVersion = false;
             }
 
             if (turnManager != null)
@@ -165,8 +165,4 @@ public class MatchManager : MonoBehaviourPunCallbacks
         return Quaternion.identity;
     }
 
-    public void SetIsPCVersion(bool state)
-    {
-        isPCVersion = state;
-    }
 }

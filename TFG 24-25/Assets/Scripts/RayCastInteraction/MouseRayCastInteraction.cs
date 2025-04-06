@@ -63,6 +63,12 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
+                case "RaycastInteractable":
+                {
+                    lastInteractedRaycastGameObject = hit.transform.gameObject;
+                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                    break;
+                }
                 default:
                 {
                         Debug.Log("ENTERED HERE");

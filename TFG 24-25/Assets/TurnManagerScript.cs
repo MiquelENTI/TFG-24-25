@@ -204,4 +204,9 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             DeckManager.Instance.DrawCard();
         }
     }
+
+    public void SetIsPCVersion(bool state)
+    {
+        isPCVersion = state;
+    }
 }

@@ -14,6 +14,8 @@ public class BaseRayCastInteraction : MonoBehaviour
 
     protected DragableGameObject lastInteractedObject;
 
+    protected GameObject lastInteractedRaycastGameObject;
+
     protected RayCastTile rayCastTile;
 
     private void Awake()

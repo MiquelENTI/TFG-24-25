@@ -26,18 +26,18 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     private GameObject rightController;
     private GameObject leftController;
 
-
-    private void Start()
+    
+private void Start()
     {
         #region RIGHT HAND
 
         // Weird Button
 
         playerInputs.XRIRightHandInteraction.Select.started += _ => { RightHand_SelectInteractionDown(); };
-        playerInputs.XRIRightHandInteraction.Select.canceled += _ => { RightHand_SelectInteractionUp(); Debug.Log("ASDASD"); };
+        playerInputs.XRIRightHandInteraction.Select.canceled += _ => { RightHand_SelectInteractionUp(); };
 
         // Trigger
-        //playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
+        playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
         //playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
 
         #endregion
@@ -49,7 +49,7 @@ public class VRRayCastInteraction : BaseRayCastInteraction
         playerInputs.XRILeftHandInteraction.Select.canceled += _ => { RightHand_SelectInteractionUp(); };
 
         // Trigger
-        //playerInputs.XRILeftHandInteraction.Activate.started += _ => { LeftHand_ActivateInteractionDown(); };
+        playerInputs.XRILeftHandInteraction.Activate.started += _ => { LeftHand_ActivateInteractionDown(); };
         //playerInputs.XRILeftHandInteraction.Activate.canceled += _ => { LeftHand_ActivateInteractionUp(); };
 
         #endregion
@@ -141,7 +141,6 @@ public class VRRayCastInteraction : BaseRayCastInteraction
             {
                 right_lastInteractedObject.CheckIsOutsideBoard();
 
-                //Destroy(right_lastInteractedObject.gameObject);
                 right_lastInteractedObject = null;
 
                     Debug.Log("ENTERED SPAWN");
@@ -155,9 +154,37 @@ public class VRRayCastInteraction : BaseRayCastInteraction
         }
     }
 
+    protected virtual void RightHand_ActivateInteractionDown()
+    {
+        Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider == null)
+            { return; }
+
+            switch (hit.collider.tag)
+            {
+                case "RaycastInteractable":
+                    {
+                        lastInteractedRaycastGameObject = hit.transform.gameObject;
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        break;
+                    }
+            }
+        }
+    }
+
+
+    #endregion
+
+    #region LEFT HAND
+
     protected virtual void LeftHand_SelectInteractionDown()
     {
-        Ray ray = new Ray(left_position.ToInputAction().ReadValue<Vector3>(), left_rotation.ToInputAction().ReadValue<Quaternion>().eulerAngles.normalized);
+        Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
         RaycastHit hit;
 
@@ -169,31 +196,31 @@ public class VRRayCastInteraction : BaseRayCastInteraction
             switch (hit.collider.tag)
             {
                 case "TokenGameObject":
-                    {
-                        left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                        CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
-                        break;
-                    }
+                {
+                    left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                    TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
+                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    break;
+                }
                 case "CardGameObject":
-                    {
-                        left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
-                        Debug.Log("ENTERED CARDGO");
-                        break;
-                    }
+                {
+                    left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                    CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
+                    Debug.Log("ENTERED CARDGO");
+                    break;
+                }
                 default:
-                    {
-                        Debug.Log("ENTERED HERE");
-                        break;
-                    }
+                {
+                    Debug.Log("ENTERED HERE");
+                    break;
+                }
             }
 
             if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
             {
                 if ((left_lastInteractedObject.GetIsBlue() == turnManagerScript.getIsBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
                 {
-                    //Debug.Log("4");
+                    
                     StartCoroutine(Left_DragUpdate(hit.collider.gameObject));
                 }
             }
@@ -227,10 +254,28 @@ public class VRRayCastInteraction : BaseRayCastInteraction
         }
     }
 
-    #endregion
+    protected virtual void LeftHand_ActivateInteractionDown()
+    {
+        Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
-    #region LEFT HAND
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider == null)
+            { return; }
+
+            switch (hit.collider.tag)
+            {
+                case "RaycastInteractable":
+                    {
+                        lastInteractedRaycastGameObject = hit.transform.gameObject;
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        break;
+                    }
+            }
+        }
+    }
     #endregion
 
     public virtual IEnumerator Right_DragUpdate(GameObject clickedGameObject)
