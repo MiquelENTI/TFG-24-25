@@ -15,6 +15,7 @@ TagManager:
   - SpawnTileCollider
   - CardGameObject
   - TokenGameObject
+  - RaycastInteractable
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tile
   - 
   - 
   - 

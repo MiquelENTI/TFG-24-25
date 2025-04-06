@@ -29,6 +29,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public GameObject finalCanvas;
     public TMP_Text winnerText;
 
+    public bool isPCVersion = true;
+
     private void Awake()
     {
         if (!TryGetComponent<PhotonView>(out photonView))
@@ -201,5 +203,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         {
             DeckManager.Instance.DrawCard();
         }
+    }
+
+    public void SetIsPCVersion(bool state)
+    {
+        isPCVersion = state;
     }
 }

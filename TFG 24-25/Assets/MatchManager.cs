@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Unity.VisualScripting;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
@@ -12,6 +13,8 @@ public class MatchManager : MonoBehaviourPunCallbacks
     public Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -4.15f);
 
     public TurnManagerScript turnManager;
+
+    
 
     void Start()
     {
@@ -69,6 +72,15 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
             GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPosition, spawnRotation);
 
+            if (playerPrefab.name == "Player") // PREVENT STRANGE VR BEHAVIOR
+            {
+                TurnManagerScript.Instance.isPCVersion = true;
+            }
+            else
+            {
+                TurnManagerScript.Instance.isPCVersion = false;
+            }
+
             if (turnManager != null)
             {
                 turnManager.RegisterPlayer(player);
@@ -81,7 +93,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, true);
+                player.GetComponent<PhotonView>().RPC("SetPlayerColorSetPlayerColor", RpcTarget.AllBuffered, true);
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
@@ -152,4 +164,5 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
         return Quaternion.identity;
     }
+
 }

@@ -71,21 +71,39 @@ public class CardHold : MonoBehaviour
     void MoveCard(GameObject gameObject, Vector3 newPosition)
     {
         gameObject.transform.position = newPosition;
-        gameObject.transform.GetChild(0).localPosition = Vector3.zero;
-        gameObject.transform.GetChild(1).localPosition = Vector3.zero;
+        //gameObject.transform.GetChild(0).localPosition = Vector3.zero;
+        Debug.Log(gameObject.transform.GetChild(0).GetChild(1).name);
+        //gameObject.transform.GetChild(0).GetChild(1).localPosition = Vector3.zero;
     }
 
     public void DestroyCard(int cardToDestroy)
     {
-        
         for (int i = 0; i < cards.Count; i++)
         {
-            if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
+            if (TurnManagerScript.Instance.isPCVersion)
             {
-                Destroy(cards[i]);
-                cards.RemoveAt(i);
-                ReorganizeCards();
-                break;
+                if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
+                {
+                    Destroy(cards[i]);
+                    cards.RemoveAt(i);
+                    ReorganizeCards();
+                    return;
+                }
+            }
+            else
+            {
+                if (cards[i].transform.childCount == 0) // WTF PK FUNCIONA? PK NO TE CHILDS QUAN EN ESCENA TE?
+                {
+                    Destroy(cards[i]);
+                    cards.RemoveAt(i);
+                    ReorganizeCards();
+                    return;
+                }
+
+                if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() != cardToDestroy)
+                {
+                    continue;
+                }
             }
         }
     }
@@ -115,4 +133,7 @@ public class CardHold : MonoBehaviour
     {
         this.defaultCardRotation = defaultCardRotation;
     }
+
+    public Camera GetPlayerCamera()
+    { return playerCam.GetComponent<Camera>(); }
 }

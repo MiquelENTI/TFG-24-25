@@ -62,8 +62,6 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 
     public Tuple<bool,CardStats> GetTemporalStats(int id)
     {
-        Debug.Log("TEMPORAL ID: " + id);
-
         if (characterStats.ContainsKey(id))
         {
             return Tuple.Create(true, characterStats[id]);

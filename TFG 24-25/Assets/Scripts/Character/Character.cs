@@ -75,7 +75,7 @@ public class Character
     {  
         position.y = 0.5f;
         token.transform.position = position;
-        token.transform.parent.GetChild(1).transform.position = position;
+        token.transform.GetChild(1).transform.position = position;
     }
     
     public GameObject GetToken()

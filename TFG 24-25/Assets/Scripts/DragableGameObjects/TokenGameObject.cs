@@ -46,105 +46,7 @@ public class TokenGameObject : DragableGameObject
         UpdateCardOnBoardText();
     }
 
-    void Update()
-    {
-        // See card Description
-
-        //Debug.Log(tileHovering);
-
-        //if (Input.GetKeyUp(KeyCode.M))
-        //{
-        //    CharactersManager.Instance.TriggerOnStartTurn();
-        //}
-        //if (Input.GetKeyUp(KeyCode.N))
-        //{
-        //    CharactersManager.Instance.TriggerOnEndTurn();
-        //}
-        //if (Input.GetKeyUp(KeyCode.I))
-        //{
-        //    UpdateCardOnBoardText();
-        //}
-    }
-
-
-
-    protected override void LeftMouseDownAction()
-    {
-        if (TurnManagerScript != null && TurnManagerScript.getIsBlue() != IsBlue)
-        {
-            Debug.Log("No es el turno del jugador actual.");
-            return;
-        }
-
-        GetMouseWorldPos("TokenGameObject");
-
-        if (gameObjectSelected == null)
-        { return; }
-
-        if (!gameObjectSelected.GetComponent<PhotonView>().IsMine)
-        { return; }
-
-        characterSelected = gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter();
-        if (isDragging)
-        {
-            CellNodeManager.Instance.showPossibleMovements.Invoke(characterSelected.GetOnTileId());
-        }
-
-        if (cardToDisplay.activeSelf)
-        {
-            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
-            return;
-        }
-    }
-
-    protected override void LeftMouseUpAction()
-    {
-        base.LeftMouseUpAction();
-
-        if (isOutsideBoard)
-        {
-            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
-            return;
-        }
-        else
-        {
-            if (character.GetId() == characterSelected.GetId())
-            {
-                //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
-
-                CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
-                MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
-            }
-        }
-
-        
-        //character.GetCharacterStats().PrintStats();
-    }
-
-    protected override IEnumerator DragUpdate(GameObject clickedGameObject)
-    {
-        Vector3 mousePos = Vector3.zero;
-
-        isDragging = true;
-
-        while (playerInputs.Gameplay.MouseLeftClick.ReadValue<float>() != 0)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(playerInputs.Gameplay.MousePosition.ReadValue<Vector2>());
-
-            if (plane.Raycast(ray, out var enter))
-            {
-                mousePos = ray.GetPoint(enter);
-                mousePos.y = planeDisplacement + objectDisplacement;
-
-                clickedGameObject.transform.position = mousePos;
-                clickedGameObject.GetComponent<TokenGameObject>().GetTileCollider().transform.position = clickedGameObject.transform.position;
-
-                yield return waitForFixedUpdate;
-            }
-        }
-    }
-
-    public GameObject GetTileCollider()
+    public override GameObject GetTileCollider()
     { return tileCollider; }
 
     public override void InitCardOnBoardText()
@@ -166,18 +68,6 @@ public class TokenGameObject : DragableGameObject
 
     public override void UpdateCardOnBoardText()
     {
-        //if (character == null)
-        //{
-        //    Debug.LogError("Character no ha sido inicializado.");
-        //    return;
-        //}
-
-        //int attack = character.GetAttack();
-        //int health = character.GetHealth();
-        //int manaCost = character.getManaCost();
-        //string name = character.GetName();
-
-        //photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All, attack, health, manaCost, name);
         photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All);
     }
 
@@ -218,6 +108,21 @@ public class TokenGameObject : DragableGameObject
     {
         character = newCharacter;
         characterStats = character.GetCharacterStats();
+    }
+
+    public override void CheckIsOutsideBoard()
+    {
+        if (isOutsideBoard)
+        {
+            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
+        }
+        else
+        {
+            //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
+
+            CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
+            MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
+        }
     }
 
 
