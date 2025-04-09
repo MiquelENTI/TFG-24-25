@@ -26,6 +26,7 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     private GameObject rightController;
     private GameObject leftController;
 
+
     
 private void Start()
     {
@@ -39,14 +40,15 @@ private void Start()
         // Trigger
         playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
         //playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
+        playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
 
         #endregion
 
         #region LEFT HAND
 
         // Weird Button
-        playerInputs.XRILeftHandInteraction.Select.started += _ => { RightHand_SelectInteractionDown(); };
-        playerInputs.XRILeftHandInteraction.Select.canceled += _ => { RightHand_SelectInteractionUp(); };
+        playerInputs.XRILeftHandInteraction.Select.started += _ => { LeftHand_SelectInteractionDown(); };
+        playerInputs.XRILeftHandInteraction.Select.canceled += _ => { LeftHand_SelectInteractionUp(); };
 
         // Trigger
         playerInputs.XRILeftHandInteraction.Activate.started += _ => { LeftHand_ActivateInteractionDown(); };
@@ -124,9 +126,7 @@ private void Start()
     {
         Debug.Log("ACTIVATE UP");
         if (right_lastInteractedObject == null)
-        {
-            Debug.Log("RIGHT OBJECT IS NULL");
-            return; }
+        { return; }
 
         switch (right_lastInteractedObject.tag)
         {
@@ -294,7 +294,7 @@ private void Start()
     {
         left_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
 
-        while (playerInputs.XRIRightHandInteraction.Select.ReadValue<float>() != 0)
+        while (playerInputs.XRILeftHandInteraction.Select.ReadValue<float>() != 0)
         {
             left_rayCastTile.UpdateRayCast();
 

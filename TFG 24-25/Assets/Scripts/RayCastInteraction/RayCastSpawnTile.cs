@@ -10,12 +10,6 @@ public class RayCastSpawnTile : RayCastTile
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateRayCast();
-    }
-
     public override void UpdateRayCast()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
@@ -24,10 +18,7 @@ public class RayCastSpawnTile : RayCastTile
         if (Physics.Raycast(ray, out hit, 5, mask)) // Layer 6 = Tile
         {
             Tile onTile = hit.transform.GetComponent<Tile>();
-
-            //Debug.Log(onTile.gameObject.name + " : ");
-            //Debug.Log(onTile.gameObject.name + " : " + previousTile.gameObject.name);
-
+            
             if (onTile.tileId != previousTile.tileId)
             {
                 previousTile.ExitRaycast();
@@ -35,8 +26,17 @@ public class RayCastSpawnTile : RayCastTile
                 previousTile = onTile;
                 transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
                 //transform.parent.localRotation = Quaternion.Euler(90, 0, 0);
-                Debug.Log("ON TILE: " + onTile.tileId);
             }
+            else if (onTile.tileId == previousTile.tileId)
+            {
+                Debug.Log("ENTERED ELSE IF UPDATE RAYCAST");
+                onTile.EnterRaycast();
+                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
+            }
+        }
+        else
+        {
+            previousTile.ExitRaycast();
         }
     }
 }

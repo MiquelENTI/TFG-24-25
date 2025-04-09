@@ -70,10 +70,8 @@ public class CardHold : MonoBehaviour
     
     void MoveCard(GameObject gameObject, Vector3 newPosition)
     {
-        gameObject.transform.position = newPosition;
-        //gameObject.transform.GetChild(0).localPosition = Vector3.zero;
-        Debug.Log(gameObject.transform.GetChild(0).GetChild(1).name);
-        //gameObject.transform.GetChild(0).GetChild(1).localPosition = Vector3.zero;
+        gameObject.transform.GetChild(0).position = newPosition;
+        gameObject.transform.GetChild(0).rotation = Quaternion.Euler(defaultCardRotation);
     }
 
     public void DestroyCard(int cardToDestroy)
@@ -112,7 +110,7 @@ public class CardHold : MonoBehaviour
     {
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].transform.LookAt(playerCam.transform.position);
+            cards[i].transform.GetChild(0).LookAt(playerCam.transform.position);
         }
     }
 

@@ -10,6 +10,7 @@ public class Fly : Character
 
     public override bool OnMovement(CellNode cellToMove)
     {
+        cellToMove.PrintStatus();
         if (!base.OnMovement(cellToMove))
         { return false; }
 

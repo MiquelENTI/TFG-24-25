@@ -59,7 +59,10 @@ public class CardGameObject : DragableGameObject
 
         if (isOutsideBoard)
         {
-            cardHold.ReorganizeCards();
+            if(TurnManagerScript.Instance.isPCVersion)
+            {
+                cardHold.ReorganizeCards();
+            }
         }
         else
         {

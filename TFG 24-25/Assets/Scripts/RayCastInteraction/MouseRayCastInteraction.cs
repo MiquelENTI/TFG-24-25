@@ -23,14 +23,14 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     void Update()
     {
-        if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
-        {
-            cardHold.LookToPlayerCam();
-        }
-        else
-        {
-            cardHold.DefaultCardRotation();
-        }
+        //if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
+        //{
+        //    cardHold.LookToPlayerCam();
+        //}
+        //else
+        //{
+        //    cardHold.DefaultCardRotation();
+        //}
     }
 
     protected virtual void LeftMouseDownAction()
@@ -107,7 +107,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             case "CardGameObject":
                 {
                     lastInteractedObject.CheckIsOutsideBoard();
-
                     lastInteractedObject = null;
                     break;
                 }
