@@ -42,7 +42,7 @@ public class SoundManager : Singleton<SoundManager>
            {003004001, "event:/SFX/CARTAS/EFFECTS/Flash/FLASH"},
            
 
-           // Fly (Falta fer el objecte per aplicar el so de posicionamenty al taulell)
+           // Fly 
            {003005001, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack"},
            {003005002, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection"},
            
@@ -111,7 +111,7 @@ public class SoundManager : Singleton<SoundManager>
            {003018002, ""},
            {003018003, ""},
 
-           // Grasshopper (Falta implementar igual que la FLY)
+           // Grasshopper
            {003019001, ""},
            {003019002, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_select"},
            {003019003, ""},
@@ -196,7 +196,7 @@ public class SoundManager : Singleton<SoundManager>
            {003035002, ""},
            {003035003, ""},
            
-           // Samurai
+           // Samurai Pendent de no fer 
            {003036001, ""},
            {003036002, ""},
            {003036003, ""},
@@ -216,10 +216,8 @@ public class SoundManager : Singleton<SoundManager>
            {003039002, ""},
            {003039003, ""},
            
-           // Cambiaformes
-           {003040001, ""},
-           {003040002, ""},
-           {003040003, ""}
+           // Cambiaformes So de la carta en que es transforma.
+           
           
         };     
 
@@ -241,6 +239,8 @@ public class SoundManager : Singleton<SoundManager>
         };   
         board = GameObject.Find("Board");
         PlayMusic(002000001);
+        PlayMusic(001001001);
+        
     }
 
 
@@ -253,8 +253,20 @@ public class SoundManager : Singleton<SoundManager>
     {
         FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],board.transform.position);
     }
-     public void PlayBonfireAtPosition (Vector3 position)
+     public void PlayMusic (int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],position);
+    }
+    public void PlayBonfireAtPosition (Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[001000002],position);
+    }
+    public void PlayMoscaMovement (GameObject mosca)
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(sfxDictionary[003005002],mosca);
+    }
+    public void PlayGrasshopperMovement (GameObject grasshopper)
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(sfxDictionary[003019002],grasshopper);
     }
 }
