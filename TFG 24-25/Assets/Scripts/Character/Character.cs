@@ -5,6 +5,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public enum MovementType { Basic, Diagonal, Omni}
 public enum TeamType { RED = 0, BLUE = 1}
@@ -207,9 +208,9 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if (playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove)
+        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "Pinsa")
         {
-            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana())
+            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
             {
                 //GetCharacterStats().PrintStats();
                 playerStats.SubstractMana(stats.manaCost);
