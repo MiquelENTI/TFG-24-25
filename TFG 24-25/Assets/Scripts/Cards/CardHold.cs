@@ -76,6 +76,12 @@ public class CardHold : MonoBehaviour
 
     public void DestroyCard(int cardToDestroy)
     {
+        photonView.RPC("DestroyCard_RPC", RpcTarget.All, cardToDestroy);
+    }
+
+    [PunRPC]
+    public void DestroyCard_RPC(int cardToDestroy)
+    {
         for (int i = 0; i < cards.Count; i++)
         {
             if (TurnManagerScript.Instance.isPCVersion)
@@ -105,6 +111,7 @@ public class CardHold : MonoBehaviour
             }
         }
     }
+
 
     public void LookToPlayerCam()
     {

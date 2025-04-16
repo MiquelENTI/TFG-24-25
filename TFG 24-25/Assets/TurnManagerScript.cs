@@ -108,7 +108,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsBlue = !IsBlue;
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
-        photonView.RPC("DrawCardRPC", RpcTarget.Others, 1);
+        photonView.RPC("DrawCardRPC", RpcTarget.All, 1);
     }
 
     [PunRPC]
@@ -201,7 +201,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         for (int i = 0; i < amount; i++)
         {
-            DeckManager.Instance.DrawCard();
+            DeckManager.Instance.DrawCard(IsBlue);
         }
     }
 

@@ -157,7 +157,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             {
                 mousePos = ray.GetPoint(enter);
                 mousePos.y = lastInteractedObject.GetObjectDisplacement();
-                lastInteractedObject.transform.position = mousePos;
+
+                lastInteractedObject.GetComponent<DragableGameObject>().UpdateObjectPosition(mousePos, lastInteractedObject.transform.rotation);
 
                 rayCastTile.UpdateRayCast();
 

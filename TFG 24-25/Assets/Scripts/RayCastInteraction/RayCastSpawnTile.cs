@@ -29,7 +29,6 @@ public class RayCastSpawnTile : RayCastTile
             }
             else if (onTile.tileId == previousTile.tileId)
             {
-                Debug.Log("ENTERED ELSE IF UPDATE RAYCAST");
                 onTile.EnterRaycast();
                 transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
             }

@@ -61,13 +61,13 @@ public class DeckManager : Singleton<DeckManager>
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //Debug.Log("Pressed T");
-            
-            // DrawCardWarro();
-            DrawCard();
+            DrawCard(true);
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            DrawCard(false);
         }
 
-        
     }
 
     void CreateDeck()
@@ -75,16 +75,22 @@ public class DeckManager : Singleton<DeckManager>
         ShuffleDeck();
     }
 
-    public void DrawCard()
+    [PunRPC]
+    public void DrawCard(bool isBlue)
     {
         if (deck.Count == 0) { return; }
-        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
 
         GameObject cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold");
+
+        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         instantiatedCard.transform.parent = cardHold.transform;
+        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().Init();
+        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
+
+
+
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
-        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
+        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(isBlue ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
     }
 
     public void BoardIntoHandDraw(string characterName)
