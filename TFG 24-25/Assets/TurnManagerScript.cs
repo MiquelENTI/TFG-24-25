@@ -44,7 +44,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (!photonView)
         {
-            Debug.LogError("El PhotonView no está asignado correctamente en el GameObject");
+            Debug.LogError("El PhotonView no estï¿½ asignado correctamente en el GameObject");
             return;
         }
 
@@ -93,7 +93,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         }
         else
         {
-            Debug.LogWarning("Ya se han registrado Player 1 y Player 2. No se pueden registrar más jugadores a través de este TurnManager.");
+            Debug.LogWarning("Ya se han registrado Player 1 y Player 2. No se pueden registrar mï¿½s jugadores a travï¿½s de este TurnManager.");
         }
     }
 
@@ -102,7 +102,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (photonView == null)
         {
-            Debug.LogError("PhotonView no está asignado correctamente.");
+            Debug.LogError("PhotonView no estï¿½ asignado correctamente.");
             return;
         }
 
@@ -129,8 +129,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
             if (turnCounter > 10)
             {
-                
-                SaveData.Instance.Save();
+                if (SceneManager.GetActiveScene().name != "ReplayScene")
+                {
+                    SaveData.Instance.Save();
+                }
 
                 
                 Debug.Log("Blue score is: " + scoreManager.BlueScore);
@@ -190,7 +192,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         }
         else
         {
-            Debug.LogWarning("Player 1 o Player 2 no han sido registrados todavía en TurnManager.");
+            Debug.LogWarning("Player 1 o Player 2 no han sido registrados todavï¿½a en TurnManager.");
         }
     }
 
@@ -206,7 +208,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [PunRPC]
     public void DrawCards(int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if (SceneManager.GetActiveScene().name != "ReplayScene")
         {
             DeckManager.Instance.DrawCard(IsBlue);
         }

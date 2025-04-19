@@ -45,7 +45,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
         character.OnMovement(cellToMove);
 
-        SaveData.Instance.SaveNewAction("M" + cellId + "/" + characterId);
+        //SaveData.Instance.SaveNewAction("M" + cellId + "/" + characterId);
     }
 
     public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
@@ -60,7 +60,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
         else
         {
             character.OnSpawn(cellToMove);
-            SaveData.Instance.SaveNewAction("S" + cellId + "/" + characterId);
+            //SaveData.Instance.SaveNewAction("S" + cellId + "/" + characterId);
         } 
     }
 

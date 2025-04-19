@@ -62,6 +62,8 @@ public class SaveData: Singleton<SaveData>
         }
         else
         {
+
+            Debug.LogError("Replay does not exist or path error");
             return null;
         }
     }

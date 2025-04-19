@@ -28,7 +28,7 @@ public class SpawnCardController : MonoBehaviourPun
         //Debug.Log($"[SpawnCardController - BEFORE CONDITION] Prefab Path: {prefabPath}, Spawn Position: {spawnPosition}, Token Team: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, Condition: (LocalPlayer.ActorNumber == initiatingPlayerActorNumber) = {(PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)}"); // **NUEVO LOG - ANTES DEL IF**
 
 
-        if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber || SceneManager.GetActiveScene().name == "Pinsa")
+        if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber || SceneManager.GetActiveScene().name == "ReplayScene")
         {
             GameObject instantiatedToken = PhotonNetwork.Instantiate(prefabPath, spawnPosition, Quaternion.identity);
             PhotonView tokenPhotonView = instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>();

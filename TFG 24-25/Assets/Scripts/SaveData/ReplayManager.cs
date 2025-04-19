@@ -6,52 +6,77 @@ using TMPro;
 using UnityEngine.Windows;
 using System;
 
-public class RankingManager : MonoBehaviour
+public class ReplayManager: MonoBehaviour
 {
     public ReplayData replayData;
     
     void Start()
     {
-        replayData = new ReplayData();
-        GetReplayMatchData(1);
 
-        for (int i = 0; i <= replayData.inputs.Count; i++)
-        {
-            Debug.Log(replayData.inputs.Dequeue().ToString());
-        }
+        replayData = new ReplayData();
+        GetReplayMatchData(0);
     }
 
     private void Update()
     {
-        if (UnityEngine.Input.GetKeyUp(KeyCode.F1))
+        if (UnityEngine.Input.GetKeyUp(KeyCode.S))
+        {
+            StartReplay();
+        }
+
+        if (UnityEngine.Input.GetKeyUp(KeyCode.N))
         {
             NextMove();
         }
     }
 
-    public void GetReplayMatchData(int matchNum)
+    private void GetReplayMatchData(int matchNum)
     {
         replayData = SaveData.Instance.LoadReplay(matchNum);
-
-        DeckManager.Instance.SetReplayDeck(replayData.deck);
     }
 
-    public void NextMove()
+    private void StartReplay()
     {
+        for (int i = 0; i <= replayData.inputs.Count; i++)
+        {
+            Debug.Log(replayData.inputs.Dequeue().ToString());
+        }
+
+        DeckManager.Instance.SetReplayDeck(replayData.deck);
+
+        for (int i = 0; i <= 4; i++)
+        {
+            DeckManager.Instance.ReplayDrawCard(true);
+        }
+
+        for (int i = 0; i <= 4; i++)
+        {
+            DeckManager.Instance.ReplayDrawCard(false);
+        }
+    }
+
+    private void NextMove()
+    {
+        if (replayData.inputs.Count <= 0)
+            return;
+
         string newInput = replayData.inputs.Dequeue();
 
         char nextChar = newInput.ToCharArray()[0];
 
-        newInput.Remove(0);
+        newInput = newInput.Substring(1);
 
         switch (nextChar)
         {
             case 'T':
-                nextChar = newInput.ToCharArray()[1];
-                if(nextChar == 1)
-                    TurnManagerScript.Instance.UpdateTurn(true);
-                else
-                    TurnManagerScript.Instance.UpdateTurn(false);
+                nextChar = newInput.ToCharArray()[0];
+
+                bool turn = nextChar == 1;
+
+                TurnManagerScript.Instance.UpdateTurn(turn);
+
+                DeckManager.Instance.ReplayDrawCard(turn);
+
                 break;
             case 'M':
                 string[] movementIds = newInput.Split('/');

@@ -202,6 +202,8 @@ public class Character
             
             cellToMove.SetCharacter(this);
 
+            SaveData.Instance.SaveNewAction("S" + cellToMove.GetId() + "/" + id);
+
             OnSpawnSFX();
             OnSpawnVFX();
 
@@ -218,9 +220,9 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if (((playerStats.GetCurrentMana() >= stats.manaCost) && !stats.stun && cellToMove.CheckNodes(id)) || SceneManager.GetActiveScene().name == "Pinsa")
+        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "ReplayScene")
         {
-            if (canMove || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
+            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "ReplayScene")
             {
                 //GetCharacterStats().PrintStats();
                 playerStats.SubstractMana(stats.manaCost);
@@ -235,6 +237,8 @@ public class Character
                 MoveToken(cellToMove.GetPosition());
 
                 cellToMove.SetCharacter(this);
+
+                SaveData.Instance.SaveNewAction("M" + cellToMove.GetId() + "/" + id);
 
                 //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
                 //Debug.Log("Previous After");
