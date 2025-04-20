@@ -88,7 +88,7 @@ public class CardHold : MonoBehaviour
             {
                 if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
                 {
-                    Destroy(cards[i]);
+                    PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
@@ -98,7 +98,7 @@ public class CardHold : MonoBehaviour
             {
                 if (cards[i].transform.childCount == 0) // WTF PK FUNCIONA? PK NO TE CHILDS QUAN EN ESCENA TE?
                 {
-                    Destroy(cards[i]);
+                    PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
