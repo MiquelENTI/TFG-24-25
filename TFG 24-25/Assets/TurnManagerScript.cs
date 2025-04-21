@@ -13,6 +13,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [SerializeField] public GameObject player1GameObject;
     [SerializeField] public GameObject player2GameObject;
 
+    [SerializeField] private AudioClip winAudioClip;
+    [SerializeField] private AudioClip loseAudioClip;
+
+
     private bool player1Registered = false;
     private bool player2Registered = false;
 
@@ -135,14 +139,46 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
                 {
                     winnerText.text = "Blue Wins!";
                     winnerText.color = Color.blue;
+                    photonView.RPC("PlayEndGameAudio", RpcTarget.All, true);
                 }
                 else if (scoreManager.RedScore > scoreManager.BlueScore)
                 {
                     winnerText.text = "Red Wins!";
                     winnerText.color = Color.red;
+                    photonView.RPC("PlayEndGameAudio", RpcTarget.All, false);
                 }
             }
         }
+
+        [PunRPC]
+        void PlayEndGameAudio(bool blueWon)
+        {
+            bool isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine
+                            || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
+
+            AudioSource audioSource = null;
+
+            if (player1GameObject.GetComponent<PhotonView>().IsMine)
+                audioSource = player1GameObject.GetComponent<AudioSource>();
+            else if (player2GameObject.GetComponent<PhotonView>().IsMine)
+                audioSource = player2GameObject.GetComponent<AudioSource>();
+
+            if (audioSource == null)
+            {
+                Debug.LogWarning("No se encontró AudioSource para el jugador local.");
+                return;
+            }
+
+            if ((isLocalBlue && blueWon) || (!isLocalBlue && !blueWon))
+            {
+                audioSource.PlayOneShot(winAudioClip);
+            }
+            else
+            {
+                audioSource.PlayOneShot(loseAudioClip);
+            }
+        }
+
 
         CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
         CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue);
