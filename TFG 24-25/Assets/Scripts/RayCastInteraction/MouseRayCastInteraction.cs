@@ -35,6 +35,9 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     protected virtual void LeftMouseDownAction()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = playerCamera.ScreenPointToRay(playerInputs.Mouse.Position.ReadValue<Vector2>());
 
         RaycastHit hit;
@@ -119,6 +122,9 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     protected virtual void RightClickDownAction()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         // Canviar Camera.Main a la camera del jugador
         Ray ray = playerCamera.ScreenPointToRay(playerInputs.Mouse.Position.ReadValue<Vector2>());
         RaycastHit hit;

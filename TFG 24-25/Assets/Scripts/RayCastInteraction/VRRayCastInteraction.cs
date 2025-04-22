@@ -74,6 +74,9 @@ private void Start()
     #region RIGHT HAND
     protected virtual void RightHand_SelectInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Debug.Log("ACTIVATE DOWN");
         
         Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
@@ -156,6 +159,9 @@ private void Start()
 
     protected virtual void RightHand_ActivateInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
 
         RaycastHit hit;
@@ -184,6 +190,9 @@ private void Start()
 
     protected virtual void LeftHand_SelectInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
         RaycastHit hit;
@@ -228,6 +237,9 @@ private void Start()
     }
     protected virtual void LeftHand_SelectInteractionUp()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         if (left_lastInteractedObject == null)
         { return; }
 
@@ -256,6 +268,9 @@ private void Start()
 
     protected virtual void LeftHand_ActivateInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
         RaycastHit hit;
