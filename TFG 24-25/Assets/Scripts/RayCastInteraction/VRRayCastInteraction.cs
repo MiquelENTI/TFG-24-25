@@ -176,7 +176,7 @@ private void Start()
                 case "RaycastInteractable":
                     {
                         lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                         break;
                     }
             }
@@ -285,7 +285,7 @@ private void Start()
                 case "RaycastInteractable":
                     {
                         lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                         break;
                     }
             }

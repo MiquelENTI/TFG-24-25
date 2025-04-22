@@ -31,6 +31,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
     public bool isPCVersion = true;
 
+    [SerializeField] private bool turnBypass;
+
     private void Awake()
     {
         if (!TryGetComponent<PhotonView>(out photonView))
@@ -208,5 +210,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public void SetIsPCVersion(bool state)
     {
         isPCVersion = state;
+    }
+
+    public bool GetTurnBypass()
+    {
+        return turnBypass;
     }
 }
