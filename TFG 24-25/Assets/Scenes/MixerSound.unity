@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.0000305, y: 0}
+  m_AnchoredPosition: {x: 5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &195266838
@@ -427,6 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418234040}
   - component: {fileID: 418234041}
+  - component: {fileID: 418234042}
   m_Layer: 5
   m_Name: Slider_Master
   m_TagString: Untagged
@@ -501,14 +502,39 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778889041}
   m_FillRect: {fileID: 1548307091}
   m_HandleRect: {fileID: 1778889040}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 418234042}
+        m_TargetAssemblyTypeName: VCAController, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &418234042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418234039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435351c259c1e4f93be26834bcd44057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VcaName: MASTER
 --- !u!1 &451141699
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,10 +644,10 @@ RectTransform:
   m_Father: {fileID: 418234040}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.14375001, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 94.4, y: -0.39999962}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9125, y: 1}
+  m_AnchoredPosition: {x: 116.1, y: -15.9}
+  m_SizeDelta: {x: 14, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456165893
 MonoBehaviour:
@@ -706,7 +732,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.1801682, y: 0, z: 0, w: -83.7927}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -806,6 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592568546}
   - component: {fileID: 592568547}
+  - component: {fileID: 592568548}
   m_Layer: 5
   m_Name: Slider_VO
   m_TagString: Untagged
@@ -880,14 +907,39 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 249985764}
   m_FillRect: {fileID: 195266839}
   m_HandleRect: {fileID: 249985763}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 592568548}
+        m_TargetAssemblyTypeName: VCAController, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &592568548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592568545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435351c259c1e4f93be26834bcd44057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VcaName: VoiceOver
 --- !u!1 &668462635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.0000305, y: 0}
+  m_AnchoredPosition: {x: 5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1054820076
@@ -1376,7 +1428,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1462844440}
   m_FillRect: {fileID: 582218603}
   m_HandleRect: {fileID: 1462844439}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -1556,7 +1608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.0000305, y: 0}
+  m_AnchoredPosition: {x: 5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1204155416
@@ -1592,8 +1644,8 @@ RectTransform:
   m_Father: {fileID: 592568546}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.14375001, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.85625, y: 1}
   m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1932,6 +1984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590640086}
   - component: {fileID: 1590640087}
+  - component: {fileID: 1590640088}
   m_Layer: 5
   m_Name: Slider_SFX
   m_TagString: Untagged
@@ -2006,14 +2059,39 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 883766950}
   m_FillRect: {fileID: 1801209192}
   m_HandleRect: {fileID: 883766949}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1590640088}
+        m_TargetAssemblyTypeName: VCAController, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1590640088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590640085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435351c259c1e4f93be26834bcd44057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VcaName: SFX
 --- !u!1 &1615570826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,9 +2161,9 @@ RectTransform:
   m_Father: {fileID: 1590640086}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.5, y: 36.4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.85, y: 1}
+  m_AnchoredPosition: {x: 4.5, y: 36.4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688984757
@@ -2448,7 +2526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.8, y: 25}
+  m_AnchoredPosition: {x: 20, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855989994
@@ -2644,8 +2722,8 @@ RectTransform:
   m_Children:
   - {fileID: 1943370795}
   - {fileID: 1615570827}
-  - {fileID: 1124341163}
   - {fileID: 1590640086}
+  - {fileID: 1124341163}
   - {fileID: 592568546}
   - {fileID: 418234040}
   m_Father: {fileID: 0}
@@ -2766,6 +2844,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.0000305, y: 0}
+  m_AnchoredPosition: {x: 5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
