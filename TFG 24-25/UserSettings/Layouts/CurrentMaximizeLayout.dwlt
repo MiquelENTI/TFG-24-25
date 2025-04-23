@@ -27,6 +27,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 15670
 =======
 <<<<<<< HEAD
@@ -45,6 +46,9 @@ MonoBehaviour:
 =======
   controlID: 46
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 48
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -265,6 +269,7 @@ MonoBehaviour:
   vertical: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 2167
 >>>>>>> ce75837 (Load test and movement recorded)
 >>>>>>> 84920df (Load test and movement recorded)
@@ -275,6 +280,9 @@ MonoBehaviour:
 =======
   controlID: 47
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 49
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -324,6 +332,7 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 2168
 >>>>>>> ce75837 (Load test and movement recorded)
 >>>>>>> 84920df (Load test and movement recorded)
@@ -334,6 +343,9 @@ MonoBehaviour:
 =======
   controlID: 48
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 50
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -441,6 +453,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
 <<<<<<< HEAD
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -475,20 +488,26 @@ MonoBehaviour:
       m_LastClickedID: 50876
       m_ExpandedIDs: cce7ffff86e9ffff04f5ffff3ac50000
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: c6850000
+      m_LastClickedID: 34246
+      m_ExpandedIDs: 1efbffff84890000
+>>>>>>> d319b32 (Spawned Dummy Token)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: 3D Card(Clone)
+        m_OriginalName: 3D Card(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -3784
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -1166,6 +1185,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 100, y: 25, z: 0}
     speed: 2
     m_Value: {x: 100, y: 25, z: 0}
@@ -1196,6 +1216,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -4.8414288, y: -0.99146223, z: 0.1475566}
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_Target: {x: 180.67538, y: -160.00652, z: -65.896194}
+    speed: 2
+    m_Value: {x: 180.67538, y: -160.00652, z: -65.896194}
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1244,6 +1269,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.17330396, y: -0.036612716, z: 0.006454306, w: 0.9841406}
 =======
 <<<<<<< HEAD
@@ -1281,24 +1307,31 @@ MonoBehaviour:
 =======
     m_Target: {x: -0.12531835, y: 0.69267124, z: -0.12412074, w: -0.699354}
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_Target: {x: -0.19517359, y: -0.7706579, z: 0.2793142, w: -0.538506}
+>>>>>>> d319b32 (Spawned Dummy Token)
     speed: 2
-    m_Value: {x: -0.12531835, y: 0.69267124, z: -0.12412074, w: -0.699354}
+    m_Value: {x: -0.19517247, y: -0.7706535, z: 0.27931258, w: -0.5385029}
   m_Size:
-    m_Target: 4.525386
+    m_Target: 126.54712
     speed: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Value: 1.1285737
 >>>>>>> cbb4170 (Fixes and various saves)
 =======
     m_Value: 4.525386
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_Value: 126.54712
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -2488,7 +2521,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: deck
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -2496,8 +2529,9 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
+    m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2519,13 +2553,17 @@ MonoBehaviour:
 =======
     - Assets/Scripts/Cards
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    - Assets
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_Globs: []
-    m_OriginalText: deck
+    m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2547,11 +2585,15 @@ MonoBehaviour:
 =======
   - Assets/Scripts/Cards
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  - Assets
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Pau\Desktop\kraken\TFG\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2591,6 +2633,12 @@ MonoBehaviour:
     m_LastClickedID: 42144
     m_ExpandedIDs: 0000000020a4000092a4000000ca9a3b
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 38a10000
+    m_LastClickedID: 41272
+    m_ExpandedIDs: 0000000038a10000dea1000000ca9a3b
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2625,6 +2673,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000024a3000000ca9a3b
 =======
 <<<<<<< HEAD
@@ -2643,6 +2692,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000020a40000
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_ExpandedIDs: 0000000038a10000
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2667,6 +2719,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2699,6 +2752,10 @@ MonoBehaviour:
 =======
     m_SelectedInstanceIDs: bcc60000
     m_LastClickedInstanceID: 50876
+=======
+    m_SelectedInstanceIDs: 60a20000
+    m_LastClickedInstanceID: 41568
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c8cb000024a70000
 >>>>>>> 47ec0e5 (Scene setup)
@@ -2826,8 +2883,8 @@ MonoBehaviour:
     width: 355.19995
 >>>>>>> cbb4170 (Fixes and various saves)
     height: 770.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}

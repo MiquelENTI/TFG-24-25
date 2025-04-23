@@ -70,6 +70,7 @@ MonoBehaviour:
   m_ShowMode: 4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Console
 <<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
@@ -90,6 +91,9 @@ MonoBehaviour:
 =======
   m_Title: Console
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  m_Title: Scene
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -251,6 +255,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 51
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
@@ -285,6 +290,9 @@ MonoBehaviour:
 =======
   controlID: 2281
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 1185
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -387,6 +395,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 52
 >>>>>>> 0697a2b (Singletone i deckSave)
 >>>>>>> 43aca31 (Singletone i deckSave)
@@ -421,6 +430,9 @@ MonoBehaviour:
 =======
   controlID: 2229
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 1133
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -524,6 +536,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 43
 <<<<<<< HEAD
 >>>>>>> 0697a2b (Singletone i deckSave)
@@ -558,6 +571,9 @@ MonoBehaviour:
 =======
   controlID: 2230
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+  controlID: 1134
+>>>>>>> d319b32 (Spawned Dummy Token)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -609,9 +625,14 @@ MonoBehaviour:
 =======
     width: 289.6
     height: 495.2
+<<<<<<< HEAD
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
 >>>>>>> cbb4170 (Fixes and various saves)
+=======
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -1007,24 +1028,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 74.79999}
-      m_SelectedIDs: 006e0300
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9471ffffaa89ffff488affff7690ffff7c92ffffcce7ffff86e9ffff04f5ffff
+      m_ExpandedIDs: 1efbffff84890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: TEMP_Onboard_GameInstructions
-        m_OriginalName: TEMP_Onboard_GameInstructions
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 135482
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -2137,6 +2158,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 80.61263, y: -25.196707, z: -52.12544}
 =======
 =======
@@ -2234,6 +2256,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -4.4355917, y: -2.9750986, z: 0.20214689}
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_Target: {x: 263.44626, y: -177.53203, z: -22.07308}
+    speed: 2
+    m_Value: {x: 263.44626, y: -177.53203, z: -22.07308}
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2279,6 +2306,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2422,20 +2450,27 @@ MonoBehaviour:
 >>>>>>> cbb4170 (Fixes and various saves)
 =======
     m_Target: {x: -0.24069844, y: 0.6211533, z: -0.20881929, w: -0.7159829}
+=======
+    m_Target: {x: -0.19852334, y: -0.7020669, z: 0.21464647, w: -0.64932984}
+>>>>>>> d319b32 (Spawned Dummy Token)
     speed: 2
-    m_Value: {x: -0.24069795, y: 0.62115204, z: -0.20881887, w: -0.7159815}
+    m_Value: {x: -0.1962543, y: -0.70367765, z: 0.21283267, w: -0.64886385}
   m_Size:
-    m_Target: 4.525386
+    m_Target: 161.8734
     speed: 2
+<<<<<<< HEAD
     m_Value: 4.525386
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_Value: 154.90277
+>>>>>>> d319b32 (Spawned Dummy Token)
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -3692,7 +3727,7 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
+    m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3942,10 +3977,16 @@ MonoBehaviour:
 >>>>>>> cbb4170 (Fixes and various saves)
 =======
     scrollPos: {x: 0, y: 79}
+<<<<<<< HEAD
     m_SelectedIDs: 20a40000
     m_LastClickedID: 42016
     m_ExpandedIDs: 0000000020a4000092a4000000ca9a3b
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_SelectedIDs: 38a10000
+    m_LastClickedID: 41272
+    m_ExpandedIDs: 0000000038a1000000ca9a3b
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3973,6 +4014,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4045,6 +4087,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000020a4000000ca9a3b
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_ExpandedIDs: 0000000038a1000000ca9a3b
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4069,6 +4114,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedInstanceIDs: acb80600
@@ -4100,6 +4146,10 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 006e0300
     m_LastClickedInstanceID: 224768
 >>>>>>> 47ec0e5 (Scene setup)
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+>>>>>>> d319b32 (Spawned Dummy Token)
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c8cb000024a70000
 <<<<<<< HEAD

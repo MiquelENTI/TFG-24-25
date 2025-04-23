@@ -8,13 +8,20 @@ using System;
 
 public class ReplayManager: MonoBehaviour
 {
+    SpawnCardController controller;
+
+    bool blueTurn;
+
     public ReplayData replayData;
     
     void Start()
     {
-
         replayData = new ReplayData();
         GetReplayMatchData(0);
+
+        blueTurn = true;
+
+        controller = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
     }
 
     private void Update()
@@ -39,7 +46,7 @@ public class ReplayManager: MonoBehaviour
     {
         for (int i = 0; i <= replayData.inputs.Count; i++)
         {
-            Debug.Log(replayData.inputs.Dequeue().ToString());
+            //Debug.Log(replayData.inputs.Dequeue().ToString());
         }
 
         DeckManager.Instance.SetReplayDeck(replayData.deck);
@@ -66,26 +73,44 @@ public class ReplayManager: MonoBehaviour
 
         newInput = newInput.Substring(1);
 
+        Debug.Log(replayData.inputs.Count);
+        Debug.Log(newInput);
+
+
         switch (nextChar)
         {
             case 'T':
-                nextChar = newInput.ToCharArray()[0];
+                {
+                    nextChar = newInput.ToCharArray()[0];
 
-                bool turn = nextChar == 1;
+                    bool turn = nextChar == 1;
 
-                TurnManagerScript.Instance.UpdateTurn(turn);
+                    TurnManagerScript.Instance.UpdateTurn(turn);
 
-                DeckManager.Instance.ReplayDrawCard(turn);
+                    DeckManager.Instance.ReplayDrawCard(turn);
 
-                break;
+                    blueTurn = !blueTurn;
+
+                    break;
+                }
             case 'M':
-                string[] movementIds = newInput.Split('/');
-                MyEventHandler.Instance.InvokeMoveToken(Int32.Parse(movementIds[0]), Int32.Parse(movementIds[1]));
-                break;
+                {
+                    string[] movementIds = newInput.Split('/');
+
+                    Debug.Log(movementIds[0] + "cometes" + movementIds[1]);
+
+                    MyEventHandler.Instance.InvokeMoveToken(Int32.Parse(movementIds[0]), Int32.Parse(movementIds[1]));
+                    break;
+                }
             case 'S':
-                string[] spawnIds = newInput.Split('/');
-                MyEventHandler.Instance.InvokeSpawnToken(Int32.Parse(spawnIds[0]), Int32.Parse(spawnIds[1]), false);
-                break;
+                {
+                    string[] spawnIds = newInput.Split('/');
+
+                    Debug.Log(spawnIds[0] + "cometes" + spawnIds[1]);
+
+                    controller.InstantiateCharacterTokenReplay(Int32.Parse(spawnIds[1]), Int32.Parse(spawnIds[0]), false, blueTurn);
+                    break;
+                }
         }
     }
 }
