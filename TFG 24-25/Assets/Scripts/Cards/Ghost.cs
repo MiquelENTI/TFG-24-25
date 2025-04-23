@@ -58,4 +58,15 @@ public class Ghost : Character
         moveAcrossBoard.Add(29,24);
         moveAcrossBoard.Add(35,30);
     }
+     //Implementació del so
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003018001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003018002, token.transform.position);
+    }
 }

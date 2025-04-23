@@ -34,8 +34,14 @@ public class CustomizedRoom : MonoBehaviour
     [SerializeField] TMP_InputField heightInput;
     [SerializeField] TMP_InputField largeInput;
     [SerializeField] TMP_InputField wideInput;
-    [SerializeField] TMP_Dropdown materialsDropdown;
-    MATERIALS material;
+    [SerializeField] TMP_Dropdown materialsDropdownHeight;
+    [SerializeField] TMP_Dropdown materialsDropdownLarge;
+    [SerializeField] TMP_Dropdown materialsDropdownWide;
+
+    MATERIALS materialHeight;        
+    MATERIALS materialLarge;
+    MATERIALS materialWide;
+
 
     // Diccionario de materiales con coeficientes de absorción en varias frecuencias
     Dictionary<MATERIALS, MaterialAbsorption> materialsData = new Dictionary<MATERIALS, MaterialAbsorption>()
@@ -61,13 +67,19 @@ public class CustomizedRoom : MonoBehaviour
 
     void Start()
     {
-        material = MATERIALS.HORMIGON; // Se inicia con el primer material del enum
+        materialHeight = MATERIALS.PLADUR; // Se inicia con el material predominante
+        materialLarge = MATERIALS.PARQUE;
+        materialWide = MATERIALS.VIDRIO;
     }
 
     public void Done()
     {
         // Asigna el material seleccionado en el Dropdown
-        material = (MATERIALS)materialsDropdown.value;
+        materialHeight = (MATERIALS)materialsDropdownHeight.value;
+        materialLarge = (MATERIALS)materialsDropdownLarge.value;
+        materialWide = (MATERIALS)materialsDropdownWide.value;
+
+        
 
         // Verifica si los campos de entrada contienen valores numéricos válidos
         if (int.TryParse(heightInput.text, out int height) &&
@@ -76,10 +88,10 @@ public class CustomizedRoom : MonoBehaviour
         {
             // Calcula volumen y área de absorción
             int volume = CalculateVolume(height, wide, large);
-            float absorptionArea = CalculateAbsorptionArea(height, wide, large, material);
-
+            float absorptionArea = CalculateAbsorptionArea(height, wide, large, materialHeight, materialLarge, materialWide);
+           
             // Calcula tiempo de reverberación usando la fórmula de Sabine con coeficiente promedio
-            CalculateSabine(volume, absorptionArea, material);
+            CalculateSabine(volume, absorptionArea);
         }
         else
         {
@@ -94,28 +106,33 @@ public class CustomizedRoom : MonoBehaviour
         return volume;
     }
 
-    public float CalculateAbsorptionArea(int height, int wide, int large, MATERIALS material)
+      public float CalculateAbsorptionArea(int height, int wide, int large, MATERIALS matHeight, MATERIALS matWide, MATERIALS matLarge)
     {
-        // Calcula la superficie total de la sala
-        float totalArea = (2 * height * wide) + (2 * height * large) + (wide * large);
+        // Superficies por tipo
+        float areaAltura = 2 * height * wide;  // Paredes laterales
+        float areaLargo = 2 * height * large;  // Fondo y frontal
+        float areaSueloTecho = wide * large * 2; // Suelo y techo
 
-        // Obtiene el coeficiente de absorción promedio
-        float absorptionCoefficient = materialsData[material].GetAverageAbsorption();
+        float coeffAltura = materialsData[matHeight].GetAverageAbsorption();
+        float coeffLargo = materialsData[matLarge].GetAverageAbsorption();
+        float coeffAncho = materialsData[matWide].GetAverageAbsorption();
 
-        // Calcula el área de absorción A = S * α
-        float absorptionArea = totalArea * absorptionCoefficient;
+        float absorptionArea =
+            (areaAltura * coeffAltura) +
+            (areaLargo * coeffLargo) +
+            (areaSueloTecho * coeffAncho);
 
-        Debug.Log("Área total de absorción: " + absorptionArea.ToString("F2") + " m² (Material: " + material + ")");
+        Debug.Log("Área total de absorción: " + absorptionArea.ToString("F2") + " m²");
         return absorptionArea;
     }
 
-    public void CalculateSabine(int volume, float absorptionArea, MATERIALS material)
+
+    public void CalculateSabine(int volume, float absorptionArea)
     {
         if (absorptionArea > 0)
         {
             float reverbTime = (0.161f * volume) / absorptionArea;
-            Debug.Log("Tiempo de reverberación (Sabine) con material " + materialsData[material].name + ": " 
-                      + reverbTime.ToString("F2") + " segundos.");
+            Debug.Log("Tiempo de reverberación (Sabine)" + reverbTime.ToString("F2") + " segundos.");
         }
         else
         {

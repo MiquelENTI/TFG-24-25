@@ -13,4 +13,15 @@ public class Zombie : Character
         DeckManager.Instance.BoardIntoHandDraw(stats.name);
         base.OnDeath(attacker);
     }
+     //Implementació del so
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003028001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003028002, token.transform.position);
+    }
 }

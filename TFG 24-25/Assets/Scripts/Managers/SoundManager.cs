@@ -12,7 +12,7 @@ public class SoundManager : Singleton<SoundManager>
 
     void Awake ()
     {
-    /* Código de 9 cifras: CCC (categoría) + NNN (carta/nivel) + SSS (número de sonido)
+    /*Código de 9 cifras: CCC (categoría) + NNN (carta/nivel) + SSS (número de sonido)
     Los primeros 3 dígitos representan la categoría del sonido (por ejemplo, ambiente, música, SFX de cartas, etc.),
     los siguientes 3 dígitos identifican el número de la carta o el nivel dentro de la categoría,
     y los últimos 3 dígitos corresponden al número de sonido dentro de esa carta o nivel. 
@@ -71,7 +71,7 @@ public class SoundManager : Singleton<SoundManager>
            {003010001, "event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_Attack"},
            {003010002, "event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_selection"},
             
-            // ALGUNA CARTA SERÁ
+            // 
            {003011001, ""},
            {003011002, ""},
            
@@ -131,12 +131,12 @@ public class SoundManager : Singleton<SoundManager>
            {003022002, "event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_select"},
            {003022003, ""},
            
-           // Mana Bottle
+           // Mana Bottle (pendent de fer o carta o saber on ficar-lo)
            {003023001, "event:/SFX/CARTAS/MANA/Drink_Mana"},
            {003023002, ""},
            {003023003, ""},
            
-           // Return
+           // Return (effectes potser NO en espera)
            {003024001, ""},
            {003024002, ""},
            {003024003, ""},
@@ -192,11 +192,11 @@ public class SoundManager : Singleton<SoundManager>
            {003034003, ""},
            
            // Lacus
-           {003035001, ""},
-           {003035002, ""},
+           {003035001, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_ATTACK"},
+           {003035002, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_SELECT"},
            {003035003, ""},
            
-           // Samurai Pendent de no fer 
+           // Samurai (Pendent de no fer - possiblement no) 
            {003036001, ""},
            {003036002, ""},
            {003036003, ""},
@@ -229,12 +229,15 @@ public class SoundManager : Singleton<SoundManager>
             // Bonfire
             {001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE"},
             // Canvi de torn 
-            {001000003, ""},
+            {001000003, "event:/SFX/AMBIENTES/CANVI DE TORN/RING"},
+            // Dialegs
+            {001000004, "event:/VOICE OFF/VO_PersonajeOmnipotente"},
         // MUSICA
             // Taverna (Gameplay)
             {002000001, "event:/MUSIC/GAMEPLAY/Taverna"},
             // Menú
             {002000002, "event:/MUSIC/MENU/Menu"},
+        
         
         };   
         board = GameObject.Find("Board");

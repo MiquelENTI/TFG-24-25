@@ -49,4 +49,16 @@ public class Ant : Character
         }
         stats.dmg = currentAttack;
     }
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003038001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003038002, token.transform.position);
+    }
+
 }

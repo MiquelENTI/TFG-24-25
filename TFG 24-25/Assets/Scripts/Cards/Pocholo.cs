@@ -45,4 +45,15 @@ public class Pocholo : Character
             }
         }
     }
+     //Implementació del so
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003030001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003030002, token.transform.position);
+    }
 }

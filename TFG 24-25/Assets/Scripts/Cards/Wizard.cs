@@ -22,7 +22,7 @@ public class Wizard : Character
         base.OnDeath(attacker);
     }
 
-    //Implementació del so general per a cartes no identificades 
+    //Implementació del so
 
     protected override void AttackSFX()
     {
