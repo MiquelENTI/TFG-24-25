@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
-using Unity.Netcode;
 
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
