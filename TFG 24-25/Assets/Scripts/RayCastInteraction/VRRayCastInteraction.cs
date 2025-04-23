@@ -26,6 +26,7 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     private GameObject rightController;
     private GameObject leftController;
 
+
     
 private void Start()
     {
@@ -39,14 +40,15 @@ private void Start()
         // Trigger
         playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
         //playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
+        playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
 
         #endregion
 
         #region LEFT HAND
 
         // Weird Button
-        playerInputs.XRILeftHandInteraction.Select.started += _ => { RightHand_SelectInteractionDown(); };
-        playerInputs.XRILeftHandInteraction.Select.canceled += _ => { RightHand_SelectInteractionUp(); };
+        playerInputs.XRILeftHandInteraction.Select.started += _ => { LeftHand_SelectInteractionDown(); };
+        playerInputs.XRILeftHandInteraction.Select.canceled += _ => { LeftHand_SelectInteractionUp(); };
 
         // Trigger
         playerInputs.XRILeftHandInteraction.Activate.started += _ => { LeftHand_ActivateInteractionDown(); };
@@ -72,6 +74,9 @@ private void Start()
     #region RIGHT HAND
     protected virtual void RightHand_SelectInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Debug.Log("ACTIVATE DOWN");
         
         Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
@@ -124,9 +129,7 @@ private void Start()
     {
         Debug.Log("ACTIVATE UP");
         if (right_lastInteractedObject == null)
-        {
-            Debug.Log("RIGHT OBJECT IS NULL");
-            return; }
+        { return; }
 
         switch (right_lastInteractedObject.tag)
         {
@@ -156,6 +159,9 @@ private void Start()
 
     protected virtual void RightHand_ActivateInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
 
         RaycastHit hit;
@@ -170,7 +176,7 @@ private void Start()
                 case "RaycastInteractable":
                     {
                         lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                         break;
                     }
             }
@@ -184,6 +190,9 @@ private void Start()
 
     protected virtual void LeftHand_SelectInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
         RaycastHit hit;
@@ -228,6 +237,9 @@ private void Start()
     }
     protected virtual void LeftHand_SelectInteractionUp()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         if (left_lastInteractedObject == null)
         { return; }
 
@@ -256,6 +268,9 @@ private void Start()
 
     protected virtual void LeftHand_ActivateInteractionDown()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
 
         RaycastHit hit;
@@ -270,7 +285,7 @@ private void Start()
                 case "RaycastInteractable":
                     {
                         lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                         break;
                     }
             }
@@ -294,7 +309,7 @@ private void Start()
     {
         left_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
 
-        while (playerInputs.XRIRightHandInteraction.Select.ReadValue<float>() != 0)
+        while (playerInputs.XRILeftHandInteraction.Select.ReadValue<float>() != 0)
         {
             left_rayCastTile.UpdateRayCast();
 

@@ -1137,6 +1137,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ThumbStickClicked"",
+                    ""type"": ""Button"",
+                    ""id"": ""43824124-76d4-4497-be4b-3eb690de3c5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1346,6 +1355,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Aim Flags"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e84d71d-c0f4-41e0-b156-2d666087eaa2"",
+                    ""path"": ""<XRController>/thumbstickClicked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThumbStickClicked"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1947,6 +1967,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_XRIRightHand_PinchPosition = m_XRIRightHand.FindAction("Pinch Position", throwIfNotFound: true);
         m_XRIRightHand_PokePosition = m_XRIRightHand.FindAction("Poke Position", throwIfNotFound: true);
         m_XRIRightHand_PokeRotation = m_XRIRightHand.FindAction("Poke Rotation", throwIfNotFound: true);
+        m_XRIRightHand_ThumbStickClicked = m_XRIRightHand.FindAction("ThumbStickClicked", throwIfNotFound: true);
         // XRI LeftHand Interaction
         m_XRILeftHandInteraction = asset.FindActionMap("XRI LeftHand Interaction", throwIfNotFound: true);
         m_XRILeftHandInteraction_Select = m_XRILeftHandInteraction.FindAction("Select", throwIfNotFound: true);
@@ -2410,6 +2431,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_XRIRightHand_PinchPosition;
     private readonly InputAction m_XRIRightHand_PokePosition;
     private readonly InputAction m_XRIRightHand_PokeRotation;
+    private readonly InputAction m_XRIRightHand_ThumbStickClicked;
     public struct XRIRightHandActions
     {
         private @PlayerInputs m_Wrapper;
@@ -2425,6 +2447,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @PinchPosition => m_Wrapper.m_XRIRightHand_PinchPosition;
         public InputAction @PokePosition => m_Wrapper.m_XRIRightHand_PokePosition;
         public InputAction @PokeRotation => m_Wrapper.m_XRIRightHand_PokeRotation;
+        public InputAction @ThumbStickClicked => m_Wrapper.m_XRIRightHand_ThumbStickClicked;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2467,6 +2490,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PokeRotation.started += instance.OnPokeRotation;
             @PokeRotation.performed += instance.OnPokeRotation;
             @PokeRotation.canceled += instance.OnPokeRotation;
+            @ThumbStickClicked.started += instance.OnThumbStickClicked;
+            @ThumbStickClicked.performed += instance.OnThumbStickClicked;
+            @ThumbStickClicked.canceled += instance.OnThumbStickClicked;
         }
 
         private void UnregisterCallbacks(IXRIRightHandActions instance)
@@ -2504,6 +2530,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PokeRotation.started -= instance.OnPokeRotation;
             @PokeRotation.performed -= instance.OnPokeRotation;
             @PokeRotation.canceled -= instance.OnPokeRotation;
+            @ThumbStickClicked.started -= instance.OnThumbStickClicked;
+            @ThumbStickClicked.performed -= instance.OnThumbStickClicked;
+            @ThumbStickClicked.canceled -= instance.OnThumbStickClicked;
         }
 
         public void RemoveCallbacks(IXRIRightHandActions instance)
@@ -2810,6 +2839,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnPinchPosition(InputAction.CallbackContext context);
         void OnPokePosition(InputAction.CallbackContext context);
         void OnPokeRotation(InputAction.CallbackContext context);
+        void OnThumbStickClicked(InputAction.CallbackContext context);
     }
     public interface IXRILeftHandInteractionActions
     {

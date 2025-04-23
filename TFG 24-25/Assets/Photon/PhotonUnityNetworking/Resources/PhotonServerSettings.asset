@@ -56,6 +56,13 @@ MonoBehaviour:
   - DrawCardOther
   - DrawCardRPC
   - RPC_SpawnToken
+  - DrawCard
+  - UpdateObjectPosition_RPC
+  - DestroyCard_RPC
+  - ChangeMaterial_RPC
+  - ChangeMaterialAvailable_RPC
+  - ChangeMaterialUnavailable_RPC
+  - InitMaterialForPlayers_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

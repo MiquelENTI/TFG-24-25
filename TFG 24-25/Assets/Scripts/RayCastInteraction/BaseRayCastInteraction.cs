@@ -18,12 +18,18 @@ public class BaseRayCastInteraction : MonoBehaviour
 
     protected RayCastTile rayCastTile;
 
+    protected bool isBluePlayer;
+    protected PhotonView photonView;
+
     private void Awake()
     {
         playerInputs = new PlayerInputs();
         turnManagerScript = GameObject.Find("TurnManager").GetComponent<TurnManagerScript>();
         cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>();
         playerCamera = transform.GetChild(0).GetComponent<Camera>();
+
+        isBluePlayer = PhotonNetwork.IsMasterClient;
+        photonView = gameObject.GetComponent<PhotonView>();
     }
 
     private void Start()

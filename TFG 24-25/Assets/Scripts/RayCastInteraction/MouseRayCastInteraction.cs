@@ -23,18 +23,21 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     void Update()
     {
-        if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
-        {
-            cardHold.LookToPlayerCam();
-        }
-        else
-        {
-            cardHold.DefaultCardRotation();
-        }
+        //if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
+        //{
+        //    cardHold.LookToPlayerCam();
+        //}
+        //else
+        //{
+        //    cardHold.DefaultCardRotation();
+        //}
     }
 
     protected virtual void LeftMouseDownAction()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         Ray ray = playerCamera.ScreenPointToRay(playerInputs.Mouse.Position.ReadValue<Vector2>());
 
         RaycastHit hit;
@@ -66,7 +69,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 case "RaycastInteractable":
                 {
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
-                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact();
+                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                     break;
                 }
                 default:
@@ -107,7 +110,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             case "CardGameObject":
                 {
                     lastInteractedObject.CheckIsOutsideBoard();
-
                     lastInteractedObject = null;
                     break;
                 }
@@ -120,6 +122,9 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
     protected virtual void RightClickDownAction()
     {
+        if (!photonView.IsMine)
+        { return; }
+
         // Canviar Camera.Main a la camera del jugador
         Ray ray = playerCamera.ScreenPointToRay(playerInputs.Mouse.Position.ReadValue<Vector2>());
         RaycastHit hit;
@@ -158,7 +163,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             {
                 mousePos = ray.GetPoint(enter);
                 mousePos.y = lastInteractedObject.GetObjectDisplacement();
-                lastInteractedObject.transform.position = mousePos;
+
+                lastInteractedObject.GetComponent<DragableGameObject>().UpdateObjectPosition(mousePos, lastInteractedObject.transform.rotation);
 
                 rayCastTile.UpdateRayCast();
 

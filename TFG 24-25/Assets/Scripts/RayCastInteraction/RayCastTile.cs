@@ -13,12 +13,6 @@ public class RayCastTile : MonoBehaviour
         previousTile = GameObject.Find("Cell: 0-0").GetComponent<Tile>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateRayCast();
-    }
-
     public virtual void UpdateRayCast()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
@@ -34,6 +28,15 @@ public class RayCastTile : MonoBehaviour
                 previousTile = onTile;
                 transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
             }
+            else if (onTile.tileId == previousTile.tileId)
+            {
+                onTile.EnterRaycast();
+                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
+            }
+        }
+        else
+        {
+            previousTile.ExitRaycast();
         }
     }
 }

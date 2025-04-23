@@ -70,13 +70,17 @@ public class CardHold : MonoBehaviour
     
     void MoveCard(GameObject gameObject, Vector3 newPosition)
     {
-        gameObject.transform.position = newPosition;
-        //gameObject.transform.GetChild(0).localPosition = Vector3.zero;
-        Debug.Log(gameObject.transform.GetChild(0).GetChild(1).name);
-        //gameObject.transform.GetChild(0).GetChild(1).localPosition = Vector3.zero;
+        gameObject.transform.GetChild(0).position = newPosition;
+        gameObject.transform.GetChild(0).rotation = Quaternion.Euler(defaultCardRotation);
     }
 
     public void DestroyCard(int cardToDestroy)
+    {
+        photonView.RPC("DestroyCard_RPC", RpcTarget.All, cardToDestroy);
+    }
+
+    [PunRPC]
+    public void DestroyCard_RPC(int cardToDestroy)
     {
         for (int i = 0; i < cards.Count; i++)
         {
@@ -84,7 +88,7 @@ public class CardHold : MonoBehaviour
             {
                 if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
                 {
-                    Destroy(cards[i]);
+                    PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
@@ -94,7 +98,7 @@ public class CardHold : MonoBehaviour
             {
                 if (cards[i].transform.childCount == 0) // WTF PK FUNCIONA? PK NO TE CHILDS QUAN EN ESCENA TE?
                 {
-                    Destroy(cards[i]);
+                    PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
@@ -108,11 +112,12 @@ public class CardHold : MonoBehaviour
         }
     }
 
+
     public void LookToPlayerCam()
     {
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].transform.LookAt(playerCam.transform.position);
+            cards[i].transform.GetChild(0).LookAt(playerCam.transform.position);
         }
     }
 

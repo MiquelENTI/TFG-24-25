@@ -43,11 +43,13 @@ public class DragableGameObject : MonoBehaviour
     protected Sprite cardSprite;
     protected Sprite movementSprite;
 
+    protected PhotonView photonView;
     protected virtual void Awake()
     {
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
         InitCardToDisplayText();
         InitCardOnBoardText();
+        photonView = GetComponent<PhotonView>();
     }
 
     protected virtual void Start()
@@ -222,4 +224,15 @@ public class DragableGameObject : MonoBehaviour
 
     public Plane GetPlane()
     { return plane; }
+
+    public void UpdateObjectPosition(Vector3 newPosition, Quaternion newRotation)
+    {
+        photonView.RPC("UpdateObjectPosition_RPC", RpcTarget.All, newPosition, newRotation);
+    }
+
+    [PunRPC]
+    public void UpdateObjectPosition_RPC(Vector3 newPosition, Quaternion newRotation)
+    {
+        transform.SetPositionAndRotation(newPosition, newRotation);
+    }
 }

@@ -27,6 +27,11 @@ public class CardGameObject : DragableGameObject
     protected override void Start()
     {
         base.Start();
+        
+    }
+
+    public void Init()
+    {
         planeDisplacement = 0.5f;
         objectDisplacement = 0.1f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
@@ -59,7 +64,10 @@ public class CardGameObject : DragableGameObject
 
         if (isOutsideBoard)
         {
-            cardHold.ReorganizeCards();
+            if(TurnManagerScript.Instance.isPCVersion)
+            {
+                cardHold.ReorganizeCards();
+            }
         }
         else
         {
