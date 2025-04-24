@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 2614872735940336508}
   - component: {fileID: 390635325336656360}
   - component: {fileID: 4373681531759934056}
+  - component: {fileID: 3280816513953869030}
   m_Layer: 0
   m_Name: BlueCavalier
   m_TagString: TokenGameObject
@@ -593,6 +594,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &3280816513953869030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025107231274772972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7b5fda4b230ee4ca05a688dabd20ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2835660334047831556
 GameObject:
   m_ObjectHideFlags: 0
