@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class EffectsManager : Singleton<EffectsManager>
 {
-    [SerializeField] List<GameObject> effectsPrefabs = new List<GameObject>();
-    Dictionary<string, GameObject> fxDictionary = new Dictionary<string, GameObject>();
-
     PhotonView photonView;
 
     Vector3 posOffset;
@@ -17,11 +14,6 @@ public class EffectsManager : Singleton<EffectsManager>
         posOffset = new Vector3(0,0.03f,0);
 
         photonView = GetComponent<PhotonView>();
-
-        foreach (GameObject prefab in effectsPrefabs)
-        {
-            fxDictionary.Add(prefab.name, prefab);
-        }
     }
 
     void Update()
