@@ -63,6 +63,7 @@ MonoBehaviour:
   - ChangeMaterialAvailable_RPC
   - ChangeMaterialUnavailable_RPC
   - InitMaterialForPlayers_RPC
+  - PlayFxInPosition_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
