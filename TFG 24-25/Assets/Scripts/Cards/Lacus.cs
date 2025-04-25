@@ -65,6 +65,9 @@ public class Lacus : Character
             {
                 direction = CellNodeManager.Instance.GetNodeById(onTile).GetDirectionToCellByRange(cellToMove.GetId(), 1).Item2;
                 Debug.Log("CURRENT DIRECTION: " + direction.ToString());
+
+                DisplayActionsManager.Instance.CreateCustomText("Direction: " + direction.ToString(), Color.white, 4, 1.0f, token.transform.position);
+
                 playerStats.SubstractMana(stats.manaCost);
                 return true;
             }

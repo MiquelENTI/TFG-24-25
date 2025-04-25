@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public enum MovementType { Basic, Diagonal, Omni}
 public enum TeamType { RED = 0, BLUE = 1}
@@ -197,6 +198,9 @@ public class Character
             cellToMove.SetCharacter(this);
 
             OnSpawnSFX();
+            OnSpawnVFX();
+
+            DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
         }
         else
         {
@@ -235,6 +239,8 @@ public class Character
                 //cellToMove.PrintStatus();
 
                 OnMovementSFX();
+                OnMovementVFX();
+
                 return true;
             }
             else
@@ -266,6 +272,9 @@ public class Character
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
 
+        OnMovementSFX();
+        OnMovementVFX();
+
         cellToMove.SetCharacter(this);
     }
 
@@ -280,6 +289,9 @@ public class Character
         cellToMove.SetCharacter(this);
 
         OnSpawnSFX();
+        OnSpawnVFX();
+
+        DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
     }
 
     void TileScoring()
@@ -298,6 +310,7 @@ public class Character
             int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
             scoreManager.UpdateScore(teamType, pointsToScore);
             OnPointsScoring(pointsToScore);
+            DisplayActionsManager.Instance.CreatePointsText(pointsToScore, token.transform.position);
         }
     }
 
@@ -327,12 +340,7 @@ public class Character
     }
     public virtual void OnAttacked(Character attacker)
     {
-        stats.hp -= attacker.stats.dmg;
-
-        if (stats.hp <= 0)
-        {
-            OnDeath(attacker);
-        }
+        ReceiveDamage(attacker.stats.dmg);
     }
 
     public virtual void OnPointsScoring(int pointsScored)
@@ -357,22 +365,35 @@ public class Character
     {
         stats.hp -= damage;
 
+        OnAttackedVFX();
+
+        DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
+
         if (stats.hp <= 0)
         {
             OnDeath(this);
         }
-        Debug.Log("RECEIVED DAMAGE:" + damage + " HP LEFT: " + stats.hp);
     }
     public void DecreaseDamage(int amount)
     {
         stats.dmg -= amount;
         if (stats.dmg <= 0)
-        { stats.dmg = 0; }
+        { 
+            stats.dmg = 0;
+            DisplayActionsManager.Instance.CreateDebuffText(amount, true, token.transform.position);
+        }
+        else
+        {
+            DisplayActionsManager.Instance.CreateDebuffText(0, true, token.transform.position);
+        }
     }
 
     public void Heal(int amount)
     {
         stats.hp += amount;
+
+        HealVFX();
+        DisplayActionsManager.Instance.CreateHealText(amount, token.transform.position);
 
         if (stats.hp > stats.maxHp)
         {
@@ -421,7 +442,11 @@ public class Character
     protected virtual void OnMovementSFX()
     {
         SoundManager.Instance.PlaySFX(003000002, token.transform.position);
+    }
 
+    protected virtual void OnMovementVFX(string vfxName = "Stomp")
+    {
+        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
     }
         
     protected virtual void AttackSFX()
@@ -429,8 +454,24 @@ public class Character
         SoundManager.Instance.PlaySFX(003000000, token.transform.position);
     }
     
+    protected virtual void OnAttackedVFX()
+    {
+        EffectsManager.Instance.PlayFxInPosition("Sparks", token.transform.position);
+        EffectsManager.Instance.PlayFxInPosition("Explosion", token.transform.position);
+    }
+
     protected virtual void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003000001, token.transform.position);
+    }
+
+    protected virtual void OnSpawnVFX(string vfxName = "Stomp")
+    {
+        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
+    }
+
+    protected virtual void HealVFX(string vfxName = "Heal")
+    {
+        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
     }
 }
