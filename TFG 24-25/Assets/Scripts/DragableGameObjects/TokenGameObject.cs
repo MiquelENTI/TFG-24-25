@@ -18,9 +18,6 @@ public class TokenGameObject : DragableGameObject
 
     private Character character;
 
-    PhotonView photonView;
-
-
     public GameObject tileCollider;
 
     private Character characterSelected;
