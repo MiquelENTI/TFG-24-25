@@ -199,6 +199,8 @@ public class Character
 
             OnSpawnSFX();
             OnSpawnVFX();
+
+            DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
         }
         else
         {
@@ -288,6 +290,8 @@ public class Character
 
         OnSpawnSFX();
         OnSpawnVFX();
+
+        DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
     }
 
     void TileScoring()
@@ -306,6 +310,7 @@ public class Character
             int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
             scoreManager.UpdateScore(teamType, pointsToScore);
             OnPointsScoring(pointsToScore);
+            DisplayActionsManager.Instance.CreatePointsText(pointsToScore, token.transform.position);
         }
     }
 
@@ -335,14 +340,7 @@ public class Character
     }
     public virtual void OnAttacked(Character attacker)
     {
-        stats.hp -= attacker.stats.dmg;
-
-        OnAttackedVFX();
-
-        if (stats.hp <= 0)
-        {
-            OnDeath(attacker);
-        }
+        ReceiveDamage(attacker.stats.dmg);
     }
 
     public virtual void OnPointsScoring(int pointsScored)
@@ -369,17 +367,25 @@ public class Character
 
         OnAttackedVFX();
 
+        DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
+
         if (stats.hp <= 0)
         {
             OnDeath(this);
         }
-        Debug.Log("RECEIVED DAMAGE:" + damage + " HP LEFT: " + stats.hp);
     }
     public void DecreaseDamage(int amount)
     {
         stats.dmg -= amount;
         if (stats.dmg <= 0)
-        { stats.dmg = 0; }
+        { 
+            stats.dmg = 0;
+            DisplayActionsManager.Instance.CreateDebuffText(amount, true, token.transform.position);
+        }
+        else
+        {
+            DisplayActionsManager.Instance.CreateDebuffText(0, true, token.transform.position);
+        }
     }
 
     public void Heal(int amount)
@@ -387,6 +393,7 @@ public class Character
         stats.hp += amount;
 
         HealVFX();
+        DisplayActionsManager.Instance.CreateHealText(amount, token.transform.position);
 
         if (stats.hp > stats.maxHp)
         {

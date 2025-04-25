@@ -38,6 +38,8 @@ public class HumanWerewolf : Character
             ChangeMovementType(stats.movementType);
             stats.dmg = humanForm.dmg;
 
+            DisplayActionsManager.Instance.CreateCustomText("=" + stats.dmg.ToString(), new Color(245, 0, 76), 8, 1.0f, token.transform.position);
+            DisplayActionsManager.Instance.CreateCustomText("=" + stats.hp.ToString(), new Color(50, 245, 99), 8, 1.0f, token.transform.position, -0.2f);
             stats.PrintStats();
         }
         else
@@ -48,6 +50,9 @@ public class HumanWerewolf : Character
             stats.dmg = wereWolfForm.dmg;
 
             ChangeMovementType(stats.movementType);
+
+            DisplayActionsManager.Instance.CreateCustomText("=" + stats.dmg.ToString(), new Color(245, 0, 76), 8, 1.0f, token.transform.position);
+            DisplayActionsManager.Instance.CreateCustomText("=" + stats.hp.ToString(), new Color(50, 245, 99), 8, 1.0f, token.transform.position, -0.2f);
             stats.PrintStats();
         }
         

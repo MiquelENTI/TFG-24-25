@@ -12,5 +12,6 @@ public class Hydra : Character
     {
         base.OnAttacked(attacker);
         stats.dmg++;
+        DisplayActionsManager.Instance.CreateBuffText(stats.dmg, true, token.transform.position);
     }
 }

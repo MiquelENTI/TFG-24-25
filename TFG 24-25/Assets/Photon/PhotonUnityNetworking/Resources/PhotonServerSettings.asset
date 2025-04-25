@@ -64,6 +64,12 @@ MonoBehaviour:
   - ChangeMaterialUnavailable_RPC
   - InitMaterialForPlayers_RPC
   - PlayFxInPosition_RPC
+  - CreateDamageText_RPC
+  - CreatePointsText_RPC
+  - CreateNameText_RPC
+  - CreateDebuffText_RPC
+  - CreateBuffText_RPC
+  - CreateCustomText_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
