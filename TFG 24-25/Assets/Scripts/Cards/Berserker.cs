@@ -21,12 +21,12 @@ public class Berserker : Character
         if (CellNodeManager.Instance.GetNodeById(onTile).GetScoreNode() == CellScoreType.NOPOINTS)
         { 
             stats.dmg = originalAttack;
-            DisplayActionsManager.Instance.CreateCustomText("=" + originalAttack.ToString(), new Color(245, 0, 76), 8, 1.0f, token.transform.position);
+            DisplayActionsManager.Instance.CreateCustomText("=" + originalAttack.ToString(), new Vector3(245, 0, 76), 8, 1.0f, token.transform.position);
             return true; 
         }
 
         stats.dmg = boostedAttack;
-        DisplayActionsManager.Instance.CreateCustomText("=" + boostedAttack.ToString(), new Color(245, 0, 76), 8, 1.0f, token.transform.position);
+        DisplayActionsManager.Instance.CreateCustomText("=" + boostedAttack.ToString(), new Vector3(245, 0, 76), 8, 1.0f, token.transform.position);
         return true;
     }
 }

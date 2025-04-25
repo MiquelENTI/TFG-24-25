@@ -55,7 +55,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateBuffText(int text, bool isDamage, Vector3 pos) 
     {
-        photonView.RPC("CreateBuffText_RPC", RpcTarget.AllBuffered, text, pos);
+        photonView.RPC("CreateBuffText_RPC", RpcTarget.AllBuffered, text, isDamage, pos);
     }
 
     [PunRPC]
@@ -77,7 +77,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateDebuffText(int text, bool isDamage, Vector3 pos)
     {
-        photonView.RPC("CreateDebuffText_RPC", RpcTarget.AllBuffered, text, pos);
+        photonView.RPC("CreateDebuffText_RPC", RpcTarget.AllBuffered, text, isDamage, pos);
     }
 
     [PunRPC]
@@ -126,18 +126,23 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         pointsText.GetComponent<TMP_Text>().fontSize = 4;
     }
 
-    public void CreateCustomText(string text, Color color, int fontSize, float duration, Vector3 pos, float offset = 0)
+    public void CreateCustomText(string text, Vector3 color, int fontSize, float duration, Vector3 pos, float offset = 0)
     {
         photonView.RPC("CreateCustomText_RPC", RpcTarget.AllBuffered, text, color, fontSize, duration, pos, offset);
     }
     [PunRPC]
-    public void CreateCustomText_RPC(string text, Color color, int fontSize,  float duration, Vector3 pos, float offset)
+    public void CreateCustomText_RPC(string text, Vector3 color, int fontSize,  float duration, Vector3 pos, float offset)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = text;
-        pointsText.GetComponent<TMP_Text>().color = color;
+        pointsText.GetComponent<TMP_Text>().color = VectorToColor(color);
         pointsText.GetComponent<TMP_Text>().fontSize = fontSize;
         pointsText.GetComponent<ActionAnimation>().SetOffsetAndDuration(offset, duration);
+    }
+
+    private Color VectorToColor(Vector3 color)
+    {
+        return new Color(color.x, color.y, color.z);
     }
 }

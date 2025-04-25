@@ -48,6 +48,6 @@ public class Ant : Character
             }
         }
         stats.dmg = currentAttack;
-        DisplayActionsManager.Instance.CreateCustomText("="+currentAttack.ToString(), new Color(245, 0, 76), 8, 1.5f, token.transform.position, -0.2f);
+        DisplayActionsManager.Instance.CreateCustomText("="+currentAttack.ToString(), new Vector3(245, 0, 76), 8, 1.5f, token.transform.position, -0.2f);
     }
 }
