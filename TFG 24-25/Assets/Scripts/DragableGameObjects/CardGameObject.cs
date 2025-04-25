@@ -91,6 +91,8 @@ public class CardGameObject : DragableGameObject
                 {
                     RequestCharacterInstantiation();
                     cardHold.DestroyCard(cardId);
+
+                    PhotonNetwork.Destroy(gameObject);
                 }
                 else
                 {

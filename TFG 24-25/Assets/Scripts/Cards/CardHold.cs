@@ -96,9 +96,11 @@ public class CardHold : MonoBehaviour
             }
             else
             {
+                Debug.Log("Entered Destroy Card");
                 if (cards[i].transform.childCount == 0) // WTF PK FUNCIONA? PK NO TE CHILDS QUAN EN ESCENA TE?
                 {
-                    PhotonNetwork.Destroy(cards[i]);
+                    Debug.Log("Destroying Card");
+                    //PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
