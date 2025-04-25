@@ -13,6 +13,7 @@ public class Samurai : Character
         base.OnPointsScoring(pointsScored);
 
         stats.dmg += pointsScored;
+        DisplayActionsManager.Instance.CreateBuffText(pointsScored, true, token.transform.position);
     }
 
     public override void OnSpawn(CellNode cellToMove)
