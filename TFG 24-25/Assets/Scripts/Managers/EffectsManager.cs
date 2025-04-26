@@ -24,14 +24,6 @@ public class EffectsManager : Singleton<EffectsManager>
     
     public void PlayFxInPosition(string effectName, Vector3 pos)
     {
-        photonView.RPC("PlayFxInPosition_RPC", RpcTarget.AllBuffered, effectName, pos + posOffset);
-    }
-
-    [PunRPC]
-    public void PlayFxInPosition_RPC(string effectName, Vector3 pos)
-    {
         PhotonNetwork.Instantiate("Particles/" + effectName, pos, Quaternion.identity);
-
-        // Add Sound
     }
 }

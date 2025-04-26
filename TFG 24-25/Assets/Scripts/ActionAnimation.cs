@@ -16,7 +16,10 @@ public class ActionAnimation : MonoBehaviour
 
     void Start()
     {
-
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 
     // Update is called once per frame
