@@ -7,14 +7,14 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
     Dictionary<int, CardStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, Movement type, Card Text
-        { 1, new CharacterStats (CardType.CHARACTER, "Wizard",              3, 2,  2,  1, 8, 1, MovementType.Basic, "This has infinite Attack Range.") }, // Cavalier
+        { 1, new CharacterStats (CardType.CHARACTER, "Wizard",             3, 2,  2,  1, 8, 1, MovementType.Basic, "This has infinite Attack Range.") }, // Cavalier
         { 2, new CharacterStats (CardType.CHARACTER,"Cavalier",            3, 5,  5,  1, 1, 1, MovementType.Basic, "This can move and attack in the same turn.") }, // Cavalier
         { 3, new CharacterStats (CardType.CHARACTER,"Salmon",              4, 8,  7,  1, 1, 1, MovementType.Omni, "When this kills an enemy card it moves to that location. Each kill -1 health.")  }, // Salmon
         { 4, new EffectStats    (CardType.EFFECT,   "Flash",               3,                                     "asdasdasd") },
         { 5, new CharacterStats (CardType.CHARACTER,"Fly",                 1, 1,  1,  2, 1, 2, MovementType.Omni, "Pzzzzzzzzzzzzzzzt")  }, // Fly
         { 6, new CharacterStats (CardType.CHARACTER,"Turtle",              2, 5,  9,  1, 1, 1, MovementType.Basic, "This moves every 2 turns)") }, // Turtle (WIP)
         { 7, new CharacterStats (CardType.CHARACTER,"Mimic",               2, 3,  2,  1, 1, 2, MovementType.Basic, "When this is attacked destroy both the attacking card and this. Then the opponent draws a card.") }, // Mimic  (WIP)
-        { 8, new CharacterStats (CardType.CHARACTER,"Pichi",               5, 1,  7,  1, 1, 1, MovementType.Basic, "When this attacks an enemy monster, that monster can't attack next turn..") }, // Mimic  (WIP)
+        { 8, new CharacterStats (CardType.CHARACTER,"Pichi",               5, 9,  7,  1, 1, 1, MovementType.Basic, "When this attacks an enemy monster, that monster can't attack next turn..") }, // Mimic  (WIP)
         { 10, new CharacterStats(CardType.CHARACTER,"Medusa",              3, 3,  6,  1, 1, 1, MovementType.Basic, "When this attacks a monster that monster is petrified. It can't move or attack. When this dies remove the curse from all cards.") }, // Medusa
         { 13, new CharacterStats(CardType.CHARACTER,"Mummy",               3, 5,  12, 1, 1, 1, MovementType.Basic, "Each time this moves -1 attack and HP") }, // Mummy
         { 14, new CharacterStats(CardType.CHARACTER,"The Gun",             3, 7,  4,  1, 1, 1, MovementType.Omni, "When this attacks, it moves to the opposite direction.") }, // The Gun
@@ -34,10 +34,10 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         
         { 32, new CharacterStats(CardType.CHARACTER,"Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
 
-        { 35, new CharacterStats(CardType.CHARACTER,"Dragon",              3, 3, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
+        { 35, new CharacterStats(CardType.CHARACTER,"Dragon",              3, 5, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
     
-        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 5, 7, 1, 1, 1, MovementType.Basic, "Each time one of your monsters dies this gains 1 attack. Max 8.") }, // Samurai
-        { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 6, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
+        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 3, 4, 1, 1, 1, MovementType.Basic, "When this scores, it gains as much attack as points scored.") }, // Samurai
+        { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 4, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
         { 39, new CharacterStats(CardType.CHARACTER,"Ant",                 2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
         
         
