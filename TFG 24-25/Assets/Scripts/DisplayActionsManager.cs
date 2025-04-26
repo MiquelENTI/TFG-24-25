@@ -11,21 +11,22 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     Vector3 positionOffset;
 
-    Vector3 damageColor;
-    Vector3 healColor;
-    Vector3 pointsColor;
-    Vector3 nameColor;
+    Color damageColor;
+    Color healColor;
+    Color pointsColor;
+    Color nameColor;
 
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
 
-        positionOffset = new Vector3(255, 49, 49);
+        positionOffset = new Vector3(0.0f, 0.1f, 0.0f);
 
-        damageColor = new Vector3(220, 20, 60);
-        pointsColor = new Vector3(255, 215, 0);
-        healColor = new Vector3(50, 245, 99);
-        nameColor = Vector3.one;
+
+        damageColor = new Color(220.0f/255.0f, 20.0f / 255.0f, 60.0f / 255.0f);
+        pointsColor = new Color(255.0f / 255.0f, 215.0f / 255.0f, 0.0f / 255.0f);
+        healColor = new Color(50.0f / 255.0f, 245.0f / 255.0f, 99.0f / 255.0f);
+        nameColor = Color.white;
     }
 
     public void CreateDamageText(int text, Vector3 pos)
@@ -36,7 +37,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject damageText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         damageText.transform.parent = transform;
         damageText.GetComponent<TMP_Text>().text = text2;
-        damageText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
+        damageText.GetComponent<TMP_Text>().color = damageColor;
     }
 
     public void CreateHealText(int text, Vector3 pos) 
@@ -44,7 +45,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject healText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         healText.transform.parent = transform;
         healText.GetComponent<TMP_Text>().text = text.ToString();
-        healText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
+        healText.GetComponent<TMP_Text>().color = healColor;
     }
     public void CreateBuffText(int text, bool isDamage, Vector3 pos) 
     {
@@ -54,11 +55,11 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
         if (isDamage)
         {
-            pointsText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
+            pointsText.GetComponent<TMP_Text>().color = damageColor;
         }
         else
         {
-            pointsText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
+            pointsText.GetComponent<TMP_Text>().color = healColor;
         }
     }
 
@@ -70,11 +71,11 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
         if (isDamage)
         {
-            pointsText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
+            pointsText.GetComponent<TMP_Text>().color = damageColor;
         }
         else
         {
-            pointsText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
+            pointsText.GetComponent<TMP_Text>().color = healColor;
         }
     }
     public void CreatePointsText(int text, Vector3 pos)
@@ -82,29 +83,24 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = text.ToString();
-        pointsText.GetComponent<TMP_Text>().color = VectorToColor(pointsColor);
+        pointsText.GetComponent<TMP_Text>().color = pointsColor;
     }
     public void CreateNameText(string name, Vector3 pos)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = name;
-        pointsText.GetComponent<TMP_Text>().color = VectorToColor(nameColor);
+        pointsText.GetComponent<TMP_Text>().color = nameColor;
         pointsText.GetComponent<TMP_Text>().fontSize = 4;
     }
 
-    public void CreateCustomText(string text, Vector3 color, int fontSize, float duration, Vector3 pos, float offset = 0)
+    public void CreateCustomText(string text, Color color, int fontSize, float duration, Vector3 pos, float offset = 0)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = text;
-        pointsText.GetComponent<TMP_Text>().color = VectorToColor(color);
+        pointsText.GetComponent<TMP_Text>().color = color;
         pointsText.GetComponent<TMP_Text>().fontSize = fontSize;
         pointsText.GetComponent<ActionAnimation>().SetOffsetAndDuration(offset, duration);
-    }
-
-    private Color VectorToColor(Vector3 color)
-    {
-        return new Color(color.x / 256, color.y / 256, color.z / 256);
     }
 }
