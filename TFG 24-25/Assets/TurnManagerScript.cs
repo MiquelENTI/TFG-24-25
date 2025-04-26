@@ -109,7 +109,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsBlue = !IsBlue;
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
-        DrawCards(1);
+        photonView.RPC("DrawCards", RpcTarget.OthersBuffered, 1);
     }
 
     [PunRPC]
@@ -197,6 +197,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public int GetIsBlueInt()
     { return IsBlue ? 1 : 0; }
 
+    [PunRPC]
     public void DrawCards(int amount)
     {
         for (int i = 0; i < amount; i++)
