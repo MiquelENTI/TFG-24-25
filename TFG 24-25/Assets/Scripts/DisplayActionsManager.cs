@@ -11,21 +11,21 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     Vector3 positionOffset;
 
-    Color damageColor;
-    Color healColor;
-    Color pointsColor;
-    Color nameColor;
+    Vector3 damageColor;
+    Vector3 healColor;
+    Vector3 pointsColor;
+    Vector3 nameColor;
 
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
 
-        positionOffset = new Vector3(0,0.1f,0);
+        positionOffset = new Vector3(255, 49, 49);
 
-        damageColor = new Color(245, 0, 76);
-        pointsColor = new Color(255, 215, 0);
-        healColor = new Color(50, 245, 99);
-        nameColor = Color.white;
+        damageColor = new Vector3(220, 20, 60);
+        pointsColor = new Vector3(255, 215, 0);
+        healColor = new Vector3(50, 245, 99);
+        nameColor = Vector3.one;
     }
 
     public void CreateDamageText(int text, Vector3 pos)
@@ -36,7 +36,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject damageText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         damageText.transform.parent = transform;
         damageText.GetComponent<TMP_Text>().text = text2;
-        damageText.GetComponent<TMP_Text>().color = damageColor;
+        damageText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
     }
 
     public void CreateHealText(int text, Vector3 pos) 
@@ -44,7 +44,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject healText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         healText.transform.parent = transform;
         healText.GetComponent<TMP_Text>().text = text.ToString();
-        healText.GetComponent<TMP_Text>().color = healColor;
+        healText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
     }
     public void CreateBuffText(int text, bool isDamage, Vector3 pos) 
     {
@@ -54,11 +54,11 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
         if (isDamage)
         {
-            pointsText.GetComponent<TMP_Text>().color = damageColor;
+            pointsText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
         }
         else
         {
-            pointsText.GetComponent<TMP_Text>().color = healColor;
+            pointsText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
         }
     }
 
@@ -70,11 +70,11 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
         if (isDamage)
         {
-            pointsText.GetComponent<TMP_Text>().color = damageColor;
+            pointsText.GetComponent<TMP_Text>().color = VectorToColor(damageColor);
         }
         else
         {
-            pointsText.GetComponent<TMP_Text>().color = healColor;
+            pointsText.GetComponent<TMP_Text>().color = VectorToColor(healColor);
         }
     }
     public void CreatePointsText(int text, Vector3 pos)
@@ -82,14 +82,14 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = text.ToString();
-        pointsText.GetComponent<TMP_Text>().color = pointsColor;
+        pointsText.GetComponent<TMP_Text>().color = VectorToColor(pointsColor);
     }
     public void CreateNameText(string name, Vector3 pos)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = name;
-        pointsText.GetComponent<TMP_Text>().color = nameColor;
+        pointsText.GetComponent<TMP_Text>().color = VectorToColor(nameColor);
         pointsText.GetComponent<TMP_Text>().fontSize = 4;
     }
 
@@ -105,6 +105,6 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     private Color VectorToColor(Vector3 color)
     {
-        return new Color(color.x, color.y, color.z);
+        return new Color(color.x / 256, color.y / 256, color.z / 256);
     }
 }
