@@ -30,12 +30,6 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateDamageText(int text, Vector3 pos)
     {
-        photonView.RPC("CreateDamageText_RPC", RpcTarget.AllBuffered, text, pos);
-    }
-
-    [PunRPC]
-    public void CreateDamageText_RPC(int text, Vector3 pos)
-    {
         string text2 = text.ToString();
         if (text > 20) { text2 = "DELETED"; }
 
@@ -47,23 +41,16 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateHealText(int text, Vector3 pos) 
     {
-        GameObject damageText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
-        damageText.transform.parent = transform;
-        damageText.GetComponent<TMP_Text>().text = text.ToString();
-        damageText.GetComponent<TMP_Text>().color = healColor;
+        GameObject healText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
+        healText.transform.parent = transform;
+        healText.GetComponent<TMP_Text>().text = text.ToString();
+        healText.GetComponent<TMP_Text>().color = healColor;
     }
-
     public void CreateBuffText(int text, bool isDamage, Vector3 pos) 
-    {
-        photonView.RPC("CreateBuffText_RPC", RpcTarget.AllBuffered, text, isDamage, pos);
-    }
-
-    [PunRPC]
-    public void CreateBuffText_RPC(int text, bool isDamage, Vector3 pos)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
-        pointsText.GetComponent<TMP_Text>().text = "+"+text.ToString();
+        pointsText.GetComponent<TMP_Text>().text = "+" + text.ToString();
 
         if (isDamage)
         {
@@ -77,15 +64,9 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateDebuffText(int text, bool isDamage, Vector3 pos)
     {
-        photonView.RPC("CreateDebuffText_RPC", RpcTarget.AllBuffered, text, isDamage, pos);
-    }
-
-    [PunRPC]
-    public void CreateDebuffText_RPC(int text, bool isDamage, Vector3 pos)
-    {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
-        pointsText.GetComponent<TMP_Text>().text = "-"+text.ToString();
+        pointsText.GetComponent<TMP_Text>().text = "-" + text.ToString();
 
         if (isDamage)
         {
@@ -96,28 +77,14 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
             pointsText.GetComponent<TMP_Text>().color = healColor;
         }
     }
-
     public void CreatePointsText(int text, Vector3 pos)
-    {
-        photonView.RPC("CreatePointsText_RPC", RpcTarget.AllBuffered, text, pos);
-    }
-
-    [PunRPC]
-    public void CreatePointsText_RPC(int text, Vector3 pos)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
         pointsText.GetComponent<TMP_Text>().text = text.ToString();
         pointsText.GetComponent<TMP_Text>().color = pointsColor;
     }
-
     public void CreateNameText(string name, Vector3 pos)
-    {
-        photonView.RPC("CreateNameText_RPC", RpcTarget.AllBuffered, name, pos);
-    }
-
-    [PunRPC]
-    public void CreateNameText_RPC(string name, Vector3 pos)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
@@ -127,11 +94,6 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
     }
 
     public void CreateCustomText(string text, Vector3 color, int fontSize, float duration, Vector3 pos, float offset = 0)
-    {
-        photonView.RPC("CreateCustomText_RPC", RpcTarget.AllBuffered, text, color, fontSize, duration, pos, offset);
-    }
-    [PunRPC]
-    public void CreateCustomText_RPC(string text, Vector3 color, int fontSize,  float duration, Vector3 pos, float offset)
     {
         GameObject pointsText = PhotonNetwork.Instantiate(textPrefab.name, pos + positionOffset, Quaternion.identity);
         pointsText.transform.parent = transform;
