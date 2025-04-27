@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,7 +34,7 @@ public class CardStats
     }
 }
 
-public class CharacterStats : CardStats
+public class CharacterStats : CardStats, ICloneable
 {
     public int hp;
     public int maxHp;
@@ -96,6 +97,11 @@ public class CharacterStats : CardStats
     public int getAttack()
     {
         return dmg;
+    }
+
+    public object Clone()
+    {
+        return (CharacterStats)this.MemberwiseClone();
     }
 }
 

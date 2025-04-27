@@ -126,7 +126,7 @@ public class CellNode
                 }
             }
         }
-        return null;
+        return Tuple.Create(0, CellConnection.UP);
     }
 
     /// <summary>
@@ -138,6 +138,7 @@ public class CellNode
     public Tuple<bool, int> CheckIsCharacterOnTheWay(int cellId, int range)
     {
         Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
+        if (direction.Item1 == 0) { Tuple.Create(false, 0); }
 
         CellNode cellToCheck = GetCellByDirection(direction.Item2);
 
@@ -293,7 +294,7 @@ public class CellNode
         
     }
 
-    bool NewMovement(int characterId)
+    public bool NewMovement(int characterId)
     {
         if (!isConnected)
         {
@@ -366,6 +367,9 @@ public class CellNode
     {
         if (!isAttacking)
         {
+            // If There is     Character On Way returns true  -> fun returns false meaning that character cannot move, its for characters with movementRange > 1
+            // If there is not Character on Way returns false -> fun returns true  meaning its clear to move
+
             return !CheckIsCharacterOnTheWay(characterMoving.GetOnTileId(), characterMoving.GetCharacterStats().movementRange).Item1;
         }
 
@@ -385,8 +389,8 @@ public class CellNode
             if (temp.Item1 == false)
             {
                 //Debug.Log("Attacking");
-                characterMoving.DisableAttackAndMovement();
                 characterMoving.Attack(this.character);
+                characterMoving.DisableAttackAndMovement();
             }
         }
 

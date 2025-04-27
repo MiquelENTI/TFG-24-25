@@ -7,6 +7,7 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public enum MovementType { Basic, Diagonal, Omni}
 public enum TeamType { RED = 0, BLUE = 1}
@@ -59,7 +60,7 @@ public class Character
 
     public bool CanAttack()
     {
-        if (playerStats.GetCurrentMana() >= stats.manaCost && !disarmAttack)
+        if (playerStats.GetCurrentMana() >= stats.manaCost && !disarmAttack && canAttack)
         {
             return true;
         }
@@ -121,6 +122,9 @@ public class Character
         }
         playerStats = PlayerStats.Instance;
         stats = newStats;
+
+        stats = (CharacterStats)newStats.Clone();
+
         directions = new List<CellConnection>();
 
         ChangeMovementType(newStats.movementType);
@@ -212,9 +216,9 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun) || SceneManager.GetActiveScene().name == "Pinsa")
+        if (((playerStats.GetCurrentMana() >= stats.manaCost) && !stats.stun && cellToMove.CheckNodes(id)) || SceneManager.GetActiveScene().name == "Pinsa")
         {
-            if (cellToMove.CheckNodes(id) && canMove || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
+            if (canMove || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
             {
                 //GetCharacterStats().PrintStats();
                 playerStats.SubstractMana(stats.manaCost);
@@ -248,6 +252,7 @@ public class Character
                 MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
                 Debug.Log("NO? 2");
                 cellToMove.PrintStatus();
+                return false;
             }
         }
         else
@@ -255,9 +260,8 @@ public class Character
             MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO? 1");
             cellToMove.PrintStatus();
-
+            return false;
         }
-        return false;
     }
 
     protected void BypassMovement(int otherTileId)
