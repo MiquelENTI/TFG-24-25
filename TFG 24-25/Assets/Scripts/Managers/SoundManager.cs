@@ -8,6 +8,9 @@ public class SoundManager : Singleton<SoundManager>
     Dictionary<int, string> sfxDictionary;
     // Listado de Musicas
     Dictionary<int, string> musicDictionary;
+
+    // Listado de Voice Over
+    Dictionary<int, string> voDictionary;
     GameObject board;
 
     void Awake ()
@@ -226,9 +229,18 @@ public class SoundManager : Singleton<SoundManager>
            {003040002, ""},
            {003040003, ""}
           
-        };     
+        };
 
-         musicDictionary=new()
+        voDictionary = new()
+        {
+            // Win
+            { 003001001, "event:/SFX/AMBIENT/ROOMTONE" },
+            // Lose
+            { 003010001, "event:/SFX/AMBIENT/BONFIRE" }
+
+        };
+
+        musicDictionary =new()
         {
         // AMBIENT
             // Roomtone
@@ -254,7 +266,12 @@ public class SoundManager : Singleton<SoundManager>
         //FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index],position);
     }
 
-   public void PlayMusic (int index)
+    public void PlayVO(int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(voDictionary[index],position);
+    }
+
+    public void PlayMusic (int index)
     {
         //FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],board.transform.position);
     }

@@ -13,8 +13,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [SerializeField] public GameObject player1GameObject;
     [SerializeField] public GameObject player2GameObject;
 
-    [SerializeField] private AudioClip winAudioClip;
-    [SerializeField] private AudioClip loseAudioClip;
+    //[SerializeField] private AudioClip winAudioClip;
+    //[SerializeField] private AudioClip loseAudioClip;
 
 
     private bool player1Registered = false;
@@ -128,7 +128,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             turnCounter++;
             turnCounterElement.text = "Turn Number: " + turnCounter;
 
-            if (turnCounter > 10)
+            if (turnCounter > 1)
             {
                 Debug.Log("Blue score is: " + scoreManager.BlueScore);
                 Debug.Log("Red score is: " + scoreManager.RedScore);
@@ -150,36 +150,6 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             }
         }
 
-        [PunRPC]
-        void PlayEndGameAudio(bool blueWon)
-        {
-            bool isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine
-                            || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
-
-            AudioSource audioSource = null;
-
-            if (player1GameObject.GetComponent<PhotonView>().IsMine)
-                audioSource = player1GameObject.GetComponent<AudioSource>();
-            else if (player2GameObject.GetComponent<PhotonView>().IsMine)
-                audioSource = player2GameObject.GetComponent<AudioSource>();
-
-            if (audioSource == null)
-            {
-                Debug.LogWarning("No se encontró AudioSource para el jugador local.");
-                return;
-            }
-
-            if ((isLocalBlue && blueWon) || (!isLocalBlue && !blueWon))
-            {
-                audioSource.PlayOneShot(winAudioClip);
-            }
-            else
-            {
-                audioSource.PlayOneShot(loseAudioClip);
-            }
-        }
-
-
         CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
         CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue);
 
@@ -188,6 +158,52 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         PlayerStats.Instance.ResetMana();
 
         UpdatePlayerCanvas();
+    }
+
+    [PunRPC]
+    void PlayEndGameAudio(bool blueWon)
+    {
+        Transform playerTransform = null;
+
+        bool isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine;
+                        // || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
+
+        if (player1GameObject.GetComponent<PhotonView>().IsMine)
+        {
+            playerTransform = player1GameObject.GetComponent<Transform>();
+            // audioSource = player1GameObject.GetComponent<AudioSource>();
+        }
+        else if (player2GameObject.GetComponent<PhotonView>().IsMine)
+        {
+            playerTransform = player2GameObject.GetComponent<Transform>();
+            // audioSource = player2GameObject.GetComponent<AudioSource>();
+        }
+
+
+        // AudioSource audioSource = null;
+
+        //if (player1GameObject.GetComponent<PhotonView>().IsMine)
+        //    audioSource = player1GameObject.GetComponent<AudioSource>();
+        //else if (player2GameObject.GetComponent<PhotonView>().IsMine)
+        //    audioSource = player2GameObject.GetComponent<AudioSource>();
+
+        //if (audioSource == null)
+        //{
+        //    Debug.LogWarning("No se encontró AudioSource para el jugador local.");
+        //    return;
+        //}
+
+        if ((isLocalBlue && blueWon) || (!isLocalBlue && !blueWon))
+        {
+            // audioSource.PlayOneShot(winAudioClip);
+            SoundManager.Instance.PlayVO(003001001, playerTransform.position);
+        }
+        else
+        {
+            // audioSource.PlayOneShot(loseAudioClip);
+
+            SoundManager.Instance.PlayVO(003010001, playerTransform.position);
+        }
     }
 
     private void UpdatePlayerCanvas()
