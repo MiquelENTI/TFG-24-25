@@ -212,9 +212,9 @@ public class Character
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "Pinsa")
+        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun) || SceneManager.GetActiveScene().name == "Pinsa")
         {
-            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
+            if (cellToMove.CheckNodes(id) && canMove || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
             {
                 //GetCharacterStats().PrintStats();
                 playerStats.SubstractMana(stats.manaCost);

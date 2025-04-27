@@ -14,17 +14,25 @@ public class Cavalier : Character
 
     public override bool OnMovement(CellNode cellToMove)
     {
-        canAttack = true;
-
         if (!base.OnMovement(cellToMove))
-        { return false; }
+        {
+            canAttack = true;
+            return false;
+        }
 
         return true;
     }
 
+    public override void Attack(Character enemy)
+    {
+        base.Attack(enemy);
+        canMove = true;
+    }
+
     public override void OnDeath(Character attacker)
     {
-        DeckManager.Instance.BoardIntoHandDraw(stats.name);
+        Debug.Log("ENTERED ON DEATH");
+        //DeckManager.Instance.BoardIntoHandDraw(teamType, stats.name);
         base.OnDeath(attacker);
     }
      //Implementació del so general per a cartes no identificades 

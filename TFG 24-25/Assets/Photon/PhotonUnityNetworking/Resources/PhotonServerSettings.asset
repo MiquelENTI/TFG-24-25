@@ -70,6 +70,7 @@ MonoBehaviour:
   - CreateDebuffText_RPC
   - CreateBuffText_RPC
   - CreateCustomText_RPC
+  - DrawCards
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

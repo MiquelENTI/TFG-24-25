@@ -385,8 +385,8 @@ public class CellNode
             if (temp.Item1 == false)
             {
                 //Debug.Log("Attacking");
-                characterMoving.Attack(this.character);
                 characterMoving.DisableAttackAndMovement();
+                characterMoving.Attack(this.character);
             }
         }
 
