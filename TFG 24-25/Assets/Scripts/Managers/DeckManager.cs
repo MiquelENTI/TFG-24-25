@@ -93,8 +93,14 @@ public class DeckManager : Singleton<DeckManager>
         cardHold.GetComponent<CardHold>().SetDefaultCardRotation(isBlue ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
     }
 
-    public void BoardIntoHandDraw(string characterName)
+    public void BoardIntoHandDraw(TeamType type, string characterName)
     {
+        if (type != TeamType.BLUE && PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+
+
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         if (characterName == "Wizard" || characterName == "Cavalier")
         {

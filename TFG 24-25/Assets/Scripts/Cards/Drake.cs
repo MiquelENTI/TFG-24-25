@@ -24,10 +24,12 @@ public class Drake : Character
 
     public override bool OnMovement(CellNode cellToMove)
     {
+        this.cellToMove = cellToMove;
+        Debug.Log("CellToMove: " + cellToMove.GetId().ToString());
+
         if (!base.OnMovement(cellToMove))
         { return false; }
 
-        this.cellToMove = cellToMove;
 
         return true;
     }
@@ -39,6 +41,8 @@ public class Drake : Character
         CellNode onTileNode = CellNodeManager.Instance.GetNodeById(onTile);
 
         CellConnection attackDirection = onTileNode.GetDirectionToCellByRange(cellToMove.GetId(), stats.attackRange).Item2;
+
+        Debug.Log("AttackDirection: " + attackDirection.ToString());
 
         Tuple<CellConnection, CellConnection> diagonals = translateDirection[attackDirection];
 

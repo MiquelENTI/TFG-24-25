@@ -30,15 +30,16 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 26, new CharacterStats(CardType.CHARACTER,"Berserker",           3, 6,  5,  1, 1, 1, MovementType.Basic, "If this is on a scoring tile, +2 attack.") }, // Berserker
         { 27, new CharacterStats(CardType.CHARACTER,"Hydra",               4, 7,  8,  1, 1, 1, MovementType.Basic, "When this is attacked, it gains +1 attack.") }, // Hydra
         { 28, new CharacterStats(CardType.CHARACTER,"Zombie",              1, 2,  1,  1, 1, 1, MovementType.Omni, "When this is killed, This returns to your hand.") }, // Hydra
-        
-        
-        { 32, new CharacterStats(CardType.CHARACTER,"Kamikaze",            2, 9, 3, 1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
-
-        { 35, new CharacterStats(CardType.CHARACTER,"Dragon",              3, 5, 7, 1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
-    
-        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 3, 4, 1, 1, 1, MovementType.Basic, "When this scores, it gains as much attack as points scored.") }, // Samurai
-        { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 4, 11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
-        { 39, new CharacterStats(CardType.CHARACTER,"Ant",                 2, 1, 4, 1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
+        { 29, new CharacterStats(CardType.CHARACTER,"Necromancer",         5, 6,  11, 1, 1, 1, MovementType.Basic, "When this kills a card, transform that card into a zombie of your control.") }, // Hydra
+        { 30, new CharacterStats(CardType.CHARACTER,"Pocholo",             2, 1,  4,  2, 1, 2, MovementType.Omni, "If an enemy card moves close to this, this moves to the opposite direction.") }, // Hydra
+        { 31, new CharacterStats(CardType.CHARACTER,"Charybdis",           3, 5,  7,  1, 1, 1, MovementType.Omni, "You summon this on a monster and this swallows it. When this dies it leaves that card on the tile this died.") }, // Hydra
+        { 32, new CharacterStats(CardType.CHARACTER,"Kamikaze",            2, 9,  3,  1, 1, 2, MovementType.Basic, "When this kills a card destroy this.") }, // Kamikaze
+        { 35, new CharacterStats(CardType.CHARACTER,"Dragon",              3, 3,  7,  1, 1, 1, MovementType.Basic, "When this attacks, it also attacks diagonally to the objective tile.") }, // Dragon
+        { 36, new CharacterStats(CardType.CHARACTER,"Lacus",               4, 6,  7,  1, 1, 1, MovementType.Basic, "This moves or attacks every turn to the direction is facing. Spend mana to change direction. If this hits a wall destroy this.") }, // Dragon
+        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 5,  7,  1, 1, 1, MovementType.Basic, "When this scores, it gains as much attack as points scored.   ") }, // Samurai
+        { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 6,  11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
+        { 39, new CharacterStats(CardType.CHARACTER,"Ant",                 2, 1,  4,  1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
+        { 39, new CharacterStats(CardType.CHARACTER,"Wyvern",              2, 10, 9,  1, 1, 1, MovementType.Omni, "If this makes an attack this turn, it can't move or attack next turn.") }, // Ant
         
         
 

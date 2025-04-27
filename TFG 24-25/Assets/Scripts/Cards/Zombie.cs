@@ -10,7 +10,7 @@ public class Zombie : Character
 
     public override void OnDeath(Character attacker)
     {
-        DeckManager.Instance.BoardIntoHandDraw(stats.name);
+        //DeckManager.Instance.BoardIntoHandDraw(teamType, stats.name);
         base.OnDeath(attacker);
     }
 }
