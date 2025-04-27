@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 029eb92f69141e9448dd884a15969c8d
   - enabled: 0
+    path: Assets/Scenes/EnterRoom.unity
+    guid: 3c645688c4c166e47aee4536450646c4
+  - enabled: 0
     path: Assets/Scenes/Sergi.unity
     guid: 00ffa151e9130fa4aacfe423d72a41a6
   - enabled: 1

@@ -1003,6 +1003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61bca54f903d6c44a0cc840534ee72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomSelectionSceneIndex: 1
+  gameSceneIndex: 2
+  creditsSceneIndex: 3
+  mainMenuSceneIndex: 0
 --- !u!114 &1556241048872256721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,3 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61bca54f903d6c44a0cc840534ee72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomSelectionSceneIndex: 1
+  gameSceneIndex: 2
+  creditsSceneIndex: 3
+  mainMenuSceneIndex: 0
