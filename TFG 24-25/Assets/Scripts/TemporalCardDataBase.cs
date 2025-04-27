@@ -39,7 +39,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 5,  7,  1, 1, 1, MovementType.Basic, "When this scores, it gains as much attack as points scored.   ") }, // Samurai
         { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 6,  11, 1, 1, 1, MovementType.Basic, "After this moves, deal 2 damage to all surrounding cards.") }, // Giant
         { 39, new CharacterStats(CardType.CHARACTER,"Ant",                 2, 1,  4,  1, 1, 2, MovementType.Omni, "This has +1 attack for each card around it.") }, // Ant
-        { 39, new CharacterStats(CardType.CHARACTER,"Wyvern",              2, 10, 9,  1, 1, 1, MovementType.Omni, "If this makes an attack this turn, it can't move or attack next turn.") }, // Ant
+        { 40, new CharacterStats(CardType.CHARACTER,"Wyvern",              2, 10, 9,  1, 1, 1, MovementType.Omni, "If this makes an attack this turn, it can't move or attack next turn.") }, // Ant
         
         
 
