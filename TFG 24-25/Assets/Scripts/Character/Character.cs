@@ -330,17 +330,27 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
-        //MyEventHandler.Instance.InvokeSamuraiEffect(teamType);
-
         CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-        currentCell.RemoveCharacter();
-        CharactersManager.Instance.RemoveCharacter(id);
 
+        currentCell.RemoveCharacter();
+
+        CharactersManager.Instance.RemoveCharacter(id);
+        Debug.Log("Enemy Killer: " + stats.name);
         attacker.OnKillEnemy(this);
     }
+
+    public virtual void OnDeathSelf()
+    {
+        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+
+        currentCell.RemoveCharacter();
+
+        CharactersManager.Instance.RemoveCharacter(id);
+    }
+
     public virtual void OnKillEnemy(Character enemy)
     {
-
+        //Debug.Log("OnKillEnemy " + enemy.stats.name);
     }
     public virtual void OnAttacked(Character attacker)
     {
@@ -371,6 +381,7 @@ public class Character
 
         OnAttackedVFX();
 
+        Debug.Log("Character: " + stats.name);
         DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
 
         if (stats.hp <= 0)
@@ -378,6 +389,22 @@ public class Character
             OnDeath(this);
         }
     }
+
+    public void ReceiveDamageSelf(int damage)
+    {
+        stats.hp -= damage;
+
+        OnAttackedVFX();
+
+        Debug.Log("Character: " + stats.name);
+        DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
+
+        if (stats.hp <= 0)
+        {
+            OnDeathSelf();
+        }
+    }
+
     public void DecreaseDamage(int amount)
     {
         stats.dmg -= amount;

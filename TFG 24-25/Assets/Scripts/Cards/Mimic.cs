@@ -14,8 +14,8 @@ public class Mimic : Character
         base.OnAttacked(attacker);
 
         // Enemy draws a cards 
-        attacker.ReceiveDamage(9999);
-        ReceiveDamage(9999);
+        attacker.ReceiveDamageSelf(9999);
+        ReceiveDamageSelf(9999);
     }
 
    //Implementació del so general per a cartes no identificades 

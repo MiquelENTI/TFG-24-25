@@ -11,7 +11,7 @@ public class Chicken : Character
 
     public override void OnAttacked(Character attacker)
     {
-        attacker.ReceiveDamage(counterDamage);
+        attacker.ReceiveDamageSelf(counterDamage);
 
         base.OnAttacked(attacker);
     }

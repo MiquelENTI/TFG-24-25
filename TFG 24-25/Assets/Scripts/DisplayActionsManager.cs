@@ -31,6 +31,7 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     public void CreateDamageText(int text, Vector3 pos)
     {
+        Debug.Log("DamageText: " + text);
         string text2 = text.ToString();
         if (text > 20) { text2 = "DELETED"; }
 

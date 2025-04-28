@@ -10,12 +10,13 @@ public class Salmon : Character
 
     public override void OnKillEnemy(Character enemy)
     {
+        Debug.Log("ENTERING EATING ENEMY");
         base.OnKillEnemy(enemy);
-
         if (enemy.GetName() != "Charybdis")
         {
+            Debug.Log("EATING ENEMY");
             BypassMovement(enemy.GetOnTileId());
-            ReceiveDamage(1);
+            ReceiveDamageSelf(1);
         }
     }
      

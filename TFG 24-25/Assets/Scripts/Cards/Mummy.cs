@@ -14,7 +14,7 @@ public class Mummy : Character
         { return false; }
 
         DecreaseDamage(1);
-        ReceiveDamage(1);
+        ReceiveDamageSelf(1);
 
         return true;
     }

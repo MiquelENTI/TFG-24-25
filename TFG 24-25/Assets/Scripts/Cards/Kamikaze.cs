@@ -12,6 +12,6 @@ public class Kamikaze : Character
     {
         base.OnKillEnemy(enemy);
 
-        ReceiveDamage(9999);
+        ReceiveDamageSelf(9999);
     }
 }
