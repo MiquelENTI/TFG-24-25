@@ -8,6 +8,12 @@ public class SoundManager : Singleton<SoundManager>
     Dictionary<int, string> sfxDictionary;
     // Listado de Musicas
     Dictionary<int, string> musicDictionary;
+    //LListat de Ambient
+    Dictionary<int, string> ambientDictionary;
+    //LListat de VO
+    Dictionary<int, string> voDictionary;
+    //LListat de uibotton
+    Dictionary<int, string> uibottonDictionary;
     GameObject board;
 
     void Awake ()
@@ -17,6 +23,29 @@ public class SoundManager : Singleton<SoundManager>
     los siguientes 3 dígitos identifican el número de la carta o el nivel dentro de la categoría,
     y los últimos 3 dígitos corresponden al número de sonido dentro de esa carta o nivel. 
     */
+
+        ambientDictionary=new()
+        {
+        // AMBIENT
+            // Roomtone
+            {001001001, "event:/SFX/AMBIENTES/ROOMTONE"},
+            // Bonfire
+            {001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE"},
+            // Canvi de torn 
+            {001000003, "event:/SFX/AMBIENTES/CANVI DE TORN/RING"},
+        };
+
+        musicDictionary=new()
+          {
+        
+        // MUSICA
+            // Taverna (Gameplay)
+            {002000001, "event:/MUSIC/GAMEPLAY/Taverna"},
+            // Menú
+            {002000002, "event:/MUSIC/MENU/Menu"},
+        
+        
+          };
 
         sfxDictionary=new()
         {
@@ -92,33 +121,33 @@ public class SoundManager : Singleton<SoundManager>
            
 
            // Human/Werewolf 
-           {003015001, ""},
+           {003015001, "event:/SFX/CARTAS/MONSTERS/WAREWOLF/Howl"},
            {003015002, "event:/SFX/CARTAS/MONSTERS/WAREWOLF/Howl"},
            
 
            // Death Horseman (Falta attack)
-           {003016001, ""},
+           {003016001, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select"},
            {003016002, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select"},
            
 
            // Terracotta Warrior 
-           {003017001, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_ATTACK"},
+           {003017001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT"},
            {003017002, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_SELECT"},
            {003017003, ""},
 
            // Fantasma
-           {003018001, ""},
-           {003018002, ""},
+           {003018001, "event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_attack"},
+           {003018002, "event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_Select"},
            {003018003, ""},
 
            // Grasshopper
-           {003019001, ""},
+           {003019001, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_Attack"},
            {003019002, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_select"},
            {003019003, ""},
 
            // Magic Karp
-           {003020001, ""},
-           {003020002, ""},
+           {003020001, "event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection"},
+           {003020002, "event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection"},
            {003020003, ""},
 
            // Archer
@@ -153,7 +182,7 @@ public class SoundManager : Singleton<SoundManager>
            
            // Hydra
            {003027001, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK"},
-           {003027002, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_SELECT"},
+           {003027002, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK"},
            {003027003, ""},
            
            // Zombie (SONS MUMMY)
@@ -177,8 +206,8 @@ public class SoundManager : Singleton<SoundManager>
            {003031003, ""},
            
            // Kamikaze
-           {003032001, ""},
-           {003032002, ""},
+           {003032001, "event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Attack"},
+           {003032002, "event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Select"},
            {003032003, ""},
 
            // C4 del medievo
@@ -188,12 +217,12 @@ public class SoundManager : Singleton<SoundManager>
            
            // Dragon
            {003034001, "event:/SFX/CARTAS/MONSTERS/DRAGON/DRAGON"},
-           {003034002, ""},
+           {003034002, "event:/SFX/CARTAS/MONSTERS/DRAGON/DRAGON"},
            {003034003, ""},
            
            // Lacus
            {003035001, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_ATTACK"},
-           {003035002, "event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_SELECT"},
+           {003035002, "event:/SFX/CARTAS/MONSTERS/Lacus/Lacus"},
            {003035003, ""},
            
            // Samurai (Pendent de no fer - possiblement no) 
@@ -207,44 +236,39 @@ public class SoundManager : Singleton<SoundManager>
            {003037003, ""},
            
            // Ant
-           {003038001, ""},
-           {003038002, ""},
+           {003038001, "event:/SFX/CARTAS/MONSTERS/ANT/Ant_Select_Attack"},
+           {003038002, "event:/SFX/CARTAS/MONSTERS/ANT/Ant_Select_Attack"},
            {003038003, ""},
            
            // Wyvern
-           {003039001, ""},
-           {003039002, ""},
+           {003039001, "event:/SFX/CARTAS/MONSTERS/Wyvern/Wyvern_Attack"},
+           {003039002, "event:/SFX/CARTAS/MONSTERS/Wyvern/Wyvern_Select"},
            {003039003, ""},
-           
-           // Cambiaformes So de la carta en que es transforma.
-           
-          
-        };     
-
-         musicDictionary=new()
-        {
-        // AMBIENT
-            // Roomtone
-            {001001001, "event:/SFX/AMBIENTES/ROOMTONE"},
-            // Bonfire
-            {001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE"},
-            // Canvi de torn 
-            {001000003, "event:/SFX/AMBIENTES/CANVI DE TORN/RING"},
+          };
+        
+        voDictionary=new()
+         {
             // Dialegs
-            {001000004, "event:/VOICE OFF/VO_PersonajeOmnipotente"},
-        // MUSICA
-            // Taverna (Gameplay)
-            {002000001, "event:/MUSIC/GAMEPLAY/Taverna"},
-            // Menú
-            {002000002, "event:/MUSIC/MENU/Menu"},
-        
-        
-        };   
-        board = GameObject.Find("Board");
+            {004000001, "event:/VOICE OFF/VO_PersonajeOmnipotente"},
+         };
+
+         uibottonDictionary=new()
+         {
+            //Botons Ui Credits
+            {005000001, "event:/SFX/UI/Button_Credits"},
+            //Botons Ui Exit
+            {005000002, "event:/SFX/UI/Button_Exit"},
+            //Botons Ui General
+            {005000003, "event:/SFX/UI/Buttons_General"},
+         };
+         
+         board = GameObject.Find("Board");
         PlayMusic(002000001);
         PlayMusic(001001001);
         
-    }
+    }   
+        
+    
 
 
    public void PlaySFX (int index, Vector3 position)
