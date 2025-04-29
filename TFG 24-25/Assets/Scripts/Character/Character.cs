@@ -334,9 +334,11 @@ public class Character
 
         //currentCell.RemoveCharacter();
 
-        CharactersManager.Instance.RemoveCharacter(id);
         Debug.Log("Dying: " + stats.name);
         Debug.Log("Killer: " + attacker.stats.name);
+
+        CharactersManager.Instance.AddToRemoveList(this);
+        
         attacker.OnKillEnemy(this);
     }
 
@@ -346,7 +348,7 @@ public class Character
 
         //currentCell.RemoveCharacter();
 
-        CharactersManager.Instance.RemoveCharacter(id);
+        CharactersManager.Instance.AddToRemoveList(this);
     }
 
     public virtual void OnKillEnemy(Character enemy)
@@ -461,9 +463,7 @@ public class Character
 
     public void DestroyCharacter()
     {
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-        currentCell.RemoveCharacter();
-        CharactersManager.Instance.RemoveCharacter(id);
+        CharactersManager.Instance.AddToRemoveList(this);
     }
 
     public void ApplyDOT()

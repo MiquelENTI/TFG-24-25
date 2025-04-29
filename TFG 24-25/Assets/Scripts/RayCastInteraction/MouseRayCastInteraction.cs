@@ -74,7 +74,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 }
                 default:
                 {
-                        Debug.Log("ENTERED HERE");
+                        //Debug.Log("MouseUp Hit Collider Default: " + hit.collider.name);
+                        //Debug.Log("MouseUp Hit Collider Default: " + hit.collider.GetComponent<DragableGameObject>().GetCharacterStats().name);
                     break;
                 }
             }

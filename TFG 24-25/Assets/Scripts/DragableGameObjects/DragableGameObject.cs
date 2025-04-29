@@ -235,4 +235,9 @@ public class DragableGameObject : MonoBehaviour
     {
         transform.SetPositionAndRotation(newPosition, newRotation);
     }
+
+    public CharacterStats GetCharacterStats()
+    {
+        return characterStats;
+    }
 }

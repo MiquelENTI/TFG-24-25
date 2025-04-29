@@ -11,8 +11,6 @@ public class Mimic : Character
 
     public override void OnAttacked(Character attacker)
     {
-        base.OnAttacked(attacker);
-
         // Enemy draws a cards 
         attacker.ReceiveDamageSelf(9999);
         ReceiveDamageSelf(9999);
