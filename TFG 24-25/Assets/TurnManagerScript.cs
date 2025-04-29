@@ -13,6 +13,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [SerializeField] public GameObject player1GameObject;
     [SerializeField] public GameObject player2GameObject;
 
+    [SerializeField] private int[] startTurnAudioCodesForAll = { 003002001, 003002002, 003002003 };
+    [SerializeField] private int[] startYourTurnAudioCodes = { 003003001, 003003002 };
+    [SerializeField] private int[] startEnemyTurnAudioCodes = { 003004001, 003004002 };
+
+
     //[SerializeField] private AudioClip winAudioClip;
     //[SerializeField] private AudioClip loseAudioClip;
 
@@ -111,6 +116,9 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         IsBlue = !IsBlue;
 
+        // photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
+        photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsBlue);
+
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
         photonView.RPC("DrawCardRPC", RpcTarget.Others, 1);
     }
@@ -128,7 +136,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             turnCounter++;
             turnCounterElement.text = "Turn Number: " + turnCounter;
 
-            if (turnCounter > 1)
+            if (turnCounter > 10)
             {
                 Debug.Log("Blue score is: " + scoreManager.BlueScore);
                 Debug.Log("Red score is: " + scoreManager.RedScore);
@@ -166,43 +174,91 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         Transform playerTransform = null;
 
         bool isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine;
-                        // || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
+                        || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
 
         if (player1GameObject.GetComponent<PhotonView>().IsMine)
         {
             playerTransform = player1GameObject.GetComponent<Transform>();
-            // audioSource = player1GameObject.GetComponent<AudioSource>();
         }
         else if (player2GameObject.GetComponent<PhotonView>().IsMine)
         {
             playerTransform = player2GameObject.GetComponent<Transform>();
-            // audioSource = player2GameObject.GetComponent<AudioSource>();
         }
-
-
-        // AudioSource audioSource = null;
-
-        //if (player1GameObject.GetComponent<PhotonView>().IsMine)
-        //    audioSource = player1GameObject.GetComponent<AudioSource>();
-        //else if (player2GameObject.GetComponent<PhotonView>().IsMine)
-        //    audioSource = player2GameObject.GetComponent<AudioSource>();
-
-        //if (audioSource == null)
-        //{
-        //    Debug.LogWarning("No se encontró AudioSource para el jugador local.");
-        //    return;
-        //}
 
         if ((isLocalBlue && blueWon) || (!isLocalBlue && !blueWon))
         {
-            // audioSource.PlayOneShot(winAudioClip);
             SoundManager.Instance.PlayVO(003001001, playerTransform.position);
         }
         else
         {
-            // audioSource.PlayOneShot(loseAudioClip);
-
             SoundManager.Instance.PlayVO(003010001, playerTransform.position);
+        }
+    }
+
+    [PunRPC]
+    void PlayStartTurnAudioForAll()
+    {
+        if (startTurnAudioCodesForAll.Length > 0)
+        {
+            int randomIndex = Random.Range(0, startTurnAudioCodesForAll.Length);
+            int randomAudioCode = startTurnAudioCodesForAll[randomIndex];
+
+            if (player1GameObject != null)
+            {
+                SoundManager.Instance.PlayVO(randomAudioCode, player1GameObject.transform.position);
+            }
+            if (player2GameObject != null)
+            {
+                SoundManager.Instance.PlayVO(randomAudioCode, player2GameObject.transform.position);
+            }
+            else
+            {
+                Debug.LogWarning("Uno o ambos jugadores no han sido registrados, o sus GameObjects son nulos al intentar reproducir el audio de inicio de turno para todos.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No hay códigos de audio definidos para PlayStartTurnAudioForAll.");
+        }
+    }
+
+    [PunRPC]
+    void PlayStartTurnAudioForColor(bool isBlueTurn)
+    {
+        Transform playerTransform = null;
+        int randomAudioCode = -1;
+        int[] audioCodesToUse = null;
+
+        if (isBlueTurn)
+        {
+            audioCodesToUse = startYourTurnAudioCodes;
+            if (player1GameObject != null && player1GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                playerTransform = player1GameObject.transform;
+            }
+            else if (player2GameObject != null && player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                playerTransform = player2GameObject.transform;
+            }
+        }
+        else
+        {
+            audioCodesToUse = startEnemyTurnAudioCodes;
+            if (player2GameObject != null && player2GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                playerTransform = player2GameObject.transform;
+            }
+            else if (player1GameObject != null && !player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                playerTransform = player1GameObject.transform;
+            }
+        }
+
+        if (audioCodesToUse != null && audioCodesToUse.Length > 0 && playerTransform != null)
+        {
+            int randomIndex = Random.Range(0, audioCodesToUse.Length);
+            randomAudioCode = audioCodesToUse[randomIndex];
+            SoundManager.Instance.PlayVO(randomAudioCode, playerTransform.position);
         }
     }
 
