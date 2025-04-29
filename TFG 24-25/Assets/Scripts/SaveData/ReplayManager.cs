@@ -17,7 +17,7 @@ public class ReplayManager: MonoBehaviour
     void Start()
     {
         replayData = new ReplayData();
-        GetReplayMatchData(0);
+        GetReplayMatchData(1);
 
         blueTurn = true;
 
@@ -44,10 +44,14 @@ public class ReplayManager: MonoBehaviour
 
     private void StartReplay()
     {
-        for (int i = 0; i <= replayData.inputs.Count; i++)
+
+        Debug.Log("DECK:");
+        Debug.Log(replayData.inputs.Count.ToString());
+
+        foreach (string input in replayData.inputs)
         {
-            //Debug.Log(replayData.inputs.Dequeue().ToString());
-        }
+            Debug.Log(input);
+        };
 
         DeckManager.Instance.SetReplayDeck(replayData.deck);
 
