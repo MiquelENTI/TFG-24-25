@@ -44,7 +44,7 @@ public class SaveData: Singleton<SaveData>
 
     public void SaveDeck(Queue<int> deckSave)
     {
-        data.deck = deckSave;
+        data.deck = new Queue<int>(deckSave);
     }
 
     public ReplayData LoadReplay(int match)

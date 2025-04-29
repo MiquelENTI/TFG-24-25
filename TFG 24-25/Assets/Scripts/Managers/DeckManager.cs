@@ -74,6 +74,11 @@ public class DeckManager : Singleton<DeckManager>
     {
         ShuffleDeck();
         SaveData.Instance.SaveDeck(deck);
+
+        foreach (int card in deck)
+        {
+            Debug.Log(card);
+        };
     }
 
     [PunRPC]

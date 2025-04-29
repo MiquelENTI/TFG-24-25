@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
@@ -115,7 +116,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [PunRPC]
     public void UpdateTurn(bool newIsBlue)
     {
-        SaveData.Instance.SaveNewAction("T" + (IsBlue ? "1" : "2"));
+        SaveData.Instance.SaveNewAction("T");
 
         IsBlue = newIsBlue;
         Debug.Log("Turno cambiado. Ahora es turno " + (IsBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));

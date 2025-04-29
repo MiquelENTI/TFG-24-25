@@ -16,9 +16,9 @@ public class Samurai : Character
         DisplayActionsManager.Instance.CreateBuffText(pointsScored, true, token.transform.position);
     }
 
-    public override void OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(CellNode cellToMove)
     {
-        base.OnSpawn(cellToMove);
+        return base.OnSpawn(cellToMove);
     }
 
     public override void OnDeath(Character attacker)

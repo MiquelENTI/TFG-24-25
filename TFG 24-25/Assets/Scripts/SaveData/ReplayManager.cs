@@ -46,21 +46,23 @@ public class ReplayManager: MonoBehaviour
     {
 
         Debug.Log("DECK:");
-        Debug.Log(replayData.inputs.Count.ToString());
+        Debug.Log(replayData.deck.Count.ToString());
 
-        foreach (string input in replayData.inputs)
+        foreach (int card in replayData.deck)
         {
-            Debug.Log(input);
+            Debug.Log(card);
         };
 
         DeckManager.Instance.SetReplayDeck(replayData.deck);
 
-        for (int i = 0; i <= 4; i++)
+        int amountToDraw = 1;
+
+        for (int i = 0; i <= amountToDraw; i++)
         {
             DeckManager.Instance.ReplayDrawCard(true);
         }
 
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i <= amountToDraw; i++)
         {
             DeckManager.Instance.ReplayDrawCard(false);
         }
@@ -77,23 +79,20 @@ public class ReplayManager: MonoBehaviour
 
         newInput = newInput.Substring(1);
 
-        Debug.Log(replayData.inputs.Count);
-        Debug.Log(newInput);
+        //Debug.Log(replayData.inputs.Count);
+        //Debug.Log(newInput);
 
 
         switch (nextChar)
         {
             case 'T':
                 {
-                    nextChar = newInput.ToCharArray()[0];
-
-                    bool turn = nextChar == 1;
-
-                    TurnManagerScript.Instance.UpdateTurn(turn);
-
-                    DeckManager.Instance.ReplayDrawCard(turn);
 
                     blueTurn = !blueTurn;
+
+                    TurnManagerScript.Instance.UpdateTurn(blueTurn);
+
+                    DeckManager.Instance.ReplayDrawCard(blueTurn);
 
                     break;
                 }

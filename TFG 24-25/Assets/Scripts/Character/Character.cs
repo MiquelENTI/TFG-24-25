@@ -208,6 +208,8 @@ public class Character
             OnSpawnVFX();
 
             DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
+
+            return true;
         }
         else
         {

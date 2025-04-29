@@ -8,92 +8,18 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 43
-    width: 1920
-    height: 997
-=======
-=======
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
-    y: 42.666668
-    width: 2560
-    height: 1357.3334
-=======
-=======
->>>>>>> 43aca31 (Singletone i deckSave)
-<<<<<<< HEAD
-    y: 43
-    width: 1920
-    height: 997
->>>>>>> 54d5d66 (Scripts added)
->>>>>>> 1427dda (Scripts added)
-  m_ShowMode: 4
-<<<<<<< HEAD
-  m_Title: Build Settings
-=======
-<<<<<<< HEAD
-  m_Title: Scene
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  m_Title: Hierarchy
-=======
-<<<<<<< HEAD
-  m_Title: Game
->>>>>>> Stashed changes
-=======
-  m_Title: Build Settings
->>>>>>> feature/Onboarding
-=======
-  m_Title: Scene
->>>>>>> feature/Modelos3D
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
     y: 43.2
     width: 1536
     height: 820.8
   m_ShowMode: 4
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Title: Console
-<<<<<<< HEAD
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-  m_Title: Project
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-  m_Title: Project
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-  m_Title: Console
->>>>>>> 47ec0e5 (Scene setup)
-=======
-  m_Title: Scene
->>>>>>> d319b32 (Spawned Dummy Token)
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -188,111 +114,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    width: 2560
-    height: 1307.3334
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 0
-  controlID: 39
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-    width: 1920
-    height: 947
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 18
-=======
-<<<<<<< HEAD
-  controlID: 31117
-=======
-<<<<<<< HEAD
-  controlID: 10814
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 3065
->>>>>>> Stashed changes
-=======
-  controlID: 19
->>>>>>> feature/Onboarding
-=======
-  controlID: 3104
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-  controlID: 4055
->>>>>>> origin/feature/Modelos3D
-=======
-  controlID: 8179
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-=======
->>>>>>> 47ec0e5 (Scene setup)
     width: 1536
     height: 770.8
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 51
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-  controlID: 100
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-  controlID: 56
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-  controlID: 2144
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-  controlID: 2281
->>>>>>> 47ec0e5 (Scene setup)
-=======
-  controlID: 1185
->>>>>>> d319b32 (Spawned Dummy Token)
+  controlID: 3129
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -312,127 +139,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1275
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    width: 1320
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    width: 1960.6666
-    height: 1307.3334
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-  controlID: 40
-=======
-    width: 1318
->>>>>>> df54bd3 (Singletone i deckSave)
->>>>>>> 46cba0c (Singletone i deckSave)
-    height: 947
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 19
-=======
-<<<<<<< HEAD
-  controlID: 31033
-=======
-<<<<<<< HEAD
-  controlID: 10815
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 3066
->>>>>>> Stashed changes
-=======
-    width: 1318
-=======
-    width: 1411
->>>>>>> 43aca31 (Singletone i deckSave)
-    height: 947
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 20
->>>>>>> feature/Onboarding
-=======
-  controlID: 3042
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-  controlID: 3990
->>>>>>> origin/feature/Modelos3D
-=======
-  controlID: 8180
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-    width: 1195.2
-=======
-=======
->>>>>>> 47ec0e5 (Scene setup)
-    width: 1180.8
+    width: 1162.4
     height: 770.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 52
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-  controlID: 42
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-  controlID: 57
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-  controlID: 2096
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-  controlID: 2229
->>>>>>> 47ec0e5 (Scene setup)
-=======
-  controlID: 1133
->>>>>>> d319b32 (Spawned Dummy Token)
+  controlID: 3057
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -452,128 +164,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1275
-    height: 594
+    width: 1162.4
+    height: 470.4
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    width: 1320
-    height: 563
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 31034
-=======
-  controlID: 10816
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    width: 1960.6666
-    height: 879.3333
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 41
-=======
-    width: 1318
-    height: 602
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 2975
->>>>>>> Stashed changes
-=======
-    width: 1318
-=======
-    width: 1411
->>>>>>> 43aca31 (Singletone i deckSave)
-    height: 602
-  m_MinSize: {x: 300, y: 50}
-  m_MaxSize: {x: 24288, y: 8096}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 21
->>>>>>> feature/Onboarding
-=======
-  controlID: 3043
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-  controlID: 3991
->>>>>>> origin/feature/Modelos3D
-=======
-  controlID: 8181
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-    width: 1195.2
-=======
-=======
->>>>>>> 47ec0e5 (Scene setup)
-    width: 1180.8
-    height: 495.2
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 43
-<<<<<<< HEAD
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-  controlID: 48
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-  controlID: 2060
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-  controlID: 2230
->>>>>>> 47ec0e5 (Scene setup)
-=======
-  controlID: 1134
->>>>>>> d319b32 (Spawned Dummy Token)
+  controlID: 3058
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -584,84 +180,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: BuildPlayerWindow
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 307
-    height: 594
-  m_MinSize: {x: 640, y: 580}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
-    width: 461
-    height: 563
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    width: 692.6667
-    height: 879.3333
-=======
-    width: 414
-=======
-    width: 452
->>>>>>> 43aca31 (Singletone i deckSave)
-    height: 602
->>>>>>> Stashed changes
->>>>>>> df54bd3 (Singletone i deckSave)
+    width: 285.6
+    height: 470.4
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-=======
-    width: 289.6
-    height: 495.2
-<<<<<<< HEAD
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
->>>>>>> d319b32 (Spawned Dummy Token)
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 0
-=======
-  m_LastSelected: 1
-=======
-<<<<<<< HEAD
-  - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
->>>>>>> feature/Onboarding
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-    width: 293.6
-    height: 495.2
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
->>>>>>> 46cba0c (Singletone i deckSave)
-  m_Panes:
-  - {fileID: 13}
-  - {fileID: 14}
-  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -673,77 +206,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 307
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    x: 461
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    x: 692.6667
-=======
-    x: 452
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
->>>>>>> 46cba0c (Singletone i deckSave)
+    x: 285.6
     y: 0
-    width: 968
-    height: 594
+    width: 876.80005
+    height: 470.4
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 16}
-  - {fileID: 12}
-<<<<<<< HEAD
-=======
-=======
-  m_ActualView: {fileID: 16}
-  m_Panes:
-  - {fileID: 16}
-<<<<<<< HEAD
->>>>>>> feature/Modelos3D
-=======
-  - {fileID: 17}
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-    x: 293.6
-=======
-=======
->>>>>>> 47ec0e5 (Scene setup)
-    x: 289.6
-    y: 0
-    width: 891.2001
-    height: 495.2
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -760,9 +239,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 495.2
-    width: 1180.8
-    height: 275.59998
+    y: 470.4
+    width: 1162.4
+    height: 300.4
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -786,57 +265,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 0
-    y: 594
-    width: 1275
-    height: 353
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-<<<<<<< HEAD
-=======
-  - {fileID: 16}
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-  - {fileID: 17}
-  - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
-=======
-<<<<<<< HEAD
-  m_Selected: 0
-  m_LastSelected: 1
->>>>>>> c110dbc (Singletone i deckSave)
---- !u!114 &11
-=======
-  - {fileID: 17}
-=======
-    y: 602
-    width: 1318
-    height: 345
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-<<<<<<< HEAD
-  m_ActualView: {fileID: 17}
-=======
-  m_ActualView: {fileID: 18}
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-    x: 1195.2
-=======
-=======
->>>>>>> 47ec0e5 (Scene setup)
-    x: 1180.8
+    x: 1162.4
     y: 0
-    width: 355.19995
+    width: 373.59998
     height: 770.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -854,55 +285,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1275
-    y: 0
-    width: 645
-    height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &12
-=======
---- !u!114 &13
-=======
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-<<<<<<< HEAD
-  m_EditorHideFlags: 1
-=======
-<<<<<<< HEAD
-  m_EditorHideFlags: 0
-=======
-<<<<<<< HEAD
-=======
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb55afc2c109f42f2af37941a8c9300e, type: 3}
-=======
-=======
->>>>>>> 84920df (Load test and movement recorded)
-=======
->>>>>>> 47ec0e5 (Scene setup)
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -914,247 +296,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 289.6
+    x: 285.6
     y: 73.6
-    width: 889.2001
-    height: 474.2
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
-  m_PlayModeViewName: GameView
-  m_ShowGizmos: 0
-  m_TargetDisplay: 0
-  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 889.2001, y: 453.2}
-  m_TextureFilterMode: 0
-  m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 0
-  m_UseMipMap: 0
-  m_VSyncEnabled: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    hZoomLockedByDefault: 0
-    vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -355.68002
-    m_HBaseRangeMax: 355.68002
-    m_VBaseRangeMin: -181.28001
-    m_VBaseRangeMax: 181.28001
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
-    m_EnableSliderZoomHorizontal: 0
-    m_EnableSliderZoomVertical: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 21
-      width: 889.2001
-      height: 453.2
-    m_Scale: {x: 1.5, y: 1.5}
-    m_Translation: {x: 444.60016, y: 226.59998}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -296.40012
-      y: -151.06665
-      width: 592.80005
-      height: 302.13333
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1111.5001, y: 592.75}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
-  m_XRRenderMode: 0
-  m_RenderTexture: {fileID: 0}
---- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 73.6
-    width: 288.6
-    height: 474.2
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_SceneHierarchy:
-    m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 1efbffff84890000
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
-      m_SearchString: 
-    m_ExpandedScenes: []
-    m_CurrenRootInstanceID: 0
-    m_LockTracker:
-      m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12043, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 640, y: 580}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Build Settings
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-<<<<<<< Updated upstream
-    y: 72.66667
-    width: 691
-    height: 856.3333
-=======
-    y: 73
-    width: 413
-    height: 581
->>>>>>> Stashed changes
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-<<<<<<< Updated upstream
-    m_SelectedIDs: 3ba7b2e2
-    m_LastClickedID: -491608261
-    m_ExpandedIDs: ffffffff
-=======
-    m_SelectedIDs: d779268e
-    m_LastClickedID: -1910081065
-    m_ExpandedIDs: 
->>>>>>> Stashed changes
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
->>>>>>> 1427dda (Scripts added)
-  m_EditorHideFlags: 1
->>>>>>> 01d1b9f (Scripts added)
->>>>>>> faa690b (Scripts added)
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 307
-    y: 73
-    width: 966
-    height: 573
+    width: 874.80005
+    height: 449.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1186,19 +331,19 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -768
+    m_HBaseRangeMax: 768
+    m_VBaseRangeMin: -432
+    m_VBaseRangeMax: 432
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1207,27 +352,27 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 966
-      height: 552
-    m_Scale: {x: 0.503125, y: 0.503125}
-    m_Translation: {x: 483, y: 276}
+      width: 874.80005
+      height: 428.4
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 437.40002, y: 214.2}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -960
-      y: -548.5714
-      width: 1920
-      height: 1097.1428
+      x: -437.40002
+      y: -214.2
+      width: 874.80005
+      height: 428.4
     m_MinimalGUI: 1
-  m_defaultScale: 0.503125
-  m_LastWindowPixelSize: {x: 966, y: 573}
+  m_defaultScale: 0.49583334
+  m_LastWindowPixelSize: {x: 1093.5, y: 561.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
-  m_XRRenderMode: -1
+  m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -1245,14 +390,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-    width: 306
-    height: 573
+    y: 73.6
+    width: 284.6
+    height: 449.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1265,10 +410,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      scrollPos: {x: 0, y: 99.600006}
+      m_SelectedIDs: 58cc0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 3416fbffe016fbff561dfbffe28efdff8e8ffdff0496fdfffcb8fdff74ebfdff28e0ffffd6e0ffff4ce7ffff1afbffff
+      m_ExpandedIDs: 988cfeff7696feff2ea5feff16affeff58bafeff60c3fefff0dafeff7ae9feff34f8feff9217ffffae18ffffd644ffff3c90ffffc490ffff4297ffff34ceffff1efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1300,84 +445,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12043, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 640, y: 580}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Build Settings
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 73
-    width: 306
-    height: 573
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d779268e
-    m_LastClickedID: -1910081065
-    m_ExpandedIDs: 
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-=======
-=======
->>>>>>> 3c0ff51 (Scripts added)
-<<<<<<< HEAD
->>>>>>> faa690b (Scripts added)
-=======
-=======
->>>>>>> 0697a2b (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
->>>>>>> 84920df (Load test and movement recorded)
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> 47ec0e5 (Scene setup)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -1390,71 +457,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 307
-    y: 73
-    width: 966
-    height: 573
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
-    x: 461
-    y: 73
-    width: 857
-    height: 542
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    x: 692.6667
-    y: 72.66667
-    width: 1266
-    height: 858.3333
-=======
-    x: 414
-=======
-    x: 452
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 73
-    width: 902
-=======
-    x: 414
-    y: 73
-    width: 450
->>>>>>> feature/Onboarding
-    height: 581
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-    x: 293.6
-=======
     x: 289.6
->>>>>>> cbb4170 (Fixes and various saves)
     y: 73.6
     width: 889.2001
-    height: 474.2
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
+    height: 449.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1469,40 +475,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      snapOffset: {x: -171, y: -26}
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
       snapOffset: {x: -170.40002, y: -26.666687}
-=======
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      snapOffset: {x: -166, y: -26.666687}
-=======
-      snapOffset: {x: -166, y: -26}
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-      snapOffset: {x: -166, y: -26}
-=======
-      snapOffset: {x: -170.40002, y: -26.666687}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-      snapOffset: {x: -170.40002, y: -26.666687}
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-      snapOffset: {x: -170.40002, y: -26.666687}
->>>>>>> 53c0b56 (Load test and movement recorded)
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -1515,34 +488,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      snapOffset: {x: -141, y: 149}
-=======
-=======
->>>>>>> 46cba0c (Singletone i deckSave)
-<<<<<<< HEAD
       snapOffset: {x: -141, y: -127}
-=======
-<<<<<<< HEAD
-      snapOffset: {x: -141, y: 149}
-=======
-      snapOffset: {x: -141, y: -127}
->>>>>>> 3c0ff51 (Scripts added)
->>>>>>> 1427dda (Scripts added)
-<<<<<<< HEAD
->>>>>>> faa690b (Scripts added)
-=======
-=======
-      snapOffset: {x: -141, y: -127}
->>>>>>> df54bd3 (Singletone i deckSave)
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-      snapOffset: {x: -141, y: -127}
->>>>>>> 53c0b56 (Load test and movement recorded)
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 3
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -1553,24 +501,11 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 24, y: 25}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
       index: 0
-      layout: 1
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-toolbar__top
-      floating: 0
-      collapsed: 0
-      displayed: 1
-      snapOffset: {x: 24, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: unity-scene-view-camera-mode-toolbar
-      index: 1
       layout: 1
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -1592,7 +527,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 24, y: 25}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -1618,50 +553,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      snapOffset: {x: 67.5, y: 86}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
       snapOffset: {x: 67.5, y: -190}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 2
-=======
-<<<<<<< HEAD
-      snapOffset: {x: 67.5, y: 86}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-=======
-<<<<<<< HEAD
-      snapOffset: {x: -140.5, y: 86}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
-=======
-      snapOffset: {x: 67.5, y: -190}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 2
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-      snapOffset: {x: 67.5, y: -190}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 2
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-      snapOffset: {x: 67.5, y: -190}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 2
->>>>>>> 53c0b56 (Load test and movement recorded)
       id: Orientation
       index: 0
       layout: 4
@@ -1836,272 +730,7 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
-    - dockPosition: 0
-      containerId: overlay-toolbar__top
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Brush Attributes
-      index: 2
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 0
-      containerId: overlay-toolbar__left
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Terrain Tools
-      index: 0
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 0
-      containerId: overlay-toolbar__left
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Brush Masks
-      index: 1
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
     - dockPosition: 1
-      containerId: overlay-container--left
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Lighting Visualization Colors
-      index: 0
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--left
-      floating: 0
-      collapsed: 0
-      displayed: 1
-      snapOffset: {x: 24, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: Overlays/OverlayMenu
-      index: 1
-      layout: 1
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      containerId: overlay-toolbar__top
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: Scene View/Open Tile Palette
-      index: 2
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-toolbar__top
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 25}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: Scene View/Tilemap Focus
-      index: 3
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 48, y: 48}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: Scene View/Path
-      index: 7
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-=======
->>>>>>> 482cf64 (Scripts added)
-      displayed: 0
-      snapOffset: {x: -216, y: -300}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 3
-      id: AINavigationOverlay
-      index: 8
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
->>>>>>> 1427dda (Scripts added)
-<<<<<<< HEAD
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Open Tile Palette
-      index: 0
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Tile Palette Clipboard
-      index: 1
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Tilemap Focus
-      index: 2
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Tile Palette Brush Pick
-      index: 4
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: APV Overlay
-      index: 7
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Path
-      index: 12
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/Sprite Swap
-      index: 13
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: SceneView/CamerasOverlay
-      index: 14
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 24, y: 0}
-      snapCorner: 0
-      id: Scene View/PBR Validation Settings
-      index: 15
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-      displayed: 0
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
-      id: Scene View/TrailRenderer
-      index: 8
-      layout: 4
-      size: {x: 0, y: 0}
-      sizeOverriden: 0
-    - dockPosition: 1
-      containerId: overlay-container--right
-      floating: 0
-      collapsed: 0
-<<<<<<< HEAD
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
@@ -2127,8 +756,6 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
-<<<<<<< HEAD
-=======
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -2142,125 +769,20 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
->>>>>>> faa690b (Scripts added)
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 80.61263, y: -25.196707, z: -52.12544}
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    m_Target: {x: -0.18514925, y: -9.624266, z: 13.422381}
-=======
-<<<<<<< HEAD
-    m_Target: {x: 1.5764408, y: 0.7056179, z: -1.8217697}
->>>>>>> 8e0b66d (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
+    m_Target: {x: 19.679117, y: 6.616433, z: -5.937066}
     speed: 2
-<<<<<<< HEAD
-    m_Value: {x: 80.61263, y: -25.196707, z: -52.12544}
-=======
-<<<<<<< HEAD
-    m_Value: {x: -0.18514925, y: -9.624266, z: 13.422381}
-=======
-<<<<<<< HEAD
-    m_Value: {x: 1.5764408, y: 0.7056179, z: -1.8217697}
-=======
-=======
-    m_Target: {x: -14.485966, y: -5.665067, z: -2.034436}
-    speed: 2
-<<<<<<< HEAD
->>>>>>> 96ba862 (Created Scene & movement recorded)
-    m_Value: {x: 1007.2952, y: 487.76874, z: 14.77356}
-=======
-    m_Target: {x: 0.13074428, y: 0.34061915, z: 0.10849595}
-    speed: 2
-    m_Value: {x: 0.13074428, y: 0.34061915, z: 0.10849595}
->>>>>>> Stashed changes
-=======
-    m_Target: {x: 0.22794618, y: 0.30537486, z: -0.58250797}
-    speed: 2
-    m_Value: {x: 0.22794618, y: 0.30537486, z: -0.58250797}
->>>>>>> feature/Onboarding
-=======
-    m_Target: {x: 1.0572615, y: 0.7861794, z: 3.0457752}
-    speed: 2
-    m_Value: {x: 1.0572615, y: 0.7861794, z: 3.0457752}
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-    m_Target: {x: -3.451284, y: 1.1932585, z: 1.4966707}
-    speed: 2
-    m_Value: {x: -3.451284, y: 1.1932585, z: 1.4966707}
->>>>>>> origin/feature/Modelos3D
-=======
-    m_Target: {x: 589.6595, y: 465.9497, z: 155.01685}
-    speed: 2
-    m_Value: {x: 589.6595, y: 465.9497, z: 155.01685}
-=======
-    m_Target: {x: 0, y: 0, z: 0}
-    speed: 2
-    m_Value: {x: -1.5724792, y: 1.6469235, z: 0.64032555}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-    m_Value: {x: -14.485966, y: -5.665067, z: -2.034436}
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    m_Target: {x: 1.1224201, y: 0.7193813, z: -0.9532688}
-    speed: 2
-    m_Value: {x: 1.1224204, y: 0.7193813, z: -0.95327014}
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-    m_Target: {x: -1.1927223, y: -0.5597527, z: -0.44563833}
-    speed: 2
-    m_Value: {x: -1.1927223, y: -0.5597527, z: -0.44563833}
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-    m_Target: {x: -4.4355917, y: -2.9750986, z: 0.20214689}
-    speed: 2
-    m_Value: {x: -4.4355917, y: -2.9750986, z: 0.20214689}
->>>>>>> 47ec0e5 (Scene setup)
-=======
-    m_Target: {x: 263.44626, y: -177.53203, z: -22.07308}
-    speed: 2
-    m_Value: {x: 263.44626, y: -177.53203, z: -22.07308}
->>>>>>> d319b32 (Spawned Dummy Token)
+    m_Value: {x: 19.679117, y: 6.616433, z: -5.937066}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2271,7 +793,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -2306,164 +828,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 0.06217774, y: 0.871582, z: -0.114659496, w: 0.4725277}
+    m_Target: {x: -0.11250069, y: 0.16376553, z: -0.018801989, w: -0.97988456}
     speed: 2
-    m_Value: {x: 0.062179282, y: 0.8716036, z: -0.11466234, w: 0.47253942}
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    m_Target: {x: -0.30435264, y: 0.016586516, z: -0.0053011165, w: -0.95239}
-    speed: 2
-    m_Value: {x: -0.30435562, y: 0.016586678, z: -0.005301168, w: -0.9523993}
-=======
-<<<<<<< HEAD
-    m_Target: {x: -0.06699587, y: 0.9262386, z: -0.19772069, w: -0.31384742}
-    speed: 2
-    m_Value: {x: -0.06699587, y: 0.9262386, z: -0.19772069, w: -0.31384742}
-=======
-    m_Target: {x: -0.12095005, y: 0.74841094, z: -0.142235, w: -0.63641375}
-    speed: 2
-<<<<<<< HEAD
-    m_Value: {x: 0.069114916, y: 0.024038475, z: 0.0016730374, w: -0.9973177}
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-  m_Size:
-    m_Target: 50.256973
-    speed: 2
-<<<<<<< HEAD
-    m_Value: 50.256973
-=======
-<<<<<<< HEAD
-    m_Value: 9.028281
-=======
-<<<<<<< HEAD
-    m_Value: 10
-=======
-    m_Value: 625.934
-=======
-    m_ShowGrid: 0
-    m_GridAxis: 1
-    m_gridOpacity: 0.5
-  m_Rotation:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 0.13992806, y: 0.0050740233, z: -0.0007456278, w: 0.99008363}
-=======
-    m_Target: {x: -0.23585203, y: -0.18038823, z: 0.044614688, w: -0.9538702}
->>>>>>> 43aca31 (Singletone i deckSave)
-    speed: 2
-    m_Value: {x: 0.13993703, y: 0.0050743488, z: -0.00074567564, w: 0.9901471}
-  m_Size:
-    m_Target: 1.6760039
-    speed: 2
-<<<<<<< HEAD
-    m_Value: 1.6760039
->>>>>>> Stashed changes
-=======
-    m_Target: {x: -0.62325984, y: -0.0018737839, z: 0.0015119248, w: -0.78202575}
-    speed: 2
-    m_Value: {x: -0.62325984, y: -0.0018737839, z: 0.0015119249, w: -0.78202575}
-  m_Size:
-    m_Target: 0.8660254
-    speed: 2
-    m_Value: 0.8660254
->>>>>>> feature/Onboarding
-=======
-    m_ShowGrid: 0
-    m_GridAxis: 1
-    m_gridOpacity: 0.5
-  m_Rotation:
-    m_Target: {x: -0.11893935, y: 0.3708079, z: -0.04952908, w: -0.9187928}
-    speed: 2
-    m_Value: {x: -0.11911609, y: 0.3697477, z: -0.04939315, w: -0.9201403}
-  m_Size:
-    m_Target: 1.7723684
-    speed: 2
-<<<<<<< HEAD
-    m_Value: 3.2006602
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-    m_Value: 1.6960464
->>>>>>> origin/feature/Modelos3D
-=======
-    m_Value: 1111.4911
-=======
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-    speed: 2
-    m_Value: {x: -0.077387996, y: 0.89155185, z: -0.16666925, w: -0.41396603}
-=======
-    m_Value: {x: -0.12094999, y: 0.7484106, z: -0.14223492, w: -0.63641346}
->>>>>>> c454dda (Created Scene & movement recorded)
+    m_Value: {x: -0.112500526, y: 0.1637653, z: -0.018801963, w: -0.97988313}
   m_Size:
     m_Target: 10
     speed: 2
     m_Value: 10
-<<<<<<< HEAD
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    m_Target: {x: -0.042051885, y: 0.8021204, z: -0.056897633, w: -0.5929823}
-=======
-    m_Target: {x: -0.20461209, y: 0.67833537, z: -0.20562698, w: -0.6750925}
->>>>>>> b6a556f (Fixes and various saves)
-    speed: 2
-    m_Value: {x: -0.20359547, y: 0.6786304, z: -0.20460542, w: -0.6753861}
-  m_Size:
-    m_Target: 2.63086
-    speed: 2
-<<<<<<< HEAD
-    m_Value: 1.1817526
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-    m_Value: 2.7548273
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-    m_Target: {x: -0.24069844, y: 0.6211533, z: -0.20881929, w: -0.7159829}
-=======
-    m_Target: {x: -0.19852334, y: -0.7020669, z: 0.21464647, w: -0.64932984}
->>>>>>> d319b32 (Spawned Dummy Token)
-    speed: 2
-    m_Value: {x: -0.1962543, y: -0.70367765, z: 0.21283267, w: -0.64886385}
-  m_Size:
-    m_Target: 161.8734
-    speed: 2
-<<<<<<< HEAD
-    m_Value: 4.525386
->>>>>>> 47ec0e5 (Scene setup)
-=======
-    m_Value: 154.90277
->>>>>>> d319b32 (Spawned Dummy Token)
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2481,104 +852,14 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-<<<<<<< HEAD
-  m_LastSceneViewRotation: {x: 0.28395137, y: -0.16994871, z: 0.05116637, w: 0.9421305}
-=======
-=======
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
   m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
-=======
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  m_LastSceneViewRotation: {x: 0.17286038, y: -0.5314461, z: 0.111515775, w: 0.82152337}
-=======
-  m_LastSceneViewRotation: {x: -0.62325984, y: -0.0018737839, z: 0.0015119248, w: -0.78202575}
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-  m_LastSceneViewRotation: {x: -0.23585203, y: -0.18038823, z: 0.044614688, w: -0.9538702}
-=======
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
->>>>>>> 84920df (Load test and movement recorded)
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
->>>>>>> 47ec0e5 (Scene setup)
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &16
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
 --- !u!114 &15
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &16
-=======
---- !u!114 &17
-=======
---- !u!114 &15
->>>>>>> 3c0ff51 (Scripts added)
->>>>>>> 54d5d66 (Scripts added)
-<<<<<<< HEAD
->>>>>>> 1427dda (Scripts added)
-<<<<<<< HEAD
->>>>>>> faa690b (Scripts added)
-=======
-=======
-=======
---- !u!114 &15
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
---- !u!114 &15
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
---- !u!114 &15
->>>>>>> 53c0b56 (Load test and movement recorded)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2586,1065 +867,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb55afc2c109f42f2af37941a8c9300e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 600, y: 300}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 307
-    y: 73
-    width: 966
-    height: 573
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_ActionMapsTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 935185ad
-    m_LastClickedID: -1383771757
-    m_ExpandedIDs: 00000000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-  m_ActionsTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6503b9c
-    m_LastClickedID: -1673834314
-    m_ExpandedIDs: b5aa09dedea217eb
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 9}
-    m_SearchString: 
-  m_ControlPickerViewState:
-    m_AdvancedDropdownState:
-      states:
-      - itemId: 371857150
-        selectedIndex: 10
-        scroll: {x: 0, y: 0}
-      - itemId: 1943893468
-        selectedIndex: 5
-        scroll: {x: 0, y: 0}
-      - itemId: -1415197782
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-      - itemId: 677733392
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-      - itemId: 1081013944
-        selectedIndex: 20
-        scroll: {x: 0, y: 180}
-      - itemId: 403810634
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
-      - itemId: -118988449
-        selectedIndex: -1
-        scroll: {x: 0, y: 0}
-    m_ManualPathEditMode: 0
-  m_ActionAssetManager:
-    m_AssetObjectForEditing: {fileID: 0}
-    m_ImportedAssetObject: {fileID: -944628639613478452, guid: 068412b09e8d6dd43b83b991d181996b, type: 3}
-    m_AssetGUID: 068412b09e8d6dd43b83b991d181996b
-    m_ImportedAssetJson: "{\n    \"name\": \"PlayerInputs\",\n    \"maps\": [\n       
-      {\n            \"name\": \"Mouse\",\n            \"id\": \"74dae919-1ea3-4bc7-98c0-35a4b166ad36\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"LeftClick\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"d70a2c62-1b4d-43fa-940c-62ba0d6ba9b2\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"RightClick\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"afdb2a3d-40cd-45b9-9ece-1924e6bb9215\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"ba81b3b7-542e-4429-9f65-c21baba3548e\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"ToggleOnBoard\",\n                    \"type\": \"Button\",\n                   
-      \"id\": \"b0771f62-d8f2-496d-ac0e-50a091aa8300\",\n                    \"expectedControlType\":
-      \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c5eaafe3-1b5f-48e1-9f41-756bae83cc88\",\n                   
-      \"path\": \"<Mouse>/leftButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"LeftClick\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"2169a0f7-8399-4ab3-8b26-b2b1609190f3\",\n                   
-      \"path\": \"<Mouse>/position\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"a389b896-1388-4af0-8d19-9d3ca53ccc11\",\n                   
-      \"path\": \"<Mouse>/rightButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"RightClick\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"edd6f2f7-265e-40d6-9117-076cc465d75f\",\n                   
-      \"path\": \"<Keyboard>/f1\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"PC\",\n                   
-      \"action\": \"ToggleOnBoard\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"XRI Head\",\n            \"id\": \"02bcf3f2-95f8-4dbe-a006-ede5f6806d90\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"eb12f605-4130-48b5-a17f-add1d88d034c\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"15c8489f-511f-4f51-b4b9-e7f82a7ccd4c\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Is Tracked\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"be73b270-012a-4d45-b917-281fac5b333f\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Tracking State\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"dc2f2dca-3c80-4a6c-9733-eac9985dc238\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Eye Gaze Position\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"1b09622b-ab9b-468a-b2b0-158ac6c45f8a\",\n                    \"expectedControlType\":
-      \"Vector3\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Eye Gaze Rotation\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"9805771c-2d9b-4263-8e08-16603bee456a\",\n                   
-      \"expectedControlType\": \"Quaternion\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Eye Gaze Tracking State\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"c62d0132-ea61-4006-8f6b-c1207b3ae4cb\",\n                    \"expectedControlType\":
-      \"Integer\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"9eb39f25-965e-4056-a12c-97a660bc80b2\",\n                   
-      \"path\": \"<XRHMD>/centerEyePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"0a5a6155-04f9-42f3-a77a-9bb450cafc73\",\n                    \"path\":
-      \"<XRHMD>/centerEyeRotation\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"Quaternion Fallback\",\n                    \"id\": \"4f11d986-6e5b-4078-9c65-cc295a8ed6ec\",\n                   
-      \"path\": \"QuaternionFallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Eye Gaze Rotation\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"f7bf6b04-0c6e-4c12-bcff-fc4865c80734\",\n                   
-      \"path\": \"<EyeGaze>/pose/rotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Eye Gaze Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"7915c2fe-efd2-42e8-a6be-37b289778198\",\n                    \"path\":
-      \"<XRHMD>/centerEyeRotation\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Eye Gaze Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"third\",\n                    \"id\": \"38646ffd-0229-4207-9dd9-bf12f8fa95e0\",\n                   
-      \"path\": \"\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Eye Gaze Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"Vector 3 Fallback\",\n                    \"id\": \"8b1f6a6a-d7a1-4c0b-bcc7-4270d442e4a0\",\n                   
-      \"path\": \"Vector3Fallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Eye Gaze Position\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"011be72e-2efc-4d19-9e1b-6b3decb9c076\",\n                   
-      \"path\": \"<EyeGaze>/pose/position\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Eye Gaze Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"39648bbe-2ef3-40f3-ab60-29d3c8efa382\",\n                    \"path\":
-      \"<XRHMD>/centerEyePosition\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Eye Gaze Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"third\",\n                    \"id\": \"b884c856-65a8-4d6b-9e86-cd50052d3e22\",\n                   
-      \"path\": \"\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Eye Gaze Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"Integer Fallback\",\n                    \"id\": \"b3e7abf9-20b7-4820-b7be-707e283001bc\",\n                   
-      \"path\": \"IntegerFallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Eye Gaze Tracking State\",\n                    \"isComposite\":
-      true,\n                    \"isPartOfComposite\": false\n                },\n               
-      {\n                    \"name\": \"first\",\n                    \"id\": \"0667d4eb-f38c-4dbe-be0c-94ac1e5ed1c5\",\n                   
-      \"path\": \"<EyeGaze>/pose/trackingState\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Eye Gaze Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"second\",\n                    \"id\": \"9e49ae31-6e6f-499d-8cd2-defb3f117e17\",\n                   
-      \"path\": \"<XRHMD>/trackingState\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Eye Gaze Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"third\",\n                    \"id\": \"6f94b789-fd7c-4fd7-9f05-22d04d50bd7e\",\n                   
-      \"path\": \"\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Eye Gaze Tracking State\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"fd46b50d-e2a5-43ac-ab0e-112da2ed2ddd\",\n                   
-      \"path\": \"<XRHMD>/trackingState\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Tracking State\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"140f775d-f2eb-47bc-a89d-762383a0a76f\",\n                    \"path\":
-      \"<XRHMD>/isTracked\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Is Tracked\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"XRI UI\",\n            \"id\": \"bc32cad0-6696-4bab-a5ec-24061f3da1af\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Navigate\",\n                   
-      \"type\": \"PassThrough\",\n                    \"id\": \"1a702a0b-a37a-42e1-922b-cf8ea26c13d1\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      false\n                },\n                {\n                    \"name\":
-      \"Submit\",\n                    \"type\": \"Button\",\n                   
-      \"id\": \"916b3c5f-ecf1-411b-b00f-605e36ef9952\",\n                    \"expectedControlType\":
-      \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Cancel\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"11f0393f-0b8d-4746-aaad-76e0fba907a4\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Point\",\n                   
-      \"type\": \"PassThrough\",\n                    \"id\": \"f53b833b-3c85-4744-a62f-8ed95f3785c1\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Click\",\n                    \"type\": \"PassThrough\",\n                   
-      \"id\": \"51cb73ec-fd32-4418-bc4b-633c2be56ec7\",\n                    \"expectedControlType\":
-      \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"ScrollWheel\",\n                   
-      \"type\": \"PassThrough\",\n                    \"id\": \"45efe933-0686-4aa5-aae0-63ebe27a5936\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      false\n                },\n                {\n                    \"name\":
-      \"MiddleClick\",\n                    \"type\": \"PassThrough\",\n                   
-      \"id\": \"3e5ed54a-7b6b-4db2-bc43-152da01c2832\",\n                    \"expectedControlType\":
-      \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"RightClick\",\n                   
-      \"type\": \"PassThrough\",\n                    \"id\": \"baa2b9ab-73ea-4bab-a0bf-36c46ac91e83\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"b0de9ceb-3f9c-4558-820f-40e36d0d6adc\",\n                   
-      \"path\": \"<Mouse>/position\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Point\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"f49a4fe8-cc7e-4259-9e9c-d78b6b944819\",\n                   
-      \"path\": \"<Pen>/position\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Point\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"9921c39c-47ff-40be-9725-072663069054\",\n                   
-      \"path\": \"<Touchscreen>/touch*/position\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Point\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"650d1273-349f-40b9-b393-bf2e5d81a4d0\",\n                   
-      \"path\": \"<Mouse>/leftButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Click\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"84a012d9-1874-46fe-abd3-12f90b31c527\",\n                   
-      \"path\": \"<Pen>/tip\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Click\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"b0fc05c5-9321-453e-91e5-ffc7588b1186\",\n                   
-      \"path\": \"<Mouse>/scroll\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"ScrollWheel\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"fb174599-2bf5-4edb-9224-734b7193995e\",\n                   
-      \"path\": \"<Mouse>/middleButton\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"MiddleClick\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"accf6719-eae2-4fda-b0a8-06592538e599\",\n                    \"path\":
-      \"<Mouse>/rightButton\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"RightClick\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"Gamepad\",\n                    \"id\": \"296adab6-c16b-4c6a-b88b-9ea6ab343ce5\",\n                   
-      \"path\": \"2DVector\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"ffe6b0d7-2898-4d28-8247-814e2f0b1a53\",\n                   
-      \"path\": \"<Gamepad>/leftStick/up\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"up\",\n                    \"id\": \"651571c6-35c8-45b8-8e43-911e78b2cbc8\",\n                   
-      \"path\": \"<Gamepad>/rightStick/up\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"down\",\n                    \"id\": \"c092583f-7428-4da8-9cab-434b111990da\",\n                   
-      \"path\": \"<Gamepad>/leftStick/down\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"down\",\n                    \"id\": \"82dba161-dc88-4147-bb15-dea43f4a6247\",\n                   
-      \"path\": \"<Gamepad>/rightStick/down\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"left\",\n                    \"id\": \"22ea5f90-5c2b-407e-94f8-48d7978928a4\",\n                   
-      \"path\": \"<Gamepad>/leftStick/left\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"left\",\n                    \"id\": \"1bff39c5-4c6b-499d-b451-b9cb1740a999\",\n                   
-      \"path\": \"<Gamepad>/rightStick/left\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"right\",\n                    \"id\": \"f741423f-9882-42df-85f2-85ea0e82626f\",\n                   
-      \"path\": \"<Gamepad>/leftStick/right\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"right\",\n                    \"id\": \"90c20584-30fb-45e5-8f88-f5df3fef1dac\",\n                   
-      \"path\": \"<Gamepad>/rightStick/right\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"9b37d8ba-6e39-479a-8591-9b7120d25479\",\n                   
-      \"path\": \"<Gamepad>/dpad\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"Joystick\",\n                    \"id\": \"43f11b38-fe0d-45f5-b355-624c48298d20\",\n                   
-      \"path\": \"2DVector\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"ff65ce62-c81b-4ff6-ab07-4644d09bfad4\",\n                   
-      \"path\": \"<Joystick>/stick/up\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"down\",\n                    \"id\": \"559f211f-c355-4fee-8eff-d9e19e5a8cd8\",\n                   
-      \"path\": \"<Joystick>/stick/down\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"left\",\n                    \"id\": \"82948e5a-edb6-489a-8bc1-5403a225781a\",\n                   
-      \"path\": \"<Joystick>/stick/left\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"right\",\n                    \"id\": \"bb3ca8ad-53e8-46d9-83ed-43299dfba77f\",\n                   
-      \"path\": \"<Joystick>/stick/right\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"Keyboard\",\n                    \"id\":
-      \"972ed60c-9015-427f-b670-850f2e7c005b\",\n                    \"path\": \"2DVector\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"\",\n                    \"action\": \"Navigate\",\n                   
-      \"isComposite\": true,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"up\",\n                   
-      \"id\": \"d15ed8fe-6dfb-48cd-abc5-b50ce3acfc88\",\n                    \"path\":
-      \"<Keyboard>/w\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"48e7bea2-d4c5-48e1-a780-c758a67b7236\",\n                   
-      \"path\": \"<Keyboard>/upArrow\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"down\",\n                    \"id\": \"de6c73be-2b47-4fbe-b7c0-37fb1cd88c17\",\n                   
-      \"path\": \"<Keyboard>/s\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"down\",\n                    \"id\": \"f83b7eab-033f-49c8-a8aa-d05325b52545\",\n                   
-      \"path\": \"<Keyboard>/downArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"left\",\n                    \"id\": \"c5bbfec0-bdab-4674-abe9-7059eac44abd\",\n                   
-      \"path\": \"<Keyboard>/a\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"left\",\n                    \"id\": \"8585fe14-7fd6-462e-93d6-c35ff844ed3a\",\n                   
-      \"path\": \"<Keyboard>/leftArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"right\",\n                    \"id\": \"29f49c4d-db24-4f9f-ac2c-daafb1a94eed\",\n                   
-      \"path\": \"<Keyboard>/d\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Navigate\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"right\",\n                    \"id\": \"f4371433-2d22-47a2-9d06-0e41026f67a6\",\n                   
-      \"path\": \"<Keyboard>/rightArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Navigate\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"ba613c7f-899d-480e-ad5b-7649ac64dfe9\",\n                   
-      \"path\": \"*/{Submit}\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Submit\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"0aae00de-1c44-4e8c-9dbc-9576d13d56b3\",\n                   
-      \"path\": \"*/{Cancel}\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Cancel\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"0dba4f65-ecd0-4b29-b67f-2279a96171a8\",\n                   
-      \"path\": \"<Touchscreen>/touch*/click\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Click\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                }\n           
-      ]\n        },\n        {\n            \"name\": \"XRI RightHand Interaction\",\n           
-      \"id\": \"3c16b6c3-f96c-4548-8397-7b7b196c3af3\",\n            \"actions\":
-      [\n                {\n                    \"name\": \"Select\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"84609d96-6f32-4834-a5e5-071915efdae7\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Select Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"47ae1879-9356-4e27-8035-2ca716c6047b\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Activate\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"3fdf9bc2-c887-47e8-a4fc-c0cd46768d75\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Activate Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"bb647409-95ea-4d89-9936-af5a4a312b4a\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"UI Press\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"9de276ff-1f22-44c0-85e8-f7c92c8fcc11\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"UI Press Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"8cc67f3c-223e-465c-97d8-8fafac44727f\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Rotate Anchor\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"9d72818e-cce0-4fe5-9452-baa0f1da6f3f\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Translate Anchor\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"b5df7ced-7fd9-40f5-8d3d-95ee6293256e\",\n                    \"expectedControlType\":
-      \"Vector2\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"788c8bb2-1271-4852-85c6-4bf16f3d4410\",\n                   
-      \"path\": \"<XRController>{RightHand}/gripPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"99a905c9-740e-487b-9088-c9407b9a3169\",\n                    \"path\":
-      \"<MetaAimHand>{RightHand}/indexPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"fe57780e-36f8-472e-b194-982e0cb02723\",\n                    \"path\":
-      \"<XRController>{RightHand}/grip\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"dcb1a87e-bec1-48dc-8fdf-a5fa553ab251\",\n                    \"path\":
-      \"<MetaAimHand>{RightHand}/pinchStrengthIndex\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"bdbed541-9dc0-4ac8-b2f8-210ac65150a6\",\n                    \"path\":
-      \"<XRController>{RightHand}/triggerPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Activate\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"0f19d390-32c9-4999-abdc-45658689ce61\",\n                    \"path\":
-      \"<XRController>{RightHand}/trigger\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Activate Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"e2f93719-97f6-47d1-b855-d2004800d16b\",\n                    \"path\":
-      \"<XRController>{RightHand}/triggerPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"ce0d6efe-d206-47ff-95fd-340a155e87d1\",\n                    \"path\":
-      \"<MetaAimHand>{RightHand}/indexPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"e173f2d9-0a6c-4971-ba34-1a63998e1bac\",\n                    \"path\":
-      \"<XRController>{RightHand}/trigger\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"e355b0ab-72ec-4d3a-9b3c-40949521c729\",\n                    \"path\":
-      \"<MetaAimHand>{RightHand}/pinchStrengthIndex\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"75ce6043-ad5b-4061-be02-3e67866feb1f\",\n                    \"path\":
-      \"<XRController>{RightHand}/Primary2DAxis\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"ScaleVector2(y=0),StickDeadzone\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Rotate
-      Anchor\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"da322086-84a6-441f-b8ef-7d2cee5315df\",\n                   
-      \"path\": \"<XRController>{RightHand}/Primary2DAxis\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"ScaleVector2(x=0),StickDeadzone\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Translate
-      Anchor\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"XRI RightHand\",\n            \"id\": \"a0db759b-b67c-48e6-9ce9-9140ce80a576\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"738ddda9-d9de-4928-9515-7ba0aec97a77\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"537ca085-9eb2-408d-8bf3-874cc44e2f2d\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Is Tracked\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"bd125cc8-2e6d-451f-a917-d91d2b379c22\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Tracking State\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"5355ed5c-ff0b-4f8b-8b28-d28d7c47a230\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Haptic Device\",\n                    \"type\": \"PassThrough\",\n                   
-      \"id\": \"914df610-a4f0-4475-bdb8-909d5bf156df\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\",\n                    \"initialStateCheck\": false\n                },\n               
-      {\n                    \"name\": \"Aim Position\",\n                    \"type\":
-      \"Value\",\n                    \"id\": \"dc72d19f-0357-4266-a1aa-73c1a4872065\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Aim Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"dbd09048-05ff-4d75-a15c-5f99afa96431\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Aim Flags\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"5296299a-4ab6-4082-81f8-74eb874b9d3a\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Pinch Position\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"fc2d3750-4205-4a42-989f-7a67347f4ed0\",\n                    \"expectedControlType\":
-      \"Vector3\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Poke Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"e1371a7d-0aee-4d3f-886b-9b4359611b91\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Poke Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"db56f37c-8550-4c07-ad1d-a1431222676b\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"ThumbStickClicked\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"43824124-76d4-4497-be4b-3eb690de3c5a\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"Quaternion Fallback\",\n                    \"id\": \"09ee2eab-4cd1-49e3-bf9a-8485d5f4abc7\",\n                   
-      \"path\": \"QuaternionFallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Rotation\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"0476b01b-eae0-448c-8e56-f0f72ad5833e\",\n                   
-      \"path\": \"<XRController>{RightHand}/pointerRotation\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"c083db3e-7626-42b3-81ed-b0e8d0461e87\",\n                    \"path\":
-      \"<XRController>{RightHand}/deviceRotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"third\",\n                   
-      \"id\": \"ae6f0c43-da27-4b53-9aa3-a0c7a1546bde\",\n                    \"path\":
-      \"<XRHandDevice>{RightHand}/deviceRotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"Vector 3 Fallback\",\n                   
-      \"id\": \"24e7a875-587e-4ec6-84aa-55beaa5a2493\",\n                    \"path\":
-      \"Vector3Fallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Position\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"7fc1c1f4-2247-4fad-8e58-abd6eed377bd\",\n                   
-      \"path\": \"<XRController>{RightHand}/pointerPosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"f5fc92fe-cc9e-4501-acb7-e985f1158c50\",\n                    \"path\":
-      \"<XRController>{RightHand}/devicePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"third\",\n                   
-      \"id\": \"4643ab9e-a67d-4be8-862f-4021d7fa9544\",\n                    \"path\":
-      \"<XRHandDevice>{RightHand}/devicePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"83220beb-f7e4-4705-a2bc-5c17360e33c4\",\n                    \"path\":
-      \"<XRController>{RightHand}/*\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Haptic Device\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"390ce61c-7bf0-4510-b2e8-431d37d4de11\",\n                   
-      \"path\": \"<XRController>{RightHand}/trackingState\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"f19ee36e-a9ad-44fc-9161-6a180da4013a\",\n                   
-      \"path\": \"<XRHandDevice>{RightHand}/trackingState\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c535b040-7829-4802-ada8-4fe8c809dc1c\",\n                   
-      \"path\": \"<MetaAimHand>{RightHand}/devicePosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Aim
-      Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"3e8cee32-f2f2-4512-9b5b-dfb71980daae\",\n                   
-      \"path\": \"<MetaAimHand>{RightHand}/deviceRotation\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Aim
-      Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"32ff725d-70e9-49c6-8c85-e0d6481f5e41\",\n                   
-      \"path\": \"<XRHandDevice>{RightHand}/pinchPosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Pinch
-      Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"2aa23d1d-ad29-4915-b2f7-d16c38252d21\",\n                   
-      \"path\": \"<XRHandDevice>{RightHand}/pokePosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Poke
-      Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"f1e3209a-4bc6-40cd-8c3e-02716b52bc5e\",\n                   
-      \"path\": \"<XRHandDevice>{RightHand}/pokeRotation\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Poke
-      Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"4e95df33-ddb9-40dc-b87e-62831b2a393e\",\n                   
-      \"path\": \"<XRController>{RightHand}/isTracked\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Is Tracked\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"7dafbdf6-cc74-4335-9ee6-9e17a1af26e3\",\n                    \"path\":
-      \"<XRHandDevice>{RightHand}/isTracked\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Is Tracked\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"19f8fe96-04ea-45f3-a271-a32ddf2e951e\",\n                    \"path\":
-      \"<MetaAimHand>{RightHand}/aimFlags\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Aim Flags\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"3e84d71d-c0f4-41e0-b156-2d666087eaa2\",\n                    \"path\":
-      \"<XRController>/thumbstickClicked\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"ThumbStickClicked\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      }\n            ]\n        },\n        {\n            \"name\": \"XRI LeftHand
-      Interaction\",\n            \"id\": \"981b83d5-9f9d-4ba8-8efd-3cdcafed6ed5\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Select\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"fc80e1bd-bd81-4fbf-a7ba-8ac4c18643bd\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Select Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"a6cc4546-f981-4162-abcc-6efc7cff2074\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Activate\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"0968d24d-d484-4a30-9a81-b3349b8468fd\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"Activate Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"5aec5bd1-0c7b-4fa7-b1ea-f398dae14ea4\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"UI Press\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"6b1d0193-9b91-48ba-b56c-9072ad93469b\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"UI Press Value\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"6811423a-cc71-4b41-a397-7c23bc8fbd72\",\n                   
-      \"expectedControlType\": \"Axis\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Rotate Anchor\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"4437f0d0-1235-42fe-918f-ff2e7d88fb5a\",\n                   
-      \"expectedControlType\": \"Vector2\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Translate Anchor\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"ed608bc0-43d4-4299-9ac9-6bb9bf25458c\",\n                    \"expectedControlType\":
-      \"Vector2\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"d725b2bd-8d42-4acb-b445-fd12d8077fbe\",\n                   
-      \"path\": \"<XRController>{LeftHand}/gripPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"298f2f15-45df-44cf-b157-ed4ba0aae40b\",\n                    \"path\":
-      \"<MetaAimHand>{LeftHand}/indexPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Select\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"0a60d551-c0f9-4cd0-9027-61591fb506ea\",\n                    \"path\":
-      \"<XRController>{LeftHand}/grip\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Select Value\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"2987bbd0-a82a-42db-b96d-0ac145b085ad\",\n                   
-      \"path\": \"<MetaAimHand>{LeftHand}/pinchStrengthIndex\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Select
-      Value\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"b6382601-c0b8-4094-8c0d-02d51a0d6eef\",\n                   
-      \"path\": \"<XRController>{LeftHand}/triggerPressed\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Activate\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"9955759f-1c82-4333-871f-f70c033e062e\",\n                    \"path\":
-      \"<XRController>{LeftHand}/trigger\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Activate Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"0943a0d0-c3ff-421e-9a4e-67e09cdb61c2\",\n                    \"path\":
-      \"<XRController>{LeftHand}/triggerPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"ddffe74e-eb73-4860-8eb4-27302dab647b\",\n                    \"path\":
-      \"<MetaAimHand>{LeftHand}/indexPressed\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"fefe9eb2-ca0f-4707-9924-705e8567ac93\",\n                    \"path\":
-      \"<XRController>{LeftHand}/trigger\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"19b6eae9-f526-4dbc-9711-33d69f0e09c8\",\n                    \"path\":
-      \"<MetaAimHand>{LeftHand}/pinchStrengthIndex\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"UI Press Value\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"8fd9db46-1855-4ba7-b705-852cef4542d0\",\n                    \"path\":
-      \"<XRController>{LeftHand}/Primary2DAxis\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"ScaleVector2(y=0),StickDeadzone\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Rotate
-      Anchor\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"56c2ffbf-7047-4d11-8ef8-25a24f671b8e\",\n                   
-      \"path\": \"<XRController>{LeftHand}/Primary2DAxis\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"ScaleVector2(x=0),StickDeadzone\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Translate
-      Anchor\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"XRI LeftHand\",\n            \"id\": \"81085cc8-d3f1-4502-b5d6-f010e4fda463\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"261b43f8-e154-4809-aadd-c45c8495c0ea\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"a543f181-4fcb-482f-8205-121bb50c3b45\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Is Tracked\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"c6b96393-66c0-4df6-8f48-96b1ba4b726c\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Tracking State\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"66753a90-6b50-4b06-adfc-7366fa1cbe47\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Haptic Device\",\n                    \"type\": \"PassThrough\",\n                   
-      \"id\": \"310f8d18-da7c-4dd4-bdfb-702e08264181\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\",\n                    \"initialStateCheck\": false\n                },\n               
-      {\n                    \"name\": \"Aim Position\",\n                    \"type\":
-      \"Value\",\n                    \"id\": \"e8e8cc9f-83d0-4eec-b6c4-ae7bdd1bb645\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Aim Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"825e3474-209c-4cb3-b608-5f7d5eac0f38\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Aim Flags\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"21fb25ab-955e-4d34-bc0e-381a884cf302\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Pinch Position\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"efdca63f-9ec6-4759-bc74-0ac84eeeb388\",\n                    \"expectedControlType\":
-      \"Vector3\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"Poke Position\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"f2d026fd-84b7-4afa-bbd1-aeedbad7f565\",\n                   
-      \"expectedControlType\": \"Vector3\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"Poke Rotation\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"e81d3555-a705-4635-9223-ce0022918a84\",\n                    \"expectedControlType\":
-      \"Quaternion\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"Quaternion Fallback\",\n                    \"id\": \"a803d9bf-9854-4569-96a1-bb9c6a78878d\",\n                   
-      \"path\": \"QuaternionFallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Rotation\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"f24fb2bf-fb67-4155-b6a6-191768242532\",\n                   
-      \"path\": \"<XRController>{LeftHand}/pointerRotation\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"e696560f-9d8f-4c82-badb-02548d588a18\",\n                    \"path\":
-      \"<XRController>{LeftHand}/deviceRotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"third\",\n                   
-      \"id\": \"67612fd8-9fcb-4061-b9d7-203a6904aa19\",\n                    \"path\":
-      \"<XRHandDevice>{LeftHand}/deviceRotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"Vector 3 Fallback\",\n                   
-      \"id\": \"29fa9fb1-354c-4666-82f6-632d5bf2d14c\",\n                    \"path\":
-      \"Vector3Fallback\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Position\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"first\",\n                    \"id\": \"3f66ed65-0b9f-4fe7-971b-9ca643addca6\",\n                   
-      \"path\": \"<XRController>{LeftHand}/pointerPosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"second\",\n                   
-      \"id\": \"fa43e286-0bad-473d-97e3-0bd0bf4f078f\",\n                    \"path\":
-      \"<XRController>{LeftHand}/devicePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"third\",\n                   
-      \"id\": \"e01654b6-9f66-4964-a147-a4293fda55f6\",\n                    \"path\":
-      \"<XRHandDevice>{LeftHand}/devicePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"add71c90-3db1-4b6f-963c-19c5aa62757d\",\n                    \"path\":
-      \"<XRController>{LeftHand}/*\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Generic XR Controller\",\n                   
-      \"action\": \"Haptic Device\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"f07439e9-8765-4ba6-954e-45f96dd3a2e9\",\n                   
-      \"path\": \"<XRController>{LeftHand}/trackingState\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"f14085ef-e0c5-4921-80d3-9559151ae31a\",\n                   
-      \"path\": \"<XRHandDevice>{LeftHand}/trackingState\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Tracking
-      State\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"db1a1111-b1eb-47bd-b5ea-6cdab7477901\",\n                   
-      \"path\": \"<MetaAimHand>{LeftHand}/devicePosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Aim
-      Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"fafe464a-0f48-4148-9de9-83d9764522a1\",\n                   
-      \"path\": \"<MetaAimHand>{LeftHand}/deviceRotation\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Aim
-      Rotation\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c71619fd-af92-4ea6-aae0-76b852500c14\",\n                   
-      \"path\": \"<XRHandDevice>{LeftHand}/pinchPosition\",\n                   
-      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Generic XR Controller\",\n                    \"action\": \"Pinch
-      Position\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c1541383-1dee-476e-ba9d-6f9d6caffdba\",\n                   
-      \"path\": \"<XRHandDevice>{LeftHand}/pokePosition\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Poke Position\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"85e88548-56ef-470c-b5d1-0f667b81795f\",\n                    \"path\":
-      \"<XRHandDevice>{LeftHand}/pokeRotation\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Poke Rotation\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"3645131c-06f0-4c1f-837d-a9560c1b2d4f\",\n                    \"path\":
-      \"<XRController>{LeftHand}/isTracked\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Is Tracked\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"7bf49af1-427e-4b2f-9ade-6dda648458d3\",\n                    \"path\":
-      \"<XRHandDevice>{LeftHand}/isTracked\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Is Tracked\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"7e4ed422-0fe0-441e-a83a-46ee18be9929\",\n                    \"path\":
-      \"<MetaAimHand>{LeftHand}/aimFlags\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Generic XR Controller\",\n                    \"action\": \"Aim Flags\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      }\n            ]\n        }\n    ],\n    \"controlSchemes\": [\n        {\n           
-      \"name\": \"PC\",\n            \"bindingGroup\": \"PC\",\n            \"devices\":
-      [\n                {\n                    \"devicePath\": \"<Mouse>\",\n                   
-      \"isOptional\": false,\n                    \"isOR\": false\n               
-      },\n                {\n                    \"devicePath\": \"<Keyboard>\",\n                   
-      \"isOptional\": true,\n                    \"isOR\": false\n               
-      }\n            ]\n        }\n    ]\n}"
-    m_IsDirty: 0
-  m_Toolbar:
-    m_IsDirty: 0
-    m_SelectedControlSchemeIndex: -1
-    m_SelectedDeviceRequirementIndex: -1
-    m_ControlSchemes:
-    - m_Name: PC
-      m_BindingGroup: PC
-      m_DeviceRequirements:
-      - m_ControlPath: <Mouse>
-        m_Flags: 0
-      - m_ControlPath: <Keyboard>
-        m_Flags: 1
-    m_SearchText: 
-  m_DirtyTitle:
-    m_Text: (*) PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Title:
-    m_Text: PlayerInputs (Input Actions)
-    m_Image: {fileID: 0}
-    m_Tooltip: 
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-=======
->>>>>>> 47ec0e5 (Scene setup)
   m_EditorHideFlags: 1
   m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -3658,56 +880,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 667
-    width: 1274
-    height: 332
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
-    y: 636
-    width: 1319
-    height: 363
-=======
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    y: 952
-    width: 1959.6666
-    height: 407.00006
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 675
-    width: 1317
-    height: 324
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
-    y: 568.8
-    width: 1179.8
-    height: 254.59998
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-    y: 568.8
-    width: 1194.2
-    height: 254.59998
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-    y: 568.8
-    width: 1194.2
-    height: 254.59998
->>>>>>> 53c0b56 (Load test and movement recorded)
+    y: 544
+    width: 1161.4
+    height: 279.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -3729,78 +904,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - Assets/Scripts/Cards
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    - Assets/Resources
-=======
-<<<<<<< HEAD
-    - Assets/Scripts/Cards
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
     - Assets
-=======
-    - Assets/Materials
->>>>>>> Stashed changes
-=======
-    - Assets/Materials
->>>>>>> feature/Onboarding
-=======
-    - Assets/Models/Balanza/Textures
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-    - Assets/Shader
->>>>>>> origin/feature/Modelos3D
-=======
-    - Assets/Scripts/Cards
-=======
-    - Assets/Scripts/DragableGameObjects
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-    - Assets/Scripts/Utilities
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    - Assets/Scenes
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-    - Assets/Scripts
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-    - Assets
->>>>>>> 47ec0e5 (Scene setup)
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -3808,185 +912,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - Assets/Scripts/Cards
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-  - Assets/Resources
-=======
-<<<<<<< HEAD
-  - Assets/Scripts/Cards
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   - Assets
-=======
-  - Assets/Materials
->>>>>>> Stashed changes
-=======
-  - Assets/Materials
->>>>>>> feature/Onboarding
-=======
-  - Assets/Models/Balanza/Textures
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-  - Assets/Shader
->>>>>>> origin/feature/Modelos3D
-=======
-  - Assets/Scripts/Cards
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
->>>>>>> c110dbc (Singletone i deckSave)
->>>>>>> 46cba0c (Singletone i deckSave)
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\lokyy\Desktop\Repos Git\TFG-24-25\TFG 24-25
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 76}
-    m_SelectedIDs: c8a20000
-    m_LastClickedID: 41672
-    m_ExpandedIDs: 000000002ea20000baa2000000ca9a3b
-=======
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 61}
-    m_SelectedIDs: f8a40000
-    m_LastClickedID: 42232
-    m_ExpandedIDs: 0000000056a4000058a400005aa400005ca400005ea4000060a4000062a4000064a4000066a4000068a400006aa400006ca400006ea4000000ca9a3b
-=======
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 54}
-    m_SelectedIDs: 6cb90000
-    m_LastClickedID: 47468
-    m_ExpandedIDs: 0000000000a1000008b9000000ca9a3bffffff7f
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 0}
-<<<<<<< Updated upstream
-    m_SelectedIDs: ca7a0000
-    m_LastClickedID: 31434
-    m_ExpandedIDs: 00000000ce7a0000d07a0000d27a0000207e0000267e0000b007010000ca9a3b
-=======
-    m_SelectedIDs: b4880000
-    m_LastClickedID: 34996
-    m_ExpandedIDs: 0000000080880000c288000000ca9a3bffffff7f
->>>>>>> Stashed changes
-=======
-    scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
-    m_SelectedIDs: a8880000
-    m_LastClickedID: 34984
-    m_ExpandedIDs: 000000007488000000ca9a3bffffff7f
->>>>>>> feature/Onboarding
-=======
-    scrollPos: {x: 0, y: 9}
-    m_SelectedIDs: ae970000
-    m_LastClickedID: 38830
-    m_ExpandedIDs: 00000000d8920000da920000dc920000de920000e0920000e2920000e4920000e6920000e8920000ea920000ec920000ee920000f0920000f2920000f4920000f6920000f8920000fa920000fc920000fe92000000930000029300000493000006930000089300000a9300000c9300000e93000010930000129300001493000016930000189300004c960000aa97000000ca9a3bffffff7f
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 809}
-    m_SelectedIDs: 22970000
-    m_LastClickedID: 38690
-    m_ExpandedIDs: 000000000c9300000e93000010930000129300001493000016930000189300001a9300001c9300001e93000020930000229300002493000026930000289300002a9300002c9300002e93000030930000329300003493000036930000389300003a9300003c9300003e93000040930000429300004493000046930000489300004a9300004c9300004e930000829600006097000000ca9a3bffffff7f
->>>>>>> origin/feature/Modelos3D
-=======
-    m_SelectedIDs: 26890000
-    m_LastClickedID: 35110
-    m_ExpandedIDs: 000000006a880000d688000000ca9a3bffffff7f
-=======
-  - Assets/Scripts/DragableGameObjects
-=======
-  - Assets/Scripts/Utilities
->>>>>>> c454dda (Created Scene & movement recorded)
-=======
-  - Assets/Scenes
->>>>>>> 84920df (Load test and movement recorded)
-=======
-  - Assets/Scripts
->>>>>>> b6a556f (Fixes and various saves)
-=======
-  - Assets
->>>>>>> 47ec0e5 (Scene setup)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Pau\Desktop\kraken\TFG\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 101.400024}
-    m_SelectedIDs: 3c800000
-    m_LastClickedID: 32828
-    m_ExpandedIDs: 000000001e8000003480000000ca9a3b
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-    scrollPos: {x: 0, y: 133.40002}
-    m_SelectedIDs: 08840000
-    m_LastClickedID: 33800
-    m_ExpandedIDs: 00000000dc830000f483000000ca9a3b
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
-    m_SelectedIDs: ba9a0000
-    m_LastClickedID: 39610
-    m_ExpandedIDs: 000000004e9a000000ca9a3b
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-    m_SelectedIDs: f8830000
-    m_LastClickedID: 33784
-    m_ExpandedIDs: 00000000e2830000f883000000ca9a3b
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-    scrollPos: {x: 0, y: 79}
-<<<<<<< HEAD
-    m_SelectedIDs: 20a40000
-    m_LastClickedID: 42016
-    m_ExpandedIDs: 0000000020a4000092a4000000ca9a3b
->>>>>>> 47ec0e5 (Scene setup)
-=======
-    m_SelectedIDs: 38a10000
-    m_LastClickedID: 41272
-    m_ExpandedIDs: 0000000038a1000000ca9a3b
->>>>>>> d319b32 (Spawned Dummy Token)
+    scrollPos: {x: 0, y: 69}
+    m_SelectedIDs: 849f0000
+    m_LastClickedID: 40836
+    m_ExpandedIDs: 00000000849f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4002,7 +937,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -4014,82 +949,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000002ea20000
-=======
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> cbb4170 (Fixes and various saves)
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000056a4000058a400005aa400005ca400005ea4000060a4000062a4000064a4000066a4000068a400006aa400006ca400006ea4000000ca9a3b
-=======
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000000a1000000ca9a3bffffff7f
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    m_ExpandedIDs: 00000000ca7a0000cc7a0000ce7a0000d07a0000d27a0000
-=======
-    m_ExpandedIDs: 000000008088000000ca9a3bffffff7f
->>>>>>> Stashed changes
-=======
-    m_ExpandedIDs: 0000000074880000
->>>>>>> feature/Onboarding
-=======
-    m_ExpandedIDs: 00000000d8920000da920000dc920000de920000e0920000e2920000e4920000e6920000e8920000ea920000ec920000ee920000f0920000f2920000f4920000f6920000f8920000fa920000fc920000fe92000000930000029300000493000006930000089300000a9300000c9300000e9300001093000012930000149300001693000018930000aa97000000ca9a3bffffff7f
->>>>>>> feature/Modelos3D
-=======
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000000c9300000e93000010930000129300001493000016930000189300001a9300001c9300001e93000020930000229300002493000026930000289300002a9300002c9300002e93000030930000329300003493000036930000389300003a9300003c9300003e93000040930000429300004493000046930000489300004a9300004c9300004e9300006097000000ca9a3bffffff7f
->>>>>>> origin/feature/Modelos3D
-=======
-    m_ExpandedIDs: 000000006a88000000ca9a3bffffff7f
-=======
-    m_ExpandedIDs: 000000001e800000
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-=======
-    m_ExpandedIDs: 00000000dc830000
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    m_ExpandedIDs: 000000004e9a0000
->>>>>>> 84920df (Load test and movement recorded)
-<<<<<<< HEAD
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
-=======
-    m_ExpandedIDs: 00000000e283000000ca9a3b
->>>>>>> b6a556f (Fixes and various saves)
->>>>>>> cbb4170 (Fixes and various saves)
-=======
-    m_ExpandedIDs: 0000000020a4000000ca9a3b
->>>>>>> 47ec0e5 (Scene setup)
-=======
-    m_ExpandedIDs: 0000000038a1000000ca9a3b
->>>>>>> d319b32 (Spawned Dummy Token)
+    m_ExpandedIDs: 00000000849f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4114,61 +974,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: acb80600
-    m_LastClickedInstanceID: 440492
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
-=======
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 56cdd8ff
-    m_LastClickedInstanceID: -2568874
-    m_HadKeyboardFocusLastEvent: 1
-=======
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_HadKeyboardFocusLastEvent: 0
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-    m_ExpandedInstanceIDs: c6230000c8cb000024a70000
-=======
-    m_ExpandedInstanceIDs: c6230000606a0000d66600008a610000186300002a63000000000000
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 84920df (Load test and movement recorded)
-=======
-    m_SelectedInstanceIDs: 006e0300
-    m_LastClickedInstanceID: 224768
->>>>>>> 47ec0e5 (Scene setup)
-=======
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
->>>>>>> d319b32 (Spawned Dummy Token)
+    m_SelectedInstanceIDs: 58cc0000
+    m_LastClickedInstanceID: 52312
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c8cb000024a70000
-<<<<<<< HEAD
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> 4de90da (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-    m_ExpandedInstanceIDs: c6230000c8cb000024a70000
->>>>>>> c454dda (Created Scene & movement recorded)
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4192,71 +1001,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 92.400024}
+    m_ScrollPosition: {x: 0, y: 67.600006}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &18
-=======
-<<<<<<< HEAD
---- !u!114 &17
-=======
 --- !u!114 &16
-<<<<<<< HEAD
-=======
-=======
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
-  m_DirectoriesAreaWidth: 210
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
---- !u!114 &17
-=======
---- !u!114 &18
->>>>>>> Stashed changes
-=======
---- !u!114 &18
->>>>>>> feature/Modelos3D
-<<<<<<< HEAD
->>>>>>> 1427dda (Scripts added)
-<<<<<<< HEAD
->>>>>>> 01d1b9f (Scripts added)
-<<<<<<< HEAD
->>>>>>> faa690b (Scripts added)
-=======
-=======
-=======
-=======
---- !u!114 &19
-=======
-  m_DirectoriesAreaWidth: 207
---- !u!114 &16
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-  m_DirectoriesAreaWidth: 207
---- !u!114 &16
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
->>>>>>> 84920df (Load test and movement recorded)
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
---- !u!114 &16
->>>>>>> 47ec0e5 (Scene setup)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4276,83 +1025,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 667
-    width: 1274
-    height: 332
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
-    y: 636
-    width: 1319
-    height: 363
-=======
-=======
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
-    y: 729
-    width: 1319
-    height: 270
-=======
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    y: 952
-    width: 1959.6666
-    height: 407.00006
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 43aca31 (Singletone i deckSave)
-    y: 675
-    width: 1317
-    height: 324
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
-    y: 568.8
-    width: 1194.2
-    height: 254.59998
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
-    y: 568.8
-    width: 1194.2
-    height: 254.59998
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
-    x: -25600
-    y: -25074.4
-    width: 1194.2
-=======
-=======
->>>>>>> 47ec0e5 (Scene setup)
-    x: 0
-    y: 568.8
-    width: 1179.8
-    height: 254.59998
-<<<<<<< HEAD
->>>>>>> 84920df (Load test and movement recorded)
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
->>>>>>> 47ec0e5 (Scene setup)
+    y: 544
+    width: 1161.4
+    height: 279.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -4363,61 +1039,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &19
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-<<<<<<< HEAD
---- !u!114 &18
-=======
-=======
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
 --- !u!114 &17
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
---- !u!114 &18
-=======
---- !u!114 &19
->>>>>>> Stashed changes
-=======
---- !u!114 &19
->>>>>>> feature/Modelos3D
-=======
---- !u!114 &20
-=======
---- !u!114 &17
->>>>>>> 0697a2b (Singletone i deckSave)
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> c110dbc (Singletone i deckSave)
-<<<<<<< HEAD
->>>>>>> 46cba0c (Singletone i deckSave)
-=======
-=======
-=======
---- !u!114 &17
->>>>>>> 96ba862 (Created Scene & movement recorded)
->>>>>>> 8e0b66d (Created Scene & movement recorded)
-<<<<<<< HEAD
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-=======
-=======
---- !u!114 &17
->>>>>>> 84920df (Load test and movement recorded)
->>>>>>> 53c0b56 (Load test and movement recorded)
-=======
---- !u!114 &17
->>>>>>> 47ec0e5 (Scene setup)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4437,52 +1059,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 1275
-=======
-=======
->>>>>>> d17cdf0 (Created Scene & movement recorded)
-<<<<<<< HEAD
-    x: 1320
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    x: 1960.6667
-    y: 72.66667
-    width: 598.3334
-    height: 1286.3334
-=======
-=======
->>>>>>> feature/Onboarding
-    x: 1318
-=======
-    x: 1411
->>>>>>> 43aca31 (Singletone i deckSave)
->>>>>>> df54bd3 (Singletone i deckSave)
->>>>>>> 46cba0c (Singletone i deckSave)
-    y: 73
-    width: 644
-    height: 926
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
-=======
-=======
->>>>>>> 96ba862 (Created Scene & movement recorded)
-=======
->>>>>>> 53c0b56 (Load test and movement recorded)
-    x: 1195.2001
-=======
-    x: 1180.8
->>>>>>> cbb4170 (Fixes and various saves)
+    x: 1162.4
     y: 73.6
-    width: 354.19995
+    width: 372.59998
     height: 749.8
   m_SerializedDataModeController:
     m_DataMode: 0
