@@ -87,6 +87,8 @@ public class CardGameObject : DragableGameObject
             {
                 CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
 
+                cellToSpawn.PrintStatus();
+
                 if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                 {
                     RequestCharacterInstantiation();

@@ -3,6 +3,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharactersManager : Singleton<CharactersManager>
 {
@@ -11,6 +12,7 @@ public class CharactersManager : Singleton<CharactersManager>
 
     // Fa falta?
     Dictionary<int, Sprite> charactersCardSprite;
+    List<Character> charactersToRemove; 
 
     [SerializeField] bool bypassMana;
 
@@ -18,6 +20,7 @@ public class CharactersManager : Singleton<CharactersManager>
     {
         charactersOnBoard = new();
         charactersCardSprite = new Dictionary<int, Sprite>();
+        charactersToRemove = new List<Character>();
     }
 
     // Update is called once per frame
@@ -33,10 +36,34 @@ public class CharactersManager : Singleton<CharactersManager>
 
         currentId++;
     }
-    public void RemoveCharacter(int id)
+    public void RemoveCharacters()
     {
-        Destroy(charactersOnBoard[id].GetToken());
-        charactersOnBoard.Remove(id);
+        if (charactersToRemove.Count == 0) return;
+
+        foreach (Character character in charactersToRemove)
+        {
+            int id = character.GetId();
+            CellNodeManager.Instance.GetNodeById(charactersOnBoard[id].GetOnTileId()).RemoveCharacter();
+            Destroy(charactersOnBoard[id].GetToken());
+            charactersOnBoard.Remove(id);
+        }
+
+        charactersToRemove.Clear();
+
+        //ClearMissingCharacterBoard();
+    }
+
+    public void AddToRemoveList(Character characterToRemove)
+    {
+        foreach (Character character in charactersToRemove)
+        {
+            if (character.GetId() == characterToRemove.GetId())
+            {
+                Debug.Log("FOUND A CHARACTER WITH SAME ID THAT HAS TO BE REMOVED");
+                return;
+            }
+        }
+        charactersToRemove.Add(characterToRemove);
     }
 
     public Character GetCharacterInBoardById(int id)

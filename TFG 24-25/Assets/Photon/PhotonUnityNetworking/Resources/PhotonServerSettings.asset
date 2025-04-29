@@ -71,6 +71,9 @@ MonoBehaviour:
   - CreateBuffText_RPC
   - CreateCustomText_RPC
   - DrawCards
+  - ClearMissingCharacters
+  - ClearMissingCharacters_RPC
+  - RemoveCharacters_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
