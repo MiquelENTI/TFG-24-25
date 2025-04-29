@@ -19,7 +19,7 @@ public class Giant : Character
         {
             if (surrondingCell.GetCharacter() != null)
             {
-                surrondingCell.GetCharacter().ReceiveDamage(2);
+                surrondingCell.GetCharacter().ReceiveDamage(this, 2);
             }
         }
 

@@ -330,20 +330,21 @@ public class Character
 
     public virtual void OnDeath(Character attacker)
     {
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        //CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
 
-        currentCell.RemoveCharacter();
+        //currentCell.RemoveCharacter();
 
         CharactersManager.Instance.RemoveCharacter(id);
-        Debug.Log("Enemy Killer: " + stats.name);
+        Debug.Log("Dying: " + stats.name);
+        Debug.Log("Killer: " + attacker.stats.name);
         attacker.OnKillEnemy(this);
     }
 
     public virtual void OnDeathSelf()
     {
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        //CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
 
-        currentCell.RemoveCharacter();
+        //currentCell.RemoveCharacter();
 
         CharactersManager.Instance.RemoveCharacter(id);
     }
@@ -354,7 +355,7 @@ public class Character
     }
     public virtual void OnAttacked(Character attacker)
     {
-        ReceiveDamage(attacker.stats.dmg);
+        ReceiveDamage(attacker, attacker.stats.dmg);
     }
 
     public virtual void OnPointsScoring(int pointsScored)
@@ -375,7 +376,7 @@ public class Character
         enemy.OnAttacked(this);
     }
     
-    public void ReceiveDamage(int damage)
+    public void ReceiveDamage(Character attacker, int damage)
     {
         stats.hp -= damage;
 
@@ -386,7 +387,7 @@ public class Character
 
         if (stats.hp <= 0)
         {
-            OnDeath(this);
+            OnDeath(attacker);
         }
     }
 

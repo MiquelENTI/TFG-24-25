@@ -30,7 +30,7 @@ public class Leech : Character
 
             if (enemy.GetTeamType() != teamType)
             {
-                enemy.ReceiveDamage(surroundingDamage);
+                enemy.ReceiveDamage(this, surroundingDamage);
             }
         }
     }

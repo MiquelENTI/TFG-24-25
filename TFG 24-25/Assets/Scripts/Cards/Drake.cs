@@ -50,7 +50,7 @@ public class Drake : Character
         { 
             if (onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter() != null)
             {
-                onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter().ReceiveDamage(splashDamage); 
+                onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter().ReceiveDamage(this, splashDamage); 
             }
         }
 
@@ -58,7 +58,7 @@ public class Drake : Character
         {
             if (onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter() != null)
             {
-                onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(splashDamage); 
+                onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(this, splashDamage); 
             }
         }
         
