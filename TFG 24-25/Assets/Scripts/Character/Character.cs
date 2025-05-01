@@ -185,8 +185,9 @@ public class Character
 
     }
 
-    public virtual void OnSpawn(CellNode cellToMove)
+    public virtual bool OnSpawn(CellNode cellToMove)
     {
+
         if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
             Debug.Log("SPAWN");
@@ -200,25 +201,28 @@ public class Character
             MoveToken(cellToMove.GetPosition());
             
             cellToMove.SetCharacter(this);
-
+                        
             OnSpawnSFX();
             OnSpawnVFX();
 
             DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
+
+            return true;
         }
         else
         {
             stats.PrintStats();
             cellToMove.PrintStatus();
             //Debug.Log("ZOMBIE??");
+            return false;
         }
     }
     
     public virtual bool OnMovement(CellNode cellToMove)
     {
-        if (((playerStats.GetCurrentMana() >= stats.manaCost) && !stats.stun && cellToMove.CheckNodes(id)) || SceneManager.GetActiveScene().name == "Pinsa")
+        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "ReplayScene")
         {
-            if (canMove || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "Pinsa")
+            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "ReplayScene")
             {
                 //GetCharacterStats().PrintStats();
                 playerStats.SubstractMana(stats.manaCost);
@@ -233,6 +237,8 @@ public class Character
                 MoveToken(cellToMove.GetPosition());
 
                 cellToMove.SetCharacter(this);
+
+                SaveData.Instance.SaveNewAction("M" + cellToMove.GetId() + "/" + id);
 
                 //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
                 //Debug.Log("Previous After");

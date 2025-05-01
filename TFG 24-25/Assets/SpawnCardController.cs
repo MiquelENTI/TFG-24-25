@@ -28,7 +28,7 @@ public class SpawnCardController : MonoBehaviourPun
         //Debug.Log($"[SpawnCardController - BEFORE CONDITION] Prefab Path: {prefabPath}, Spawn Position: {spawnPosition}, Token Team: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, Condition: (LocalPlayer.ActorNumber == initiatingPlayerActorNumber) = {(PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber)}"); // **NUEVO LOG - ANTES DEL IF**
 
 
-        if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber || SceneManager.GetActiveScene().name == "Pinsa")
+        if (PhotonNetwork.LocalPlayer.ActorNumber == initiatingPlayerActorNumber || SceneManager.GetActiveScene().name == "ReplayScene")
         {
             GameObject instantiatedToken = PhotonNetwork.Instantiate(prefabPath, spawnPosition, Quaternion.identity);
             PhotonView tokenPhotonView = instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>();
@@ -60,5 +60,32 @@ public class SpawnCardController : MonoBehaviourPun
 
         //Debug.Log($"[SpawnCardController - AFTER CONDITION] Controlador procesó InstantiateCharacterTokenRPC para Personaje: {characterIdToAssign}, Equipo: {tokenTeam}, InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}"); // **NUEVO LOG - DESPUÉS DEL IF**
 
+    }
+
+    public void InstantiateCharacterTokenReplay(int characterIdToAssign, int tileId, bool bypassSpawn, bool blueTurn)
+    {
+        //Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
+
+        TeamType tokenTeam = blueTurn ? TeamType.BLUE : TeamType.RED;
+
+        Vector3 spawnPosition = new Vector3(2, 0, 0);
+
+        string prefabPath = tokenTeam == TeamType.BLUE ? tokenPrefabBlue.name : tokenPrefabRed.name;
+
+        GameObject instantiatedToken = Instantiate((GameObject)Resources.Load(prefabPath), spawnPosition, Quaternion.identity);
+
+        
+
+        TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
+        if (tokenGameObjectScript != null)
+        {
+            instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().SetCharacterRPC(characterIdToAssign, (int)tokenTeam);
+
+            MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
+        }
+        else
+        {
+            Debug.LogError("Token prefab no tiene SelectToken script!");
+        }
     }
 }

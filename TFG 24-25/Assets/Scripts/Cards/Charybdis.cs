@@ -13,9 +13,9 @@ public class Charybdis : Character
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
     }
 
-    public override void OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(CellNode cellToMove)
     {
-        if (cellToMove.GetCharacter() == null) { return; }
+        if (cellToMove.GetCharacter() == null) { return false; }
 
         if (cellToMove.GetCharacter().GetTeamType() == teamType)
         {
@@ -24,7 +24,10 @@ public class Charybdis : Character
             cellToMove.GetCharacter().DestroyCharacter();
 
             base.OnSpawn(cellToMove);
+
         }
+
+        return true;
     }
 
     public override void OnDeath(Character attacker)

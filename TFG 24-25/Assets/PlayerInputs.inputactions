@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextReplayAction",
+                    "type": "Button",
+                    "id": "b33d6907-d02d-45b3-a70b-a162d4aadb86",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -84,6 +93,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "ToggleOnBoard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a87148d-9fcd-483d-bd59-ad253c7e2f88",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "NextReplayAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

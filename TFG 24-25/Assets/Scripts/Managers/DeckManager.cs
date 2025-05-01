@@ -73,6 +73,12 @@ public class DeckManager : Singleton<DeckManager>
     void CreateDeck()
     {
         ShuffleDeck();
+        SaveData.Instance.SaveDeck(deck);
+
+        foreach (int card in deck)
+        {
+            Debug.Log(card);
+        };
     }
 
     [PunRPC]
@@ -92,6 +98,21 @@ public class DeckManager : Singleton<DeckManager>
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
         cardHold.GetComponent<CardHold>().SetDefaultCardRotation(isBlue ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
     }
+
+    public void ReplayDrawCard(bool hold)
+    {
+        if (deck.Count == 0) { return; }
+
+        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
+        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
+
+        GameObject cardHold = GameObject.FindGameObjectWithTag(hold ? "BlueHold" : "RedHold");
+        instantiatedCard.transform.parent = cardHold.transform;
+        cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
+        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
+    }
+
+
 
     public void BoardIntoHandDraw(TeamType type, string characterName)
     {
@@ -191,6 +212,11 @@ public class DeckManager : Singleton<DeckManager>
         }
 
         //Debug.Log("Number of Cards in Deck = " + deck.Count);
+    }
+
+    public void SetReplayDeck(Queue<int> replayDeck)
+    {
+        deck = replayDeck;
     }
 
     private IList<T> Shuffle<T>(IList<T> list)

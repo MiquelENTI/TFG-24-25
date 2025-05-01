@@ -11,11 +11,13 @@ public class Ant : Character
         originalAttack = newStats.dmg;
     }
 
-    public override void OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(CellNode cellToMove)
     {
         base.OnSpawn(cellToMove);
 
         CalculateCurrentAttack(cellToMove);
+
+        return true;
     }
 
     public override bool OnMovement(CellNode cellToMove)
