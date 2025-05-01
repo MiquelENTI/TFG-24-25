@@ -275,11 +275,11 @@ public class SoundManager : Singleton<SoundManager>
         FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index],position);
     }
 
-    public void PlayVO(int index, Vector3 position)
+    public void PlayMusic(int index)
     {
         FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],board.transform.position);
     }
-     public void PlayMusic (int index, Vector3 position)
+     public void PlayVO(int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],position);
     }
