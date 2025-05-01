@@ -261,22 +261,6 @@ public class SoundManager : Singleton<SoundManager>
             //Botons Ui General
             {005000003, "event:/SFX/UI/Buttons_General"},
          };
-         
-        musicDictionary =new()
-        {
-        // AMBIENT
-            // Roomtone
-            {001001001, "event:/SFX/AMBIENT/ROOMTONE"},
-            // Bonfire
-            {001000002, "event:/SFX/AMBIENT/BONFIRE"},
-            // Canvi de torn 
-            {001000003, "event:/SFX/UI/CANVI DE TORN/Whisper"},
-        // MUSICA
-            // Taverna (Gameplay)
-            {002000001, "event:/MUSIC/GAMEPLAY/Gameplay"},
-            // Menú
-            {002000002, "event:/MUSIC/MENU/Menu"},
-        };
         
         board = GameObject.Find("Board");
         PlayMusic(002000001);
