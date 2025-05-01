@@ -6,7 +6,7 @@ using TMPro;
 
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
-    [SerializeField] private bool IsBlue = true;
+    [SerializeField] private bool IsTurnBlue = true;
     int turnCounter = 1;
 
     [SerializeField] public GameObject player1GameObject;
@@ -19,9 +19,6 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public TMP_Text turnCounterElement;
 
     int drawCardsStart = 2;
-
-    int blueMana;
-    int redMana;
 
 
     public ScoreManager scoreManager; 
@@ -106,17 +103,17 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             return;
         }
 
-        IsBlue = !IsBlue;
+        IsTurnBlue = !IsTurnBlue;
 
-        photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsBlue);
+        photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsTurnBlue);
         photonView.RPC("DrawCards", RpcTarget.OthersBuffered, 1);
     }
 
     [PunRPC]
     public void UpdateTurn(bool newIsBlue)
     {
-        IsBlue = newIsBlue;
-        Debug.Log("Turno cambiado. Ahora es turno " + (IsBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
+        IsTurnBlue = newIsBlue;
+        Debug.Log("Turno cambiado. Ahora es turno " + (IsTurnBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
 
         if (newIsBlue)
         {
@@ -145,8 +142,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             }
         }
 
-        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsBlue);
-        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsBlue);
+        CharactersManager.Instance.ActivateEndTurnCharactersByColor(IsTurnBlue);
+        CharactersManager.Instance.ActivateStartTurnCharactersByColor(IsTurnBlue);
 
         Debug.Log("TO RESET MANA");
 
@@ -164,7 +161,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
             if (canvasPlayer1 != null && canvasPlayer2 != null)
             {
-                if (IsBlue)
+                if (IsTurnBlue)
                 {
                     canvasPlayer1.enabled = true;
                     canvasPlayer2.enabled = false;
@@ -189,20 +186,20 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     }
 
 
-    public bool getIsBlue()
+    public bool GetIsTurnBlue()
     {
-        return IsBlue;
+        return IsTurnBlue;
     }
 
     public int GetIsBlueInt()
-    { return IsBlue ? 1 : 0; }
+    { return IsTurnBlue ? 1 : 0; }
 
     [PunRPC]
     public void DrawCards(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
-            DeckManager.Instance.DrawCard(IsBlue);
+            DeckManager.Instance.DrawCard(IsTurnBlue);
         }
     }
 

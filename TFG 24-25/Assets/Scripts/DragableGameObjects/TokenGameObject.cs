@@ -9,20 +9,8 @@ using TMPro;
 
 public class TokenGameObject : DragableGameObject
 {
-    // TEMP?
-    GameObject player;
-    
-    public Sprite characterSprite;
-
-    [SerializeField] int TEMP_id;
-
     private Character character;
 
-    public GameObject tileCollider;
-
-    private Character characterSelected;
-
-    [SerializeField] Transform cardCanvas;
 
     protected override void Awake()
     {
@@ -42,9 +30,6 @@ public class TokenGameObject : DragableGameObject
         transform.parent.name = character.GetCharacterStats().name;
         UpdateCardOnBoardText();
     }
-
-    public override GameObject GetTileCollider()
-    { return tileCollider; }
 
     public override void InitCardOnBoardText()
     {

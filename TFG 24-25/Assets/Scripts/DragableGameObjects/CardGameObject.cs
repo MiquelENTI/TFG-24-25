@@ -12,10 +12,8 @@ public class CardGameObject : DragableGameObject
     CardHold cardHold;
     int cardId;
 
-    public GameObject spawnTileCollider;
-
     int cardIdToSpawn = -10;
-    public SpawnCardController gameController;
+    public SpawnCardController spawnCardController;
 
 
     protected override void Awake()
@@ -41,8 +39,8 @@ public class CardGameObject : DragableGameObject
         GameObject spawnManagerGO = GameObject.Find("SpawnManager");
         if (spawnManagerGO != null)
         {
-            gameController = spawnManagerGO.GetComponent<SpawnCardController>();
-            if (gameController == null)
+            spawnCardController = spawnManagerGO.GetComponent<SpawnCardController>();
+            if (spawnCardController == null)
             {
                 Debug.LogError("No se encontró el componente CardGameController en SpawnManager!");
             }
@@ -116,19 +114,16 @@ public class CardGameObject : DragableGameObject
         }
     }
 
-    public override GameObject GetTileCollider()
-    { return spawnTileCollider; }
-
     void RequestCharacterInstantiation()
     {
-        if (gameController != null)
+        if (spawnCardController != null)
         {
-            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
+            //Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
+            spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
         }
         else
         {
-            Debug.LogError("GameController no asignado en DragableUIObject!");
+            Debug.LogError("GameController no asignado en CardGameObject!");
         }
     }
 

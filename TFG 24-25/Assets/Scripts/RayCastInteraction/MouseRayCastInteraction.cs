@@ -82,7 +82,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             
             if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
             {
-                if ((lastInteractedObject.GetIsBlue() == turnManagerScript.getIsBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
+                if ((lastInteractedObject.GetIsBlue() == turnManagerScript.GetIsTurnBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
                 {
                     //Debug.Log("4");
                     StartCoroutine(DragUpdate(hit.collider.gameObject));

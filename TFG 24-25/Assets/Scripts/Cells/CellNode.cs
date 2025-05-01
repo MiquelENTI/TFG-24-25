@@ -19,7 +19,6 @@ public class CellNode
     Vector3 position;
     Character character;
     bool isOccupied = false;
-    bool isConnected = true;
     CellSpawnable spawnable = CellSpawnable.NONE;
     GameObject cellMovementIndicator;
     bool isCellMovementIndicatorVisble = false;
@@ -219,9 +218,6 @@ public class CellNode
     public bool IsOccupied()
     {  return isOccupied; }
 
-    public bool IsConnected() 
-    { return isConnected; }
-
     public bool CanCharacterSpawn(Character character)
     {
 
@@ -274,7 +270,6 @@ public class CellNode
             " |  Num of Connections: " + connectionDictionary.Count +
             " |  IsOccupied: " + isOccupied.ToString() +
             " by: " + GetCharacter().GetId().ToString() +
-            " |  IsConnected: " + isConnected.ToString() +
             " |  Spawnable: " + spawnable.ToString() +
             " |  ScoreMode: " + scoreType.ToString() +
             " |  ScoreAmount: " + scoreAmount.ToString());
@@ -286,7 +281,6 @@ public class CellNode
                 ": Position: X: " + position.x + " Z: " + position.z +
                 " |  Num of Connections: " + connectionDictionary.Count +
                 " |  IsOccupied: " + isOccupied.ToString() +
-                " |  IsConnected: " + isConnected.ToString() +
                 " |  Spawnable: " + spawnable.ToString() +
                 " |  ScoreMode: " + scoreType.ToString() +
                 " |  ScoreAmount: " + scoreAmount.ToString());
@@ -296,12 +290,6 @@ public class CellNode
 
     public bool NewMovement(int characterId)
     {
-        if (!isConnected)
-        {
-            Debug.Log("Node to move is disconnected from grid");
-            return false;
-        }
-
         Character characterMoving = CharactersManager.Instance.GetCharacterInBoardById(characterId);
         bool isAttacking = false;
         if (isOccupied)

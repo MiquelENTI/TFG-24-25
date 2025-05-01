@@ -8,8 +8,6 @@ public class SpawnCardController : MonoBehaviourPun
 {
     [SerializeField] GameObject tokenPrefabBlue;
     [SerializeField] GameObject tokenPrefabRed;
-    [SerializeField] Material blueMaterial;
-    [SerializeField] Material redMaterial;
 
     void Start() { }
 

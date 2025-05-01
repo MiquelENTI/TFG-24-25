@@ -24,7 +24,7 @@ public class RayCastEndTurn : MonoBehaviour
 
     public void Interact(bool isBluePlayer)
     {   
-        if (turnManagerScript.getIsBlue() == isBluePlayer || turnManagerScript.GetTurnBypass())
+        if (turnManagerScript.GetIsTurnBlue() == isBluePlayer || turnManagerScript.GetTurnBypass())
         {
             turnManagerScript.TurnManager();
             ChangeMaterial();

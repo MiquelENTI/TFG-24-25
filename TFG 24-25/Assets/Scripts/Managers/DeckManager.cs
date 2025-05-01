@@ -18,17 +18,10 @@ public class DeckManager : Singleton<DeckManager>
     [SerializeField] List<int> characterWorkingList;
 
 
-
-    
-
-    int teamTypeAlternator;
-
     private void Awake()
     {
         characterBlackList = new() 
         {
-            //6,  // Turtle, Problems with its effect
-            //7,  // Mimic, Problems with its effect
             50, // Prototype Cards
             51, // Prototype Cards
             52, // Prototype Cards
@@ -56,7 +49,6 @@ public class DeckManager : Singleton<DeckManager>
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
