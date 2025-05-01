@@ -49,7 +49,7 @@ public class CharactersManager : Singleton<CharactersManager>
         }
 
         charactersToRemove.Clear();
-
+        
         //ClearMissingCharacterBoard();
     }
 

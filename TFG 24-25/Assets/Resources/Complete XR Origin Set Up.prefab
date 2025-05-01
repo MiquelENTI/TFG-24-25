@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4134505312059479865}
-  - component: {fileID: 6742322101809628762}
+  - component: {fileID: 5886061360641467215}
   - component: {fileID: 5337332720444313164}
   - component: {fileID: 3827926315998511675}
   m_Layer: 0
@@ -555,7 +555,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6742322101809628762
+--- !u!114 &5886061360641467215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7313654230448209575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 11500000, guid: bd9fa399661e759438cc1f79079b70d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ObservedComponentsFoldoutOpen: 1
@@ -591,10 +591,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 9014170783809206332}
   menu: {fileID: 5781679259380861314}
-  endTurnButton: {fileID: 0}
-  hand: {fileID: 0}
-  IsBlue: 0
-  score: 0
 --- !u!114 &3827926315998511675
 MonoBehaviour:
   m_ObjectHideFlags: 0
