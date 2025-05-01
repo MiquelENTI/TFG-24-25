@@ -29,4 +29,16 @@ public class Berserker : Character
         DisplayActionsManager.Instance.CreateCustomText("=" + boostedAttack.ToString(), new Color(220.0f / 255.0f, 20.0f / 255.0f, 60.0f / 255.0f), 8, 1.0f, token.transform.position);
         return true;
     }
+
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026002, token.transform.position);
+    }
 }

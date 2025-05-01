@@ -50,4 +50,16 @@ public class Ant : Character
         stats.dmg = currentAttack;
         DisplayActionsManager.Instance.CreateCustomText("="+currentAttack.ToString(), new Color(220.0f / 255.0f, 20.0f / 255.0f, 60.0f / 255.0f), 8, 1.5f, token.transform.position, -0.2f);
     }
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003038001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003038002, token.transform.position);
+    }
+
 }

@@ -58,7 +58,7 @@ public class HumanWerewolf : Character
         
     }
 
-    //Implementació del so general per a cartes no identificades 
+    //Implementació del so
         
     protected override void OnSpawnSFX()
     {
