@@ -21,6 +21,7 @@ public class BaseRayCastInteraction : MonoBehaviour
     protected bool isBluePlayer;
     protected PhotonView photonView;
 
+    protected bool displayingCard = false;
     private void Awake()
     {
         playerInputs = new PlayerInputs();

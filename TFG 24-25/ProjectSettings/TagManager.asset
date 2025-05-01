@@ -16,6 +16,9 @@ TagManager:
   - CardGameObject
   - TokenGameObject
   - RaycastInteractable
+  - Bullet
+  - CardToDisplayPC
+  - CardToDisplayVR
   layers:
   - Default
   - TransparentFX

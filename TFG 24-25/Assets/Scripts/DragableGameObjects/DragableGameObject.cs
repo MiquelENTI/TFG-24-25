@@ -47,6 +47,7 @@ public class DragableGameObject : MonoBehaviour
     protected virtual void Awake()
     {
         cardToDisplay = GameObject.FindGameObjectWithTag("CardToDisplay").transform.GetChild(0).gameObject;
+
         InitCardToDisplayText();
         InitCardOnBoardText();
         photonView = GetComponent<PhotonView>();
@@ -207,6 +208,18 @@ public class DragableGameObject : MonoBehaviour
     {
         cardToDisplay.SetActive(state);
     }
+
+    public void RotateCardToDisplayVR()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            cardToDisplay.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else
+        {
+            cardToDisplay.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+}
 
     public bool GetIsBlue()
     { return IsBlue; }

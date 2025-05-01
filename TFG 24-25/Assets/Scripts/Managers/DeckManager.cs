@@ -100,7 +100,6 @@ public class DeckManager : Singleton<DeckManager>
             return;
         }
 
-
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         if (characterName == "Wizard" || characterName == "Cavalier")
         {
