@@ -33352,6 +33352,7 @@ MonoBehaviour:
   finalCanvas: {fileID: 388725774}
   winnerText: {fileID: 735938748}
   isPCVersion: 1
+  turnBypass: 0
 --- !u!4 &1256807050
 Transform:
   m_ObjectHideFlags: 0
@@ -34711,7 +34712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckmode: 3
   amountOfCopies: 1
-  prefabCard: {fileID: 4335443431014593374, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
+  prefabCard: {fileID: 8488798576455071380, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 
   characterWhiteList: 
   characterWorkingList: 010000000200000003000000050000000a0000000d0000000e0000000f0000001000000011000000140000001500000016000000190000001a0000001b00000020000000230000002600000027000000

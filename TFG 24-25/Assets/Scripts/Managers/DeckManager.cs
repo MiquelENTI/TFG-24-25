@@ -102,6 +102,7 @@ public class DeckManager : Singleton<DeckManager>
     public void ReplayDrawCard(bool hold)
     {
         if (deck.Count == 0) { return; }
+
         GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
         instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
 

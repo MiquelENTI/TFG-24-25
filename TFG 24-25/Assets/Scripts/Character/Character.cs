@@ -201,9 +201,7 @@ public class Character
             MoveToken(cellToMove.GetPosition());
             
             cellToMove.SetCharacter(this);
-
-            SaveData.Instance.SaveNewAction("S" + cellToMove.GetId() + "/" + id);
-
+                        
             OnSpawnSFX();
             OnSpawnVFX();
 

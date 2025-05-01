@@ -17,7 +17,7 @@ public class ReplayManager: MonoBehaviour
     void Start()
     {
         replayData = new ReplayData();
-        GetReplayMatchData(1);
+        GetReplayMatchData(0);
 
         blueTurn = true;
 
