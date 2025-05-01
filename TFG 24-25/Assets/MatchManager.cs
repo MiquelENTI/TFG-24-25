@@ -51,6 +51,19 @@ public class MatchManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
     }
 
+    public void JoinOrCreateRoomByName(string roomName)
+    {
+        if (string.IsNullOrEmpty(roomName))
+        {
+            Debug.LogWarning("El nombre de la sala está vacío.");
+            return;
+        }
+
+        Debug.Log("Intentando unirse a la sala con nombre: " + roomName);
+        PhotonNetwork.JoinOrCreateRoom(roomName, new RoomOptions { MaxPlayers = 2 }, TypedLobby.Default);
+    }
+
+
 
     public override void OnJoinedRoom()
     {
