@@ -24,13 +24,13 @@ public class ScoreManager : MonoBehaviourPun
         if (teamType == TeamType.BLUE)
         {
             BlueScore += amount;
-            Debug.Log("Puntaje azul incrementado. Nuevo puntaje: " + BlueScore);
+            //Debug.Log("Puntaje azul incrementado. Nuevo puntaje: " + BlueScore);
             blueText.text = "Blue Score: " + BlueScore;
         }
         else
         {
             RedScore += amount;
-            Debug.Log("Puntaje rojo incrementado. Nuevo puntaje: " + RedScore);
+            //Debug.Log("Puntaje rojo incrementado. Nuevo puntaje: " + RedScore);
             redText.text = "Red Score: " + RedScore;
         }
     }

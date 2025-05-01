@@ -24,24 +24,13 @@ public class BaseRayCastInteraction : MonoBehaviour
     private void Awake()
     {
         playerInputs = new PlayerInputs();
-        turnManagerScript = GameObject.Find("TurnManager").GetComponent<TurnManagerScript>();
+        turnManagerScript = TurnManagerScript.Instance;
         cardHold = GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>();
         playerCamera = transform.GetChild(0).GetComponent<Camera>();
 
         isBluePlayer = PhotonNetwork.IsMasterClient;
         photonView = gameObject.GetComponent<PhotonView>();
     }
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
         playerInputs.Enable();

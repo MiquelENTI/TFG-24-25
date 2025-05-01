@@ -18,7 +18,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     PhotonView photonView;
     public TMP_Text turnCounterElement;
 
-    int drawCardsStart = 2;
+    int drawCardsStart = 5;
 
 
     public ScoreManager scoreManager; 
@@ -80,7 +80,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             player1GameObject = playerGameObject;
             player1Registered = true;
             Debug.Log("Player 1 registrado en TurnManager: " + playerGameObject.name);
-            DrawCards(5);
+            DrawCards(drawCardsStart);
         }
         else if (!player2Registered)
         {

@@ -16,14 +16,8 @@ public class EffectsManager : Singleton<EffectsManager>
         photonView = GetComponent<PhotonView>();
     }
 
-    void Update()
-    {
-        
-    }
-
-    
     public void PlayFxInPosition(string effectName, Vector3 pos)
     {
-        PhotonNetwork.Instantiate("Particles/" + effectName, pos, Quaternion.identity);
+        PhotonNetwork.Instantiate("Particles/" + effectName, pos + posOffset, Quaternion.identity);
     }
 }

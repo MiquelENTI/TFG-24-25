@@ -7,7 +7,6 @@ using UnityEngine;
 public class DisplayActionsManager : Singleton<DisplayActionsManager>
 {
     [SerializeField] private GameObject textPrefab;
-    PhotonView photonView;
 
     Vector3 positionOffset;
 
@@ -18,8 +17,6 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 
     private void Awake()
     {
-        photonView = GetComponent<PhotonView>();
-
         positionOffset = new Vector3(0.0f, 0.1f, 0.0f);
 
 

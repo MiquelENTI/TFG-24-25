@@ -35,7 +35,6 @@ public class CellNode
         positionInGrid = new Vector2(x, y);
 
         cellMovementIndicator = movementIndicator.transform.GetChild(0).gameObject;
-        //ChangeMovementIndicatorVisibility();
 
         CellNodeManager.Instance.AddNode(this);
     }
@@ -220,12 +219,6 @@ public class CellNode
 
     public bool CanCharacterSpawn(Character character)
     {
-
-        // try { Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString() + " " + this.character.GetName()); }
-        // catch { Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString()); }
-
-        // At the moment like this, in the future do return if statement
-        
         return (CellSpawnable)character.GetTeamType() == spawnable && this.character == null;
     }
 
