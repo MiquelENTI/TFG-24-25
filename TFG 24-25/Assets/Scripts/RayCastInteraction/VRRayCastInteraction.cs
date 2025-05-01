@@ -39,7 +39,7 @@ private void Start()
 
         // Trigger
         playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
-        //playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
+        playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
         playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
 
         #endregion
@@ -52,7 +52,7 @@ private void Start()
 
         // Trigger
         playerInputs.XRILeftHandInteraction.Activate.started += _ => { LeftHand_ActivateInteractionDown(); };
-        //playerInputs.XRILeftHandInteraction.Activate.canceled += _ => { LeftHand_ActivateInteractionUp(); };
+        playerInputs.XRILeftHandInteraction.Activate.canceled += _ => { LeftHand_ActivateInteractionUp(); };
 
         #endregion
     }
@@ -173,13 +173,35 @@ private void Start()
 
             switch (hit.collider.tag)
             {
+                case "TokenGameObject":
+                case "CardGameObject":
+                {
+                    right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                    right_lastInteractedObject.SeeTokenCard();
+                    right_lastInteractedObject.ToggleCardToDisplay(true);
+                    right_lastInteractedObject.RotateCardToDisplayVR();
+                    displayingCard = true;
+                    break;
+                }
                 case "RaycastInteractable":
-                    {
-                        lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
-                        break;
-                    }
+                {
+                    lastInteractedRaycastGameObject = hit.transform.gameObject;
+                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
+                    break;
+                }
             }
+        }
+    }
+
+    protected virtual void RightHand_ActivateInteractionUp()
+    {
+        if (right_lastInteractedObject == null)
+        { return; }
+
+        if (displayingCard)
+        {
+            right_lastInteractedObject.GetComponent<DragableGameObject>().ToggleCardToDisplay(false);
+            displayingCard = false;
         }
     }
 
@@ -282,13 +304,35 @@ private void Start()
 
             switch (hit.collider.tag)
             {
-                case "RaycastInteractable":
+                case "TokenGameObject":
+                case "CardGameObject":
                     {
-                        lastInteractedRaycastGameObject = hit.transform.gameObject;
-                        lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
+                        left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                        left_lastInteractedObject.SeeTokenCard();
+                        left_lastInteractedObject.ToggleCardToDisplay(true);
+                        left_lastInteractedObject.RotateCardToDisplayVR();
+                        displayingCard = true;
                         break;
                     }
+                case "RaycastInteractable":
+                {
+                    lastInteractedRaycastGameObject = hit.transform.gameObject;
+                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
+                    break;
+                }
             }
+        }
+    }
+
+    protected virtual void LeftHand_ActivateInteractionUp()
+    {
+        if (left_lastInteractedObject == null)
+        { return; }
+
+        if (displayingCard)
+        {
+            left_lastInteractedObject.GetComponent<DragableGameObject>().ToggleCardToDisplay(false);
+            displayingCard = false;
         }
     }
     #endregion

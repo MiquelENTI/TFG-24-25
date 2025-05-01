@@ -132,18 +132,29 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
         if (Physics.Raycast(ray, out hit))
         {
+            if (hit.collider == null)
+            { return; }
+
             if (hit.transform.tag == "CardGameObject" || hit.transform.tag == "TokenGameObject")
             {
                 lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                 lastInteractedObject.SeeTokenCard();
                 lastInteractedObject.ToggleCardToDisplay(true);
+                displayingCard = true;
             }
         }
     }
 
     protected virtual void RightClickUpAction()
     {
-        lastInteractedObject.ToggleCardToDisplay(false);
+        if (lastInteractedObject == null)
+        { return; }
+
+        if (displayingCard)
+        {
+            lastInteractedObject.GetComponent<DragableGameObject>().ToggleCardToDisplay(false);
+            displayingCard = false;
+        }
     }
 
     public virtual IEnumerator DragUpdate(GameObject clickedGameObject)
