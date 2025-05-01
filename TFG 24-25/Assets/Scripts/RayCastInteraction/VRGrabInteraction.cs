@@ -26,7 +26,7 @@ public class VRGrabInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isBlue != turnManagerScript.getIsBlue())
+        if (isBlue != turnManagerScript.GetIsTurnBlue())
         {
             interactable.enabled = false;
         }

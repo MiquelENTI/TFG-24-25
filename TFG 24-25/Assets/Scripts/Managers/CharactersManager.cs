@@ -10,8 +10,6 @@ public class CharactersManager : Singleton<CharactersManager>
     Dictionary<int, Character> charactersOnBoard;
     int currentId = 0;
 
-    // Fa falta?
-    Dictionary<int, Sprite> charactersCardSprite;
     List<Character> charactersToRemove; 
 
     [SerializeField] bool bypassMana;
@@ -19,7 +17,6 @@ public class CharactersManager : Singleton<CharactersManager>
     private void Awake()
     {
         charactersOnBoard = new();
-        charactersCardSprite = new Dictionary<int, Sprite>();
         charactersToRemove = new List<Character>();
     }
 
@@ -49,8 +46,6 @@ public class CharactersManager : Singleton<CharactersManager>
         }
 
         charactersToRemove.Clear();
-
-        //ClearMissingCharacterBoard();
     }
 
     public void AddToRemoveList(Character characterToRemove)
@@ -84,23 +79,6 @@ public class CharactersManager : Singleton<CharactersManager>
         }
         return list;
     }
-
-    public void TriggerOnStartTurn()
-    {
-        foreach(Character character in charactersOnBoard.Values)
-        {
-            character.OnStartTurn();
-        }
-    }
-    public void TriggerOnEndTurn()
-    {
-        Debug.Log("Trigger");
-        foreach (Character character in charactersOnBoard.Values)
-        {
-            character.OnEndTurn();
-        }
-    }
-
     public void ActivateEndTurnCharactersByColor(bool isBlue)
     {
         TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;

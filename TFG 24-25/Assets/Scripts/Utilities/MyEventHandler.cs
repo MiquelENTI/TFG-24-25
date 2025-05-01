@@ -11,8 +11,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
     public UnityEvent<int, int> moveToken;
     public UnityEvent<int, int, bool> spawnToken;
 
-    public UnityEvent samuraiEffectRed;
-    public UnityEvent samuraiEffectBlue;
     private PhotonView photonView;
 
     private void Awake()

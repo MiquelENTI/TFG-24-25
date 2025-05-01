@@ -21,10 +21,12 @@ public class DragableGameObject : MonoBehaviour
     protected CharacterStats characterStats;
     protected EffectStats effectStats;
 
-    protected TurnManagerScript TurnManagerScript;
+    protected TurnManagerScript turnManagerScript;
     [SerializeField] protected bool IsBlue;
 
     [SerializeField] protected GameObject cardToDisplay;
+
+    #region Card To Display (ctd)
     protected TMP_Text ctd_AtkText;
     protected TMP_Text ctd_HpText;
     protected TMP_Text ctd_NameText;
@@ -32,13 +34,16 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text ctd_Description;
     protected Image ctd_CardSprite;
     protected Image ctd_MovementSprite;
+    #endregion
 
+    #region Card On Board (cob)
     protected TMP_Text cob_AtkText;
     protected TMP_Text cob_HpText;
     protected TMP_Text cob_NameText;
     protected TMP_Text cob_ManaText;
     protected Image cob_CardSprite;
     protected Image cob_MovementSprite;
+    #endregion
 
     protected Sprite cardSprite;
     protected Sprite movementSprite;
@@ -55,19 +60,8 @@ public class DragableGameObject : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameObject turnManagerObject = GameObject.Find("TurnManager");
-        if (turnManagerObject != null)
-        {
-            TurnManagerScript = turnManagerObject.GetComponent<TurnManagerScript>();
-            if (TurnManagerScript == null)
-            {
-                Debug.LogError("TurnManagerScript no encontrado en el GameObject 'turnmanager'.");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se encontró el GameObject 'turnmanager' en la escena.");
-        }
+        turnManagerScript = TurnManagerScript.Instance;
+        
 
         IsBlue = PhotonNetwork.IsMasterClient ? true : false;
 
@@ -226,9 +220,6 @@ public class DragableGameObject : MonoBehaviour
 
     public float GetObjectDisplacement()
     { return objectDisplacement + planeDisplacement; }
-
-    public virtual GameObject GetTileCollider()
-    { return null; }
 
     public virtual void CheckIsOutsideBoard()
     { 

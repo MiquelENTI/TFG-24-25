@@ -12,10 +12,8 @@ public class CardGameObject : DragableGameObject
     CardHold cardHold;
     int cardId;
 
-    public GameObject spawnTileCollider;
-
     int cardIdToSpawn = -10;
-    public SpawnCardController gameController;
+    public SpawnCardController spawnCardController;
 
 
     protected override void Awake()
@@ -36,13 +34,12 @@ public class CardGameObject : DragableGameObject
         objectDisplacement = 0.1f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         cardHold = transform.parent.parent.GetComponent<CardHold>();
-        spawnTileCollider = transform.GetChild(1).gameObject;
 
         GameObject spawnManagerGO = GameObject.Find("SpawnManager");
         if (spawnManagerGO != null)
         {
-            gameController = spawnManagerGO.GetComponent<SpawnCardController>();
-            if (gameController == null)
+            spawnCardController = spawnManagerGO.GetComponent<SpawnCardController>();
+            if (spawnCardController == null)
             {
                 Debug.LogError("No se encontró el componente CardGameController en SpawnManager!");
             }
@@ -89,7 +86,7 @@ public class CardGameObject : DragableGameObject
 
                 cellToSpawn.PrintStatus();
 
-                if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
+                if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsTurnBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                 {
                     RequestCharacterInstantiation();
                     cardHold.DestroyCard(cardId);
@@ -115,22 +112,18 @@ public class CardGameObject : DragableGameObject
             }
         }
     }
-
-    public override GameObject GetTileCollider()
-    { return spawnTileCollider; }
-
     void RequestCharacterInstantiation()
     {
-        if (gameController != null)
+        if (spawnCardController != null)
         {
             Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
-            gameController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
+            spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
 
             SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
         }
         else
         {
-            Debug.LogError("GameController no asignado en DragableUIObject!");
+            Debug.LogError("SpawnCardController no asignado en CardGameObject!");
         }
     }
 

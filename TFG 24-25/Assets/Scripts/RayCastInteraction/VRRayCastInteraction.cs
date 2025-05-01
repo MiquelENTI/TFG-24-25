@@ -117,7 +117,7 @@ private void Start()
 
             if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
             {
-                if ((right_lastInteractedObject.GetIsBlue() == turnManagerScript.getIsBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
+                if ((right_lastInteractedObject.GetIsBlue() == turnManagerScript.GetIsTurnBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
                 {
                     Debug.Log("ENTERED RIGHT DRAG UPDATE");
                     StartCoroutine(Right_DragUpdate(hit.collider.gameObject));
@@ -249,7 +249,7 @@ private void Start()
 
             if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
             {
-                if ((left_lastInteractedObject.GetIsBlue() == turnManagerScript.getIsBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
+                if ((left_lastInteractedObject.GetIsBlue() == turnManagerScript.GetIsTurnBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
                 {
                     
                     StartCoroutine(Left_DragUpdate(hit.collider.gameObject));

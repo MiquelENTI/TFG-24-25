@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RayCastSpawnTile : RayCastTile
 {
-    // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
@@ -25,7 +24,6 @@ public class RayCastSpawnTile : RayCastTile
                 onTile.EnterRaycast();
                 previousTile = onTile;
                 transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
-                //transform.parent.localRotation = Quaternion.Euler(90, 0, 0);
             }
             else if (onTile.tileId == previousTile.tileId)
             {

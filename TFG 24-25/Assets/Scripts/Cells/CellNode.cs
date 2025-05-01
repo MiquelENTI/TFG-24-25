@@ -19,7 +19,6 @@ public class CellNode
     Vector3 position;
     Character character;
     bool isOccupied = false;
-    bool isConnected = true;
     CellSpawnable spawnable = CellSpawnable.NONE;
     GameObject cellMovementIndicator;
     bool isCellMovementIndicatorVisble = false;
@@ -36,7 +35,6 @@ public class CellNode
         positionInGrid = new Vector2(x, y);
 
         cellMovementIndicator = movementIndicator.transform.GetChild(0).gameObject;
-        //ChangeMovementIndicatorVisibility();
 
         CellNodeManager.Instance.AddNode(this);
     }
@@ -219,17 +217,8 @@ public class CellNode
     public bool IsOccupied()
     {  return isOccupied; }
 
-    public bool IsConnected() 
-    { return isConnected; }
-
     public bool CanCharacterSpawn(Character character)
     {
-
-        // try { Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString() + " " + this.character.GetName()); }
-        // catch { Debug.Log(character.GetTeamType().ToString() + " " + spawnable.ToString()); }
-
-        // At the moment like this, in the future do return if statement
-        
         return (CellSpawnable)character.GetTeamType() == spawnable && this.character == null;
     }
 
@@ -274,7 +263,6 @@ public class CellNode
             " |  Num of Connections: " + connectionDictionary.Count +
             " |  IsOccupied: " + isOccupied.ToString() +
             " by: " + GetCharacter().GetId().ToString() +
-            " |  IsConnected: " + isConnected.ToString() +
             " |  Spawnable: " + spawnable.ToString() +
             " |  ScoreMode: " + scoreType.ToString() +
             " |  ScoreAmount: " + scoreAmount.ToString());
@@ -286,7 +274,6 @@ public class CellNode
                 ": Position: X: " + position.x + " Z: " + position.z +
                 " |  Num of Connections: " + connectionDictionary.Count +
                 " |  IsOccupied: " + isOccupied.ToString() +
-                " |  IsConnected: " + isConnected.ToString() +
                 " |  Spawnable: " + spawnable.ToString() +
                 " |  ScoreMode: " + scoreType.ToString() +
                 " |  ScoreAmount: " + scoreAmount.ToString());
@@ -296,12 +283,6 @@ public class CellNode
 
     public bool NewMovement(int characterId)
     {
-        if (!isConnected)
-        {
-            Debug.Log("Node to move is disconnected from grid");
-            return false;
-        }
-
         Character characterMoving = CharactersManager.Instance.GetCharacterInBoardById(characterId);
         bool isAttacking = false;
         if (isOccupied)
