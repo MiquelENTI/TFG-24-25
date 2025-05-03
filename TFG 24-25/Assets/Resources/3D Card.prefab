@@ -1576,8 +1576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsBlue: 0
   cardToDisplay: {fileID: 0}
-  spawnTileCollider: {fileID: 0}
-  gameController: {fileID: 0}
+  spawnCardController: {fileID: 0}
 --- !u!114 &7267973748837844944
 MonoBehaviour:
   m_ObjectHideFlags: 0

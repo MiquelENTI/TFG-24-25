@@ -75,6 +75,9 @@ MonoBehaviour:
   - ClearMissingCharacters_RPC
   - RemoveCharacters_RPC
   - <UpdateTurn>g__PlayEndGameAudio|21_0
+  - PlayEndGameAudio
+  - PlayStartTurnAudioForAll
+  - PlayStartTurnAudioForColor
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

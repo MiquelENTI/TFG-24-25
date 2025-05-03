@@ -74,6 +74,11 @@ public class MyEventHandler : Singleton<MyEventHandler>
         InvokeSpawnToken(cellId, characterId, bypassSpawn);
     }
 
+    public void RemoveCharacters()
+    {
+        photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+    }
+
     [PunRPC]
     public void RemoveCharacters_RPC()
     {
