@@ -56,7 +56,6 @@ MonoBehaviour:
   - DrawCardOther
   - DrawCardRPC
   - RPC_SpawnToken
-<<<<<<< HEAD
   - DrawCard
   - UpdateObjectPosition_RPC
   - DestroyCard_RPC
@@ -75,9 +74,7 @@ MonoBehaviour:
   - ClearMissingCharacters
   - ClearMissingCharacters_RPC
   - RemoveCharacters_RPC
-=======
   - <UpdateTurn>g__PlayEndGameAudio|21_0
->>>>>>> Sergi
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
