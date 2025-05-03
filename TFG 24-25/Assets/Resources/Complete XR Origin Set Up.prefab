@@ -595,10 +595,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 9014170783809206332}
   menu: {fileID: 5781679259380861314}
-  endTurnButton: {fileID: 0}
   hand: {fileID: 0}
   IsBlue: 0
-  score: 0
 --- !u!114 &3827926315998511675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +831,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4134505312059479865}
     m_Modifications:
+    - target: {fileID: 202364692, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 2473693011621020840, guid: 646ac3a5d6e2de740a384cbbee8ed730, type: 3}
+    - target: {fileID: 1670256628, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 2473693011621020840, guid: 464d742ce95198d41b8f37ed7aca7e06, type: 3}
     - target: {fileID: 941652828260492489, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Parameters.widthMultiplier
       value: 0.01
