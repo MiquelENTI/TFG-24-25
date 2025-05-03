@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
+public enum HandState { IDLE, POINTING, GRABBING, INTERACT }
+
 public class VRRayCastInteraction : BaseRayCastInteraction
 {
     private WaitForFixedUpdate right_waitForFixedUpdate = new WaitForFixedUpdate();
@@ -26,7 +28,8 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     private GameObject rightController;
     private GameObject leftController;
 
-
+    [SerializeField] private Animator rightHandAnimator;
+    HandState right_handState = HandState.IDLE;
     
 private void Start()
     {
@@ -59,7 +62,11 @@ private void Start()
 
     private void Update()
     {
-        if (rightController != null || leftController != null) { return; }
+        if (rightController != null || leftController != null) 
+        {
+            Right_HoverUpdate();
+            return; 
+        }
 
         if (rightController == null)
         {
@@ -69,6 +76,9 @@ private void Start()
         {
             leftController = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
         }
+
+        
+        //Left_HoverUpdate();
     }
 
     #region RIGHT HAND
@@ -358,6 +368,79 @@ private void Start()
             left_rayCastTile.UpdateRayCast();
 
             yield return left_waitForFixedUpdate;
+        }
+    }
+
+    public virtual void Right_HoverUpdate()
+    {
+        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+        Debug.DrawRay(rightController.transform.position, rightController.transform.forward, Color.blue, 1.0f, true);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            if (hit.collider == null)
+            {
+                return;
+            }
+
+            
+
+            Debug.Log(hit.collider.name);
+
+            switch (hit.collider.tag)
+            {
+                case "TokenGameObject":
+                case "CardGameObject":
+                case "RaycastInteractable":
+                {
+                        Debug.Log("POINTING");
+
+                        Right_ChangeHandState(HandState.POINTING);
+                    break;
+                }
+                default:
+                {
+                        Debug.Log("NOT POINTING");
+                        Right_ChangeHandState(HandState.IDLE);
+                    break;
+                }
+            }
+        }
+    }
+
+    protected void  Right_ChangeHandState(HandState newHandState)
+    {
+        if (right_handState == newHandState) { return; }
+
+        switch (newHandState)
+        {
+            case HandState.IDLE:
+                {
+                    rightHandAnimator.SetBool("IndexPoint", false);
+                    rightHandAnimator.SetBool("IndexInteract", false);
+                    rightHandAnimator.SetBool("HandGrab", false);
+                    right_handState = newHandState;
+                break;
+                }
+            case HandState.POINTING:
+                {
+                    rightHandAnimator.SetBool("IndexPoint", true);
+                    right_handState = newHandState;
+                    break;
+                }
+            case HandState.GRABBING:
+                {
+                    rightHandAnimator.SetBool("HandGrab", true);
+                    right_handState = newHandState;
+                    break;
+                }
+            case HandState.INTERACT:
+                {
+                    rightHandAnimator.SetBool("IndexInteract", true);
+                    right_handState = newHandState;
+                    break;
+                }
         }
     }
 }
