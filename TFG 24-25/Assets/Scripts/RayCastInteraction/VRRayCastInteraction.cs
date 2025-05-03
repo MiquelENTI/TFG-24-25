@@ -89,7 +89,7 @@ private void Start()
 
         Debug.Log("ACTIVATE DOWN");
         
-        Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
+        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
 
         Debug.Log("RIGHT HAND POS: " + rightController.transform.position + " RIGHT HAND DIRECTION: " + -rightController.transform.forward);
 
@@ -172,7 +172,7 @@ private void Start()
         if (!photonView.IsMine)
         { return; }
 
-        Ray ray = new Ray(rightController.transform.position, -rightController.transform.forward);
+        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
 
         RaycastHit hit;
 
@@ -225,7 +225,7 @@ private void Start()
         if (!photonView.IsMine)
         { return; }
 
-        Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
+        Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
 
         RaycastHit hit;
 
@@ -303,7 +303,7 @@ private void Start()
         if (!photonView.IsMine)
         { return; }
 
-        Ray ray = new Ray(leftController.transform.position, -leftController.transform.forward);
+        Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
 
         RaycastHit hit;
 
