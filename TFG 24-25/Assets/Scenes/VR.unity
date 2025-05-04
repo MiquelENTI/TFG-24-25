@@ -7226,8 +7226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tokenPrefabBlue: {fileID: 8236987784292183732, guid: cd10928736021b947af0ad6e30752b57, type: 3}
   tokenPrefabRed: {fileID: 8236987784292183732, guid: 6789227a21d2f5546aee7680ff10ace8, type: 3}
-  blueMaterial: {fileID: 2100000, guid: b7d67d7d7ddb88542b23886a4b496c77, type: 2}
-  redMaterial: {fileID: 2100000, guid: b957742c5b9bfd441b9b330c8b55d0c5, type: 2}
 --- !u!114 &258275269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17211,7 +17209,6 @@ MonoBehaviour:
   playerPrefab: {fileID: 7313654230448209575, guid: 2607880d3ba208640913317c329fa198, type: 3}
   spawnPositionPlayer1: {x: 0.29824275, y: 1.236404, z: -1.323052}
   spawnPositionPlayer2: {x: 0.4257408, y: 1.236404, z: 0.643667}
-  turnManager: {fileID: 1256807049}
 --- !u!114 &643941742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33665,7 +33662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bacabcdb95b7ca47805af2467e0115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsBlue: 1
+  IsTurnBlue: 1
   player1GameObject: {fileID: 0}
   player2GameObject: {fileID: 0}
   startTurnAudioCodesForAll: 91ce2d0092ce2d0093ce2d00
@@ -34750,7 +34747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1280274882
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38666,12 +38663,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   spawnToken:
-    m_PersistentCalls:
-      m_Calls: []
-  samuraiEffectRed:
-    m_PersistentCalls:
-      m_Calls: []
-  samuraiEffectBlue:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1416548696
