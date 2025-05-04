@@ -8,9 +8,9 @@ public class ScoreManager : MonoBehaviourPun
 {
     public int BlueScore;
     public int RedScore;
-    public TMP_Text redText;
-    public TMP_Text blueText;
 
+    Vector3 blueCoinSpawnPos = new(-0.67f, 1.0f, -0.85f);
+    Vector3 redCoinSpawnPos = new(1.4f, 1.0f, 0.2f);
 
     void Start()
     {
@@ -24,14 +24,14 @@ public class ScoreManager : MonoBehaviourPun
         if (teamType == TeamType.BLUE)
         {
             BlueScore += amount;
-            Debug.Log("Puntaje azul incrementado. Nuevo puntaje: " + BlueScore);
-            blueText.text = "Blue Score: " + BlueScore;
+
+            PhotonNetwork.Instantiate("Moneda1", blueCoinSpawnPos, Quaternion.identity);
         }
         else
         {
             RedScore += amount;
-            Debug.Log("Puntaje rojo incrementado. Nuevo puntaje: " + RedScore);
-            redText.text = "Red Score: " + RedScore;
+
+            PhotonNetwork.Instantiate("Moneda1", redCoinSpawnPos, Quaternion.identity);
         }
     }
 }
