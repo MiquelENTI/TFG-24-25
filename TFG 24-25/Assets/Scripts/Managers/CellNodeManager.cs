@@ -199,17 +199,17 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 // If Character Exists
                 if (isCharacter != null)
                 {
+                    if (isCharacter.GetJumpMove()) { continue; }
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
-                        // If character can jump, continue
                         break;
                     }
                     // Or are on different teams, cell is highlighted with attacking color
                     else
                     {
                         // Set Cell Red and visible
-                        // If character can jump, continue
+
                         break;
                     }
                 }
