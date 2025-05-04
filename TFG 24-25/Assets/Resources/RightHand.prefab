@@ -316,6 +316,10 @@ PrefabInstance:
       propertyPath: m_Bones.Array.data[17]
       value: 
       objectReference: {fileID: 3721702779156164509}
+    - target: {fileID: -715101866666799579, guid: 232f43f2df6f9744eaec75f3404920d0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49b891a2c41a15d43ad266e268d21ff1, type: 2}
     - target: {fileID: 919132149155446097, guid: 232f43f2df6f9744eaec75f3404920d0, type: 3}
       propertyPath: m_Name
       value: RightHand

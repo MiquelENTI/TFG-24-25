@@ -46,7 +46,18 @@ private void Start()
         // Trigger
         playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
         playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
-        playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
+        //playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
+        playerInputs.XRIRightHand.ThumbStickClicked.started += _ => {
+            photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.GRABBING, right_blockChangeAnimation);
+            Right_ChangeHandState((int)HandState.GRABBING, right_blockChangeAnimation);
+            right_blockChangeAnimation = true;
+        };
+        playerInputs.XRIRightHand.ThumbStickClicked.canceled += _ => {
+
+            right_blockChangeAnimation = false;
+            photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.IDLE, right_blockChangeAnimation);
+            Right_ChangeHandState((int)HandState.IDLE, right_blockChangeAnimation);
+        };
 
         #endregion
 
