@@ -36,4 +36,17 @@ public class Charybdis : Character
 
         base.OnDeath(attacker);
     }
+    
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003031001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003031002, token.transform.position);
+    }
+
 }
