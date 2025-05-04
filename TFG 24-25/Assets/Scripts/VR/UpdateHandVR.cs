@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using static UnityEngine.Tilemaps.Tilemap;
 
 public class UpdateHandVR : MonoBehaviour
 {
@@ -18,14 +19,14 @@ public class UpdateHandVR : MonoBehaviour
         
     }
 
-    public void HandsPositionUpdating()
+    public void HandsPositionUpdating(Vector3 position, Quaternion rotation)
     {
-        photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.OthersBuffered);
+        photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
     }
 
     [PunRPC]
-    public void HandsPositionUpdating_RPC()
+    public void HandsPositionUpdating_RPC(Vector3 position, Quaternion rotation)
     {
-        transform.SetPositionAndRotation(transform.position, transform.rotation);
+        transform.SetPositionAndRotation(position, rotation);
     }
 }

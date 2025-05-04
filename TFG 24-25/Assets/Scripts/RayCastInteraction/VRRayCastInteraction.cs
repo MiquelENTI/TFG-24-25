@@ -413,7 +413,8 @@ private void Start()
 
     public virtual void Right_HoverUpdate()
     {
-        rightHandUpdate.HandsPositionUpdating();
+        rightHandUpdate.HandsPositionUpdating(rightController.transform.position, rightController.transform.rotation);
+
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
         RaycastHit hit;
 
@@ -447,7 +448,7 @@ private void Start()
 
     public virtual void Left_HoverUpdate()
     {
-        leftHandUpdate.HandsPositionUpdating();
+        leftHandUpdate.HandsPositionUpdating(leftController.transform.position, leftController.transform.rotation);
         Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
         RaycastHit hit;
 
