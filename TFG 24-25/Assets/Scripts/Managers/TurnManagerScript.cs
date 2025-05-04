@@ -130,8 +130,13 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsTurnBlue = newIsTurnBlue;
         Debug.Log("Turno cambiado. Ahora es turno " + (IsTurnBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
 
+        CandleBehavior.Instance.ChangeCandleColor(IsTurnBlue);
+
         if (newIsTurnBlue)
         {
+            CandleBehavior.Instance.AddCandle();
+            CandleBehavior.Instance.ChangeCandleColor(IsTurnBlue);
+
             Debug.Log("isBlueTurn: " + newIsTurnBlue);
 
             turnCounter++;
