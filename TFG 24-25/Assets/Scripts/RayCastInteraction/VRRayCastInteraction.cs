@@ -69,6 +69,7 @@ private void Start()
         {
             Right_HoverUpdate();
             Left_HoverUpdate();
+            photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.AllBuffered);
             return; 
         }
 
@@ -558,5 +559,12 @@ private void Start()
                     break;
                 }
         }
+    }
+
+    [PunRPC]
+    protected void HandsPositionUpdating_RPC()
+    {
+        rightController.transform.SetPositionAndRotation(rightController.transform.position, rightController.transform.rotation);
+        leftController.transform.SetPositionAndRotation(leftController.transform.position, leftController.transform.rotation);
     }
 }
