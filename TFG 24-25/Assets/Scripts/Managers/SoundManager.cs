@@ -126,6 +126,65 @@ public class SoundManager : Singleton<SoundManager>
             { 003016001, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select" },
             { 003016002, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select" },
 
+           // Archer
+           {003021001, "event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_attack"},
+           {003021002, "event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_Select"},
+           {003021003, ""},
+           
+           // Chicken
+           {003022001, "event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_Attack"},
+           {003022002, "event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_select"},
+           {003022003, ""},
+           
+           // Mana Bottle (pendent de fer o carta o saber on ficar-lo)
+           {003023001, "event:/SFX/CARTAS/MANA/Drink_Mana"},
+           {003023002, ""},
+           {003023003, ""},
+           
+           // Return (effectes potser NO en espera)
+           {003024001, ""},
+           {003024002, ""},
+           {003024003, ""},
+           
+           // Leech
+           {003025001, "event:/SFX/CARTAS/MONSTERS/LEECH/LEECH"},
+           {003025002, ""},
+           {003025003, ""},
+           
+           // Berserker
+           {003026001, "event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_ATACK"},
+           {003026002, "event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_SELECT"},
+           {003026003, ""},
+           
+           // Hydra
+           {003027001, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK"},
+           {003027002, "event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK"},
+           {003027003, ""},
+           
+           // Zombie (SONS MUMMY)
+           {003028001, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Attack"},
+           {003028002, "event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Selecction"},
+           {003028003, ""},
+           
+           // Necromancer
+           {003029001, "event:/SFX/CARTAS/MONSTERS/Necromander/Necromander"},
+           {003029002, "event:/SFX/CARTAS/MONSTERS/Necromander/Necromander"},
+           {003029003, ""},
+           
+           // Pocholo (SONS PICHI)
+           {003030001, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Attack"},
+           {003030002, "event:/SFX/CARTAS/MONSTERS/PICHI/Pichi_Selection"},
+           {003030003, ""},
+           
+           // Charybdis
+           {003031001, "event:/SFX/CARTAS/MONSTERS/CHarybdis/Charybdis"},
+           {003031002, "event:/SFX/CARTAS/MONSTERS/CHarybdis/Charybdis"},
+           {003031003, ""},
+           
+           // Kamikaze
+           {003032001, "event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Attack"},
+           {003032002, "event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Select"},
+           {003032003, ""},
 
             // Terracotta Warrior 
             { 003017001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT" },

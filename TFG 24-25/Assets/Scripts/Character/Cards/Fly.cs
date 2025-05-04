@@ -23,8 +23,8 @@ public class Fly : Character
         SoundManager.Instance.PlaySFX(003005001, token.transform.position);
     }
     
-    /*protected override void OnSpawnSFX()
+    protected override void OnSpawnSFX()
     {
-        SoundManager.Instance.PlaySFX(003005002, token.transform.position);
-    }*/
+        SoundManager.Instance.PlaySFX(003005001, token.transform.position);
+    }
 }

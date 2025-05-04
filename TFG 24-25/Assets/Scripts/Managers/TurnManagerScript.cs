@@ -225,7 +225,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         }
         else
         {
-            Debug.LogWarning("No hay códigos de audio definidos para PlayStartTurnAudioForAll.");
+            Debug.LogWarning("No hay cï¿½digos de audio definidos para PlayStartTurnAudioForAll.");
         }
     }
 
