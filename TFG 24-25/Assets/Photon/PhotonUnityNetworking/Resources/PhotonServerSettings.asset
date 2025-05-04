@@ -79,6 +79,8 @@ MonoBehaviour:
   - PlayStartTurnAudioForAll
   - PlayStartTurnAudioForColor
   - HandsPositionUpdating_RPC
+  - Left_ChangeHandState
+  - Right_ChangeHandState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
