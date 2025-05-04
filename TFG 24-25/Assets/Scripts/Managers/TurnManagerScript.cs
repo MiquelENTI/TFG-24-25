@@ -142,6 +142,22 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             turnCounter++;
             turnCounterElement.text = "Turn Number: " + turnCounter;
 
+
+            if (AudioManager.Instance != null)
+            {
+                int rondaValueFMOD;
+
+                if (turnCounter <= 2)
+                    rondaValueFMOD = 0; // RONDA 1-2
+                else if (turnCounter <= 9)
+                    rondaValueFMOD = 1; // RONDA 3 A 9
+                else
+                    rondaValueFMOD = 2; // RONDA 10 o més
+
+                //AudioManager.Instance.SetRondaParameter(rondaValueFMOD);
+                Debug.Log("RONDA FMOD actualitzada a: " + rondaValueFMOD);
+            }
+
             if (turnCounter > 10)
             {
                 if (SceneManager.GetActiveScene().name != "ReplayScene")
