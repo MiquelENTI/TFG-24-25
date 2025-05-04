@@ -506,43 +506,83 @@ private void Start()
         HandState newHandState = (HandState)HandStateTemp;
         if (right_handState == newHandState || blockAnimation) { return; }
 
-        Debug.Log("RIGHT CHANGING TO: " + newHandState.ToString());
-
-        switch (newHandState)
+        if (photonView.IsMine)
         {
-            case HandState.IDLE:
-                {
-                    rightHandAnimator.SetBool("RightIndexPoint", false);
-                    rightHandAnimator.SetBool("RightIndexInteract", false);
-                    rightHandAnimator.SetBool("RightHandGrab", false);
-                    right_handState = newHandState;
-                break;
-                }
-            case HandState.POINTING:
-                {
-                    rightHandAnimator.SetBool("RightIndexPoint", true);
-                    rightHandAnimator.SetBool("RightIndexInteract", false);
-                    rightHandAnimator.SetBool("RightHandGrab", false);
-                    right_handState = newHandState;
-                    break;
-                }
-            case HandState.GRABBING:
-                {
+            switch (newHandState)
+            {
+                case HandState.IDLE:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", false);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.POINTING:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.GRABBING:
+                    {
 
-                    rightHandAnimator.SetBool("RightIndexPoint", true);
-                    rightHandAnimator.SetBool("RightIndexInteract", false);
-                    rightHandAnimator.SetBool("RightHandGrab", true);
-                    right_handState = newHandState;
-                    break;
-                }
-            case HandState.INTERACT:
-                {
-                    rightHandAnimator.SetBool("RightIndexPoint", true);
-                    rightHandAnimator.SetBool("RightIndexInteract", true);
-                    rightHandAnimator.SetBool("RightHandGrab", false);
-                    right_handState = newHandState;
-                    break;
-                }
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", true);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.INTERACT:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", true);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+            }
+        }
+        else
+        {
+            switch (newHandState)
+            {
+                case HandState.IDLE:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", false);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.POINTING:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.GRABBING:
+                    {
+
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", true);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.INTERACT:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", true);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+            }
         }
     }
 
@@ -554,41 +594,84 @@ private void Start()
 
         Debug.Log("LEFT CHANGING TO: " + newHandState.ToString());
 
-        switch (newHandState)
+        if (photonView.IsMine)
         {
-            case HandState.IDLE:
-                {
-                    leftHandAnimator.SetBool("LeftIndexPoint", false);
-                    leftHandAnimator.SetBool("LeftIndexInteract", false);
-                    leftHandAnimator.SetBool("LeftHandGrab", false);
-                    left_handState = newHandState;
-                    break;
-                }
-            case HandState.POINTING:
-                {
-                    leftHandAnimator.SetBool("LeftIndexPoint", true);
-                    leftHandAnimator.SetBool("LeftIndexInteract", false);
-                    leftHandAnimator.SetBool("LeftHandGrab", false);
-                    left_handState = newHandState;
-                    break;
-                }
-            case HandState.GRABBING:
-                {
+            switch (newHandState)
+            {
+                case HandState.IDLE:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", false);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.POINTING:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.GRABBING:
+                    {
 
-                    leftHandAnimator.SetBool("LeftIndexPoint", true);
-                    leftHandAnimator.SetBool("LeftIndexInteract", false);
-                    leftHandAnimator.SetBool("LeftHandGrab", true);
-                    left_handState = newHandState;
-                    break;
-                }
-            case HandState.INTERACT:
-                {
-                    leftHandAnimator.SetBool("LeftIndexPoint", true);
-                    leftHandAnimator.SetBool("LeftIndexInteract", true);
-                    leftHandAnimator.SetBool("LeftHandGrab", false);
-                    left_handState = newHandState;
-                    break;
-                }
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", false);
+                        leftHandAnimator.SetBool("LeftHandGrab", true);
+                        left_handState = newHandState;
+                        break;
+                    }
+                case HandState.INTERACT:
+                    {
+                        leftHandAnimator.SetBool("LeftIndexPoint", true);
+                        leftHandAnimator.SetBool("LeftIndexInteract", true);
+                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handState = newHandState;
+                        break;
+                    }
+            }
         }
+        else
+        {
+            switch (newHandState)
+            {
+                case HandState.IDLE:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", false);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.POINTING:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.GRABBING:
+                    {
+
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", false);
+                        rightHandAnimator.SetBool("RightHandGrab", true);
+                        right_handState = newHandState;
+                        break;
+                    }
+                case HandState.INTERACT:
+                    {
+                        rightHandAnimator.SetBool("RightIndexPoint", true);
+                        rightHandAnimator.SetBool("RightIndexInteract", true);
+                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handState = newHandState;
+                        break;
+                    }
+            }
+        }
+        
     }
 }
