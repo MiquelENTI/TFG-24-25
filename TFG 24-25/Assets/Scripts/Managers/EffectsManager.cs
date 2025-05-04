@@ -39,10 +39,20 @@ public class EffectsManager : Singleton<EffectsManager>
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            foreach (GameObject particle in blueHighlightList)
+            {
+                PhotonNetwork.Destroy(particle);
+                Destroy(particle);
+            }
             blueHighlightList.Clear();
         }
         else
         {
+            foreach (GameObject particle in redHighlightList)
+            {
+                PhotonNetwork.Destroy(particle);
+                Destroy(particle);
+            }
             redHighlightList.Clear();
         }
     }
