@@ -78,6 +78,7 @@ MonoBehaviour:
   - PlayEndGameAudio
   - PlayStartTurnAudioForAll
   - PlayStartTurnAudioForColor
+  - HandsPositionUpdating_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

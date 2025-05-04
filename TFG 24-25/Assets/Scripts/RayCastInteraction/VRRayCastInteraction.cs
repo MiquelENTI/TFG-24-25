@@ -30,6 +30,9 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     [SerializeField] private Animator leftHandAnimator;
     HandState left_handState = HandState.IDLE;
     bool left_blockChangeAnimation = false;
+
+    UpdateHandVR rightHandUpdate;
+    UpdateHandVR leftHandUpdate;
     
 private void Start()
     {
@@ -69,17 +72,18 @@ private void Start()
         {
             Right_HoverUpdate();
             Left_HoverUpdate();
-            photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.AllBuffered);
             return; 
         }
 
         if (rightController == null)
         {
             rightController = transform.GetChild(2).GetChild(0).GetChild(2).GetChild(4).gameObject;
+            rightHandUpdate = rightController.GetComponent<UpdateHandVR>();
         }
         if(leftController == null)
         {
             leftController = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
+            leftHandUpdate = leftController.GetComponent<UpdateHandVR>();
         }
     }
 
@@ -409,6 +413,7 @@ private void Start()
 
     public virtual void Right_HoverUpdate()
     {
+        rightHandUpdate.HandsPositionUpdating();
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
         RaycastHit hit;
 
@@ -442,6 +447,7 @@ private void Start()
 
     public virtual void Left_HoverUpdate()
     {
+        leftHandUpdate.HandsPositionUpdating();
         Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
         RaycastHit hit;
 
@@ -559,12 +565,5 @@ private void Start()
                     break;
                 }
         }
-    }
-
-    [PunRPC]
-    protected void HandsPositionUpdating_RPC()
-    {
-        rightController.transform.SetPositionAndRotation(rightController.transform.position, rightController.transform.rotation);
-        leftController.transform.SetPositionAndRotation(leftController.transform.position, leftController.transform.rotation);
     }
 }
