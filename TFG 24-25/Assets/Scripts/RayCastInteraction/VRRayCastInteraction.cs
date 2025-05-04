@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
-public enum HandState { IDLE, POINTING, GRABBING, INTERACT }
+public enum HandState { IDLE = 0, POINTING = 1, GRABBING = 2, INTERACT = 3 }
 
 public class VRRayCastInteraction : BaseRayCastInteraction
 {
@@ -105,7 +105,7 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Right_ChangeHandState(HandState.IDLE);
+                photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
                 Debug.Log("ENTERED RETURN DOWN");
                 return; }
 
@@ -138,7 +138,7 @@ private void Start()
                 {
                     Debug.Log("ENTERED RIGHT DRAG UPDATE");
                     StartCoroutine(Right_DragUpdate(hit.collider.gameObject));
-                    Right_ChangeHandState(HandState.GRABBING);
+                    photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.GRABBING);
                     right_blockChangeAnimation = true;
                 }
             }
@@ -148,8 +148,7 @@ private void Start()
     {
         Debug.Log("ACTIVATE UP");
         right_blockChangeAnimation = false;
-        Right_ChangeHandState(HandState.POINTING);
-
+        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
         if (right_lastInteractedObject == null)
         { return; }
 
@@ -192,7 +191,7 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Right_ChangeHandState(HandState.POINTING);
+                photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
                 return; 
             }
 
@@ -207,8 +206,8 @@ private void Start()
                     right_lastInteractedObject.RotateCardToDisplayVR();
                     displayingCard = true;
 
-                    Right_ChangeHandState(HandState.INTERACT);
-                    right_blockChangeAnimation = true;
+                        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.INTERACT);
+                        right_blockChangeAnimation = true;
                     break;
                 }
                 case "RaycastInteractable":
@@ -216,8 +215,8 @@ private void Start()
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
                     lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
 
-                    Right_ChangeHandState(HandState.INTERACT);
-                    right_blockChangeAnimation = true;
+                        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.INTERACT);
+                        right_blockChangeAnimation = true;
                     break;
                 }
             }
@@ -227,7 +226,7 @@ private void Start()
     protected virtual void RightHand_ActivateInteractionUp()
     {
         right_blockChangeAnimation = false;
-        Right_ChangeHandState(HandState.POINTING);
+        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
 
         if (right_lastInteractedObject == null)
         { return; }
@@ -480,8 +479,10 @@ private void Start()
         }
     }
 
-    protected void Right_ChangeHandState(HandState newHandState)
+    [PunRPC]
+    protected void Right_ChangeHandState(int HandStateTemp)
     {
+        HandState newHandState = (HandState)HandStateTemp;
         if (right_handState == newHandState || right_blockChangeAnimation) { return; }
 
         Debug.Log("RIGHT CHANGING TO: " + newHandState.ToString());
