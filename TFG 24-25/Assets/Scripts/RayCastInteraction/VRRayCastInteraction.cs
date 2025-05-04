@@ -504,10 +504,12 @@ private void Start()
     protected void Right_ChangeHandState(int HandStateTemp, bool blockAnimation)
     {
         HandState newHandState = (HandState)HandStateTemp;
-        if (right_handState == newHandState || blockAnimation) { return; }
+        
 
         if (photonView.IsMine)
         {
+            if (right_handState == newHandState || blockAnimation) { return; }
+
             switch (newHandState)
             {
                 case HandState.IDLE:
@@ -547,6 +549,8 @@ private void Start()
         }
         else
         {
+            if (left_handState == newHandState || blockAnimation) { return; }
+
             switch (newHandState)
             {
                 case HandState.IDLE:
@@ -590,12 +594,11 @@ private void Start()
     protected void Left_ChangeHandState(int HandStateTemp, bool blockAnimation)
     {
         HandState newHandState = (HandState)HandStateTemp;
-        if (left_handState == newHandState || blockAnimation) { return; }
-
-        Debug.Log("LEFT CHANGING TO: " + newHandState.ToString());
-
+        
         if (photonView.IsMine)
         {
+            if (left_handState == newHandState || blockAnimation) { return; }
+
             switch (newHandState)
             {
                 case HandState.IDLE:
@@ -635,6 +638,8 @@ private void Start()
         }
         else
         {
+            if (right_handState == newHandState || blockAnimation) { return; }
+
             switch (newHandState)
             {
                 case HandState.IDLE:
