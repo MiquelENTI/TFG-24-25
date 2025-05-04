@@ -42,10 +42,11 @@ public class CharacterStats : CardStats, ICloneable
     public int movementRange;
     public int attackRange;
     public MovementType movementType;
+    public AbilityType abilityType;
     public bool stun;
     public bool checkAllInRangeCells;
     public int scoreMultiplier;
-    public CharacterStats(CardType _cardType, string _name, int _manaCost, int _dmg, int _hp, int _movementRange, int _attackRange, int _scoreMult, MovementType _movementType, string _description)
+    public CharacterStats(CardType _cardType, string _name, int _manaCost, int _dmg, int _hp, int _movementRange, int _attackRange, int _scoreMult, MovementType _movementType, AbilityType _abilityType, string _description)
     {
         cardType = _cardType;
         name = _name;
@@ -57,6 +58,7 @@ public class CharacterStats : CardStats, ICloneable
         attackRange = _attackRange;
         scoreMultiplier = _scoreMult;
         movementType = _movementType;
+        abilityType = _abilityType;
         stun = false;
         description = _description;
         checkAllInRangeCells = false;
