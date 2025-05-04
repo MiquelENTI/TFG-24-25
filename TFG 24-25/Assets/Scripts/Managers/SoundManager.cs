@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class SoundManager : Singleton<SoundManager>
 {
@@ -265,17 +264,15 @@ public class SoundManager : Singleton<SoundManager>
         
         board = GameObject.Find("Board");
         PlayMusic(002000001);
-        PlayAmbient(001001001);
-    }
+        PlayMusic(001001001);
+    }   
+        
+    
+
 
    public void PlaySFX (int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index],position);
-    }
-
-    public void PlayAmbient(int index)
-    {
-        FMODUnity.RuntimeManager.PlayOneShot(ambientDictionary[index], board.transform.position);
     }
 
     public void PlayMusic(int index)

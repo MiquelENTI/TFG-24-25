@@ -115,8 +115,7 @@ public class AudioManager : MonoBehaviour
     {
         if (gameplayMusicInstance.isValid())
         {
-            FMOD.RESULT test = gameplayMusicInstance.setParameterByName("RONDA", rondaValue);
-            Debug.Log(test.ToString());
+            gameplayMusicInstance.setParameterByName("RONDA", rondaValue);
         Debug.Log("Paràmetre RONDA establert a: " + rondaValue);
         }
 }
