@@ -104,8 +104,6 @@ public class CellNode
 
     public Tuple<int, CellConnection> GetDirectionToCellByRange(int cellId, int range)
     {
-        List<CellNode> surroundingCells = GetSurrondingCells();
-
         foreach (var direction in connectionDictionary)
         {
             CellNode nextCell = this;
@@ -120,7 +118,8 @@ public class CellNode
                 nextCell = nextCell.GetCellByDirection(direction.Key);
                 if (nextCell.id == cellId)
                 {
-                    return Tuple.Create(i, direction.Key);
+                    nextCell.PrintStatus();
+                    return Tuple.Create(i + 1, direction.Key);
                 }
             }
         }
@@ -135,10 +134,12 @@ public class CellNode
     /// <returns></returns>
     public Tuple<bool, int> CheckIsCharacterOnTheWay(int cellId, int range)
     {
-        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
-        if (direction.Item1 == 0) { Tuple.Create(false, 0); }
+        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range); // Cap a on esta el character // Si retorna 0 es que no la ha trobat
+        if (direction.Item1 == 0) { return Tuple.Create(true, 0); }
 
-        CellNode cellToCheck = GetCellByDirection(direction.Item2);
+       // Debug.Log("Direction: " + direction.Item1 + " " + direction.Item2);
+
+        CellNode cellToCheck = GetCellByDirection(direction.Item2); 
 
         for (int i = 1; i < direction.Item1; i++)
         {
