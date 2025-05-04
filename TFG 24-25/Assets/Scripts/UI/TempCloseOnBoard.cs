@@ -25,7 +25,8 @@ public class TempCloseOnBoard : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.F2))
         { 
-            ToggleOnboard(0); 
+            ToggleOnboard(0);
+            ToggleOnboard(2);
         }
 
 

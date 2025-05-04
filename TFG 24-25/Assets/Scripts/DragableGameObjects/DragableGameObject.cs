@@ -34,6 +34,10 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text ctd_Description;
     protected Image ctd_CardSprite;
     protected Image ctd_MovementSprite;
+    protected Image ctd_AbilityBackground;
+    protected Image ctd_AbilitySprite;
+    protected Image ctd_doubleScoreBackground;
+    protected Image ctd_doubleScoreSprite;
     #endregion
 
     #region Card On Board (cob)
@@ -104,7 +108,11 @@ public class DragableGameObject : MonoBehaviour
         ctd_Description = cardToDisplay.transform.GetChild(10).GetComponent<TMP_Text>();
         ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
         ctd_MovementSprite = cardToDisplay.transform.GetChild(11).GetComponent<Image>();
-        
+        ctd_AbilityBackground = cardToDisplay.transform.GetChild(13).GetComponent<Image>();
+        ctd_AbilitySprite = cardToDisplay.transform.GetChild(14).GetComponent<Image>();
+        ctd_doubleScoreBackground = cardToDisplay.transform.GetChild(15).GetComponent<Image>();
+        ctd_doubleScoreSprite = cardToDisplay.transform.GetChild(16).GetComponent<Image>();
+
     }
 
     public virtual void InitCardOnBoardText()
@@ -137,6 +145,33 @@ public class DragableGameObject : MonoBehaviour
             ctd_NameText.text = characterStats.name;
 
             ctd_Description.text = characterStats.description;
+
+            ctd_AbilitySprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/" + characterStats.abilityType.ToString());
+
+            if (characterStats.abilityType.ToString() == "nothing")
+            {
+                ctd_AbilitySprite.gameObject.SetActive(false);
+                ctd_AbilityBackground.gameObject.SetActive(false);
+            }
+            else
+            {
+                ctd_AbilitySprite.gameObject.SetActive(true);
+                ctd_AbilityBackground.gameObject.SetActive(true);
+            }
+
+
+            if (characterStats.scoreMultiplier == 1)
+            {
+                ctd_doubleScoreSprite.gameObject.SetActive(false);
+                ctd_doubleScoreBackground.gameObject.SetActive(false);
+            }
+            else if (characterStats.scoreMultiplier == 2)
+            {
+                ctd_doubleScoreSprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
+                ctd_doubleScoreSprite.gameObject.SetActive(true);
+                ctd_doubleScoreBackground.gameObject.SetActive(true);
+            }
+
         }
         catch 
         {

@@ -10,6 +10,8 @@ using UnityEngine.Rendering;
 using Unity.VisualScripting;
 
 public enum MovementType { Basic, Diagonal, Omni}
+
+public enum AbilityType { nothing, onAttack, onKill, attacked, startTurn, onDeath, onMove, scoringTile, onScore }
 public enum TeamType { RED = 0, BLUE = 1}
 public class Character
 {

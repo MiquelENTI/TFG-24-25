@@ -16,6 +16,19 @@ public class CardGameObject : DragableGameObject
     public SpawnCardController spawnCardController;
 
 
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text attackText;
+    [SerializeField] private TMP_Text cardDescriptionText;
+    [SerializeField] private Image illustrationImage;
+    [SerializeField] private Image movementImage;
+
+    [SerializeField] private Image DoubleScoreImage;
+    [SerializeField] private Image DoubleScoreBGImage;
+
+    [SerializeField] private Image AbilityImage;
+    [SerializeField] private Image AbilityBGImage;
+
     protected override void Awake()
     {
         base.Awake();
@@ -149,8 +162,48 @@ public class CardGameObject : DragableGameObject
             if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item2.cardType == CardType.CHARACTER)
             {
                 characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
-                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name); 
                 movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
+                if (id == 19 || id == 5 || id == 30)
+                {
+                    movementSprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2");
+                }
+
+                nameText.text = characterStats.getName();
+                healthText.text = characterStats.getHealthToString();
+                attackText.text = characterStats.getAttackToString();
+                cardDescriptionText.text = characterStats.getDescription();
+                illustrationImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+                if (id == 19 || id == 5 || id == 30)
+                {
+                    movementImage.sprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2");
+                }
+
+                AbilityImage.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/" + characterStats.abilityType.ToString());
+
+                if (characterStats.abilityType.ToString() == "nothing")
+                {
+                    AbilityImage.gameObject.SetActive(false);
+                    AbilityBGImage.gameObject.SetActive(false);
+                }
+                else
+                {
+                    AbilityImage.gameObject.SetActive(true);
+                    AbilityBGImage.gameObject.SetActive(true);
+                }
+
+                if (characterStats.scoreMultiplier == 1)
+                {
+                    DoubleScoreImage.gameObject.SetActive(false);
+                    DoubleScoreBGImage.gameObject.SetActive(false);
+                }
+                else if (characterStats.scoreMultiplier == 2)
+                {
+                    DoubleScoreImage.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
+                    DoubleScoreImage.gameObject.SetActive(true);
+                    DoubleScoreBGImage.gameObject.SetActive(true);
+                }
+
             }
             else
             {
