@@ -1120,7 +1120,11 @@ MonoBehaviour:
   - {fileID: 8127518540336807045}
   StringsBanks:
   - {fileID: 5514283767104542192}
+<<<<<<< Updated upstream
   cacheTime: 638818893350844844
+=======
+  cacheTime: 638819214480656959
+>>>>>>> Stashed changes
   cacheVersion: 131621
 --- !u!114 &171655600562397013
 MonoBehaviour:
@@ -1783,7 +1787,11 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638818893350844844
+=======
+  lastModified: 638819214480656959
+>>>>>>> Stashed changes
   FileSizes:
   - Name: 
     Value: 4828
@@ -1995,7 +2003,11 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638818893350834877
+=======
+  lastModified: 638819214480646957
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &8568041047220006492
