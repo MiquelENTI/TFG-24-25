@@ -78,12 +78,12 @@ private void Start()
         if (rightController == null)
         {
             rightController = transform.GetChild(2).GetChild(0).GetChild(2).GetChild(4).gameObject;
-            rightHandUpdate = rightController.GetComponent<UpdateHandVR>();
+            rightHandUpdate = transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<UpdateHandVR>();
         }
         if(leftController == null)
         {
             leftController = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
-            leftHandUpdate = leftController.GetComponent<UpdateHandVR>();
+            leftHandUpdate = transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<UpdateHandVR>();
         }
     }
 
@@ -413,7 +413,7 @@ private void Start()
 
     public virtual void Right_HoverUpdate()
     {
-        rightHandUpdate.HandsPositionUpdating(rightController, rightController.transform.position, rightController.transform.rotation);
+        rightHandUpdate.HandsPositionUpdating(rightController.transform.position, rightController.transform.rotation);
 
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
         RaycastHit hit;
@@ -448,7 +448,7 @@ private void Start()
 
     public virtual void Left_HoverUpdate()
     {
-        leftHandUpdate.HandsPositionUpdating(leftController, leftController.transform.position, leftController.transform.rotation);
+        leftHandUpdate.HandsPositionUpdating(leftController.transform.position, leftController.transform.rotation);
         Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
         RaycastHit hit;
 

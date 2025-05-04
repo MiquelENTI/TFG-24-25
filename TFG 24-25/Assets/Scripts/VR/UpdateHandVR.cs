@@ -19,14 +19,14 @@ public class UpdateHandVR : MonoBehaviour
         
     }
 
-    public void HandsPositionUpdating(GameObject myobject, Vector3 position, Quaternion rotation)
+    public void HandsPositionUpdating(Vector3 position, Quaternion rotation)
     {
-        photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, myobject, position, rotation);
+        photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
     }
 
     [PunRPC]
-    public void HandsPositionUpdating_RPC(GameObject myobject, Vector3 position, Quaternion rotation)
+    public void HandsPositionUpdating_RPC(Vector3 position, Quaternion rotation)
     {
-        myobject.transform.SetPositionAndRotation(position, rotation);
+        transform.SetPositionAndRotation(position, rotation);
     }
 }
