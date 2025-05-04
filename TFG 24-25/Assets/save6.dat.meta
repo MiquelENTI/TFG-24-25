@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 98246d95b3d7e584b8befecc905a1294
+=======
+guid: fbe8f534d10da470f856311346b5efab
+>>>>>>> 445fb36 (add script turn)
 DefaultImporter:
   externalObjects: {}
   userData: 
