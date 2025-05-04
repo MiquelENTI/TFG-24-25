@@ -421,7 +421,7 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Right_ChangeHandState(HandState.IDLE);
+                photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
                 return;
             }
 
@@ -433,13 +433,13 @@ private void Start()
                 case "CardGameObject":
                 case "RaycastInteractable":
                 {
-                        Right_ChangeHandState(HandState.POINTING);
-                    break;
+                        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
+                        break;
                 }
                 default:
                 {
-                        Right_ChangeHandState(HandState.IDLE);
-                    break;
+                        photonView.RPC("Right_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
+                        break;
                 }
             }
         }
