@@ -256,7 +256,8 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Left_ChangeHandState(HandState.IDLE);
+                photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
+
                 return; 
             }
 
@@ -289,7 +290,7 @@ private void Start()
                 {
                     
                     StartCoroutine(Left_DragUpdate(hit.collider.gameObject));
-                    Left_ChangeHandState(HandState.GRABBING);
+                    photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.GRABBING);
                     left_blockChangeAnimation = true;
                 }
             }
@@ -298,7 +299,7 @@ private void Start()
     protected virtual void LeftHand_SelectInteractionUp()
     {
         left_blockChangeAnimation = false;
-        Left_ChangeHandState(HandState.POINTING);
+        photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
 
         if (left_lastInteractedObject == null)
         { return; }
@@ -339,7 +340,7 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Left_ChangeHandState(HandState.POINTING);
+                photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
                 return; 
             }
 
@@ -354,7 +355,7 @@ private void Start()
                         left_lastInteractedObject.RotateCardToDisplayVR();
                         displayingCard = true;
 
-                        Left_ChangeHandState(HandState.INTERACT);
+                        photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.INTERACT);
                         left_blockChangeAnimation = true;
                         break;
                     }
@@ -363,7 +364,7 @@ private void Start()
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
                     lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
 
-                    Left_ChangeHandState(HandState.INTERACT);
+                    photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.INTERACT);
                     left_blockChangeAnimation = true;
                     break;
                 }
@@ -374,7 +375,7 @@ private void Start()
     protected virtual void LeftHand_ActivateInteractionUp()
     {
         left_blockChangeAnimation = false;
-        Left_ChangeHandState(HandState.POINTING);
+        photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
 
         if (left_lastInteractedObject == null)
         { return; }
@@ -455,7 +456,7 @@ private void Start()
         {
             if (hit.collider == null)
             {
-                Left_ChangeHandState(HandState.IDLE);
+                photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
                 return;
             }
 
@@ -467,12 +468,12 @@ private void Start()
                 case "CardGameObject":
                 case "RaycastInteractable":
                 {
-                    Left_ChangeHandState(HandState.POINTING);
+                    photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.POINTING);
                     break;
                 }
                 default:
                 {
-                    Left_ChangeHandState(HandState.IDLE);
+                    photonView.RPC("Left_ChangeHandState", RpcTarget.All, (int)HandState.IDLE);
                     break;
                 }
             }
@@ -525,8 +526,10 @@ private void Start()
         }
     }
 
-    protected void Left_ChangeHandState(HandState newHandState)
+    [PunRPC]
+    protected void Left_ChangeHandState(int HandStateTemp)
     {
+        HandState newHandState = (HandState)HandStateTemp;
         if (left_handState == newHandState || left_blockChangeAnimation) { return; }
 
         Debug.Log("LEFT CHANGING TO: " + newHandState.ToString());
