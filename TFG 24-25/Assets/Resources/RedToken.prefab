@@ -406,10 +406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsBlue: 1
   cardToDisplay: {fileID: 0}
-  characterSprite: {fileID: 21300000, guid: edf6ed263482e4a48a4bdc09c314d80f, type: 3}
-  TEMP_id: 1
-  tileCollider: {fileID: 107403703900830869}
-  cardCanvas: {fileID: 9007898544887815244}
 --- !u!54 &2614872735940336508
 Rigidbody:
   m_ObjectHideFlags: 0
