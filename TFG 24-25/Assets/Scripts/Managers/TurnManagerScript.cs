@@ -26,7 +26,6 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     private bool player2Registered = false;
 
     PhotonView photonView;
-    public TMP_Text turnCounterElement;
 
     int drawCardsStart = 5;
 
@@ -130,12 +129,16 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         IsTurnBlue = newIsTurnBlue;
         Debug.Log("Turno cambiado. Ahora es turno " + (IsTurnBlue ? "Azul (Player 1)" : "Rojo (Player 2)"));
 
+        CandleBehavior.Instance.ChangeCandleColor(IsTurnBlue);
+
         if (newIsTurnBlue)
         {
+            CandleBehavior.Instance.AddCandle();
+            CandleBehavior.Instance.ChangeCandleColor(IsTurnBlue);
+
             Debug.Log("isBlueTurn: " + newIsTurnBlue);
 
             turnCounter++;
-            turnCounterElement.text = "Turn Number: " + turnCounter;
 
             if (turnCounter > 10)
             {

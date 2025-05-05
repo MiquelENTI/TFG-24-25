@@ -19,6 +19,7 @@ TagManager:
   - Bullet
   - CardToDisplayPC
   - CardToDisplayVR
+  - ManaBottleCanvas
   layers:
   - Default
   - TransparentFX

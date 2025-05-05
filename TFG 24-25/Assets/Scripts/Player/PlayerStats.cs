@@ -8,18 +8,25 @@ public class PlayerStats : Singleton<PlayerStats>
     int totalMana = 15;
     int currentMana = 15;
 
-    [SerializeField] TMP_Text manaText;
+    [SerializeField] TMP_Text[] manaBottleTexts = new TMP_Text[2];
+
+    private void Start()
+    {
+        manaBottleTexts = GameObject.FindGameObjectWithTag("ManaBottleCanvas").GetComponentsInChildren<TMP_Text>();
+    }
 
     public void SubstractMana(int amount)
     {
         currentMana -= amount;
-        manaText.text = "CURRENT MANA: " + currentMana;
+        manaBottleTexts[0].text = currentMana.ToString();
+        manaBottleTexts[1].text = currentMana.ToString();
     }
 
     public void ResetMana()
     {
         currentMana = totalMana;
-        manaText.text = "CURRENT MANA: " + currentMana;
+        manaBottleTexts[0].text = currentMana.ToString();
+        manaBottleTexts[1].text = currentMana.ToString();
     }
 
     public int GetCurrentMana()

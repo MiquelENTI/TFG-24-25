@@ -535,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
   HasSourceProject: 0
-  HasPlatforms: 0
+  HasPlatforms: 1
   sourceProjectPath: ../../TFG/TFG-FMOD/FMODProject/FMODProject.fspro
   sourceBankPath: FMOD
   sourceBankPathUnformatted: 

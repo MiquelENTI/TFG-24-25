@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 669d54138ecd3924db5bf6a57b4c827c
+=======
+guid: 08673006ee3ef3c4a958218c93b0080b
+>>>>>>> feature/settingSceneTrailer
 DefaultImporter:
   externalObjects: {}
   userData: 

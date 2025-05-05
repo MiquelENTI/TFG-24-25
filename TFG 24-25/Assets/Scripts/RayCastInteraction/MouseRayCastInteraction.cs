@@ -68,6 +68,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 }
                 case "RaycastInteractable":
                 {
+                        Debug.Log("CLICKED BELL");
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
                     lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
                     break;

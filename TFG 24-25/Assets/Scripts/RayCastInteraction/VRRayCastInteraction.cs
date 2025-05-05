@@ -36,6 +36,11 @@ public class VRRayCastInteraction : BaseRayCastInteraction
     
 private void Start()
     {
+
+        if (!photonView.IsMine)
+        {
+            return;
+        }
         #region RIGHT HAND
 
         // Weird Button
@@ -46,7 +51,9 @@ private void Start()
         // Trigger
         playerInputs.XRIRightHandInteraction.Activate.started += _ => { RightHand_ActivateInteractionDown(); };
         playerInputs.XRIRightHandInteraction.Activate.canceled += _ => { RightHand_ActivateInteractionUp(); };
-        //playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
+        playerInputs.XRIRightHand.ThumbStickClicked.started += _ => { GameObject.FindGameObjectWithTag(PhotonNetwork.IsMasterClient ? "BlueHold" : "RedHold").GetComponent<CardHold>().ReorganizeCards(); };
+        
+        /* 
         playerInputs.XRIRightHand.ThumbStickClicked.started += _ => {
             photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.GRABBING, right_blockChangeAnimation);
             Right_ChangeHandState((int)HandState.GRABBING, right_blockChangeAnimation);
@@ -58,6 +65,7 @@ private void Start()
             photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.IDLE, right_blockChangeAnimation);
             Right_ChangeHandState((int)HandState.IDLE, right_blockChangeAnimation);
         };
+        */
 
         #endregion
 
@@ -79,6 +87,11 @@ private void Start()
 
     private void Update()
     {
+        if (!photonView.IsMine)
+        {
+            return;
+        }
+
         if (rightController != null || leftController != null) 
         {
             Right_HoverUpdate();
