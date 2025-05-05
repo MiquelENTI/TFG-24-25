@@ -175,6 +175,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
     {
         // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
 
+        EffectsManager.Instance.RemoveTeamEffects();
+
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
 
@@ -203,18 +205,23 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
+                        EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                     // Or are on different teams, cell is highlighted with attacking color
                     else
                     {
                         // Set Cell Red and visible
-
+                        EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                 }
                 // The cell is empty and is highlighted with movement color
-                nextCell.ChangeMovementIndicatorVisibility(state);
+                if (state)
+                {
+                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextCell.GetPosition()+new Vector3(0,0.02f,0));
+                }
+                //nextCell.ChangeMovementIndicatorVisibility(state);
             }
         }
     }
