@@ -68772,12 +68772,11 @@ MonoBehaviour:
   startTurnAudioCodesForAll: 91ce2d0092ce2d0093ce2d00
   startYourTurnAudioCodes: 79d22d007ad22d00
   startEnemyTurnAudioCodes: 61d62d0062d62d00
-  turnCounterElement: {fileID: 0}
   scoreManager: {fileID: 128790850}
   finalCanvas: {fileID: 388725774}
   winnerText: {fileID: 735938748}
   isPCVersion: 1
-  turnBypass: 1
+  turnBypass: 0
 --- !u!4 &1256807050
 Transform:
   m_ObjectHideFlags: 0
