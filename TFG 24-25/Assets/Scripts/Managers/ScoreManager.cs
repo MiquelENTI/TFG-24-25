@@ -21,17 +21,23 @@ public class ScoreManager : MonoBehaviourPun
     [PunRPC]
     public void UpdateScore(TeamType teamType, int amount)
     {
-        if (teamType == TeamType.BLUE)
+        if (teamType == TeamType.BLUE && PhotonNetwork.IsMasterClient)
         {
             BlueScore += amount;
 
-            PhotonNetwork.Instantiate("Moneda1", blueCoinSpawnPos, Quaternion.identity);
+            for (int i = 0; i < amount; i++)
+            {
+                PhotonNetwork.Instantiate("Moneda1", blueCoinSpawnPos, Quaternion.identity);
+            }
         }
         else
         {
             RedScore += amount;
 
-            PhotonNetwork.Instantiate("Moneda1", redCoinSpawnPos, Quaternion.identity);
+            for (int i = 0; i < amount; i++)
+            {
+                PhotonNetwork.Instantiate("Moneda1", redCoinSpawnPos, Quaternion.identity);
+            }
         }
     }
 }
