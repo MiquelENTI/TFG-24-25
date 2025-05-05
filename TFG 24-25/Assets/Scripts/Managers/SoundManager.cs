@@ -281,7 +281,7 @@ public class SoundManager : Singleton<SoundManager>
     }
      public void PlayVO(int index, Vector3 position)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index],position);
+        FMODUnity.RuntimeManager.PlayOneShot(voDictionary[index],position);
     }
     public void PlayBonfireAtPosition (Vector3 position)
     {

@@ -114,7 +114,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         IsTurnBlue = !IsTurnBlue;
 
-        // photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
+        photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
         photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsTurnBlue);
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsTurnBlue);
@@ -190,11 +190,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         if ((isLocalBlue && blueWon) || (!isLocalBlue && !blueWon))
         {
-            //SoundManager.Instance.PlayVO(003001001, playerTransform.position);
+            SoundManager.Instance.PlayVO(004000001, playerTransform.position);
         }
         else
         {
-            //SoundManager.Instance.PlayVO(003010001, playerTransform.position);
+            SoundManager.Instance.PlayVO(004000001, playerTransform.position);
         }
     }
 
@@ -208,11 +208,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
             if (player1GameObject != null)
             {
-                //SoundManager.Instance.PlayVO(randomAudioCode, player1GameObject.transform.position);
+                SoundManager.Instance.PlayVO(randomAudioCode, player1GameObject.transform.position);
             }
             if (player2GameObject != null)
             {
-                //SoundManager.Instance.PlayVO(randomAudioCode, player2GameObject.transform.position);
+                SoundManager.Instance.PlayVO(randomAudioCode, player2GameObject.transform.position);
             }
             else
             {
@@ -261,7 +261,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
         {
             int randomIndex = Random.Range(0, audioCodesToUse.Length);
             randomAudioCode = audioCodesToUse[randomIndex];
-            //SoundManager.Instance.PlayVO(randomAudioCode, playerTransform.position);
+            SoundManager.Instance.PlayVO(randomAudioCode, playerTransform.position);
         }
     }
 

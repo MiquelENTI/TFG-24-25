@@ -68329,9 +68329,9 @@ MonoBehaviour:
   IsTurnBlue: 1
   player1GameObject: {fileID: 0}
   player2GameObject: {fileID: 0}
-  startTurnAudioCodesForAll: 91ce2d0092ce2d0093ce2d00
-  startYourTurnAudioCodes: 79d22d007ad22d00
-  startEnemyTurnAudioCodes: 61d62d0062d62d00
+  startTurnAudioCodesForAll: 01093d00
+  startYourTurnAudioCodes: 01093d00
+  startEnemyTurnAudioCodes: 01093d00
   turnCounterElement: {fileID: 407714517}
   scoreManager: {fileID: 128790850}
   finalCanvas: {fileID: 388725774}
