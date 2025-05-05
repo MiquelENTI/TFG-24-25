@@ -27,7 +27,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
     PhotonView photonView;
 
-    int drawCardsStart = 5;
+    int drawCardsStart = 4;
 
     public ScoreManager scoreManager; 
     public GameObject finalCanvas;
