@@ -26,7 +26,6 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     private bool player2Registered = false;
 
     PhotonView photonView;
-    public TMP_Text turnCounterElement;
 
     int drawCardsStart = 5;
 
@@ -140,7 +139,6 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             Debug.Log("isBlueTurn: " + newIsTurnBlue);
 
             turnCounter++;
-            turnCounterElement.text = "Turn Number: " + turnCounter;
 
             if (turnCounter > 10)
             {
