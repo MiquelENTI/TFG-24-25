@@ -16,8 +16,14 @@ EditorUserSettings:
       value: 50050c0452545b0c580d0e2012215e4412151e287f2a7268787d4537b2b76361
       flags: 0
     RecentlyUsedSceneGuid-3:
+<<<<<<< HEAD
 =======
 >>>>>>> feature/ChangeTileHighlight
+=======
+      value: 5301520004045c0a08575d7140255e4417161b2c297c7463297e4f32b6b1356e
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+>>>>>>> UpdateDatabase
       value: 51500d505706080d095d0e7247730c44174f482b7c2925622c7d1f63bbb7613e
       flags: 0
     vcSharedLogLevel:
