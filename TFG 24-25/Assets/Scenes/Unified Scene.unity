@@ -68940,7 +68940,6 @@ MonoBehaviour:
   startTurnAudioCodesForAll: 01093d00
   startYourTurnAudioCodes: 01093d00
   startEnemyTurnAudioCodes: 01093d00
-  turnCounterElement: {fileID: 407714517}
   scoreManager: {fileID: 128790850}
   finalCanvas: {fileID: 388725774}
   winnerText: {fileID: 735938748}
