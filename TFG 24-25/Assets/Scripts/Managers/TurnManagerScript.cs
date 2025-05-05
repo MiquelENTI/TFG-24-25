@@ -282,7 +282,11 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (SceneManager.GetActiveScene().name != "ReplayScene")
         {
-            DeckManager.Instance.DrawCard(IsTurnBlue);
+            for (int i = 0; i < amount; i++)
+            {
+                DeckManager.Instance.DrawCard(IsTurnBlue);
+            }
+            
         }
     }
 

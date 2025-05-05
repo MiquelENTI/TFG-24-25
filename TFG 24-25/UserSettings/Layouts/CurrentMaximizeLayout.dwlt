@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
-  - {fileID: 14}
+  - {fileID: 16}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -24,15 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 41821
-=======
-  controlID: 20461
->>>>>>> feature/ChangeTileHighlight
-=======
-  controlID: 3151
->>>>>>> UpdateDatabase
+  controlID: 1719
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -53,17 +45,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 307
-    y: 73
-    width: 966
-    height: 573
-=======
     x: 403.2
     y: 73.6
     width: 727.60004
     height: 304.6
->>>>>>> UpdateDatabase
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -116,40 +101,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-      width: 966
-      height: 552
-    m_Scale: {x: 0.503125, y: 0.503125}
-    m_Translation: {x: 483, y: 276}
-=======
       width: 727.60004
       height: 283.6
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 0.32824075, y: 0.32824075}
     m_Translation: {x: 363.80002, y: 141.8}
->>>>>>> UpdateDatabase
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-      x: -960
-      y: -548.5714
-      width: 1920
-      height: 1097.1428
-    m_MinimalGUI: 1
-  m_defaultScale: 0.503125
-  m_LastWindowPixelSize: {x: 966, y: 573}
-=======
-      x: -363.80002
-      y: -141.8
-      width: 727.60004
-      height: 283.6
+      x: -1108.3329
+      y: -432
+      width: 2216.6658
+      height: 864
     m_MinimalGUI: 1
   m_defaultScale: 0.32824075
   m_LastWindowPixelSize: {x: 909.50006, y: 380.75}
->>>>>>> UpdateDatabase
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -169,30 +137,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 4}
-  - {fileID: 11}
+  - {fileID: 12}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1275
-    height: 947
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 41822
-=======
-  controlID: 20462
->>>>>>> feature/ChangeTileHighlight
-=======
     width: 1132.8
     height: 770.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 3152
->>>>>>> UpdateDatabase
+  controlID: 1720
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,25 +167,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1275
-    height: 594
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 41823
-=======
-  controlID: 20463
->>>>>>> feature/ChangeTileHighlight
-=======
     width: 1132.8
     height: 325.6
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 3153
->>>>>>> UpdateDatabase
+  controlID: 1721
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,17 +190,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 307
-    height: 594
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-=======
     width: 403.2
     height: 325.6
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
->>>>>>> UpdateDatabase
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -286,15 +221,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 73
-    width: 306
-    height: 573
-=======
     y: 73.6
     width: 402.2
     height: 304.6
->>>>>>> UpdateDatabase
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -307,23 +236,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-<<<<<<< HEAD
-      scrollPos: {x: 0, y: 3240}
-      m_SelectedIDs: c2faffff
-      m_LastClickedID: -1342
-      m_ExpandedIDs: 5efaffff66faffff6efaffff76faffff7efaffff80faffffaafaffffb2faffffbafaffffc2faffffcafaffffccfaffff1afbffff328d0000dc900000e8960000fc990000
-=======
-      scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: beb4fcff4ab5fcff3e22fdff34ecfeffd0ecfeff16edfeff2aedfeff40edfeff1afbffffbe8b0200
->>>>>>> feature/ChangeTileHighlight
-=======
-      m_SelectedIDs: ee1b0100
-      m_LastClickedID: 0
-      m_ExpandedIDs: b8b8ffff82f5ffff70f6ffffc2aa0000e8b30000
->>>>>>> UpdateDatabase
+      scrollPos: {x: 0, y: 60}
+      m_SelectedIDs: d2a20000
+      m_LastClickedID: 41682
+      m_ExpandedIDs: 9af7ffffe49e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -369,8 +285,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 306
-    height: 573
+    width: 468
+    height: 574
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -418,17 +334,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 307
-    y: 0
-    width: 968
-    height: 594
-=======
     x: 403.2
     y: 0
     width: 729.60004
     height: 325.6
->>>>>>> UpdateDatabase
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -436,6 +345,7 @@ MonoBehaviour:
   - {fileID: 9}
   - {fileID: 10}
   - {fileID: 2}
+  - {fileID: 11}
   m_Selected: 2
   m_LastSelected: 0
 --- !u!114 &9
@@ -458,17 +368,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 307
-    y: 73
-    width: 966
-    height: 573
-=======
     x: 403.2
     y: 73.6
     width: 727.60004
     height: 304.6
->>>>>>> UpdateDatabase
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -717,11 +620,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-<<<<<<< HEAD
-      snapOffset: {x: 0, y: 25}
-=======
       snapOffset: {x: 0, y: 0}
->>>>>>> UpdateDatabase
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -955,7 +854,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 35}
+      snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
@@ -974,21 +873,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 0.44928247, y: 2.1139946, z: -1.3161383}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 0.44928247, y: 2.1139946, z: -1.3161383}
-=======
-    m_Target: {x: -3.862926, y: -0.08561479, z: 3.928205}
-    speed: 2
-    m_Value: {x: -3.862926, y: -0.08561479, z: 3.928205}
->>>>>>> feature/ChangeTileHighlight
-=======
-    m_Target: {x: -11.498865, y: -7.5414424, z: 10.993938}
-    speed: 2
-    m_Value: {x: -11.498865, y: -7.5414424, z: 10.993938}
->>>>>>> UpdateDatabase
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1034,36 +921,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: -0.43545672, y: 0.135864, z: -0.067023136, w: -0.8872209}
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
-    m_Value: {x: -0.4355145, y: 0.13588203, z: -0.06703203, w: -0.88733864}
-=======
-    m_Target: {x: 0.20982002, y: -0.379082, z: 0.08868531, w: 0.8968905}
-    speed: 2
-    m_Value: {x: 0.20981947, y: -0.379081, z: 0.08868508, w: 0.8968882}
->>>>>>> UpdateDatabase
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
-    m_Target: 0.33200875
+    m_Target: 10
     speed: 2
-    m_Value: 0.33200875
-=======
-    m_Target: {x: -0.22768217, y: 0.7700764, z: -0.3866392, w: -0.45347863}
-    speed: 2
-    m_Value: {x: -0.22768337, y: 0.77008045, z: -0.38664123, w: -0.45348102}
-  m_Size:
-    m_Target: 0.12303626
-    speed: 2
-    m_Value: 0.12303626
->>>>>>> feature/ChangeTileHighlight
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.24087995
+    m_SpeedNormalized: 0.119999975
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1072,7 +943,7 @@ MonoBehaviour:
     m_FieldOfViewHorizontalOrVertical: 60
     m_NearClip: 0.03
     m_FarClip: 10000
-    m_DynamicClip: 1
+    m_DynamicClip: 0
     m_OcclusionCulling: 0
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
@@ -1101,10 +972,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 307
+    x: 504
     y: 73
-    width: 966
-    height: 573
+    width: 910
+    height: 379
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2154,8 +2025,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-<<<<<<< HEAD
-=======
   m_EditorHideFlags: 0
   m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -2243,7 +2112,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
->>>>>>> UpdateDatabase
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ProjectBrowser
@@ -2252,29 +2120,19 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 594
-    width: 1275
-    height: 353
-=======
     y: 325.6
     width: 1132.8
     height: 445.19998
->>>>>>> UpdateDatabase
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 13}
   m_Panes:
-  - {fileID: 12}
   - {fileID: 13}
+  - {fileID: 14}
+  - {fileID: 15}
   m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 1
---- !u!114 &12
-=======
   m_LastSelected: 2
 --- !u!114 &13
->>>>>>> UpdateDatabase
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2295,15 +2153,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 667
-    width: 1274
-    height: 332
-=======
     y: 399.2
     width: 1131.8
     height: 424.19998
->>>>>>> UpdateDatabase
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2315,7 +2167,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: turnma
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -2325,38 +2177,24 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Scripts/Managers
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: turnma
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Scripts/Managers
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Pau\Desktop\kraken\TFG\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 584}
-    m_SelectedIDs: f2b80000
-    m_LastClickedID: 47346
-    m_ExpandedIDs: 000000005cb800005eb8000060b8000062b8000064b8000066b8000068b800006ab800006cb800006eb8000070b8000072b8000074b8000076b8000078b800007ab800007cb800007eb8000080b8000082b8000000ca9a3b
-=======
-    scrollPos: {x: 0, y: 358}
-    m_SelectedIDs: f8a80000
-    m_LastClickedID: 43256
-    m_ExpandedIDs: 000000007ea4000080a4000082a4000084a4000086a4000088a400008aa400008ca400008ea4000090a4000092a4000094a4000096a4000098a400009aa400009ca400009ea40000a0a40000a2a40000a4a40000f4a8000012aa000000ca9a3b
->>>>>>> feature/ChangeTileHighlight
-=======
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 92bf0000
-    m_LastClickedID: 49042
-    m_ExpandedIDs: 00000000a0be000000ca9a3b
->>>>>>> UpdateDatabase
+    m_SelectedIDs: 3a610100
+    m_LastClickedID: 90426
+    m_ExpandedIDs: 0000000042be000044be000046be000048be000048bf000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2384,11 +2222,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000005cb800005eb8000060b8000062b8000064b8000066b8000068b800006ab800006cb800006eb8000070b8000072b8000074b8000076b8000078b800007ab800007cb800007eb8000080b8000082b8000000ca9a3b
-=======
-    m_ExpandedIDs: 00000000a0be000000ca9a3b
->>>>>>> UpdateDatabase
+    m_ExpandedIDs: 0000000042be000044be000046be000048be000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2413,20 +2247,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: c2faffff
-    m_LastClickedInstanceID: -1342
-=======
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
->>>>>>> feature/ChangeTileHighlight
-=======
-    m_SelectedInstanceIDs: ee1b0100
-    m_LastClickedInstanceID: 72686
->>>>>>> UpdateDatabase
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_SelectedInstanceIDs: d2a20000
+    m_LastClickedInstanceID: 41682
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300000c63010070630100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2442,7 +2266,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -2454,7 +2278,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2475,9 +2299,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 667
-    width: 1274
-    height: 332
+    y: 473
+    width: 1415
+    height: 526
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2488,9 +2312,6 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-<<<<<<< HEAD
---- !u!114 &14
-=======
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2527,9 +2348,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 35808
+  m_LastSelectedObjectID: -772224
 --- !u!114 &16
->>>>>>> UpdateDatabase
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2539,36 +2359,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1275
-    y: 0
-    width: 645
-    height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-<<<<<<< HEAD
-  m_ActualView: {fileID: 15}
-=======
-=======
     x: 1132.8
     y: 0
     width: 403.19995
     height: 770.8
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
->>>>>>> UpdateDatabase
   m_ActualView: {fileID: 17}
->>>>>>> feature/ChangeTileHighlight
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &15
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2588,17 +2395,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1275
-    y: 73
-    width: 644
-    height: 926
-=======
     x: 1132.8
     y: 73.6
     width: 402.19995
     height: 749.8
->>>>>>> UpdateDatabase
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
