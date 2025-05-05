@@ -113,8 +113,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         IsTurnBlue = !IsTurnBlue;
 
-        photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
-        photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsTurnBlue);
+        //photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
+        //photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsTurnBlue);
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsTurnBlue);
         photonView.RPC("DrawCards", RpcTarget.OthersBuffered, 1);

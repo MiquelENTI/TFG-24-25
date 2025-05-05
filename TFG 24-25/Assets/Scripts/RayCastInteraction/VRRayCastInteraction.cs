@@ -207,9 +207,6 @@ private void Start()
 
     protected virtual void RightHand_ActivateInteractionDown()
     {
-        if (!photonView.IsMine)
-        { return; }
-
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
 
         RaycastHit hit;
@@ -228,6 +225,7 @@ private void Start()
                 case "TokenGameObject":
                 case "CardGameObject":
                 {
+                        Debug.Log("ENTERED INSPECT");
                     right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     right_lastInteractedObject.SeeTokenCard();
                     right_lastInteractedObject.ToggleCardToDisplay(true);
