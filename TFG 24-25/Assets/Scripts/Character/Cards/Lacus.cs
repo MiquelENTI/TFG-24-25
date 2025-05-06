@@ -50,7 +50,7 @@ public class Lacus : Character
         MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
         if (playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
-            Vector2 diff = cellToMove.positionInGrid - CellNodeManager.Instance.GetNodeById(onTile).positionInGrid;
+            Vector2 diff = cellToMove.GetPositionInGrid() - CellNodeManager.Instance.GetNodeById(onTile).GetPositionInGrid();
 
             diff.x = Mathf.Abs(diff.x);
             diff.y = Mathf.Abs(diff.y);

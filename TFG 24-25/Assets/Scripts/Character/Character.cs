@@ -240,11 +240,8 @@ public class Character
     private void TileScoring()
     {
         CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
-
-        Debug.Log("ENTERING TILE SCORING");
-
-
-        if (node.GetScoreNode() == CellScoreType.QUICK)
+        
+        if (node.GetScoreNode() != CellScoreType.NOPOINTS)
         {
             // Prevent scoring in your own scoring tiles
             if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
