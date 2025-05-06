@@ -1,14 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public enum CardType { CHARACTER, EFFECT }
 public class CardStats
 {
-
     public CardType cardType;
+
     public string name;
     public int manaCost;
     public string description;
@@ -20,17 +17,6 @@ public class CardStats
         "Name : " + name +
         " | Mana Cost: " + manaCost
         );
-    }
-
-    public string getName()
-    { return name; }
-    public int getManaCost()
-    {
-        return manaCost;
-    }
-    public string getDescription()
-    {
-        return description;
     }
 }
 
@@ -44,7 +30,6 @@ public class CharacterStats : CardStats, ICloneable
     public MovementType movementType;
     public AbilityType abilityType;
     public bool stun;
-    public bool checkAllInRangeCells;
     public int scoreMultiplier;
     public CharacterStats(CardType _cardType, string _name, int _manaCost, int _dmg, int _hp, int _movementRange, int _attackRange, int _scoreMult, MovementType _movementType, AbilityType _abilityType, string _description)
     {
@@ -61,7 +46,10 @@ public class CharacterStats : CardStats, ICloneable
         abilityType = _abilityType;
         stun = false;
         description = _description;
-        checkAllInRangeCells = false;
+    }
+    public object Clone()
+    {
+        return (CharacterStats)this.MemberwiseClone();
     }
 
     public override void PrintStats()
@@ -77,45 +65,17 @@ public class CharacterStats : CardStats, ICloneable
         " | Movement Type: " + movementType.ToString()
         );
     }
-    public string getHealthToString()
-    {
-        return hp.ToString();
-    }
-
-    public int getHealth()
-    {
-        return hp;
-    }
-
-    public string getAttackToString()
-    {
-        return dmg.ToString();
-    }
-
-    public int getManaCostToString()
-    {
-        return manaCost;
-    }
-    public int getAttack()
-    {
-        return dmg;
-    }
-
-    public object Clone()
-    {
-        return (CharacterStats)this.MemberwiseClone();
-    }
 }
 
 public class EffectStats : CardStats
 {
    public EffectStats(CardType _cardType, string _name, int _manaCost, string _description)
-    {
+   {
         cardType = _cardType;
         name = _name;
         manaCost = _manaCost;
         description = _description;
-    }
+   }
 
     public override void PrintStats()
     {
