@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
-using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
-using UnityEngine.TextCore.Text;
 
 public class MyEventHandler : Singleton<MyEventHandler>
 {
@@ -22,30 +17,24 @@ public class MyEventHandler : Singleton<MyEventHandler>
         moveToken.AddListener((int cellId, int characterId) =>
         {
             photonView.RPC("RPC_MoveToken", RpcTarget.AllBuffered, cellId, characterId);
-            photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
-            Debug.Log("TRIGGERED MOVE");
+            photonView.RPC("RPC_RemoveCharacters", RpcTarget.AllBuffered);
         });
 
         spawnToken.AddListener((int cellId, int characterId, bool bypassSpawn) =>
         {
             photonView.RPC("RPC_SpawnToken", RpcTarget.AllBuffered, cellId, characterId, bypassSpawn);
-            photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+            photonView.RPC("RPC_RemoveCharacters", RpcTarget.AllBuffered);
         });
         
     }
 
     public void InvokeMoveToken(int cellId, int characterId)
     {
-        Debug.Log("INVOKE");
-
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         character.OnMovement(cellToMove);
-
-        //SaveData.Instance.SaveNewAction("M" + cellId + "/" + characterId);
     }
-
     public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
     {
         CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
@@ -60,29 +49,18 @@ public class MyEventHandler : Singleton<MyEventHandler>
             SaveData.Instance.BufferCheck(character.OnSpawn(cellToMove));
         } 
     }
-
+    public void RemoveCharacters()
+    { photonView.RPC("RPC_RemoveCharacters", RpcTarget.AllBuffered); }
 
     [PunRPC]
     public void RPC_MoveToken(int cellId, int characterId)
-    {
-        InvokeMoveToken(cellId, characterId);
-    }
+    { InvokeMoveToken(cellId, characterId); }
 
     [PunRPC]
     public void RPC_SpawnToken(int cellId, int characterId, bool bypassSpawn)
-    {
-        InvokeSpawnToken(cellId, characterId, bypassSpawn);
-    }
-
-    public void RemoveCharacters()
-    {
-        photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
-    }
+    { InvokeSpawnToken(cellId, characterId, bypassSpawn); }
 
     [PunRPC]
-    public void RemoveCharacters_RPC()
-    {
-        CharactersManager.Instance.RemoveCharacters();
-    }
+    public void RPC_RemoveCharacters()
+    { CharactersManager.Instance.RemoveCharacters(); }
 }
-
