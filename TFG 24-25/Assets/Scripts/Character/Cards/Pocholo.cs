@@ -40,7 +40,7 @@ public class Pocholo : Character
 
                 if (!cellToMove.IsOccupied())
                 {
-                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction).GetId());
+                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction));
                 }
             }
         }

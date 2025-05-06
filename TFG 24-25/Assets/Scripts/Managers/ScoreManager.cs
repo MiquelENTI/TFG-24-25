@@ -4,8 +4,10 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 
-public class ScoreManager : MonoBehaviourPun
+public class ScoreManager : Singleton<ScoreManager>
 {
+    PhotonView photonView;
+
     public int BlueScore;
     public int RedScore;
 
@@ -14,6 +16,8 @@ public class ScoreManager : MonoBehaviourPun
 
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
+
         BlueScore = 0;
         RedScore = 0;
     }

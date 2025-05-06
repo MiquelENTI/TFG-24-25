@@ -8,7 +8,7 @@ public class Kamikaze : Character
     {
     }
 
-    public override void OnKillEnemy(Character enemy)
+    protected override void OnKillEnemy(Character enemy)
     {
         base.OnKillEnemy(enemy);
 

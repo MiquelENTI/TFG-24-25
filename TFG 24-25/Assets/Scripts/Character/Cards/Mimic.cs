@@ -9,7 +9,7 @@ public class Mimic : Character
     {
     }
 
-    public override void OnAttacked(Character attacker)
+    protected override void OnAttacked(Character attacker)
     {
         // Enemy draws a cards 
         attacker.ReceiveDamageSelf(9999);

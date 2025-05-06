@@ -68,16 +68,15 @@ public class TokenGameObject : DragableGameObject
     }
 
     [PunRPC]
-    //void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
     void ChangeCardOnBoard_RPC()
     {
-        cob_AtkText.text = character.GetAttack().ToString();
+        cob_AtkText.text = character.GetCharacterStats().dmg.ToString();
 
-        cob_HpText.text = character.GetHealth().ToString();
+        cob_HpText.text = character.GetCharacterStats().hp.ToString();
 
-        cob_ManaText.text = character.getManaCost().ToString();
+        cob_ManaText.text = character.GetCharacterStats().manaCost.ToString();
 
-        cob_NameText.text = character.GetName();
+        cob_NameText.text = character.GetCharacterStats().name;
 
         cob_CardSprite.sprite = cardSprite;
     }

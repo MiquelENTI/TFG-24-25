@@ -25,7 +25,7 @@ public class Pichi : Character
         base.OnStartTurn();
     }
 
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
         charactersAttackDisabled.ForEach(_ => disarmAttack = false);
         charactersAttackDisabled.Clear();

@@ -19,7 +19,7 @@ public class Charybdis : Character
 
         if (cellToMove.GetCharacter().GetTeamType() == teamType)
         {
-            characterIdToSpawn = TemporalCardDataBase.Instance.GetTemporalStatsIdByName(cellToMove.GetCharacter().GetName());
+            characterIdToSpawn = TemporalCardDataBase.Instance.GetTemporalStatsIdByName(cellToMove.GetCharacter().GetCharacterStats().name);
 
             cellToMove.GetCharacter().DestroyCharacter();
 
@@ -30,7 +30,7 @@ public class Charybdis : Character
         return true;
     }
 
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
         spawnManager.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, characterIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, onTile, true);
 

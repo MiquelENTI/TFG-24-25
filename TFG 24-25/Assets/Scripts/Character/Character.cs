@@ -1,65 +1,195 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Globalization;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering;
-using Unity.VisualScripting;
 
 public enum MovementType { Basic, Diagonal, Omni}
-
 public enum AbilityType { nothing, onAttack, onKill, attacked, startTurn, onDeath, onMove, scoringTile, onScore }
 public enum TeamType { RED = 0, BLUE = 1}
+
 public class Character
 {
-    protected ScoreManager scoreManager;
     protected int id;
     protected CharacterStats stats;
     protected List<CellConnection> directions;
-
     protected TeamType teamType;
     protected int onTile;
+    protected GameObject token;
 
+    protected bool canMove = false;
     protected bool canAttack = true;
     protected bool disarmAttack = false;
-
-    protected GameObject token;
-    protected PlayerStats playerStats;
-
     protected bool canScore = false;
-    protected bool canMove = false;
-
     protected bool jumpMove = false;
 
-    public int GetId()
-    { return id; }
+    protected PlayerStats playerStats;
+    protected ScoreManager scoreManager;
 
-    public void SetId(int id)
-    { this.id = id; }
+    public Character(CharacterStats newStats, TeamType teamType, GameObject token)
+    {
+        directions = new List<CellConnection>();
 
-    public int GetOnTileId()
-    { return onTile; }
+        CharactersManager.Instance.AddCharacter(this);
 
-    public void SetOnTileId(int id)
-    { this.onTile = id; }
+        stats = newStats;
+        stats = (CharacterStats)newStats.Clone();
 
-    public TeamType GetTeamType()
-    { return teamType; }
+        ChangeMovementType(newStats.movementType);
 
-    public List<CellConnection> GetDirections()
-    { return directions; }
+        this.teamType = teamType;
+        this.token = token;
 
-    //public int GetMovementsLeft()
-    //{ return stats.movementsLeft; }
+        scoreManager = ScoreManager.Instance;
+        playerStats = PlayerStats.Instance;
+    }
+    public virtual bool OnSpawn(CellNode cellToMove)
+    {
+        if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
+        {
+            Debug.Log("SPAWN");
 
-    //public void DecreaseMovement()
-    //{ stats.movementsLeft--; }
-    //void ResetMovementsLeft()
-    //{ stats.movementsLeft = stats.numOfMovements; }
+            DisableAttackAndMovement();
 
+            playerStats.SubstractMana(stats.manaCost);
+
+            SetOnTileId(cellToMove.GetId());
+            //Debug.Log("ONTILE: " + onTile);
+            MoveToken(cellToMove.GetPosition());
+
+            cellToMove.SetCharacter(this);
+
+            OnSpawnSFX();
+            OnSpawnVFX();
+
+            DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
+
+            return true;
+        }
+        else
+        {
+            stats.PrintStats();
+            cellToMove.PrintStatus();
+            //Debug.Log("ZOMBIE??");
+            return false;
+        }
+    }
+    public virtual bool OnMovement(CellNode cellToMove)
+    {
+        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "ReplayScene")
+        {
+            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "ReplayScene")
+            {
+                //GetCharacterStats().PrintStats();
+                playerStats.SubstractMana(stats.manaCost);
+
+                DisableAttackAndMovement();
+
+                //Debug.Log(teamType.ToString() + " MOOOVE");
+
+                CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
+
+                SetOnTileId(cellToMove.GetId());
+                MoveToken(cellToMove.GetPosition());
+
+                cellToMove.SetCharacter(this);
+
+                SaveData.Instance.SaveNewAction("M" + cellToMove.GetId() + "/" + id);
+
+                OnMovementSFX();
+                OnMovementVFX();
+
+                return true;
+            }
+            else
+            {
+                MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+                Debug.Log("NO? 2");
+                cellToMove.PrintStatus();
+                return false;
+            }
+        }
+        else
+        {
+            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+            Debug.Log("NO? 1");
+            cellToMove.PrintStatus();
+            return false;
+        }
+    }
+    public virtual void OnStartTurn()
+    {
+        ResetStats();
+        TileScoring();
+    }
+    public virtual void OnEndTurn()
+    {
+
+    }
+    protected virtual void OnDeath(Character attacker)
+    {
+        CharactersManager.Instance.AddToRemoveList(this);
+
+        attacker.OnKillEnemy(this);
+    }
+    protected virtual void OnDeathSelf()
+    {
+        CharactersManager.Instance.AddToRemoveList(this);
+    }
+    protected virtual void OnKillEnemy(Character enemy)
+    {
+
+    }
+    protected virtual void OnAttacked(Character attacker)
+    {
+        ReceiveDamage(attacker, attacker.stats.dmg);
+    }
+    protected virtual void OnPointsScoring(int pointsScored)
+    {
+
+    }
+    public virtual void Attack(Character enemy)
+    {
+        if (stats.stun) { return; }
+
+        playerStats.SubstractMana(stats.manaCost);
+
+        AttackSFX();
+
+        enemy.OnAttacked(this);
+    }
+    protected void BypassMovement(CellNode cellToMove)
+    {
+        DisableAttackAndMovement();
+
+        CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
+
+        SetOnTileId(cellToMove.GetId());
+        MoveToken(cellToMove.GetPosition());
+
+        cellToMove.SetCharacter(this);
+
+        OnMovementSFX();
+        OnMovementVFX();
+    }
+    public void BypassSpawn(CellNode cellToMove)
+    {
+        DisableAttackAndMovement();
+
+        SetOnTileId(cellToMove.GetId());
+        MoveToken(cellToMove.GetPosition());
+
+        cellToMove.SetCharacter(this);
+
+        OnSpawnSFX();
+        OnSpawnVFX();
+
+        DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
+    }
+    protected void MoveToken(Vector3 position)
+    {
+        position.y = 0.5f;
+        token.transform.position = position;
+        token.transform.GetChild(1).transform.position = position;
+    }
     public bool CanAttack()
     {
         if (playerStats.GetCurrentMana() >= stats.manaCost && !disarmAttack && canAttack)
@@ -75,80 +205,7 @@ public class Character
             return false;
         }
     }
-
-    public void MoveToken(Vector3 position)
-    {  
-        position.y = 0.5f;
-        token.transform.position = position;
-        token.transform.GetChild(1).transform.position = position;
-    }
-    
-    public GameObject GetToken()
-    { return token; }
-
-    public int GetHealth()
-    {
-        return stats.getHealth();
-    }
-
-    public int GetAttack()
-    {
-        return stats.getAttack();
-    }
-
-    public string GetDescription()
-    {
-        return stats.getDescription();
-    }
-
-    public string GetName()
-    {
-        return stats.getName();
-    }
-
-    public int getManaCost()
-    {
-        return stats.getManaCost();
-    }
-
-    public Character(CharacterStats newStats, TeamType teamType, GameObject token)
-    {
-        GameObject scoreManagerObject = GameObject.Find("ScoreManager");
-        if (scoreManagerObject != null)
-        {
-            scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
-        }
-        else
-        {
-            Debug.LogError("No se encontr� el GameObject 'ScoreManager' en la escena.");
-        }
-        playerStats = PlayerStats.Instance;
-        stats = newStats;
-
-        stats = (CharacterStats)newStats.Clone();
-
-        directions = new List<CellConnection>();
-
-        ChangeMovementType(newStats.movementType);
-
-        this.teamType = teamType;
-
-        CharactersManager.Instance.AddCharacter(this);
-        this.token = token;
-    }
-
-    public void ResetStats()
-    {
-        canAttack = true;
-        canMove = true;
-    }
-
-    public CharacterStats GetCharacterStats()
-    {
-        return stats;
-    }
-
-    public void ChangeMovementType(MovementType newType)
+    protected void ChangeMovementType(MovementType newType)
     {
         directions.Clear();
 
@@ -180,133 +237,7 @@ public class Character
                 break;
         }
     }
-
-
-    public virtual void Effect()
-    {
-
-    }
-
-    public virtual bool OnSpawn(CellNode cellToMove)
-    {
-
-        if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
-        {
-            Debug.Log("SPAWN");
-
-            DisableAttackAndMovement();
-
-            playerStats.SubstractMana(stats.manaCost);
-
-            SetOnTileId(cellToMove.GetId());
-            //Debug.Log("ONTILE: " + onTile);
-            MoveToken(cellToMove.GetPosition());
-            
-            cellToMove.SetCharacter(this);
-                        
-            OnSpawnSFX();
-            OnSpawnVFX();
-
-            DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
-
-            return true;
-        }
-        else
-        {
-            stats.PrintStats();
-            cellToMove.PrintStatus();
-            //Debug.Log("ZOMBIE??");
-            return false;
-        }
-    }
-    
-    public virtual bool OnMovement(CellNode cellToMove)
-    {
-        if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "ReplayScene")
-        {
-            if (cellToMove.CheckNodes(id) || CharactersManager.Instance.GetBypassMana() || SceneManager.GetActiveScene().name == "ReplayScene")
-            {
-                //GetCharacterStats().PrintStats();
-                playerStats.SubstractMana(stats.manaCost);
-
-                DisableAttackAndMovement();
-
-                //Debug.Log(teamType.ToString() + " MOOOVE");
-
-                CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
-
-                SetOnTileId(cellToMove.GetId());
-                MoveToken(cellToMove.GetPosition());
-
-                cellToMove.SetCharacter(this);
-
-                SaveData.Instance.SaveNewAction("M" + cellToMove.GetId() + "/" + id);
-
-                //Debug.Log("PREVIOUS TILE: " + previousTile + " OnTile" + onTile + " FUTURE TILE" + cellToMove.GetId());
-                //Debug.Log("Previous After");
-                //previousNode.PrintStatus();
-                //Debug.Log("OnTIle AFter");
-                //CellNodeManager.Instance.GetNodeById(onTile).PrintStatus();
-                //Debug.Log("CellToMove After");
-                //cellToMove.PrintStatus();
-
-                OnMovementSFX();
-                OnMovementVFX();
-
-                return true;
-            }
-            else
-            {
-                MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
-                Debug.Log("NO? 2");
-                cellToMove.PrintStatus();
-                return false;
-            }
-        }
-        else
-        {
-            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
-            Debug.Log("NO? 1");
-            cellToMove.PrintStatus();
-            return false;
-        }
-    }
-
-    protected void BypassMovement(int otherTileId)
-    {
-        DisableAttackAndMovement();
-
-        Debug.Log(teamType.ToString() + " BYPASSED MOOOVE");
-
-        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(otherTileId);
-        CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
-
-        SetOnTileId(cellToMove.GetId());
-        MoveToken(cellToMove.GetPosition());
-
-        OnMovementSFX();
-        OnMovementVFX();
-
-        cellToMove.SetCharacter(this);
-    }
-
-    public void BypassSpawn(CellNode cellToMove)
-    {
-        DisableAttackAndMovement();
-
-        SetOnTileId(cellToMove.GetId());
-        //Debug.Log("ONTILE: " + onTile);
-        MoveToken(cellToMove.GetPosition());
-
-        cellToMove.SetCharacter(this);
-
-        OnSpawnSFX();
-        OnSpawnVFX();
-
-        DisplayActionsManager.Instance.CreateNameText(stats.name, token.transform.position);
-    }
-
-    void TileScoring()
+    private void TileScoring()
     {
         CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
 
@@ -325,74 +256,12 @@ public class Character
             DisplayActionsManager.Instance.CreatePointsText(pointsToScore, token.transform.position);
         }
     }
-
-    public virtual void OnStartTurn()
-    {
-        ResetStats();
-        TileScoring();
-    }
-    public virtual void OnEndTurn()
-    {
-
-    }
-
-    public virtual void OnDeath(Character attacker)
-    {
-        //CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-
-        //currentCell.RemoveCharacter();
-
-        Debug.Log("Dying: " + stats.name);
-        Debug.Log("Killer: " + attacker.stats.name);
-
-        CharactersManager.Instance.AddToRemoveList(this);
-        
-        attacker.OnKillEnemy(this);
-    }
-
-    public virtual void OnDeathSelf()
-    {
-        //CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-
-        //currentCell.RemoveCharacter();
-
-        CharactersManager.Instance.AddToRemoveList(this);
-    }
-
-    public virtual void OnKillEnemy(Character enemy)
-    {
-        //Debug.Log("OnKillEnemy " + enemy.stats.name);
-    }
-    public virtual void OnAttacked(Character attacker)
-    {
-        ReceiveDamage(attacker, attacker.stats.dmg);
-    }
-
-    public virtual void OnPointsScoring(int pointsScored)
-    {
-
-    }
-    public virtual void Attack(Character enemy)
-    {
-        if (stats.stun) { return; }
-
-        playerStats.SubstractMana(stats.manaCost);
-
-        Debug.Log("ATTACK");
-        
-
-        AttackSFX();
-
-        enemy.OnAttacked(this);
-    }
-    
     public void ReceiveDamage(Character attacker, int damage)
     {
         stats.hp -= damage;
 
         OnAttackedVFX();
 
-        Debug.Log("Character: " + stats.name);
         DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
 
         if (stats.hp <= 0)
@@ -400,14 +269,12 @@ public class Character
             OnDeath(attacker);
         }
     }
-
     public void ReceiveDamageSelf(int damage)
     {
         stats.hp -= damage;
 
         OnAttackedVFX();
 
-        Debug.Log("Character: " + stats.name);
         DisplayActionsManager.Instance.CreateDamageText(damage, token.transform.position);
 
         if (stats.hp <= 0)
@@ -415,8 +282,7 @@ public class Character
             OnDeathSelf();
         }
     }
-
-    public void DecreaseDamage(int amount)
+    protected void DecreaseDamage(int amount)
     {
         stats.dmg -= amount;
         if (stats.dmg <= 0)
@@ -429,8 +295,7 @@ public class Character
             DisplayActionsManager.Instance.CreateDebuffText(0, true, token.transform.position);
         }
     }
-
-    public void Heal(int amount)
+    protected void Heal(int amount)
     {
         stats.hp += amount;
 
@@ -442,42 +307,61 @@ public class Character
             stats.hp = stats.maxHp;
         }
     }
-
     public void ApplyStun()
     {
         stats.stun = true;
-        Debug.Log("CHARACTER STUNNED!");
     }
-
     public void RemoveStun()
     {
         stats.stun = false;
-        Debug.Log("CHARACTER NOT STUNNED!");
     }
+    private void ResetStats()
+    {
+        canAttack = true;
+        canMove = true;
+    }
+    public void DisableAttackAndMovement()
+    {
+        canAttack = false;
+        canMove = false;
+    }
+    public void DestroyCharacter()
+    {
+        CharactersManager.Instance.AddToRemoveList(this);
+    }
+
+    public int GetId()
+    { return id; }
+
+    public void SetId(int id)
+    { this.id = id; }
+
+    public int GetOnTileId()
+    { return onTile; }
+
+    public void SetOnTileId(int id)
+    { this.onTile = id; }
+
+    public TeamType GetTeamType()
+    { return teamType; }
+
+    public List<CellConnection> GetDirections()
+    { return directions; }
+
+    public GameObject GetToken()
+    { return token; }
+
+    public CharacterStats GetCharacterStats()
+    { return stats; }
+
+    public bool GetJumpMove()
+    { return jumpMove; }
 
     public void SetDisarmAttack(bool state)
     {
         disarmAttack = state;
     }
 
-    public void DisableAttackAndMovement()
-    {
-        canAttack = false;
-        canMove = false;
-    }
-
-    public bool GetJumpMove()
-    { return jumpMove; }
-
-    public void DestroyCharacter()
-    {
-        CharactersManager.Instance.AddToRemoveList(this);
-    }
-
-    public void ApplyDOT()
-    {
-
-    }
     //Implementació del so general per a cartes no identificades 
     protected virtual void OnMovementSFX()
     {

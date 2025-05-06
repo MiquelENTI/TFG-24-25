@@ -15,7 +15,7 @@ public class TerracottaWarrior : Character
         return true;
     }
 
-    public override void OnPointsScoring(int pointsScored)
+    protected override void OnPointsScoring(int pointsScored)
     {
         base.OnPointsScoring(pointsScored);
 

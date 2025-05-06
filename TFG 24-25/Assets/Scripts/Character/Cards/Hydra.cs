@@ -8,7 +8,7 @@ public class Hydra : Character
     {
     }
 
-    public override void OnAttacked(Character attacker)
+    protected override void OnAttacked(Character attacker)
     {
         base.OnAttacked(attacker);
         stats.dmg++;

@@ -16,7 +16,7 @@ public class Medusa : Character
         base.Attack(enemy);
     }
 
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
         foreach (Character enemy in enemiesAttacked)
         {

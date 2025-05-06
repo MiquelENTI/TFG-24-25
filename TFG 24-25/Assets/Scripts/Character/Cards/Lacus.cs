@@ -28,7 +28,7 @@ public class Lacus : Character
         Character infrontCharacter = currentCell.GetCellByDirection(direction).GetCharacter();
         if (infrontCharacter == null)
         {
-            BypassMovement(currentCell.GetCellByDirection(direction).GetId());
+            BypassMovement(currentCell.GetCellByDirection(direction));
             return; 
         }
 

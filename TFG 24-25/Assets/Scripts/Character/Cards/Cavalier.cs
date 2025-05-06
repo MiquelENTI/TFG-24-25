@@ -45,9 +45,8 @@ public class Cavalier : Character
         hasMoved = false;
     }
 
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
-        Debug.Log("ENTERED ON DEATH");
         //DeckManager.Instance.BoardIntoHandDraw(teamType, stats.name);
         base.OnDeath(attacker);
     }

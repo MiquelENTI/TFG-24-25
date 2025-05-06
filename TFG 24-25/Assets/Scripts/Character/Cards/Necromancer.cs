@@ -12,7 +12,7 @@ public class Necromancer : Character
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
     }
 
-    public override void OnKillEnemy(Character enemy)
+    protected override void OnKillEnemy(Character enemy)
     {
         int tileToSpawnZombie = enemy.GetOnTileId();
         base.OnKillEnemy(enemy);

@@ -8,14 +8,14 @@ public class Salmon : Character
     {
     }
 
-    public override void OnKillEnemy(Character enemy)
+    protected override void OnKillEnemy(Character enemy)
     {
         Debug.Log("ENTERING EATING ENEMY");
         base.OnKillEnemy(enemy);
-        if (enemy.GetName() != "Charybdis")
+        if (enemy.GetCharacterStats().name != "Charybdis")
         {
             Debug.Log("EATING ENEMY");
-            BypassMovement(enemy.GetOnTileId());
+            BypassMovement(CellNodeManager.Instance.GetNodeById(enemy.GetOnTileId()));
             ReceiveDamageSelf(1);
         }
     }

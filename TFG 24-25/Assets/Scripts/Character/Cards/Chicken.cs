@@ -9,7 +9,7 @@ public class Chicken : Character
     {
     }
 
-    public override void OnAttacked(Character attacker)
+    protected override void OnAttacked(Character attacker)
     {
         attacker.ReceiveDamageSelf(counterDamage);
 

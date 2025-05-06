@@ -11,7 +11,7 @@ public class Turtle : Character
     {
     }
 
-    public override void OnAttacked(Character attacker)
+    protected override void OnAttacked(Character attacker)
     {
         int enemyDamage = attacker.GetCharacterStats().dmg;
 

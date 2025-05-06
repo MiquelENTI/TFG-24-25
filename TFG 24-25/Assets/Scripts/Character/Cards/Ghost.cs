@@ -17,7 +17,7 @@ public class Ghost : Character
         if (CheckIfMoveAcrossBoard(cellToMove) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove)
         {
             playerStats.SubstractMana(stats.manaCost);
-            BypassMovement(cellToMove.GetId());
+            BypassMovement(cellToMove);
 
             return true;
         }

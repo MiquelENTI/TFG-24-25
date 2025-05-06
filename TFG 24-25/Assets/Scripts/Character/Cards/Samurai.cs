@@ -8,7 +8,7 @@ public class Samurai : Character
     {
     }
 
-    public override void OnPointsScoring(int pointsScored)
+    protected override void OnPointsScoring(int pointsScored)
     {
         base.OnPointsScoring(pointsScored);
 
@@ -21,7 +21,7 @@ public class Samurai : Character
         return base.OnSpawn(cellToMove);
     }
 
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
         base.OnDeath(attacker);
     }
