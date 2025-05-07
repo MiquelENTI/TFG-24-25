@@ -10565,8 +10565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 182972341}
+  gridSize: {x: 6, y: 6}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
-  GridSize: {x: 6, y: 6}
   cornerPointPrefab: {fileID: 1328978554650317836, guid: 5d64773b9b330e34eaf58274d40091a5, type: 3}
   edgeDarkPrefab: {fileID: 5519599502171961328, guid: b4b32aff08b0ea14ea15c98f4573975c, type: 3}
   edgeWhitePrefab: {fileID: 1987291774460552710, guid: 17a083b18c153594d8f7e2601d13c0d2, type: 3}
@@ -14978,6 +14978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tokenPrefabBlue: {fileID: 8236987784292183732, guid: cd10928736021b947af0ad6e30752b57, type: 3}
   tokenPrefabRed: {fileID: 8236987784292183732, guid: 6789227a21d2f5546aee7680ff10ace8, type: 3}
+  photonView: {fileID: 0}
 --- !u!114 &258275269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36940,8 +36941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a099e86e43ab2b4cb1e9d8c0e09df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamType: 1
-  TEMP: {fileID: 8236987784292183732, guid: 44c8cc010a05eee4aacd26c6b819b6e6, type: 3}
 --- !u!4 &647292346
 Transform:
   m_ObjectHideFlags: 0
@@ -48318,8 +48317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a099e86e43ab2b4cb1e9d8c0e09df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamType: 0
-  TEMP: {fileID: 0}
 --- !u!4 &870657472
 Transform:
   m_ObjectHideFlags: 0
@@ -91836,8 +91833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1643901579}
+  gridSize: {x: 0, y: 0}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
-  GridSize: {x: 6, y: 6}
   cornerPointPrefab: {fileID: 1328978554650317836, guid: 5d64773b9b330e34eaf58274d40091a5, type: 3}
   edgeDarkPrefab: {fileID: 5519599502171961328, guid: b4b32aff08b0ea14ea15c98f4573975c, type: 3}
   edgeWhitePrefab: {fileID: 1987291774460552710, guid: 17a083b18c153594d8f7e2601d13c0d2, type: 3}

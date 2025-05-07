@@ -40,12 +40,19 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text cob_HpText;
     protected TMP_Text cob_NameText;
     protected TMP_Text cob_ManaText;
+    protected TMP_Text cob_Description;
     protected Image cob_CardSprite;
     protected Image cob_MovementSprite;
+    protected Image cob_AbilityBackground;
+    protected Image cob_AbilitySprite;
+    protected Image cob_doubleScoreBackground;
+    protected Image cob_doubleScoreSprite;
     #endregion
 
     protected Sprite cardSprite;
     protected Sprite movementSprite;
+    protected Sprite abilitySprite;
+    protected Sprite doubleScoreSprite;
 
     protected PhotonView photonView;
     protected virtual void Awake()
@@ -89,7 +96,7 @@ public class DragableGameObject : MonoBehaviour
 
         //characterStats.PrintStats();
 
-        try
+        try // Character
         {
             ctd_AtkText.text = characterStats.dmg.ToString();
 
@@ -100,35 +107,8 @@ public class DragableGameObject : MonoBehaviour
             ctd_NameText.text = characterStats.name;
 
             ctd_Description.text = characterStats.description;
-
-            ctd_AbilitySprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/" + characterStats.abilityType.ToString());
-
-            if (characterStats.abilityType.ToString() == "nothing")
-            {
-                ctd_AbilitySprite.gameObject.SetActive(false);
-                ctd_AbilityBackground.gameObject.SetActive(false);
-            }
-            else
-            {
-                ctd_AbilitySprite.gameObject.SetActive(true);
-                ctd_AbilityBackground.gameObject.SetActive(true);
-            }
-
-
-            if (characterStats.scoreMultiplier == 1)
-            {
-                ctd_doubleScoreSprite.gameObject.SetActive(false);
-                ctd_doubleScoreBackground.gameObject.SetActive(false);
-            }
-            else if (characterStats.scoreMultiplier == 2)
-            {
-                ctd_doubleScoreSprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
-                ctd_doubleScoreSprite.gameObject.SetActive(true);
-                ctd_doubleScoreBackground.gameObject.SetActive(true);
-            }
-
         }
-        catch
+        catch // Effects
         {
             ctd_AtkText.text = "0";
 
@@ -141,22 +121,19 @@ public class DragableGameObject : MonoBehaviour
             ctd_Description.text = effectStats.description;
         }
 
-        // Potser fer funcio a part per canviar sprite
-        if (cardSprite != null)
-        {
-            ctd_CardSprite.sprite = cardSprite;
-        }
-        else
-        {
-            ctd_CardSprite.sprite = null;
-        }
-
+        ctd_CardSprite.sprite = cardSprite;
         ctd_MovementSprite.sprite = movementSprite;
+
+        if (abilitySprite != null)
+        { ctd_AbilitySprite.sprite = abilitySprite; }
+
+        if (doubleScoreSprite != null)
+        { ctd_doubleScoreSprite.sprite = doubleScoreSprite; }
     }
 
     protected virtual void UpdateCardOnBoardText()
     {
-        try
+        try // Character
         {
             cob_AtkText.text = characterStats.dmg.ToString();
 
@@ -165,8 +142,9 @@ public class DragableGameObject : MonoBehaviour
             cob_ManaText.text = characterStats.manaCost.ToString();
 
             cob_NameText.text = characterStats.name;
+
         }
-        catch
+        catch // Effects
         {
             cob_AtkText.text = "0";
 
@@ -179,10 +157,12 @@ public class DragableGameObject : MonoBehaviour
 
         if (cardSprite != null)
         {
+            Debug.Log("SpriteFound");
             cob_CardSprite.sprite = cardSprite;
         }
         else
         {
+            Debug.Log("NOT Sprite Found");
             cob_CardSprite.sprite = null;
         }
         cob_MovementSprite.sprite = movementSprite;
@@ -206,7 +186,6 @@ public class DragableGameObject : MonoBehaviour
         ctd_AbilitySprite = cardToDisplay.transform.GetChild(14).GetComponent<Image>();
         ctd_doubleScoreBackground = cardToDisplay.transform.GetChild(15).GetComponent<Image>();
         ctd_doubleScoreSprite = cardToDisplay.transform.GetChild(16).GetComponent<Image>();
-
     }
     public void SeeTokenCard()
     {

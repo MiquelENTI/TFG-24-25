@@ -29,17 +29,16 @@ public class TokenGameObject : DragableGameObject
         transform.parent.name = character.GetCharacterStats().name;
         UpdateCardOnBoardText();
     }
-    public override void InitCardOnBoardText()
+    protected override void InitCardOnBoardText()
     {
         cob_AtkText = transform.GetChild(0).GetChild(0).GetChild(7).GetComponent<TMP_Text>();
         cob_HpText = transform.GetChild(0).GetChild(0).GetChild(6).GetComponent<TMP_Text>();
-        cob_ManaText = transform.GetChild(0).GetChild(0).GetChild(8).GetComponent<TMP_Text>(); // Falta mana
+        cob_ManaText = transform.GetChild(0).GetChild(0).GetChild(8).GetComponent<TMP_Text>();
         cob_NameText = transform.GetChild(0).GetChild(0).GetChild(9).GetComponent<TMP_Text>();
         cob_CardSprite = transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Image>();
-        //cig_MovementSprite = transform.GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
     }
 
-    public override void UpdateCardToDisplayText()
+    protected override void UpdateCardToDisplayText()
     {
         characterStats = character.GetCharacterStats();
 
@@ -100,7 +99,6 @@ public class TokenGameObject : DragableGameObject
         }
         else
         {
-            //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
             MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
         }
     }

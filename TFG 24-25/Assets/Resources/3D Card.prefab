@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7923142397438793824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1108187724888724066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1884,17 +1884,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsBlue: 0
   cardToDisplay: {fileID: 0}
-  spawnCardController: {fileID: 0}
-  nameText: {fileID: 999855996663947030}
-  healthText: {fileID: 4233756135403593454}
-  attackText: {fileID: 2689087133555778284}
-  cardDescriptionText: {fileID: 5615895171138991686}
-  illustrationImage: {fileID: 5784688712799426975}
-  movementImage: {fileID: 4275046939243025372}
-  DoubleScoreImage: {fileID: 396670712336773369}
-  DoubleScoreBGImage: {fileID: 4591464101201758666}
-  AbilityImage: {fileID: 4834110627847531170}
-  AbilityBGImage: {fileID: 1992583692423738034}
+  cob_AtkText: {fileID: 0}
+  cob_HpText: {fileID: 0}
+  cob_NameText: {fileID: 0}
+  cob_ManaText: {fileID: 0}
+  cob_CardSprite: {fileID: 0}
+  cob_MovementSprite: {fileID: 0}
+  cob_AbilityBackground: {fileID: 0}
+  cob_AbilitySprite: {fileID: 0}
+  cob_doubleScoreBackground: {fileID: 0}
+  cob_doubleScoreSprite: {fileID: 0}
 --- !u!114 &7267973748837844944
 MonoBehaviour:
   m_ObjectHideFlags: 0

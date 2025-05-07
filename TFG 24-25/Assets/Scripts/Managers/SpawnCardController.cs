@@ -4,10 +4,17 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 
-public class SpawnCardController : MonoBehaviourPun
+public class SpawnCardController : Singleton<SpawnCardController>
 {
     [SerializeField] GameObject tokenPrefabBlue;
     [SerializeField] GameObject tokenPrefabRed;
+
+    public PhotonView photonView;
+
+    private void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
 
     [PunRPC]
     public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId, bool bypassSpawn)

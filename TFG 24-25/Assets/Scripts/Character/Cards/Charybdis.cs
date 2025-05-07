@@ -8,7 +8,7 @@ public class Charybdis : Character
 
     public Charybdis(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
+        spawnManager = SpawnCardController.Instance;
     }
 
     public override bool OnSpawn(CellNode cellToMove)

@@ -1,44 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class CardGameObject : DragableGameObject
 {
-    CardHold cardHold;
-    int cardId;
+    private CardHold cardHold;
+    private int cardId;
 
-    int cardIdToSpawn = -10;
-    public SpawnCardController spawnCardController;
-
-
-    [SerializeField] private TMP_Text nameText;
-    [SerializeField] private TMP_Text healthText;
-    [SerializeField] private TMP_Text attackText;
-    [SerializeField] private TMP_Text cardDescriptionText;
-    [SerializeField] private Image illustrationImage;
-    [SerializeField] private Image movementImage;
-
-    [SerializeField] private Image DoubleScoreImage;
-    [SerializeField] private Image DoubleScoreBGImage;
-
-    [SerializeField] private Image AbilityImage;
-    [SerializeField] private Image AbilityBGImage;
+    private int cardIdToSpawn = -10;
+    private SpawnCardController spawnCardController;
 
     protected override void Awake()
     {
         base.Awake();
     }
-
         
     protected override void Start()
     {
         base.Start();
-        
     }
 
     public void Init()
@@ -47,25 +27,8 @@ public class CardGameObject : DragableGameObject
         objectDisplacement = 0.1f;
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         cardHold = transform.parent.parent.GetComponent<CardHold>();
-
-        GameObject spawnManagerGO = GameObject.Find("SpawnManager");
-        if (spawnManagerGO != null)
-        {
-            spawnCardController = spawnManagerGO.GetComponent<SpawnCardController>();
-            if (spawnCardController == null)
-            {
-                Debug.LogError("No se encontró el componente CardGameController en SpawnManager!");
-            }
-        }
-        else
-        {
-            Debug.LogError("No se encontró GameObject con Tag 'SpawnManager' para el CardGameController!");
-        }
-
-        if (cardIdToSpawn != -10)
-        {
-            UpdateCardOnBoardText();
-        }
+        
+        spawnCardController = SpawnCardController.Instance;
     }
 
     public override void CheckIsOutsideBoard()
@@ -75,29 +38,19 @@ public class CardGameObject : DragableGameObject
         if (isOutsideBoard)
         {
             if(TurnManagerScript.Instance.isPCVersion)
-            {
-                cardHold.ReorganizeCards();
-            }
+            { cardHold.ReorganizeCards(); }
         }
         else
         {
-            Debug.Log("NOT OUTSIDE BOARD");
             CardStats cardStats = TemporalCardDataBase.Instance.GetTemporalStats(-1).Item2;
             if (TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item1)
-            {
-                cardStats = TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item2;
-            }
+            { cardStats = TemporalCardDataBase.Instance.GetTemporalStats(cardIdToSpawn).Item2; }
             else
-            {
-                Debug.LogError("STATS DE CARTA NO ENCONTRADAS");
-                return;
-            }
+            { return; }
 
             if (cardStats.cardType == CardType.CHARACTER)
             {
                 CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
-
-                cellToSpawn.PrintStatus();
 
                 if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsTurnBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                 {
@@ -107,9 +60,7 @@ public class CardGameObject : DragableGameObject
                     PhotonNetwork.Destroy(gameObject);
                 }
                 else
-                {
-                    cardHold.ReorganizeCards();
-                }
+                { cardHold.ReorganizeCards(); }
             }
             else
             {
@@ -119,31 +70,20 @@ public class CardGameObject : DragableGameObject
                     cardHold.DestroyCard(cardId);
                 }
                 else
-                {
-                    cardHold.ReorganizeCards();
-                }
+                { cardHold.ReorganizeCards(); }
             }
         }
     }
     void RequestCharacterInstantiation()
     {
-        if (spawnCardController != null)
-        {
-            Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
-            spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
+        Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
+        spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
 
-            SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
-        }
-        else
-        {
-            Debug.LogError("SpawnCardController no asignado en CardGameObject!");
-        }
+        SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
     }
 
     void RequestEffectActivation()
-    {
-        Debug.Log("CARTA ACTIVADA");
-    }
+    { Debug.Log("CARTA ACTIVADA"); }
 
     public void SetCardId(int id)
     { cardId = id; }
@@ -155,55 +95,35 @@ public class CardGameObject : DragableGameObject
         cardIdToSpawn = id;
         // Info To Display it on Card
 
-
         if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item1)
         {
-            Debug.Log("ENTERED TRUE");
             if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item2.cardType == CardType.CHARACTER)
             {
                 characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
-                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name); 
-                movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
-                if (id == 19 || id == 5 || id == 30)
-                {
-                    movementSprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2");
-                }
+                cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+                abilitySprite = Resources.Load<Sprite>("cardsprites/abilityicons/" + characterStats.abilityType.ToString());
+                doubleScoreSprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
 
-                nameText.text = characterStats.name;
-                healthText.text = characterStats.hp.ToString();
-                attackText.text = characterStats.dmg.ToString();
-                cardDescriptionText.text = characterStats.description;
-                illustrationImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
                 if (id == 19 || id == 5 || id == 30)
-                {
-                    movementImage.sprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2");
-                }
-
-                AbilityImage.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/" + characterStats.abilityType.ToString());
+                { movementSprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2"); }
+                else
+                { movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString()); }
 
                 if (characterStats.abilityType.ToString() == "nothing")
                 {
-                    AbilityImage.gameObject.SetActive(false);
-                    AbilityBGImage.gameObject.SetActive(false);
-                }
-                else
-                {
-                    AbilityImage.gameObject.SetActive(true);
-                    AbilityBGImage.gameObject.SetActive(true);
+                    ctd_AbilitySprite.gameObject.SetActive(false);
+                    ctd_AbilityBackground.gameObject.SetActive(false);
+                    cob_AbilitySprite.gameObject.SetActive(false);
+                    cob_AbilityBackground.gameObject.SetActive(false);
                 }
 
-                if (characterStats.scoreMultiplier == 1)
+                if (characterStats.scoreMultiplier == 2)
                 {
-                    DoubleScoreImage.gameObject.SetActive(false);
-                    DoubleScoreBGImage.gameObject.SetActive(false);
+                    ctd_doubleScoreSprite.gameObject.SetActive(true);
+                    ctd_doubleScoreBackground.gameObject.SetActive(true);
+                    cob_doubleScoreSprite.gameObject.SetActive(true);
+                    cob_doubleScoreBackground.gameObject.SetActive(true);
                 }
-                else if (characterStats.scoreMultiplier == 2)
-                {
-                    DoubleScoreImage.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
-                    DoubleScoreImage.gameObject.SetActive(true);
-                    DoubleScoreBGImage.gameObject.SetActive(true);
-                }
-
             }
             else
             {
@@ -213,15 +133,13 @@ public class CardGameObject : DragableGameObject
             }
         }
         else
-        {
-            Debug.Log("ENTERED FALSE");
-            return;
-        }
+        { return; }
 
         if (cardSprite == null)
-        {
-            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
-        }
+        { cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future"); }
+
+        if (cardIdToSpawn != -10)
+        { UpdateCardOnBoardText(); }
     }
 
     public void SetCharacterToSpawnId_ManaCostIncrease(int id)
@@ -242,13 +160,47 @@ public class CardGameObject : DragableGameObject
     public int GetCharacterToSpawnId()
     { return cardIdToSpawn; }
 
-    public override void InitCardOnBoardText()
+    protected override void InitCardOnBoardText()
     {
         cob_AtkText = transform.GetChild(0).GetChild(7).GetComponent<TMP_Text>();
         cob_HpText = transform.GetChild(0).GetChild(8).GetComponent<TMP_Text>();
-        cob_ManaText = transform.GetChild(0).GetChild(10).GetComponent<TMP_Text>();
         cob_NameText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
+        cob_ManaText = transform.GetChild(0).GetChild(10).GetComponent<TMP_Text>();
+        cob_Description = transform.GetChild(0).GetChild(11).GetComponent<TMP_Text>();
         cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
         cob_MovementSprite = transform.GetChild(0).GetChild(12).GetComponent<Image>();
+        cob_AbilityBackground = transform.GetChild(0).GetChild(13).GetComponent<Image>();
+        cob_AbilitySprite = transform.GetChild(0).GetChild(14).GetComponent<Image>();
+        cob_doubleScoreBackground = transform.GetChild(0).GetChild(15).GetComponent<Image>();
+        cob_doubleScoreSprite = transform.GetChild(0).GetChild(16).GetComponent<Image>();
+    }
+
+    protected override void UpdateCardOnBoardText()
+    {
+        try // Character
+        {
+            cob_AtkText.text = characterStats.dmg.ToString();
+            cob_HpText.text = characterStats.hp.ToString();
+            cob_ManaText.text = characterStats.manaCost.ToString();
+            cob_NameText.text = characterStats.name;
+            cob_Description.text = characterStats.description;
+        }
+        catch // Effects
+        {
+            cob_AtkText.text = "0";
+            cob_HpText.text = "0";
+            cob_ManaText.text = effectStats.manaCost.ToString();
+            cob_NameText.text = effectStats.name;
+            cob_Description.text = effectStats.description;
+        }
+
+        cob_CardSprite.sprite = cardSprite;
+        cob_MovementSprite.sprite = movementSprite;
+
+        if (abilitySprite != null)
+        { cob_AbilitySprite.sprite = abilitySprite; }
+
+        if (doubleScoreSprite != null)
+        { cob_doubleScoreSprite.sprite = doubleScoreSprite; }
     }
 }

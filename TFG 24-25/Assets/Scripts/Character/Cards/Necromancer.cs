@@ -7,7 +7,7 @@ public class Necromancer : Character
 
     public Necromancer(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
+        spawnManager = SpawnCardController.Instance;
     }
 
     protected override void OnKillEnemy(Character enemy)
