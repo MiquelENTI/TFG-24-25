@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TerracottaWarrior : Character
@@ -23,14 +21,12 @@ public class TerracottaWarrior : Character
     }
 
     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003017001, token.transform.position);
-    }
-    
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003017002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003017001, token.transform.position);
     }
 }

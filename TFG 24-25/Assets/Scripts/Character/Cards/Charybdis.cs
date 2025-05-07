@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
 public class Charybdis : Character
 {
-    SpawnCardController spawnManager;
-    int characterIdToSpawn;
+    private SpawnCardController spawnManager;
+    private int characterIdToSpawn;
 
     public Charybdis(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {

@@ -1,19 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Samurai : Character
 {
     public Samurai(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
-    }
-
-    protected override void OnPointsScoring(int pointsScored)
-    {
-        base.OnPointsScoring(pointsScored);
-
-        stats.dmg += pointsScored;
-        DisplayActionsManager.Instance.CreateBuffText(pointsScored, true, token.transform.position);
     }
 
     public override bool OnSpawn(CellNode cellToMove)
@@ -25,15 +15,21 @@ public class Samurai : Character
     {
         base.OnDeath(attacker);
     }
-    //Implementació del so
-        
-    protected override void AttackSFX()
+    protected override void OnPointsScoring(int pointsScored)
     {
-        SoundManager.Instance.PlaySFX(003036001, token.transform.position);
+        base.OnPointsScoring(pointsScored);
+
+        stats.dmg += pointsScored;
+        DisplayActionsManager.Instance.CreateBuffText(pointsScored, true, token.transform.position);
     }
-    
+
+    //Implementació del so
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003036002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003036001, token.transform.position);
     }
 }

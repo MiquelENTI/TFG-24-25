@@ -169,10 +169,10 @@ public class CardGameObject : DragableGameObject
                     movementSprite = Resources.Load<Sprite>("cardsprites/abilityicons/omni2");
                 }
 
-                nameText.text = characterStats.getName();
-                healthText.text = characterStats.getHealthToString();
-                attackText.text = characterStats.getAttackToString();
-                cardDescriptionText.text = characterStats.getDescription();
+                nameText.text = characterStats.name;
+                healthText.text = characterStats.hp.ToString();
+                attackText.text = characterStats.dmg.ToString();
+                cardDescriptionText.text = characterStats.description;
                 illustrationImage.sprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
                 if (id == 19 || id == 5 || id == 30)
                 {

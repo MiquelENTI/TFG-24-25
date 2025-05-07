@@ -1,11 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ghost : Character
 {
-    Dictionary<int, int> moveAcrossBoard = new Dictionary<int, int>();
+    private Dictionary<int, int> moveAcrossBoard = new Dictionary<int, int>();
 
     public Ghost(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
@@ -24,7 +22,17 @@ public class Ghost : Character
         return base.OnMovement(cellToMove);
     }
 
-    bool CheckIfMoveAcrossBoard(CellNode cellToMove)
+    //Implementació del so
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003018002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003018001, token.transform.position);
+    }
+
+    private bool CheckIfMoveAcrossBoard(CellNode cellToMove)
     {
         if (!moveAcrossBoard.ContainsKey(onTile))
         { return false; }
@@ -37,9 +45,7 @@ public class Ghost : Character
 
         return true;
     }
-
-
-    void InitAdditionalMoves()
+    private void InitAdditionalMoves()
     {
         // Left to Right
         moveAcrossBoard.Add(0,5);
@@ -57,16 +63,5 @@ public class Ghost : Character
         moveAcrossBoard.Add(23,18);
         moveAcrossBoard.Add(29,24);
         moveAcrossBoard.Add(35,30);
-    }
-     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003018001, token.transform.position);
-    }
-    
-    protected override void OnSpawnSFX()
-    {
-        SoundManager.Instance.PlaySFX(003018002, token.transform.position);
     }
 }
