@@ -1,43 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
-using Photon.Pun;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class CreateGrid : MonoBehaviour
 {
-    [SerializeField] GameObject board;
+    [SerializeField] private GameObject board;
+    [SerializeField] private Vector2 gridSize;
 
-    [SerializeField] GameObject cell;
+    [SerializeField] private GameObject cell;
 
-    [SerializeField] Vector2 GridSize;
-
-    [SerializeField] GameObject cornerPointPrefab;
-    [SerializeField] GameObject edgeDarkPrefab;
-    [SerializeField] GameObject edgeWhitePrefab;
-    [SerializeField] GameObject edgePointPrefab;
-    [SerializeField] GameObject centralPrefab;
-    [SerializeField] GameObject centralPointPrefab;
+    [SerializeField] private GameObject cornerPointPrefab;
+    [SerializeField] private GameObject edgeDarkPrefab;
+    [SerializeField] private GameObject edgeWhitePrefab;
+    [SerializeField] private GameObject edgePointPrefab;
+    [SerializeField] private GameObject centralPrefab;
+    [SerializeField] private GameObject centralPointPrefab;
     
-    void Start()
+    private void Start()
     {
-        InitGrid(GridSize.x,GridSize.y);
+        InitGrid(gridSize.x,gridSize.y);
     }
 
-    void Update()
-    {
-        
-    }
-
-    void InitGrid(float columns, float rows)
+    private void InitGrid(float columns, float rows)
     {
         CellNodeManager.Instance.SetGridSize(new Vector2(columns, rows));
-        List<CellNode> nodeGrid = new();
-
-        Vector3 centerGrid = new Vector3((columns-1.0f) / 1.18f /2.0f / transform.localScale.x, 0f, -(rows-1.0f) / 1.18f / 2.0f / transform.localScale.z);
-        Vector3 gridSize = new Vector3(columns/ transform.localScale.x, 1f, rows / transform.localScale.z+0.43f);
 
         cell.transform.localScale = new Vector3(1.2f, 0.5f, 1.2f);
 
@@ -48,21 +32,19 @@ public class CreateGrid : MonoBehaviour
                 Vector3 position = new Vector3(j /(1.18f *6f), 0.5f, -i / (1.18f *6f));
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + j.ToString() + "-" + i.ToString();
-                obj.GetComponent<Tile>().tileId = (int)(i * rows + j);
+                obj.GetComponent<Tile>().SetTileId((int)(i * rows + j));
                 CellNode node = new CellNode(position, obj, j,i);
 
-                CreateModelBoard(i, j, rows,columns, position);
+                CreateModelBoard(i, j, position);
             }
         }
-
-        
 
         CellNodeManager.Instance.CreateDefaultConnections();
         CellNodeManager.Instance.CreateSpecialTiles(2);
         //CellNodeManager.Instance.PrintNodeGridStatus();
     }
 
-    void CreateModelBoard(int i, int j, float rows, float columns, Vector3 position)
+    private void CreateModelBoard(int i, int j, Vector3 position)
     {
         if (i == 0) // Top
         {
@@ -73,7 +55,7 @@ public class CreateGrid : MonoBehaviour
                 obj.name = "Corner Top Left";
                 obj.transform.rotation = Quaternion.Euler(0, -90, 0);
             }
-            else if (j == columns - 1)
+            else if (j == gridSize.x - 1)
             {
                 // Instantiate Corner TopRight
                 GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
@@ -87,7 +69,7 @@ public class CreateGrid : MonoBehaviour
                 obj.transform.rotation = Quaternion.Euler(0, -90, 0);
             }
         }
-        else if(i == rows - 1)
+        else if(i == gridSize.y - 1)
         {
             if (j == 0)
             {
@@ -96,7 +78,7 @@ public class CreateGrid : MonoBehaviour
                 obj.name = "Corner Bot Left";
                 obj.transform.rotation = Quaternion.Euler(0, -180, 0);
             }
-            else if (j == columns - 1)
+            else if (j == gridSize.x - 1)
             {
                 // Instantiate Corner BotRight
                 GameObject obj = Instantiate(cornerPointPrefab, position, Quaternion.identity, board.transform.GetChild(0));
@@ -128,7 +110,7 @@ public class CreateGrid : MonoBehaviour
             }
             
         }
-        else if (j == columns - 1)
+        else if (j == gridSize.x - 1)
         {
             // Instantiate SideRight
             if (i == 1 || i == 4) // Dark
