@@ -46,7 +46,7 @@ public class TokenGameObject : DragableGameObject
         base.UpdateCardToDisplayText();
     }
 
-    public override void UpdateCardOnBoardText()
+    protected override void UpdateCardOnBoardText()
     {
         photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All);
     }
@@ -107,7 +107,7 @@ public class TokenGameObject : DragableGameObject
 
 
 
-    Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
+    private Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
     {
         CharacterStats stats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
         switch (id)
