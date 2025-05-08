@@ -1333,8 +1333,878 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
   Length: 1531
 --- !u!114 &1401956247263902218
+=======
+  Length: 3313
+--- !u!114 &-304487404152045219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/HYDRA/HYDRA_ATTACK
+  Guid:
+    Data1: 1895618965
+    Data2: 1159810698
+    Data3: -157948245
+    Data4: 884749417
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-60215675800580496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/CAVALIER/CAVALIER_ATTACK
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/CAVALIER/CAVALIER_ATTACK
+  Guid:
+    Data1: 1793175780
+    Data2: 1284369732
+    Data3: -2032075876
+    Data4: 457850648
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
+--- !u!114 &-42049443773063648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/MEDUSA/Medusa_Attack
+  Guid:
+    Data1: -280644010
+    Data2: 1214774243
+    Data3: -1301596536
+    Data4: -2126907486
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8646538831758797888}
+  - {fileID: 3836144223505674586}
+  EditorEvents:
+  - {fileID: 7255108047818370097}
+  - {fileID: 966743786182897096}
+  - {fileID: 6783453168304347235}
+  - {fileID: -4040564432568083290}
+  - {fileID: -4166865673864810451}
+  - {fileID: 5775902584551508486}
+  - {fileID: 6301445501584988855}
+  - {fileID: 8496618197443577526}
+  - {fileID: 1026696425363529107}
+  - {fileID: 6988040465027969761}
+  - {fileID: 4743349600180369571}
+  - {fileID: 604382343733750162}
+  - {fileID: -5897007409546546341}
+  - {fileID: -8547261272731062490}
+  - {fileID: -5829825482320580320}
+  - {fileID: 8603700118805110463}
+  - {fileID: -2697128838124561756}
+  - {fileID: -7889038747220063347}
+  - {fileID: -42049443773063648}
+  - {fileID: -897062132033370724}
+  - {fileID: -4516651694141435557}
+  - {fileID: 4374249968084567793}
+  - {fileID: -8300776153029238701}
+  - {fileID: -5904612835843772901}
+  - {fileID: 7817820920457377040}
+  - {fileID: -5427204430139560566}
+  - {fileID: -5529640786759955776}
+  - {fileID: 1212040521933018946}
+  - {fileID: -474269389442640505}
+  - {fileID: 5168148233943311610}
+  - {fileID: -1190532008868546352}
+  - {fileID: 5472943787838037627}
+  - {fileID: -3365891461451006196}
+  - {fileID: 5310318654285630489}
+  - {fileID: -304487404152045219}
+  - {fileID: -4218353923564442290}
+  - {fileID: -1550669844895232773}
+  - {fileID: 7963797336938125763}
+  - {fileID: -1120734673942967059}
+  - {fileID: 6296305129066348079}
+  - {fileID: -726354671599861230}
+  - {fileID: -5364059507897237786}
+  - {fileID: 2655979567365500369}
+  - {fileID: -5702831802523080438}
+  - {fileID: -1161267468061210775}
+  - {fileID: 4061189179832322686}
+  - {fileID: -789316061349338120}
+  - {fileID: -8285934802849757845}
+  - {fileID: 7664637485168486033}
+  - {fileID: -9172553825522975565}
+  - {fileID: -342732968663063932}
+  - {fileID: -6542445683610736712}
+  - {fileID: -8623866120562165812}
+  - {fileID: -60215675800580496}
+  - {fileID: 563547289028357821}
+  - {fileID: -2373834200873194877}
+  - {fileID: 7404594953451367020}
+  - {fileID: 7051668960932976036}
+  - {fileID: 6339828807461473732}
+  - {fileID: -7675290971127953065}
+  - {fileID: 5117556260747885786}
+  - {fileID: 1456124265424726207}
+  - {fileID: 1384811503615396730}
+  - {fileID: 7840263275213289869}
+  - {fileID: -6989709735200128328}
+  - {fileID: -8847975237592376385}
+  EditorParameters:
+  - {fileID: 4633214011512609708}
+  - {fileID: -9213393333964247263}
+  - {fileID: -479136036237591945}
+  MasterBanks:
+  - {fileID: 3836144223505674586}
+  StringsBanks:
+  - {fileID: 8646538831758797888}
+  cacheTime: 638823275657733364
+  cacheVersion: 131621
+--- !u!114 &563547289028357821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Play_SNP_PausaJuego
+  m_EditorClassIdentifier: 
+  Path: event:/Play_SNP_PausaJuego
+  Guid:
+    Data1: 2073756904
+    Data2: 1167894861
+    Data3: 415148214
+    Data4: -2048957854
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &604382343733750162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/ANT/Ant_Select_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/ANT/Ant_Select_Attack
+  Guid:
+    Data1: -205716420
+    Data2: 1224232037
+    Data3: -1233101907
+    Data4: 137431299
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &966743786182897096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_ATTACK
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_ATTACK
+  Guid:
+    Data1: 463175430
+    Data2: 1196049849
+    Data3: -782463089
+    Data4: 2025462677
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &1026696425363529107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_ATTACK
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_ATTACK
+  Guid:
+    Data1: -358029784
+    Data2: 1104192059
+    Data3: 2090169506
+    Data4: -2043592601
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3815
+--- !u!114 &1212040521933018946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/Gustav/Gustav_Select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/Gustav/Gustav_Select
+  Guid:
+    Data1: -1352270975
+    Data2: 1138685165
+    Data3: -1955344000
+    Data4: -2055553810
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1625
+--- !u!114 &1384811503615396730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection
+  Guid:
+    Data1: 1097031159
+    Data2: 1100652465
+    Data3: 484962735
+    Data4: 110529219
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85893
+--- !u!114 &1456124265424726207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_ATACK
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/BERSERKER/BERSERKER_ATACK
+  Guid:
+    Data1: -1672017933
+    Data2: 1235054124
+    Data3: -1694739291
+    Data4: -1146535080
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &2655979567365500369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/SNP_PausaJuego
+  m_EditorClassIdentifier: 
+  Path: snapshot:/SNP_PausaJuego
+  Guid:
+    Data1: -1013353041
+    Data2: 1232927490
+    Data3: 623284904
+    Data4: -598936489
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &3836144223505674586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638823275657713483
+  FileSizes:
+  - Name: Desktop
+    Value: 19549536
+  Exists: 1
+--- !u!114 &4061189179832322686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/SALMON/Salmon_selection
+  Guid:
+    Data1: -760990028
+    Data2: 1209647404
+    Data3: -701405002
+    Data4: 964568782
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2607
+--- !u!114 &4374249968084567793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT
+  Guid:
+    Data1: -1908846748
+    Data2: 1100605887
+    Data3: 1465421189
+    Data4: -88962801
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &4633214011512609708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/RT60
+  m_EditorClassIdentifier: 
+  Name: RT60
+  StudioPath: parameter:/RT60
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 3415376268
+    data2: 1025728923
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4743349600180369571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MANA/Drink_Mana
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MANA/Drink_Mana
+  Guid:
+    Data1: 1320533049
+    Data2: 1340335908
+    Data3: -1809048129
+    Data4: 307954529
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1966
+--- !u!114 &5117556260747885786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Button_Exit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Button_Exit
+  Guid:
+    Data1: -1117573390
+    Data2: 1169021889
+    Data3: 608982915
+    Data4: -2139049945
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2627
+--- !u!114 &5168148233943311610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/THE GUN/TheGun_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/THE GUN/TheGun_Attack
+  Guid:
+    Data1: 457871493
+    Data2: 1280131075
+    Data3: 1738169528
+    Data4: 1121500463
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6756
+--- !u!114 &5310318654285630489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Buttons_General
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Buttons_General
+  Guid:
+    Data1: 1982783379
+    Data2: 1097692385
+    Data3: 1248649357
+    Data4: 856379154
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 906
+--- !u!114 &5472943787838037627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_attack
+  Guid:
+    Data1: 672075150
+    Data2: 1175839648
+    Data3: -951879540
+    Data4: -1013401230
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1125
+--- !u!114 &5775902584551508486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AMBIENTES/ROOMTONE
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENTES/ROOMTONE
+  Guid:
+    Data1: 1860700176
+    Data2: 1144748228
+    Data3: 1483625137
+    Data4: 1267618951
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 182762
+--- !u!114 &6067983311915297937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Taverna/RONDA
+  m_EditorClassIdentifier: 
+  Name: RONDA
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3471956703
+    data2: 2972532473
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - RONDA 1-2
+  - RONDA 3 A 9
+  - RONDA 10
+  Exists: 1
+--- !u!114 &6296305129066348079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AMBIENTES/CANVI DE TORN/RING
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENTES/CANVI DE TORN/RING
+  Guid:
+    Data1: -307875157
+    Data2: 1302402879
+    Data3: 533341112
+    Data4: -169503081
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3993
+--- !u!114 &6301445501584988855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_attack
+  Guid:
+    Data1: -806062320
+    Data2: 1328401407
+    Data3: -1767149133
+    Data4: -8837925
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2635
+--- !u!114 &6339828807461473732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/CHICKEN/Chicken_select
+  Guid:
+    Data1: 2125677807
+    Data2: 1080992663
+    Data3: 1734080158
+    Data4: 1239800274
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1937
+--- !u!114 &6783453168304347235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select
+  Guid:
+    Data1: -1342085625
+    Data2: 1254621408
+    Data3: 804495239
+    Data4: 1545287166
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2437
+--- !u!114 &6988040465027969761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/EFFECTS/Flash/FLASH
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/EFFECTS/Flash/FLASH
+  Guid:
+    Data1: -1945005269
+    Data2: 1299605566
+    Data3: -1753413979
+    Data4: 512706616
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3973
+--- !u!114 &7051668960932976036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Selecction
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/MUMMY/Mummy_Selecction
+  Guid:
+    Data1: -980313619
+    Data2: 1127975878
+    Data3: -1258565482
+    Data4: 1840306775
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3773
+--- !u!114 &7255108047818370097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack
+  Guid:
+    Data1: 236929796
+    Data2: 1164586379
+    Data3: -903899758
+    Data4: -1888746353
+  Banks:
+  - {fileID: 3836144223505674586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7404594953451367020
+>>>>>>> eb4e347 (Blue Spawn Recording)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2068,6 +2938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Select
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/SFX/CARTAS/MONSTERS/Kamikaze/Kamikaze_Select
   Guid:
     Data1: -780331924
@@ -2110,3 +2981,13 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+=======
+  Path: FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638823275657733364
+  FileSizes:
+  - Name: Desktop
+    Value: 4828
+  Exists: 1
+>>>>>>> eb4e347 (Blue Spawn Recording)

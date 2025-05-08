@@ -57,7 +57,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
         }
         else
         {
-            SaveData.Instance.BufferCheck(character.OnSpawn(cellToMove));
+            //SaveData.Instance.BufferCheck(character.OnSpawn(cellToMove));
         } 
     }
 

@@ -12,6 +12,7 @@ EditorUserSettings:
       value: 02050c5352025f035b0a5d7413260a44174e197a787870327c704566b4b26569
       flags: 0
     RecentlyUsedSceneGuid-2:
+<<<<<<< HEAD
       value: 5555510757050a0a595e5c71437759131316192f7b2e25317b2b4a67e4e2353c
       flags: 0
     RecentlyUsedSceneGuid-3:
@@ -33,6 +34,11 @@ EditorUserSettings:
       value: 5301520004045c0a08575d7140255e4417161b2c297c7463297e4f32b6b1356e
       flags: 0
     RecentlyUsedSceneGuid-9:
+=======
+      value: 50050c0452545b0c580d0e2012215e4412151e287f2a7268787d4537b2b76361
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+>>>>>>> eb4e347 (Blue Spawn Recording)
       value: 51500d505706080d095d0e7247730c44174f482b7c2925622c7d1f63bbb7613e
       flags: 0
     vcSharedLogLevel:
