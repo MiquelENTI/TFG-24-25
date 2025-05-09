@@ -66,7 +66,7 @@ public class CardGameObject : DragableGameObject
     }
     public override void CheckIsOutsideBoard()
     {
-        CellNodeManager.Instance.InvokeHidePossibleSpawnTiles(IsBlue);
+        MyEventHandler.Instance.InvokeHidePossibleSpawnTiles(IsBlue);
 
         if (isOutsideBoard)
         {

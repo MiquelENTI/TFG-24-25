@@ -1,12 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro.Examples;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class CellNodeManager : Singleton<CellNodeManager>
 {
@@ -14,10 +7,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private Vector2 gridSize;
     private int currentId;
 
-    public UnityEvent<int> hidePossibleMovements;
-    public UnityEvent<int> showPossibleMovements;
-    public UnityEvent<TeamType> hidePossibleSpawnTiles;
-    public UnityEvent<TeamType> showPossibleSpawnTiles;
+    
 
     private List<CellNode> redSpawnTiles;
     private List<CellNode> blueSpawnTiles;
@@ -28,33 +18,6 @@ public class CellNodeManager : Singleton<CellNodeManager>
         nodeGrid = new List<CellNode>();
         redSpawnTiles = new List<CellNode>();
         blueSpawnTiles = new List<CellNode>();
-
-        // Event that Triggers ToggleVisibilityPossibleMovements Function
-        
-        showPossibleMovements = new UnityEvent<int>();
-        showPossibleMovements.AddListener((int tileId) =>
-        {
-            ToggleVisibilityPossibleMovements(tileId, true);
-        });
-        hidePossibleMovements = new UnityEvent<int>();
-        hidePossibleMovements.AddListener((int tileId) =>
-        {
-            ToggleVisibilityPossibleMovements(tileId, false);
-        });
-
-        // Event that Triggers ToggleVisibilityAvailableSpawnCells
-        showPossibleSpawnTiles = new UnityEvent<TeamType>();
-        showPossibleSpawnTiles.AddListener((TeamType teamType) =>
-        {
-            ToggleVisibilityAvailableSpawnCells(teamType, true);
-        });
-
-        // Event that Triggers ToggleVisibilityAvailableSpawnCells
-        hidePossibleSpawnTiles = new UnityEvent<TeamType>();
-        hidePossibleSpawnTiles.AddListener((TeamType teamType) =>
-        {
-            ToggleVisibilityAvailableSpawnCells(teamType, false);
-        });
     }
     public void SetGridSize(Vector2 size)
     { gridSize = size; }
@@ -169,7 +132,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Higlihts all the Token's possible movements
-    void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
+    public void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
     {
         // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
 
@@ -225,7 +188,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Highlights all the Available SpawnTiles
-    void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
+    public void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
     {
         // Parameter Determines Which Tiles to Highlight
         switch (teamType)
@@ -247,26 +210,6 @@ public class CellNodeManager : Singleton<CellNodeManager>
             default:
                 break;
         }
-    }
-
-    
-    public void InvokeShowPossibleSpawnTiles(bool isBlue)
-    {
-        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
-        showPossibleSpawnTiles.Invoke(type);
-    }
-    public void InvokeShowPossibleSpawnTiles(TeamType teamType)
-    {
-        showPossibleSpawnTiles.Invoke(teamType);
-    }
-    public void InvokeHidePossibleSpawnTiles(bool isBlue)
-    {
-        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
-        hidePossibleSpawnTiles.Invoke(type);
-    }
-    public void InvokeHidePossibleSpawnTiles(TeamType teamType)
-    {
-        hidePossibleSpawnTiles.Invoke(teamType);
     }
 
     void SetScoreNodes4x2()

@@ -56,13 +56,13 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(lastInteractedObject.GetIsBlue());
+                        MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(lastInteractedObject.GetIsBlue());
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
