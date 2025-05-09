@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class CardGameObject : DragableGameObject
 {
-    private CardHold cardHold;
     private int cardId;
-
     private int cardIdToSpawn = -10;
+
+    private CardHold cardHold;
+    
     private SpawnCardController spawnCardController;
 
     protected override void Awake()
@@ -21,23 +22,55 @@ public class CardGameObject : DragableGameObject
         base.Start();
     }
 
-    public void Init()
+    protected override void InitCardOnBoardText()
     {
-        planeDisplacement = 0.5f;
-        objectDisplacement = 0.1f;
-        plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
-        cardHold = transform.parent.parent.GetComponent<CardHold>();
-        
-        spawnCardController = SpawnCardController.Instance;
+        cob_AtkText = transform.GetChild(0).GetChild(7).GetComponent<TMP_Text>();
+        cob_HpText = transform.GetChild(0).GetChild(8).GetComponent<TMP_Text>();
+        cob_NameText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
+        cob_ManaText = transform.GetChild(0).GetChild(10).GetComponent<TMP_Text>();
+        cob_Description = transform.GetChild(0).GetChild(11).GetComponent<TMP_Text>();
+        cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
+        cob_MovementSprite = transform.GetChild(0).GetChild(12).GetComponent<Image>();
+        cob_AbilityBackground = transform.GetChild(0).GetChild(13).GetComponent<Image>();
+        cob_AbilitySprite = transform.GetChild(0).GetChild(14).GetComponent<Image>();
+        cob_doubleScoreBackground = transform.GetChild(0).GetChild(15).GetComponent<Image>();
+        cob_doubleScoreSprite = transform.GetChild(0).GetChild(16).GetComponent<Image>();
     }
+    protected override void UpdateCardOnBoardText()
+    {
+        try // Character
+        {
+            cob_AtkText.text = characterStats.dmg.ToString();
+            cob_HpText.text = characterStats.hp.ToString();
+            cob_ManaText.text = characterStats.manaCost.ToString();
+            cob_NameText.text = characterStats.name;
+            cob_Description.text = characterStats.description;
+        }
+        catch // Effects
+        {
+            cob_AtkText.text = "0";
+            cob_HpText.text = "0";
+            cob_ManaText.text = effectStats.manaCost.ToString();
+            cob_NameText.text = effectStats.name;
+            cob_Description.text = effectStats.description;
+        }
 
+        cob_CardSprite.sprite = cardSprite;
+        cob_MovementSprite.sprite = movementSprite;
+
+        if (abilitySprite != null)
+        { cob_AbilitySprite.sprite = abilitySprite; }
+
+        if (doubleScoreSprite != null)
+        { cob_doubleScoreSprite.sprite = doubleScoreSprite; }
+    }
     public override void CheckIsOutsideBoard()
     {
         CellNodeManager.Instance.InvokeHidePossibleSpawnTiles(IsBlue);
 
         if (isOutsideBoard)
         {
-            if(TurnManagerScript.Instance.isPCVersion)
+            if (TurnManagerScript.Instance.isPCVersion)
             { cardHold.ReorganizeCards(); }
         }
         else
@@ -74,7 +107,19 @@ public class CardGameObject : DragableGameObject
             }
         }
     }
-    void RequestCharacterInstantiation()
+
+    public void Init()
+    {
+        planeDisplacement = 0.5f;
+        objectDisplacement = 0.1f;
+        plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
+        cardHold = transform.parent.parent.GetComponent<CardHold>();
+        
+        spawnCardController = SpawnCardController.Instance;
+    }
+
+    
+    private void RequestCharacterInstantiation()
     {
         Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
         spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
@@ -82,13 +127,8 @@ public class CardGameObject : DragableGameObject
         SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
     }
 
-    void RequestEffectActivation()
+    private void RequestEffectActivation()
     { Debug.Log("CARTA ACTIVADA"); }
-
-    public void SetCardId(int id)
-    { cardId = id; }
-    public int GetCardId()
-    { return cardId; }
 
     public void SetCardToSpawnId(int id)
     { 
@@ -157,50 +197,8 @@ public class CardGameObject : DragableGameObject
         movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
 
-    public int GetCharacterToSpawnId()
-    { return cardIdToSpawn; }
-
-    protected override void InitCardOnBoardText()
-    {
-        cob_AtkText = transform.GetChild(0).GetChild(7).GetComponent<TMP_Text>();
-        cob_HpText = transform.GetChild(0).GetChild(8).GetComponent<TMP_Text>();
-        cob_NameText = transform.GetChild(0).GetChild(9).GetComponent<TMP_Text>();
-        cob_ManaText = transform.GetChild(0).GetChild(10).GetComponent<TMP_Text>();
-        cob_Description = transform.GetChild(0).GetChild(11).GetComponent<TMP_Text>();
-        cob_CardSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
-        cob_MovementSprite = transform.GetChild(0).GetChild(12).GetComponent<Image>();
-        cob_AbilityBackground = transform.GetChild(0).GetChild(13).GetComponent<Image>();
-        cob_AbilitySprite = transform.GetChild(0).GetChild(14).GetComponent<Image>();
-        cob_doubleScoreBackground = transform.GetChild(0).GetChild(15).GetComponent<Image>();
-        cob_doubleScoreSprite = transform.GetChild(0).GetChild(16).GetComponent<Image>();
-    }
-
-    protected override void UpdateCardOnBoardText()
-    {
-        try // Character
-        {
-            cob_AtkText.text = characterStats.dmg.ToString();
-            cob_HpText.text = characterStats.hp.ToString();
-            cob_ManaText.text = characterStats.manaCost.ToString();
-            cob_NameText.text = characterStats.name;
-            cob_Description.text = characterStats.description;
-        }
-        catch // Effects
-        {
-            cob_AtkText.text = "0";
-            cob_HpText.text = "0";
-            cob_ManaText.text = effectStats.manaCost.ToString();
-            cob_NameText.text = effectStats.name;
-            cob_Description.text = effectStats.description;
-        }
-
-        cob_CardSprite.sprite = cardSprite;
-        cob_MovementSprite.sprite = movementSprite;
-
-        if (abilitySprite != null)
-        { cob_AbilitySprite.sprite = abilitySprite; }
-
-        if (doubleScoreSprite != null)
-        { cob_doubleScoreSprite.sprite = doubleScoreSprite; }
-    }
+    public void SetCardId(int id)
+    { cardId = id; }
+    public int GetCardId()
+    { return cardId; }
 }

@@ -47,7 +47,7 @@ public class SpawnCardController : Singleton<SpawnCardController>
             TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
             if (tokenGameObjectScript != null)
             {
-                instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
+                instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("RPC_SetCharacter", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
 
                 MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
             }
@@ -82,7 +82,7 @@ public class SpawnCardController : Singleton<SpawnCardController>
         TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
         if (tokenGameObjectScript != null)
         {
-            instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().SetCharacterRPC(characterIdToAssign, (int)tokenTeam);
+            instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().RPC_SetCharacter(characterIdToAssign, (int)tokenTeam);
 
             MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
         }

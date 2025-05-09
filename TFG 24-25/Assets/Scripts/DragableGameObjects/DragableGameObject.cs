@@ -84,18 +84,6 @@ public class DragableGameObject : MonoBehaviour
 
     protected virtual void UpdateCardToDisplayText()
     {
-        // 0 -> Card Sprite
-        // 1 -> Name Container
-        // 2 -> DMG Container
-        // 3 -> Name
-        // 4 -> HP Container
-        // 5 -> HP
-        // 6 -> DMG
-        // 7 -> Mana
-        // 8 -> Description
-
-        //characterStats.PrintStats();
-
         try // Character
         {
             ctd_AtkText.text = characterStats.dmg.ToString();

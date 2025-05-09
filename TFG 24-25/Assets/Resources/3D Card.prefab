@@ -1884,16 +1884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsBlue: 0
   cardToDisplay: {fileID: 0}
-  cob_AtkText: {fileID: 0}
-  cob_HpText: {fileID: 0}
-  cob_NameText: {fileID: 0}
-  cob_ManaText: {fileID: 0}
-  cob_CardSprite: {fileID: 0}
-  cob_MovementSprite: {fileID: 0}
-  cob_AbilityBackground: {fileID: 0}
-  cob_AbilitySprite: {fileID: 0}
-  cob_doubleScoreBackground: {fileID: 0}
-  cob_doubleScoreSprite: {fileID: 0}
 --- !u!114 &7267973748837844944
 MonoBehaviour:
   m_ObjectHideFlags: 0
