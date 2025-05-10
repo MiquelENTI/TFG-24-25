@@ -10,8 +10,23 @@ public class PlayerController : MonoBehaviourPun
 
     public bool IsBlue;
 
+    private GameObject wizardHead;
+    private GameObject knightHead;
+
     void Start()
     {
+        if (TurnManagerScript.Instance.isPCVersion)
+        {
+            
+        }
+        else
+        {
+            knightHead = gameObject.transform.GetChild(2).GetChild(0).GetChild(0).GetChild(1).gameObject;
+            wizardHead = gameObject.transform.GetChild(2).GetChild(0).GetChild(0).GetChild(2).gameObject;
+        }
+
+        photonView.RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
+
         if (!photonView.IsMine)
         {
             playerCamera.SetActive(false);
@@ -42,6 +57,21 @@ public class PlayerController : MonoBehaviourPun
                 bool isActive = menu.activeSelf;
                 menu.SetActive(!isActive);
             }
+        }
+    }
+
+    [PunRPC]
+    public void ActivatePlayerHeads()
+    {
+        if (IsBlue)
+        {
+            knightHead.SetActive(false);
+            wizardHead.SetActive(true);
+        }
+        else
+        {
+            knightHead.SetActive(true);
+            wizardHead.SetActive(false);
         }
     }
 }

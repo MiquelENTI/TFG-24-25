@@ -1,12 +1,15 @@
 [LOG] System::create                           : Header version = 2.02.25. Current version = 2.02.25.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20225 (147536), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
+[LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x3a6b0a008 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000001E95ECB2A98 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,80 +20,6 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SoundI::release                          :  (0x145f980b8)
-[LOG] SoundI::release                          :     Grasshopper_Attack_as_ui_so_Card_00 (0x33b833ec8)
-[LOG] SoundI::release                          :  (0x1507918a8)
-[LOG] SoundI::release                          :     Giant_Select_as_ui_so_Card_00 (0x336f7d2d8)
-[LOG] SoundI::release                          :  (0x3c5ff0368)
-[LOG] SoundI::release                          :     Salmon_table_salmon_00 (0x3e7158138)
-[LOG] SoundI::release                          :  (0x3e5304778)
-[LOG] SoundI::release                          :     Wheel_canon_ 00 (0x3e53e8428)
-[LOG] SoundI::release                          :  (0x3b6c70c48)
-[LOG] SoundI::release                          :     242470-household_wood_chair_movement_on_wood_floor-05 (0x3b6c70db8)
-[LOG] SoundI::release                          : 396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x3e75b79c8)
-[LOG] SoundI::release                          :     396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x336fee088)
-[LOG] SoundI::release                          :     396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x336f7fe48)
-[LOG] SoundI::release                          : Roomtone_Taverna_00 (0x3f30eda28)
-[LOG] SoundI::release                          :     Roomtone_Taverna_00 (0x336fbe308)
-[LOG] SoundI::release                          :     Roomtone_Taverna_00 (0x336f8e7b8)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Treble_Flute (0x3e71d2808)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3c0b5ef48)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3c0b5f0d8)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Harp (0x3e71d22c8)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3c0be5c58)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3c0be5de8)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Laúd (0x3e71d1db8)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3c0be7528)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3c0be7788)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Treble_Flute (0x3e71d1928)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3c0bb4758)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3c0b99b28)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Harp (0x3e71cf7c8)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3c0b99468)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3c0b996c8)
-[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Laúd (0x3e71d1428)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3c0ba8f68)
-[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3c0ba90f8)
-[LOG] SoundI::release                          :  (0x3b6c4d838)
-[LOG] SoundI::release                          :     326406-Office_Chair-1 (0x3b6c4d9a8)
-[LOG] SoundI::release                          :  (0x3b6c4e158)
-[LOG] SoundI::release                          :     242469-household_wood_chair_movement_on_wood_floor-04 (0x3b6c4e2c8)
-[LOG] SoundI::release                          :  (0x3b6c71568)
-[LOG] SoundI::release                          :     95135-Dice_roll_table_board_game-BLASTWAVEFX-29338 (0x3b6c4d518)
-[LOG] SoundI::release                          :  (0x3b6c4e5e8)
-[LOG] SoundI::release                          :     81901-Dice_two_roll_felt_table-BLASTWAVEFX-15947 (0x3b6c4e758)
-[LOG] SoundI::release                          :  (0x141789118)
-[LOG] SoundI::release                          :     79662-Dice_two_roll_hit_settle_felt_table-BLASTWAVEFX-15949 (0x3b6cc4a18)
-[LOG] SoundI::release                          :  (0x33a91c398)
-[LOG] SoundI::release                          :     82332-Dice_two_roll_hit_backing_settle_felt_table-BLASTWAVEFX-15948 (1) (0x3e5375c38)
-[LOG] SoundI::release                          :  (0x3b6c70328)
-[LOG] SoundI::release                          :     82332-Dice_two_roll_hit_backing_settle_felt_table-BLASTWAVEFX-15948 (0x3b6c70498)
-[LOG] SoundI::release                          :  (0x33a9315a8)
-[LOG] SoundI::release                          :     18126-throwing_dice (0x33e6d34e8)
-[LOG] SoundI::release                          :  (0x3b6c710d8)
-[LOG] SoundI::release                          :     203668-Middle-aged_intense_male_laughter_-short- (0x3b6c71248)
-[LOG] SoundI::release                          :  (0x3b6c4dcc8)
-[LOG] SoundI::release                          :     203524-Joyful_male_laughter_02 (0x3b6c4de38)
-[LOG] SoundI::release                          :  (0x3b6c4ea78)
-[LOG] SoundI::release                          :     460735-CERMImpt-Broken_Ceramic_Mug_Tap_Slide_Scrape-AYCEA-none-ST-CO100K-MKH30 (0x3b6c4ebe8)
-[LOG] SoundI::release                          :  (0x33a92f1b8)
-[LOG] SoundI::release                          :     315993-DNE_GLASS_Big_Clink_Multiple_5 (0x33e66fe38)
-[LOG] SoundI::release                          :  (0x3b6c707b8)
-[LOG] SoundI::release                          :     315989-DNE_GLASS_Big_Clink_Multiple_1 (0x3b6c70928)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] ProfileClient::markForDead               : Closing client connection
-[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
-[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -98,5 +27,3 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
