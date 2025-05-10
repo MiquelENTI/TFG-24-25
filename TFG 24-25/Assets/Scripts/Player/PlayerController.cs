@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviourPun
     {
         if (TurnManagerScript.Instance.isPCVersion)
         {
-            
+            knightHead = gameObject.transform.GetChild(0).GetChild(1).gameObject;
+            wizardHead = gameObject.transform.GetChild(0).GetChild(2).gameObject;
         }
         else
         {
