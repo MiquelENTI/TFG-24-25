@@ -8,4 +8,15 @@ public class Grasshopper : Character
     {
         jumpMove = true;
     }
+    //Implementació del so 
+        
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003019001, token.transform.position);
+    }
+    
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003019001, token.transform.position);
+    }
 }

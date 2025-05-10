@@ -126,7 +126,6 @@ public class SoundManager : Singleton<SoundManager>
             { 003016001, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select" },
             { 003016002, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select" },
 
-
             // Terracotta Warrior 
             { 003017001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
             { 003017002, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
