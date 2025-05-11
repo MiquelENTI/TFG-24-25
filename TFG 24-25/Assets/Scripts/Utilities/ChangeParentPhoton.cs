@@ -11,16 +11,16 @@ public class ChangeParentPhoton : MonoBehaviourPun
     }
     
 
-    public void ChangeParentWithTag(string tag)
+    public void ChangeParentWithTag(string tag, int index)
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered, tag);
+            photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered, tag, index);
         }
     }
     [PunRPC]
-    public void RPC_ChangeParentWithTag(string tag)
+    public void RPC_ChangeParentWithTag(string tag, int index)
     {
-        transform.parent = GameObject.FindGameObjectWithTag(tag).transform;
+        transform.parent = GameObject.FindGameObjectsWithTag(tag)[index].transform;
     }
 }
