@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviourPun
     private Vector3 VR_WizardHeadOffset = new Vector3(0f, -0.155f, -0.25f);
     private Vector3 VR_KnightHeadOffset = new Vector3(0f, -0.155f, 0.25f);
 
-    bool headCreated = false;
 
 
     private void Awake()
@@ -30,12 +29,12 @@ public class PlayerController : MonoBehaviourPun
     {
         if (!photonView.IsMine)
         {
-            playerCamera.SetActive(false);
+            ToggleCameraGameObject(false);
             return;
         }
         else
         {
-            playerCamera.SetActive(true);
+            ToggleCameraGameObject(true);
         }
 
         if (TurnManagerScript.Instance.isPCVersion)
@@ -65,8 +64,6 @@ public class PlayerController : MonoBehaviourPun
             }
         }
 
-        headCreated = true;
-
         if (menu != null)
         {
             menu.SetActive(false);
@@ -89,5 +86,10 @@ public class PlayerController : MonoBehaviourPun
                 menu.SetActive(!isActive);
             }
         }
+    }
+
+    private void ToggleCameraGameObject(bool state)
+    {
+        playerCamera.GetComponent<Camera>().enabled = state;
     }
 }
