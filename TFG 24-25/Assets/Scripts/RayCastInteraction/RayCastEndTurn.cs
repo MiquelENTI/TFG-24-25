@@ -18,5 +18,6 @@ public class RayCastEndTurn : MonoBehaviour
         {
             turnManagerScript.TurnManager();
         }
+        SoundManager.Instance.PlayAmbient(001000003,transform.position);
     }
 }

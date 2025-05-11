@@ -32,7 +32,10 @@ public class SoundManager : Singleton<SoundManager>
             { 002000001, "event:/MUSIC/GAMEPLAY/Taverna" },
             // Menú
             { 002000002, "event:/MUSIC/MENU/Menu" },
+        };
 
+        ambientDictionary = new()
+        {
             // AMBIENT
             // Roomtone
             { 001001001, "event:/SFX/AMBIENTES/ROOMTONE" },
@@ -40,8 +43,6 @@ public class SoundManager : Singleton<SoundManager>
             { 001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE" },
             // Canvi de torn 
             { 001000003, "event:/SFX/AMBIENTES/CANVI DE TORN/RING" },
-
-
         };
 
         sfxDictionary = new()
@@ -127,8 +128,8 @@ public class SoundManager : Singleton<SoundManager>
             { 003016002, "event:/SFX/CARTAS/MONSTERS/DEATHHORSEMAN/DeathHorseman_select" },
 
             // Terracotta Warrior 
-            { 003017001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
-            { 003017002, "event:/SFX/CARTAS/CARDS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
+            { 003017001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_ATTACK" },
+            { 003017002, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
             { 003017003, "" },
 
             // Fantasma
@@ -221,9 +222,9 @@ public class SoundManager : Singleton<SoundManager>
             { 003035002, "event:/SFX/CARTAS/MONSTERS/Lacus/Lacus" },
             { 003035003, "" },
 
-            // Samurai (Pendent de no fer - possiblement no) 
-            { 003036001, "" },
-            { 003036002, "" },
+            // Samurai
+            { 003036001, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_ATTACK" },
+            { 003036002, "event:/SFX/CARTAS/MONSTERS/TARRACOTA_WARRIOR/Tarracota_SELECT" },
             { 003036003, "" },
 
             // Giant
@@ -267,7 +268,11 @@ public class SoundManager : Singleton<SoundManager>
         PlayMusic(001001001);
     }
 
-
+    public void PlayAmbient(int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(ambientDictionary[index], position);
+    }
+    
     public void PlaySFX(int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index], position);

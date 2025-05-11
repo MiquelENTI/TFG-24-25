@@ -26,11 +26,14 @@ public class TerracottaWarrior : Character
         
     protected override void AttackSFX()
     {
+        Debug.Log("SONA");
         SoundManager.Instance.PlaySFX(003017001, token.transform.position);
+        
     }
     
     protected override void OnSpawnSFX()
     {
+        Debug.Log("SONA_SPAWN");
         SoundManager.Instance.PlaySFX(003017002, token.transform.position);
     }
 }
