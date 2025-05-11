@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5322233757928262971}
   - component: {fileID: 773808737935865956}
   - component: {fileID: 6427736085643165288}
+  - component: {fileID: -8809151817121357565}
   m_Layer: 0
   m_Name: KnightHead
   m_TagString: KnightHead
@@ -117,5 +118,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1378e1a0070b2a4392ecc8849fe48d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8809151817121357565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333567039539346776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be56093d198a34e49b8d9fb5e3e33249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
