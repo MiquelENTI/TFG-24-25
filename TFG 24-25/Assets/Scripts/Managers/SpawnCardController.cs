@@ -12,6 +12,8 @@ public class SpawnCardController : MonoBehaviourPun
     [PunRPC]
     public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId, bool bypassSpawn)
     {
+        SaveData.Instance.SaveNewAction("S" + tileId + "/" + characterIdToAssign);
+
         //Debug.Log($"[SpawnCardController - START] InstantiateCharacterTokenRPC Received - ... InitiatingPlayerActorNr: {initiatingPlayerActorNumber}, LocalPlayer ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber}, LocalPlayer.IsMasterClient: {PhotonNetwork.LocalPlayer.IsMasterClient}");
 
         TeamType tokenTeam = PhotonNetwork.LocalPlayer.IsMasterClient ? TeamType.BLUE : TeamType.RED;
@@ -48,6 +50,8 @@ public class SpawnCardController : MonoBehaviourPun
             {
                 Debug.LogError("Token prefab no tiene SelectToken script!");
             }
+
+            
         }
         else
         {
