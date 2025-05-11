@@ -93,10 +93,13 @@ public class MatchManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
                 player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, true);
+                //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
+
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, false);
+                //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
             }
         }
         else
