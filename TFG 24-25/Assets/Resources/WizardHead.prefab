@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7600469412232863747}
   - component: {fileID: 5864120523167037796}
   - component: {fileID: 254633700978285334}
+  - component: {fileID: 7044818235440643895}
   m_Layer: 0
   m_Name: WizardHead
-  m_TagString: Untagged
+  m_TagString: WizardHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +107,15 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &7044818235440643895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154493112069171258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1378e1a0070b2a4392ecc8849fe48d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
