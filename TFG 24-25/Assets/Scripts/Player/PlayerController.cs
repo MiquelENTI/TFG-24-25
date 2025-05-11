@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient)
             {
                 playerHead = PhotonNetwork.Instantiate("WizardHead", playerCamera.transform.position + VR_WizardHeadOffset, Quaternion.identity);
+                //photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered);
                 playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("WizardHead");
                 //playerHead.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
             }
