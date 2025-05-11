@@ -13,7 +13,8 @@ public class ChangeParentPhoton : MonoBehaviour
     }
     public void RPC_ChangeParentWithTag(string tag)
     {
-        transform.parent = GameObject.FindGameObjectWithTag(tag).transform;
+        //PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
+        Debug.Log(PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.name);
     }
 
     public void ChangeParentWithTag(string tag)

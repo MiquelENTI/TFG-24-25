@@ -42,13 +42,13 @@ public class PlayerController : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient)
             {
                 playerHead = PhotonNetwork.Instantiate("WizardHead", playerCamera.transform.position + PC_WizardHeadOffset, Quaternion.identity);
-                PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(0);
+                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("WizardHead");
                 //playerHead.transform.parent = gameObject.transform.GetChild(0);
             }
             else
             {
                 playerHead = PhotonNetwork.Instantiate("KnightHead", playerCamera.transform.position + PC_KnightHeadOffset, Quaternion.Euler(0, 180, 0));
-                PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(0);
+                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("KnightHead");
                 //playerHead.transform.parent = gameObject.transform.GetChild(0);
             }
         }
@@ -57,13 +57,14 @@ public class PlayerController : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient)
             {
                 playerHead = PhotonNetwork.Instantiate("WizardHead", playerCamera.transform.position + VR_WizardHeadOffset, Quaternion.identity);
-                PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
+                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("WizardHead");
                 //playerHead.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
             }
             else
             {
                 playerHead = PhotonNetwork.Instantiate("KnightHead", playerCamera.transform.position + VR_KnightHeadOffset, Quaternion.Euler(0, 180, 0));
-                PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
+                //PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
+                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("KnightHead");
                 //playerHead.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
             }
         }
