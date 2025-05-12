@@ -127,12 +127,11 @@ public class CardGameObject : DragableGameObject
     }
     void RequestCharacterInstantiation()
     {
+
         if (spawnCardController != null)
         {
             Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
             spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
-
-            SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
         }
         else
         {
