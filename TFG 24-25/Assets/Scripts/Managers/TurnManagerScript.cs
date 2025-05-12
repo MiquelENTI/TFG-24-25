@@ -14,7 +14,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [SerializeField] public GameObject player2GameObject;
 
     [SerializeField] private int[] startTurnAudioCodesForAll = { 003002001, 003002002, 003002003 };
-    [SerializeField] private int[] startYourTurnAudioCodes = { 003003001, 003003002 };
+    [SerializeField] private int[] startYourTurnAudioCodes = { 004000000 };
     [SerializeField] private int[] startEnemyTurnAudioCodes = { 003004001, 003004002 };
 
 
@@ -36,6 +36,12 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public bool isPCVersion = true;
 
     [SerializeField] private bool turnBypass;
+
+    [SerializeField] private float turnTimeLimit = 60f;
+    private float currentTurnTime;
+    private bool isTurnTimerActive = false;
+
+    [SerializeField] private int timeOutAudioCode = 004000002;
 
     private void Awake()
     {
@@ -79,7 +85,69 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
                 Debug.LogError("Winner Text no encontrado como hijo de Final Canvas.");
             }
         }
+
+        StartTurnTimer();
     }
+
+    private void Update()
+    {
+        if (isTurnTimerActive)
+        {
+            currentTurnTime += Time.deltaTime;
+            if (currentTurnTime >= turnTimeLimit)
+            {
+                TurnTimeOut();
+            }
+        }
+    }
+
+    private void StartTurnTimer()
+    {
+        isTurnTimerActive = true;
+        currentTurnTime = 0f;
+    }
+
+    private void StopTurnTimer()
+    {
+        isTurnTimerActive = false;
+        currentTurnTime = 0f;
+    }
+
+    private void TurnTimeOut()
+    {
+        Debug.LogWarning("¡Tiempo de turno agotado para el jugador " + (IsTurnBlue ? "Azul" : "Rojo") + "!");
+        photonView.RPC("PlayTimeOutAudioRPC", RpcTarget.MasterClient, IsTurnBlue);
+        StartTurnTimer();
+    }
+
+    [PunRPC]
+    private void PlayTimeOutAudioRPC(bool isBlueTimedOut)
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            if (isBlueTimedOut && player1GameObject != null && player1GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                PlayAudio(004000002);
+            }
+            else if (!isBlueTimedOut && player2GameObject != null && player2GameObject.GetComponent<PhotonView>().IsMine)
+            {
+                PlayAudio(004000002);
+            }
+        }
+    }
+
+    private void PlayAudio(int audioCode)
+    {
+        if (SoundManager.Instance != null && player1GameObject != null)
+        {
+            SoundManager.Instance.PlayVOIndication(audioCode, player1GameObject.transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("SoundManager no encontrado o no hay jugadores para reproducir el audio de tiempo de espera.");
+        }
+    }
+
 
     public void RegisterPlayer(GameObject playerGameObject)
     {
@@ -114,12 +182,13 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
         IsTurnBlue = !IsTurnBlue;
 
-        photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
-        //photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsTurnBlue);
+        // photonView.RPC("PlayStartTurnAudioForAll", RpcTarget.All);
+        photonView.RPC("PlayStartTurnAudioForColor", RpcTarget.All, IsTurnBlue);
 
         photonView.RPC("UpdateTurn", RpcTarget.AllBuffered, IsTurnBlue);
         photonView.RPC("DrawCards", RpcTarget.OthersBuffered, 1);
         MyEventHandler.Instance.RemoveCharacters();
+
     }
 
     [PunRPC]
