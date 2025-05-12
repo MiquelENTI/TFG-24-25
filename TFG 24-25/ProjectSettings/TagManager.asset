@@ -20,6 +20,10 @@ TagManager:
   - CardToDisplayPC
   - CardToDisplayVR
   - ManaBottleCanvas
+  - WizardHead
+  - KnightHead
+  - Master
+  - Client
   layers:
   - Default
   - TransparentFX

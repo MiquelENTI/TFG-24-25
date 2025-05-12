@@ -266,12 +266,6 @@ public class DragableGameObject : MonoBehaviour
 
     public void UpdateObjectPosition(Vector3 newPosition, Quaternion newRotation)
     {
-        photonView.RPC("UpdateObjectPosition_RPC", RpcTarget.All, newPosition, newRotation);
-    }
-
-    [PunRPC]
-    public void UpdateObjectPosition_RPC(Vector3 newPosition, Quaternion newRotation)
-    {
         transform.SetPositionAndRotation(newPosition, newRotation);
     }
 

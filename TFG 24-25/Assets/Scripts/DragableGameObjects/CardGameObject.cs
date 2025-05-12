@@ -157,7 +157,6 @@ public class CardGameObject : DragableGameObject
 
         if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item1)
         {
-            Debug.Log("ENTERED TRUE");
             if (TemporalCardDataBase.Instance.GetTemporalStats(id).Item2.cardType == CardType.CHARACTER)
             {
                 characterStats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;

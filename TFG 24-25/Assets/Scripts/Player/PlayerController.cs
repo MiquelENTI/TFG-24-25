@@ -10,15 +10,45 @@ public class PlayerController : MonoBehaviourPun
 
     public bool IsBlue;
 
+    private GameObject playerHead;
+
+    private Vector3 PC_WizardHeadOffset = new Vector3(0, -0.515f, -0.7f);
+    private Vector3 PC_KnightHeadOffset = new Vector3(0, -0.515f, 0.7f);
+
+    private Vector3 VR_WizardHeadOffset = new Vector3(0f, -0.155f, -0.25f);
+    private Vector3 VR_KnightHeadOffset = new Vector3(0f, -0.155f, 0.25f);
+
+
+
+    private void Awake()
+    {
+        if (photonView.IsMine)
+        photonView.RPC("ChangeTagMasterOrClient", RpcTarget.AllBuffered, PhotonNetwork.IsMasterClient);
+    }
+
     void Start()
     {
         if (!photonView.IsMine)
         {
-            playerCamera.SetActive(false);
+            ToggleCameraGameObject(false);
+            return;
         }
         else
         {
-            playerCamera.SetActive(true);
+            ToggleCameraGameObject(true);
+        }
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("TRY");
+            GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
+            Debug.Log("DONE");
+            //playerHead.transform.parent = gameObject.transform.GetChild(0);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
+            //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
 
         if (menu != null)
@@ -42,6 +72,24 @@ public class PlayerController : MonoBehaviourPun
                 bool isActive = menu.activeSelf;
                 menu.SetActive(!isActive);
             }
+        }
+    }
+
+    private void ToggleCameraGameObject(bool state)
+    {
+        playerCamera.GetComponent<Camera>().enabled = state;
+    }
+
+    [PunRPC]
+    public void ChangeTagMasterOrClient(bool master)
+    {
+        if (master)
+        {
+            gameObject.tag = "Master";
+        }
+        else
+        {
+            gameObject.tag = "Client";
         }
     }
 }

@@ -81,7 +81,11 @@ MonoBehaviour:
   - HandsPositionUpdating_RPC
   - Left_ChangeHandState
   - Right_ChangeHandState
-  - PlayTimeOutAudioRPC
+  - ActivatePlayerHeads
+  - RPC_ChangeParentWithTag
+  - UpdatePosition_RPC
+  - ChangeTagMasterOrClient
+  - UpdateCameraPosition_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

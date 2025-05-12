@@ -4,7 +4,7 @@ using Photon.Pun;
 using UnityEngine;
 using static UnityEngine.Tilemaps.Tilemap;
 
-public class UpdateHandVR : MonoBehaviour
+public class UpdateHandVR : MonoBehaviour, IPunObservable
 {
     PhotonView photonView;
 
@@ -31,5 +31,10 @@ public class UpdateHandVR : MonoBehaviour
     public void HandsPositionUpdating_RPC(Vector3 position, Quaternion rotation)
     {
         transform.SetPositionAndRotation(position, rotation);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
     }
 }
