@@ -42,8 +42,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         character.OnMovement(cellToMove);
-
-        //SaveData.Instance.SaveNewAction("M" + cellId + "/" + characterId);
     }
 
     public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
@@ -58,7 +56,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
         else
         {
             character.OnSpawn(cellToMove);
-            //SaveData.Instance.BufferCheck(character.OnSpawn(cellToMove));
         } 
     }
 

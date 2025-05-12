@@ -7,8 +7,6 @@ public class SaveData: Singleton<SaveData>
 {
     ReplayData data;
 
-    string actionBuffer;
-
     public string pathFolder = "/save";
 
     SaveData()
@@ -42,24 +40,6 @@ public class SaveData: Singleton<SaveData>
     public void SaveNewAction(string newAction)
     {
         data.inputs.Enqueue(newAction);
-        Debug.LogError("NewAction:" + newAction);
-    }
-
-    public void LoadBufferAction(string newAction)
-    {
-        actionBuffer = newAction;
-
-        Debug.LogError("Buffer Spawn Carregat");
-    }
-
-    public void BufferCheck(bool save)
-    {
-        if(save)
-        {
-            data.inputs.Enqueue(actionBuffer);
-
-            Debug.LogError("Spawn:" + actionBuffer);
-        }
     }
 
     public void SaveDeck(Queue<int> deckSave)
