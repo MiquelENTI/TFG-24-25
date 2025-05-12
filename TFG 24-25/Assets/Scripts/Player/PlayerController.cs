@@ -42,13 +42,11 @@ public class PlayerController : MonoBehaviourPun
             if (PhotonNetwork.IsMasterClient)
             {
                 playerHead = PhotonNetwork.Instantiate("WizardHead", playerCamera.transform.position + PC_WizardHeadOffset, Quaternion.identity);
-                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
                 //playerHead.transform.parent = gameObject.transform.GetChild(0);
             }
             else
             {
                 playerHead = PhotonNetwork.Instantiate("KnightHead", playerCamera.transform.position + PC_KnightHeadOffset, Quaternion.Euler(0, 180, 0));
-                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
                 //playerHead.transform.parent = gameObject.transform.GetChild(0);
             }
         }
@@ -59,14 +57,12 @@ public class PlayerController : MonoBehaviourPun
                 playerHead = PhotonNetwork.Instantiate("WizardHead", playerCamera.transform.position + VR_WizardHeadOffset, Quaternion.identity);
                 
                 //photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered);
-                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
                 //playerHead.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
             }
             else
             {
                 playerHead = PhotonNetwork.Instantiate("KnightHead", playerCamera.transform.position + VR_KnightHeadOffset, Quaternion.Euler(0, 180, 0));
                 //PhotonView.FindObjectOfType<ChangeParentPhoton>().gameObject.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
-                playerHead.GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
                 //playerHead.transform.parent = gameObject.transform.GetChild(2).GetChild(0).GetChild(0);
             }
         }

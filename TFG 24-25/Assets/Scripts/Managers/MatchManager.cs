@@ -102,6 +102,9 @@ public class MatchManager : MonoBehaviourPunCallbacks
             {
                 //player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, false);
                 //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
+
+                GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
+                GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
             }
         }
         else
