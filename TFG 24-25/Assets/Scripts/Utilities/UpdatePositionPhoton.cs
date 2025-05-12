@@ -12,7 +12,7 @@ public class UpdatePositionPhoton : MonoBehaviour, IPunObservable
 
     private PhotonView photonView;
 
-    private float speed = 20.0f;
+    private float speed = 10.0f;
 
     private void Awake()
     {

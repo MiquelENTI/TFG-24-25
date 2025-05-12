@@ -14,8 +14,6 @@ public class CameraFly : MonoBehaviour
     public bool focusOnEnable = true;
 
     private Vector3 velocity;
-
-    private PhotonView photonView;
     static bool Focused
     {
         get => Cursor.lockState == CursorLockMode.Locked;
@@ -35,14 +33,10 @@ public class CameraFly : MonoBehaviour
 
     private void Awake()
     {
-        photonView = GetComponent<PhotonView>();
     }
 
     void Update()
     {
-        if (!photonView.IsMine) { return; }
-
-        // Es mi cámara, puedo moverla
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             isDisabled = !isDisabled;
