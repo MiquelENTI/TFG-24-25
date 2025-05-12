@@ -20,11 +20,13 @@ public class ChangeParentPhoton : MonoBehaviourPun
     {
         if (TurnManagerScript.Instance.isPCVersion)
         {
-            transform.parent = GameObject.FindGameObjectWithTag(tag).transform.GetChild(0);
+            GameObject player = GameObject.FindGameObjectWithTag(tag);
+            transform.parent = player.transform.GetChild(0);
         }
         else
         {
-            transform.parent = GameObject.FindGameObjectWithTag(tag).transform.GetChild(2).GetChild(0).GetChild(0);
+            GameObject player = GameObject.FindGameObjectWithTag(tag);
+            transform.parent = player.transform.GetChild(2).GetChild(0).GetChild(0);
         }
     }
 }
