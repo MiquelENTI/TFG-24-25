@@ -101,10 +101,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
                 //player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, false);
-                //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
-
-                GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
-                GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
+                //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered
             }
         }
         else
