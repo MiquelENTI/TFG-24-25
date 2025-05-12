@@ -15,7 +15,7 @@ public class ChangeParentPhoton : MonoBehaviourPun
     {
         if (photonView.IsMine) 
         {
-            photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered, tag);
+            photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.All, tag);
         }
     }
     [PunRPC]
