@@ -18,6 +18,8 @@ public class ChangeParentPhoton : MonoBehaviourPun
     [PunRPC]
     public void RPC_ChangeParentWithTag(string tag, int index)
     {
+        GameObject[] list = GameObject.FindGameObjectsWithTag(tag);
+        Debug.Log(list[0].name + " " + list[1] + ", INDEX: " + index + " " + list[index]);
         transform.parent = GameObject.FindGameObjectsWithTag(tag)[index].transform;
     }
 }
