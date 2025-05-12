@@ -3,7 +3,7 @@ using UnityEngine;
 using Photon.Pun;
 
 [RequireComponent(typeof(Camera))]
-public class CameraFly : MonoBehaviourPun, IPunObservable
+public class CameraFly : MonoBehaviour, IPunObservable
 {
     public bool isDisabled = true;
 
@@ -18,6 +18,7 @@ public class CameraFly : MonoBehaviourPun, IPunObservable
     private Vector3 networkedPosition;
     private Quaternion networkedRotation;
 
+    private PhotonView photonView;
     static bool Focused
     {
         get => Cursor.lockState == CursorLockMode.Locked;
@@ -35,10 +36,15 @@ public class CameraFly : MonoBehaviourPun, IPunObservable
 
     void OnDisable() => Focused = false;
 
-    void Awake()
+    private void Awake()
     {
-        networkedPosition = transform.position;
-        networkedRotation = transform.rotation;
+        photonView = GetComponent<PhotonView>();
+
+        if (photonView != null && !photonView.ObservedComponents.Contains(this))
+        {
+            photonView.ObservedComponents.Add(this);
+            photonView.Synchronization = ViewSynchronization.UnreliableOnChange;
+        }
     }
 
     void Update()
