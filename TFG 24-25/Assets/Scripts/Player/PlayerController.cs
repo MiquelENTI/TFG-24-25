@@ -39,8 +39,9 @@ public class PlayerController : MonoBehaviourPun
 
         if (PhotonNetwork.IsMasterClient)
         {
+            Debug.Log("TRY");
             GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
-            
+            Debug.Log("DONE");
             //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
         else

@@ -13,18 +13,17 @@ public class ChangeParentPhoton : MonoBehaviourPun
 
     public void ChangeParentWithTag(string tag)
     {
-        if (photonView.IsMine) 
-        {
-            photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.All, tag);
-        }
+        photonView.RPC("RPC_ChangeParentWithTag", RpcTarget.AllBuffered, tag);
     }
     [PunRPC]
     public void RPC_ChangeParentWithTag(string tag)
     {
         if (TurnManagerScript.Instance.isPCVersion)
         {
+            Debug.Log("TRY 2");
             GameObject player = GameObject.FindGameObjectWithTag(tag);
             transform.SetParent(player.transform.GetChild(0));
+            Debug.Log("DONE 2");
         }
         else
         {
