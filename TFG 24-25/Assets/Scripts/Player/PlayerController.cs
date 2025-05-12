@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviourPun
 
     private void Awake()
     {
-        photonView.RPC("ChangeTagMasterOrClient", RpcTarget.AllBuffered);
+        if (photonView.IsMine)
+        photonView.RPC("ChangeTagMasterOrClient", RpcTarget.AllBuffered, PhotonNetwork.IsMasterClient);
     }
 
     void Start()
@@ -80,9 +81,9 @@ public class PlayerController : MonoBehaviourPun
     }
 
     [PunRPC]
-    public void ChangeTagMasterOrClient()
+    public void ChangeTagMasterOrClient(bool master)
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (master)
         {
             gameObject.tag = "Master";
         }
