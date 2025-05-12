@@ -14,7 +14,7 @@ public class UpdatePositionPhoton : MonoBehaviourPun
             photonView.RPC("UpdatePosition_RPC", RpcTarget.AllBuffered, transform.position, transform.rotation);
         }
     }
-
+    [PunRPC]
     public void UpdatePosition_RPC(Vector3 pos, Quaternion rot)
     {
         transform.SetPositionAndRotation(pos, rot);
