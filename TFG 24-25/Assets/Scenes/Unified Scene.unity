@@ -40619,23 +40619,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1249547049104144860, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3869068608333049794, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4549052696017258320, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5404416849052417545, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5496337171840430717, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6383893239458430558, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_Pivot.x
@@ -40723,15 +40723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038760005948083502, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7823310727381270657, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_Name
       value: Mixer
       objectReference: {fileID: 0}
+    - target: {fileID: 7823310727381270657, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8473196063289394285, guid: 1a8aafd4a50c9452ca8cb24380e4fdae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

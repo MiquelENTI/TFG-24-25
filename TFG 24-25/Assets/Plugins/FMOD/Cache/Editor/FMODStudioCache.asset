@@ -397,7 +397,7 @@ MonoBehaviour:
   Name: RT60
   StudioPath: parameter:/RT60
   Min: 0
-  Max: 5
+  Max: 6.5
   Default: 0
   ID:
     data1: 3415376268
@@ -829,7 +829,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638826824911964167
+  lastModified: 638826907111062511
   FileSizes:
   - Name: Desktop
     Value: 19706976
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   - {fileID: -2797810904010182897}
   StringsBanks:
   - {fileID: 9014691746413782784}
-  cacheTime: 638826824911964167
+  cacheTime: 638826907111123144
   cacheVersion: 131621
 --- !u!114 &30671091259861226
 MonoBehaviour:
@@ -2051,7 +2051,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638826817594786671
+  lastModified: 638826907111123144
   FileSizes:
   - Name: Desktop
     Value: 4942

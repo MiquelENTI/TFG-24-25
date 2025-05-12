@@ -14,9 +14,9 @@ public class GeneralRoom : MonoBehaviour
     // Diccionari amb les dades acústiques: volum, absorció, RT60
     Dictionary<ROOM, (int volume, float absorption, float t60)> roomData = new Dictionary<ROOM, (int, float, float)>()
     {
-        { ROOM.SMALL, (36, 2.39f, 2.43f) },
-        { ROOM.MEDIUM, (60, 3.48f, 2.77f) },
-        { ROOM.LARGE, (90, 4.76f, 3.04f) }
+        { ROOM.SMALL, (36, 2.39f, 2.43f) }, 
+        { ROOM.MEDIUM, (90, 4.76f, 3.04f) }, 
+        { ROOM.LARGE, (450, 7.5f, 6.5f) }, 
     };
 
        public void ChangeRoom(int newRoom)
