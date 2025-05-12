@@ -22,6 +22,8 @@ TagManager:
   - ManaBottleCanvas
   - WizardHead
   - KnightHead
+  - Master
+  - Client
   layers:
   - Default
   - TransparentFX
