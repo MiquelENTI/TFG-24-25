@@ -9,10 +9,7 @@ public class UpdatePositionPhoton : MonoBehaviourPun
 {
     public void Update()
     {
-        if (photonView.IsMine)
-        {
-            photonView.RPC("UpdatePosition_RPC", RpcTarget.AllBuffered, transform.position, transform.rotation);
-        }
+        photonView.RPC("UpdatePosition_RPC", RpcTarget.AllBuffered, transform.position, transform.rotation);
     }
     [PunRPC]
     public void UpdatePosition_RPC(Vector3 pos, Quaternion rot)
