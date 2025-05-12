@@ -3,7 +3,7 @@ using UnityEngine;
 using Photon.Pun;
 
 [RequireComponent(typeof(Camera))]
-public class CameraFly : MonoBehaviour, IPunObservable
+public class CameraFly : MonoBehaviour
 {
     public bool isDisabled = true;
 
@@ -14,9 +14,6 @@ public class CameraFly : MonoBehaviour, IPunObservable
     public bool focusOnEnable = true;
 
     private Vector3 velocity;
-
-    private Vector3 networkedPosition;
-    private Quaternion networkedRotation;
 
     private PhotonView photonView;
     static bool Focused
@@ -39,23 +36,11 @@ public class CameraFly : MonoBehaviour, IPunObservable
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
-
-        if (photonView != null && !photonView.ObservedComponents.Contains(this))
-        {
-            photonView.ObservedComponents.Add(this);
-            photonView.Synchronization = ViewSynchronization.UnreliableOnChange;
-        }
     }
 
     void Update()
     {
-        if (!photonView.IsMine)
-        {
-            // Interpolar hacia la posición recibida por red
-            transform.position = Vector3.Lerp(transform.position, networkedPosition, Time.deltaTime * 10f);
-            transform.rotation = Quaternion.Slerp(transform.rotation, networkedRotation, Time.deltaTime * 10f);
-            return;
-        }
+        if (!photonView.IsMine) { return; }
 
         // Es mi cámara, puedo moverla
         if (Input.GetKeyUp(KeyCode.Tab))
@@ -112,22 +97,5 @@ public class CameraFly : MonoBehaviour, IPunObservable
         if (Input.GetKey(KeyCode.LeftShift))
             return direction * (acceleration * accSprintMultiplier);
         return direction * acceleration;
-    }
-
-    // Esta función sincroniza posición y rotación de manera automática
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            // Soy el dueño, mando mi posición y rotación
-            stream.SendNext(transform.position);
-            stream.SendNext(transform.rotation);
-        }
-        else
-        {
-            // Recibo la posición y rotación
-            networkedPosition = (Vector3)stream.ReceiveNext();
-            networkedRotation = (Quaternion)stream.ReceiveNext();
-        }
     }
 }

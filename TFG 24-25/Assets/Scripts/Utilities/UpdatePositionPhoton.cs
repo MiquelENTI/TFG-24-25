@@ -5,15 +5,50 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UpdatePositionPhoton : MonoBehaviourPun
+public class UpdatePositionPhoton : MonoBehaviour, IPunObservable
 {
-    public void Update()
+    private Vector3 networkedPosition;
+    private Quaternion networkedRotation;
+
+    private PhotonView photonView;
+
+    private float speed = 20.0f;
+
+    private void Awake()
     {
-        //photonView.RPC("UpdatePosition_RPC", RpcTarget.AllBuffered, transform.position, transform.rotation);
+        photonView = GetComponent<PhotonView>();
+
+        if (photonView != null && !photonView.ObservedComponents.Contains(this))
+        {
+            photonView.ObservedComponents.Add(this);
+            photonView.Synchronization = ViewSynchronization.UnreliableOnChange;
+        }
     }
-    [PunRPC]
-    public void UpdateCameraPosition_RPC(Vector3 pos, Quaternion rot)
+
+    private void Update()
     {
-        transform.SetPositionAndRotation(pos, rot);
+        if (!photonView.IsMine)
+        {
+            // Interpolar hacia la posición recibida por red
+            transform.position = Vector3.Lerp(transform.position, networkedPosition, Time.deltaTime * speed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, networkedRotation, Time.deltaTime * speed);
+            return;
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // Soy el dueño, mando mi posición y rotación
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+        }
+        else
+        {
+            // Recibo la posición y rotación
+            networkedPosition = (Vector3)stream.ReceiveNext();
+            networkedRotation = (Quaternion)stream.ReceiveNext();
+        }
     }
 }
