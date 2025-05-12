@@ -41,6 +41,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 32661
 >>>>>>> feature/AudioManager
 =======
@@ -51,6 +52,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 25789
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 61
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -345,6 +349,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 32662
 >>>>>>> feature/AudioManager
 =======
@@ -355,6 +360,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 25790
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 62
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -392,6 +400,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 32663
 >>>>>>> feature/AudioManager
 =======
@@ -402,6 +411,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 25791
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 63
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -465,11 +477,15 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 72.66667
     width: 309.66666
     height: 992.3333
 =======
     y: 19
+=======
+    y: 73
+>>>>>>> feature/addingNewsModels3d
     width: 530
     height: 662
 >>>>>>> feature/AudioManager
@@ -493,6 +509,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: ca970100
       m_LastClickedID: 0
       m_ExpandedIDs: 6820fffff820ffff8aafffffe0b3ffff4ab6ffff1cb7ffffa4e8ffff36ebffff34edffffbcf3ffff66f4ffff2af9ffffaebf00000ec00000c2c000000ec100007ac10000e0c10000acc2000046670100cef60100
@@ -506,6 +523,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: a65d77ffba5f77ff902079ff462179ff462979fff23e7eff023f7eff0c3f7effc69e80ffd09e80fff42c81ffaa2d81ffaa3581ff067988ffbc7988ffbc8188ff32d88bff1c6c8eff266c8eff9af798ffa8f798ffb2f798fff6fa98ff00fb98ff1c41bdff2641bdff6a44bdff7444bdffa030d1ffaa30d1ff5a20f6ff1ae6ffff1ee6ffff32e6ffff48e6ffff1afbfffff4fffffff4080a0012190a00
 >>>>>>> feature/ChangesVR
+=======
+      m_SelectedIDs: a0bc0000
+      m_LastClickedID: 48288
+      m_ExpandedIDs: 6af4ffff20fbffff74b000000cb30000
+>>>>>>> feature/addingNewsModels3d
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -605,6 +627,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 310.6667
     y: 72.66667
     width: 1640.6667
@@ -612,6 +635,10 @@ MonoBehaviour:
 =======
     x: 532
     y: 19
+=======
+    x: 531
+    y: 73
+>>>>>>> feature/addingNewsModels3d
     width: 919
     height: 662
 >>>>>>> feature/AudioManager
@@ -962,6 +989,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -35.378414, y: 39.574223, z: -61.918037}
     speed: 2
     m_Value: {x: -35.378414, y: 39.574223, z: -61.918037}
@@ -975,6 +1003,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 2.9763544, y: 1.3215307, z: 0.14962816}
 >>>>>>> feature/ChangesVR
+=======
+    m_Target: {x: 1.9385912, y: -0.5017323, z: 21.950064}
+    speed: 2
+    m_Value: {x: 1.9385912, y: -0.5017323, z: 21.950064}
+>>>>>>> feature/addingNewsModels3d
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1022,6 +1055,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.15597458, y: -0.050444506, z: 0.007956845, w: -0.9865078}
     speed: 2
     m_Value: {x: -0.15595205, y: -0.051920746, z: 0.008190251, w: -0.98636514}
@@ -1030,9 +1064,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.052383408, y: -0.9296792, z: 0.13394018, w: 0.33913493}
 >>>>>>> feature/AudioManager
+=======
+    m_Target: {x: 0.048766438, y: 0.12687677, z: -0.009650196, w: 0.98732376}
+    speed: 2
+    m_Value: {x: 0.04892873, y: 0.12729901, z: -0.009682311, w: 0.99060947}
+>>>>>>> feature/addingNewsModels3d
   m_Size:
     m_Target: 11.935944
     speed: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Value: 12.49837
 =======
@@ -1047,6 +1087,9 @@ MonoBehaviour:
     speed: 2
     m_Value: 0.40837654
 >>>>>>> feature/ChangesVR
+=======
+    m_Value: 10
+>>>>>>> feature/addingNewsModels3d
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1349,7 +1392,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 702
+=======
+    y: 756
+>>>>>>> feature/addingNewsModels3d
     width: 1451
     height: 243
 =======
@@ -1379,10 +1426,14 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
 =======
     - Assets/Scenes
 >>>>>>> feature/ChangesVR
+=======
+    - Assets/Scenes
+>>>>>>> feature/addingNewsModels3d
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1391,12 +1442,17 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets
+=======
+  - Assets/Scenes
+>>>>>>> feature/addingNewsModels3d
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\1.ENTI\TFG_GITKRAKEN\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: caa70000
     m_LastClickedID: 42954
@@ -1413,6 +1469,12 @@ MonoBehaviour:
     m_LastClickedID: 49174
     m_ExpandedIDs: 00000000e0be0000e2be0000e4be0000e6be0000e8be0000eabe0000ecbe0000eebe0000f0be0000f2be0000f4be0000f6be0000f8be0000fabe0000fcbe0000febe000000bf000002bf000004bf000006bf000008bf000000ca9a3b
 >>>>>>> feature/ChangesVR
+=======
+    scrollPos: {x: 0, y: 2465}
+    m_SelectedIDs: f6a90000
+    m_LastClickedID: 43510
+    m_ExpandedIDs: 00000000e4a70000e6a70000e8a70000eaa70000eca70000eea70000f0a70000f2a70000f4a70000f6a70000f8a70000faa70000fca70000fea7000000a8000002a8000004a8000006a8000008a800000aa800000ca800000ea8000010a8000012a8000014a8000016a8000018a800001aa800001ca800001ea8000020a8000022a8000024a8000026a8000028a800002aa800002ca800002ea8000030a8000032a8000034a8000036a8000038a800003aa800003ca800003ea8000040a8000042a8000044a8000046a8000048a800004aa800004ca800004ea8000050a8000052a8000054a8000056a8000058a800005aa800005ca800005ea8000060a8000062a8000064a8000066a8000068a800006aa800006ca800006ea8000070a8000072a8000074a8000076a8000078a800007aa8000098a9000000ca9a3bffffff7f
+>>>>>>> feature/addingNewsModels3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1441,10 +1503,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000020a6000022a6000024a6000026a6000028a600002aa600002ca600002ea6000030a6000032a6000034a6000036a6000038a600003aa600003ca600003ea6000040a6000042a6000044a6000046a6000048a600004aa600004ca600004ea6000050a6000052a6000054a6000056a6000058a600005aa600005ca600005ea6000060a6000062a6000064a6000066a6000068a600006aa600006ca600006ea6000070a6000072a6000074a6000076a6000078a600007aa600007ca600007ea6000080a6000082a6000084a6000086a6000088a600008aa600008ca600008ea6000090a6000092a6000094a6000096a6000098a600009aa600009ca600009ea60000a0a60000a2a60000a4a60000a6a60000a8a60000aaa60000aca60000aea6000024a9000026c4000078c500003a26030000ca9a3bffffff7f
 =======
     m_ExpandedIDs: 00000000e0be0000e2be0000e4be0000e6be0000e8be0000eabe0000ecbe0000eebe0000f0be0000f2be0000f4be0000f6be0000f8be0000fabe0000fcbe0000febe000000bf000002bf000004bf000006bf000008bf000000ca9a3b
 >>>>>>> feature/ChangesVR
+=======
+    m_ExpandedIDs: 00000000e4a70000e6a70000e8a70000eaa70000eca70000eea70000f0a70000f2a70000f4a70000f6a70000f8a70000faa70000fca70000fea7000000a8000002a8000004a8000006a8000008a800000aa800000ca800000ea8000010a8000012a8000014a8000016a8000018a800001aa800001ca800001ea8000020a8000022a8000024a8000026a8000028a800002aa800002ca800002ea8000030a8000032a8000034a8000036a8000038a800003aa800003ca800003ea8000040a8000042a8000044a8000046a8000048a800004aa800004ca800004ea8000050a8000052a8000054a8000056a8000058a800005aa800005ca800005ea8000060a8000062a8000064a8000066a8000068a800006aa800006ca800006ea8000070a8000072a8000074a8000076a8000078a800007aa80000
+>>>>>>> feature/addingNewsModels3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1470,8 +1536,13 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+=======
+    m_SelectedInstanceIDs: a0bc0000
+    m_LastClickedInstanceID: 48288
+>>>>>>> feature/addingNewsModels3d
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300000c63010070630100000000008a7801007ecc0300f4360400
 =======
@@ -1680,6 +1751,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1953.3334
     y: 72.66667
     width: 605.6666
@@ -1687,6 +1759,10 @@ MonoBehaviour:
 =======
     x: 1453
     y: 19
+=======
+    x: 1452
+    y: 73
+>>>>>>> feature/addingNewsModels3d
     width: 467
     height: 926
 >>>>>>> feature/AudioManager

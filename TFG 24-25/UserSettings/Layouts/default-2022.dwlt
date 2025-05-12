@@ -155,6 +155,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 106
 =======
     height: 1248
@@ -171,6 +172,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 642
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 115
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,6 +201,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 45
 =======
     width: 1713
@@ -214,6 +219,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 643
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 60
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,6 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
   controlID: 46
 =======
     width: 1713
@@ -258,6 +267,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 610
 >>>>>>> feature/ChangesVR
+=======
+  controlID: 61
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,12 +401,19 @@ MonoBehaviour:
   m_Panes:
   - {fileID: 12}
   - {fileID: 16}
+<<<<<<< HEAD
   m_Selected: 1
   m_LastSelected: 0
 >>>>>>> feature/AudioManager
 =======
   m_LastSelected: 0
 >>>>>>> feature/ChangesVR
+=======
+  - {fileID: 17}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 1
+>>>>>>> feature/addingNewsModels3d
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -507,11 +526,18 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 925
     y: 73
     width: 358
     height: 636
 >>>>>>> feature/ChangesVR
+=======
+    x: 531
+    y: 73
+    width: 919
+    height: 662
+>>>>>>> feature/addingNewsModels3d
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -709,10 +735,17 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 358
       height: 615
     m_Scale: {x: 0.18645833, y: 0.18645833}
     m_Translation: {x: 179, y: 307.5}
+=======
+      width: 919
+      height: 641
+    m_Scale: {x: 0.47864583, y: 0.4786458}
+    m_Translation: {x: 459.5, y: 320.5}
+>>>>>>> feature/addingNewsModels3d
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -720,12 +753,21 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -960
+<<<<<<< HEAD
       y: -1649.162
       width: 1920
       height: 3298.324
     m_MinimalGUI: 1
   m_defaultScale: 0.18645833
   m_LastWindowPixelSize: {x: 358, y: 636}
+=======
+      y: -669.5974
+      width: 1920
+      height: 1339.1948
+    m_MinimalGUI: 1
+  m_defaultScale: 0.47864583
+  m_LastWindowPixelSize: {x: 919, y: 662}
+>>>>>>> feature/addingNewsModels3d
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -785,6 +827,7 @@ MonoBehaviour:
 <<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: 1efbffff
 =======
       m_SelectedIDs: a2930000
@@ -796,6 +839,9 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 40af9dff44af9dff58af9dff6eaf9dffdcfc9effe0fc9efff4fc9eff0afd9eff9054e4ff9454e4ffa854e4ffbe54e4ff44cae8ff48cae8ff5ccae8ff72cae8ffd22eeaff3447efff4047efff4e47efff5847efff648cefff0efbffff3e120200301f0200
 >>>>>>> feature/ChangesVR
+=======
+      m_ExpandedIDs: 305dffff845effff8efaffff5e8500000a86000004870000
+>>>>>>> feature/addingNewsModels3d
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: CameraOffset
@@ -1189,6 +1235,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 54.270992, y: -6.4718223, z: 80.74492}
     speed: 2
     m_Value: {x: 0.03441204, y: -0.4321975, z: -1.207466}
@@ -1202,6 +1249,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.48098025, y: 1.1539509, z: 0.32089037}
 >>>>>>> feature/ChangesVR
+=======
+    m_Target: {x: -2.2973685, y: 2.4106221, z: 1.2243137}
+    speed: 2
+    m_Value: {x: -2.2973685, y: 2.4106221, z: 1.2243137}
+>>>>>>> feature/addingNewsModels3d
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1249,6 +1301,7 @@ MonoBehaviour:
   m_Rotation:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.034228954, y: 0.29246917, z: -0.010501047, w: 0.9556419}
     speed: 2
     m_Value: {x: -0.0058316276, y: -0.9855779, z: 0.16562839, w: -0.034196895}
@@ -1274,6 +1327,15 @@ MonoBehaviour:
     speed: 2
     m_Value: 0.40837654
 >>>>>>> feature/ChangesVR
+=======
+    m_Target: {x: -0.045729842, y: -0.9275311, z: 0.16080247, w: -0.3236236}
+    speed: 2
+    m_Value: {x: -0.045648757, y: -0.9312831, z: 0.16143732, w: -0.32336655}
+  m_Size:
+    m_Target: 0.87291986
+    speed: 2
+    m_Value: 0.87291986
+>>>>>>> feature/addingNewsModels3d
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1469,7 +1531,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Resources
+=======
+    - Assets/Models/A_IDLES/KnightVR
+>>>>>>> feature/addingNewsModels3d
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1477,16 +1543,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Resources
+=======
+  - Assets/Models/A_IDLES/KnightVR
+>>>>>>> feature/addingNewsModels3d
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lokyy\Desktop\Repos Git\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 647}
     m_SelectedIDs: d0bf0000
     m_LastClickedID: 49104
     m_ExpandedIDs: 00000000e2be0000e4be0000e6be0000e8be0000eabe0000ecbe0000eebe0000f0be0000f2be0000f4be0000f6be0000f8be0000fabe0000fcbe0000febe000000bf000002bf000004bf000006bf000008bf0000ee57030000ca9a3b
+=======
+    scrollPos: {x: 0, y: 369}
+    m_SelectedIDs: 1a9e0000
+    m_LastClickedID: 40474
+    m_ExpandedIDs: 000000005e94000060940000629400006494000066940000689400006a9400006c9400006e94000070940000729400007494000076940000789400007a9400007c9400007e94000080940000829400008494000086940000889400008a9400008c9400008e94000090940000929400009494000096940000989400009a9400009c9400009e940000a0940000a2940000a4940000a6940000a8940000aa940000ac940000ae940000b0940000b2940000b4940000b6940000b8940000ba940000bc940000be940000c0940000c2940000c4940000c6940000c8940000ca940000cc940000ce940000d0940000d2940000d4940000d6940000d8940000da940000dc940000de940000e0940000e2940000e4940000e6940000e8940000ea940000ec940000ee940000f0940000f2940000f4940000c895000000ca9a3bffffff7f
+>>>>>>> feature/addingNewsModels3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1514,7 +1591,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000e2be0000e4be0000e6be0000e8be0000eabe0000ecbe0000eebe0000f0be0000f2be0000f4be0000f6be0000f8be0000fabe0000fcbe0000febe000000bf000002bf000004bf000006bf000008bf000000ca9a3b
+=======
+    m_ExpandedIDs: 000000005e94000060940000629400006494000066940000689400006a9400006c9400006e94000070940000729400007494000076940000789400007a9400007c9400007e94000080940000829400008494000086940000889400008a9400008c9400008e94000090940000929400009494000096940000989400009a9400009c9400009e940000a0940000a2940000a4940000a6940000a8940000aa940000ac940000ae940000b0940000b2940000b4940000b6940000b8940000ba940000bc940000be940000c0940000c2940000c4940000c6940000c8940000ca940000cc940000ce940000d0940000d2940000d4940000d6940000d8940000da940000dc940000de940000e0940000e2940000e4940000e6940000e8940000ea940000ec940000ee940000f0940000f2940000f4940000
+>>>>>>> feature/addingNewsModels3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1539,10 +1620,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: b0d40800
     m_LastClickedInstanceID: 578736
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c8cb000024a70000
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300000c63010070630100000000008a7801007ecc0300f4360400
+>>>>>>> feature/addingNewsModels3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1594,6 +1682,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 979.3334
     width: 1712.3334
     height: 379.6667
@@ -1607,6 +1696,11 @@ MonoBehaviour:
     width: 1284
     height: 269
 >>>>>>> feature/ChangesVR
+=======
+    y: 756
+    width: 1451
+    height: 243
+>>>>>>> feature/addingNewsModels3d
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1625,6 +1719,46 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 756
+    width: 1451
+    height: 243
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 40520
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+>>>>>>> feature/addingNewsModels3d
   m_EditorHideFlags: 1
   m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
