@@ -81,6 +81,7 @@ MonoBehaviour:
   - HandsPositionUpdating_RPC
   - Left_ChangeHandState
   - Right_ChangeHandState
+  - PlayTimeOutAudioRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
