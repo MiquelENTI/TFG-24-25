@@ -209,6 +209,26 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             Debug.Log("isBlueTurn: " + newIsTurnBlue);
 
             turnCounter++;
+        
+        
+            int fmodRoundValue = 0;
+
+            if (turnCounter >= 1 && turnCounter <= 3)
+            {
+                fmodRoundValue = 0;
+            }
+            else if (turnCounter >= 4 && turnCounter <= 9)
+            {
+                fmodRoundValue = 1;
+            }
+            else if (turnCounter >= 10)
+            {
+                fmodRoundValue = 2;
+            }
+
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("RONDA", fmodRoundValue);
+            Debug.Log("RONDA parameter updated to: " + fmodRoundValue);
+    
 
             if (turnCounter > 10)
             {
