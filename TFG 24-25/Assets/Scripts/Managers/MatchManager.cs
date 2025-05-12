@@ -82,6 +82,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
             if (playerPrefab.name == "Player") // PREVENT STRANGE VR BEHAVIOR
             {
                 TurnManagerScript.Instance.isPCVersion = true;
+                
             }
             else
             {
@@ -92,6 +93,7 @@ public class MatchManager : MonoBehaviourPunCallbacks
 
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
+
                 //player.GetComponent<PhotonView>().RPC("SetPlayerColor", RpcTarget.AllBuffered, true);
                 //player.GetComponent<PhotonView>().RPC("ActivatePlayerHeads", RpcTarget.AllBuffered);
 
