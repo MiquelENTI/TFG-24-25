@@ -18,17 +18,37 @@ public class ChangeParentPhoton : MonoBehaviourPun
     [PunRPC]
     public void RPC_ChangeParentWithTag(string tag)
     {
-        if (TurnManagerScript.Instance.isPCVersion)
+        if (PhotonNetwork.IsMasterClient && tag == "Master")
         {
-            Debug.Log("TRY 2");
-            GameObject player = GameObject.FindGameObjectWithTag(tag);
-            transform.SetParent(player.transform.GetChild(0));
-            Debug.Log("DONE 2");
+            if (TurnManagerScript.Instance.isPCVersion)
+            {
+                Debug.Log("TRY 2");
+                GameObject player = GameObject.FindGameObjectWithTag(tag);
+                transform.SetParent(player.transform.GetChild(0));
+                Debug.Log("DONE 2");
+            }
+            else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag(tag);
+                transform.SetParent(player.transform.GetChild(2).GetChild(0).GetChild(0));
+            }
         }
-        else
+        else if (!PhotonNetwork.IsMasterClient && tag == "Client")
         {
-            GameObject player = GameObject.FindGameObjectWithTag(tag);
-            transform.SetParent(player.transform.GetChild(2).GetChild(0).GetChild(0));
+            if (TurnManagerScript.Instance.isPCVersion)
+            {
+                Debug.Log("TRY 2");
+                GameObject player = GameObject.FindGameObjectWithTag(tag);
+                transform.SetParent(player.transform.GetChild(0));
+                Debug.Log("DONE 2");
+            }
+            else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag(tag);
+                transform.SetParent(player.transform.GetChild(2).GetChild(0).GetChild(0));
+            }
         }
+
+        
     }
 }
