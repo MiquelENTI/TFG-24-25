@@ -1,6 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:TFG 24-25/Assets/Resources/UI/New UI.meta
 guid: 4c93f3b3fc7bd834da69687bb27fe9e3
 folderAsset: yes
+=======
+<<<<<<< HEAD
+guid: caf78d5749684284e807ade00c5a0441
+=======
+guid: 2fe6ff6bdc4b149beb92a8db55ca83f0
+>>>>>>> 445fb36 (add script turn)
+>>>>>>> origin/feature/AudioManager:TFG 24-25/Assets/save5.dat.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

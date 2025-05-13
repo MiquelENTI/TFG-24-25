@@ -1777,6 +1777,7 @@ GameObject:
   - component: {fileID: 890155286992824548}
   - component: {fileID: 8683026874187258527}
   - component: {fileID: 5278345368384420546}
+  - component: {fileID: 4476170697045398403}
   m_Layer: 0
   m_Name: 3D Card Model
   m_TagString: CardGameObject
@@ -2090,6 +2091,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7b5fda4b230ee4ca05a688dabd20ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4476170697045398403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739110978533587446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be56093d198a34e49b8d9fb5e3e33249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8959957356686886265

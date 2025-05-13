@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 390635325336656360}
   - component: {fileID: 9140908761812556237}
   - component: {fileID: 3052251044598469108}
+  - component: {fileID: 1849280158529233619}
   m_Layer: 0
   m_Name: BlueCavalier
   m_TagString: TokenGameObject
@@ -451,7 +452,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1849280158529233619}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -600,6 +602,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7b5fda4b230ee4ca05a688dabd20ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1849280158529233619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025107231274772972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be56093d198a34e49b8d9fb5e3e33249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2835660334047831556

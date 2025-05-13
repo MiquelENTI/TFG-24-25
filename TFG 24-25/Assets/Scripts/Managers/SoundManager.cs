@@ -245,12 +245,12 @@ public class SoundManager : Singleton<SoundManager>
         // VO: event és únic, però el diccionari serveix com a identificador lògic
         voDictionary = new()
         {
-            { 004000000, "CAMBIO_TURNO" },
-            { 004000001, "MULTI_KILL" },
-            { 004000002, "JUGADOR_INACTIVO" },
-            { 004000003, "GENERAL" },
-            { 004000004, "VICTORIA" },
-            { 004000005, "DERROTA" },
+            { 004000000, "CAMBIO_TURNO" }, //Individual per a cadascu
+            { 004000001, "MULTI_KILL" }, //Quan mates una carta, si pot ser quan mates varies millor? 
+            { 004000002, "JUGADOR_INACTIVO" }, //esta si el jugadror esta innactiu (individual per a cadascú), no es necessari
+            { 004000003, "GENERAL" }, //Tampoc es necessari. 
+            { 004000004, "VICTORIA" }, //quan guanya jugador, individual per a cadascun 
+            { 004000005, "DERROTA" }, //quan perd jugador individual cadascun
         };
         uibottonDictionary = new()
         {
@@ -271,6 +271,14 @@ public class SoundManager : Singleton<SoundManager>
     public void PlaySFX(int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sfxDictionary[index], position);
+    }
+    public void PlayAmbient(int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(ambientDictionary[index], position);
+    }
+    public void PlayUibotton(int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(uibottonDictionary[index], position);
     }
 
     public void PlayMusic(int index)
