@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviourPun
         if (PhotonNetwork.IsMasterClient)
         {
             Debug.Log("TRY");
-            GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master");
+            GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master", PC_WizardHeadOffset, VR_WizardHeadOffset);
             Debug.Log("DONE");
             //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
         else
         {
-            GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client");
+            GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client", PC_KnightHeadOffset, VR_KnightHeadOffset);
             //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
 
