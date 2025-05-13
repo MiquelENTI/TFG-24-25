@@ -674,8 +674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomSelectionSceneIndex: 4
-  gameSceneIndex: 2
-  creditsSceneIndex: 3
+  gameSceneIndex: 1
+  creditsSceneIndex: 2
   mainMenuSceneIndex: 0
 --- !u!1 &654468695
 GameObject:
