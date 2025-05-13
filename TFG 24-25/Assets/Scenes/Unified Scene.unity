@@ -1605,6 +1605,7 @@ GameObject:
   - component: {fileID: 312873706}
   - component: {fileID: 312873708}
   - component: {fileID: 312873707}
+  - component: {fileID: 312873709}
   m_Layer: 0
   m_Name: Mesa
   m_TagString: Untagged
@@ -1676,6 +1677,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312873705}
+  m_Mesh: {fileID: -3101794883780484172, guid: 1945313158111cb4b81046e8dd6259ed, type: 3}
+--- !u!64 &312873709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312873705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -3101794883780484172, guid: 1945313158111cb4b81046e8dd6259ed, type: 3}
 --- !u!1 &352999804
 GameObject:
@@ -4212,7 +4235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04e6445dbef3404ab6d649cdd8e14fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 4894877133841640924, guid: fc8c501390fdd444989696956514bb92, type: 3}
+  playerPrefab: {fileID: 3167686104426531104, guid: fc8c501390fdd444989696956514bb92, type: 3}
   spawnPositionPlayer1: {x: 0.2982427, y: 1.236404, z: -1.323052}
   spawnPositionPlayer2: {x: 0.2982427, y: 1.236404, z: 0.643667}
 --- !u!114 &643941742
