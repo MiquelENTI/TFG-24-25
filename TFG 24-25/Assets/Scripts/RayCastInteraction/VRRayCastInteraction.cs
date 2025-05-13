@@ -165,7 +165,7 @@ private void Start()
     }
     protected virtual void RightHand_SelectInteractionUp()
     {
-        Debug.Log("ACTIVATE UP");
+        EffectsManager.Instance.RemoveTeamEffects();
         right_blockChangeAnimation = false;
         photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, right_blockChangeAnimation);
         Right_ChangeHandState((int)HandState.POINTING, right_blockChangeAnimation);
@@ -319,6 +319,7 @@ private void Start()
     }
     protected virtual void LeftHand_SelectInteractionUp()
     {
+        EffectsManager.Instance.RemoveTeamEffects();
         left_blockChangeAnimation = false;
         photonView.RPC("Left_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, left_blockChangeAnimation);
         Left_ChangeHandState((int)HandState.POINTING, left_blockChangeAnimation);
