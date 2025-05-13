@@ -89,11 +89,26 @@ public class DeckManager : Singleton<DeckManager>
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
         if (PhotonNetwork.IsMasterClient)
         {
-            cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 0, 0));
+            if (isBlue)
+            {
+                cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 0, 0));
+            }
+            else
+            {
+                cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 180, 0));
+            }
+            
         }
         else 
         {
-            cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 180, 0));
+            if (isBlue)
+            {
+                cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 180, 0));
+            }
+            else
+            {
+                cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 0, 0));
+            }
         }
         
     }
