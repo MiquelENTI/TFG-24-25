@@ -229,6 +229,10 @@ public class CellNodeManager : Singleton<CellNodeManager>
     // Function that Highlights all the Available SpawnTiles
     void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
     {
+        if (!state)
+        {
+            EffectsManager.Instance.RemoveTeamEffects();
+        }
         // Parameter Determines Which Tiles to Highlight
         switch (teamType)
         {
@@ -236,14 +240,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in redSpawnTiles)
                 {
-                    spawnableTile.ChangeMovementIndicatorVisibility(state);
+                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             case TeamType.BLUE:
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in blueSpawnTiles)
                 {
-                    spawnableTile.ChangeMovementIndicatorVisibility(state);
+                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             default:
