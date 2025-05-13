@@ -87,7 +87,15 @@ public class DeckManager : Singleton<DeckManager>
 
 
         cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
-        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(isBlue ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
+        if (PhotonNetwork.IsMasterClient)
+        {
+            cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 0, 0));
+        }
+        else 
+        {
+            cardHold.GetComponent<CardHold>().SetDefaultCardRotation(new Vector3(0, 180, 0));
+        }
+        
     }
 
     public void ReplayDrawCard(bool hold)

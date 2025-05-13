@@ -120,6 +120,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                     break;
                 }
         }
+
+        EffectsManager.Instance.RemoveTeamEffects();
     }
 
     protected virtual void RightClickDownAction()
