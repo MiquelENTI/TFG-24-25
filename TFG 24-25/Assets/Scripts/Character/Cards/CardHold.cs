@@ -37,7 +37,7 @@ public class CardHold : MonoBehaviour
         float halfLength = totalLength / 2;
 
         for (int i = 0; i < cards.Count; i++)
-        {
+        {   Debug.Log(cards[i]);
             MoveCard(cards[i], new Vector3(
                 transform.position.x - halfLength + (i * (cardSize + padding)),
                 transform.position.y,
@@ -53,7 +53,7 @@ public class CardHold : MonoBehaviour
 
     public void DestroyCard(int cardToDestroy)
     {
-        photonView.RPC("DestroyCard_RPC", RpcTarget.All, cardToDestroy);
+        photonView.RPC("RPC_DestroyCard", RpcTarget.AllBuffered, cardToDestroy);
     }
 
     [PunRPC]
@@ -65,7 +65,6 @@ public class CardHold : MonoBehaviour
             {
                 if (cards[i].transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() == cardToDestroy)
                 {
-                    PhotonNetwork.Destroy(cards[i]);
                     cards.RemoveAt(i);
                     ReorganizeCards();
                     return;
