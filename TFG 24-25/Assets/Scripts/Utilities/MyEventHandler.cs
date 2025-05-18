@@ -23,13 +23,14 @@ public class MyEventHandler : Singleton<MyEventHandler>
         {
             photonView.RPC("RPC_MoveToken", RpcTarget.AllBuffered, cellId, characterId);
             photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
-            Debug.Log("TRIGGERED MOVE");
+            EffectsManager.Instance.RemoveTeamEffects();
         });
 
         spawnToken.AddListener((int cellId, int characterId, bool bypassSpawn) =>
         {
             photonView.RPC("RPC_SpawnToken", RpcTarget.AllBuffered, cellId, characterId, bypassSpawn);
             photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+            EffectsManager.Instance.RemoveTeamEffects();
         });
         
     }
@@ -83,4 +84,3 @@ public class MyEventHandler : Singleton<MyEventHandler>
         CharactersManager.Instance.RemoveCharacters();
     }
 }
-

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,16 +24,14 @@ public class Giant : Character
 
         return true;
     }
-     
-     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003037001, token.transform.position);
-    }
-    
+
+    //Implementació del so
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003037002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003037001, token.transform.position);
     }
 }

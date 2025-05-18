@@ -4,10 +4,17 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 
-public class SpawnCardController : MonoBehaviourPun
+public class SpawnCardController : Singleton<SpawnCardController>
 {
     [SerializeField] GameObject tokenPrefabBlue;
     [SerializeField] GameObject tokenPrefabRed;
+
+    public PhotonView photonView;
+
+    private void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
 
     [PunRPC]
     public void InstantiateCharacterTokenRPC(int characterIdToAssign, int initiatingPlayerActorNumber, int tileId, bool bypassSpawn)
@@ -42,7 +49,7 @@ public class SpawnCardController : MonoBehaviourPun
             TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
             if (tokenGameObjectScript != null)
             {
-                instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("SetCharacterRPC", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
+                instantiatedToken.transform.GetChild(0).GetComponent<PhotonView>().RPC("RPC_SetCharacter", RpcTarget.AllBuffered, characterIdToAssign, (int)tokenTeam);
 
                 MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
             }
@@ -79,7 +86,7 @@ public class SpawnCardController : MonoBehaviourPun
         TokenGameObject tokenGameObjectScript = instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>();
         if (tokenGameObjectScript != null)
         {
-            instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().SetCharacterRPC(characterIdToAssign, (int)tokenTeam);
+            instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().RPC_SetCharacter(characterIdToAssign, (int)tokenTeam);
 
             MyEventHandler.Instance.spawnToken.Invoke(tileId, instantiatedToken.transform.GetChild(0).GetComponent<TokenGameObject>().GetCharacter().GetId(), bypassSpawn);
         }

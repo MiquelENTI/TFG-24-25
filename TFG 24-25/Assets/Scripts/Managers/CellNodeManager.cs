@@ -1,12 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro.Examples;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class CellNodeManager : Singleton<CellNodeManager>
 {
@@ -22,7 +16,6 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private List<CellNode> redSpawnTiles;
     private List<CellNode> blueSpawnTiles;
 
-
     private void Awake()
     {
         nodeGrid = new List<CellNode>();
@@ -30,7 +23,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         blueSpawnTiles = new List<CellNode>();
 
         // Event that Triggers ToggleVisibilityPossibleMovements Function
-        
+
         showPossibleMovements = new UnityEvent<int>();
         showPossibleMovements.AddListener((int tileId) =>
         {
@@ -164,14 +157,12 @@ public class CellNodeManager : Singleton<CellNodeManager>
             blueSpawnTiles.Add(nodeGrid[nodeGrid.Count - i - 1]);
         }
 
-        //SetScoreNodes2x2();
-        SetEnemyScoreNodes();
         SetScoreNodes4x2();
-        SetQuickScoreNodes();
+        SetEnemyScoreNodes();
     }
 
     // Function that Higlihts all the Token's possible movements
-    void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
+    public void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
     {
         // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
 
@@ -227,8 +218,12 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Highlights all the Available SpawnTiles
-    void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
+    public void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
     {
+        if (!state)
+        {
+            EffectsManager.Instance.RemoveTeamEffects();
+        }
         // Parameter Determines Which Tiles to Highlight
         switch (teamType)
         {
@@ -236,14 +231,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in redSpawnTiles)
                 {
-                    spawnableTile.ChangeMovementIndicatorVisibility(state);
+                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             case TeamType.BLUE:
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in blueSpawnTiles)
                 {
-                    spawnableTile.ChangeMovementIndicatorVisibility(state);
+                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             default:
@@ -251,71 +246,39 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
-    
-    public void InvokeShowPossibleSpawnTiles(bool isBlue)
-    {
-        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
-        showPossibleSpawnTiles.Invoke(type);
-    }
-    public void InvokeShowPossibleSpawnTiles(TeamType teamType)
-    {
-        showPossibleSpawnTiles.Invoke(teamType);
-    }
-    public void InvokeHidePossibleSpawnTiles(bool isBlue)
-    {
-        TeamType type = isBlue ? TeamType.BLUE : TeamType.RED;
-        hidePossibleSpawnTiles.Invoke(type);
-    }
-    public void InvokeHidePossibleSpawnTiles(TeamType teamType)
-    {
-        hidePossibleSpawnTiles.Invoke(teamType);
-    }
-
-    void SetScoreNodes2x2()
-    {
-        nodeGrid[14].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[15].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[20].SetScoreNode(CellScoreType.NORMAL);
-        nodeGrid[21].SetScoreNode(CellScoreType.NORMAL);
-    }
-
     void SetScoreNodes4x2()
     {
-        nodeGrid[13].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[14].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[15].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[16].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[19].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[20].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[21].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[22].SetScoreNode(CellScoreType.QUICK);
+        nodeGrid[13].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[14].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[15].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[16].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[19].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[20].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[21].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[22].SetScoreNode(CellScoreType.POINTS);
     }
-
-    void SetQuickScoreNodes()
-    {
-        nodeGrid[0].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[1].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[2].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[3].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[4].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[5].SetScoreNode(CellScoreType.QUICK);
-
-        nodeGrid[30].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[31].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[32].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[33].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[34].SetScoreNode(CellScoreType.QUICK);
-        nodeGrid[35].SetScoreNode(CellScoreType.QUICK);
-    }
-
     void SetEnemyScoreNodes()
     {
+        nodeGrid[0].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[1].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[2].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[3].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[4].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[5].SetScoreNode(CellScoreType.POINTS);
+
         nodeGrid[0].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[1].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[2].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[3].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[4].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[5].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+
+        nodeGrid[30].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[31].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[32].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[33].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[34].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[35].SetScoreNode(CellScoreType.POINTS);
 
         nodeGrid[30].SetScoreAmount(CellScoreAmount.ENEMYROWS);
         nodeGrid[31].SetScoreAmount(CellScoreAmount.ENEMYROWS);

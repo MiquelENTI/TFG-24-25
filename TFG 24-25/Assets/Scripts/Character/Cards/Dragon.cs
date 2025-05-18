@@ -1,15 +1,13 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class Drake : Character
+public class Dragon : Character
 {
-    CellNode cellToMove;
-    int splashDamage;
+    private CellNode cellToMove;
+    private int splashDamage;
 
-    Dictionary<CellConnection, Tuple<CellConnection, CellConnection>> translateDirection = new()
+    private Dictionary<CellConnection, Tuple<CellConnection, CellConnection>> translateDirection = new()
     {
         { CellConnection.UP, Tuple.Create(CellConnection.UPLEFT, CellConnection.UPRIGHT) },
         { CellConnection.LEFT, Tuple.Create(CellConnection.UPLEFT, CellConnection.DOWNLEFT) },
@@ -17,7 +15,7 @@ public class Drake : Character
         { CellConnection.DOWN, Tuple.Create(CellConnection.DOWNLEFT, CellConnection.DOWNRIGHT) },
     };
 
-    public Drake(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
+    public Dragon(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
         splashDamage = stats.dmg;
     }
@@ -61,7 +59,6 @@ public class Drake : Character
                 onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(this, splashDamage); 
             }
         }
-        
     }
      
      //Implementació del so 

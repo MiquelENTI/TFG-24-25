@@ -49,20 +49,20 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             //Debug.Log("2");
             if (hit.collider == null)
             { return; }
-            
+
             switch (hit.collider.tag)
             {
                 case "TokenGameObject":
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                     break;
                 }
                 case "CardGameObject":
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(lastInteractedObject.GetIsBlue());
+                    CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
@@ -120,6 +120,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                     break;
                 }
         }
+
+        EffectsManager.Instance.RemoveTeamEffects();
     }
 
     protected virtual void RightClickDownAction()

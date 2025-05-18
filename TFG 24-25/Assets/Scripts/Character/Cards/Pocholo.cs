@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Pocholo : Character
@@ -18,7 +16,18 @@ public class Pocholo : Character
         });
     }
 
-    void EvadeEnemy()
+
+    //Implementació del so
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003030002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003030001, token.transform.position);
+    }
+
+    private void EvadeEnemy()
     {
         CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
 
@@ -40,20 +49,9 @@ public class Pocholo : Character
 
                 if (!cellToMove.IsOccupied())
                 {
-                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction).GetId());
+                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction));
                 }
             }
         }
-    }
-     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003030001, token.transform.position);
-    }
-    
-    protected override void OnSpawnSFX()
-    {
-        SoundManager.Instance.PlaySFX(003030002, token.transform.position);
     }
 }

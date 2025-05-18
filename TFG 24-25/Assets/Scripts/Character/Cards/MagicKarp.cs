@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MagicKarp : Character
@@ -24,16 +22,14 @@ public class MagicKarp : Character
             }
         }
     }
-    
+
     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003020001, token.transform.position);
-    }
-    
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003020002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003020001, token.transform.position);
     }
 }

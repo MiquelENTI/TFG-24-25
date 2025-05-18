@@ -133,13 +133,13 @@ private void Start()
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                         TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                        CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                        CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                         break;
                     }
                 case "CardGameObject":
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(right_lastInteractedObject.GetIsBlue());
+                        CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                         Debug.Log("ENTERED CARDGO");
                         break;
                     }
@@ -165,7 +165,7 @@ private void Start()
     }
     protected virtual void RightHand_SelectInteractionUp()
     {
-        Debug.Log("ACTIVATE UP");
+        EffectsManager.Instance.RemoveTeamEffects();
         right_blockChangeAnimation = false;
         photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, right_blockChangeAnimation);
         Right_ChangeHandState((int)HandState.POINTING, right_blockChangeAnimation);
@@ -287,13 +287,13 @@ private void Start()
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                     break;
                 }
                 case "CardGameObject":
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
+                    CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
@@ -319,6 +319,7 @@ private void Start()
     }
     protected virtual void LeftHand_SelectInteractionUp()
     {
+        EffectsManager.Instance.RemoveTeamEffects();
         left_blockChangeAnimation = false;
         photonView.RPC("Left_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, left_blockChangeAnimation);
         Left_ChangeHandState((int)HandState.POINTING, left_blockChangeAnimation);

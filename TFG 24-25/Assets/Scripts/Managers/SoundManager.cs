@@ -32,10 +32,7 @@ public class SoundManager : Singleton<SoundManager>
             { 002000001, "event:/MUSIC/GAMEPLAY/Taverna" },
             // Menú
             { 002000002, "event:/MUSIC/MENU/Menu" },
-        };
 
-        musicDictionary = new()
-        {
             // AMBIENT
             // Roomtone
             { 001001001, "event:/SFX/AMBIENTES/ROOMTONE" },
@@ -43,6 +40,7 @@ public class SoundManager : Singleton<SoundManager>
             { 001000002, "event:/SFX/AMBIENTES/TORCH/BONFIRE" },
             // Canvi de torn 
             { 001000003, "event:/SFX/AMBIENTES/CANVI DE TORN/RING" },
+
 
         };
 

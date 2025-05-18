@@ -18,17 +18,17 @@ public class RayCastSpawnTile : RayCastTile
         {
             Tile onTile = hit.transform.GetComponent<Tile>();
             
-            if (onTile.tileId != previousTile.tileId)
+            if (onTile.GetTileId() != previousTile.GetTileId())
             {
                 previousTile.ExitRaycast();
                 onTile.EnterRaycast();
                 previousTile = onTile;
-                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
+                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.GetTileId());
             }
-            else if (onTile.tileId == previousTile.tileId)
+            else if (onTile.GetTileId() == previousTile.GetTileId())
             {
                 onTile.EnterRaycast();
-                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.tileId);
+                transform.parent.GetComponent<DragableGameObject>().SetOnTileId(onTile.GetTileId());
             }
         }
         else

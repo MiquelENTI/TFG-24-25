@@ -19,10 +19,6 @@ public class TempCloseOnBoard : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.F1))
-        {
-            ToggleOnboard(1);
-        }
         if (Input.GetKeyUp(KeyCode.F2))
         { 
             ToggleOnboard(0);

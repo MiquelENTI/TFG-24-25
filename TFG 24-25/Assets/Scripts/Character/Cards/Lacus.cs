@@ -1,47 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Lacus : Character
 {
-    CellConnection direction = CellConnection.UP;
+    private CellConnection direction;
 
     public Lacus(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
-    }
-
-    public override void OnStartTurn()
-    {
-        base.OnStartTurn();
-
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-
-        if (stats.stun)
-        { return; }
-
-        if (!currentCell.CheckConnectionNode(direction))
+        if (PhotonNetwork.IsMasterClient)
         {
-            DestroyCharacter();
-            return;
-        }
-
-        Character infrontCharacter = currentCell.GetCellByDirection(direction).GetCharacter();
-        if (infrontCharacter == null)
-        {
-            BypassMovement(currentCell.GetCellByDirection(direction).GetId());
-            return; 
-        }
-
-        if (infrontCharacter.GetTeamType() == teamType)
-        {
-            return;
+            direction = CellConnection.UP;
         }
         else
         {
-            if (canAttack)
-            {
-                Attack(infrontCharacter);
-            }
+            direction = CellConnection.DOWN;
         }
     }
 
@@ -50,7 +22,7 @@ public class Lacus : Character
         MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
         if (playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun)
         {
-            Vector2 diff = cellToMove.positionInGrid - CellNodeManager.Instance.GetNodeById(onTile).positionInGrid;
+            Vector2 diff = cellToMove.GetPositionInGrid() - CellNodeManager.Instance.GetNodeById(onTile).GetPositionInGrid();
 
             diff.x = Mathf.Abs(diff.x);
             diff.y = Mathf.Abs(diff.y);
@@ -72,18 +44,52 @@ public class Lacus : Character
                 return true;
             }
         }
-        
+
         return false;
     }
-    //Implementació del so
-        
-    protected override void AttackSFX()
+
+    public override void OnStartTurn()
     {
-        SoundManager.Instance.PlaySFX(003035001, token.transform.position);
+        base.OnStartTurn();
+
+        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+
+        if (stats.stun)
+        { return; }
+
+        if (!currentCell.CheckConnectionNode(direction))
+        {
+            DestroyCharacter();
+            return;
+        }
+
+        Character infrontCharacter = currentCell.GetCellByDirection(direction).GetCharacter();
+        if (infrontCharacter == null)
+        {
+            BypassMovement(currentCell.GetCellByDirection(direction));
+            return; 
+        }
+
+        if (infrontCharacter.GetTeamType() == teamType)
+        {
+            return;
+        }
+        else
+        {
+            if (canAttack)
+            {
+                Attack(infrontCharacter);
+            }
+        }
     }
-    
+
+    //Implementació del so
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003035002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003035001, token.transform.position);
     }
 }

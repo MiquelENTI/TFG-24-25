@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using System.Linq;
-using System;
 using TMPro;
 
 public class TokenGameObject : DragableGameObject
@@ -27,69 +23,32 @@ public class TokenGameObject : DragableGameObject
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         
         transform.parent.name = character.GetCharacterStats().name;
+        characterStats = character.GetCharacterStats();
         UpdateCardOnBoardText();
     }
-    public override void InitCardOnBoardText()
+    protected override void InitCardOnBoardText()
     {
         cob_AtkText = transform.GetChild(0).GetChild(0).GetChild(7).GetComponent<TMP_Text>();
         cob_HpText = transform.GetChild(0).GetChild(0).GetChild(6).GetComponent<TMP_Text>();
-        cob_ManaText = transform.GetChild(0).GetChild(0).GetChild(8).GetComponent<TMP_Text>(); // Falta mana
+        cob_ManaText = transform.GetChild(0).GetChild(0).GetChild(8).GetComponent<TMP_Text>();
         cob_NameText = transform.GetChild(0).GetChild(0).GetChild(9).GetComponent<TMP_Text>();
         cob_CardSprite = transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Image>();
-        //cig_MovementSprite = transform.GetChild(0).GetChild(0).GetChild(5).GetComponent<Image>();
     }
 
-    public override void UpdateCardToDisplayText()
+    protected override void UpdateCardOnBoardText()
     {
-        characterStats = character.GetCharacterStats();
+        //photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All);
 
-        base.UpdateCardToDisplayText();
-    }
+        cob_AtkText.text = character.GetCharacterStats().dmg.ToString();
 
-    public override void UpdateCardOnBoardText()
-    {
-        photonView.RPC("ChangeCardOnBoard_RPC", RpcTarget.All);
-    }
+        cob_HpText.text = character.GetCharacterStats().hp.ToString();
 
-    [PunRPC]
-    public void SetCharacterRPC(int characterId, int teamTypeInt)
-    {
-        TeamType tokenTeam = (TeamType)teamTypeInt;
-        Character characterToAssign = CharacterClassSelector(characterId, tokenTeam, gameObject);
-        SetCharacter(characterToAssign);
+        cob_ManaText.text = character.GetCharacterStats().manaCost.ToString();
 
-        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
-        if (cardSprite == null)
-        {
-            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
-        }
-
-        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
-    }
-
-    [PunRPC]
-    //void ChangeCardOnBoard_RPC(int attack, int health, int manaCost, string name)
-    void ChangeCardOnBoard_RPC()
-    {
-        cob_AtkText.text = character.GetAttack().ToString();
-
-        cob_HpText.text = character.GetHealth().ToString();
-
-        cob_ManaText.text = character.getManaCost().ToString();
-
-        cob_NameText.text = character.GetName();
+        cob_NameText.text = character.GetCharacterStats().name;
 
         cob_CardSprite.sprite = cardSprite;
     }
-
-    public Character GetCharacter() { return character; }
-
-    public void SetCharacter(Character newCharacter)
-    {
-        character = newCharacter;
-        characterStats = character.GetCharacterStats();
-    }
-
     public override void CheckIsOutsideBoard()
     {
         CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
@@ -101,14 +60,11 @@ public class TokenGameObject : DragableGameObject
         }
         else
         {
-            //Debug.Log(character.GetId() + " " + gameObjectSelected.GetComponent<TokenGameObject>().GetCharacter().GetId());
             MyEventHandler.Instance.moveToken.Invoke(tileHovering, character.GetId());
         }
     }
 
-
-
-    Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
+    private Character CharacterClassSelector(int id, TeamType tokenTeam, GameObject instantiatedToken)
     {
         CharacterStats stats = (CharacterStats)TemporalCardDataBase.Instance.GetTemporalStats(id).Item2;
         switch (id)
@@ -166,7 +122,7 @@ public class TokenGameObject : DragableGameObject
             case 32:
                 return new Kamikaze(stats, tokenTeam, instantiatedToken);
             case 35:
-                return new Drake(stats, tokenTeam, instantiatedToken);
+                return new Dragon(stats, tokenTeam, instantiatedToken);
             case 36:
                 return new Lacus(stats, tokenTeam, instantiatedToken);
             case 37:
@@ -190,5 +146,23 @@ public class TokenGameObject : DragableGameObject
                 return new Character(stats, tokenTeam, instantiatedToken);
         }
 
+    }
+
+    public Character GetCharacter() { return character; }
+
+    [PunRPC]
+    public void RPC_SetCharacter(int characterId, int teamTypeInt)
+    {
+        TeamType tokenTeam = (TeamType)teamTypeInt;
+        character = CharacterClassSelector(characterId, tokenTeam, gameObject);
+        characterStats = character.GetCharacterStats();
+
+        cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/" + characterStats.name);
+        if (cardSprite == null)
+        {
+            cardSprite = Resources.Load<Sprite>("cardsprites/ilustracions/See_the_future");
+        }
+
+        movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
     }
 }
