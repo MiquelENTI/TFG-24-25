@@ -1,3 +1,4 @@
+using Autodesk.Fbx;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -66,7 +67,7 @@ public class CardGameObject : DragableGameObject
     }
     public override void CheckIsOutsideBoard()
     {
-        CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(IsBlue ? TeamType.BLUE : TeamType.RED, true);
+        CellNodeManager.Instance.hidePossibleSpawnTiles.Invoke(IsBlue ? TeamType.BLUE : TeamType.RED);
 
         if (isOutsideBoard)
         {

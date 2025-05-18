@@ -133,13 +133,13 @@ private void Start()
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                         TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                        CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
+                        CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                         break;
                     }
                 case "CardGameObject":
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
+                        CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
                         Debug.Log("ENTERED CARDGO");
                         break;
                     }
@@ -287,13 +287,13 @@ private void Start()
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                    CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
+                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
+                    CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
