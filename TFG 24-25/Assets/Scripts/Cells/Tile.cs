@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public int tileId;
+    private int tileId;
 
 
     GameObject tileHighlight;
@@ -26,4 +26,9 @@ public class Tile : MonoBehaviour
     {
         tileHighlight.GetComponent<Renderer>().material = nonSelectedMaterial;
     }
+
+    public void SetTileId(int id)
+    { tileId = id; }
+    public int GetTileId()
+    { return tileId; }
 }

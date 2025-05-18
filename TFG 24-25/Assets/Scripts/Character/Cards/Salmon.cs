@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Salmon : Character
@@ -8,28 +6,25 @@ public class Salmon : Character
     {
     }
 
-    public override void OnKillEnemy(Character enemy)
+    protected override void OnKillEnemy(Character enemy)
     {
         Debug.Log("ENTERING EATING ENEMY");
         base.OnKillEnemy(enemy);
-        if (enemy.GetName() != "Charybdis")
+        if (enemy.GetCharacterStats().name != "Charybdis")
         {
             Debug.Log("EATING ENEMY");
-            BypassMovement(enemy.GetOnTileId());
+            BypassMovement(CellNodeManager.Instance.GetNodeById(enemy.GetOnTileId()));
             ReceiveDamageSelf(1);
         }
     }
-      //Implementació del so 
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003003001, token.transform.position);
-    }
-    
+    //Implementació del so 
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003003002, token.transform.position);
     }
-
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003003001, token.transform.position);
+    }
 }
  

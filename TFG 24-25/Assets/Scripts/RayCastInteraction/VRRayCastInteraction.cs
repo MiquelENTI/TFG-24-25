@@ -133,13 +133,13 @@ private void Start()
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                         TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                        CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                        MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                         break;
                     }
                 case "CardGameObject":
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(right_lastInteractedObject.GetIsBlue());
+                        MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(right_lastInteractedObject.GetIsBlue());
                         Debug.Log("ENTERED CARDGO");
                         break;
                     }
@@ -287,13 +287,13 @@ private void Start()
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
+                    MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }

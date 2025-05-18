@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Samurai : Character
@@ -8,7 +6,16 @@ public class Samurai : Character
     {
     }
 
-    public override void OnPointsScoring(int pointsScored)
+    public override bool OnSpawn(CellNode cellToMove)
+    {
+        return base.OnSpawn(cellToMove);
+    }
+
+    protected override void OnDeath(Character attacker)
+    {
+        base.OnDeath(attacker);
+    }
+    protected override void OnPointsScoring(int pointsScored)
     {
         base.OnPointsScoring(pointsScored);
 
@@ -16,24 +23,13 @@ public class Samurai : Character
         DisplayActionsManager.Instance.CreateBuffText(pointsScored, true, token.transform.position);
     }
 
-    public override bool OnSpawn(CellNode cellToMove)
-    {
-        return base.OnSpawn(cellToMove);
-    }
-
-    public override void OnDeath(Character attacker)
-    {
-        base.OnDeath(attacker);
-    }
     //Implementació del so
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003036001, token.transform.position);
-    }
-    
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003036002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003036001, token.transform.position);
     }
 }

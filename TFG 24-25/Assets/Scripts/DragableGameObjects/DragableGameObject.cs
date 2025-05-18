@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using Photon.Pun;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class DragableGameObject : MonoBehaviour
@@ -45,12 +40,19 @@ public class DragableGameObject : MonoBehaviour
     protected TMP_Text cob_HpText;
     protected TMP_Text cob_NameText;
     protected TMP_Text cob_ManaText;
+    protected TMP_Text cob_Description;
     protected Image cob_CardSprite;
     protected Image cob_MovementSprite;
+    protected Image cob_AbilityBackground;
+    protected Image cob_AbilitySprite;
+    protected Image cob_doubleScoreBackground;
+    protected Image cob_doubleScoreSprite;
     #endregion
 
     protected Sprite cardSprite;
     protected Sprite movementSprite;
+    protected Sprite abilitySprite;
+    protected Sprite doubleScoreSprite;
 
     protected PhotonView photonView;
     protected virtual void Awake()
@@ -75,66 +77,14 @@ public class DragableGameObject : MonoBehaviour
         }
     }
 
-    // Detect and Calculate Mouse World Position to Move Inside a Plane
-    
-
-    // Assign On Which Board Tile is the GameObject hovering
-    public void SetOnTileId(int tileId)
-    {
-        tileHovering = tileId;
-    }
-
-    // Bool that Indicates if the GameObject is inside the Board Space
-    public void SetOutsideBoard(bool isOutside)
-    {
-        isOutsideBoard = isOutside;
-    }
-
-    public int GetTileHovering()
-    { return tileHovering; }
-
-
-    public void SeeTokenCard()
-    {
-        UpdateCardToDisplayText();
-    }
-
-    void InitCardToDisplayText()
-    {
-        ctd_AtkText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
-        ctd_HpText = cardToDisplay.transform.GetChild(8).GetComponent<TMP_Text>();
-        ctd_NameText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
-        ctd_ManaText = cardToDisplay.transform.GetChild(9).GetComponent<TMP_Text>();
-        ctd_Description = cardToDisplay.transform.GetChild(10).GetComponent<TMP_Text>();
-        ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
-        ctd_MovementSprite = cardToDisplay.transform.GetChild(11).GetComponent<Image>();
-        ctd_AbilityBackground = cardToDisplay.transform.GetChild(13).GetComponent<Image>();
-        ctd_AbilitySprite = cardToDisplay.transform.GetChild(14).GetComponent<Image>();
-        ctd_doubleScoreBackground = cardToDisplay.transform.GetChild(15).GetComponent<Image>();
-        ctd_doubleScoreSprite = cardToDisplay.transform.GetChild(16).GetComponent<Image>();
-
-    }
-
-    public virtual void InitCardOnBoardText()
+    protected virtual void InitCardOnBoardText()
     {
 
     }
 
-    public virtual void UpdateCardToDisplayText()
+    protected virtual void UpdateCardToDisplayText()
     {
-        // 0 -> Card Sprite
-        // 1 -> Name Container
-        // 2 -> DMG Container
-        // 3 -> Name
-        // 4 -> HP Container
-        // 5 -> HP
-        // 6 -> DMG
-        // 7 -> Mana
-        // 8 -> Description
-
-        //characterStats.PrintStats();
-
-        try
+        try // Character
         {
             ctd_AtkText.text = characterStats.dmg.ToString();
 
@@ -145,35 +95,8 @@ public class DragableGameObject : MonoBehaviour
             ctd_NameText.text = characterStats.name;
 
             ctd_Description.text = characterStats.description;
-
-            ctd_AbilitySprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/" + characterStats.abilityType.ToString());
-
-            if (characterStats.abilityType.ToString() == "nothing")
-            {
-                ctd_AbilitySprite.gameObject.SetActive(false);
-                ctd_AbilityBackground.gameObject.SetActive(false);
-            }
-            else
-            {
-                ctd_AbilitySprite.gameObject.SetActive(true);
-                ctd_AbilityBackground.gameObject.SetActive(true);
-            }
-
-
-            if (characterStats.scoreMultiplier == 1)
-            {
-                ctd_doubleScoreSprite.gameObject.SetActive(false);
-                ctd_doubleScoreBackground.gameObject.SetActive(false);
-            }
-            else if (characterStats.scoreMultiplier == 2)
-            {
-                ctd_doubleScoreSprite.sprite = Resources.Load<Sprite>("cardsprites/AbilityIcons/doublePoints");
-                ctd_doubleScoreSprite.gameObject.SetActive(true);
-                ctd_doubleScoreBackground.gameObject.SetActive(true);
-            }
-
         }
-        catch 
+        catch // Effects
         {
             ctd_AtkText.text = "0";
 
@@ -186,22 +109,19 @@ public class DragableGameObject : MonoBehaviour
             ctd_Description.text = effectStats.description;
         }
 
-        // Potser fer funcio a part per canviar sprite
-        if (cardSprite != null)
-        {
-            ctd_CardSprite.sprite = cardSprite;
-        }
-        else
-        {
-            ctd_CardSprite.sprite = null;
-        }
-
+        ctd_CardSprite.sprite = cardSprite;
         ctd_MovementSprite.sprite = movementSprite;
+
+        if (abilitySprite != null)
+        { ctd_AbilitySprite.sprite = abilitySprite; }
+
+        if (doubleScoreSprite != null)
+        { ctd_doubleScoreSprite.sprite = doubleScoreSprite; }
     }
 
-    public virtual void UpdateCardOnBoardText()
+    protected virtual void UpdateCardOnBoardText()
     {
-        try
+        try // Character
         {
             cob_AtkText.text = characterStats.dmg.ToString();
 
@@ -210,8 +130,9 @@ public class DragableGameObject : MonoBehaviour
             cob_ManaText.text = characterStats.manaCost.ToString();
 
             cob_NameText.text = characterStats.name;
+
         }
-        catch
+        catch // Effects
         {
             cob_AtkText.text = "0";
 
@@ -224,20 +145,40 @@ public class DragableGameObject : MonoBehaviour
 
         if (cardSprite != null)
         {
+            Debug.Log("SpriteFound");
             cob_CardSprite.sprite = cardSprite;
         }
         else
         {
+            Debug.Log("NOT Sprite Found");
             cob_CardSprite.sprite = null;
         }
         cob_MovementSprite.sprite = movementSprite;
     }
 
-    public void ToggleCardToDisplay(bool state)
+    public virtual void CheckIsOutsideBoard()
     {
-        cardToDisplay.SetActive(state);
+
     }
 
+    private void InitCardToDisplayText()
+    {
+        ctd_AtkText = cardToDisplay.transform.GetChild(7).GetComponent<TMP_Text>();
+        ctd_HpText = cardToDisplay.transform.GetChild(8).GetComponent<TMP_Text>();
+        ctd_NameText = cardToDisplay.transform.GetChild(6).GetComponent<TMP_Text>();
+        ctd_ManaText = cardToDisplay.transform.GetChild(9).GetComponent<TMP_Text>();
+        ctd_Description = cardToDisplay.transform.GetChild(10).GetComponent<TMP_Text>();
+        ctd_CardSprite = cardToDisplay.transform.GetChild(0).GetComponent<Image>();
+        ctd_MovementSprite = cardToDisplay.transform.GetChild(11).GetComponent<Image>();
+        ctd_AbilityBackground = cardToDisplay.transform.GetChild(13).GetComponent<Image>();
+        ctd_AbilitySprite = cardToDisplay.transform.GetChild(14).GetComponent<Image>();
+        ctd_doubleScoreBackground = cardToDisplay.transform.GetChild(15).GetComponent<Image>();
+        ctd_doubleScoreSprite = cardToDisplay.transform.GetChild(16).GetComponent<Image>();
+    }
+    public void SeeTokenCard()
+    {
+        UpdateCardToDisplayText();
+    }
     public void RotateCardToDisplayVR()
     {
         if (PhotonNetwork.IsMasterClient)
@@ -248,29 +189,28 @@ public class DragableGameObject : MonoBehaviour
         {
             cardToDisplay.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
-}
-
-    public bool GetIsBlue()
-    { return IsBlue; }
-
-    public float GetObjectDisplacement()
-    { return objectDisplacement + planeDisplacement; }
-
-    public virtual void CheckIsOutsideBoard()
-    { 
-
+    }
+    public void ToggleCardToDisplay(bool state)
+    {
+        cardToDisplay.SetActive(state);
     }
 
     public Plane GetPlane()
     { return plane; }
+    public float GetObjectDisplacement()
+    { return objectDisplacement + planeDisplacement; }
+    // Assign On Which Board Tile is the GameObject hovering
+    public void SetOnTileId(int tileId)
+    { tileHovering = tileId; }
+
+    // Bool that Indicates if the GameObject is inside the Board Space
+    public void SetOutsideBoard(bool isOutside)
+    { isOutsideBoard = isOutside; }
+    public bool GetIsBlue()
+    { return IsBlue; }
 
     public void UpdateObjectPosition(Vector3 newPosition, Quaternion newRotation)
     {
         transform.SetPositionAndRotation(newPosition, newRotation);
-    }
-
-    public CharacterStats GetCharacterStats()
-    {
-        return characterStats;
     }
 }

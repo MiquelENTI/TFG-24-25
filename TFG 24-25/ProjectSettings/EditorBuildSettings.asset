@@ -7,7 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/VR.unity
+<<<<<<< HEAD
     guid: a9f422b20a8640e479803996ace7be81
+=======
+    guid: 348b7a275cbbbba4dbfb3b48548d0779
+>>>>>>> origin/feature/RectificationUML
   - enabled: 1
     path: Assets/Scenes/Unified Scene.unity
     guid: 2a9623a6d3b07034a80a0ac2a4b0975f

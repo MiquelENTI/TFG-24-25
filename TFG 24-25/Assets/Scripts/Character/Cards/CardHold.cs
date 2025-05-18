@@ -1,23 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
 public class CardHold : MonoBehaviour
 {
-    [SerializeField] TeamType teamType;
-    List<GameObject> cards;
-    float cardSize;
-
-    public GameObject TEMP;
-
-    PhotonView photonView;
-
     int currentId;
 
-    GameObject playerCam;
-
+    List<GameObject> cards;
     Vector3 defaultCardRotation;
+    float cardSize;
+
+    PhotonView photonView;
 
     void Start()
     {
@@ -28,28 +21,12 @@ public class CardHold : MonoBehaviour
         currentId = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void SetTeamType(TeamType teamType)
-    {
-        this.teamType = teamType;
-    }
-    public TeamType GetTeamType()
-    {
-        return teamType;
-    }
-
     public void AddCardToHold(GameObject card)
     {
         cards.Add(card);
         ReorganizeCards();
         card.transform.GetChild(0).GetComponent<CardGameObject>().SetCardId(currentId);
         currentId++;
-
-        //Debug.Log("CardID: " + card.transform.GetChild(0).GetComponent<CardGameObject>().GetCardId() + " CurrentID: " + currentId);
     }
 
     public void ReorganizeCards()
@@ -68,7 +45,7 @@ public class CardHold : MonoBehaviour
         }
     }
     
-    void MoveCard(GameObject gameObject, Vector3 newPosition)
+    private void MoveCard(GameObject gameObject, Vector3 newPosition)
     {
         gameObject.transform.GetChild(0).position = newPosition;
         gameObject.transform.GetChild(0).rotation = Quaternion.Euler(defaultCardRotation);
@@ -80,7 +57,7 @@ public class CardHold : MonoBehaviour
     }
 
     [PunRPC]
-    public void DestroyCard_RPC(int cardToDestroy)
+    public void RPC_DestroyCard(int cardToDestroy)
     {
         for (int i = 0; i < cards.Count; i++)
         {
@@ -114,15 +91,6 @@ public class CardHold : MonoBehaviour
         }
     }
 
-
-    public void LookToPlayerCam()
-    {
-        for (int i = 0; i < cards.Count; i++)
-        {
-            cards[i].transform.GetChild(0).LookAt(playerCam.transform.position);
-        }
-    }
-
     public void DefaultCardRotation()
     {
         for (int i = 0; i < cards.Count; i++)
@@ -131,16 +99,8 @@ public class CardHold : MonoBehaviour
         }
     }
 
-    public void AssignPlayerCam(GameObject playerCam)
-    {
-        this.playerCam = playerCam; 
-    }
-
     public void SetDefaultCardRotation(Vector3 defaultCardRotation)
     {
         this.defaultCardRotation = defaultCardRotation;
     }
-
-    public Camera GetPlayerCamera()
-    { return playerCam.GetComponent<Camera>(); }
 }

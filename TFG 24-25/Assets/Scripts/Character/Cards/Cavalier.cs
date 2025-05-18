@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cavalier : Character
 {
-    bool hasAttacked = false;
-    bool hasMoved = false;
+    private bool hasAttacked = false;
+    private bool hasMoved = false;
 
     public Cavalier(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
@@ -31,12 +28,6 @@ public class Cavalier : Character
         hasMoved = true;
         return true;
     }
-
-    public override void Attack(Character enemy)
-    {
-        base.Attack(enemy);
-        hasAttacked = true;
-    }
     public override void OnStartTurn()
     {
         base.OnStartTurn();
@@ -44,22 +35,24 @@ public class Cavalier : Character
         hasAttacked = false;
         hasMoved = false;
     }
-
-    public override void OnDeath(Character attacker)
+    protected override void OnDeath(Character attacker)
     {
-        Debug.Log("ENTERED ON DEATH");
         //DeckManager.Instance.BoardIntoHandDraw(teamType, stats.name);
         base.OnDeath(attacker);
     }
-    //Implementació del so 
-        
-    protected override void AttackSFX()
+    public override void Attack(Character enemy)
     {
-        SoundManager.Instance.PlaySFX(003002001, token.transform.position);
+        base.Attack(enemy);
+        hasAttacked = true;
     }
-    
+
+    //Implementació del so 
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003002002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003002001, token.transform.position);
     }
 }

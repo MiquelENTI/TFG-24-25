@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Berserker : Character
 {
-    int originalAttack;
-    int boostedAttack = 8;
+    private int originalAttack;
+    private int boostedAttack = 8;
 
 
     public Berserker(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
@@ -31,14 +29,12 @@ public class Berserker : Character
     }
 
     //Implementació del so 
-        
-    protected override void AttackSFX()
-    {
-        SoundManager.Instance.PlaySFX(003026001, token.transform.position);
-    }
-    
     protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003026002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026001, token.transform.position);
     }
 }

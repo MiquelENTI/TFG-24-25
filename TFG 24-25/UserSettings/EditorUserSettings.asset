@@ -12,7 +12,11 @@ EditorUserSettings:
       value: 53030d03070c5b5d5b575d7641260644424f1c2e747072317c7c4465bbe36c3c
       flags: 0
     RecentlyUsedSceneGuid-2:
+<<<<<<< HEAD
       value: 0208525257070b095d0f547444735a44414e407a7f717f662c2a1864e0e56c69
+=======
+      value: 50050c0452545b0c580d0e2012215e4412151e287f2a7268787d4537b2b76361
+>>>>>>> origin/feature/RectificationUML
       flags: 0
     RecentlyUsedSceneGuid-3:
       value: 51500d505706080d095d0e7247730c44174f482b7c2925622c7d1f63bbb7613e

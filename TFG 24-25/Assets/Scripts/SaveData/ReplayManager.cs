@@ -21,7 +21,7 @@ public class ReplayManager: MonoBehaviour
 
         blueTurn = true;
 
-        controller = GameObject.Find("SpawnManager").GetComponent<SpawnCardController>();
+        controller = SpawnCardController.Instance;
     }
 
     private void Update()

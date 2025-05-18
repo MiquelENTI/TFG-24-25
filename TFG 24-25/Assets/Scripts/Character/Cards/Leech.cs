@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Leech : Character
 {
-    int surroundingDamage = 1;
+    private int surroundingDamage = 1;
 
     public Leech(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
@@ -34,15 +34,13 @@ public class Leech : Character
             }
         }
     }
-     
-     //Implementació del so
-        
-    protected override void AttackSFX()
+
+    //Implementació del so
+    protected override void OnSpawnSFX()
     {
         SoundManager.Instance.PlaySFX(003025001, token.transform.position);
     }
-    
-    protected override void OnSpawnSFX()
+    protected override void AttackSFX()
     {
         SoundManager.Instance.PlaySFX(003025001, token.transform.position);
     }
