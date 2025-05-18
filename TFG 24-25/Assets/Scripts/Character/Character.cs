@@ -345,9 +345,9 @@ public class Character
         Debug.Log("Dying: " + stats.name);
         Debug.Log("Killer: " + attacker.stats.name);
 
-        CharactersManager.Instance.AddToRemoveList(this);
-        
         attacker.OnKillEnemy(this);
+
+        CharactersManager.Instance.AddToRemoveList(this);
     }
 
     public virtual void OnDeathSelf()
