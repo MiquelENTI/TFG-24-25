@@ -66,7 +66,7 @@ public class CardGameObject : DragableGameObject
     }
     public override void CheckIsOutsideBoard()
     {
-        MyEventHandler.Instance.InvokeHidePossibleSpawnTiles(IsBlue);
+        CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(IsBlue ? TeamType.BLUE : TeamType.RED, true);
 
         if (isOutsideBoard)
         {
@@ -123,8 +123,6 @@ public class CardGameObject : DragableGameObject
     {
         Debug.Log($"[DragableUIObject] Player ActorNr: {PhotonNetwork.LocalPlayer.ActorNumber} requesting instantiation of character ID: {cardIdToSpawn}");
         spawnCardController.photonView.RPC("InstantiateCharacterTokenRPC", RpcTarget.AllBuffered, cardIdToSpawn, PhotonNetwork.LocalPlayer.ActorNumber, tileHovering, false);
-
-        SaveData.Instance.TryBufferAction("S" + tileHovering + "/" + cardIdToSpawn);
     }
 
     private void RequestEffectActivation()

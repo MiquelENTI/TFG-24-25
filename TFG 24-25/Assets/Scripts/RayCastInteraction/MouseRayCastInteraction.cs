@@ -49,20 +49,20 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             //Debug.Log("2");
             if (hit.collider == null)
             { return; }
-            
+
             switch (hit.collider.tag)
             {
                 case "TokenGameObject":
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)lastInteractedObject;
-                    MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                     break;
                 }
                 case "CardGameObject":
                 {
                     lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(lastInteractedObject.GetIsBlue());
+                    CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }

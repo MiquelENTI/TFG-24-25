@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CellNodeManager : Singleton<CellNodeManager>
 {
@@ -7,17 +8,46 @@ public class CellNodeManager : Singleton<CellNodeManager>
     private Vector2 gridSize;
     private int currentId;
 
-    
+    public UnityEvent<int> hidePossibleMovements;
+    public UnityEvent<int> showPossibleMovements;
+    public UnityEvent<TeamType> hidePossibleSpawnTiles;
+    public UnityEvent<TeamType> showPossibleSpawnTiles;
 
     private List<CellNode> redSpawnTiles;
     private List<CellNode> blueSpawnTiles;
-
 
     private void Awake()
     {
         nodeGrid = new List<CellNode>();
         redSpawnTiles = new List<CellNode>();
         blueSpawnTiles = new List<CellNode>();
+
+        // Event that Triggers ToggleVisibilityPossibleMovements Function
+
+        showPossibleMovements = new UnityEvent<int>();
+        showPossibleMovements.AddListener((int tileId) =>
+        {
+            ToggleVisibilityPossibleMovements(tileId, true);
+        });
+        hidePossibleMovements = new UnityEvent<int>();
+        hidePossibleMovements.AddListener((int tileId) =>
+        {
+            ToggleVisibilityPossibleMovements(tileId, false);
+        });
+
+        // Event that Triggers ToggleVisibilityAvailableSpawnCells
+        showPossibleSpawnTiles = new UnityEvent<TeamType>();
+        showPossibleSpawnTiles.AddListener((TeamType teamType) =>
+        {
+            ToggleVisibilityAvailableSpawnCells(teamType, true);
+        });
+
+        // Event that Triggers ToggleVisibilityAvailableSpawnCells
+        hidePossibleSpawnTiles = new UnityEvent<TeamType>();
+        hidePossibleSpawnTiles.AddListener((TeamType teamType) =>
+        {
+            ToggleVisibilityAvailableSpawnCells(teamType, false);
+        });
     }
     public void SetGridSize(Vector2 size)
     { gridSize = size; }

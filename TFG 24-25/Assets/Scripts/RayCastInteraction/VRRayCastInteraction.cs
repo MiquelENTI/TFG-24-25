@@ -133,13 +133,13 @@ private void Start()
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                         TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                        MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                        CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                         break;
                     }
                 case "CardGameObject":
                     {
                         right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(right_lastInteractedObject.GetIsBlue());
+                        CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                         Debug.Log("ENTERED CARDGO");
                         break;
                     }
@@ -287,13 +287,13 @@ private void Start()
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                    MyEventHandler.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    CellNodeManager.Instance.ToggleVisibilityPossibleMovements(temp.GetCharacter().GetOnTileId(), true);
                     break;
                 }
                 case "CardGameObject":
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    MyEventHandler.Instance.InvokeShowPossibleSpawnTiles(left_lastInteractedObject.GetIsBlue());
+                    CellNodeManager.Instance.ToggleVisibilityAvailableSpawnCells(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED, true);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
