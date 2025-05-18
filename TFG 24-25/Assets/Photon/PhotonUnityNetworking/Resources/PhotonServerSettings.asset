@@ -87,6 +87,8 @@ MonoBehaviour:
   - ChangeTagMasterOrClient
   - UpdateCameraPosition_RPC
   - PlayTimeOutAudioRPC
+  - RPC_DestroyCard
+  - RPC_SetCharacter
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

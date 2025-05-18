@@ -13578,8 +13578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 1589491933}
+  gridSize: {x: 6, y: 6}
   cell: {fileID: 2923819660281745749, guid: 8cea953b14c7ad94b8d08446d717f4dd, type: 3}
-  GridSize: {x: 6, y: 6}
   cornerPointPrefab: {fileID: 1328978554650317836, guid: 5d64773b9b330e34eaf58274d40091a5, type: 3}
   edgeDarkPrefab: {fileID: 5519599502171961328, guid: b4b32aff08b0ea14ea15c98f4573975c, type: 3}
   edgeWhitePrefab: {fileID: 1987291774460552710, guid: 17a083b18c153594d8f7e2601d13c0d2, type: 3}
