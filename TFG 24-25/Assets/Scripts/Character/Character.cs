@@ -345,9 +345,9 @@ public class Character
         Debug.Log("Dying: " + stats.name);
         Debug.Log("Killer: " + attacker.stats.name);
 
-        CharactersManager.Instance.AddToRemoveList(this);
-        
         attacker.OnKillEnemy(this);
+
+        CharactersManager.Instance.AddToRemoveList(this);
     }
 
     public virtual void OnDeathSelf()
@@ -366,7 +366,7 @@ public class Character
     public virtual void OnAttacked(Character attacker)
     {
         ReceiveDamage(attacker, attacker.stats.dmg);
-        this.GetToken().transform.GetChild(0).GetComponent<TokenGameObject>().UpdateCardOnBoardText();
+        token.transform.GetComponent<TokenGameObject>().UpdateCardOnBoardText();
     }
 
     public virtual void OnPointsScoring(int pointsScored)
