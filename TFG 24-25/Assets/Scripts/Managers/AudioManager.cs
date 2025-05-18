@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
         };
     }
 
-    // ---- MÚSICA PERSISTENTE ----
+    // MÚSICA PERSISTENTE
     public void PlayMenuMusic()
     {
         StopAllMusic();

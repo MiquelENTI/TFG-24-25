@@ -13,10 +13,16 @@ public class RayCastEndTurn : MonoBehaviour
     }
 
     public void Interact(bool isBluePlayer)
-    {   
+    {
         if (turnManagerScript.GetIsTurnBlue() == isBluePlayer || turnManagerScript.GetTurnBypass())
         {
             turnManagerScript.TurnManager();
         }
+        RingBell();
+    }
+    //Implementació del so 
+    public void RingBell()
+    {
+        SoundManager.Instance.PlayMusic(001000003,transform.position);
     }
 }
