@@ -285,6 +285,11 @@ public class SoundManager : Singleton<SoundManager>
     {
         FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index], board.transform.position);
     }
+    public void PlayMusic(int index, Vector3 position)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(musicDictionary[index], position);
+    }
+
     public void PlayVO(int index, Vector3 position)
     {
         FMODUnity.RuntimeManager.PlayOneShot(voDictionary[index], position); // si fos VO per event separat

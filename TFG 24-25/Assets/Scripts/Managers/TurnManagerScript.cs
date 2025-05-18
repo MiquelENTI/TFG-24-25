@@ -211,23 +211,24 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             turnCounter++;
 
 
-            //int fmodroundvalue = 0;
+            int fmodroundvalue = 0;
 
-            //if (turncounter >= 1 && turncounter <= 3)
-            //{
-            //    fmodroundvalue = 0;
-            //}
-            //else if (turncounter >= 4 && turncounter <= 9)
-            //{
-            //    fmodroundvalue = 1;
-            //}
-            //else if (turncounter >= 10)
-            //{
-            //    fmodroundvalue = 2;
-            //}
+            if (turnCounter > 0 && turnCounter < 4)
+            {
+               fmodroundvalue = 0;
+            }
+            else if (turnCounter > 5 && turnCounter < 9)
+            {
+               fmodroundvalue = 1;
+            }
+            else if (turnCounter >= 10)
+            {
+               fmodroundvalue = 2;
+            }
+            
 
-            //fmodunity.runtimemanager.studiosystem.setparameterbyname("ronda", fmodroundvalue);
-            //debug.log("ronda parameter updated to: " + fmodroundvalue);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("RONDA", fmodroundvalue);
+            Debug.Log("ronda parameter updated to: " + fmodroundvalue);
 
 
             if (turnCounter > 10)
