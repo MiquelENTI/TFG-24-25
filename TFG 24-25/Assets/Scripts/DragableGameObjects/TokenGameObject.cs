@@ -23,8 +23,8 @@ public class TokenGameObject : DragableGameObject
         plane = new Plane(Vector3.up, new Vector3(0, planeDisplacement, 0));
         
         //transform.parent.name = character.GetCharacterStats().name;
-        characterStats = character.GetCharacterStats();
-        UpdateCardOnBoardText();
+        //characterStats = character.GetCharacterStats();
+        
     }
     protected override void InitCardOnBoardText()
     {
@@ -164,5 +164,7 @@ public class TokenGameObject : DragableGameObject
         }
 
         movementSprite = Resources.Load<Sprite>("cardsprites/" + characterStats.movementType.ToString());
+
+        UpdateCardOnBoardText();
     }
 }
