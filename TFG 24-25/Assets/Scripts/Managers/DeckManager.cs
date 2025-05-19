@@ -110,21 +110,6 @@ public class DeckManager : Singleton<DeckManager>
         
     }
 
-    public void ReplayDrawCard(bool hold)
-    {
-        if (deck.Count == 0) { return; }
-
-        GameObject instantiatedCard = PhotonNetwork.Instantiate(prefabCard.name, prefabCard.transform.localPosition, Quaternion.identity);
-        instantiatedCard.transform.GetChild(0).GetComponent<CardGameObject>().SetCardToSpawnId(deck.Dequeue());
-
-        GameObject cardHold = GameObject.FindGameObjectWithTag(hold ? "BlueHold" : "RedHold");
-        instantiatedCard.transform.parent = cardHold.transform;
-        cardHold.GetComponent<CardHold>().AddCardToHold(instantiatedCard);
-        cardHold.GetComponent<CardHold>().SetDefaultCardRotation(PhotonNetwork.IsMasterClient ? new Vector3(0, 180, 0) : new Vector3(0, 0, 0));
-    }
-
-
-
     public void BoardIntoHandDraw(TeamType type, string characterName)
     {
         if (type != TeamType.BLUE && PhotonNetwork.IsMasterClient)

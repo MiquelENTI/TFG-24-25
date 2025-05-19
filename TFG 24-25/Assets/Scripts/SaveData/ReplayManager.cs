@@ -12,7 +12,7 @@ public class ReplayManager: MonoBehaviour
     void Start()
     {
         replayData = new ReplayData();
-        GetReplayMatchData(0);
+        GetReplayMatchData(4);
 
         blueTurn = true;
 
@@ -50,17 +50,6 @@ public class ReplayManager: MonoBehaviour
 
         DeckManager.Instance.SetReplayDeck(replayData.deck);
 
-        int amountToDraw = 1;
-
-        for (int i = 0; i <= amountToDraw; i++)
-        {
-            DeckManager.Instance.ReplayDrawCard(true);
-        }
-
-        for (int i = 0; i <= amountToDraw; i++)
-        {
-            DeckManager.Instance.ReplayDrawCard(false);
-        }
     }
 
     private void NextMove()
@@ -86,8 +75,6 @@ public class ReplayManager: MonoBehaviour
                     blueTurn = !blueTurn;
 
                     TurnManagerScript.Instance.UpdateTurn(blueTurn);
-
-                    DeckManager.Instance.ReplayDrawCard(blueTurn);
 
                     break;
                 }
