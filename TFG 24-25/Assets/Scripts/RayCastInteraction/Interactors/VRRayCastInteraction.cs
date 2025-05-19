@@ -110,11 +110,7 @@ private void Start()
     #region RIGHT HAND
     protected virtual void RightHand_SelectInteractionDown()
     {
-        Debug.Log("ACTIVATE DOWN");
-        
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
-
-        Debug.Log("RIGHT HAND POS: " + rightController.transform.position + " RIGHT HAND DIRECTION: " + -rightController.transform.forward);
 
         RaycastHit hit;
 
@@ -125,29 +121,30 @@ private void Start()
                 photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.IDLE, right_blockChangeAnimation);
                 Right_ChangeHandState((int)HandState.IDLE, right_blockChangeAnimation);
                 Debug.Log("ENTERED RETURN DOWN");
-                return; }
+                return; 
+            }
 
             switch (hit.collider.tag)
             {
                 case "TokenGameObject":
-                    {
-                        right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                        CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
-                        break;
-                    }
+                {
+                    right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                    TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
+                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    break;
+                }
                 case "CardGameObject":
-                    {
-                        right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                        CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
-                        Debug.Log("ENTERED CARDGO");
-                        break;
-                    }
+                {
+                    right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
+                    CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
+                    Debug.Log("ENTERED CARDGO");
+                    break;
+                }
                 default:
-                    {
-                        Debug.Log("ENTERED HERE");
-                        break;
-                    }
+                {
+                    Debug.Log("ENTERED HERE");
+                    break;
+                }
             }
 
             if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
@@ -160,7 +157,11 @@ private void Start()
                     Right_ChangeHandState((int)HandState.GRABBING, right_blockChangeAnimation);
                     right_blockChangeAnimation = true;
                 }
+                return;
             }
+
+            if (hit.collider.tag == "RaycastInteractable")
+            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
         }
     }
     protected virtual void RightHand_SelectInteractionUp()
@@ -225,19 +226,23 @@ private void Start()
                     right_lastInteractedObject.RotateCardToDisplayVR();
                     displayingCard = true;
 
-                        photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, right_blockChangeAnimation);
-                        Right_ChangeHandState((int)HandState.INTERACT, right_blockChangeAnimation);
-                        right_blockChangeAnimation = true;
+                    photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, right_blockChangeAnimation);
+                    Right_ChangeHandState((int)HandState.INTERACT, right_blockChangeAnimation);
+                    right_blockChangeAnimation = true;
                     break;
                 }
                 case "RaycastInteractable":
                 {
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
-                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
 
-                        photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, right_blockChangeAnimation);
-                        Right_ChangeHandState((int)HandState.INTERACT, right_blockChangeAnimation);
-                        right_blockChangeAnimation = true;
+                    if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    else
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
+
+                    photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, right_blockChangeAnimation);
+                    Right_ChangeHandState((int)HandState.INTERACT, right_blockChangeAnimation);
+                    right_blockChangeAnimation = true;
                     break;
                 }
             }
@@ -314,7 +319,11 @@ private void Start()
                     Left_ChangeHandState((int)HandState.GRABBING, left_blockChangeAnimation);
                     left_blockChangeAnimation = true;
                 }
+                return;
             }
+
+            if (hit.collider.tag == "RaycastInteractable")
+            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
         }
     }
     protected virtual void LeftHand_SelectInteractionUp()
@@ -383,12 +392,17 @@ private void Start()
                     }
                 case "RaycastInteractable":
                 {
-                    lastInteractedRaycastGameObject = hit.transform.gameObject;
-                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
+                    lastInteractedRaycastGameObject = hit.transform.gameObject; 
+
+                    if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    else
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
 
                     photonView.RPC("Left_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, left_blockChangeAnimation);
-                        Left_ChangeHandState((int)HandState.INTERACT, left_blockChangeAnimation);
-                        left_blockChangeAnimation = true;
+                    Left_ChangeHandState((int)HandState.INTERACT, left_blockChangeAnimation);
+                    left_blockChangeAnimation = true;
+
                     break;
                 }
             }
