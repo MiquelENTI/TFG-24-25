@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class RayCastEndTurn : MonoBehaviour
+public class RayCastEndTurn : RayCastInteractable
 {
     TurnManagerScript turnManagerScript;
 
@@ -12,7 +12,7 @@ public class RayCastEndTurn : MonoBehaviour
         turnManagerScript = TurnManagerScript.Instance;
     }
 
-    public void Interact(bool isBluePlayer)
+    public override void Interact(bool isBluePlayer)
     {
         if (turnManagerScript.GetIsTurnBlue() == isBluePlayer || turnManagerScript.GetTurnBypass())
         {

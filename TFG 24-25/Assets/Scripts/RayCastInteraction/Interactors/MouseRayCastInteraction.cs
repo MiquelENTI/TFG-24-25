@@ -68,9 +68,13 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 }
                 case "RaycastInteractable":
                 {
-                        Debug.Log("CLICKED BELL");
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
-                    lastInteractedRaycastGameObject.GetComponent<RayCastEndTurn>().Interact(isBluePlayer);
+
+                    if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    else
+                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
+
                     break;
                 }
                 default:
@@ -144,7 +148,11 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 lastInteractedObject.SeeTokenCard();
                 lastInteractedObject.ToggleCardToDisplay(true);
                 displayingCard = true;
+                return;
             }
+
+            if (hit.collider.tag == "RaycastInteractable")
+            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
         }
     }
 
