@@ -23,14 +23,14 @@ public class MyEventHandler : Singleton<MyEventHandler>
         {
             photonView.RPC("RPC_MoveToken", RpcTarget.AllBuffered, cellId, characterId);
             photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
-            EffectsManager.Instance.RemoveTeamEffects();
+            VFXManager.Instance.RemoveTeamHighlights();
         });
 
         spawnToken.AddListener((int cellId, int characterId, bool bypassSpawn) =>
         {
             photonView.RPC("RPC_SpawnToken", RpcTarget.AllBuffered, cellId, characterId, bypassSpawn);
             photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
-            EffectsManager.Instance.RemoveTeamEffects();
+            VFXManager.Instance.RemoveTeamHighlights();
         });
         
     }

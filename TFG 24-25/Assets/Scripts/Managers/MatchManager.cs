@@ -1,16 +1,14 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-using Unity.VisualScripting;
 
 public class MatchManager : MonoBehaviourPunCallbacks
 {
-    public GameObject playerPrefab;
-    public Vector3 spawnPositionPlayer1 = new Vector3(11.8f, -8.7f, -0.14f);
-    public Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -4.15f);
+    [SerializeField] private GameObject playerPrefab;
+
+    [SerializeField] private Vector3 spawnPositionPlayer1 = new Vector3(11.8f, -8.7f, -0.14f);
+    [SerializeField] private Vector3 spawnPositionPlayer2 = new Vector3(-8.0f, -8.7f, -4.15f);
 
     void Start()
     {

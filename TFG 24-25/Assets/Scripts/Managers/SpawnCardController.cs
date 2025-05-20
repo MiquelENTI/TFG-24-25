@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
 
 public class SpawnCardController : Singleton<SpawnCardController>
 {
-    [SerializeField] GameObject tokenPrefabBlue;
-    [SerializeField] GameObject tokenPrefabRed;
-
     public PhotonView photonView;
+
+    [SerializeField] private GameObject tokenPrefabBlue;
+    [SerializeField] private GameObject tokenPrefabRed;
+
 
     private void Start()
     {

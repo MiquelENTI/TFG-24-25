@@ -6,28 +6,20 @@ using TMPro;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    PhotonView photonView;
+    private PhotonView photonView;
 
-    public int BlueScore;
-    public int RedScore;
+    public int blueScore = 0;
+    public int redScore = 0;
 
-    Vector3 blueCoinSpawnPos = new(-0.67f, 1.0f, -0.85f);
-    Vector3 redCoinSpawnPos = new(1.4f, 1.0f, 0.2f);
-
-    void Start()
-    {
-        photonView = GetComponent<PhotonView>();
-
-        BlueScore = 0;
-        RedScore = 0;
-    }
+    private Vector3 blueCoinSpawnPos = new(-0.67f, 1.0f, -0.85f);
+    private Vector3 redCoinSpawnPos = new(1.4f, 1.0f, 0.2f);
 
     [PunRPC]
     public void UpdateScore(TeamType teamType, int amount)
     {
         if (teamType == TeamType.BLUE && PhotonNetwork.IsMasterClient)
         {
-            BlueScore += amount;
+            blueScore += amount;
 
             for (int i = 0; i < amount; i++)
             {
@@ -36,7 +28,7 @@ public class ScoreManager : Singleton<ScoreManager>
         }
         else
         {
-            RedScore += amount;
+            redScore += amount;
 
             for (int i = 0; i < amount; i++)
             {

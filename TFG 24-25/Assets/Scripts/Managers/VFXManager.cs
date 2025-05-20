@@ -1,23 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
 public enum TileHighlightState { Movement, Attack, Occupied }
 
-public class EffectsManager : Singleton<EffectsManager>
+public class VFXManager : Singleton<VFXManager>
 {
-    Vector3 posOffset;
+    private Vector3 posOffset = new Vector3(0, 0.03f, 0);
 
-    List<GameObject> blueHighlightList = new List<GameObject>();
-    List<GameObject> redHighlightList = new List<GameObject>();
+    private List<GameObject> blueHighlightList = new List<GameObject>();
+    private List<GameObject> redHighlightList = new List<GameObject>();
 
-    void Start()
-    {
-        posOffset = new Vector3(0, 0.03f, 0);
-    }
 
-    public void PlayFxInPosition(string effectName, Vector3 pos)
+    public void PlayVFXInPosition(string effectName, Vector3 pos)
     {
         PhotonNetwork.Instantiate("Particles/" + effectName, pos + posOffset, Quaternion.identity);
     }
@@ -35,7 +30,7 @@ public class EffectsManager : Singleton<EffectsManager>
         }
     }
 
-    public void RemoveTeamEffects()
+    public void RemoveTeamHighlights()
     {
         if (PhotonNetwork.IsMasterClient)
         {

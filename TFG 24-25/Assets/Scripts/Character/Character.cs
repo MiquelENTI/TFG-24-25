@@ -367,7 +367,7 @@ public class Character
 
     protected virtual void OnMovementVFX(string vfxName = "Stomp")
     {
-        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
+        VFXManager.Instance.PlayVFXInPosition(vfxName, token.transform.position);
     }
         
     protected virtual void AttackSFX()
@@ -377,8 +377,8 @@ public class Character
     
     protected virtual void OnAttackedVFX()
     {
-        EffectsManager.Instance.PlayFxInPosition("Sparks", token.transform.position);
-        EffectsManager.Instance.PlayFxInPosition("Explosion", token.transform.position);
+        VFXManager.Instance.PlayVFXInPosition("Sparks", token.transform.position);
+        VFXManager.Instance.PlayVFXInPosition("Explosion", token.transform.position);
     }
 
     protected virtual void OnSpawnSFX()
@@ -388,11 +388,11 @@ public class Character
 
     protected virtual void OnSpawnVFX(string vfxName = "Stomp")
     {
-        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
+        VFXManager.Instance.PlayVFXInPosition(vfxName, token.transform.position);
     }
 
     protected virtual void HealVFX(string vfxName = "Heal")
     {
-        EffectsManager.Instance.PlayFxInPosition(vfxName, token.transform.position);
+        VFXManager.Instance.PlayVFXInPosition(vfxName, token.transform.position);
     }
 }

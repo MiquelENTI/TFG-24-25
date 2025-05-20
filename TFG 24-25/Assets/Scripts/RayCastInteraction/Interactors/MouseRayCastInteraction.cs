@@ -125,7 +125,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 }
         }
 
-        EffectsManager.Instance.RemoveTeamEffects();
+        VFXManager.Instance.RemoveTeamHighlights();
     }
 
     protected virtual void RightClickDownAction()
