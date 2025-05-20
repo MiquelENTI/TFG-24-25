@@ -3,13 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public int roomSelectionSceneIndex = 1;
+    private int mainMenuSceneIndex = 0;
 
-    public int gameSceneIndex = 2;
+    private int gameSceneIndex = 1;
 
-    public int creditsSceneIndex = 3;
+    private int creditsSceneIndex = 2;
 
-    public int mainMenuSceneIndex = 0;
+    // private int roomSelectionSceneIndex = 1;
 
     public void PlayGame()
     {
