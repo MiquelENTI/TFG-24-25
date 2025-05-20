@@ -14,7 +14,7 @@ public class LecternOnboarding : MonoBehaviour
 
     private void Start()
     {
-        onboardingImage = transform.GetChild(0).gameObject;
+        onboardingImage = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     public void ChangeToNewPage(int index)
