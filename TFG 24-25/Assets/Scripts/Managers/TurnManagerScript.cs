@@ -31,7 +31,9 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
     public ScoreManager scoreManager; 
     public GameObject finalCanvas;
-    public TMP_Text winnerText;
+    public GameObject redWinGO;
+    public GameObject blueWinGO;
+
 
     public bool isPCVersion = true;
 
@@ -77,14 +79,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             }
         }
 
-        if (winnerText == null && finalCanvas != null)
-        {
-            winnerText = finalCanvas.transform.Find("Winner").GetComponent<TMP_Text>();
-            if (winnerText == null)
-            {
-                Debug.LogError("Winner Text no encontrado como hijo de Final Canvas.");
-            }
-        }
+        if (redWinGO != null) redWinGO.SetActive(false);
+        if (blueWinGO != null) blueWinGO.SetActive(false);
 
         StartTurnTimer();
     }
@@ -244,18 +240,22 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
 
                 finalCanvas.SetActive(true);
 
+
                 if (scoreManager.BlueScore > scoreManager.RedScore)
                 {
-                    winnerText.text = "Blue Wins!";
-                    winnerText.color = Color.blue;
+                    if (blueWinGO != null) blueWinGO.SetActive(true);
+                    if (redWinGO != null) redWinGO.SetActive(false);
+
                     photonView.RPC("PlayEndGameAudio", RpcTarget.All, true);
                 }
                 else if (scoreManager.RedScore > scoreManager.BlueScore)
                 {
-                    winnerText.text = "Red Wins!";
-                    winnerText.color = Color.red;
+                    if (redWinGO != null) redWinGO.SetActive(true);
+                    if (blueWinGO != null) blueWinGO.SetActive(false);
+
                     photonView.RPC("PlayEndGameAudio", RpcTarget.All, false);
                 }
+
             }
         }
 
