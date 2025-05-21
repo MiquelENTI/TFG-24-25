@@ -152,7 +152,16 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             }
 
             if (hit.collider.tag == "RaycastInteractable")
-            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
+            {
+                lastInteractedRaycastGameObject = hit.transform.gameObject;
+
+                lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); 
+            }
+            else
+            {
+                lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().ResetStatus();
+                lastInteractedRaycastGameObject = null;
+            }
         }
     }
 
