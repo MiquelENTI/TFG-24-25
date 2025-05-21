@@ -11,8 +11,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public bool isPCVersion = true;
     [SerializeField] private bool turnBypass;
 
-    int turnCounter = 1;
-    int drawCardsStart = 4;
+    private int turnCounter = 1;
+    private int drawCardsStart = 4;
 
     PhotonView photonView;
 

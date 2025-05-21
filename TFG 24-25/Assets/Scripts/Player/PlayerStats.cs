@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class PlayerStats : Singleton<PlayerStats>
 {
-    int totalMana = 15;
-    int currentMana = 15;
+    private int totalMana = 15;
+    private int currentMana = 15;
 
-    [SerializeField] TMP_Text[] manaBottleTexts = new TMP_Text[2];
+    [SerializeField] private TMP_Text[] manaBottleTexts = new TMP_Text[2];
 
     private void Start()
     {

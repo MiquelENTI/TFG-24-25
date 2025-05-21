@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseRayCastInteraction : MonoBehaviour
 {
+    protected bool isBluePlayer;
+    protected PhotonView photonView;
+
     protected PlayerInputs playerInputs;
     protected TurnManagerScript turnManagerScript;
     protected CardHold cardHold;
@@ -13,15 +13,11 @@ public class BaseRayCastInteraction : MonoBehaviour
     protected Camera playerCamera;
 
     protected DragableGameObject lastInteractedObject;
-
     protected GameObject lastInteractedRaycastGameObject;
-
     protected RayCastTile rayCastTile;
 
-    protected bool isBluePlayer;
-    protected PhotonView photonView;
-
     protected bool displayingCard = false;
+
     private void Awake()
     {
         playerInputs = new PlayerInputs();
