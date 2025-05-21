@@ -812,7 +812,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 3135373581665699360}
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
@@ -858,10 +859,14 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638827523186092636
+=======
+  lastModified: 638833798164398252
+>>>>>>> origin/feature/MenuSounds
   FileSizes:
   - Name: Desktop
-    Value: 19708864
+    Value: 19709824
   Exists: 1
 --- !u!114 &-314076516874560806
 MonoBehaviour:
@@ -1036,7 +1041,11 @@ MonoBehaviour:
   - {fileID: -631291036560247942}
   StringsBanks:
   - {fileID: 5514065779183853030}
+<<<<<<< HEAD
   cacheTime: 638827523186092636
+=======
+  cacheTime: 638833798164482091
+>>>>>>> origin/feature/MenuSounds
   cacheVersion: 131621
 --- !u!114 &263606321119843023
 MonoBehaviour:
@@ -1337,6 +1346,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3621
+--- !u!114 &3135373581665699360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Play_SNP_PausaJuego/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3397957695
+    data2: 2432489433
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &3613697040402202357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1582,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 8331704225276973437}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1622,10 +1656,14 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638825875742665599
+=======
+  lastModified: 638833798164482091
+>>>>>>> origin/feature/MenuSounds
   FileSizes:
   - Name: Desktop
-    Value: 4942
+    Value: 4984
   Exists: 1
 --- !u!114 &5565977621892053441
 MonoBehaviour:
@@ -1870,8 +1908,226 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
   Length: 2995
 --- !u!114 &-7454514411026015022
+=======
+  Length: 3500
+--- !u!114 &6691900899270157984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/CHarybdis/Charybdis
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/CHarybdis/Charybdis
+  Guid:
+    Data1: -244514075
+    Data2: 1129098848
+    Data3: -1743540300
+    Data4: -264635107
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6723
+--- !u!114 &7029685888488965448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/BOWLING/Inici_Bowling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/BOWLING/Inici_Bowling
+  Guid:
+    Data1: -460635216
+    Data2: 1306527500
+    Data3: 1243729079
+    Data4: 936190727
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7278062641369860054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/Fantasma/Fantasma_attack
+  Guid:
+    Data1: -806062320
+    Data2: 1328401407
+    Data3: -1767149133
+    Data4: -8837925
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2635
+--- !u!114 &7308536992058083620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_SELECT
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/GIANT/GIANT_SELECT
+  Guid:
+    Data1: -2054041348
+    Data2: 1192080554
+    Data3: -1714145381
+    Data4: 1103842744
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &7467599036073223200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Button_Credits
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Button_Credits
+  Guid:
+    Data1: -853952236
+    Data2: 1295968939
+    Data3: 666327722
+    Data4: 525825893
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2627
+--- !u!114 &8109555411069369058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/EFFECTS/Flash/FLASH
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/EFFECTS/Flash/FLASH
+  Guid:
+    Data1: -1945005269
+    Data2: 1299605566
+    Data3: -1753413979
+    Data4: 512706616
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3973
+--- !u!114 &8331704225276973437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SNP_PausaJuego/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3397957695
+    data2: 2432489433
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8354041839848056725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_Select
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CARTAS/MONSTERS/ARCHER/Archer_Select
+  Guid:
+    Data1: 924272241
+    Data2: 1097883554
+    Data3: -1486527583
+    Data4: -410045363
+  Banks:
+  - {fileID: -631291036560247942}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1321
+--- !u!114 &8869352518735920610
+>>>>>>> origin/feature/MenuSounds
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

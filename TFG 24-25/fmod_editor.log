@@ -1,6 +1,7 @@
 [LOG] System::create                           : Header version = 2.02.25. Current version = 2.02.25.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
 [LOG] SystemI::init                            : Initialize version=20225 (147536), maxchannels=256, flags=0x00020000
+<<<<<<< HEAD
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
@@ -14,12 +15,208 @@
 =======
 [LOG] AsyncManager::init                       : manager 0000017360223728 isAsync 0 updatePeriod 0.02
 >>>>>>> origin/FixMenus
+=======
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0x3cd4c0608 isAsync 0 updatePeriod 0.02
+>>>>>>> origin/feature/MenuSounds
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (0x17bc84e98)
+[LOG] SoundI::release                          :     242470-household_wood_chair_movement_on_wood_floor-05 (0x17bc843c8)
+[LOG] SoundI::release                          :  (0x16bfc0e98)
+[LOG] SoundI::release                          :     326406-Office_Chair-1 (0x345f226d8)
+[LOG] SoundI::release                          :  (0x345fa3ad8)
+[LOG] SoundI::release                          :     242469-household_wood_chair_movement_on_wood_floor-04 (0x3c2d9c398)
+[LOG] SoundI::release                          :  (0x17bc0ca08)
+[LOG] SoundI::release                          :     95135-Dice_roll_table_board_game-BLASTWAVEFX-29338 (0x345f9b8d8)
+[LOG] SoundI::release                          :  (0x345faa688)
+[LOG] SoundI::release                          :     81901-Dice_two_roll_felt_table-BLASTWAVEFX-15947 (0x345b33028)
+[LOG] SoundI::release                          :  (0x3dfabdc28)
+[LOG] SoundI::release                          :     79662-Dice_two_roll_hit_settle_felt_table-BLASTWAVEFX-15949 (0x3d4fbb2e8)
+[LOG] SoundI::release                          :  (0x17bccfcc8)
+[LOG] SoundI::release                          :     82332-Dice_two_roll_hit_backing_settle_felt_table-BLASTWAVEFX-15948 (1) (0x16f8d8878)
+[LOG] SoundI::release                          :  (0x17bc05718)
+[LOG] SoundI::release                          :     82332-Dice_two_roll_hit_backing_settle_felt_table-BLASTWAVEFX-15948 (0x17bce0638)
+[LOG] SoundI::release                          :  (0x16f895088)
+[LOG] SoundI::release                          :     18126-throwing_dice (0x16f8e24c8)
+[LOG] SoundI::release                          :  (0x17bc25058)
+[LOG] SoundI::release                          :     203668-Middle-aged_intense_male_laughter_-short- (0x16bf55538)
+[LOG] SoundI::release                          :  (0x345f3d878)
+[LOG] SoundI::release                          :     203524-Joyful_male_laughter_02 (0x3c5a9b7c8)
+[LOG] SoundI::release                          :  (0x3cdbcc748)
+[LOG] SoundI::release                          :     460735-CERMImpt-Broken_Ceramic_Mug_Tap_Slide_Scrape-AYCEA-none-ST-CO100K-MKH30 (0x345b08d68)
+[LOG] SoundI::release                          :  (0x16f8a0978)
+[LOG] SoundI::release                          :     315993-DNE_GLASS_Big_Clink_Multiple_5 (0x16f89dff8)
+[LOG] SoundI::release                          :  (0x17bca55d8)
+[LOG] SoundI::release                          :     315989-DNE_GLASS_Big_Clink_Multiple_1 (0x17bcd9118)
+[LOG] SoundI::release                          :  (0x3ca9188a8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr00 (0x3ca918a18)
+[LOG] SoundI::release                          :  (0x3ca91bad8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr01 (0x3ca91bc48)
+[LOG] SoundI::release                          :  (0x3ca9168b8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr02 (0x3ca916a28)
+[LOG] SoundI::release                          :  (0x3ca921278)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr03 (0x3ca9213e8)
+[LOG] SoundI::release                          :  (0x3ca922088)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr04 (0x3ca9221f8)
+[LOG] SoundI::release                          :  (0x3ca9148c8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr05 (0x3ca914a38)
+[LOG] SoundI::release                          :  (0x3ca91f658)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr06 (0x3ca91f7c8)
+[LOG] SoundI::release                          :  (0x3ca918418)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr07 (0x3ca918588)
+[LOG] SoundI::release                          :  (0x3ca91e3e8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr08 (0x3ca91e558)
+[LOG] SoundI::release                          :  (0x3ca913ca8)
+[LOG] SoundI::release                          :     Derrota_av_npc_ao_VO_rr09 (0x3ca913e18)
+[LOG] SoundI::release                          :  (0x3ca920918)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr00 (0x3ca920a88)
+[LOG] SoundI::release                          :  (0x3ca91a408)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr01 (0x3ca91a578)
+[LOG] SoundI::release                          :  (0x3ca91bf68)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr02 (0x3ca91c0d8)
+[LOG] SoundI::release                          :  (0x3ca920468)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr03 (0x3ca9205d8)
+[LOG] SoundI::release                          :  (0x3ca91b1b8)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr04 (0x3ca91b328)
+[LOG] SoundI::release                          :  (0x3ca91c888)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr05 (0x3ca91c9f8)
+[LOG] SoundI::release                          :  (0x3ca91fb08)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr06 (0x3ca91fc78)
+[LOG] SoundI::release                          :  (0x3ca91c3f8)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr07 (0x3ca91c568)
+[LOG] SoundI::release                          :  (0x3ca91cd18)
+[LOG] SoundI::release                          :     Derrota_Larga_av_npc_ao_VO_rr08 (0x3ca91ce88)
+[LOG] SoundI::release                          :  (0x3ca91ffb8)
+[LOG] SoundI::release                          :     Múltiples kills_av_npc_ao_VO_rr00 (0x3ca920128)
+[LOG] SoundI::release                          :  (0x3ca916428)
+[LOG] SoundI::release                          :     Múltiples kills_av_npc_ao_VO_rr01 (0x3ca916598)
+[LOG] SoundI::release                          :  (0x3ca921728)
+[LOG] SoundI::release                          :     Múltiples kills_av_npc_ao_VO_rr02 (0x3ca921898)
+[LOG] SoundI::release                          :  (0x3ca91ed08)
+[LOG] SoundI::release                          :     Múltiples kills_av_npc_ao_VO_rr03 (0x3ca91ee78)
+[LOG] SoundI::release                          :  (0x3ca913fa8)
+[LOG] SoundI::release                          :     Múltiples kills_av_npc_ao_VO_rr04 (0x3ca914118)
+[LOG] SoundI::release                          :  (0x3ca91dac8)
+[LOG] SoundI::release                          :     Jugador inactivo_av_npc_ao_VO_rr00 (0x3ca91dc38)
+[LOG] SoundI::release                          :  (0x3ca91df58)
+[LOG] SoundI::release                          :     Jugador inactivo_av_npc_ao_VO_rr01 (0x3ca91e0c8)
+[LOG] SoundI::release                          :  (0x3ca917af8)
+[LOG] SoundI::release                          :     Jugador inactivo_av_npc_ao_VO_rr02 (0x3ca917c68)
+[LOG] SoundI::release                          :  (0x3ca9151e8)
+[LOG] SoundI::release                          :     Jugador inactivo_av_npc_ao_VO_rr03 (0x3ca915358)
+[LOG] SoundI::release                          :  (0x3ca9171d8)
+[LOG] SoundI::release                          :     Jugador inactivo_av_npc_ao_VO_rr04 (0x3ca917348)
+[LOG] SoundI::release                          :  (0x3ca917f88)
+[LOG] SoundI::release                          :     Cambio de turno _av_npc_ao_VO_rr01 (0x3ca9180f8)
+[LOG] SoundI::release                          :  (0x3ca91d1a8)
+[LOG] SoundI::release                          :     Cambio de turno _av_npc_ao_VO_rr02 (0x3ca91d318)
+[LOG] SoundI::release                          :  (0x3ca915678)
+[LOG] SoundI::release                          :     Cambio de turno _av_npc_ao_VO_rr03 (0x3ca9157e8)
+[LOG] SoundI::release                          :  (0x3ca914438)
+[LOG] SoundI::release                          :     Cambio de turno _av_npc_ao_VO_rr04 (0x3ca9145a8)
+[LOG] SoundI::release                          :  (0x3ca91f1a8)
+[LOG] SoundI::release                          :     Cambio de turno_av_npc_ao_VO_rr00 (0x3ca91f318)
+[LOG] SoundI::release                          :  (0x3ca919ae8)
+[LOG] SoundI::release                          :     General_av_npc_ao_VO_rr00 (0x3ca919c58)
+[LOG] SoundI::release                          :  (0x3ca915b08)
+[LOG] SoundI::release                          :     General_av_npc_ao_VO_rr01 (0x3ca915c78)
+[LOG] SoundI::release                          :  (0x3ca921bd8)
+[LOG] SoundI::release                          :     General_av_npc_ao_VO_rr02 (0x3ca921d48)
+[LOG] SoundI::release                          :  (0x3ca91a898)
+[LOG] SoundI::release                          :     General_av_npc_ao_VO_rr03 (0x3ca91aa08)
+[LOG] SoundI::release                          :  (0x3ca91e878)
+[LOG] SoundI::release                          :     General_av_npc_ao_VO_rr04 (0x3ca91e9e8)
+[LOG] SoundI::release                          :  (0x3ca915f98)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr00 (0x3ca916108)
+[LOG] SoundI::release                          :  (0x3ca916d48)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr01 (0x3ca916eb8)
+[LOG] SoundI::release                          :  (0x3ca919658)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr02 (0x3ca9197c8)
+[LOG] SoundI::release                          :  (0x3ca917668)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr03 (0x3ca9177d8)
+[LOG] SoundI::release                          :  (0x3ca918d38)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr04 (0x3ca918ea8)
+[LOG] SoundI::release                          :  (0x3ca91d638)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr05 (0x3ca91d7a8)
+[LOG] SoundI::release                          :  (0x3ca9191c8)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr06 (0x3ca919338)
+[LOG] SoundI::release                          :  (0x3ca919f78)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr07 (0x3ca91a0e8)
+[LOG] SoundI::release                          :  (0x3ca914d58)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr08 (0x3ca914ec8)
+[LOG] SoundI::release                          :  (0x3ca91ad28)
+[LOG] SoundI::release                          :     Victoria_av_npc_ao_VO_rr09 (0x3ca91ae98)
+[LOG] SoundI::release                          :  (0x3ca920dc8)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr00 (0x3ca920f38)
+[LOG] SoundI::release                          :  (0x3ca91b648)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr01 (0x3ca91b7b8)
+[LOG] SoundI::release                          : 396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x3cb0fea78)
+[LOG] SoundI::release                          :     396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x3e0fead58)
+[LOG] SoundI::release                          :     396227-Ski_Resort-Bar_Terrace-20-30_People_Talk-Spanish-French-Dutch (0x3e0feaee8)
+[LOG] SoundI::release                          : Roomtone_Taverna_00 (0x3cb0f0048)
+[LOG] SoundI::release                          :     Roomtone_Taverna_00 (0x3e0f90188)
+[LOG] SoundI::release                          :     Roomtone_Taverna_00 (0x3e0fea638)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Treble_Flute (0x3cb4e3698)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3ca84e228)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3ca84e3b8)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Harp (0x3cb49ed68)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3ca84d7f8)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3ca84d988)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Laúd (0x3cb4c0508)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3ca82f308)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3ca833018)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Treble_Flute (0x3cb4e4088)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3ca84fc38)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Treble_Flute (0x3ca84fdc8)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Harp (0x3cb4e3d38)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3ca84f388)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Harp (0x3ca84f518)
+[LOG] SoundI::release                          : GAMEPLAY_TAVERNA-Laúd (0x3cb4e39e8)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3ca84ead8)
+[LOG] SoundI::release                          :     GAMEPLAY_TAVERNA-Laúd (0x3ca84ec68)
+[LOG] SoundI::release                          :  (0x3e63d6c38)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr02 (0x3e63d6da8)
+[LOG] SoundI::release                          :  (0x3bf74a1d8)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr03 (0x3bd199548)
+[LOG] SoundI::release                          :  (0x3e63d5268)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr04 (0x3e63d53d8)
+[LOG] SoundI::release                          :  (0x3cdc5f8f8)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr05 (0x3cdc5efa8)
+[LOG] SoundI::release                          :  (0x3e63d0868)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr06 (0x3e63d09d8)
+[LOG] SoundI::release                          :  (0x164a24d68)
+[LOG] SoundI::release                          :     Victoria_Larga_av_npc_ao_VO_rr07 (0x3bd1b43c8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
@@ -31,3 +228,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

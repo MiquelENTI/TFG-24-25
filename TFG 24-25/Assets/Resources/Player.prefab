@@ -147,6 +147,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 75211252616006324}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OptionGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8472611761422229219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +469,13 @@ MonoBehaviour:
   menu: {fileID: 4083086346017603723}
   hand: {fileID: 0}
   IsBlue: 0
+  menuSnapshot:
+    Guid:
+      Data1: -1013353041
+      Data2: 1232927490
+      Data3: 623284904
+      Data4: -598936489
+    Path: snapshot:/SNP_PausaJuego
 --- !u!114 &304389311319399862
 MonoBehaviour:
   m_ObjectHideFlags: 0
