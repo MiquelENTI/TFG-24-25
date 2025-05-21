@@ -16,4 +16,8 @@ public class RayCastInteractable : MonoBehaviour
     {
 
     }
+    public virtual void ResetStatus()
+    {
+
+    }
 }

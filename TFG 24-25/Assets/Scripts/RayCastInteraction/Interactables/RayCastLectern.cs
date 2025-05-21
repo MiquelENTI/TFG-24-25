@@ -19,6 +19,11 @@ public class RayCastLectern : RayCastInteractable
 
     public override void Inspect()
     {
-        lectern.DisplayPage();
+        lectern.DisplayPage(isLeft);
+    }
+
+    public override void ResetStatus()
+    {
+        lectern.CloseOnboardingImage();
     }
 }

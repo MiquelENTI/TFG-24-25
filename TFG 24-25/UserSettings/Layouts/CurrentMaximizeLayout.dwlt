@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 723
+  controlID: 7857
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 724
+  controlID: 7858
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 725
+  controlID: 7859
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,8 +194,8 @@ MonoBehaviour:
     y: 0
     width: 312
     height: 613
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -238,9 +238,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48570000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 1afbfffff8860000
+      m_SelectedIDs: ae880000
+      m_LastClickedID: 34990
+      m_ExpandedIDs: fafaffffdc84000042870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -625,7 +625,7 @@ MonoBehaviour:
       sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 14.575716, y: -0.7358122, z: -12.7216625}
+    m_Target: {x: 851.89056, y: 747.49615, z: -1121.9362}
     speed: 2
-    m_Value: {x: 14.575716, y: -0.7358122, z: -12.7216625}
+    m_Value: {x: 851.89056, y: 747.49615, z: -1121.9362}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -682,13 +682,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.01447397, y: -0.908735, z: 0.013347248, w: -0.41680095}
+    m_Target: {x: 0.08965837, y: 0.0060410276, z: -0.014776554, w: 0.99582946}
     speed: 2
-    m_Value: {x: -0.014474621, y: -0.90877587, z: 0.013347848, w: -0.4168197}
+    m_Value: {x: 0.08965973, y: 0.006041119, z: -0.0147767775, w: 0.99584454}
   m_Size:
-    m_Target: 10
+    m_Target: 40.8998
     speed: 2
-    m_Value: 10
+    m_Value: 40.8998
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -706,7 +706,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.29792044, y: -0.45988715, z: 0.15751071, w: -0.8214914}
+  m_LastSceneViewRotation: {x: 0.10627072, y: 0.6405662, z: -0.090141274, w: 0.7551332}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -785,7 +785,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Cells
+    - Assets/Models/A_Book
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -793,16 +793,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Cells
+  - Assets/Models/A_Book
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lokyy\Desktop\Repos Git\TFG-24-25\TFG 24-25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 63}
-    m_SelectedIDs: 569c0000
-    m_LastClickedID: 40022
-    m_ExpandedIDs: 00000000849b00004a9c000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: b09e0000
+    m_LastClickedID: 40624
+    m_ExpandedIDs: 00000000ce9c0000289e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -830,7 +830,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000849b000000ca9a3b
+    m_ExpandedIDs: 00000000ce9c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -855,9 +855,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 48570000
-    m_LastClickedInstanceID: 22344
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: ae880000
+    m_LastClickedInstanceID: 34990
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c8cb000024a7000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
