@@ -8,40 +8,32 @@ using UnityEngine.SceneManagement;
 public class TurnManagerScript : Singleton<TurnManagerScript>
 {
     [SerializeField] private bool IsTurnBlue = true;
-    int turnCounter = 1;
+    public bool isPCVersion = true;
+    [SerializeField] private bool turnBypass;
+
+    private int turnCounter = 1;
+    private int drawCardsStart = 4;
+
+    PhotonView photonView;
 
     [SerializeField] public GameObject player1GameObject;
     [SerializeField] public GameObject player2GameObject;
 
-    [SerializeField] private int[] startTurnAudioCodesForAll = { 003002001, 003002002, 003002003 };
-    [SerializeField] private int[] startYourTurnAudioCodes = { 004000000 };
-    [SerializeField] private int[] startEnemyTurnAudioCodes = { 003004001, 003004002 };
-
-
-    //[SerializeField] private AudioClip winAudioClip;
-    //[SerializeField] private AudioClip loseAudioClip;
-
-
     private bool player1Registered = false;
     private bool player2Registered = false;
-
-    PhotonView photonView;
-
-    int drawCardsStart = 4;
 
     public ScoreManager scoreManager; 
     public GameObject finalCanvas;
     public GameObject redWinGO;
     public GameObject blueWinGO;
 
-
-    public bool isPCVersion = true;
-
-    [SerializeField] private bool turnBypass;
-
     [SerializeField] private float turnTimeLimit = 60f;
     private float currentTurnTime;
     private bool isTurnTimerActive = false;
+
+    [SerializeField] private int[] startTurnAudioCodesForAll = { 003002001, 003002002, 003002003 };
+    [SerializeField] private int[] startYourTurnAudioCodes = { 004000000 };
+    [SerializeField] private int[] startEnemyTurnAudioCodes = { 003004001, 003004002 };
 
     [SerializeField] private int timeOutAudioCode = 004000002;
 
@@ -235,20 +227,19 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
                 }
 
                 
-                Debug.Log("Blue score is: " + scoreManager.BlueScore);
-                Debug.Log("Red score is: " + scoreManager.RedScore);
+                Debug.Log("Blue score is: " + scoreManager.blueScore);
+                Debug.Log("Red score is: " + scoreManager.redScore);
 
                 finalCanvas.SetActive(true);
 
-
-                if (scoreManager.BlueScore > scoreManager.RedScore)
+                if (scoreManager.blueScore > scoreManager.redScore)
                 {
                     if (blueWinGO != null) blueWinGO.SetActive(true);
                     if (redWinGO != null) redWinGO.SetActive(false);
 
                     photonView.RPC("PlayEndGameAudio", RpcTarget.All, true);
                 }
-                else if (scoreManager.RedScore > scoreManager.BlueScore)
+                else if (scoreManager.redScore > scoreManager.blueScore)
                 {
                     if (redWinGO != null) redWinGO.SetActive(true);
                     if (blueWinGO != null) blueWinGO.SetActive(false);

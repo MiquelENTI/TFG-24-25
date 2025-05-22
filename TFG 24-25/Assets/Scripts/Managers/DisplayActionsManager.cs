@@ -8,12 +8,12 @@ public class DisplayActionsManager : Singleton<DisplayActionsManager>
 {
     [SerializeField] private GameObject textPrefab;
 
-    Vector3 positionOffset;
+    private Vector3 positionOffset;
 
-    Color damageColor;
-    Color healColor;
-    Color pointsColor;
-    Color nameColor;
+    private Color damageColor;
+    private Color healColor;
+    private Color pointsColor;
+    private Color nameColor;
 
     private void Awake()
     {

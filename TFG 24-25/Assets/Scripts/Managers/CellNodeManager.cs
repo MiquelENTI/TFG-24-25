@@ -166,7 +166,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     {
         // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
 
-        EffectsManager.Instance.RemoveTeamEffects();
+        VFXManager.Instance.RemoveTeamHighlights();
 
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
@@ -196,21 +196,21 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
-                        EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
+                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                     // Or are on different teams, cell is highlighted with attacking color
                     else
                     {
                         // Set Cell Red and visible
-                        EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
+                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                 }
                 // The cell is empty and is highlighted with movement color
                 if (state)
                 {
-                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextCell.GetPosition()+new Vector3(0,0.02f,0));
+                    VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextCell.GetPosition()+new Vector3(0,0.02f,0));
                 }
                 //nextCell.ChangeMovementIndicatorVisibility(state);
             }
@@ -222,7 +222,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     {
         if (!state)
         {
-            EffectsManager.Instance.RemoveTeamEffects();
+            VFXManager.Instance.RemoveTeamHighlights();
         }
         // Parameter Determines Which Tiles to Highlight
         switch (teamType)
@@ -231,14 +231,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in redSpawnTiles)
                 {
-                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
+                    VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             case TeamType.BLUE:
                 // Highlight Red Spawn Tiles
                 foreach (CellNode spawnableTile in blueSpawnTiles)
                 {
-                    EffectsManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
+                    VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             default:

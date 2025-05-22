@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Photon.Pun;
 using FMODUnity;
 using FMOD.Studio;
@@ -8,7 +7,6 @@ public class PlayerController : MonoBehaviourPun
 {
     public GameObject playerCamera;
     public GameObject menu;
-    public GameObject hand;
 
     public bool IsBlue;
 
@@ -27,8 +25,6 @@ public class PlayerController : MonoBehaviourPun
     private Vector3 VR_KnightHeadOffset = new Vector3(0f, -0.155f, 0.25f);
     
    
-
-
 
     private void Awake()
     {
@@ -50,27 +46,17 @@ public class PlayerController : MonoBehaviourPun
 
         if (PhotonNetwork.IsMasterClient)
         {
-            Debug.Log("TRY");
             GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master", PC_WizardHeadOffset, VR_WizardHeadOffset);
-            Debug.Log("DONE");
-            //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
         else
         {
             GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client", PC_KnightHeadOffset, VR_KnightHeadOffset);
-            //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
 
         if (menu != null)
         {
             menu.SetActive(false);
         }
-    }
-
-    [PunRPC]
-    public void SetPlayerColor(bool isBlue)
-    {
-        IsBlue = isBlue;
     }
 
     void Update()
@@ -114,15 +100,14 @@ public class PlayerController : MonoBehaviourPun
     }
 
     [PunRPC]
+    public void SetPlayerColor(bool isBlue)
+    {
+        IsBlue = isBlue;
+    }
+
+    [PunRPC]
     public void ChangeTagMasterOrClient(bool master)
     {
-        if (master)
-        {
-            gameObject.tag = "Master";
-        }
-        else
-        {
-            gameObject.tag = "Client";
-        }
+        gameObject.tag = master ? "Master" : "Client";
     }
 }

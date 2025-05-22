@@ -1,14 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MouseRayCastInteraction : BaseRayCastInteraction
 {
-    protected Plane plane;
-
-    private bool isDragging = false;
+    private Plane plane;
 
     private WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
 
@@ -19,18 +15,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
         playerInputs.Mouse.RightClick.started += _ => RightClickDownAction();
         playerInputs.Mouse.RightClick.canceled += _ => RightClickUpAction();
-    }
-
-    void Update()
-    {
-        //if (playerInputs.Mouse.Position.ReadValue<Vector2>().y < 360.0f)
-        //{
-        //    cardHold.LookToPlayerCam();
-        //}
-        //else
-        //{
-        //    cardHold.DefaultCardRotation();
-        //}
     }
 
     protected virtual void LeftMouseDownAction()
@@ -99,8 +83,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
     
     protected virtual void LeftMouseUpAction()
     {
-        isDragging = false;
-
         if (lastInteractedObject == null)
         { return; }
 
@@ -125,7 +107,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                 }
         }
 
-        EffectsManager.Instance.RemoveTeamEffects();
+        VFXManager.Instance.RemoveTeamHighlights();
     }
 
     protected virtual void RightClickDownAction()
@@ -180,8 +162,6 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
     public virtual IEnumerator DragUpdate(GameObject clickedGameObject)
     {
         Vector3 mousePos = Vector3.zero;
-
-        isDragging = true;
 
         plane = lastInteractedObject.GetPlane();
 

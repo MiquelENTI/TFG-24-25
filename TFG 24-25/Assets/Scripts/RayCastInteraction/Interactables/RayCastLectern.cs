@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RayCastLectern : RayCastInteractable
 {
-    [SerializeField] bool isLeft;
-    LecternOnboarding lectern;
+    [SerializeField] private bool isLeft;
+    private LecternOnboarding lectern;
 
     private void Start()
     {
