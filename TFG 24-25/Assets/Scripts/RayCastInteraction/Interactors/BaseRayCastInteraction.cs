@@ -1,7 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class BaseRayCastInteraction : MonoBehaviour
+public class BaseRaycastInteraction : MonoBehaviour
 {
     protected bool isBluePlayer;
     protected PhotonView photonView;
@@ -14,7 +14,8 @@ public class BaseRayCastInteraction : MonoBehaviour
 
     protected DragableGameObject lastInteractedObject;
     protected GameObject lastInteractedRaycastGameObject;
-    protected RayCastTile rayCastTile;
+
+    protected RaycastTile raycastTile;
 
     protected bool displayingCard = false;
 

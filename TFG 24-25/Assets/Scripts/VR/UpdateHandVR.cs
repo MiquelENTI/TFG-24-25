@@ -23,7 +23,7 @@ public class UpdateHandVR : MonoBehaviour, IPunObservable
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
+            //photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
         }
     }
 

@@ -1,5 +1,5 @@
 
-public class RayCastEndTurn : RayCastInteractable
+public class RaycastEndTurn : RaycastInteractable
 {
     TurnManagerScript turnManagerScript;
 

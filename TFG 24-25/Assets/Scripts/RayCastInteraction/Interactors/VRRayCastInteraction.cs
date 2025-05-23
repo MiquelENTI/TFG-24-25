@@ -1,40 +1,35 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public enum HandState { IDLE = 0, POINTING = 1, GRABBING = 2, INTERACT = 3 }
 
-public class VRRayCastInteraction : BaseRayCastInteraction
+public class VRRaycastInteraction : BaseRaycastInteraction
 {
-    private WaitForFixedUpdate right_waitForFixedUpdate = new WaitForFixedUpdate();
-    private WaitForFixedUpdate left_waitForFixedUpdate = new WaitForFixedUpdate();
+    private GameObject right_controller;
+    private GameObject left_controller;
 
     private DragableGameObject right_lastInteractedObject;
     private DragableGameObject left_lastInteractedObject;
 
-    private RayCastTile right_rayCastTile;
-    private RayCastTile left_rayCastTile;
+    private RaycastTile right_rayCastTile;
+    private RaycastTile left_rayCastTile;
 
-    private GameObject rightController;
-    private GameObject leftController;
+    [SerializeField] private Animator right_handAnimator;
+    private HandState right_handState = HandState.IDLE;
+    private bool right_blockChangeAnimation = false;
 
-    [SerializeField] private Animator rightHandAnimator;
-    HandState right_handState = HandState.IDLE;
-    bool right_blockChangeAnimation = false;
+    [SerializeField] private Animator left_handAnimator;
+    private HandState left_handState = HandState.IDLE;
+    private bool left_blockChangeAnimation = false;
 
-    [SerializeField] private Animator leftHandAnimator;
-    HandState left_handState = HandState.IDLE;
-    bool left_blockChangeAnimation = false;
+    private WaitForFixedUpdate right_waitForFixedUpdate = new WaitForFixedUpdate();
+    private WaitForFixedUpdate left_waitForFixedUpdate = new WaitForFixedUpdate();
 
     UpdateHandVR rightHandUpdate;
     UpdateHandVR leftHandUpdate;
     
-private void Start()
+    private void Start()
     {
 
         if (!photonView.IsMine)
@@ -88,21 +83,21 @@ private void Start()
     private void Update()
     {
 
-        if (rightController != null || leftController != null) 
+        if (right_controller != null || left_controller != null) 
         {
             Right_HoverUpdate();
             Left_HoverUpdate();
             return; 
         }
 
-        if (rightController == null)
+        if (right_controller == null)
         {
-            rightController = transform.GetChild(2).GetChild(0).GetChild(2).GetChild(4).gameObject;
+            right_controller = transform.GetChild(2).GetChild(0).GetChild(2).GetChild(4).gameObject;
             rightHandUpdate = transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<UpdateHandVR>();
         }
-        if(leftController == null)
+        if(left_controller == null)
         {
-            leftController = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
+            left_controller = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
             leftHandUpdate = transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<UpdateHandVR>();
         }
     }
@@ -110,7 +105,7 @@ private void Start()
     #region RIGHT HAND
     protected virtual void RightHand_SelectInteractionDown()
     {
-        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+        Ray ray = new Ray(right_controller.transform.position, right_controller.transform.forward);
 
         RaycastHit hit;
 
@@ -161,7 +156,7 @@ private void Start()
             }
 
             if (hit.collider.tag == "RaycastInteractable")
-            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
+            { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Inspect(); }
         }
     }
     protected virtual void RightHand_SelectInteractionUp()
@@ -201,7 +196,7 @@ private void Start()
 
     protected virtual void RightHand_ActivateInteractionDown()
     {
-        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+        Ray ray = new Ray(right_controller.transform.position, right_controller.transform.forward);
 
         RaycastHit hit;
 
@@ -236,9 +231,9 @@ private void Start()
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
 
                     if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(isBluePlayer); }
                     else
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(); }
 
                     photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, right_blockChangeAnimation);
                     Right_ChangeHandState((int)HandState.INTERACT, right_blockChangeAnimation);
@@ -272,7 +267,7 @@ private void Start()
 
     protected virtual void LeftHand_SelectInteractionDown()
     {
-        Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
+        Ray ray = new Ray(left_controller.transform.position, left_controller.transform.forward);
 
         RaycastHit hit;
 
@@ -323,7 +318,7 @@ private void Start()
             }
 
             if (hit.collider.tag == "RaycastInteractable")
-            { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); }
+            { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Inspect(); }
         }
     }
     protected virtual void LeftHand_SelectInteractionUp()
@@ -361,7 +356,7 @@ private void Start()
 
     protected virtual void LeftHand_ActivateInteractionDown()
     {
-        Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
+        Ray ray = new Ray(left_controller.transform.position, left_controller.transform.forward);
 
         RaycastHit hit;
 
@@ -395,9 +390,9 @@ private void Start()
                     lastInteractedRaycastGameObject = hit.transform.gameObject; 
 
                     if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(isBluePlayer); }
                     else
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(); }
 
                     photonView.RPC("Left_ChangeHandState", RpcTarget.Others, (int)HandState.INTERACT, left_blockChangeAnimation);
                     Left_ChangeHandState((int)HandState.INTERACT, left_blockChangeAnimation);
@@ -428,22 +423,22 @@ private void Start()
 
     public virtual IEnumerator Right_DragUpdate(GameObject clickedGameObject)
     {
-        right_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
+        right_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RaycastTile>();
 
         while (playerInputs.XRIRightHandInteraction.Select.ReadValue<float>() != 0)
         {
-            right_rayCastTile.UpdateRayCast();
+            right_rayCastTile.UpdateRaycast();
             yield return right_waitForFixedUpdate;
         }
     }
 
     public virtual IEnumerator Left_DragUpdate(GameObject clickedGameObject)
     {
-        left_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
+        left_rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RaycastTile>();
 
         while (playerInputs.XRILeftHandInteraction.Select.ReadValue<float>() != 0)
         {
-            left_rayCastTile.UpdateRayCast();
+            left_rayCastTile.UpdateRaycast();
 
             yield return left_waitForFixedUpdate;
         }
@@ -451,9 +446,9 @@ private void Start()
 
     public virtual void Right_HoverUpdate()
     {
-        rightHandUpdate.HandsPositionUpdating(rightController.transform.position, rightController.transform.rotation);
+        rightHandUpdate.HandsPositionUpdating(right_controller.transform.position, right_controller.transform.rotation);
 
-        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+        Ray ray = new Ray(right_controller.transform.position, right_controller.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100))
@@ -489,8 +484,8 @@ private void Start()
 
     public virtual void Left_HoverUpdate()
     {
-        leftHandUpdate.HandsPositionUpdating(leftController.transform.position, leftController.transform.rotation);
-        Ray ray = new Ray(leftController.transform.position, leftController.transform.forward);
+        leftHandUpdate.HandsPositionUpdating(left_controller.transform.position, left_controller.transform.rotation);
+        Ray ray = new Ray(left_controller.transform.position, left_controller.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100))
@@ -525,7 +520,7 @@ private void Start()
     }
 
     [PunRPC]
-    protected void Right_ChangeHandState(int HandStateTemp, bool blockAnimation)
+    protected virtual void Right_ChangeHandState(int HandStateTemp, bool blockAnimation)
     {
         HandState newHandState = (HandState)HandStateTemp;
         
@@ -538,34 +533,34 @@ private void Start()
             {
                 case HandState.IDLE:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", false);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", false);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.POINTING:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.GRABBING:
                     {
 
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", true);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", true);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.INTERACT:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", true);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", true);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }
@@ -579,34 +574,34 @@ private void Start()
             {
                 case HandState.IDLE:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", false);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", false);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.POINTING:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.GRABBING:
                     {
 
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", true);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", true);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.INTERACT:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", true);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", true);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
@@ -615,7 +610,7 @@ private void Start()
     }
 
     [PunRPC]
-    protected void Left_ChangeHandState(int HandStateTemp, bool blockAnimation)
+    protected virtual void Left_ChangeHandState(int HandStateTemp, bool blockAnimation)
     {
         HandState newHandState = (HandState)HandStateTemp;
         
@@ -627,34 +622,34 @@ private void Start()
             {
                 case HandState.IDLE:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", false);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", false);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.POINTING:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.GRABBING:
                     {
 
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", false);
-                        leftHandAnimator.SetBool("LeftHandGrab", true);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", false);
+                        left_handAnimator.SetBool("LeftHandGrab", true);
                         left_handState = newHandState;
                         break;
                     }
                 case HandState.INTERACT:
                     {
-                        leftHandAnimator.SetBool("LeftIndexPoint", true);
-                        leftHandAnimator.SetBool("LeftIndexInteract", true);
-                        leftHandAnimator.SetBool("LeftHandGrab", false);
+                        left_handAnimator.SetBool("LeftIndexPoint", true);
+                        left_handAnimator.SetBool("LeftIndexInteract", true);
+                        left_handAnimator.SetBool("LeftHandGrab", false);
                         left_handState = newHandState;
                         break;
                     }
@@ -668,34 +663,34 @@ private void Start()
             {
                 case HandState.IDLE:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", false);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", false);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.POINTING:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.GRABBING:
                     {
 
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", false);
-                        rightHandAnimator.SetBool("RightHandGrab", true);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", false);
+                        right_handAnimator.SetBool("RightHandGrab", true);
                         right_handState = newHandState;
                         break;
                     }
                 case HandState.INTERACT:
                     {
-                        rightHandAnimator.SetBool("RightIndexPoint", true);
-                        rightHandAnimator.SetBool("RightIndexInteract", true);
-                        rightHandAnimator.SetBool("RightHandGrab", false);
+                        right_handAnimator.SetBool("RightIndexPoint", true);
+                        right_handAnimator.SetBool("RightIndexInteract", true);
+                        right_handAnimator.SetBool("RightHandGrab", false);
                         right_handState = newHandState;
                         break;
                     }

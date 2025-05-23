@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RayCastInteractable : MonoBehaviour
+public class RaycastInteractable : MonoBehaviour
 {
     public virtual void Interact() // Left Click
     {

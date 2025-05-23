@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayCastTile : MonoBehaviour
+public class RaycastTile : MonoBehaviour
 {
     [SerializeField] protected LayerMask mask;
     protected Tile previousTile;
@@ -13,7 +13,7 @@ public class RayCastTile : MonoBehaviour
         previousTile = GameObject.Find("Cell: 0-0").GetComponent<Tile>();
     }
 
-    public virtual void UpdateRayCast()
+    public virtual void UpdateRaycast()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit;

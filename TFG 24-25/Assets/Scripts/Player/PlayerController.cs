@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviourPun
 
     private void Awake()
     {
-        if (photonView.IsMine)
-            photonView.RPC("ChangeTagMasterOrClient", RpcTarget.AllBuffered, PhotonNetwork.IsMasterClient);
+        //if (photonView.IsMine)
+            //photonView.RPC("ChangeTagMasterOrClient", RpcTarget.AllBuffered, PhotonNetwork.IsMasterClient);
     }
 
     void Start()
@@ -46,11 +46,15 @@ public class PlayerController : MonoBehaviourPun
 
         if (PhotonNetwork.IsMasterClient)
         {
-            GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master", PC_WizardHeadOffset, VR_WizardHeadOffset);
+            Debug.Log("TRY");
+            //GameObject.FindGameObjectWithTag("WizardHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Master", PC_WizardHeadOffset, VR_WizardHeadOffset);
+            Debug.Log("DONE");
+            //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
         else
         {
-            GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client", PC_KnightHeadOffset, VR_KnightHeadOffset);
+            //GameObject.FindGameObjectWithTag("KnightHead").GetComponent<ChangeParentPhoton>().ChangeParentWithTag("Client", PC_KnightHeadOffset, VR_KnightHeadOffset);
+            //playerHead.transform.parent = gameObject.transform.GetChild(0);
         }
 
         if (menu != null)

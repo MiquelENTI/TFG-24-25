@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
-using UnityEngine.TextCore.Text;
 
 public class MyEventHandler : Singleton<MyEventHandler>
 {
@@ -60,6 +56,10 @@ public class MyEventHandler : Singleton<MyEventHandler>
         } 
     }
 
+    public void RemoveCharacters()
+    {
+        photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+    }
 
     [PunRPC]
     public void RPC_MoveToken(int cellId, int characterId)
@@ -71,11 +71,6 @@ public class MyEventHandler : Singleton<MyEventHandler>
     public void RPC_SpawnToken(int cellId, int characterId, bool bypassSpawn)
     {
         InvokeSpawnToken(cellId, characterId, bypassSpawn);
-    }
-
-    public void RemoveCharacters()
-    {
-        photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
     }
 
     [PunRPC]

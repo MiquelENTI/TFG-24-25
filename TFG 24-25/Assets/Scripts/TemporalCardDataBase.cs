@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
 {
-    Dictionary<int, CardStats> characterStats = new() {
+    private Dictionary<int, CardStats> characterStats = new() {
         // ManaCost, Attack, Hp, Movement amount, attack range, score multiplier, Movement type, Ability Type, Card Text
         { 1, new CharacterStats (CardType.CHARACTER, "Wizard",             3, 2,  2,  1, 8, 1, MovementType.Basic, AbilityType.onAttack,"This has infinite Attack Range.") }, // Cavalier
         { 2, new CharacterStats (CardType.CHARACTER,"Cavalier",            3, 5,  5,  1, 1, 1, MovementType.Basic, AbilityType.nothing, "This can move and attack in the same turn.") }, // Cavalier

@@ -2,7 +2,7 @@ using System.Collections;
 using Photon.Pun;
 using UnityEngine;
 
-public class MouseRayCastInteraction : BaseRayCastInteraction
+public class MouseRaycastInteraction : BaseRaycastInteraction
 {
     private Plane plane;
 
@@ -34,6 +34,8 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             if (hit.collider == null)
             { return; }
 
+            Debug.Log("MOUSE DOWN");
+
             switch (hit.collider.tag)
             {
                 case "TokenGameObject":
@@ -55,9 +57,9 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
                     lastInteractedRaycastGameObject = hit.transform.gameObject;
 
                     if (lastInteractedRaycastGameObject.name == "DingDongEndTurn")
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(isBluePlayer); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(isBluePlayer); }
                     else
-                    { lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Interact(); }
+                    { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Interact(); }
 
                     break;
                 }
@@ -137,11 +139,11 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
             {
                 lastInteractedRaycastGameObject = hit.transform.gameObject;
 
-                lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().Inspect(); 
+                lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Inspect(); 
             }
             else
             {
-                lastInteractedRaycastGameObject.GetComponent<RayCastInteractable>().ResetStatus();
+                lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().ResetStatus();
                 lastInteractedRaycastGameObject = null;
             }
         }
@@ -165,7 +167,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
         plane = lastInteractedObject.GetPlane();
 
-        rayCastTile = clickedGameObject.transform.GetChild(1).GetComponent<RayCastTile>();
+        raycastTile = clickedGameObject.transform.GetChild(1).GetComponent<RaycastTile>();
 
         while (playerInputs.Mouse.LeftClick.ReadValue<float>() != 0)
         {
@@ -178,7 +180,7 @@ public class MouseRayCastInteraction : BaseRayCastInteraction
 
                 lastInteractedObject.GetComponent<DragableGameObject>().UpdateObjectPosition(mousePos, lastInteractedObject.transform.rotation);
 
-                rayCastTile.UpdateRayCast();
+                raycastTile.UpdateRaycast();
 
                 yield return waitForFixedUpdate;
             }
