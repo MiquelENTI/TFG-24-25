@@ -174,8 +174,11 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
         bool hasCharacterJumped = false;
 
-        if (character == null) { return; }
+        if (character == null) 
+        { return; }
 
+        if (PlayerStats.Instance.GetCurrentMana() < character.GetCharacterStats().manaCost) 
+        { return; }
         
         foreach (CellConnection direction in character.GetDirections())
         {
