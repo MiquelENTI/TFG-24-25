@@ -176,9 +176,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
         if (character == null) { return; }
 
+        
         foreach (CellConnection direction in character.GetDirections())
         {
             CellNode nextCell = centralCell;
+
+            // If the character cannot move, goto check if character can attack
+            if (!character.GetCanMove())
+            { goto Attack; }
 
             // Movement
             for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
@@ -205,11 +210,17 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 }
                 //nextCell.ChangeMovementIndicatorVisibility(state);
             }
-
+            
             hasCharacterJumped = false;
             nextCell = centralCell;
 
-            // Attack
+            Attack:
+            // If character cannot attack, return function
+            if (!character.GetCanAttack())
+            {
+                return;
+            }
+
             for (int i = 0; i < character.GetCharacterStats().attackRange; i++)
             {
                 if (!nextCell.CheckConnectionNode(direction))
