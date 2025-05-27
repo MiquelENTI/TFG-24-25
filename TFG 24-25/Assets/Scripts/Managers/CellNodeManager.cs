@@ -180,6 +180,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
         {
             CellNode nextCell = centralCell;
 
+            // Movement
             for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
             {
                 if (!nextCell.CheckConnectionNode(direction))
@@ -195,26 +196,44 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
                 // If Character Exists
                 if (isCharacter != null)
-                {
-                    // And are in the same Team Skip, cell is not highlighted
-                    if (isCharacter.GetTeamType() == character.GetTeamType())
-                    {
-                        break;
-                    }
-                    // Or are on different teams, cell is highlighted with attacking color
-                    else
-                    {
-                        // Set Cell Green and visible
-                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
-                        break;
-                    }
-                }
+                { break; }
+
                 // The cell is empty and is highlighted with movement color
                 if (state)
                 {
                     VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextCell.GetPosition()+new Vector3(0,0.02f,0));
                 }
                 //nextCell.ChangeMovementIndicatorVisibility(state);
+            }
+
+            hasCharacterJumped = false;
+            nextCell = centralCell;
+
+            // Attack
+            for (int i = 0; i < character.GetCharacterStats().attackRange; i++)
+            {
+                if (!nextCell.CheckConnectionNode(direction))
+                { continue; }
+
+                // Cell To Check
+                nextCell = nextCell.GetCellByDirection(direction);
+
+                if (character.GetJumpMove() && !hasCharacterJumped)
+                { hasCharacterJumped = true; continue; }
+
+                Character isCharacter = nextCell.GetCharacter();
+
+                // If Character Exists
+                if (isCharacter != null)
+                {
+                    // And are on different teams, cell is highlighted with attacking color
+                    if (isCharacter.GetTeamType() != character.GetTeamType())
+                    {
+                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
+                        break;
+                    }
+                    break;
+                }
             }
             hasCharacterJumped = false;
         }
