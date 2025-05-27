@@ -124,7 +124,7 @@ public class CellNode
 
         return false;
     }
-    bool CanAttackOrMoveLogicJump(bool isAttacking, Character characterMoving, Vector2 diff)
+    private bool CanAttackOrMoveLogicJump(bool isAttacking, Character characterMoving, Vector2 diff)
     {
         if (!isAttacking && (diff.x == characterMoving.GetCharacterStats().movementRange || diff.y == characterMoving.GetCharacterStats().movementRange))
         {
