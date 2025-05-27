@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.TextCore.Text;
 
 public class CellNodeManager : Singleton<CellNodeManager>
 {
@@ -171,6 +172,8 @@ public class CellNodeManager : Singleton<CellNodeManager>
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
 
+        bool hasCharacterJumped = false;
+
         if (character == null) { return; }
 
         foreach (CellConnection direction in character.GetDirections())
@@ -180,19 +183,19 @@ public class CellNodeManager : Singleton<CellNodeManager>
             for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
             {
                 if (!nextCell.CheckConnectionNode(direction))
-                {
-                    continue;
-                }
+                { continue; }
 
                 // Cell To Check
                 nextCell = nextCell.GetCellByDirection(direction);
+
+                if (character.GetJumpMove() && !hasCharacterJumped)
+                { hasCharacterJumped = true; continue; }
 
                 Character isCharacter = nextCell.GetCharacter();
 
                 // If Character Exists
                 if (isCharacter != null)
                 {
-                    if (isCharacter.GetJumpMove()) { continue; }
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
@@ -201,7 +204,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // Or are on different teams, cell is highlighted with attacking color
                     else
                     {
-                        // Set Cell Red and visible
+                        // Set Cell Green and visible
                         VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
@@ -213,6 +216,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 }
                 //nextCell.ChangeMovementIndicatorVisibility(state);
             }
+            hasCharacterJumped = false;
         }
     }
 
