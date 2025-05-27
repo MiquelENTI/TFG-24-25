@@ -196,7 +196,6 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // And are in the same Team Skip, cell is not highlighted
                     if (isCharacter.GetTeamType() == character.GetTeamType())
                     {
-                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                     // Or are on different teams, cell is highlighted with attacking color
