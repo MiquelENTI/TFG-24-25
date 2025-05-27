@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRGrabInteraction : MonoBehaviour
 {
-    TurnManagerScript turnManagerScript;
+    private TurnManagerScript turnManagerScript;
 
-    XRGrabInteractable interactable;
+    private XRGrabInteractable interactable;
 
-    bool isBlue;
+    private bool isBlue;
+
     void Start()
     {
         turnManagerScript = TurnManagerScript.Instance;
@@ -35,6 +34,4 @@ public class VRGrabInteraction : MonoBehaviour
             interactable.enabled = true;
         }
     }
-
-
 }

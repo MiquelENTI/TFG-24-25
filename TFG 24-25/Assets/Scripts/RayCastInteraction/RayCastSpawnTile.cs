@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayCastSpawnTile : RayCastTile
+public class RaycastSpawnTile : RaycastTile
 {
     protected override void Start()
     {
         base.Start();
     }
 
-    public override void UpdateRayCast()
+    public override void UpdateRaycast()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit;

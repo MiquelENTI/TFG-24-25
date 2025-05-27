@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RayCastLectern : RayCastInteractable
+public class RaycastLectern : RaycastInteractable
 {
     [SerializeField] private bool isLeft;
     private LecternOnboarding lectern;

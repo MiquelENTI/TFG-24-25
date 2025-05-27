@@ -18,17 +18,12 @@ public class CellNode
     private CellScoreType scoreType = CellScoreType.NOPOINTS;
     private CellScoreAmount scoreAmount = CellScoreAmount.NORMAL;
 
-    private GameObject cellMovementIndicator;
-    private bool isCellMovementIndicatorVisble = false;
-
     private Dictionary<CellConnection, CellNode> connectionDictionary = new();
 
-    public CellNode(Vector3 position, GameObject movementIndicator, int x, int y)
+    public CellNode(Vector3 position, int x, int y)
     {  
         this.position = position;
         positionInGrid = new Vector2(x, y);
-
-        cellMovementIndicator = movementIndicator.transform.GetChild(0).gameObject;
 
         CellNodeManager.Instance.AddNode(this);
     }
@@ -129,7 +124,7 @@ public class CellNode
 
         return false;
     }
-    bool CanAttackOrMoveLogicJump(bool isAttacking, Character characterMoving, Vector2 diff)
+    private bool CanAttackOrMoveLogicJump(bool isAttacking, Character characterMoving, Vector2 diff)
     {
         if (!isAttacking && (diff.x == characterMoving.GetCharacterStats().movementRange || diff.y == characterMoving.GetCharacterStats().movementRange))
         {
@@ -220,13 +215,6 @@ public class CellNode
                 " |  ScoreMode: " + scoreType.ToString() +
                 " |  ScoreAmount: " + scoreAmount.ToString());
         }
-    }
-
-    public void ChangeMovementIndicatorVisibility(bool state)
-    {
-        isCellMovementIndicatorVisble = state;
-
-        cellMovementIndicator.SetActive(isCellMovementIndicatorVisble);
     }
 
     public CellNode GetCellByDirection(CellConnection cellConnection)

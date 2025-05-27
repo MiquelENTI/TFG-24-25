@@ -33,7 +33,7 @@ public class CreateGrid : MonoBehaviour
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
                 obj.name = "Cell: " + j.ToString() + "-" + i.ToString();
                 obj.GetComponent<Tile>().SetTileId((int)(i * rows + j));
-                CellNode node = new CellNode(position, obj, j,i);
+                CellNode node = new CellNode(position, j,i);
 
                 CreateModelBoard(i, j, position);
             }

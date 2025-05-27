@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ActionAnimation : MonoBehaviour
 {
-    float lifeTime = 1.0f;
-    float timeElapsed = 0.0f;
+    private float lifeTime = 1.0f;
+    private float timeElapsed = 0.0f;
 
-    float speed = 0.1f;
+    private float speed = 0.1f;
 
-    bool noDelete = false;
+    private bool noDelete = false;
 
-    float offset = 0;
+    private float offset = 0;
 
     void Start()
     {

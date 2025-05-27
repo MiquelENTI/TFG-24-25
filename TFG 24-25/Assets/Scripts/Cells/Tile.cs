@@ -6,13 +6,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     private int tileId;
-
-    private void Start()
-    {
-
-    }
-
-    public void EnterRaycast()
+    public void EnterRaycast() // Appear / Disappear highlightParticle
     {
         
     }

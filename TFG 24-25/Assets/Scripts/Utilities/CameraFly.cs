@@ -14,7 +14,7 @@ public class CameraFly : MonoBehaviour
     public bool focusOnEnable = true;
 
     private Vector3 velocity;
-    static bool Focused
+    private static bool Focused
     {
         get => Cursor.lockState == CursorLockMode.Locked;
         set
@@ -24,18 +24,14 @@ public class CameraFly : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (focusOnEnable) Focused = true;
     }
 
-    void OnDisable() => Focused = false;
+    private void OnDisable() => Focused = false;
 
-    private void Awake()
-    {
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Tab))
         {
@@ -55,7 +51,7 @@ public class CameraFly : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
-    void UpdateInput()
+    private void UpdateInput()
     {
         velocity += GetAccelerationVector() * Time.deltaTime;
 
@@ -69,7 +65,7 @@ public class CameraFly : MonoBehaviour
             Focused = false;
     }
 
-    Vector3 GetAccelerationVector()
+    private Vector3 GetAccelerationVector()
     {
         Vector3 moveInput = default;
 

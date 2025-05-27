@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using FMODUnity;
-using FMOD.Studio;
 
 public enum MATERIALS { YESO, LADRILLO, PARQUET, GRES, MARMOL, VIDRIO, MOQUETA };
 
