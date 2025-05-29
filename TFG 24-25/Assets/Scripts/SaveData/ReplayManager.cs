@@ -3,6 +3,9 @@ using System;
 
 public class ReplayManager: MonoBehaviour
 {
+
+    [SerializeField] private string MatchToReplay;
+
     SpawnCardController controller;
 
     bool blueTurn;
@@ -12,7 +15,7 @@ public class ReplayManager: MonoBehaviour
     void Start()
     {
         replayData = new ReplayData();
-        GetReplayMatchData(0);
+        GetReplayMatchData(MatchToReplay);
 
         blueTurn = true;
 
@@ -32,9 +35,9 @@ public class ReplayManager: MonoBehaviour
         }
     }
 
-    private void GetReplayMatchData(int matchNum)
+    private void GetReplayMatchData(string matchName)
     {
-        replayData = SaveData.Instance.LoadReplay(matchNum);
+        replayData = SaveData.Instance.LoadReplay(matchName);
     }
 
     private void StartReplay()
@@ -50,17 +53,6 @@ public class ReplayManager: MonoBehaviour
 
         DeckManager.Instance.SetReplayDeck(replayData.deck);
 
-        int amountToDraw = 1;
-
-        for (int i = 0; i <= amountToDraw; i++)
-        {
-            DeckManager.Instance.ReplayDrawCard(true);
-        }
-
-        for (int i = 0; i <= amountToDraw; i++)
-        {
-            DeckManager.Instance.ReplayDrawCard(false);
-        }
     }
 
     private void NextMove()
@@ -86,8 +78,6 @@ public class ReplayManager: MonoBehaviour
                     blueTurn = !blueTurn;
 
                     TurnManagerScript.Instance.UpdateTurn(blueTurn);
-
-                    DeckManager.Instance.ReplayDrawCard(blueTurn);
 
                     break;
                 }

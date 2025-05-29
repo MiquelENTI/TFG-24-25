@@ -47,7 +47,7 @@ public class SaveData: Singleton<SaveData>
         data.deck = new Queue<int>(deckSave);
     }
 
-    public ReplayData LoadReplay(int match)
+    public ReplayData LoadReplay(string match)
     {
         string path = Application.dataPath + pathFolder + match + ".dat";
         if(File.Exists(path))
