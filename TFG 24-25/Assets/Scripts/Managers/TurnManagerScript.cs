@@ -219,7 +219,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             Debug.Log("ronda parameter updated to: " + fmodroundvalue);
 
 
-            if (turnCounter > 10)
+            if (turnCounter > 1)
             {
                 if (SceneManager.GetActiveScene().name != "ReplayScene")
                 {

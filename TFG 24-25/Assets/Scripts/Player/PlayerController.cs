@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviourPun
             {
                 isMenuOpen = !menu.activeSelf;
                 menu.SetActive(isMenuOpen);
+                Debug.Log("esc apretado por eso abrimos el menu.");
 
                 if (menuSnapshot.IsNull)
                 {
