@@ -36,7 +36,7 @@ public class TemporalCardDataBase : Singleton<TemporalCardDataBase>
         { 32, new CharacterStats(CardType.CHARACTER,"Kamikaze",            2, 9,  3,  1, 1, 2, MovementType.Basic, AbilityType.onKill, "Destroy this.") }, // Kamikaze
         { 35, new CharacterStats(CardType.CHARACTER,"Dragon",              3, 5,  7,  1, 1, 1, MovementType.Basic, AbilityType.nothing, "This also attacks diagonally to the objective tile.") }, // Dragon
         { 36, new CharacterStats(CardType.CHARACTER,"Lacus",               4, 6,  7,  1, 1, 1, MovementType.Basic, AbilityType.startTurn, "This moves or attacks every turn to the direction is facing. Spend mana to change direction. If this hits a wall it dies.") }, // Lacus
-        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 3,  4,  1, 1, 1, MovementType.Basic, AbilityType.nothing, "This gains as much attack as points scores.") }, // Samurai
+        { 37, new CharacterStats(CardType.CHARACTER,"Samurai",             3, 3,  4,  1, 1, 2, MovementType.Basic, AbilityType.nothing, "This gains as much attack as points scores.") }, // Samurai
         { 38, new CharacterStats(CardType.CHARACTER,"Giant",               5, 4,  11, 1, 1, 1, MovementType.Basic, AbilityType.onMove, "Deal 2 damage to all surrounding cards.") }, // Giant
         { 39, new CharacterStats(CardType.CHARACTER,"Ant",                 2, 1,  4,  1, 1, 2, MovementType.Omni, AbilityType.nothing, "This has +1 attack for each card around it.") }, // Ant
         { 40, new CharacterStats(CardType.CHARACTER,"Wyvern",              2, 10, 9,  1, 1, 1, MovementType.Omni, AbilityType.onAttack, "This can't move or attack next turn.") }, // Wyvern

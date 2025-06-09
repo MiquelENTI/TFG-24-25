@@ -26,6 +26,10 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     public GameObject finalCanvas;
     public GameObject redWinGO;
     public GameObject blueWinGO;
+    public GameObject redScoreGameObject;
+    public GameObject blueScoreGameObject;
+    public TextMeshProUGUI redScoreText;
+    public TextMeshProUGUI blueScoreText;
 
     [SerializeField] private float turnTimeLimit = 60f;
     private float currentTurnTime;
@@ -41,7 +45,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (!TryGetComponent<PhotonView>(out photonView))
         {
-            Debug.LogError("PhotonView no encontrado en el GameObject.");
+            Debug.Log("PhotonView no encontrado en el GameObject.");
         }
     }
 
@@ -49,7 +53,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (!photonView)
         {
-            Debug.LogError("El PhotonView no est� asignado correctamente en el GameObject");
+            Debug.Log("El PhotonView no est� asignado correctamente en el GameObject");
             return;
         }
 
@@ -58,7 +62,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             scoreManager = FindObjectOfType<ScoreManager>();
             if (scoreManager == null)
             {
-                Debug.LogError("ScoreManager no encontrado en la escena.");
+                Debug.Log("ScoreManager no encontrado en la escena.");
             }
         }
 
@@ -67,9 +71,26 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             finalCanvas = GameObject.Find("Final Canvas");
             if (finalCanvas == null)
             {
-                Debug.LogError("Final Canvas no encontrado en la escena.");
+                Debug.Log("Final Canvas no encontrado en la escena.");
             }
         }
+
+        if (redScoreText == null)
+        {
+            if (redScoreGameObject != null)
+            {
+                redScoreText = redScoreGameObject.GetComponent<TextMeshProUGUI>();
+            }
+        }
+        
+        if (blueScoreText == null)
+        {
+            if (blueScoreGameObject != null)
+            {
+                blueScoreText = blueScoreGameObject.GetComponent<TextMeshProUGUI>();
+            }
+        }
+
 
         if (redWinGO != null) redWinGO.SetActive(false);
         if (blueWinGO != null) blueWinGO.SetActive(false);
@@ -164,7 +185,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         if (photonView == null)
         {
-            Debug.LogError("PhotonView no est� asignado correctamente.");
+            Debug.Log("PhotonView no est� asignado correctamente.");
             return;
         }
 
@@ -219,7 +240,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             Debug.Log("ronda parameter updated to: " + fmodroundvalue);
 
 
-            if (turnCounter > 1)
+            if (turnCounter > 10)
             {
                 if (SceneManager.GetActiveScene().name != "ReplayScene")
                 {
@@ -230,22 +251,23 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
                 Debug.Log("Blue score is: " + scoreManager.blueScore);
                 Debug.Log("Red score is: " + scoreManager.redScore);
 
-                finalCanvas.SetActive(true);
-
-                if (scoreManager.blueScore > scoreManager.redScore)
+                if (blueScoreText != null)
                 {
-                    if (blueWinGO != null) blueWinGO.SetActive(true);
-                    if (redWinGO != null) redWinGO.SetActive(false);
-
-                    photonView.RPC("PlayEndGameAudio", RpcTarget.All, true);
+                    blueScoreText.text = scoreManager.blueScore.ToString();
                 }
-                else if (scoreManager.redScore > scoreManager.blueScore)
+
+                if (redScoreText != null)
                 {
-                    if (redWinGO != null) redWinGO.SetActive(true);
-                    if (blueWinGO != null) blueWinGO.SetActive(false);
-
-                    photonView.RPC("PlayEndGameAudio", RpcTarget.All, false);
+                    redScoreText.text = scoreManager.redScore.ToString();
                 }
+
+                bool blueWon = scoreManager.blueScore > scoreManager.redScore;
+                if (scoreManager.blueScore != scoreManager.redScore)
+                {
+                    photonView.RPC("ShowFinalResult", RpcTarget.All, blueWon);
+                    photonView.RPC("PlayEndGameAudio", RpcTarget.All, blueWon);
+                }
+
 
             }
         }
@@ -261,8 +283,17 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     {
         Transform playerTransform = null;
 
-        bool isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue && player1GameObject.GetComponent<PhotonView>().IsMine
-                        || player2GameObject.GetComponent<PlayerController>().IsBlue && player2GameObject.GetComponent<PhotonView>().IsMine;
+        bool isLocalBlue = false;
+
+        if (player1GameObject != null && player1GameObject.GetComponent<PhotonView>().IsMine)
+        {
+            isLocalBlue = player1GameObject.GetComponent<PlayerController>().IsBlue;
+        }
+        else if (player2GameObject != null && player2GameObject.GetComponent<PhotonView>().IsMine)
+        {
+            isLocalBlue = player2GameObject.GetComponent<PlayerController>().IsBlue;
+        }
+
 
         if (player1GameObject.GetComponent<PhotonView>().IsMine)
         {
@@ -349,6 +380,34 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
             SoundManager.Instance.PlayVOIndication(randomAudioCode, playerTransform.position);
         }
     }
+
+    [PunRPC]
+    void ShowFinalResult(bool blueWon)
+    {
+        finalCanvas.SetActive(true);
+
+        if (blueWon)
+        {
+            if (blueWinGO != null) blueWinGO.SetActive(true);
+            if (redWinGO != null) redWinGO.SetActive(false);
+        }
+        else
+        {
+            if (redWinGO != null) redWinGO.SetActive(true);
+            if (blueWinGO != null) blueWinGO.SetActive(false);
+        }
+
+        if (blueScoreText != null)
+        {
+            blueScoreText.text = scoreManager.blueScore.ToString();
+        }
+
+        if (redScoreText != null)
+        {
+            redScoreText.text = scoreManager.redScore.ToString();
+        }
+    }
+
 
 
     public bool GetIsTurnBlue()
