@@ -7,7 +7,8 @@ public class SaveData: Singleton<SaveData>
 {
     ReplayData data;
 
-    public string pathFolder = "/save";
+    public string pathFolderSave = "/save";
+    public string pathFolderLoad = "/Saves/save";
 
     SaveData()
     {
@@ -30,7 +31,7 @@ public class SaveData: Singleton<SaveData>
 
 
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.dataPath + pathFolder + nFile + ".dat";
+        string path = Application.dataPath + pathFolderSave + nFile + ".dat";
         FileStream fileStream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(fileStream, data);
@@ -49,7 +50,7 @@ public class SaveData: Singleton<SaveData>
 
     public ReplayData LoadReplay(string match)
     {
-        string path = Application.dataPath + pathFolder + match + ".dat";
+        string path = Application.dataPath + pathFolderLoad + match + ".dat";
         if(File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -70,7 +71,7 @@ public class SaveData: Singleton<SaveData>
 
     private bool CheckFileExists(int match)
     {
-        string path = Application.dataPath + pathFolder + match + ".dat";
+        string path = Application.dataPath + pathFolderSave + match + ".dat";
         return File.Exists(path);
     }
 }
