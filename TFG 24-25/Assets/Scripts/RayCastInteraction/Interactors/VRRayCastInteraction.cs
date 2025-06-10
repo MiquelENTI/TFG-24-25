@@ -82,7 +82,7 @@ public class VRRaycastInteraction : BaseRaycastInteraction
 
     private void Update()
     {
-
+        
         if (right_controller != null || left_controller != null) 
         {
             Right_HoverUpdate();
@@ -100,6 +100,7 @@ public class VRRaycastInteraction : BaseRaycastInteraction
             left_controller = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
             leftHandUpdate = transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<UpdateHandVR>();
         }
+        Debug.Log("WORK");
     }
 
     #region RIGHT HAND

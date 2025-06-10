@@ -21,10 +21,8 @@ public class UpdateHandVR : MonoBehaviour, IPunObservable
 
     public void HandsPositionUpdating(Vector3 position, Quaternion rotation)
     {
-        if (photonView.IsMine)
-        {
-            //photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
-        }
+        Debug.Log(position);
+        photonView.RPC("HandsPositionUpdating_RPC", RpcTarget.All, position, rotation);
     }
 
     [PunRPC]
