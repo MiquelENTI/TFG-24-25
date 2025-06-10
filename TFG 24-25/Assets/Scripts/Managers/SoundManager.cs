@@ -69,8 +69,8 @@ public class SoundManager : Singleton<SoundManager>
 
 
             // Fly 
-            { 003005001, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection" },
-            { 003005002, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Selection" },
+            { 003005001, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack" },
+            { 003005002, "event:/SFX/CARTAS/MONSTERS/FLY/Fly_Attack" },
 
 
             // Turtle
@@ -137,8 +137,8 @@ public class SoundManager : Singleton<SoundManager>
             { 003018003, "" },
 
             // Grasshopper
-            { 003019001, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_select" },
-            { 003019002, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_select" },
+            { 003019001, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_Attack" },
+            { 003019002, "event:/SFX/CARTAS/MONSTERS/GRASSHOPPER/Grasshopper_Attack" },
             { 003019003, "" },
 
             // Magic Karp
