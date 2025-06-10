@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.TextCore.Text;
 
 public class CellNodeManager : Singleton<CellNodeManager>
 {
@@ -171,42 +172,40 @@ public class CellNodeManager : Singleton<CellNodeManager>
         Character character = nodeGrid[tileId].GetCharacter();
         CellNode centralCell = nodeGrid[tileId];
 
-        if (character == null) { return; }
+        bool hasCharacterJumped = false;
 
+        if (character == null) 
+        { return; }
+
+        if (PlayerStats.Instance.GetCurrentMana() < character.GetCharacterStats().manaCost) 
+        { return; }
+        
         foreach (CellConnection direction in character.GetDirections())
         {
             CellNode nextCell = centralCell;
 
+            // If the character cannot move, goto check if character can attack
+            if (!character.GetCanMove())
+            { goto Attack; }
+
+            // Movement
             for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
             {
                 if (!nextCell.CheckConnectionNode(direction))
-                {
-                    continue;
-                }
+                { continue; }
 
                 // Cell To Check
                 nextCell = nextCell.GetCellByDirection(direction);
+
+                if (character.GetJumpMove() && !hasCharacterJumped)
+                { hasCharacterJumped = true; continue; }
 
                 Character isCharacter = nextCell.GetCharacter();
 
                 // If Character Exists
                 if (isCharacter != null)
-                {
-                    if (isCharacter.GetJumpMove()) { continue; }
-                    // And are in the same Team Skip, cell is not highlighted
-                    if (isCharacter.GetTeamType() == character.GetTeamType())
-                    {
-                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
-                        break;
-                    }
-                    // Or are on different teams, cell is highlighted with attacking color
-                    else
-                    {
-                        // Set Cell Red and visible
-                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
-                        break;
-                    }
-                }
+                { break; }
+
                 // The cell is empty and is highlighted with movement color
                 if (state)
                 {
@@ -214,6 +213,43 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 }
                 //nextCell.ChangeMovementIndicatorVisibility(state);
             }
+            
+            hasCharacterJumped = false;
+            nextCell = centralCell;
+
+            Attack:
+            // If character cannot attack, return function
+            if (!character.GetCanAttack())
+            {
+                return;
+            }
+
+            for (int i = 0; i < character.GetCharacterStats().attackRange; i++)
+            {
+                if (!nextCell.CheckConnectionNode(direction))
+                { continue; }
+
+                // Cell To Check
+                nextCell = nextCell.GetCellByDirection(direction);
+
+                if (character.GetJumpMove() && !hasCharacterJumped)
+                { hasCharacterJumped = true; continue; }
+
+                Character isCharacter = nextCell.GetCharacter();
+
+                // If Character Exists
+                if (isCharacter != null)
+                {
+                    // And are on different teams, cell is highlighted with attacking color
+                    if (isCharacter.GetTeamType() != character.GetTeamType())
+                    {
+                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
+                        break;
+                    }
+                    break;
+                }
+            }
+            hasCharacterJumped = false;
         }
     }
 

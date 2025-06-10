@@ -741,8 +741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d773c30f4f12113449ae13e66e3543a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlueScore: 0
-  RedScore: 0
+  blueScore: 0
+  redScore: 0
 --- !u!114 &128790851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,9 +1268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c075c3c0c948f4ab811ea85702b0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
   tokenPrefabBlue: {fileID: 8236987784292183732, guid: cd10928736021b947af0ad6e30752b57, type: 3}
   tokenPrefabRed: {fileID: 8236987784292183732, guid: 6789227a21d2f5546aee7680ff10ace8, type: 3}
-  photonView: {fileID: 0}
 --- !u!114 &258275269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9831,18 +9831,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTurnBlue: 1
+  isPCVersion: 1
+  turnBypass: 1
   player1GameObject: {fileID: 0}
   player2GameObject: {fileID: 0}
-  startTurnAudioCodesForAll: 00093d00
-  startYourTurnAudioCodes: 00093d00
-  startEnemyTurnAudioCodes: 00093d00
   scoreManager: {fileID: 128790850}
   finalCanvas: {fileID: 388725774}
   redWinGO: {fileID: 211135233}
   blueWinGO: {fileID: 1875248225}
-  isPCVersion: 1
-  turnBypass: 0
   turnTimeLimit: 60
+  startTurnAudioCodesForAll: 00093d00
+  startYourTurnAudioCodes: 00093d00
+  startEnemyTurnAudioCodes: 00093d00
   timeOutAudioCode: 5000001
 --- !u!4 &1256807050
 Transform:
@@ -10193,11 +10193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38948f91a27aaef48afbd66708b8ceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckmode: 3
+  deckmode: 1
   amountOfCopies: 1
   prefabCard: {fileID: 8488798576455071380, guid: 43dca9c2918cfa949ad3a503ea56199e, type: 3}
   characterBlackList: 
-  characterWhiteList: 01000000
+  characterWhiteList: 130000000100000005000000
   characterWorkingList: 010000000200000003000000050000000600000007000000080000000a0000000d0000000e0000000f00000010000000110000001200000013000000140000001500000016000000190000001a0000001b0000001c0000001d0000001e00000020000000230000002400000025000000260000002700000028000000
 --- !u!4 &1293831302
 Transform:

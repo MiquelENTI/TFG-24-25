@@ -82,7 +82,7 @@ public class VRRaycastInteraction : BaseRaycastInteraction
 
     private void Update()
     {
-
+        
         if (right_controller != null || left_controller != null) 
         {
             Right_HoverUpdate();
@@ -100,6 +100,7 @@ public class VRRaycastInteraction : BaseRaycastInteraction
             left_controller = transform.GetChild(2).GetChild(0).GetChild(1).GetChild(4).gameObject;
             leftHandUpdate = transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<UpdateHandVR>();
         }
+        Debug.Log("WORK");
     }
 
     #region RIGHT HAND
@@ -137,36 +138,32 @@ public class VRRaycastInteraction : BaseRaycastInteraction
                 }
                 default:
                 {
+                    lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Inspect();
                     Debug.Log("ENTERED HERE");
-                    break;
+                    return;
                 }
             }
 
-            if (hit.collider.tag == "TokenGameObject" || hit.transform.tag == "CardGameObject")
+            if ((right_lastInteractedObject.GetIsBlue() == turnManagerScript.GetIsTurnBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
             {
-                if ((right_lastInteractedObject.GetIsBlue() == turnManagerScript.GetIsTurnBlue()) && hit.transform.GetComponent<PhotonView>().IsMine)
-                {
-                    Debug.Log("ENTERED RIGHT DRAG UPDATE");
-                    StartCoroutine(Right_DragUpdate(hit.collider.gameObject));
-                    photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.GRABBING, right_blockChangeAnimation);
-                    Right_ChangeHandState((int)HandState.GRABBING, right_blockChangeAnimation);
-                    right_blockChangeAnimation = true;
-                }
-                return;
+                Debug.Log("ENTERED RIGHT DRAG UPDATE");
+                StartCoroutine(Right_DragUpdate(hit.collider.gameObject));
+                photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.GRABBING, right_blockChangeAnimation);
+                Right_ChangeHandState((int)HandState.GRABBING, right_blockChangeAnimation);
+                right_blockChangeAnimation = true;
             }
-
-            if (hit.collider.tag == "RaycastInteractable")
-            { lastInteractedRaycastGameObject.GetComponent<RaycastInteractable>().Inspect(); }
         }
     }
     protected virtual void RightHand_SelectInteractionUp()
     {
         VFXManager.Instance.RemoveTeamHighlights();
+        
+        if (right_lastInteractedObject == null)
+        { return; } 
+
         right_blockChangeAnimation = false;
         photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, right_blockChangeAnimation);
         Right_ChangeHandState((int)HandState.POINTING, right_blockChangeAnimation);
-        if (right_lastInteractedObject == null)
-        { return; }
 
         switch (right_lastInteractedObject.tag)
         {
@@ -204,8 +201,8 @@ public class VRRaycastInteraction : BaseRaycastInteraction
         {
             if (hit.collider == null)
             {
-                photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, right_blockChangeAnimation);
-                Right_ChangeHandState((int)HandState.POINTING, right_blockChangeAnimation);
+                photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.IDLE, right_blockChangeAnimation);
+                Right_ChangeHandState((int)HandState.IDLE, right_blockChangeAnimation);
                 return; 
             }
 
@@ -246,12 +243,12 @@ public class VRRaycastInteraction : BaseRaycastInteraction
 
     protected virtual void RightHand_ActivateInteractionUp()
     {
+        if (right_lastInteractedObject == null)
+        { return; }
+
         right_blockChangeAnimation = false;
         photonView.RPC("Right_ChangeHandState", RpcTarget.Others, (int)HandState.POINTING, right_blockChangeAnimation);
         Right_ChangeHandState((int)HandState.POINTING, right_blockChangeAnimation);
-
-        if (right_lastInteractedObject == null)
-        { return; }
 
         if (displayingCard)
         {

@@ -323,10 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61bca54f903d6c44a0cc840534ee72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSelectionSceneIndex: 1
-  gameSceneIndex: 2
-  creditsSceneIndex: 3
-  mainMenuSceneIndex: 0
 --- !u!1 &6229068764224729075
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,8 +591,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 9014170783809206332}
   menu: {fileID: 5781679259380861314}
-  hand: {fileID: 0}
   IsBlue: 0
+  menuSnapshot:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &3827926315998511675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,8 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e40f5efb85abb40afe3fa3c21ad86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHandAnimator: {fileID: 195744230046663603}
-  leftHandAnimator: {fileID: 2154683812233182903}
+  right_handAnimator: {fileID: 195744230046663603}
+  left_handAnimator: {fileID: 2154683812233182903}
 --- !u!1 &8578164012232038566
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,10 +761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61bca54f903d6c44a0cc840534ee72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSelectionSceneIndex: 1
-  gameSceneIndex: 2
-  creditsSceneIndex: 3
-  mainMenuSceneIndex: 0
 --- !u!114 &4345745624896726425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1256,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4259548117460404135, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_ControllerTransform
+      value: 
+      objectReference: {fileID: 4380883722766368115}
+    - target: {fileID: 4259548117460404135, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_GrabMoveAction.m_UseReference
       value: 0
       objectReference: {fileID: 0}
@@ -1265,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5943189913811301960, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_ControllerTransform
+      value: 
+      objectReference: {fileID: 615776201568396851}
     - target: {fileID: 5943189913811301960, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_GrabMoveAction.m_UseReference
       value: 0
@@ -1442,7 +1448,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 169903085826379496}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1573,7 +1580,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 2816655106455240389}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

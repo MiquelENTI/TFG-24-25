@@ -351,6 +351,12 @@ public class Character
     public CharacterStats GetCharacterStats()
     { return stats; }
 
+    public bool GetCanMove()
+    { return canMove; }
+
+    public bool GetCanAttack()
+    { return canAttack; }
+
     public bool GetJumpMove()
     { return jumpMove; }
 
