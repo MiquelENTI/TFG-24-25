@@ -19,7 +19,7 @@ public class RaycastLectern : RaycastInteractable
 
     public override void Inspect()
     {
-        lectern.DisplayPage(isLeft);
+        //lectern.DisplayPage(isLeft);
     }
 
     public override void ResetStatus()

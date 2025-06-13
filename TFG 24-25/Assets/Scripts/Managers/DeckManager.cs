@@ -50,11 +50,11 @@ public class DeckManager : Singleton<DeckManager>
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             DrawCard(true);
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             DrawCard(false);
         }

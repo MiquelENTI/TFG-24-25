@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : Singleton<SoundManager>
 {
@@ -265,6 +266,7 @@ public class SoundManager : Singleton<SoundManager>
         board = GameObject.Find("Board");
         PlayMusic(002000001);
         PlayMusic(001001001);
+
     }
 
 
