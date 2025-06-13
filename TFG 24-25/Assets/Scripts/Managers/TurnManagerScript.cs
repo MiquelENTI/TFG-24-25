@@ -317,6 +317,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [PunRPC]
     void PlayStartTurnAudioForAll()
     {
+        Debug.Log("ASDASD");
+
         if (startTurnAudioCodesForAll.Length > 0)
         {
             int randomIndex = Random.Range(0, startTurnAudioCodesForAll.Length);
@@ -344,6 +346,8 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     [PunRPC]
     void PlayStartTurnAudioForColor(bool isBlueTurn)
     {
+        SoundManager.Instance.PlayMusic(001000003, player1GameObject.transform.position);
+
         Transform playerTransform = null;
         int randomAudioCode = -1;
         int[] audioCodesToUse = null;
