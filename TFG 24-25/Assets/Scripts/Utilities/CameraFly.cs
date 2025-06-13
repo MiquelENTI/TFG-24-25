@@ -75,12 +75,12 @@ public class CameraFly : MonoBehaviour
                 moveInput += dir;
         }
 
-        AddMovement(KeyCode.W, Vector3.forward);
-        AddMovement(KeyCode.S, Vector3.back);
-        AddMovement(KeyCode.D, Vector3.right);
-        AddMovement(KeyCode.A, Vector3.left);
-        AddMovement(KeyCode.E, Vector3.up);
-        AddMovement(KeyCode.Q, Vector3.down);
+        AddMovement(KeyCode.I, Vector3.forward);
+        AddMovement(KeyCode.K, Vector3.back);
+        AddMovement(KeyCode.L, Vector3.right);
+        AddMovement(KeyCode.J, Vector3.left);
+        AddMovement(KeyCode.O, Vector3.up);
+        AddMovement(KeyCode.U, Vector3.down);
 
         Vector3 direction = transform.TransformVector(moveInput.normalized);
 

@@ -14,7 +14,7 @@ public class TurnManagerScript : Singleton<TurnManagerScript>
     private int turnCounter = 1;
     private int drawCardsStart = 4;
 
-    PhotonView photonView;
+    private PhotonView photonView;
 
     [SerializeField] public GameObject player1GameObject;
     [SerializeField] public GameObject player2GameObject;
