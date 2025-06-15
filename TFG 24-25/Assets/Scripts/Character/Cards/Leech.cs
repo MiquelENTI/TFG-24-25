@@ -15,14 +15,14 @@ public class Leech : Character
     {
         base.OnStartTurn();
 
-        CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
+        TileNode node = TileNodeManager.Instance.GetNodeById(onTile);
 
-        if (node.GetScoreNode() == CellScoreType.NOPOINTS)
+        if (node.GetScoreNode() == TileScoreType.NOPOINTS)
         { return; }
 
-        List<CellNode> surrondingCells = node.GetSurrondingCells();
+        List<TileNode> surrondingTiles = node.GetSurrondingTiles();
 
-        foreach (CellNode cellnode in surrondingCells)
+        foreach (TileNode cellnode in surrondingTiles)
         {
             Character enemy = cellnode.GetCharacter();
             if (enemy == null)

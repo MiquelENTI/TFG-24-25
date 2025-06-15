@@ -35,7 +35,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
     {
         Debug.Log("INVOKE");
 
-        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
+        TileNode cellToMove = TileNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         character.OnMovement(cellToMove);
@@ -43,7 +43,7 @@ public class MyEventHandler : Singleton<MyEventHandler>
 
     public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
     {
-        CellNode cellToMove = CellNodeManager.Instance.GetNodeById(cellId);
+        TileNode cellToMove = TileNodeManager.Instance.GetNodeById(cellId);
         Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
 
         if (bypassSpawn)

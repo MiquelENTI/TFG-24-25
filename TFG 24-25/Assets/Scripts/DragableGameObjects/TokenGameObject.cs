@@ -51,12 +51,12 @@ public class TokenGameObject : DragableGameObject
     }
     public override void CheckIsOutsideBoard()
     {
-        CellNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
+        TileNodeManager.Instance.hidePossibleMovements.Invoke(character.GetOnTileId());
         transform.rotation = Quaternion.Euler(0, 0, 0);
 
         if (isOutsideBoard)
         {
-            transform.position = CellNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
+            transform.position = TileNodeManager.Instance.GetNodeById(character.GetOnTileId()).GetPosition();
         }
         else
         {

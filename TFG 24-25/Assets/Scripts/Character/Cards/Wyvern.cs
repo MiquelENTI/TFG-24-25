@@ -9,7 +9,7 @@ public class Wyvern : Character
     {
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!isTired)
         {
@@ -17,7 +17,7 @@ public class Wyvern : Character
         }
         else
         {
-            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+            MoveToken(TileNodeManager.Instance.GetNodeById(onTile).GetPosition());
             return false;
         }
     }

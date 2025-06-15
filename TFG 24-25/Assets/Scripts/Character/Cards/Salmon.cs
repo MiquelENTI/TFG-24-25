@@ -13,7 +13,7 @@ public class Salmon : Character
         if (enemy.GetCharacterStats().name != "Charybdis")
         {
             Debug.Log("EATING ENEMY");
-            BypassMovement(CellNodeManager.Instance.GetNodeById(enemy.GetOnTileId()));
+            BypassMovement(TileNodeManager.Instance.GetNodeById(enemy.GetOnTileId()));
             ReceiveDamageSelf(1);
         }
     }

@@ -66,7 +66,7 @@ public class CardGameObject : DragableGameObject
     }
     public override void CheckIsOutsideBoard()
     {
-        CellNodeManager.Instance.hidePossibleSpawnTiles.Invoke(IsBlue ? TeamType.BLUE : TeamType.RED);
+        TileNodeManager.Instance.hidePossibleSpawnTiles.Invoke(IsBlue ? TeamType.BLUE : TeamType.RED);
 
         if (isOutsideBoard)
         {
@@ -83,7 +83,7 @@ public class CardGameObject : DragableGameObject
 
             if (cardStats.cardType == CardType.CHARACTER)
             {
-                CellNode cellToSpawn = CellNodeManager.Instance.GetNodeById(tileHovering);
+                TileNode cellToSpawn = TileNodeManager.Instance.GetNodeById(tileHovering);
 
                 if (!cellToSpawn.IsOccupied() && (int)cellToSpawn.GetSpawnable() == TurnManagerScript.Instance.GetIsTurnBlueInt() && PlayerStats.Instance.GetCurrentMana() >= cardStats.manaCost)
                 {

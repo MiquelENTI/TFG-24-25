@@ -10,7 +10,7 @@ public class Ant : Character
         originalAttack = newStats.dmg;
     }
 
-    public override bool OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(TileNode cellToMove)
     {
         base.OnSpawn(cellToMove);
 
@@ -19,7 +19,7 @@ public class Ant : Character
         return true;
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!base.OnMovement(cellToMove))
         { return false; }
@@ -33,17 +33,17 @@ public class Ant : Character
     {
         base.OnStartTurn();
 
-        CalculateCurrentAttack(CellNodeManager.Instance.GetNodeById(onTile));
+        CalculateCurrentAttack(TileNodeManager.Instance.GetNodeById(onTile));
     }
 
-    private void CalculateCurrentAttack(CellNode cellToMove)
+    private void CalculateCurrentAttack(TileNode cellToMove)
     {
-        List<CellNode> surrondingCells = cellToMove.GetSurrondingCells();
+        List<TileNode> surrondingTiles = cellToMove.GetSurrondingTiles();
 
         currentAttack = originalAttack;
-        foreach (CellNode surrondingCell in surrondingCells)
+        foreach (TileNode surrondingTile in surrondingTiles)
         {
-            if (surrondingCell.GetCharacter() != null)
+            if (surrondingTile.GetCharacter() != null)
             {
                 currentAttack++;
             }

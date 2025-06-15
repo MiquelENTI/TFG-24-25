@@ -10,7 +10,7 @@ public class Cavalier : Character
 
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (hasMoved && !hasAttacked)
         {

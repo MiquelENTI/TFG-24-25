@@ -6,7 +6,7 @@ public class Samurai : Character
     {
     }
 
-    public override bool OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(TileNode cellToMove)
     {
         return base.OnSpawn(cellToMove);
     }

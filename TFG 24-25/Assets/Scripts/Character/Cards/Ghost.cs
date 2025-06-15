@@ -10,7 +10,7 @@ public class Ghost : Character
         InitAdditionalMoves();
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (CheckIfMoveAcrossBoard(cellToMove) && playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove)
         {
@@ -32,7 +32,7 @@ public class Ghost : Character
         SoundManager.Instance.PlaySFX(003018001, token.transform.position);
     }
 
-    private bool CheckIfMoveAcrossBoard(CellNode cellToMove)
+    private bool CheckIfMoveAcrossBoard(TileNode cellToMove)
     {
         if (!moveAcrossBoard.ContainsKey(onTile))
         { return false; }
@@ -40,7 +40,7 @@ public class Ghost : Character
         if (moveAcrossBoard[onTile] != cellToMove.GetId())
         { return false; }
 
-        if (CellNodeManager.Instance.GetNodeById(moveAcrossBoard[onTile]).GetCharacter() != null)
+        if (TileNodeManager.Instance.GetNodeById(moveAcrossBoard[onTile]).GetCharacter() != null)
         { return false; }
 
         return true;
