@@ -10,7 +10,7 @@ public class RaycastTile : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        previousTile = GameObject.Find("Cell: 0-0").GetComponent<Tile>();
+        previousTile = GameObject.Find("Tile: 0-0").GetComponent<Tile>();
     }
 
     public virtual void UpdateRaycast()

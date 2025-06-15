@@ -10,7 +10,7 @@ public class Character
 {
     protected int id;
     protected CharacterStats stats;
-    protected List<CellConnection> directions;
+    protected List<TileConnection> directions;
     protected TeamType teamType;
     protected int onTile;
     protected GameObject token;
@@ -26,7 +26,7 @@ public class Character
 
     public Character(CharacterStats newStats, TeamType teamType, GameObject token)
     {
-        directions = new List<CellConnection>();
+        directions = new List<TileConnection>();
 
         CharactersManager.Instance.AddCharacter(this);
 
@@ -41,7 +41,7 @@ public class Character
         scoreManager = ScoreManager.Instance;
         playerStats = PlayerStats.Instance;
     }
-    public virtual bool OnSpawn(CellNode cellToMove)
+    public virtual bool OnSpawn(TileNode cellToMove)
     {
         if ((cellToMove.CanCharacterSpawn(this) && !cellToMove.IsOccupied() && playerStats.GetCurrentMana() >= stats.manaCost) || CharactersManager.Instance.GetBypassMana())
         {
@@ -72,7 +72,7 @@ public class Character
             return false;
         }
     }
-    public virtual bool OnMovement(CellNode cellToMove)
+    public virtual bool OnMovement(TileNode cellToMove)
     {
         if ((playerStats.GetCurrentMana() >= stats.manaCost && !stats.stun && canMove) || SceneManager.GetActiveScene().name == "ReplayScene")
         {
@@ -85,7 +85,7 @@ public class Character
 
                 //Debug.Log(teamType.ToString() + " MOOOVE");
 
-                CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
+                TileNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
                 SetOnTileId(cellToMove.GetId());
                 MoveToken(cellToMove.GetPosition());
@@ -101,7 +101,7 @@ public class Character
             }
             else
             {
-                MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+                MoveToken(TileNodeManager.Instance.GetNodeById(onTile).GetPosition());
                 Debug.Log("NO? 2");
                 cellToMove.PrintStatus();
                 return false;
@@ -109,7 +109,7 @@ public class Character
         }
         else
         {
-            MoveToken(CellNodeManager.Instance.GetNodeById(onTile).GetPosition());
+            MoveToken(TileNodeManager.Instance.GetNodeById(onTile).GetPosition());
             Debug.Log("NO? 1");
             cellToMove.PrintStatus();
             return false;
@@ -156,11 +156,11 @@ public class Character
 
         enemy.OnAttacked(this);
     }
-    protected void BypassMovement(CellNode cellToMove)
+    protected void BypassMovement(TileNode cellToMove)
     {
         DisableAttackAndMovement();
 
-        CellNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
+        TileNodeManager.Instance.GetNodeById(onTile).RemoveCharacter();
 
         SetOnTileId(cellToMove.GetId());
         MoveToken(cellToMove.GetPosition());
@@ -170,7 +170,7 @@ public class Character
         OnMovementSFX();
         OnMovementVFX();
     }
-    public void BypassSpawn(CellNode cellToMove)
+    public void BypassSpawn(TileNode cellToMove)
     {
         DisableAttackAndMovement();
 
@@ -212,26 +212,26 @@ public class Character
         switch (newType)
         {
             case MovementType.Basic:
-                directions.Add(CellConnection.UP);
-                directions.Add(CellConnection.DOWN);
-                directions.Add(CellConnection.LEFT);
-                directions.Add(CellConnection.RIGHT);
+                directions.Add(TileConnection.UP);
+                directions.Add(TileConnection.DOWN);
+                directions.Add(TileConnection.LEFT);
+                directions.Add(TileConnection.RIGHT);
                 break;
             case MovementType.Diagonal:
-                directions.Add(CellConnection.UPRIGHT);
-                directions.Add(CellConnection.UPLEFT);
-                directions.Add(CellConnection.DOWNRIGHT);
-                directions.Add(CellConnection.DOWNLEFT);
+                directions.Add(TileConnection.UPRIGHT);
+                directions.Add(TileConnection.UPLEFT);
+                directions.Add(TileConnection.DOWNRIGHT);
+                directions.Add(TileConnection.DOWNLEFT);
                 break;
             case MovementType.Omni:
-                directions.Add(CellConnection.UP);
-                directions.Add(CellConnection.DOWN);
-                directions.Add(CellConnection.LEFT);
-                directions.Add(CellConnection.RIGHT);
-                directions.Add(CellConnection.UPRIGHT);
-                directions.Add(CellConnection.UPLEFT);
-                directions.Add(CellConnection.DOWNRIGHT);
-                directions.Add(CellConnection.DOWNLEFT);
+                directions.Add(TileConnection.UP);
+                directions.Add(TileConnection.DOWN);
+                directions.Add(TileConnection.LEFT);
+                directions.Add(TileConnection.RIGHT);
+                directions.Add(TileConnection.UPRIGHT);
+                directions.Add(TileConnection.UPLEFT);
+                directions.Add(TileConnection.DOWNRIGHT);
+                directions.Add(TileConnection.DOWNLEFT);
                 break;
             default:
                 break;
@@ -239,12 +239,12 @@ public class Character
     }
     private void TileScoring()
     {
-        CellNode node = CellNodeManager.Instance.GetNodeById(onTile);
+        TileNode node = TileNodeManager.Instance.GetNodeById(onTile);
         
-        if (node.GetScoreNode() != CellScoreType.NOPOINTS)
+        if (node.GetScoreNode() != TileScoreType.NOPOINTS)
         {
             // Prevent scoring in your own scoring tiles
-            if (node.GetScoreAmount() == CellScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
+            if (node.GetScoreAmount() == TileScoreAmount.ENEMYROWS && (int)node.GetSpawnable() == (int)teamType)
             { return; }
 
             int pointsToScore = (int)node.GetScoreAmount() * stats.scoreMultiplier;
@@ -342,7 +342,7 @@ public class Character
     public TeamType GetTeamType()
     { return teamType; }
 
-    public List<CellConnection> GetDirections()
+    public List<TileConnection> GetDirections()
     { return directions; }
 
     public GameObject GetToken()

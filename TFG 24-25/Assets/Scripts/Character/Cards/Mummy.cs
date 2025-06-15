@@ -6,7 +6,7 @@ public class Mummy : Character
     {
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!base.OnMovement(cellToMove))
         { return false; }

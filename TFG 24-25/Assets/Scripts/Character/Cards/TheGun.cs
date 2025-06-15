@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class TheGun : Character
 {
-    private CellNode currentCellToMove;
+    private TileNode currentTileToMove;
 
     public TheGun(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode tileToMove)
     {
-        currentCellToMove = cellToMove;
+        currentTileToMove = tileToMove;
 
-        if (!base.OnMovement(cellToMove))
+        if (!base.OnMovement(tileToMove))
         { return false; }
 
         return true;
@@ -19,23 +19,23 @@ public class TheGun : Character
     public override void Attack(Character enemy)
     {
         base.Attack(enemy);
-        foreach (CellConnection direction in directions)
+        foreach (TileConnection direction in directions)
         {
-            CellNode cellOnTile = CellNodeManager.Instance.GetNodeById(onTile);
+            TileNode cellOnTile = TileNodeManager.Instance.GetNodeById(onTile);
             if (!cellOnTile.CheckConnectionNode(direction))
             {
                 continue;
             }
 
-            if (cellOnTile.GetCellByDirection(direction).GetId() == currentCellToMove.GetId())
+            if (cellOnTile.GetTileByDirection(direction).GetId() == currentTileToMove.GetId())
             {
-                CellNode cellToMove = cellOnTile.GetCellByInverseDirection((int)direction);
+                TileNode cellToMove = cellOnTile.GetTileByInverseDirection((int)direction);
                 
                 if (cellToMove == null) { return; }
 
                 if (!cellToMove.IsOccupied())
                 {
-                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction));
+                    BypassMovement(TileNodeManager.Instance.GetNodeById(onTile).GetTileByInverseDirection((int)direction));
                 }
             }
         }

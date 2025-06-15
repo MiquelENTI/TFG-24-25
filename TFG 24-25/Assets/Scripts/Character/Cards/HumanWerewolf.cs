@@ -14,7 +14,7 @@ public class HumanWerewolf : Character
         wereWolfForm.movementType = MovementType.Omni;
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!base.OnMovement(cellToMove))
         { return false; }

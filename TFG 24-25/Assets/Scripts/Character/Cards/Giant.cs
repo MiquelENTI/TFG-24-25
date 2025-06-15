@@ -7,18 +7,18 @@ public class Giant : Character
     {
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!base.OnMovement(cellToMove))
         { return false; }
 
-        List<CellNode> surrondingCells = cellToMove.GetSurrondingCells();
+        List<TileNode> surrondingTiles = cellToMove.GetSurrondingTiles();
 
-        foreach (CellNode surrondingCell in surrondingCells)
+        foreach (TileNode surrondingTile in surrondingTiles)
         {
-            if (surrondingCell.GetCharacter() != null)
+            if (surrondingTile.GetCharacter() != null)
             {
-                surrondingCell.GetCharacter().ReceiveDamage(this, 2);
+                surrondingTile.GetCharacter().ReceiveDamage(this, 2);
             }
         }
 

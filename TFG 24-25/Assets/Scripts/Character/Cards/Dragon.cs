@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Dragon : Character
 {
-    private CellNode cellToMove;
+    private TileNode tileToMove;
     private int splashDamage;
 
-    private Dictionary<CellConnection, Tuple<CellConnection, CellConnection>> translateDirection = new()
+    private Dictionary<TileConnection, Tuple<TileConnection, TileConnection>> translateDirection = new()
     {
-        { CellConnection.UP, Tuple.Create(CellConnection.UPLEFT, CellConnection.UPRIGHT) },
-        { CellConnection.LEFT, Tuple.Create(CellConnection.UPLEFT, CellConnection.DOWNLEFT) },
-        { CellConnection.RIGHT, Tuple.Create(CellConnection.DOWNRIGHT, CellConnection.UPRIGHT) },
-        { CellConnection.DOWN, Tuple.Create(CellConnection.DOWNLEFT, CellConnection.DOWNRIGHT) },
+        { TileConnection.UP, Tuple.Create(TileConnection.UPLEFT, TileConnection.UPRIGHT) },
+        { TileConnection.LEFT, Tuple.Create(TileConnection.UPLEFT, TileConnection.DOWNLEFT) },
+        { TileConnection.RIGHT, Tuple.Create(TileConnection.DOWNRIGHT, TileConnection.UPRIGHT) },
+        { TileConnection.DOWN, Tuple.Create(TileConnection.DOWNLEFT, TileConnection.DOWNRIGHT) },
     };
 
     public Dragon(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
@@ -20,12 +20,12 @@ public class Dragon : Character
         splashDamage = stats.dmg;
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode tileToMove)
     {
-        this.cellToMove = cellToMove;
-        Debug.Log("CellToMove: " + cellToMove.GetId().ToString());
+        this.tileToMove = tileToMove;
+        Debug.Log("TileToMove: " + tileToMove.GetId().ToString());
 
-        if (!base.OnMovement(cellToMove))
+        if (!base.OnMovement(tileToMove))
         { return false; }
 
 
@@ -36,27 +36,27 @@ public class Dragon : Character
     {
         base.Attack(enemy);
 
-        CellNode onTileNode = CellNodeManager.Instance.GetNodeById(onTile);
+        TileNode onTileNode = TileNodeManager.Instance.GetNodeById(onTile);
 
-        CellConnection attackDirection = onTileNode.GetDirectionToCellByRange(cellToMove.GetId(), stats.attackRange).Item2;
+        TileConnection attackDirection = onTileNode.GetDirectionToTileByRange(tileToMove.GetId(), stats.attackRange).Item2;
 
         Debug.Log("AttackDirection: " + attackDirection.ToString());
 
-        Tuple<CellConnection, CellConnection> diagonals = translateDirection[attackDirection];
+        Tuple<TileConnection, TileConnection> diagonals = translateDirection[attackDirection];
 
         if (onTileNode.CheckConnectionNode(diagonals.Item1))
         { 
-            if (onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter() != null)
+            if (onTileNode.GetTileByDirection(diagonals.Item1).GetCharacter() != null)
             {
-                onTileNode.GetCellByDirection(diagonals.Item1).GetCharacter().ReceiveDamage(this, splashDamage); 
+                onTileNode.GetTileByDirection(diagonals.Item1).GetCharacter().ReceiveDamage(this, splashDamage); 
             }
         }
 
         if (onTileNode.CheckConnectionNode(diagonals.Item2))
         {
-            if (onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter() != null)
+            if (onTileNode.GetTileByDirection(diagonals.Item2).GetCharacter() != null)
             {
-                onTileNode.GetCellByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(this, splashDamage); 
+                onTileNode.GetTileByDirection(diagonals.Item2).GetCharacter().ReceiveDamage(this, splashDamage); 
             }
         }
     }

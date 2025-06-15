@@ -11,12 +11,12 @@ public class Berserker : Character
         originalAttack = newStats.dmg;
     }
 
-    public override bool OnMovement(CellNode cellToMove)
+    public override bool OnMovement(TileNode cellToMove)
     {
         if (!base.OnMovement(cellToMove))
         { return false; }
 
-        if (CellNodeManager.Instance.GetNodeById(onTile).GetScoreNode() == CellScoreType.NOPOINTS)
+        if (TileNodeManager.Instance.GetNodeById(onTile).GetScoreNode() == TileScoreType.NOPOINTS)
         { 
             stats.dmg = originalAttack;
             DisplayActionsManager.Instance.CreateCustomText("=" + originalAttack.ToString(), new Color(220.0f / 255.0f, 20.0f / 255.0f, 60.0f / 255.0f), 8, 1.0f, token.transform.position);

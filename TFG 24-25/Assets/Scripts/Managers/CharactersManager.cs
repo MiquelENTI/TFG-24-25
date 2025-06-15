@@ -40,7 +40,7 @@ public class CharactersManager : Singleton<CharactersManager>
         foreach (Character character in charactersToRemove)
         {
             int id = character.GetId();
-            CellNodeManager.Instance.GetNodeById(charactersOnBoard[id].GetOnTileId()).RemoveCharacter();
+            TileNodeManager.Instance.GetNodeById(charactersOnBoard[id].GetOnTileId()).RemoveCharacter();
             Destroy(charactersOnBoard[id].GetToken());
             charactersOnBoard.Remove(id);
         }

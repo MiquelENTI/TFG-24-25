@@ -9,12 +9,12 @@ public class MagicKarp : Character
     public override void OnStartTurn()
     {
         base.OnStartTurn();
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
-        foreach (CellConnection direction in directions)
+        TileNode currentTile = TileNodeManager.Instance.GetNodeById(onTile);
+        foreach (TileConnection direction in directions)
         {
-            if (currentCell.CheckConnectionNode(direction))
+            if (currentTile.CheckConnectionNode(direction))
             {
-                Character enemy = currentCell.GetCellByDirection(direction).GetCharacter();
+                Character enemy = currentTile.GetTileByDirection(direction).GetCharacter();
                 if (enemy != null)
                 {
                     enemy.ReceiveDamage(this, 9999);

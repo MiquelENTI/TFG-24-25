@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CellConnection { UP = 1, DOWN = -1, RIGHT = 2, LEFT = -2, UPRIGHT = 3, DOWNLEFT = -3, UPLEFT = 4, DOWNRIGHT = -4 }
-public enum CellScoreType { NOPOINTS = 0, POINTS = 1 }
-public enum CellScoreAmount { NORMAL = 1, ENEMYROWS = 2 }
-public enum CellSpawnable { NONE = -1, RED = 0, BLUE = 1}
-public class CellNode
+public enum TileConnection { UP = 1, DOWN = -1, RIGHT = 2, LEFT = -2, UPRIGHT = 3, DOWNLEFT = -3, UPLEFT = 4, DOWNRIGHT = -4 }
+public enum TileScoreType { NOPOINTS = 0, POINTS = 1 }
+public enum TileScoreAmount { NORMAL = 1, ENEMYROWS = 2 }
+public enum TileSpawnable { NONE = -1, RED = 0, BLUE = 1}
+public class TileNode
 {
     private int id;
     private Vector3 position;
@@ -14,25 +14,25 @@ public class CellNode
     private Character character;
     private bool isOccupied = false;
 
-    private CellSpawnable spawnable = CellSpawnable.NONE;
-    private CellScoreType scoreType = CellScoreType.NOPOINTS;
-    private CellScoreAmount scoreAmount = CellScoreAmount.NORMAL;
+    private TileSpawnable spawnable = TileSpawnable.NONE;
+    private TileScoreType scoreType = TileScoreType.NOPOINTS;
+    private TileScoreAmount scoreAmount = TileScoreAmount.NORMAL;
 
-    private Dictionary<CellConnection, CellNode> connectionDictionary = new();
+    private Dictionary<TileConnection, TileNode> connectionDictionary = new();
 
-    public CellNode(Vector3 position, int x, int y)
+    public TileNode(Vector3 position, int x, int y)
     {  
         this.position = position;
         positionInGrid = new Vector2(x, y);
 
-        CellNodeManager.Instance.AddNode(this);
+        TileNodeManager.Instance.AddNode(this);
     }
 
-    public bool CheckConnectionNode(CellConnection cellConnection)
+    public bool CheckConnectionNode(TileConnection cellConnection)
     {
         return connectionDictionary.ContainsKey(cellConnection);
     }
-    public void AddConnection(CellConnection cellConnection, CellNode cellNode)
+    public void AddConnection(TileConnection cellConnection, TileNode cellNode)
     {
         connectionDictionary.Add(cellConnection, cellNode);
     }
@@ -51,7 +51,7 @@ public class CellNode
             isAttacking = true;
         }
 
-        CellNode characterTile = CellNodeManager.Instance.GetNodeById(characterMoving.GetOnTileId());
+        TileNode characterTile = TileNodeManager.Instance.GetNodeById(characterMoving.GetOnTileId());
 
         Vector2 diff = positionInGrid - characterTile.positionInGrid;
 
@@ -147,12 +147,12 @@ public class CellNode
     }
     private Tuple<bool, int> CheckIsCharacterOnTheWay(int cellId, int range)
     {
-        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
+        Tuple<int, TileConnection> direction = GetDirectionToTileByRange(cellId, range);
         if (direction.Item1 == 0) { return Tuple.Create(true, 0); }
 
         // Debug.Log("Direction: " + direction.Item1 + " " + direction.Item2);
 
-        CellNode cellToCheck = GetCellByDirection(direction.Item2);
+        TileNode cellToCheck = GetTileByDirection(direction.Item2);
 
         for (int i = 1; i < direction.Item1; i++)
         {
@@ -162,16 +162,16 @@ public class CellNode
                 //Debug.Log("Encountered Character at " + i);
                 return Tuple.Create(true, i);
             }
-            cellToCheck = cellToCheck.GetCellByDirection(direction.Item2);
+            cellToCheck = cellToCheck.GetTileByDirection(direction.Item2);
         }
         //Debug.Log("NO Encounter");
         return Tuple.Create(false, 0);
     }
-    private Tuple<int, CellConnection, Character> CheckForCharacterOnTheWay(int cellId, int range)
+    private Tuple<int, TileConnection, Character> CheckForCharacterOnTheWay(int cellId, int range)
     {
-        Tuple<int, CellConnection> direction = GetDirectionToCellByRange(cellId, range);
+        Tuple<int, TileConnection> direction = GetDirectionToTileByRange(cellId, range);
 
-        CellNode cellToCheck = GetCellByDirection(direction.Item2);
+        TileNode cellToCheck = GetTileByDirection(direction.Item2);
 
         for (int i = 1; i < direction.Item1; i++)
         {
@@ -179,13 +179,13 @@ public class CellNode
             {
                 return Tuple.Create(i, direction.Item2, cellToCheck.character);
             }
-            cellToCheck = GetCellByDirection(direction.Item2);
+            cellToCheck = GetTileByDirection(direction.Item2);
         }
         return null;
     }
     public bool CanCharacterSpawn(Character character)
     {
-        return (CellSpawnable)character.GetTeamType() == spawnable && this.character == null;
+        return (TileSpawnable)character.GetTeamType() == spawnable && this.character == null;
     }
     public void RemoveCharacter()
     {
@@ -217,15 +217,15 @@ public class CellNode
         }
     }
 
-    public CellNode GetCellByDirection(CellConnection cellConnection)
+    public TileNode GetTileByDirection(TileConnection cellConnection)
     {
         return connectionDictionary[cellConnection];
     }
-    private CellConnection GetInverseDirection(int cellConnection)
+    private TileConnection GetInverseDirection(int cellConnection)
     {
-        return (CellConnection)(-cellConnection);
+        return (TileConnection)(-cellConnection);
     }
-    public CellNode GetCellByInverseDirection(int cellConnection)
+    public TileNode GetTileByInverseDirection(int cellConnection)
     {
         if (CheckConnectionNode(GetInverseDirection(cellConnection)))
         {
@@ -233,9 +233,9 @@ public class CellNode
         }
         return null;
     }
-    public List<CellNode> GetSurrondingCells()
+    public List<TileNode> GetSurrondingTiles()
     {
-        List<CellNode> temp = new List<CellNode>();
+        List<TileNode> temp = new List<TileNode>();
 
         foreach (var cellNode in connectionDictionary)
         {
@@ -244,28 +244,28 @@ public class CellNode
 
         return temp;
     }
-    public Tuple<int, CellConnection> GetDirectionToCellByRange(int cellId, int range)
+    public Tuple<int, TileConnection> GetDirectionToTileByRange(int cellId, int range)
     {
         foreach (var direction in connectionDictionary)
         {
-            CellNode nextCell = this;
+            TileNode nextTile = this;
             for (int i = 0; i < range; i++)
             {
-                // Cell To Check
-                if (!nextCell.CheckConnectionNode(direction.Key))
+                // Tile To Check
+                if (!nextTile.CheckConnectionNode(direction.Key))
                 {
                     break;
                 }
 
-                nextCell = nextCell.GetCellByDirection(direction.Key);
-                if (nextCell.id == cellId)
+                nextTile = nextTile.GetTileByDirection(direction.Key);
+                if (nextTile.id == cellId)
                 {
-                    nextCell.PrintStatus();
+                    nextTile.PrintStatus();
                     return Tuple.Create(i + 1, direction.Key);
                 }
             }
         }
-        return Tuple.Create(0, CellConnection.UP);
+        return Tuple.Create(0, TileConnection.UP);
     }
 
     public void SetId(int id)
@@ -290,16 +290,16 @@ public class CellNode
         else
             return null;
     }
-    public void SetSpawnable(CellSpawnable spawnable)
+    public void SetSpawnable(TileSpawnable spawnable)
     { this.spawnable = spawnable; }
-    public CellSpawnable GetSpawnable()
+    public TileSpawnable GetSpawnable()
     { return spawnable; }
-    public void SetScoreNode(CellScoreType type)
+    public void SetScoreNode(TileScoreType type)
     { scoreType = type; }
-    public CellScoreType GetScoreNode()
+    public TileScoreType GetScoreNode()
     { return scoreType; }
-    public void SetScoreAmount(CellScoreAmount type)
+    public void SetScoreAmount(TileScoreAmount type)
     { scoreAmount = type; }
-    public CellScoreAmount GetScoreAmount()
+    public TileScoreAmount GetScoreAmount()
     { return scoreAmount; }
 }

@@ -11,7 +11,7 @@ public class Charybdis : Character
         spawnManager = SpawnCardController.Instance;
     }
 
-    public override bool OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(TileNode cellToMove)
     {
         if (cellToMove.GetCharacter() == null) { return false; }
 

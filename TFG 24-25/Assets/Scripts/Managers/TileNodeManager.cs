@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.TextCore.Text;
 
-public class CellNodeManager : Singleton<CellNodeManager>
+public class TileNodeManager : Singleton<TileNodeManager>
 {
-    private List<CellNode> nodeGrid;
+    private List<TileNode> nodeGrid;
     private Vector2 gridSize;
     private int currentId;
 
@@ -14,14 +14,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
     public UnityEvent<TeamType> hidePossibleSpawnTiles;
     public UnityEvent<TeamType> showPossibleSpawnTiles;
 
-    private List<CellNode> redSpawnTiles;
-    private List<CellNode> blueSpawnTiles;
+    private List<TileNode> redSpawnTiles;
+    private List<TileNode> blueSpawnTiles;
 
     private void Awake()
     {
-        nodeGrid = new List<CellNode>();
-        redSpawnTiles = new List<CellNode>();
-        blueSpawnTiles = new List<CellNode>();
+        nodeGrid = new List<TileNode>();
+        redSpawnTiles = new List<TileNode>();
+        blueSpawnTiles = new List<TileNode>();
 
         // Event that Triggers ToggleVisibilityPossibleMovements Function
 
@@ -36,24 +36,24 @@ public class CellNodeManager : Singleton<CellNodeManager>
             ToggleVisibilityPossibleMovements(tileId, false);
         });
 
-        // Event that Triggers ToggleVisibilityAvailableSpawnCells
+        // Event that Triggers ToggleVisibilityAvailableSpawnTiles
         showPossibleSpawnTiles = new UnityEvent<TeamType>();
         showPossibleSpawnTiles.AddListener((TeamType teamType) =>
         {
-            ToggleVisibilityAvailableSpawnCells(teamType, true);
+            ToggleVisibilityAvailableSpawnTiles(teamType, true);
         });
 
-        // Event that Triggers ToggleVisibilityAvailableSpawnCells
+        // Event that Triggers ToggleVisibilityAvailableSpawnTiles
         hidePossibleSpawnTiles = new UnityEvent<TeamType>();
         hidePossibleSpawnTiles.AddListener((TeamType teamType) =>
         {
-            ToggleVisibilityAvailableSpawnCells(teamType, false);
+            ToggleVisibilityAvailableSpawnTiles(teamType, false);
         });
     }
     public void SetGridSize(Vector2 size)
     { gridSize = size; }
 
-    public CellNode GetNodeById(int id)
+    public TileNode GetNodeById(int id)
     {
         //Debug.Log("HOVERING: " + id);
         try
@@ -66,14 +66,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
-    public void AddNode(CellNode node)
+    public void AddNode(TileNode node)
     {
         nodeGrid.Add(node);
         node.SetId(currentId);
         currentId++;
     }
 
-    // Debugging Function to check all the CellNodes' status
+    // Debugging Function to check all the TileNodes' status
     public void PrintNodeGridStatus()
     {
         if (nodeGrid == null)
@@ -82,13 +82,13 @@ public class CellNodeManager : Singleton<CellNodeManager>
             return;
         }
 
-        foreach (CellNode node in nodeGrid)
+        foreach (TileNode node in nodeGrid)
         {
             node.PrintStatus();
         }
     }
 
-    // Function that Creates All the CellNodes Connections
+    // Function that Creates All the TileNodes Connections
     public void CreateDefaultConnections()
     {
         // Vector2 Directions Reference
@@ -109,20 +109,20 @@ public class CellNodeManager : Singleton<CellNodeManager>
             new Vector2Int(1, 1)     // Down-Right
         };
 
-        // Dictionary to Convert a Vector2 to CellConnection
-        Dictionary<Vector2Int, CellConnection> conversion = new Dictionary<Vector2Int, CellConnection> 
+        // Dictionary to Convert a Vector2 to TileConnection
+        Dictionary<Vector2Int, TileConnection> conversion = new Dictionary<Vector2Int, TileConnection> 
         {
-            { new Vector2Int(0, -1),  CellConnection.UP},
-            { new Vector2Int(0, 1),  CellConnection.DOWN},
-            { new Vector2Int(-1, 0),  CellConnection.LEFT},
-            { new Vector2Int(1, 0),  CellConnection.RIGHT},
-            { new Vector2Int(-1, -1),  CellConnection.UPLEFT},
-            { new Vector2Int(1, -1),  CellConnection.UPRIGHT},
-            { new Vector2Int(-1, 1),  CellConnection.DOWNLEFT},
-            { new Vector2Int(1, 1),  CellConnection.DOWNRIGHT}
+            { new Vector2Int(0, -1),  TileConnection.UP},
+            { new Vector2Int(0, 1),  TileConnection.DOWN},
+            { new Vector2Int(-1, 0),  TileConnection.LEFT},
+            { new Vector2Int(1, 0),  TileConnection.RIGHT},
+            { new Vector2Int(-1, -1),  TileConnection.UPLEFT},
+            { new Vector2Int(1, -1),  TileConnection.UPRIGHT},
+            { new Vector2Int(-1, 1),  TileConnection.DOWNLEFT},
+            { new Vector2Int(1, 1),  TileConnection.DOWNRIGHT}
         };
 
-        // Loop that initializes all the connections between CellNodes
+        // Loop that initializes all the connections between TileNodes
         for (int j = 0; j < gridSize.y; j++) 
         {
             for (int i = 0; i < gridSize.x; i++)
@@ -144,17 +144,17 @@ public class CellNodeManager : Singleton<CellNodeManager>
         }
     }
 
-    // Function that Sets Special Properties to the Existing Cells
+    // Function that Sets Special Properties to the Existing Tiles
     public void CreateSpecialTiles(int numSpawnableRows)
     {
-        // Assigns the CellSpawnable Properties to Be Able to Spawn Tokens
+        // Assigns the TileSpawnable Properties to Be Able to Spawn Tokens
         // Parameter Dictates how Many Rows each Player has to Spawn Tokens
 
         for (int i = 0; i < gridSize.x * numSpawnableRows; i++)
         {
-            nodeGrid[i].SetSpawnable(CellSpawnable.RED);
+            nodeGrid[i].SetSpawnable(TileSpawnable.RED);
             redSpawnTiles.Add(nodeGrid[i]);
-            nodeGrid[nodeGrid.Count - i-1].SetSpawnable(CellSpawnable.BLUE);
+            nodeGrid[nodeGrid.Count - i-1].SetSpawnable(TileSpawnable.BLUE);
             blueSpawnTiles.Add(nodeGrid[nodeGrid.Count - i - 1]);
         }
 
@@ -165,12 +165,12 @@ public class CellNodeManager : Singleton<CellNodeManager>
     // Function that Higlihts all the Token's possible movements
     public void ToggleVisibilityPossibleMovements(int tileId, bool state) // Character's OnTile
     {
-        // By Getting a Central CellNode Using the Parameter, Check each surrounding CellNode to See if there's an Ally Character, Enemy Character or it's Empty
+        // By Getting a Central TileNode Using the Parameter, Check each surrounding TileNode to See if there's an Ally Character, Enemy Character or it's Empty
 
         VFXManager.Instance.RemoveTeamHighlights();
 
         Character character = nodeGrid[tileId].GetCharacter();
-        CellNode centralCell = nodeGrid[tileId];
+        TileNode centralTile = nodeGrid[tileId];
 
         bool hasCharacterJumped = false;
 
@@ -180,9 +180,9 @@ public class CellNodeManager : Singleton<CellNodeManager>
         if (PlayerStats.Instance.GetCurrentMana() < character.GetCharacterStats().manaCost) 
         { return; }
         
-        foreach (CellConnection direction in character.GetDirections())
+        foreach (TileConnection direction in character.GetDirections())
         {
-            CellNode nextCell = centralCell;
+            TileNode nextTile = centralTile;
 
             // If the character cannot move, goto check if character can attack
             if (!character.GetCanMove())
@@ -191,16 +191,16 @@ public class CellNodeManager : Singleton<CellNodeManager>
             // Movement
             for (int i = 0; i<character.GetCharacterStats().movementRange; i++)
             {
-                if (!nextCell.CheckConnectionNode(direction))
+                if (!nextTile.CheckConnectionNode(direction))
                 { continue; }
 
-                // Cell To Check
-                nextCell = nextCell.GetCellByDirection(direction);
+                // Tile To Check
+                nextTile = nextTile.GetTileByDirection(direction);
 
                 if (character.GetJumpMove() && !hasCharacterJumped)
                 { hasCharacterJumped = true; continue; }
 
-                Character isCharacter = nextCell.GetCharacter();
+                Character isCharacter = nextTile.GetCharacter();
 
                 // If Character Exists
                 if (isCharacter != null)
@@ -209,13 +209,13 @@ public class CellNodeManager : Singleton<CellNodeManager>
                 // The cell is empty and is highlighted with movement color
                 if (state)
                 {
-                    VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextCell.GetPosition()+new Vector3(0,0.02f,0));
+                    VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, nextTile.GetPosition()+new Vector3(0,0.02f,0));
                 }
-                //nextCell.ChangeMovementIndicatorVisibility(state);
+                //nextTile.ChangeMovementIndicatorVisibility(state);
             }
             
             hasCharacterJumped = false;
-            nextCell = centralCell;
+            nextTile = centralTile;
 
             Attack:
             // If character cannot attack, return function
@@ -226,16 +226,16 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
             for (int i = 0; i < character.GetCharacterStats().attackRange; i++)
             {
-                if (!nextCell.CheckConnectionNode(direction))
+                if (!nextTile.CheckConnectionNode(direction))
                 { continue; }
 
-                // Cell To Check
-                nextCell = nextCell.GetCellByDirection(direction);
+                // Tile To Check
+                nextTile = nextTile.GetTileByDirection(direction);
 
                 if (character.GetJumpMove() && !hasCharacterJumped)
                 { hasCharacterJumped = true; continue; }
 
-                Character isCharacter = nextCell.GetCharacter();
+                Character isCharacter = nextTile.GetCharacter();
 
                 // If Character Exists
                 if (isCharacter != null)
@@ -243,7 +243,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
                     // And are on different teams, cell is highlighted with attacking color
                     if (isCharacter.GetTeamType() != character.GetTeamType())
                     {
-                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextCell.GetPosition() + new Vector3(0, 0.02f, 0));
+                        VFXManager.Instance.SetHighlightParticles(TileHighlightState.Attack, nextTile.GetPosition() + new Vector3(0, 0.02f, 0));
                         break;
                     }
                     break;
@@ -254,7 +254,7 @@ public class CellNodeManager : Singleton<CellNodeManager>
     }
 
     // Function that Highlights all the Available SpawnTiles
-    public void ToggleVisibilityAvailableSpawnCells(TeamType teamType, bool state)
+    public void ToggleVisibilityAvailableSpawnTiles(TeamType teamType, bool state)
     {
         if (!state)
         {
@@ -265,14 +265,14 @@ public class CellNodeManager : Singleton<CellNodeManager>
         {
             case TeamType.RED:
                 // Highlight Red Spawn Tiles
-                foreach (CellNode spawnableTile in redSpawnTiles)
+                foreach (TileNode spawnableTile in redSpawnTiles)
                 {
                     VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
                 break;
             case TeamType.BLUE:
                 // Highlight Red Spawn Tiles
-                foreach (CellNode spawnableTile in blueSpawnTiles)
+                foreach (TileNode spawnableTile in blueSpawnTiles)
                 {
                     VFXManager.Instance.SetHighlightParticles(TileHighlightState.Movement, spawnableTile.GetPosition() + new Vector3(0, 0.02f, 0));
                 }
@@ -284,43 +284,43 @@ public class CellNodeManager : Singleton<CellNodeManager>
 
     void SetScoreNodes4x2()
     {
-        nodeGrid[13].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[14].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[15].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[16].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[19].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[20].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[21].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[22].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[13].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[14].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[15].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[16].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[19].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[20].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[21].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[22].SetScoreNode(TileScoreType.POINTS);
     }
     void SetEnemyScoreNodes()
     {
-        nodeGrid[0].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[1].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[2].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[3].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[4].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[5].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[0].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[1].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[2].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[3].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[4].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[5].SetScoreNode(TileScoreType.POINTS);
 
-        nodeGrid[0].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[1].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[2].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[3].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[4].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[5].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[0].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[1].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[2].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[3].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[4].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[5].SetScoreAmount(TileScoreAmount.ENEMYROWS);
 
-        nodeGrid[30].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[31].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[32].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[33].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[34].SetScoreNode(CellScoreType.POINTS);
-        nodeGrid[35].SetScoreNode(CellScoreType.POINTS);
+        nodeGrid[30].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[31].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[32].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[33].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[34].SetScoreNode(TileScoreType.POINTS);
+        nodeGrid[35].SetScoreNode(TileScoreType.POINTS);
 
-        nodeGrid[30].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[31].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[32].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[33].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[34].SetScoreAmount(CellScoreAmount.ENEMYROWS);
-        nodeGrid[35].SetScoreAmount(CellScoreAmount.ENEMYROWS);
+        nodeGrid[30].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[31].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[32].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[33].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[34].SetScoreAmount(TileScoreAmount.ENEMYROWS);
+        nodeGrid[35].SetScoreAmount(TileScoreAmount.ENEMYROWS);
     }
 }

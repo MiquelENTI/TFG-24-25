@@ -29,27 +29,27 @@ public class Pocholo : Character
 
     private void EvadeEnemy()
     {
-        CellNode currentCell = CellNodeManager.Instance.GetNodeById(onTile);
+        TileNode currentTile = TileNodeManager.Instance.GetNodeById(onTile);
 
-        List<CellNode> surroundingCells = new();
-        surroundingCells = currentCell.GetSurrondingCells();
+        List<TileNode> surroundingTiles = new();
+        surroundingTiles = currentTile.GetSurrondingTiles();
 
-        foreach (CellNode cell in surroundingCells)
+        foreach (TileNode cell in surroundingTiles)
         {
             if (cell.GetCharacter() == null)
             { continue; }
 
             if (cell.GetCharacter().GetTeamType() != teamType)
             {
-                CellConnection direction = currentCell.GetDirectionToCellByRange(cell.GetId(), 1).Item2;
+                TileConnection direction = currentTile.GetDirectionToTileByRange(cell.GetId(), 1).Item2;
 
-                CellNode cellToMove = currentCell.GetCellByInverseDirection((int)direction);
+                TileNode cellToMove = currentTile.GetTileByInverseDirection((int)direction);
 
                 if (cellToMove == null) { return; }
 
                 if (!cellToMove.IsOccupied())
                 {
-                    BypassMovement(CellNodeManager.Instance.GetNodeById(onTile).GetCellByInverseDirection((int)direction));
+                    BypassMovement(TileNodeManager.Instance.GetNodeById(onTile).GetTileByInverseDirection((int)direction));
                 }
             }
         }

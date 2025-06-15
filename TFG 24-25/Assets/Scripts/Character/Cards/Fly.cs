@@ -5,7 +5,7 @@ public class Fly : Character
     public Fly(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
     {
     }
-    public override bool OnSpawn(CellNode cellToMove)
+    public override bool OnSpawn(TileNode cellToMove)
     {
         return base.OnSpawn(cellToMove);
     }

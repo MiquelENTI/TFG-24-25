@@ -21,7 +21,7 @@ public class CreateGrid : MonoBehaviour
 
     private void InitGrid(float columns, float rows)
     {
-        CellNodeManager.Instance.SetGridSize(new Vector2(columns, rows));
+        TileNodeManager.Instance.SetGridSize(new Vector2(columns, rows));
 
         cell.transform.localScale = new Vector3(1.2f, 0.5f, 1.2f);
 
@@ -31,17 +31,17 @@ public class CreateGrid : MonoBehaviour
             {
                 Vector3 position = new Vector3(j /(1.18f *6f), 0.5f, -i / (1.18f *6f));
                 GameObject obj = Instantiate(cell, position, Quaternion.identity, board.transform.GetChild(0));
-                obj.name = "Cell: " + j.ToString() + "-" + i.ToString();
+                obj.name = "Tile: " + j.ToString() + "-" + i.ToString();
                 obj.GetComponent<Tile>().SetTileId((int)(i * rows + j));
-                CellNode node = new CellNode(position, j,i);
+                TileNode node = new TileNode(position, j,i);
 
                 CreateModelBoard(i, j, position);
             }
         }
 
-        CellNodeManager.Instance.CreateDefaultConnections();
-        CellNodeManager.Instance.CreateSpecialTiles(2);
-        //CellNodeManager.Instance.PrintNodeGridStatus();
+        TileNodeManager.Instance.CreateDefaultConnections();
+        TileNodeManager.Instance.CreateSpecialTiles(2);
+        //TileNodeManager.Instance.PrintNodeGridStatus();
     }
 
     private void CreateModelBoard(int i, int j, Vector3 position)

@@ -126,13 +126,13 @@ public class VRRaycastInteraction : BaseRaycastInteraction
                 {
                     right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)right_lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    TileNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
                 {
                     right_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
+                    TileNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
@@ -284,13 +284,13 @@ public class VRRaycastInteraction : BaseRaycastInteraction
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
                     TokenGameObject temp = (TokenGameObject)left_lastInteractedObject;
-                    CellNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
+                    TileNodeManager.Instance.showPossibleMovements.Invoke(temp.GetCharacter().GetOnTileId());
                     break;
                 }
                 case "CardGameObject":
                 {
                     left_lastInteractedObject = hit.transform.GetComponent<DragableGameObject>();
-                    CellNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
+                    TileNodeManager.Instance.showPossibleSpawnTiles.Invoke(right_lastInteractedObject.GetIsBlue() ? TeamType.BLUE : TeamType.RED);
                     Debug.Log("ENTERED CARDGO");
                     break;
                 }
