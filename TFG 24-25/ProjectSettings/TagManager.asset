@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Token
+  - CardToDisplay
+  - RedHand
+  - BlueHand
+  - TileCollider
+  - SpawnManager
+  - RedHold
+  - BlueHold
+  - SpawnTileCollider
+  - CardGameObject
+  - TokenGameObject
+  - RaycastInteractable
+  - Bullet
+  - CardToDisplayPC
+  - CardToDisplayVR
+  - ManaBottleCanvas
+  - WizardHead
+  - KnightHead
+  - Master
+  - Client
   layers:
   - Default
   - TransparentFX
@@ -11,7 +31,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tile
   - 
   - 
   - 

@@ -1,0 +1,81 @@
+using UnityEngine;
+using UnityEngine.Events;
+using Photon.Pun;
+
+public class MyEventHandler : Singleton<MyEventHandler>
+{
+    public UnityEvent<int, int> moveToken;
+    public UnityEvent<int, int, bool> spawnToken;
+
+    private PhotonView photonView;
+
+    private void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+        moveToken = new UnityEvent<int, int>();
+        spawnToken = new UnityEvent<int, int, bool>();
+
+        moveToken.AddListener((int cellId, int characterId) =>
+        {
+            photonView.RPC("RPC_MoveToken", RpcTarget.AllBuffered, cellId, characterId);
+            photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+            VFXManager.Instance.RemoveTeamHighlights();
+        });
+
+        spawnToken.AddListener((int cellId, int characterId, bool bypassSpawn) =>
+        {
+            photonView.RPC("RPC_SpawnToken", RpcTarget.AllBuffered, cellId, characterId, bypassSpawn);
+            photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+            VFXManager.Instance.RemoveTeamHighlights();
+        });
+        
+    }
+
+    public void InvokeMoveToken(int cellId, int characterId)
+    {
+        Debug.Log("INVOKE");
+
+        TileNode cellToMove = TileNodeManager.Instance.GetNodeById(cellId);
+        Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
+
+        character.OnMovement(cellToMove);
+    }
+
+    public void InvokeSpawnToken(int cellId, int characterId, bool bypassSpawn)
+    {
+        TileNode cellToMove = TileNodeManager.Instance.GetNodeById(cellId);
+        Character character = CharactersManager.Instance.GetCharacterInBoardById(characterId);
+
+        if (bypassSpawn)
+        {
+            character.BypassSpawn(cellToMove);
+        }
+        else
+        {
+            character.OnSpawn(cellToMove);
+        } 
+    }
+
+    public void RemoveCharacters()
+    {
+        photonView.RPC("RemoveCharacters_RPC", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    public void RPC_MoveToken(int cellId, int characterId)
+    {
+        InvokeMoveToken(cellId, characterId);
+    }
+
+    [PunRPC]
+    public void RPC_SpawnToken(int cellId, int characterId, bool bypassSpawn)
+    {
+        InvokeSpawnToken(cellId, characterId, bypassSpawn);
+    }
+
+    [PunRPC]
+    public void RemoveCharacters_RPC()
+    {
+        CharactersManager.Instance.RemoveCharacters();
+    }
+}

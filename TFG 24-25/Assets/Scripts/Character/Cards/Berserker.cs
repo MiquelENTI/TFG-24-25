@@ -1,0 +1,40 @@
+using UnityEngine;
+
+public class Berserker : Character
+{
+    private int originalAttack;
+    private int boostedAttack = 8;
+
+
+    public Berserker(CharacterStats newStats, TeamType teamType, GameObject token) : base(newStats, teamType, token)
+    {
+        originalAttack = newStats.dmg;
+    }
+
+    public override bool OnMovement(TileNode cellToMove)
+    {
+        if (!base.OnMovement(cellToMove))
+        { return false; }
+
+        if (TileNodeManager.Instance.GetNodeById(onTile).GetScoreNode() == TileScoreType.NOPOINTS)
+        { 
+            stats.dmg = originalAttack;
+            DisplayActionsManager.Instance.CreateCustomText("=" + originalAttack.ToString(), new Color(220.0f / 255.0f, 20.0f / 255.0f, 60.0f / 255.0f), 8, 1.0f, token.transform.position);
+            return true; 
+        }
+
+        stats.dmg = boostedAttack;
+        DisplayActionsManager.Instance.CreateCustomText("=" + boostedAttack.ToString(), new Color(220.0f / 255.0f, 20.0f / 255.0f, 60.0f / 255.0f), 8, 1.0f, token.transform.position);
+        return true;
+    }
+
+    //Implementació del so 
+    protected override void OnSpawnSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026002, token.transform.position);
+    }
+    protected override void AttackSFX()
+    {
+        SoundManager.Instance.PlaySFX(003026001, token.transform.position);
+    }
+}
